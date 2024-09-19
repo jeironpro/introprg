@@ -1,0 +1,35 @@
+# No volem fitxers temporals aquí
+*~
+.*.swp
+.*.swo
+.~lock.*#
+*.pyc
+*.class
+
+# No volem fitxers comprimits aquí!
+*.zip
+*.jar
+*.gz
+*.rar
+*.7z
+*.bz2
+*.iso
+*.tar
+*.tgz
+*.Z
+*.tbz2
+*.lz
+*.tlz
+*.xz
+*.txz
+
+# No volem els fitxers generats per gradle
+**/bin/
+**/.gradle/
+**/gradle/
+**/build/
+.classpath
+gradlew
+gradlew.bat
+.project
+**/.settings/

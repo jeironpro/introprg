@@ -1,0 +1,4 @@
+#! /bin/bash
+scriptdir=$(dirname "$0")
+prgtest_Java.bin $@
+exit "$?"
