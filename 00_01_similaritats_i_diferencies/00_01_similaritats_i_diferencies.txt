@@ -1,0 +1,30 @@
+Títol: 00_01.Similaritats_i_Diferencies
+
+Autoria: Jeiron Junior Espinal Cruz - 21/09/2024
+
+Introducció: aquest exercici es tracta de verificar les similaritats i diferencies d'un programa escrit en diferents llenguatges de programació. A més ens permet poder detectar els diferents tipus de llenguatges de programació mitjançant l'estructura de cadascun d'ells.
+
+Pregunta 1. Què fa el programa?
+El programa calcula l'area d'un cercle, partint del radi introduït per l'usuari.
+
+Pregunta 2. Elements comuns
+-Los missatges que es mostren per pantalla estan dins de cometes dobles.
+-Gairebé tots tenen la paraula reservat float, menys la versió pseudocodi
+-La declaració de area es la mateixa, l'únic que varia és la formula d'obtenir el resultat, encara que sigui el mateix. 
+
+Pregunta 3. Entrada/sortida
+-En la versió de pseudocodi l'entrada se obtiene amb la palabra llegeix i la sortida amb la palabra escriu.
+-En la versió C l'entrada se obtiene amb scanf i la sortida amb printf.
+-En la versió Python l'entrada se obtiene amb una variable y la paraula reservat input i la sortida amb print.
+-En la versío Java l'entrada se obtiene amb un element de java anomenat BufferedReader que se li agrega a una variable, després altre element anomenat InputSreamReader i la sortida amb system.out.print i si vols un salt de linia utilitza system.out.println. 
+
+Pregunta 4. Variables
+-En el pseudocodi estan declarat les variables radi i àrea.
+-En C les variables estan declarat amb el tipus de dada.
+-En Python les variables poden convertir el tipus de dada a dins del mateix valor.
+-En Java a diferència de C les variables es declaren amb el tipus de dada, el nom i el valor.
+
+Pregunta 5. Preferència
+La meva preferencia personal es Python, perquè es un lleguatge que estat aprenent i la seva estructura i sintaxi em semblen més fàcil d'aprendre. però em sembla que Java serà un desafiament per la seva estructura.
+
+Aprenentatge: en aquest exercici he aprés a difenciar els llenguatges de programació que he vist, ja que tots tenen una estructura diferent. m'ha sorgit la pregunta que tan dificil és convertir un programa d'un llenguatge a un altre.
