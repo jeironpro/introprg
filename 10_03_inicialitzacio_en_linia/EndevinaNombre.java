@@ -10,7 +10,7 @@ public class EndevinaNombre {
         
         // Pensa un número
         int numeroPensat = Integer.parseInt(args[0]);
-        System.out.print("El número pensat es ");
+        System.out.print("El número pensat és ");
         System.out.println(numeroPensat);
         
         // Multiplica'l per 3
