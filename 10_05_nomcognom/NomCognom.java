@@ -13,7 +13,7 @@ public class NomCognom {
         String nom = Entrada.readLine();
         
         // Obté el cognom
-        System.out.println("Cognom?");
+        System.out.println("Primer cognom?");
         String primerCognom = Entrada.readLine();
         
         // Mostra resultat
