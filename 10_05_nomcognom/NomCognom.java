@@ -17,6 +17,6 @@ public class NomCognom {
         String primerCognom = Entrada.readLine();
         
         // Mostra resultat
-        System.out.println("El " + nom + ", tinc una amiga que també és " + primerCognom);
+        System.out.println("Ei " + nom + ", tinc una amiga que també és " + primerCognom);
     }
 }
