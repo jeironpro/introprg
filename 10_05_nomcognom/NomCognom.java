@@ -14,9 +14,9 @@ public class NomCognom {
         
         // Obté el cognom
         System.out.println("Cognom?");
-        String cognom = Entrada.readLine();
+        String primerCognom = Entrada.readLine();
         
         // Mostra resultat
-        System.out.println("El " + nom + ", tinc una amiga que també és " + cognom);
+        System.out.println("El " + nom + ", tinc una amiga que també és " + primerCognom);
     }
 }
