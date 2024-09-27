@@ -11,7 +11,7 @@
 
 public class CalculaArea {
     public static void main(String[] args) {
-        System.out.println("Cálcul de l'àrea d'un cercle");
+        System.out.println("Càlcul de l'àrea d'un cercle");
         System.out.println("Introduïu el radi: ");
         String linia = Entrada.readLine();
         System.out.println("Introduïu les unitats (ex. cm): ");
