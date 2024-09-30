@@ -14,12 +14,19 @@ Variables
 =========
 quin nom de variable li posaries a aquestes definicions.
 -La teva talla de sabates: talla o tallaSabates
+
 -La data del teu aniversari: data o dataNaixement
+
 -El teu nom: nom
+
 -El color de fons del teu escriptori: colorFons o colorFonsEscriptori
+
 -Si t'agrada o no el gust de la llimona: gustLlimona
--La lletra de la teva canço preferida: cancoPreferida
+
+-La lletra de la teva canço preferida: lletraCancoPreferida
+
 -La llista de pel·lícules i llibres que més t'han marcat: pelliculesLlibres o llistaPelliculesLlibres
+
 
 Aprenentatge
 ============
