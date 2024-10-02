@@ -21,7 +21,7 @@ public class CalculadoraBasica {
         int suma = primerOperand + segonOperand;
         int resta = primerOperand - segonOperand;
         int multiplicacio = primerOperand * segonOperand;
-        float divisio = primerOperand / segonOperand;
+        int divisio = primerOperand / segonOperand;
         
         // mostra resultats
         System.out.println(primerOperand + " + " + segonOperand + " = " + suma);
