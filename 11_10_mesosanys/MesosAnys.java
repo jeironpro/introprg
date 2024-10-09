@@ -12,7 +12,7 @@ public class MesosAnys {
         int any = Integer.parseInt(Entrada.readLine());
         
         if (mes == 1) {
-            System.out.println("el mes" + " " + mes + " " + "no té mes anterior" + " " + "i mes següent" + " " + (mes + 1) + "/" + any);
+            System.out.println("Mes anterior" + " " + "12" + "/" + (any - 1) + " " + "i mes següent" + " " + (mes + 1) + "/" + any);
         } else {
             System.out.println("Mes anterior" + " " + (mes - 1) + "/" + any + " " + "i mes següent" + " " + (mes + 1) + "/" + any);
         }
