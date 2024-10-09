@@ -1,4 +1,8 @@
-/* Aqui va el comentari de que fas el programa */
+/* Aquest programa prendrà el primer argument
+* (que ha de ser un número del 1 al 7) 
+* per tornar el dia de la setmana que correspongui a aquest numero.
+* Si s'introdueix un altre número el programa dirà que és un error.
+*/
 
 public class DiaSetmana {
     public static void main(String[] args) {
