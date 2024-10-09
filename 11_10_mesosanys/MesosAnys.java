@@ -13,6 +13,8 @@ public class MesosAnys {
         
         if (mes == 1) {
             System.out.println("Mes anterior" + " " + "12" + "/" + (any - 1) + " " + "i mes següent" + " " + (mes + 1) + "/" + any);
+        } else if (mes == 12) {
+            System.out.println("Mes anterior" + " " + (mes - 1) + "/" + any + " " + "i mes següent" + " " + "1" + "/" + (any + 1));
         } else {
             System.out.println("Mes anterior" + " " + (mes - 1) + "/" + any + " " + "i mes següent" + " " + (mes + 1) + "/" + any);
         }
