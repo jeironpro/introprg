@@ -8,7 +8,7 @@ public class Semafor {
         String color = Entrada.readLine();
         
         if (color.equals("verd")) {
-            System.out.println("pots passar");
+            System.out.println("passa");
         } else if (color.equals("vermell")) {
             System.out.println("ni se t'acudeixi creuar");
         } else if (color.equals("groc")) {
