@@ -10,7 +10,7 @@ public class Semafor {
         if (color.equals("verd")) {
             System.out.println("passa");
         } else if (color.equals("vermell")) {
-            System.out.println("ni se t'acudeixi creuar");
+            System.out.println("espera");
         } else if (color.equals("groc")) {
             System.out.println("corre!");
         } else {
