@@ -10,7 +10,7 @@ public class Fills {
         if (numFills < 0) {
             System.out.println("No pots tenir menys de 0 fills!");
         } else if (numFills == 0) {
-            System.out.println("Tot el que t'has estalviat en bloquers!");
+            System.out.println("Tot el que t'has estalviat en bolquers!");
         } else if (numFills == 1) {
             System.out.println("Compte de no mimar-lo massa!");
         } else if (numFills > 1 && numFills < 5) {
