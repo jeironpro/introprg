@@ -25,7 +25,7 @@ public class CalculadoraSenzilla {
         } else if (operador == '/' && operandDos == 0) {
             System.out.println("No es pot dividir entre 0");
         } else {
-            System.out.println("L'operador " + operador + " no esta disponible");
+            System.out.println("L'operador " + operador + " no està disponible");
         }
     }
 }
