@@ -22,7 +22,7 @@ public class CalculadoraSenzilla {
             System.out.println(operandUno + " * " + operandDos + " = " + (operandUno * operandDos));
         } else if (operador == '/') {
             System.out.println(operandUno + " / " + operandDos + " = " + (operandUno / operandDos));
-        } else if (operandDos == 0.0) {
+        } else if (operador == '/' && operandDos == 0) {
             System.out.println("No es pot dividir entre 0");
         } else {
             System.out.println("L'operador " + operador + " no esta disponible");
