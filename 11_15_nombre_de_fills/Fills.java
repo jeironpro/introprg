@@ -8,7 +8,7 @@ public class Fills {
         int numFills = Integer.parseInt(Entrada.readLine());
         
         if (numFills < 0) {
-            System.out.println("No pots tenir menys de 0 fills");
+            System.out.println("No pots tenir menys de 0 fills!");
         } else if (numFills == 0) {
             System.out.println("Tot el que t'has estalviat en bloquers!");
         } else if (numFills == 1) {
