@@ -8,13 +8,13 @@ public class Semafor {
         String color = Entrada.readLine();
         
         if (color.equals("verd")) {
-            System.out.println("Pots passar");
+            System.out.println("pots passar");
         } else if (color.equals("vermell")) {
-            System.out.println("Ni se t'acudeixi creuar");
+            System.out.println("ni se t'acudeixi creuar");
         } else if (color.equals("groc")) {
-            System.out.println("Corre!");
+            System.out.println("corre!");
         } else {
-            System.out.println("Aquest color no està al semafor");
+            System.out.println("aquest color no està al semafor");
         }
     }
 }
