@@ -14,7 +14,7 @@ public class Semafor {
         } else if (color.equals("groc")) {
             System.out.println("corre!");
         } else {
-            System.out.println("aquest color no està al semafor");
+            System.out.println("ves a l'oculista");
         }
     }
 }
