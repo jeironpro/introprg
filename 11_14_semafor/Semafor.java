@@ -4,7 +4,7 @@
 
 public class Semafor {
     public static void main(String[] args) {
-        System.out.println("De quin color està el semafor?");
+        System.out.println("Color?");
         String color = Entrada.readLine();
         
         if (color.equals("verd")) {
