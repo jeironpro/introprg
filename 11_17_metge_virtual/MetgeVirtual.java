@@ -53,6 +53,8 @@ public class MetgeVirtual {
                 } else {
                     System.out.println("pren un carmel d'eucaliptus"); 
                 }
+            } else {
+                System.out.println("vine a la consulta");
             }
         }
     }
