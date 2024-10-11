@@ -30,6 +30,8 @@ public class Ascensor {
             System.out.println("Error");
         } else if (!pis.equals("planta baixa") || !pis.equals("primer pis") || !pis.equals("segon pis") && boto.equals("baixar un") || boto.equals("baixar dos") || boto.equals("pujar un") || boto.equals("pujar dos")) {
         System.out.println("error");
+        } else {
+            System.out.println("error");
         }
     }
 }
