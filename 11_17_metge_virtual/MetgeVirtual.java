@@ -6,7 +6,6 @@
 
 public class MetgeVirtual {
     public static void main(String[] args) {
-        System.out.println("Benvingut/da al teu metge virtual!");
         System.out.println("esternuts? (sí o no)");
         String esternut = Entrada.readLine();
         System.out.println("mal de cap? (sí o no)");
