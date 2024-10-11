@@ -36,6 +36,8 @@ public class MetgeVirtual {
                     } else {
                         System.out.println("pren un carmel d'eucaliptus"); 
                     }
+                } else if (tos.equals("no")) {
+                    System.out.println("vine a la consulta");
                 }
             }
         }
