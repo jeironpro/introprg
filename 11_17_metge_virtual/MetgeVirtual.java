@@ -40,6 +40,18 @@ public class MetgeVirtual {
                     System.out.println("vine a la consulta");
                 }
             }
+        } else if (esternut.equals("no")) {
+            System.out.println("tos? (sí o no)");
+            String tos = Entrada.readLine();
+            
+            if (tos.equals("si")) {
+                System.out.println("edat?");
+                int edat = Integer.parseInt(Entrada.readLine());
+                
+                if (edat < 12) {
+                    System.out.println("pren un carmel de mel");
+                }
+            }
         }
     }
 }
