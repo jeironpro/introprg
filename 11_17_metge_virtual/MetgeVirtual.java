@@ -8,12 +8,16 @@ public class MetgeVirtual {
     public static void main(String[] args) {
         System.out.println("esternuts? (sí o no)");
         String esternut = Entrada.readLine();
+        
         System.out.println("mal de cap? (sí o no)");
         String malCap = Entrada.readLine();
+        
         System.out.println("problemes d'estómac? (sí o no)");
         String problemesEstomac = Entrada.readLine();
+        
         System.out.println("tos? (sí o no)");
         String tos = Entrada.readLine();
+        
         System.out.println("edat?");
         int edat = Integer.parseInt(Entrada.readLine());
         
