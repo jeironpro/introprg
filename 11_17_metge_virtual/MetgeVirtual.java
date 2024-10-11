@@ -17,13 +17,13 @@ public class MetgeVirtual {
         System.out.println("edat?");
         int edat = Integer.parseInt(Entrada.readLine());
         
-        if (esternut.equals("si") && malCap.equals("si") && problemesEstomac.equals("si") && tos.equals("no") && edat > 12) {
+        if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("sí") && tos.equals("no") && edat > 12) {
             System.out.println("pren paracetamol");
-        } else if (esternut.equals("si") && malCap.equals("si") && problemesEstomac.equals("no") && tos.equals("no") && edat > 12) {
+        } else if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("no") && tos.equals("no") && edat > 12) {
             System.out.println("prendre àcid acetil salicílic");
-        } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no") && tos.equals("si") && edat < 12) {
+        } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no") && tos.equals("sí") && edat < 12) {
             System.out.println("pren un carmel de mel");
-        } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no") && tos.equals("si") && edat > 12) {
+        } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no") && tos.equals("sí") && edat > 12) {
             System.out.println("pren un carmel d'eucaliptus");
         } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no") && tos.equals("no")) {
             System.out.println("vine a la consulta");
