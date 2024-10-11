@@ -24,7 +24,7 @@ public class MetgeVirtual {
         if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("sí")) {
             System.out.println("pren paracetamol");
         } else if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("no")) {
-            System.out.println("prendre àcid acetil salicílic");
+            System.out.println("pren aspirina");
         } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no")) {
             System.out.println("pren un carmel de mel");
         } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no")) {
