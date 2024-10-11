@@ -21,7 +21,7 @@ public class MetgeVirtual {
         System.out.println("edat?");
         int edat = Integer.parseInt(Entrada.readLine());
         
-        if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("sí") && tos.equals("no") && edat > 12) {
+        if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("sí")) {
             System.out.println("pren paracetamol");
         } else if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("no") && tos.equals("no") && edat > 12) {
             System.out.println("prendre àcid acetil salicílic");
