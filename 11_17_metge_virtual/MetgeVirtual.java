@@ -20,6 +20,8 @@ public class MetgeVirtual {
                 
                 if (problemesEstomac.equals("sí")) {
                     System.out.println("pren paracetamol");
+                } else if (problemesEstomac.equals("no")) {
+                    System.out.println("pren aspirina");
                 }
             } else if (malCap.equals("no")) {
                 System.out.println("tos? (sí o no)");
