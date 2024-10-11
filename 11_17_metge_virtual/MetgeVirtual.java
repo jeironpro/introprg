@@ -9,28 +9,33 @@ public class MetgeVirtual {
         System.out.println("esternuts? (sí o no)");
         String esternut = Entrada.readLine();
         
-        System.out.println("mal de cap? (sí o no)");
-        String malCap = Entrada.readLine();
         
-        System.out.println("problemes d'estómac? (sí o no)");
-        String problemesEstomac = Entrada.readLine();
-        
-        System.out.println("tos? (sí o no)");
-        String tos = Entrada.readLine();
-        
-        /*System.out.println("edat?");
-        int edat = Integer.parseInt(Entrada.readLine());*/
-        
-        if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("sí")) {
-            System.out.println("pren paracetamol");
-        } else if (esternut.equals("sí") && malCap.equals("sí") && problemesEstomac.equals("no")) {
-            System.out.println("pren aspirina");
-        } else if (esternut.equals("sí") && malCap.equals("no")) {
-            System.out.println("pren un carmel de mel");       
-        } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no")) {
-            System.out.println("pren un carmel d'eucaliptus");
-        } else if (esternut.equals("no") && malCap.equals("no") && problemesEstomac.equals("no")) {
-            System.out.println("vine a la consulta");
+        if (esternut.equals("sí")) {
+            System.out.println("mal de cap? (sí o no)");
+            String malCap = Entrada.readLine();
+            
+            if (malCap.equals("sí")) {
+                System.out.println("problemes d'estómac? (sí o no)");
+                String problemesEstomac = Entrada.readLine();
+                
+                if (problemesEstomac.equals("sí")) {
+                    System.out.println("pren paracetamol");
+                }
+            } else if (malCap.equals("no")) {
+                System.out.println("tos? (sí o no)");
+                String tos = Entrada.readLine();
+                
+                if (tos.equals("sí")) {
+                    System.out.println("edat?");
+                    int edat = Integer.parseInt(Entrada.readLine());
+                    
+                    if (edat < 12) {
+                        System.out.println("pren un carmel de mel");
+                    } else {
+                        System.out.println("pren un carmel d'eucaliptus"); 
+                    }
+                }
+            }
         }
     }
 }
