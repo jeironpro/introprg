@@ -12,15 +12,15 @@ public class TresEnOrdre {
         int tercer = Integer.parseInt(Entrada.readLine());
         
         if (primer > segon && primer > tercer && segon > tercer) {
-            System.out.println(tercer + "," + segon + " i " + primer);
+            System.out.println(tercer + " ," + segon + " i " + primer);
         } else if (segon > primer && segon > tercer && primer > tercer) {
-            System.out.println(tercer + "," + primer + " i " + segon);
+            System.out.println(tercer + " ," + primer + " i " + segon);
         } else if (tercer > primer && tercer > segon && primer > segon) {
-            System.out.println(segon + "," + primer + " i " + tercer);
+            System.out.println(segon + " ," + primer + " i " + tercer);
         } else if (primer > segon && primer > tercer && tercer > segon) {
-            System.out.println(segon + "," + tercer + " i " + primer);
+            System.out.println(segon + " ," + tercer + " i " + primer);
         } else if (segon > primer && segon > tercer && tercer > primer) {
-            System.out.println(primer + "," + tercer + " i " + segon);
+            System.out.println(primer + " ," + tercer + " i " + segon);
         } else {
             System.out.println(primer + "," + segon + " i " + tercer);
         }
