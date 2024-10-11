@@ -50,6 +50,8 @@ public class MetgeVirtual {
                 
                 if (edat < 12) {
                     System.out.println("pren un carmel de mel");
+                } else {
+                    System.out.println("pren un carmel d'eucaliptus"); 
                 }
             }
         }
