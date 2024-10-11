@@ -22,7 +22,7 @@ public class TresEnOrdre {
         } else if (segon > primer && segon > tercer && tercer > primer) {
             System.out.println(primer + " ," + tercer + " i " + segon);
         } else {
-            System.out.println(primer + "," + segon + " i " + tercer);
+            System.out.println(primer + " ," + segon + " i " + tercer);
         }
     }
 }
