@@ -1,7 +1,7 @@
 /* Aquest programa funcionés com metge virtual,
 * et farà algunes preguntes sobre el teu estat de salut
 * i et dirà si tens que prendre algú medicament, recomanarà algú caramel 
-* o anar a la seva consulta presencial.
+* o anar a la seva consulta presencial
 */
 
 public class MetgeVirtual {
