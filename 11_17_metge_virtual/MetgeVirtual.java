@@ -9,8 +9,7 @@ public class MetgeVirtual {
         System.out.println("esternuts? (sí o no)");
         String esternut = Entrada.readLine();
         String malCap = "no";
-
-
+    
         if (esternut.equals("sí")) {
             System.out.println("mal de cap? (sí o no)");
             malCap = Entrada.readLine();
@@ -25,7 +24,7 @@ public class MetgeVirtual {
                     System.out.println("pren aspirina");
                 }
             }
-        } else if (malCap.equals("no")){
+        } else if (esternut.equals("no")){
             System.out.println("tos? (sí o no)");
             String tos = Entrada.readLine();
 
