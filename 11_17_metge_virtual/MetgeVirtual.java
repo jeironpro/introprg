@@ -26,7 +26,7 @@ public class MetgeVirtual {
                 }
             }
         }
-        malCap = "no";
+        malCap = "sí";
         if (esternut.equals("no") || malCap.equals("no")){
             System.out.println("tos? (sí o no)");
             String tos = Entrada.readLine();
