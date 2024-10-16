@@ -13,6 +13,7 @@ public class MetgeVirtual {
         if (esternut.equals("sí")) {
             System.out.println("mal de cap? (sí o no)");
             malCap = Entrada.readLine();
+            
             if (malCap.equals("sí")) {            
                 System.out.println("problemes d'estómac? (sí o no)");
                 String problemesEstomac = Entrada.readLine();
