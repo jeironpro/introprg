@@ -27,7 +27,7 @@ public class MetgeVirtual {
                 System.out.println("tos? (sí o no)");
                 String tos = Entrada.readLine();
                 
-                if (tos.equals("sí")) {
+                /* if (tos.equals("sí")) {
                     System.out.println("edat?");
                     int edat = Integer.parseInt(Entrada.readLine());
                     
@@ -38,7 +38,7 @@ public class MetgeVirtual {
                     }
                 } else if (tos.equals("no")) {
                     System.out.println("vine a la consulta");
-                }
+                } */
             }
         } else if (esternut.equals("no")) {
             System.out.println("tos? (sí o no)");
