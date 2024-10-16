@@ -20,7 +20,7 @@ public class MetgeVirtual {
                 
                 if (problemesEstomac.equals("sí")) {
                     System.out.println("pren paracetamol");
-                } else if (problemesEstomac.equals("no")) {
+                } else {
                     System.out.println("pren aspirina");
                 }
             } else if (malCap.equals("no")) {
@@ -40,7 +40,7 @@ public class MetgeVirtual {
                     System.out.println("vine a la consulta");
                 }
             }
-        } /* else if (esternut.equals("no")) {
+        } else if (esternut.equals("no")) {
             System.out.println("tos? (sí o no)");
             String tos = Entrada.readLine();
             
@@ -56,6 +56,6 @@ public class MetgeVirtual {
             } else {
                 System.out.println("vine a la consulta");
             }
-        }*/
+        }
     }
 }
