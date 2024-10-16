@@ -23,7 +23,7 @@ public class MetgeVirtual {
                 } else {
                     System.out.println("pren aspirina");
                 }
-            } else if (malCap.equals("no")) {
+            } else {
                 System.out.println("tos? (sí o no)");
                 String tos = Entrada.readLine();
                 
