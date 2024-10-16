@@ -24,7 +24,7 @@ public class MetgeVirtual {
                     System.out.println("pren aspirina");
                 }
             }
-        } else if (esternut.equals("no")){
+        } else if (esternut.equals("no") && malCap.equals("no")) {
             System.out.println("tos? (sí o no)");
             String tos = Entrada.readLine();
 
