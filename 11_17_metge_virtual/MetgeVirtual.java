@@ -23,24 +23,25 @@ public class MetgeVirtual {
                 } else {
                     System.out.println("pren aspirina");
                 }
-            } else {
-                System.out.println("tos? (sí o no)");
-                String tos = Entrada.readLine();
+            } 
+        } else {
+            System.out.println("tos? (sí o no)");
+            String tos = Entrada.readLine();
+            
+            if (tos.equals("sí")) {
+                System.out.println("edat?");
+                int edat = Integer.parseInt(Entrada.readLine());
                 
-                if (tos.equals("sí")) {
-                    System.out.println("edat?");
-                    int edat = Integer.parseInt(Entrada.readLine());
-                    
-                    if (edat < 12) {
-                        System.out.println("pren un carmel de mel");
-                    } else {
-                        System.out.println("pren un carmel d'eucaliptus"); 
-                    }
-                } else if (tos.equals("no")) {
-                    System.out.println("vine a la consulta");
+                if (edat < 12) {
+                    System.out.println("pren un carmel de mel");
+                } else {
+                    System.out.println("pren un carmel d'eucaliptus"); 
                 }
+            } else if (tos.equals("no")) {
+                System.out.println("vine a la consulta");
             }
-        } /*else if (esternut.equals("no")) {
+        }
+         /*else if (esternut.equals("no")) {
             System.out.println("tos? (sí o no)");
             String tos = Entrada.readLine();
             
