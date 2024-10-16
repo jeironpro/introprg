@@ -25,25 +25,24 @@ public class MetgeVirtual {
                     System.out.println("pren aspirina");
                 }
             }
-        } else  {
-            malCap = "no";
-            if (esternut.equals("sí") || malCap.equals("no")){
-                System.out.println("tos? (sí o no)");
-                String tos = Entrada.readLine();
+        }
+        malCap = "no";
+        if (esternut.equals("no") || malCap.equals("no")){
+            System.out.println("tos? (sí o no)");
+            String tos = Entrada.readLine();
 
-                if (tos.equals("sí")) {
-                    System.out.println("edat?");
-                    int edat = Integer.parseInt(Entrada.readLine());
+            if (tos.equals("sí")) {
+                System.out.println("edat?");
+                int edat = Integer.parseInt(Entrada.readLine());
 
-                    if (edat < 12) {
-                        System.out.println("pren un carmel de mel");
-                    } else {
-                        System.out.println("pren un carmel d'eucaliptus"); 
-                    }
+                if (edat < 12) {
+                    System.out.println("pren un carmel de mel");
                 } else {
-                    System.out.println("vine a la consulta");
-                }            
-            }
+                    System.out.println("pren un carmel d'eucaliptus"); 
+                }
+            } else {
+                System.out.println("vine a la consulta");
+            }            
         }
     }
 }
