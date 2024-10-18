@@ -1,4 +1,7 @@
-/**/
+/* Aquest programa demana número entero positius i s'introduiexi 
+* qualsevol número negatiu finalitzarà l'execució i et mostrarà
+* el número maxim.
+*/
 
 public class TrobaMaxim {
     public static void main(String[] args) {
