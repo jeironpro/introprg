@@ -19,9 +19,7 @@ public class Mitjana {
             nota = Integer.parseInt(Entrada.readLine());           
         }
         
-        if (nota < 0) {
-            System.out.println("Cap nota vàlida introduïda");
-        } else if (nota > 100) {
+        if (nota < 0 || nota > 100) {
             System.out.println("Cap nota vàlida introduïda");
         } else {
             System.out.println("La mitjana de les notes vàlides és " + (sumaNotes / cantidadNota));    
