@@ -22,9 +22,6 @@ public class Mitjana {
             System.out.println("Introdueix un valor");
             nota = Double.parseDouble(Entrada.readLine());           
         }
-        
-        if (nota >= 0 && nota <= 100) {
-            System.out.println("La mitjana de les notes vàlides és " + (sumaNotes / cantidadNota));    
-        }
+        System.out.println("La mitjana de les notes vàlides és " + (sumaNotes / cantidadNota));    
     }
 }
