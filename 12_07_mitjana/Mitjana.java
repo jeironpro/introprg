@@ -11,7 +11,7 @@ public class Mitjana {
         double sumaNotes = 0;        
         
         while (nota >= 0 && nota <= 100) {
-            if (nota >= 0 && nota <= 100) {
+            if (nota >= 0) {
                 cantidadNota = cantidadNota + 1;
                 sumaNotes = sumaNotes + nota;
             }
