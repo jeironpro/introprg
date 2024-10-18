@@ -6,17 +6,17 @@
 public class Mitjana {
     public static void main(String[] args) {
         System.out.println("Introdueix un valor");
-        double nota = Double.parseDouble(Entrada.readLine());   
-        double cantidadNota = 0;
-        double sumaNotes = 0;        
+        int nota = Integer.parseInt(Entrada.readLine());   
+        int cantidadNota = 0;
+        int sumaNotes = 0;        
         
         while (nota >= 0 && nota <= 100) {
-            if (nota >= 0) {
+            if (nota >= 0 && nota <= 100) {
                 cantidadNota = cantidadNota + 1;
                 sumaNotes = sumaNotes + nota;
             }
             System.out.println("Introdueix un valor");
-            nota = Double.parseDouble(Entrada.readLine());           
+            nota = Integer.parseInt(Entrada.readLine());           
         }
         
         if (nota < 0 || nota > 100) {
