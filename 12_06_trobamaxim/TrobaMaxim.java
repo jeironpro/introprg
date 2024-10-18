@@ -12,9 +12,9 @@ public class TrobaMaxim {
             valor = Integer.parseInt(Entrada.readLine()); 
             
             if (valor >= 0 && valorCambiat >= valor) {
-                valorMaxim = valorCambiat;            
+                valorMaxim = valorCambiat;
             } else {
-                valorCambiat = valorCambiat; 
+                valorMaxim = valorCambiat;
             }
         }
         System.out.println("El màxim és " + valorMaxim);
