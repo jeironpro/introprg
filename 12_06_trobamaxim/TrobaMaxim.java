@@ -11,15 +11,15 @@ public class TrobaMaxim {
             System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine()); 
             
+            if (valor >= 0 && valor <= valorCambiat) {
+                valorMaxim = valorCambiat;
+            }
+
             if (valor >= 0 && valorCambiat >= valor) {
                 valorMaxim = valorCambiat;
             } else {
                 valorMaxim = valorCambiat;
-            }
-            
-            if (valor >= 0 && valor <= valorCambiat) {
-                valorMaxim = valorCambiat;
-            }
+            }            
         }
         System.out.println("El màxim és " + valorMaxim);
     }
