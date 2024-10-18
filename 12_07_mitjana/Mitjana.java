@@ -20,10 +20,10 @@ public class Mitjana {
                 sumaNotes = sumaNotes + nota;
             }
             System.out.println("Introdueix un valor");
-            nota = Integer.parseInt(Entrada.readLine());            
+            nota = Double.parseDouble(Entrada.readLine());           
         }
         
-        if (nota >= 0 || nota <= 100) {
+        if (nota >= 0 && nota <= 100) {
             System.out.println("La mitjana de les notes vàlides és " + (sumaNotes / cantidadNota));    
         }
     }
