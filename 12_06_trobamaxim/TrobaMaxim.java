@@ -13,9 +13,11 @@ public class TrobaMaxim {
             
             if (valor >= 0 && valorCambiat >= valor) {
                 valorMaxim = valorCambiat;
-            } else if (valorCambiat <= valor) {
-                valorMaxim = valorCambiat;
             } else {
+                valorMaxim = valorCambiat;
+            }
+            
+            if (valor <= valorCambiat) {
                 valorMaxim = valorCambiat;
             }
         }
