@@ -7,11 +7,15 @@ public class TrobaMaxim {
         int valorMaxim = 0;
         
         while (valor >= 0) {
-            int valorCambiat = valor;
+            if (valor >= valorMaxim) {
+                valorMaxim = valor;            
+            }
+            
             System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine());  
             
            
+            /*
             if (valor >= 0) {
                 if (valorCambiat >= valor) {
                     valorMaxim = valorCambiat;            
@@ -20,7 +24,7 @@ public class TrobaMaxim {
                 }
             } else if (valorCambiat >= 0 && valor < 0) {
                 valorMaxim = valorCambiat;
-            }           
+            } */          
         }
         System.out.println("El màxim és " + valorMaxim);
     }
