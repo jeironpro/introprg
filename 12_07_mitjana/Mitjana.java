@@ -10,7 +10,7 @@ public class Mitjana {
         double cantidadNota = 0;
         double sumaNotes = 0;       
         
-        if (nota < 0) {
+        if (nota < 0 || nota > 100) {
             System.out.println("Cap nota vàlida introduïda");
         }
 
