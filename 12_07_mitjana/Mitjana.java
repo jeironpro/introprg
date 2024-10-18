@@ -8,13 +8,7 @@ public class Mitjana {
         System.out.println("Introdueix un valor");
         double nota = Double.parseDouble(Entrada.readLine());   
         double cantidadNota = 0;
-        double sumaNotes = 0;
-        
-        if (nota < 0 || nota > 100) {
-            System.out.println("Cap nota vàlida introduïda");
-        } else {
-            System.out.println("La mitjana de les notes vàlides és " + (sumaNotes / cantidadNota));       
-        }
+        double sumaNotes = 0;        
         
         while (nota >= 0 && nota <= 100) {
             if (nota >= 0 && nota <= 100) {
@@ -23,6 +17,12 @@ public class Mitjana {
             }
             System.out.println("Introdueix un valor");
             nota = Double.parseDouble(Entrada.readLine());           
+        }
+        
+        if (nota < 0 || nota > 100) {
+            System.out.println("Cap nota vàlida introduïda");
+        } else {
+            System.out.println("La mitjana de les notes vàlides és " + (sumaNotes / cantidadNota));       
         }
     }
 }
