@@ -14,9 +14,9 @@ public class TrobaMaxim {
             if (valor >= 0) {
                 if (valorCambiat >= valor) {
                     valorMaxim = valorCambiat;            
+                } else {
+                    valorMaxim = valorMaxim; 
                 }
-            } else {
-                valorMaxim = valorCambiat; 
             }
         }
         System.out.println("El màxim és " + valorMaxim);
