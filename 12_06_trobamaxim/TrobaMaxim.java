@@ -15,6 +15,6 @@ public class TrobaMaxim {
                 valorMaxim = valorCambiat;
             }
         }
-        System.out.println("El valor màxim és " + valorMaxim);
+        System.out.println("El màxim és " + valorMaxim);
     }
 }
