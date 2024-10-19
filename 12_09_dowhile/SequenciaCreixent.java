@@ -1,4 +1,10 @@
-/**/
+/* Aquest programa demana nombres enters creixents i deixa d'executar-se
+* quan rep un nombre que no és més gran que l'anterior.
+* Per exemple:
+* 10, 20, 30, 40, 40 
+* 10, 20, 30, 20.
+* i finalment et dirà quants valors enters dels introduïts son creixents.
+ */
 
 public class SequenciaCreixent {
     public static void main(String[] args) {
