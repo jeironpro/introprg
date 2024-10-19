@@ -1,4 +1,10 @@
-/**/
+/* Aquest programa és un petit joc que repta els usuaris a endevinar un nombre. 
+* El nombre es passa per línia de comandes.
+* Els usuaris ha d'introduir enters entre el 1 i el 100 fins que endevini el nombre
+* que s'ha passat per la línia de comandes.
+* Si s'introdueix un nombre més petit, més gran o fora de rang us mostrarà un missatge.
+* Quan ho endevini us mostrarà un missatge que l'heu endevinat.
+*/
 
 public class EndevinaNombre {
     public static void main(String[] args) {
