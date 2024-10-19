@@ -13,7 +13,10 @@ public class Estadistiques {
             System.out.println("Cap valor vàlid introduït");
         } else {
             while (valor >= 0) {
-                if (valor >= valorMaxim) {
+                if (valor >= 0) {
+                    sumaValor = sumaValor + valor;
+                    cantidadValor = cantidadValor + 1; 
+                } else if (valor >= valorMaxim) {
                     valorMaxim = valor;
                 } else if (valor < valorMinim && valorMinim <= valorMaxim) {
                     valorMinim = valor;
@@ -21,10 +24,6 @@ public class Estadistiques {
                     valorMinim = valorMinim;
                 }
                 
-                if (valor >= 0) {
-                    sumaValor = sumaValor + valor;
-                    cantidadValor = cantidadValor + 1; 
-                }
                 System.out.println("Introdueix un valor");
                 valor = Integer.parseInt(Entrada.readLine());
             }
