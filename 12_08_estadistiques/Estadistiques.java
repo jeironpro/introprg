@@ -5,7 +5,7 @@ public class Estadistiques {
         System.out.println("Introdueix un valor");
         int valor = Integer.parseInt(Entrada.readLine());
         int valorMaxim = 0;
-        int valorMinim = 0;
+        int valorMinim = valor;
         double sumaValor = 0;
         double cantidadValor = 0;
         
