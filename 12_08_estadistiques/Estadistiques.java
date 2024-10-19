@@ -1,4 +1,6 @@
-/**/
+/* Aquest programa demana enters positius i quan rep un negatiu finalitzará la execució 
+* i et mostrarà el mínim, la mitjana i el màxim dels valors vàlids. 
+*/
 
 public class Estadistiques {
     public static void main(String[] args) {
