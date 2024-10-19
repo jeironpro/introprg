@@ -10,9 +10,9 @@ public class EndevinaNombre {
         while (valor > valorEndevinar || valor < valorEndevinar) {
             
             if (valor <= 0) {
-                System.out.println("Com mínim 1");                    
+                System.out.println("Com a mínim 1");                    
             } else if (valor > 100) {
-                System.out.println("Com màxim 100");
+                System.out.println("Com a màxim 100");
             } else if (valor > valorEndevinar) {
                 System.out.println("És més petit que " + valor);
             } else {
