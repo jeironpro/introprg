@@ -17,6 +17,6 @@ public class SequenciaCreixent {
             valorCreixent = Integer.parseInt(Entrada.readLine());               
         } while (valorCreixent > valor);
         
-        System.out.println("Longitud de la seqüencia creixent: " + valorsCreixents);
+        System.out.println("Longitud de la seqüència creixent: " + valorsCreixents);
     }
 }
