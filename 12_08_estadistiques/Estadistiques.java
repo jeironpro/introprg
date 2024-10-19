@@ -21,7 +21,7 @@ public class Estadistiques {
                     valorMinim = valorMinim;
                 }
                 
-                if (valor >= 0 && valor <= 100) {
+                if (valor >= 0) {
                     sumaValor = sumaValor + valor;
                     cantidadValor = cantidadValor + 1; 
                 }
