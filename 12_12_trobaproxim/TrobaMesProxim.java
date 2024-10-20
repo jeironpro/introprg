@@ -16,10 +16,14 @@ public class TrobaMesProxim {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
                 while (valor >= 0) {
-                
-                    if (valor >= valorMesProxim && valor == (ancora - 1)) {
+                    
+                    if (valor >= valorMesProxim && valor < ancora) {
                         valorMesProxim = valor;
-                    } 
+                    } else if (valor >= valorMesProxim && valor > ancora) {
+                        valorMesProxim = valor;
+                    } else if (valor >= valorMesProxim && valor == (ancora - 1)) {
+                        valorMesProxim = valor;
+                    }
                 
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
