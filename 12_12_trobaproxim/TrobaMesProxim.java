@@ -18,14 +18,13 @@ public class TrobaMesProxim {
             } else {
                 while (valor >= 0) {
                 
-                    if (valor >= valorMesProxim && valor > ancora) {
-                        valorMaxim = valor;
-                    }
-                
                     if (valor >= valorMesProxim && valor == (ancora - 1)) {
                         valorMesProxim = valor;
                     }
-                
+
+                    if (valor >= valorMesProxim && valor > ancora) {
+                        valorMaxim = valor;
+                    }
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
                 }             
