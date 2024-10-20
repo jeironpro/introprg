@@ -24,6 +24,7 @@ public class TrobaMesProxim {
 
                     if (valor >= valorMesProxim && valor > ancora) {
                         valorMaxim = valor;
+                        valorMesProxim = valorMaxim;
                     }
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
