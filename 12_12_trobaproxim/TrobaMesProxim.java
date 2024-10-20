@@ -28,12 +28,8 @@ public class TrobaMesProxim {
                 
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
-                }
-                if (valor >= valorMesProxim && valor > ancora) {
-                    System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMaxim);                
-                } else if (valor >= valorMesProxim && valor == (ancora - 1)) {
-                    System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim); 
-                }
+                }             
+                System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim); 
             }
         }    
     }
