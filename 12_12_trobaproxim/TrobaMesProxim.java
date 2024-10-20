@@ -20,6 +20,10 @@ public class TrobaMesProxim {
                 
                     if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
+                    } else {
+                        if (valor < ancora) {
+                            valorMesProxim = valor;
+                        }
                     }
                     
                     if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
