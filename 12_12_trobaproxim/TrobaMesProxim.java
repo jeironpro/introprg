@@ -23,6 +23,9 @@ public class TrobaMesProxim {
                     if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
                         valorMesProxim = valor;
                     }
+                    if (valorMesProxim < valor) {
+                        valorMesProxim = valor;
+                    }
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
                 }  
