@@ -17,6 +17,10 @@ public class TrobaMesProxim {
             } else {
                 while (valor >= 0) {
                 
+                    if (valor >= valorMesProxim && valor > ancora) {
+                        valorMesProxim = valor;
+                    }
+                
                     if (valor >= valorMesProxim && valor < ancora) {
                         valorMesProxim = valor;
                     }
