@@ -18,7 +18,7 @@ public class TrobaMesProxim {
             } else {
                 while (valor >= 0) {
                 
-                    if (valor == (ancora - 1)) {
+                    if (valor <= (ancora - 1)) {
                         valorMesProxim = valor;
                     }
                     
