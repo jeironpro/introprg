@@ -17,14 +17,11 @@ public class TrobaMesProxim {
             } else {
                 while (valor >= 0) {
                 
-                    if (valor == (ancora - 1)) {
+                    if (valor >= valorMesProxim && valor == (ancora - 1)) {
                         valorMesProxim = valor;
-                    }
-                    
-                    if (valor >= valorMesProxim && valor < ancora) {
+                    } else if (valor >= valorMesProxim && valor < ancora) {
                         valorMesProxim = valor;
-                    }
-                    if (valor >= valorMesProxim && valor > ancora) {
+                    } else if (valor >= valorMesProxim && valor > ancora) {
                         valorMesProxim = valor;
                     }
                 
