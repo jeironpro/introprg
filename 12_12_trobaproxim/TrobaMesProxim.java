@@ -18,22 +18,17 @@ public class TrobaMesProxim {
             } else {
                 while (valor >= 0) {
                 
-                    if (valor <= (ancora - 1)) {
+                    if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
                     }
                     
-                    if (valor > ancora) {
-                        valorMaxim = valor;
+                    if (valorMesProxim == 0 && valor > ancora) {
+                        valorMesProxim = valor;
                     }
-
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
-                }
-                if (valor <= (ancora - 1)) {
-                    System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim);  
-                } else if (valor > ancora) {
-                    System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMaxim); 
-                }            
+                }  
+                System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim);          
             }
         }    
     }
