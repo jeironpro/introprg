@@ -5,6 +5,7 @@ public class TrobaMesProxim {
         System.out.println("Introdueix l'àncora");
         int ancora = Integer.parseInt(Entrada.readLine());
         int valorMesProxim = 0;
+        int valorMaxim = 0;
         
         if (ancora < 0) {
             System.out.println("Àncora no vàlida");
@@ -17,12 +18,12 @@ public class TrobaMesProxim {
             } else {
                 while (valor >= 0) {
                 
+                    if (valor >= valorMesProxim && valor > ancora) {
+                        valorMaxim = valor;
+                    }
+                
                     if (valor >= valorMesProxim && valor == (ancora - 1)) {
                         valorMesProxim = valor;
-                    } else {
-                        if (valor >= valorMesProxim && valor > ancora) {
-                            valorMesProxim = valor;
-                        }
                     }
                 
                     System.out.println("Introdueix un valor");
