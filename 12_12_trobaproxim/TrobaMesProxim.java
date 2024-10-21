@@ -34,6 +34,9 @@ public class TrobaMesProxim {
                     if (valorEncontrat && valor < ancora) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
+                    } else {
+                        valorMesProxim = valor;
+                        valorEncontrat = true;
                     }
                     
                     System.out.println("Introdueix un valor");
