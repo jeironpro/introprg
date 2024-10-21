@@ -31,15 +31,17 @@ public class TrobaMesProxim {
                         valorEncontrat = true;
                     } 
                     
-                    if (valorEncontrat && valor < ancora) {
+                    if (valorEncontrat && valor < ancora && valor > valorMesProxim) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
                    }
                    
-                   if (valorEncontrat && valor > ancora && valor < valor) {
+                   if (valorEncontrat && valor > ancora && valor < valorMesProxim) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
                     }
+                    
+                    System.out.println(valorMesProxim);
                     
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
