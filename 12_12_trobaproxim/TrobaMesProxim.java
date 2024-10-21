@@ -25,7 +25,7 @@ public class TrobaMesProxim {
                     }
                     
                     // PROBLEMA.
-                    if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
+                    if (valor > ancora || valor == ancora) {
                         valorMesProxim = valor;
                     }
                     
