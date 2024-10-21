@@ -27,11 +27,9 @@ public class TrobaMesProxim {
                     } else if (valorEncontrat && valor > ancora && valor < valorMesProxim) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
-                        
-                        if (valorEncontrat && valor < ancora && valor > valorMesProxim) {
-                            valorMesProxim = valor;
-                            valorEncontrat = true;
-                        }
+                    } else if (valorEncontrat && valor < ancora && valor > valorMesProxim) {
+                        valorMesProxim = valor;
+                        valorEncontrat = true;
                     } else if (!valorEncontrat && valor > ancora - 1 || valor == ancora) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
