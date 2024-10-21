@@ -24,7 +24,7 @@ public class TrobaMesProxim {
                         valorMesProxim = valor;
                     } else if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
                         valorMesProxim = valor;
-                    } else if (valor < ancora && valor < valorMesProxim) {
+                    } else if (valor < ancora && valorMesProxim < ancora) {
                         valorMesProxim = valor;
                     }
                     
