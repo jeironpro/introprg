@@ -8,6 +8,7 @@ public class TrobaMesProxim {
         System.out.println("Introdueix l'àncora");
         int ancora = Integer.parseInt(Entrada.readLine());
         int valorMesProxim = 0;
+        boolean valorEncontrat = false;
         
         if (ancora < 0) {
             System.out.println("Àncora no vàlida");
@@ -18,17 +19,26 @@ public class TrobaMesProxim {
             if (valor < 0) {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
-                while (valor >= 0) {
-                
+                while (valor >= 0) {                
+                    
                     if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
+                        valorEncontrat = true;
                     }
                     
-                    // PROBLEMA.
-                    if (valor > ancora || valor == ancora) {
+                    if (valor < ancora && valor != (ancora - 1)) {
                         valorMesProxim = valor;
+                        valorEncontrat = true;
                     }
                     
+                    if (!valorEncontrat && valorMesProxim == 0 && valor > ancora - 1) {
+                        valorMesProxim = valor;
+                        valorEncontrat = true;
+                    } 
+                    
+                    /*if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
+                        valorMesProxim = valor;
+                    }*/
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
                 }  
