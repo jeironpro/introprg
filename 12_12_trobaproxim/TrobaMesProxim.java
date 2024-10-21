@@ -41,7 +41,7 @@ public class TrobaMesProxim {
                         valorEncontrat = true;
                     }
                    
-                    
+                    System.out.println(!valorEncontrat);
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
                 }  
