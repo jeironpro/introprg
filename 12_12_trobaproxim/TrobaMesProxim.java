@@ -24,11 +24,9 @@ public class TrobaMesProxim {
                         valorMesProxim = valor;
                     } else if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
                         valorMesProxim = valor;
-                    } else if (valor < ancora && valor > valorMesProxim) {
+                    } else if (valor < ancora && valor < valorMesProxim) {
                         valorMesProxim = valor;
                     }
-                    
-                    System.out.println(valorMesProxim);
                     
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
