@@ -31,6 +31,11 @@ public class TrobaMesProxim {
                         valorEncontrat = true;
                     } 
                     
+                    if (valorEncontrat && valor < ancora) {
+                        valorMesProxim = valor;
+                        valorEncontrat = true;
+                    }
+                    
                     /*if (valorMesProxim == 0 && valor > ancora || valor == ancora) {
                         valorMesProxim = valor;
                     }*/
