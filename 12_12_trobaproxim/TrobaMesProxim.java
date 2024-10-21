@@ -29,7 +29,7 @@ public class TrobaMesProxim {
                         valorMesProxim = valor;
                     }
                     
-                    if (valor < ancora && valor < valorMesProxim && valorMesProxim != ancora) {
+                    if (valorMesProxim == 0 && valor < ancora && valor < valorMesProxim) {
                         valorMesProxim = valor;
                     }
                     
