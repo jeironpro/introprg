@@ -1,4 +1,7 @@
-/**/
+ /* Aquest programa demana una ancora i després valors enters positius
+ * i quan vulgis finalitzar l'execució introdueix un valor negatiu i et mostrarà
+ * el valor més proxim a l'ancora.
+ */
 
 public class TrobaMesProxim {
     public static void main(String[] args) {
