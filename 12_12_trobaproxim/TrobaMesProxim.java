@@ -24,21 +24,14 @@ public class TrobaMesProxim {
                     if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
-                    }
-                    
-                    if (!valorEncontrat && valor > ancora - 1 || valor == ancora) {
-                        valorMesProxim = valor;
-                        valorEncontrat = true;
-                    } 
-                    
-                    if (!valorEncontrat && valorMesProxim > valor && valor > ancora) {    
-                        valorMesProxim = valor;
-                        valorEncontrat = true;
-                    }
-                    
-                    if (!valorEncontrat && valor < ancora) {
-                        valorMesProxim = valor;
-                        valorEncontrat = true;
+                        if (valorEncontrat && valor < ancora) {
+                            valorMesProxim = valor;
+                            valorEncontrat = true;
+                        }
+                        if (!valorEncontrat && valor > ancora - 1 || valor == ancora) {
+                            valorMesProxim = valor;
+                            valorEncontrat = true;
+                        } 
                     }
                     
                     System.out.println("Introdueix un valor");
