@@ -20,14 +20,14 @@ public class TrobaMesProxim {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
                 while (valor >= 0) {                
-                    
+                    int valorAnterior = valor;
                     if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
-                    } else if (valorEncontrat && valor > ancora && valor < valorMesProxim) {
+                    } else if (valorEncontrat && valor > ancora && valor < valorAnterior) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
-                    } else if (valorEncontrat && valor < ancora && valor > valorMesProxim) {
+                    } else if (valorEncontrat && valor < ancora && valor > valorAnterior) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
                     } else if (!valorEncontrat && valor > ancora - 1 || valor == ancora) {
