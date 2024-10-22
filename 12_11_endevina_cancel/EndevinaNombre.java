@@ -35,7 +35,7 @@ public class EndevinaNombre {
                 }           
             }
             if (valor == valorEndevinar) {
-                System.out.println("Has endevinat!");            
+                System.out.println("Has encertat!");            
             } else if (cadena.isEmpty()) {
                 System.out.println("Cancel·lat!");   
             }
