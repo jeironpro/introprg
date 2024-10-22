@@ -17,7 +17,6 @@ public class EndevinaNombre {
         if (!cadena.isEmpty()) {
             int valor = Integer.parseInt(cadena);
             while (!cadena.isEmpty() && valor != valorEndevinar) {
-                valor = Integer.parseInt(cadena); 
                 if (valor <= 0) {
                     System.out.println("Com a mínim 1");                    
                 } else if (valor > 100) {
@@ -29,6 +28,7 @@ public class EndevinaNombre {
                 }
                 System.out.println("Introdueix un valor");
                 cadena = Entrada.readLine();
+                valor = Integer.parseInt(cadena); 
                 
                 if (valor == valorEndevinar) {
                     cadena = "";
