@@ -13,10 +13,14 @@ public class EndevinaNombre {
         System.out.println("Introdueix un valor");
         String cadena = Entrada.readLine();
         int valorEndevinar = Integer.parseInt(args[0]);
-        
-        if (!cadena.isEmpty()) {
-            int valor = Integer.parseInt(cadena);
-            while (!cadena.isEmpty() && valor != valorEndevinar) {
+        boolean continuar = true;
+           
+        while (continuar) {
+            if (cadena.isEmpty()) {
+                System.out.println("Cancel·lat!");   
+                continuar = false;
+            } else {
+                int valor = Integer.parseInt(cadena);
                 if (valor <= 0) {
                     System.out.println("Com a mínim 1");                    
                 } else if (valor > 100) {
@@ -26,21 +30,15 @@ public class EndevinaNombre {
                 } else if (valor < valorEndevinar) {
                     System.out.println("És més gran que " + valor);
                 }
-                System.out.println("Introdueix un valor");
-                cadena = Entrada.readLine();
-                valor = Integer.parseInt(cadena); 
                 
                 if (valor == valorEndevinar) {
-                    cadena = "";
-                }           
+                    System.out.println("Has encertat!");    
+                    continuar = false;
+                } else {
+                    System.out.println("Introdueix un valor");
+                    cadena = Entrada.readLine();                
+                }
             }
-            if (valor == valorEndevinar) {
-                System.out.println("Has encertat!");            
-            } else if (cadena.isEmpty()) {
-                System.out.println("Cancel·lat!");   
-            }
-        } else {
-            System.out.println("Cancel·lat!");        
         }
     }
 }
