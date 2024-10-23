@@ -13,7 +13,7 @@ public class NaturalsEntre {
         int salt = Integer.parseInt(Entrada.readLine());
         int contador = valorInicial;
         
-        if (valorInicial < 0 || valorFinal < 0 || salt <= 0 || valorInicial >= valorFinal) {
+        if (valorInicial < 0 || valorFinal < 0 || salt <= 0 || valorInicial <= valorFinal) {
             System.out.println("Valor no vàlid");
         } else {
             while (contador <= valorFinal) {
