@@ -8,7 +8,7 @@ public class Naturals {
         int numero = Integer.parseInt(args[0]);
         
         if (numero < 1) {
-            System.out.println("Cap Valor creixent entre 1 i " + numero);        
+            System.out.println("Cap valor creixent entre 1 i " + numero);        
         } else {
             for (int i = 1; i <= numero ; i++) {
                 System.out.println(i);
