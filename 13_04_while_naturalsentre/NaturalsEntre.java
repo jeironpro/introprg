@@ -16,7 +16,7 @@ public class NaturalsEntre {
         if (valorInicial < 0 || valorFinal < 0 || salt <= 0 || valorInicial >= valorFinal) {
             System.out.println("Valor no vàlid");
         } else {
-            while (contador < valorFinal) {
+            while (contador <= valorFinal) {
                 System.out.println(contador);
                 contador = contador + salt;
             }
