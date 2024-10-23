@@ -7,8 +7,12 @@ public class Naturals {
     public static void main(String[] args) {
         int numero = Integer.parseInt(args[0]);
         
-        for (int i = 1; i <= numero ; i++) {
-            System.out.println(i);
+        if (numero < 1) {
+            System.out.println("Cap Valor creixent entre 1 i " + numero);        
+        } else {
+            for (int i = 1; i <= numero ; i++) {
+                System.out.println(i);
+            }
         }
     }
 }
