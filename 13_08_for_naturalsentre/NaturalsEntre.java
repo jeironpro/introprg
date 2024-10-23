@@ -24,7 +24,7 @@ public class NaturalsEntre {
                 int salt = Integer.parseInt(Entrada.readLine());
                 
                 if (salt <= 0) {
-                    System.out.println("Valor vàlid");
+                    System.out.println("Valor no vàlid");
                 } else {
                     for (int i = valorInicial; i <= valorFinal; i = i + salt) {
                         System.out.println(i);
