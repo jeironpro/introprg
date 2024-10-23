@@ -1,5 +1,5 @@
 /* Aquest programa rep un nombre per la línia de comandes i et mostra
-* els números des del nombre introduït fins 1.
+* els números de manera decreixent des del nombre introduït fins 1.
 */
 
 public class NaturalsDecreixents {
