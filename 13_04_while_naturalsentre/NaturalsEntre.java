@@ -7,19 +7,32 @@ public class NaturalsEntre {
     public static void main(String[] args) {
         System.out.println("Valor inicial?");
         int valorInicial = Integer.parseInt(Entrada.readLine());
-        System.out.println("Valor final?");
-        int valorFinal = Integer.parseInt(Entrada.readLine());
-        System.out.println("Salt?");
-        int salt = Integer.parseInt(Entrada.readLine());
-        int contador = valorInicial;
         
-        if (valorInicial < 0 || valorFinal < 0 || salt <= 0 || valorInicial > valorFinal) {
+        if (valorInicial < 0) {
             System.out.println("Valor no vàlid");
         } else {
-            while (contador <= valorFinal) {
-                System.out.println(contador);
-                contador = contador + salt;
-            }
+            System.out.println("Valor final?");
+            int valorFinal = Integer.parseInt(Entrada.readLine());
+            
+            if (valorFinal < 0) {
+                System.out.println("Valor no vàlid");
+            } else if (valorInicial > valorFinal) {
+                System.out.println("Valor no vàlid");
+            } else {
+                System.out.println("Salt?");
+                int salt = Integer.parseInt(Entrada.readLine());
+                
+                if (salt <= 0) {
+                    System.out.println("Valor no vàlid");
+                } else {
+                    int contador = valorInicial;
+                    
+                    while (contador <= valorFinal) {
+                        System.out.println(contador);
+                        contador = contador + salt;
+                    }
+                }            
+            }           
         }
     }
 }
