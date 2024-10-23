@@ -10,7 +10,7 @@ public class NaturalsParells {
         if (numero < 1) {
             System.out.println("Cap valor parell creixent entre 1 i " + numero);
         } else {
-            while (contador < numero) {
+            while (contador < numero && numero > 1) {
                 contador = contador + 2;
                 System.out.println(contador);
             }        
