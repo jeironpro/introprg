@@ -10,8 +10,8 @@ public class NaturalsDecreixents {
         if (numero < 1) {
             System.out.println("Cap valor decreixent entre " + numero + " i 1");
         } else {
-            for (int i = 0; numero > i; numero--) {
-                System.out.println(numero);
+            for (int i = numero; i > 0; i--) {
+                System.out.println(i);
             }
         }
     }
