@@ -24,9 +24,9 @@ public class HistoricEdats {
                 } else { 
                     if (edat > 0) {
                         int anyNaixement = anyActual - edat;
-                        System.out.println("El " + anyNaixement + " vau néixer"); 
-                                           
-                        edat = edat - edat;
+                        System.out.println("El " + anyNaixement + " vau néixer");                  
+                        edat = 0;
+                        
                         for (int i = anyNaixement + 1; i < anyActual; i++) {
                             edat = edat + 1;
                             if (edat == 1) {
@@ -34,8 +34,10 @@ public class HistoricEdats {
                             } else {
                                 System.out.println("El " + i + " teníeu " + edat + " anys");  
                             }
+                            System.out.println("Adéu " + nom);           
                         }
-                        System.out.println("Adéu " + nom);           
+                    } else {
+                        System.out.println("Adéu " + nom); 
                     }
                 }
             }
