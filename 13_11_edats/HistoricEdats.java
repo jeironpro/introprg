@@ -22,7 +22,7 @@ public class HistoricEdats {
             
             for (int i = anyNaixement + 1; i < anyActual; i++) {
                 edat = edat + 1;
-                if (edat == 1) {
+                if (edat > 1) {
                     System.out.println("El " + i + " teníeu " + edat + " any");
                 } else {
                     System.out.println("El " + i + " teníeu " + edat + " anys");  
