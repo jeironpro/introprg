@@ -16,7 +16,7 @@ public class SumaInterval {
             primer = segon;
             segon = tmp;
         }
-        for (int i = primer; segon >= i; i++) {
+        for (int i = primer; i <= segon; i++) {
             int resultat = sumador + i;
             System.out.println(sumador + " + " + i + " = " + resultat);
             sumador = resultat;
