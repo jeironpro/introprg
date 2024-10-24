@@ -16,19 +16,23 @@ public class HistoricEdats {
         if (nom.isBlank() || edat < 0 || anyActual < 1971) {
             System.out.println("Entrada incorrecta");
         } else {
-            int anyNaixement = anyActual - edat;
-            System.out.println("El " + anyNaixement + " vau néixer");                  
-            edat = 0;
-            
-            for (int i = anyNaixement + 1; i < anyActual; i++) {
-                edat = edat + 1;
-                if (edat == 1) {
-                    System.out.println("El " + i + " teníeu " + edat + " any");
-                } else {
-                    System.out.println("El " + i + " teníeu " + edat + " anys");  
+            if (edat > 0) {
+                int anyNaixement = anyActual - edat;
+                System.out.println("El " + anyNaixement + " vau néixer");                  
+                edat = 0;
+                
+                for (int i = anyNaixement + 1; i < anyActual; i++) {
+                    edat = edat + 1;
+                    if (edat == 1) {
+                        System.out.println("El " + i + " teníeu " + edat + " any");
+                    } else {
+                        System.out.println("El " + i + " teníeu " + edat + " anys");  
+                    }
                 }
+                System.out.println("Adéu " + nom);           
+            } else {
+                System.out.println("Adéu " + nom); 
             }
-            System.out.println("Adéu " + nom);
         }
     }
 }
