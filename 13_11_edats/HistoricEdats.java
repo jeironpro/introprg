@@ -35,9 +35,8 @@ public class HistoricEdats {
                                 System.out.println("El " + i + " teníeu " + edat + " anys");  
                             }
                         }
-                    } else {
-                        System.out.println("Adéu " + nom);
-                    }            
+                        System.out.println("Adéu " + nom);           
+                    }
                 }
             }
             
