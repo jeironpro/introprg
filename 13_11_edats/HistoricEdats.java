@@ -1,0 +1,46 @@
+/* Aquest programa demana el nom, la edat i l'any actual i et mostra el historic 
+* de la teva edat des de que naixes fins a l'any actual.
+*/
+
+public class HistoricEdats {
+    public static void main(String[] args) {
+        System.out.println("nom?");
+        String nom = Entrada.readLine();
+        
+        if (nom.isBlank()) {
+            System.out.println("Entrada incorrecta");
+        } else {
+            System.out.println("edat?");
+            int edat = Integer.parseInt(Entrada.readLine());
+            
+            if (edat < 0) {
+                System.out.println("Entrada incorrecta");
+            } else {
+                System.out.println("any actual?");
+                int anyActual = Integer.parseInt(Entrada.readLine());
+                
+                if (anyActual < 1971) {
+                    System.out.println("Entrada incorrecta");
+                } else { 
+                    if (edat > 0) {
+                        int anyNaixement = anyActual - edat;
+                        System.out.println("El " + anyNaixement + " vau néixer"); 
+                                           
+                        edat = edat - edat;
+                        for (int i = anyNaixement + 1; i < anyActual; i++) {
+                            edat = edat + 1;
+                            if (edat == 1) {
+                                System.out.println("El " + i + " teníeu " + edat + " any");
+                            } else {
+                                System.out.println("El " + i + " teníeu " + edat + " anys");  
+                            }
+                        }
+                    } else {
+                        System.out.println("Adéu " + nom);
+                    }            
+                }
+            }
+            
+        }
+    }
+}
