@@ -24,7 +24,7 @@ public class TrobaMesProxim {
                     int distanciaNova = Math.abs(distancia);
                     distancia = valor - ancora;
                      
-                    if (distancia <= distanciaNova) {
+                    if (distancia < distanciaNova) {
                         valorMesProxim = valor;
                     }
                     
