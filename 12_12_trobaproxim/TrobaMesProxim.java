@@ -31,7 +31,7 @@ public class TrobaMesProxim {
                     }
                     
                     if (distancia > distanciaNova) {
-                        valorMesProxim = valorMesProxim;
+                        valorMesProxim = distancia;
                     }
                     
                     System.out.println("Introdueix un valor");
