@@ -22,11 +22,10 @@ public class TrobaMesProxim {
                 while (valor >= 0) {  
                     if (valor < ancora) {
                         valorMesProxim = valor;
-                        
-                        if (valorMesProxim < valor) {
-                            valorMesProxim = valor;  
-                        }
                     }    
+                    if (valorMesProxim < valor) {
+                        valorMesProxim = valor;  
+                    }
                 
                     /*if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
