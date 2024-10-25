@@ -20,7 +20,6 @@ public class TrobaMesProxim {
                 int valorMesProxim = 0;
                 while (valor >= 0) {
                     int distancia = valor - ancora;
-                    System.out.println(distancia);
                     
                     if (distancia >= 0) {
                         valorMesProxim = valor;
