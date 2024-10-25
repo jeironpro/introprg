@@ -19,9 +19,13 @@ public class TrobaMesProxim {
             if (valor < 0) {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
-                while (valor >= 0) {        
+                while (valor >= 0) {  
+                    if (valor > ancora) {
+                        valorMesProxim = valor;
+                    }      
                 
-                    if (valor == (ancora - 1)) {
+                    int distancia = valorMesProxim - ancora;
+                    /*if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
                     } else if (valorEncontrat && valor < ancora) {
@@ -30,7 +34,9 @@ public class TrobaMesProxim {
                     } else if (!valorEncontrat && valor > ancora - 1 || valor == ancora) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
-                    }
+                    }*/
+                    
+                    
                     
                     
                     System.out.println("Introdueix un valor");
