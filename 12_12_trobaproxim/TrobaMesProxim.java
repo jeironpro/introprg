@@ -22,6 +22,10 @@ public class TrobaMesProxim {
                 while (valor >= 0) {  
                     if (valor > ancora) {
                         valorMesProxim = valor;
+                    }
+                    
+                    if (valor < ancora && valorMesProxim > ancora) {
+                        valorMesProxim = valor;
                     }      
                 
                     int distancia = valorMesProxim - ancora;
