@@ -19,11 +19,13 @@ public class TrobaMesProxim {
             } else {
                 int valorMesProxim = 0;
                 while (valor >= 0) {
-                    int distancia = ancora % valor;
+                    int distancia = ancora - valor;
+                    int nouValor = distancia;
                     
-                    if (distancia > distancia) {
-                        valorMesProxim = distancia;
-                    }                    
+                    if (distancia > nouValor) {
+                        valorMesProxim = valor;
+                    }
+                                       
                     
                     /*if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
