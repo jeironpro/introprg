@@ -25,6 +25,10 @@ public class TrobaMesProxim {
                         valorMesProxim = valor;
                     }
                     
+                    if (distancia == -1) {
+                        valorMesProxim = valor;
+                    }
+                    
                     
                     /*if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
