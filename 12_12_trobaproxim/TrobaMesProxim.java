@@ -22,22 +22,18 @@ public class TrobaMesProxim {
                 int distancia = valor - ancora;
                 while (valor >= 0) {
                     int distanciaNova = Math.abs(distancia);
-                    
- 
+                    distancia = valor - ancora;
+                     
                     if (distancia <= distanciaNova) {
                         valorMesProxim = valor;
                     }
-                    
                     
                     if (distancia == distanciaNova && valor < valorMesProxim) {
                         valorMesProxim = valor;
                     }
                     
-                    distancia = valor - ancora;
-                    
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
-                    
                     
                 }  
                     System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim);          
