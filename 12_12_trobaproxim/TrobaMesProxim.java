@@ -23,12 +23,12 @@ public class TrobaMesProxim {
                     if (valor > ancora) {
                         valorMesProxim = valor;
                     }
+                    int distancia = valorMesProxim - ancora;
                     
-                    if (valor < ancora && valorMesProxim > ancora) {
+                    if (valor < ancora && distancia > ancora) {
                         valorMesProxim = valor;
                     }      
                 
-                    int distancia = valorMesProxim - ancora;
                     /*if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
                         valorEncontrat = true;
