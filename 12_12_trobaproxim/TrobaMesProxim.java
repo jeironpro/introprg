@@ -18,13 +18,12 @@ public class TrobaMesProxim {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
                 int valorMesProxim = valor;
-                
                 int distancia = valor - ancora;
+                int distanciaNova = Math.abs(distancia);
                 while (valor >= 0) {
-                    int distanciaNova = Math.abs(distancia);
                     distancia = valor - ancora;
-                     
-                    if (distancia < distanciaNova && valor < valorMesProxim) {
+                    distanciaNova = Math.abs(distancia); 
+                    if (distancia < distanciaNova) {
                         valorMesProxim = valor;
                     }
                     
@@ -35,8 +34,9 @@ public class TrobaMesProxim {
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
                     
-                }  
-                    System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim);          
+                } 
+                System.out.println(distanciaNova); 
+                System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim);          
             }
         }    
     }
