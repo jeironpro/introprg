@@ -28,7 +28,7 @@ public class TrobaMesProxim {
                         valorMesProxim = valor;
                     }
                     
-                    if (distancia == distanciaNova) {
+                    if (distancia == distanciaNova && valor < valorMesProxim) {
                         valorMesProxim = valor;
                     }
                     
