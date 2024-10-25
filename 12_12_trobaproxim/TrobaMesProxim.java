@@ -18,9 +18,8 @@ public class TrobaMesProxim {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
                 int valorMesProxim = valor;
-                int distancia = valor - ancora;
                 while (valor >= 0) {
-                    distancia = valor - ancora;
+                    int distancia = valor - ancora;
                     int distanciaNova = Math.abs(distancia); 
                     
                     if (distancia < distanciaNova) {
