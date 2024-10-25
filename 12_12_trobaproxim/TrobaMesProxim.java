@@ -32,9 +32,6 @@ public class TrobaMesProxim {
                     
                     System.out.println("Introdueix un valor");
                     valor = Integer.parseInt(Entrada.readLine());
-                    
-                    distanciaNova = Math.abs(distancia); 
-                    distancia = valor - ancora;
                 }
                 System.out.println("El valor introduït més pròxim a " + ancora + " és " + valorMesProxim);          
             }
