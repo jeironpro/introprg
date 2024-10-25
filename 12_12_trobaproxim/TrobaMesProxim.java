@@ -17,12 +17,13 @@ public class TrobaMesProxim {
             if (valor < 0) {
                 System.out.println("No s'ha introduït cap valor positiu");
             } else {
-                int valorMesProxim = valor;
-                int distancia = valor - ancora;
+                int valorMesProxim = 0;
                 while (valor >= 0) {
-                    if (valorMesProxim < distancia) {
-                        valorMesProxim = valorMesProxim;
-                    }
+                    int distancia = ancora % valor;
+                    
+                    if (distancia > distancia) {
+                        valorMesProxim = distancia;
+                    }                    
                     
                     /*if (valor == (ancora - 1)) {
                         valorMesProxim = valor;
