@@ -19,7 +19,7 @@ public class TrobaMesProxim {
             } else {
                 int valorMesProxim = valor;
                 int distancia = valor - ancora;
-                int distanciaNova = 0; 
+                int distanciaNova = Math.abs(distancia); 
                 while (valor >= 0) {
                     distanciaNova = Math.abs(distancia); 
                     distancia = valor - ancora;
