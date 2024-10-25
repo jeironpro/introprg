@@ -21,8 +21,6 @@ public class TrobaMesProxim {
                 int distancia = valor - ancora;
                 int distanciaNova = Math.abs(distancia); 
                 while (valor >= 0) {
-                    distancia = valor - ancora;
-                    distanciaNova = Math.abs(distancia); 
                     
                     if (distancia < distanciaNova) {
                         valorMesProxim = valor;
