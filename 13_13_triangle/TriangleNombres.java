@@ -14,11 +14,15 @@ public class TriangleNombres {
         System.out.println("Nombre?");
         int valor = Integer.parseInt(Entrada.readLine());
         
-        for (int i = 1; i <= valor; i++) {
-            for (int j = i; j >= 1; j--) {
-                System.out.print(j);
+        if (valor <= 0 || valor > 9) {
+            System.out.println("Valor inadequat");
+        } else {
+            for (int i = 1; i <= valor; i++) {
+                for (int j = i; j >= 1; j--) {
+                    System.out.print(j);
+                }
+                System.out.println();
             }
-            System.out.println();
         }
     }
 }
