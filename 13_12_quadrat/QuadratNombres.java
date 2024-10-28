@@ -13,7 +13,7 @@ public class QuadratNombres {
         } else {
             for (int i = 1; i <= valor; i++) {
                 for (int j = 1; j <= valor; j++) {
-                    System.out.print(j);
+                    System.out.print(" " + j);
                 }
                 System.out.println("");
             }        
