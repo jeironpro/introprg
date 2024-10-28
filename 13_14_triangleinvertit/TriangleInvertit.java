@@ -19,7 +19,11 @@ public class TriangleInvertit {
         } else {
             for (int i = valor; i >= 1; i--) {
                 for (int j = 1; j <= i; j++) {
-                    System.out.print(j + ", ");
+                    if (j <= 4) {
+                        System.out.print(j + ", ");
+                    } else {
+                        System.out.print(j);
+                    }
                 }
                 System.out.println();
             }
