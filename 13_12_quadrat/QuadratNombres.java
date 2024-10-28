@@ -5,11 +5,11 @@
 
 public class QuadratNombres {
     public static void main(String[] args) {
-        System.out.println("Introdueix un valor enter entre 1 i 9");
+        System.out.println("Valor final?");
         int valor = Integer.parseInt(Entrada.readLine());
         
         if (valor < 0 || valor > 9) {
-            System.out.println("Valor no vàlid");
+            System.out.println("Valor inadequat");
         } else {
             for (int i = 1; i <= valor; i++) {
                 for (int j = 1; j <= valor; j++) {
