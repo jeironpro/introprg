@@ -22,7 +22,6 @@ public class TaulaMultiplicar {
                 multiplicacio = i * j;
                 System.out.println(i + " x " + j + " = " + multiplicacio); 
             }
-            System.out.println();
         }
     }
 }
