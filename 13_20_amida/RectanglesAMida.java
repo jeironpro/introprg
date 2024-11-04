@@ -30,6 +30,9 @@ public class RectanglesAMida {
                         contadorPunts = fila * valorColumna;
                         for (int k = 0; k < valorColumna; k++) {
                             System.out.print("*");
+                            if (valorColumna == 9) {
+                                k = 0;
+                            }
                         }
                     }
                     System.out.println();
