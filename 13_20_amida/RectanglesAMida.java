@@ -36,10 +36,10 @@ public class RectanglesAMida {
                 columna = Entrada.readLine();
                 rectangle++; 
                 punts += contadorPunts;     
-                System.out.println("Rectangles: " + rectangle);
-                System.out.println("Punts: " + punts);
             } else {
                 columna = "";
+                System.out.println("Rectangles: " + rectangle);
+                System.out.println("Punts: " + punts);
             }
         }
     }
