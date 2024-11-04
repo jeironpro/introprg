@@ -28,11 +28,8 @@ public class RectanglesAMida {
                         System.out.println();
                         System.out.print(i + " "); 
                         contadorPunts = fila * valorColumna;
-                        for (int k = 0; k < valorColumna; k++) {
+                        for (int k = i; k < valorColumna; k++) {
                             System.out.print("*");
-                            if (k == 9) {
-                                k = 0;
-                            }
                         }
                     }
                     System.out.println();
