@@ -5,7 +5,7 @@
 
 public class Triangle  {
     public static void main(String[] args) {
-        System.out.println("quants");
+        System.out.println("quants?");
         int quantitat = Integer.parseInt(Entrada.readLine());
         
         if (quantitat < 1) {
