@@ -14,26 +14,46 @@ public class RectanglesAMida {
         int rectangle = 0;
         int punts = 0;
         int contadorPunts = 0;
+        int valorColumnaTmp = 0;
         boolean continuar = true;
         
         while (continuar) {
             if (!columna.isBlank()) {
                 int valorColumna = Integer.parseInt(columna);
+                valorColumnaTmp = valorColumna;
                 if (valorColumna > 0) {
                     System.out.print("  ");
-                    for (int j = 0; j < valorColumna; j++) {
-                        System.out.print(j);
+                    for (int i = 0; i < valorColumna; i++) {
+                        if (i <= 9) {
+                            System.out.print(i);                
+                        } else {
+                            valorColumna = valorColumna - i;
+                            for (int j = 0; j < valorColumna; j++) {
+                                System.out.print(j);                    
+                            }
+                        }
                     }
                     for (int i = 0; i < fila; i++) {
-                        System.out.println();
-                        System.out.print(i + " "); 
-                        contadorPunts = fila * valorColumna;
-                        for (int k = i; k < valorColumna; k++) {
-                            System.out.print("*");
+                        contadorPunts = fila * valorColumnaTmp;
+                        if (i <= 9) {
+                            System.out.println();
+                            System.out.print(i + " ");  
+                            for (int k = 0; k < valorColumnaTmp; k++) {
+                                System.out.print("*");
+                            }               
+                        } else {
+                            fila = fila - i;
+                            for (int j = 0; j < fila; j++) {
+                                System.out.println();
+                                System.out.print(j + " ");
+                                for (int k = 0; k < valorColumnaTmp; k++) {
+                                    System.out.print("*");
+                                }
+                            }
                         }
                     }
                     System.out.println();
-                    fila = valorColumna;
+                    fila = valorColumnaTmp;
                     System.out.println(fila + " x ?");
                     columna = Entrada.readLine();
                     rectangle++; 
