@@ -6,6 +6,8 @@
 * "Cap rectangle dibuixat". 
 */
 
+/* Aquest programa té molta redundància, vaig enviar-ho però estaré traballant en la eliminació de la redundància  */
+
 public class RectanglesAMida {
     public static void main(String[] args) {
         int fila = 1;
