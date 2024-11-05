@@ -60,13 +60,21 @@ public class RectanglesAMida {
                     punts += contadorPunts;     
                 } else {
                     continuar = false;
-                    System.out.println("Rectangles: " + rectangle);
-                    System.out.println("Punts: " + punts);
+                    if (rectangle <= 0) {
+                        System.out.println("Cap rectangle dibuixat");
+                    } else {                
+                        System.out.println("Rectangles: " + rectangle);
+                        System.out.println("Punts: " + punts);
+                    }
                 }
             } else {
                 continuar = false;
-                System.out.println("Rectangles: " + rectangle);
-                System.out.println("Punts: " + punts);
+                if (rectangle <= 0) {
+                    System.out.println("Cap rectangle dibuixat");
+                } else {                
+                    System.out.println("Rectangles: " + rectangle);
+                    System.out.println("Punts: " + punts);
+                }
             }
         }
     }
