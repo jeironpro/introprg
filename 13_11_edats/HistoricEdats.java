@@ -18,16 +18,12 @@ public class HistoricEdats {
             if (edat > 0) {
                 System.out.println("El " + anyNaixement + " vau néixer"); 
             }
-                        
-            edat = 0;
+                       
             for (int i = anyNaixement + 1; i < anyActual; i++) {
-                edat = edat + 1;
+                edat = i - anyNaixement;
                 
-                if (edat == 1) {
-                    System.out.println("El " + i + " teníeu " + edat + " any");
-                } else {
-                    System.out.println("El " + i + " teníeu " + edat + " anys");  
-                }
+                String edatTernari = (edat == 1) ? ("El " + i + " teníeu " + edat + " any") : ("El " + i + " teníeu " + edat + " anys");
+                System.out.println(edatTernari);  
             }
             System.out.println("Adéu " + nom); 
         }
