@@ -17,13 +17,13 @@ public class InformeString {
         int num = Integer.parseInt(Entrada.readLine());
         
         // Obtenir la longitud (nombre de caràcters) del text principal.
-        System.out.println("\"" + textPrincipal + "\"" +  ".length(): " + textPrincipal.length());
+        System.out.println("\"" + textPrincipal + "\"" + ".length(): " + textPrincipal.length());
         
         // Verificar si el text principal comença per el text secundari.
-        System.out.println("textPrincipal.startsWith(textSecundari): " + textPrincipal.startsWith(textSecundari));
+        System.out.println("\"" + textPrincipal + "\"" + ".startsWith(" + textPrincipal + "\"): " + textPrincipal.startsWith(textSecundari));
         
         // Verificar si el text principal acaba per el text secundari.
-        System.out.println("textPrincipal.endsWith(textSecundari): " + textPrincipal.endsWith(textSecundari));
+        System.out.println("\"" + textPrincipal + "\"" + ".endsWith" + textPrincipal.endsWith(textSecundari));
         
         // Verificar si el text principal és equal que el text secundari.
         System.out.println("textPrincipal.equals(textSecundari): " + textPrincipal.equals(textSecundari));
