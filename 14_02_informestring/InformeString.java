@@ -44,7 +44,7 @@ public class InformeString {
          System.out.println("\"" + textPrincipal + "\"" + ".concat(" + "\"" + textSecundari + "\"): " + textPrincipal.concat(textSecundari));
         
         // Repeteix text principal el número de vegades indicat per num.
-        System.out.println("\"" + textPrincipal + "\"" + ".repeat(" + "\"" + num + "\"): " + textPrincipal.repeat(num));
+        System.out.println("\"" + textPrincipal + "\"" + ".repeat(" + num + "): " + textPrincipal.repeat(num));
         
         // Convertir text principal amb totes les lletres en majúscules.
         System.out.println("\"" + textPrincipal + "\"" + ".toUpperCase(): " + textPrincipal.toUpperCase());
