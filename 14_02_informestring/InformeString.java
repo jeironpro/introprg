@@ -20,7 +20,7 @@ public class InformeString {
         System.out.println("\"" + textPrincipal + "\"" + ".length(): " + textPrincipal.length());
         
         // Verificar si el text principal comença per el text secundari.
-        System.out.println("\"" + textPrincipal + "\"" + ".startsWith(" + textPrincipal + "\"): " + textPrincipal.startsWith(textSecundari));
+        System.out.println("\"" + textPrincipal + "\"" + ".startsWith(" + "\"" + textPrincipal + "\"): " + textPrincipal.startsWith(textSecundari));
         
         // Verificar si el text principal acaba per el text secundari.
         System.out.println("\"" + textPrincipal + "\"" + ".endsWith" + textPrincipal.endsWith(textSecundari));
