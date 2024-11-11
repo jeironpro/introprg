@@ -16,7 +16,7 @@ public class InformeString {
         int num = Integer.parseInt(Entrada.readLine());
         
         // Obtenir la longitud (nombre de caràcters) del text principal.
-        String length = String.format("%s .length(): %s", textPrincipal, textPrincipal.length());
+        String length = String.format("%s.length(): %s", textPrincipal, textPrincipal.length());
         System.out.println(length);
         System.out.println("" + "" + textPrincipal + ".length(): " + textPrincipal.length());
         
