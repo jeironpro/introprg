@@ -6,7 +6,7 @@ public class InformeString {
         // Text principal
         System.out.println("Text principal?");
         String textPrincipal = Entrada.readLine();
-        String textPrincipalComilla = "" + textPrincipal;
+        String cometes = "";
         
         // Tex secundari
         System.out.println("Text secundari?");
@@ -17,7 +17,7 @@ public class InformeString {
         int num = Integer.parseInt(Entrada.readLine());
         
         // Obtenir la longitud (nombre de caràcters) del text principal.
-        System.out.println(textPrincipalComilla + ".length(): " + textPrincipal.length());
+        System.out.println(cometes + textPrincipal + ".length(): " + textPrincipal.length());
         
         // Verificar si el text principal comença per el text secundari.
         System.out.println("textPrincipal.startsWith(textSecundari): " + textPrincipal.startsWith(textSecundari));
