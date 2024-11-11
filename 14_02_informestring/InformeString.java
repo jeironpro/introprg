@@ -38,7 +38,7 @@ public class InformeString {
         System.out.println("\"" + textPrincipal + "\"" + ".isEmpty(): " + textPrincipal.isEmpty());
         
         // Verificar quina lletra està a la posició num.
-        System.out.println("\"" + textPrincipal + "\"" + ".charAt(" + "\"" + num + "\"): " + + textPrincipal.charAt(num));
+        System.out.println("\"" + textPrincipal + "\"" + ".charAt(" + num + "): " + textPrincipal.charAt(num));
         
         // Unir (sumar-li) text principla amb text secundari.
          System.out.println("\"" + textPrincipal + "\"" + ".concat(" + "\"" + textSecundari + "\"): " + textPrincipal.concat(textSecundari));
