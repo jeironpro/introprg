@@ -8,7 +8,7 @@ public class InformeCaracter {
         String text = Entrada.readLine();
         
         // Demanar la posició a l'usuari
-        System.out.println("Posoció?");
+        System.out.println("Posició?");
         // Llegir posicio introduït per l'usuari
         int posicio = Integer.parseInt(Entrada.readLine());
         
