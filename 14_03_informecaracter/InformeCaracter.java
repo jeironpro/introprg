@@ -18,7 +18,7 @@ public class InformeCaracter {
             // Llegir posicio introduït per l'usuari
             int posicio = Integer.parseInt(Entrada.readLine());
             
-            if (posicio > text.length()) {
+            if (posicio != text.length()) {
                 System.out.println("Fora de rang");            
             } else {
                 // Obtenir el primer carácter del text
