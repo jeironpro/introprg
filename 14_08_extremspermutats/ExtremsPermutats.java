@@ -7,8 +7,8 @@ public class ExtremsPermutats {
     public static void main(String[] args) {
         boolean continuar = true;
         
+        System.out.println("Ves introduïnt texts (finalitza amb INTRO sol)");
         while (continuar) {
-            System.out.println("Ves introduïnt texts (finalitza amb INTRO sol)");
             String paraula = Entrada.readLine();
             
             if (paraula.isEmpty()) {
