@@ -1,6 +1,5 @@
-/*
- * Programa que demostra diferents manipulacions amb Strings
- */
+/* Programa que demostra diferents manipulacions amb Strings */
+
 public class ManipulaString {
     public static void main(String[] args){
         System.out.println("Paraula?");
