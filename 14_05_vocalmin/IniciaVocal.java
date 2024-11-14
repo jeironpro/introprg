@@ -1,4 +1,6 @@
-/*  */
+/* Aquest programa demana paraulas que comenci amb vocal i la repeteix
+* fins que introdueixi una cadena buida i et dira adéu.
+*/
 
 public class IniciaVocal {
     public static void main(String[] args) {
