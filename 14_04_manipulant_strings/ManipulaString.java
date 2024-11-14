@@ -13,7 +13,7 @@ public class ManipulaString {
         System.out.println("La segona lletra és '" + paraula.charAt(1) + "'");
 
         // Mostra la darrera lletra de la paraula
-        System.out.println("La darrera lletra és '" + paraula.substring(paraula.length()-1) + "'");
+        System.out.println("La darrera lletra és '" + (paraula.length()-1) + "'");
 
         // Mostra la penúltima lletra de la paraula
         System.out.println("La penúltima lletra és '" + paraula.charAt(paraula.length()-2) + "'");
@@ -29,7 +29,7 @@ public class ManipulaString {
         // Mostra una composició formada per la darrera lletra de la paraula,
         // seguida de les tres primeres. (ex. si la paraula és «Nekane»
         // mostrarà «eNek»)
-        System.out.println("La composició de quatre és " + "\"" + paraula.substring(paraula.length()-1) + paraula.charAt(0) + paraula.charAt(1) + paraula.charAt(2) + "\"");
+        System.out.println("La composició de quatre és " + "\"" + (paraula.length()-1) + paraula.charAt(0) + paraula.charAt(1) + paraula.charAt(2) + "\"");
 
         // Com en el cas anterior però ara corregint les majúscules i
         // minúscules de manera que la primera sigui majúscules i la resta en
