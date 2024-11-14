@@ -9,11 +9,11 @@ public class ManipulaString {
         // Mostra la longitud de la paraula (quantes lletres conté)
         System.out.println("La longitud és " + paraula.length());
 
-        // Mostra la segona lletra de la paraula
-        System.out.println("La segona lletra és '" + (paraula.length() > 1 ? paraula.charAt(1) : paraula) + "'");
-
         // Mostra la darrera lletra de la paraula
         System.out.println("La darrera lletra és '" + paraula.charAt(paraula.length()-1) + "'");
+
+        // Mostra la segona lletra de la paraula
+        System.out.println("La segona lletra és '" + (paraula.length() > 1 ? paraula.charAt(1) : paraula) + "'");
 
         // Mostra la penúltima lletra de la paraula
         System.out.println("La penúltima lletra és '" + (paraula.length() > 1 ? paraula.charAt(paraula.length()-2) : paraula) + "'");
