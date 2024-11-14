@@ -5,11 +5,17 @@
 
 public class ExtremsPermutats {
     public static void main(String[] args) {
-        System.out.println("Ves introduïnt texts (finalitza amb INTRO sol)");
-        String paraula = Entrada.readLine();
+        boolean continuar = true;
         
-        while (!paraula.isEmpty()) {
-            System.out.print((Character.isLetter(paraula.charAt(0)) && (paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) ? "Repeteix: " + paraula + "\n" : "");
+        while (continuar) {
+            System.out.println("Ves introduïnt texts (finalitza amb INTRO sol)");
+            String paraula = Entrada.readLine();
+            
+            if (paraula.isEmpty()) {
+                continuar = false;
+            } else {
+                System.out.print((Character.isLetter(paraula.charAt(0)) && (paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) ? "Repeteix: " + paraula + "\n" : "");            
+            }
         }
         System.out.println("Adéu");
     }
