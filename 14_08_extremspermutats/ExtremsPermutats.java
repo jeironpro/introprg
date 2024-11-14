@@ -10,7 +10,6 @@ public class ExtremsPermutats {
         
         while (!paraula.isEmpty()) {
             System.out.print((Character.isLetter(paraula.charAt(0)) && (paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) ? "Repeteix: " + paraula + "\n" : "");
-            paraula = Entrada.readLine();
         }
         System.out.println("Adéu");
     }
