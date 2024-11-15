@@ -4,14 +4,18 @@ public class NomesLletres {
     public static void main(String[] args) {
         System.out.println("Text?");
         String text = Entrada.readLine();
+        String nouText = "";
         
-         for (int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             if (Character.isLetter(text.charAt(i))) {
-                if (i+1 == text.length()) {
-                    System.out.print(text.charAt(i)); 
-                } else {
-                    System.out.print(text.charAt(i) + ", ");                              
-                }
+                nouText += text.charAt(i);
+            }
+        }
+        for (int j = 0; j < nouText.length(); j++) {
+            if (j < nouText.length()-1) {
+                System.out.print(nouText.charAt(j) + ", ");
+            } else {
+                System.out.print(nouText.charAt(j));
             }
         }
     }
