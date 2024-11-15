@@ -30,8 +30,6 @@ public class ExtremsPermutats {
                             System.out.println("Repeteix: " + paraula);
                         }
                     }
-                } else {
-                    System.out.println("Repeteix: " + paraula);
                 }
             } else {
                 paraula = "";
