@@ -7,7 +7,9 @@ public class NomesLletres {
         
          for (int i = 0; i < text.length(); i++) {
             if (Character.isLetter(text.charAt(i))) {
-                System.out.print(text.charAt(i) + ", ");                            
+                if (i < text.length()) {
+                    System.out.print(text.charAt(i) + ", ");                                            
+                }
             }
         }
     }
