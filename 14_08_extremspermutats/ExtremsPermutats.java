@@ -10,7 +10,7 @@ public class ExtremsPermutats {
         
         while (!paraula.isEmpty()) {
             paraula = Entrada.readLine();
-            
+      
             // Verificar si la paraula no és buida
             if (!paraula.isEmpty()) {
                 // Verificar si la paraula té una longitud de més de quatre lletra
