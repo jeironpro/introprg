@@ -6,7 +6,7 @@
 public class ExtremsPermutats {
     public static void main(String[] args) {
         System.out.println("Ves introduïnt texts (finalitza amb INTRO sol)");
-        String paraula = Entrada.readLine();
+        String paraula = "";
         boolean continuar = true;
         String guardaParaula = paraula;
         int cantidadParaula = 0;
