@@ -12,9 +12,12 @@ public class ExtremsPermutats {
             paraula = Entrada.readLine();
     
             // Verificar si la paraula no és buida
-            if (!paraula.isEmpty()) {
+            if (paraula.isEmpty()) {
+                paraula = "";
+                System.out.println("Adéu");                
+            } else {
                 // Verificar si la paraula té una longitud de més de quatre lletra
-                if (paraula.length() >= 4) {
+                if (paraula.length() > 1) {
                     // Verificar si el index 0 és una lletra
                     if (Character.isLetter(paraula.charAt(0)) && Character.isLetter(paraula.charAt(1)) && Character.isLetter(paraula.charAt(paraula.length()-1)) && Character.isLetter(paraula.charAt(paraula.length()-2))) {
                         // Verificar si la primera i la segona lletra de la paraula són iguals a la penúltima i a l'última lletra respectivament sense importar el ordre 
@@ -31,9 +34,6 @@ public class ExtremsPermutats {
                         }
                     }
                 }
-            } else {
-                paraula = "";
-                System.out.println("Adéu");
             }
         }      
     }
