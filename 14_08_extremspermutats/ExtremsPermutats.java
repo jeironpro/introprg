@@ -10,24 +10,31 @@ public class ExtremsPermutats {
         
         while (!paraula.isEmpty()) {
             paraula = Entrada.readLine();
-      
+    
             // Verificar si la paraula no és buida
             if (!paraula.isEmpty()) {
                 // Verificar si la paraula té una longitud de més de quatre lletra
                 if (paraula.length() >= 4) {
                     // Verificar si el index 0 és una lletra
-                    if (Character.isLetter(paraula.charAt(0))) {
+                    if (Character.isLetter(paraula.charAt(0)) && Character.isLetter(paraula.charAt(1)) && Character.isLetter(paraula.charAt(paraula.length()-1)) && Character.isLetter(paraula.charAt(paraula.length()-2))) {
                         // Verificar si la primera i la segona lletra de la paraula són iguals a la penúltima i a l'última lletra respectivament sense importar el ordre 
-                        if ((paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) {
-                                System.out.println("Repeteix: " + paraula);
+                        char primeraLletra = Character.toUpperCase(paraula.charAt(0));
+                        char segonaLletra = Character.toUpperCase(paraula.charAt(0));
+                        char penultimaLletra = Character.toUpperCase(paraula.charAt(paraula.length()-1));
+                        char ultimaLletra = Character.toUpperCase(paraula.charAt(paraula.length()-2));
+                        if (
+                        primeraLletra == penultimaLletra || primeraLletra == ultimaLletra 
+                        &&
+                        segonaLletra == ultimaLletra || segonaLletra == ultimaLletra
+                        ) {
+                            System.out.println("Repeteix: " + paraula);
                         }
                     }
-                
                 }
             } else {
                 paraula = "";
+                System.out.println("Adéu");
             }
-        }
-        System.out.println("Adéu");
+        }      
     }
 }
