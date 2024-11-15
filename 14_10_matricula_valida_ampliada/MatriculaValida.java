@@ -76,7 +76,7 @@ public class MatriculaValida {
                     System.out.println(terceraLletra + ": Correcte");                    
                 }
                 
-                // Verificar que la tercera lletra compleixi totes les condicions per ser vàlida
+                // Verificar que la quarta lletra compleixi totes les condicions per ser vàlida
                 if (Character.isDigit(quartaLletra) || quartaLletra < 'A' || quartaLletra > 'Z') {
                     System.out.println(quartaLletra + ": Ha de ser una lletra");
                 } else if (Character.isLowerCase(quartaLletra)) {
