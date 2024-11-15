@@ -6,13 +6,13 @@
 public class ExtremsPermutats {
     public static void main(String[] args) {
         System.out.println("Ves introduïnt texts (finalitza amb INTRO sol)");
-        String paraula = "";
         boolean continuar = true;
-        String guardaParaula = paraula;
+        String guardaParaula = "";
         int cantidadParaula = 0;
         
         while (continuar) {
-            paraula = Entrada.readLine();
+            String paraula = Entrada.readLine();
+            
             if (!paraula.isEmpty() && Character.isLetter(paraula.charAt(0)) && (paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) {
                 cantidadParaula += 1;
                 guardaParaula = paraula;
@@ -23,6 +23,7 @@ public class ExtremsPermutats {
             }
         }
         for (int i = cantidadParaula; i > 0; i--) {
+            guardaParaula = guardaParaula;
             System.out.println("Repeteix: " + guardaParaula);                
         }
         System.out.println("Adéu");
