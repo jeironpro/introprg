@@ -11,7 +11,7 @@ public class NomesLletres {
                     if (j == 1) {
                         System.out.print(text.charAt(j)); 
                     } else {
-                        System.out.print(", " + text.charAt(j));                              
+                        System.out.print(text.charAt(j) + ", ");                              
                     }
                 }
             }
