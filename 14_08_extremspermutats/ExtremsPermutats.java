@@ -12,7 +12,6 @@ public class ExtremsPermutats {
         
         while (continuar) {
             String paraula = Entrada.readLine();
-            guardaParaula = paraula;
             
             if (!paraula.isEmpty() && Character.isLetter(paraula.charAt(0)) && (paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) {
                 cantidadParaula += 1;
