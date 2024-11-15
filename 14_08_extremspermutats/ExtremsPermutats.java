@@ -15,15 +15,16 @@ public class ExtremsPermutats {
             
             if (!paraula.isEmpty() && Character.isLetter(paraula.charAt(0)) && (paraula.charAt(paraula.length()-1) == paraula.charAt(0) || paraula.charAt(paraula.length()-1) == paraula.charAt(1) && paraula.charAt(paraula.length()-2) == paraula.charAt(0) || paraula.charAt(paraula.length()-2) == paraula.charAt(1))) {
                 cantidadParaula += 1;
-                guardaParaula = guardaParaula + paraula;
+                guardaParaula = paraula;
             }
             
             if (paraula.isEmpty()) {
                 continuar = false;
+                for (int i = cantidadParaula; i > 0; i--) {
+                    guardaParaula = paraula;
+                    System.out.println("Repeteix: " + guardaParaula);                
+                }
             }
-        }
-        for (int i = cantidadParaula; i > 0; i--) {
-            System.out.println("Repeteix: " + guardaParaula);                
         }
         System.out.println("Adéu");
     }
