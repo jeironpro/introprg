@@ -20,11 +20,10 @@ public class ExtremsPermutats {
             
             if (paraula.isEmpty()) {
                 continuar = false;
-                for (int i = cantidadParaula; i > 0; i--) {
-                    guardaParaula = paraula;
-                    System.out.println("Repeteix: " + guardaParaula);                
-                }
             }
+        }
+        for (int i = cantidadParaula; i > 0; i--) {
+            System.out.println("Repeteix: " + guardaParaula);                
         }
         System.out.println("Adéu");
     }
