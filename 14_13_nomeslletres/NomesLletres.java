@@ -8,10 +8,10 @@ public class NomesLletres {
          for (int i = 0; i < text.length(); i++) {
             if (Character.isLetter(text.charAt(i))) {
                 for (int j = i; j <= i; j++) {
-                    if (j < text.length()-1) {
-                        System.out.print(text.charAt(j) + ", ");                              
-                    } else {
+                    if (j == 1) {
                         System.out.print(text.charAt(j)); 
+                    } else {
+                        System.out.print(", " + text.charAt(j));                              
                     }
                 }
             }
