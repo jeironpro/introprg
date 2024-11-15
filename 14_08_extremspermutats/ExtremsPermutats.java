@@ -22,14 +22,11 @@ public class ExtremsPermutats {
                     if (Character.isLetter(paraula.charAt(0)) && Character.isLetter(paraula.charAt(1)) && Character.isLetter(paraula.charAt(paraula.length()-1)) && Character.isLetter(paraula.charAt(paraula.length()-2))) {
                         // Verificar si la primera i la segona lletra de la paraula són iguals a la penúltima i a l'última lletra respectivament sense importar el ordre 
                         char primeraLletra = Character.toUpperCase(paraula.charAt(0));
-                        char segonaLletra = Character.toUpperCase(paraula.charAt(0));
+                        char segonaLletra = Character.toUpperCase(paraula.charAt(1));
                         char penultimaLletra = Character.toUpperCase(paraula.charAt(paraula.length()-1));
                         char ultimaLletra = Character.toUpperCase(paraula.charAt(paraula.length()-2));
-                        if (
-                        (primeraLletra == penultimaLletra && primeraLletra == ultimaLletra) 
-                        &&
-                        (segonaLletra == ultimaLletra && segonaLletra == ultimaLletra)
-                        ) {
+                        if ((primeraLletra == penultimaLletra || primeraLletra == ultimaLletra)
+                        && (segonaLletra == ultimaLletra || segonaLletra == ultimaLletra)) {
                             System.out.println("Repeteix: " + paraula);
                         }
                     }
