@@ -26,7 +26,7 @@ public class ExtremsPermutats {
                         char penultimaLletra = Character.toUpperCase(paraula.charAt(paraula.length()-1));
                         char ultimaLletra = Character.toUpperCase(paraula.charAt(paraula.length()-2));
                         if ((primeraLletra == penultimaLletra || primeraLletra == ultimaLletra)
-                        && (segonaLletra == ultimaLletra || segonaLletra == ultimaLletra)) {
+                        && (segonaLletra == penultimaLletra || segonaLletra == ultimaLletra)) {
                             System.out.println("Repeteix: " + paraula);
                         }
                     }
