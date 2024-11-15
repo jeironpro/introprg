@@ -6,13 +6,11 @@ public class NomesLletres {
         String text = Entrada.readLine();
         
          for (int i = 0; i < text.length(); i++) {
-            for (int j = i; j <= i; j++) {
-                if (Character.isLetter(text.charAt(i))) {
-                    if (j == 1) {
-                        System.out.print(text.charAt(j)); 
-                    } else {
-                        System.out.print(text.charAt(j) + ", ");                              
-                    }
+            if (Character.isLetter(text.charAt(i))) {
+                if (i == 1) {
+                    System.out.print(text.charAt(i)); 
+                } else {
+                    System.out.print(text.charAt(i) + ", ");                              
                 }
             }
         }
