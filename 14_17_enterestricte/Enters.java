@@ -14,7 +14,9 @@ public class Enters {
             
             // Verificar si el text és buit
             if (!text.isEmpty()) {
-                if (text.charAt(0) == '-' || text.charAt(0) == '+' || Character.isDigit(text.charAt(0)) || Character.isDigit(text.length()-1)) {
+                if (text.charAt(0) == '-' || text.charAt(0) == '+' && Character.isDigit(text.charAt(1))) {
+                    System.out.println("És un enter");
+                } else if (Character.isDigit(text.charAt(0)) || Character.isDigit(text.length()-1)) {
                     System.out.println("És enter");
                 } else {
                     System.out.println("No és enter");
