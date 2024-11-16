@@ -26,12 +26,12 @@ public class MostraInterval {
                 // Possar-li el valor final de la longitud del text a finall
                 finall = text.length()-1;
                 // for creixent, per iterar les lletres que esten en el rang (inici, finall)
-                for (int i = inici; i <= finall; i++) {
+                for (int i = inici; i < finall; i++) {
                         // Mostrar les lletres
                         System.out.println(text.charAt(i));                    
                 }
             } else {
-                for (int i = inici; i <= finall; i++) {
+                for (int i = inici; i < finall; i++) {
                     // Mostrar les lletres
                     System.out.println(text.charAt(i));
                 }
@@ -43,12 +43,12 @@ public class MostraInterval {
                 // Possar-li el valor final de la longitud del text a inici
                 inici = text.length()-1;
                 // for decreixent, per iterar les lletres que esten en el rang (inici, finall)
-                for (int j = inici; j >= finall; j--) {
+                for (int j = inici; j > finall; j--) {
                     // Mostrar les lletres
                     System.out.println(text.charAt(j));
                 }
             } else {
-                for (int j = inici; j >= finall; j--) {
+                for (int j = inici; j > finall; j--) {
                     // Mostrar les lletres
                     System.out.println(text.charAt(j));
                 }
