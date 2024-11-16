@@ -22,8 +22,10 @@ public class MostraInterval {
                 finall = text.length()-1;
                 // for creixent, per iterar les lletres que esten en el rang (inici, finall)
                 for (int i = inici; i <= finall; i++) {
-                    // Mostrar les lletres
-                    System.out.println(text.charAt(i));
+                    if (Character.isLetter(text.charAt(i))) {
+                        // Mostrar les lletres
+                        System.out.println(text.charAt(i));                    
+                    }
                 }
             }
         // De lo contrario. Fer un for decreixent 
@@ -34,8 +36,10 @@ public class MostraInterval {
                 inici = text.length()-1;
                 // for decreixent, per iterar les lletres que esten en el rang (inici, finall)
                 for (int j = inici; j >= finall; j--) {
-                    // Mostrar les lletres
-                    System.out.println(text.charAt(j));
+                    if (Character.isLetter(text.charAt(j))) {
+                        // Mostrar les lletres
+                        System.out.println(text.charAt(j));                    
+                    }
                 }
             }
         }
