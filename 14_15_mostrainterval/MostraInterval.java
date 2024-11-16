@@ -25,17 +25,13 @@ public class MostraInterval {
                 finall = text.length()-1;
                 // for creixent, per iterar les lletres que esten en el rang (inici, finall)
                 for (int i = inici; i <= finall; i++) {
-                    if (Character.isLetter(text.charAt(i)) || Character.isWhitespace(text.charAt(i))) {
                         // Mostrar les lletres
                         System.out.println(text.charAt(i));                    
-                    }
                 }
             } else {
                 for (int i = inici; i <= finall; i++) {
-                    if (Character.isLetter(text.charAt(i)) || Character.isWhitespace(i)) {
-                        // Mostrar les lletres
-                        System.out.println(text.charAt(i));                    
-                    }
+                    // Mostrar les lletres
+                    System.out.println(text.charAt(i));
                 }
             }
         // De lo contrario. Fer un for decreixent 
@@ -46,17 +42,13 @@ public class MostraInterval {
                 inici = text.length()-1;
                 // for decreixent, per iterar les lletres que esten en el rang (inici, finall)
                 for (int j = inici; j >= finall; j--) {
-                    if (Character.isLetter(text.charAt(j)) || Character.isWhitespace(j)) {
-                        // Mostrar les lletres
-                        System.out.println(text.charAt(j));                    
-                    }
+                    // Mostrar les lletres
+                    System.out.println(text.charAt(j));
                 }
             } else {
                 for (int j = inici; j >= finall; j--) {
-                    if (Character.isLetter(text.charAt(j)) || Character.isWhitespace(j)) {
-                        // Mostrar les lletres
-                        System.out.println(text.charAt(j));                    
-                    }
+                    // Mostrar les lletres
+                    System.out.println(text.charAt(j));
                 }
             }
         }
