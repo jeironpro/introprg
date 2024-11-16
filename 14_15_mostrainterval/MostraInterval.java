@@ -14,7 +14,9 @@ public class MostraInterval {
         System.out.println("final?");
         int finall = Integer.parseInt(Entrada.readLine());
         
-        if (inici < 0 || finall < 0) {
+        if (inici < 0) {
+            inici = 0;
+        } else if (inici < 0 && finall < 0) {
             inici = 0;
             finall = 0;
         }
