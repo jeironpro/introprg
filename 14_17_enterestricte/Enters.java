@@ -14,12 +14,14 @@ public class Enters {
             
             // Verificar si el text és buit
             if (!text.isEmpty()) {
-                if (text.charAt(0) == '-' || text.charAt(0) == '+' && Character.isDigit(text.charAt(1))) {
-                    System.out.println("És enter");
-                } else if (Character.isDigit(text.charAt(0))) {
-                    System.out.println("És enter");
-                } else {
-                    System.out.println("No és enter");
+                for (int i = 0; i < text.length(); i++) {
+                    if (text.charAt(0) == '-' || text.charAt(0) == '+' && Character.isDigit(text.charAt(1))) {
+                        System.out.println("És enter");
+                    } else if (Character.isDigit(text.charAt(0)) && Character.isDigit(text.length())) {
+                        System.out.println("És enter");
+                    } else {
+                        System.out.println("No és enter");
+                    }                    
                 }
             // Del contrari, fer la verificació si és enter o no
             } else {
