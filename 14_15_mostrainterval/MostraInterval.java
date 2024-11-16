@@ -24,7 +24,7 @@ public class MostraInterval {
         // Verificar si valor inici és menor a valor final. Per fer un for creixent
         if (inici < finall) {
             // Verificar si valor final és major a la longitud del text.
-            if (finall > text.length()) {
+            if (finall >= text.length()) {
                 // Possar-li el valor final de la longitud del text a finall
                 finall = text.length()-1;
             }
@@ -36,7 +36,7 @@ public class MostraInterval {
         // De lo contrario. Fer un for decreixent 
         } else {
             // Verificar si valor inici és major a la longitud del text.
-            if (inici > text.length()) {
+            if (inici >= text.length()) {
                 // Possar-li el valor final de la longitud del text a inici
                 inici = text.length()-1;
             }
