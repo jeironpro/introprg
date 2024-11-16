@@ -20,7 +20,7 @@ public class MostraInterval {
             finall = 0;
         }
         // Verificar si valor inici és menor a valor final. Per fer un for creixent
-        if (inici < finall) {
+        if (inici <= finall) {
             // Verificar si valor final és major a la longitud del text.
             if (finall > text.length()) {
                 // Possar-li el valor final de la longitud del text a finall
