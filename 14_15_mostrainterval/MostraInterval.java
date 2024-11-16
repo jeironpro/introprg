@@ -16,7 +16,9 @@ public class MostraInterval {
         
         if (inici < 0) {
             inici = 0;
-        } else if (finall < 0) {
+        } 
+        
+        if (finall < 0) {
             finall = 0;
         }
         // Verificar si valor inici és menor a valor final. Per fer un for creixent
