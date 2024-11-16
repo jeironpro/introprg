@@ -14,8 +14,9 @@ public class MostraInterval {
         System.out.println("final?");
         int finall = Integer.parseInt(Entrada.readLine());
         
-        if (inici < 0) {
+        if (inici < 0 || finall < 0) {
             inici = 0;
+            finall = 0;
         }
         // Verificar si valor inici és menor a valor final. Per fer un for creixent
         if (inici < finall) {
