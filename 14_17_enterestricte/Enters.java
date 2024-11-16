@@ -19,12 +19,15 @@ public class Enters {
                 System.out.println("Adéu");
             // Del contrari, fer la verificació si és enter o no
             } else {
-                // Si comença per lletra no és un enter
+                // Si comença per lletra o un espai en blanc i si acaba amb un espai no és un enter
                 if (Character.isLetter(text.charAt(0)) || Character.isWhitespace(text.charAt(0)) || Character.isWhitespace(text.charAt(text.length()-1))) {
                     System.out.println("No és enter"); 
                 // Del contrari, és un enter                   
                 } else {
-                    System.out.println("És enter");               
+                    int enter = Integer.parseInt(text);
+                    if (enter < 0 || enter > 0) {
+                        System.out.println("És enter");               
+                    }
                 }
             }
         }
