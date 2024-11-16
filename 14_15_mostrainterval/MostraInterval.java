@@ -27,6 +27,13 @@ public class MostraInterval {
                         System.out.println(text.charAt(i));                    
                     }
                 }
+            } else {
+                for (int i = inici; i <= finall; i++) {
+                    if (Character.isLetter(text.charAt(i))) {
+                        // Mostrar les lletres
+                        System.out.println(text.charAt(i));                    
+                    }
+                }
             }
         // De lo contrario. Fer un for decreixent 
         } else {
@@ -35,6 +42,13 @@ public class MostraInterval {
                 // Possar-li el valor final de la longitud del text a inici
                 inici = text.length()-1;
                 // for decreixent, per iterar les lletres que esten en el rang (inici, finall)
+                for (int j = inici; j >= finall; j--) {
+                    if (Character.isLetter(text.charAt(j))) {
+                        // Mostrar les lletres
+                        System.out.println(text.charAt(j));                    
+                    }
+                }
+            } else {
                 for (int j = inici; j >= finall; j--) {
                     if (Character.isLetter(text.charAt(j))) {
                         // Mostrar les lletres
