@@ -8,7 +8,7 @@ public class AnalitzaCaracter {
         
         if (!text.isEmpty()) {
             for (int i = 0; i < text.length(); i++) {
-                if (Character.isLetter(text.charAt(i)) || Character.isDigit(text.charAt(i))) {
+                if (Character.isLetter(text.charAt(i)) || Character.isDigit(text.charAt(i)) || Character.isWhitespace(text.charAt(i))) {
                     nuevoText += text.charAt(i);
                 }
             }
