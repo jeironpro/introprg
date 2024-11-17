@@ -2,7 +2,7 @@
 * Per cada text introduït et dira si és un enter o no.
 */
 
-public class Enterss {
+public class Enters {
     public static void main(String[] args) {
         // Demanar els texts
         System.out.println("Introdueix texts (enter sol per finalitzar)");
