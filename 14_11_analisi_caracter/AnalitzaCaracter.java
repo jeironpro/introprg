@@ -27,7 +27,7 @@ public class AnalitzaCaracter {
                     System.out.println(" és una altra cosa");
                 }
             } else if (posicio > text.length()) {
-                while(posicio > text.length()-1) {
+                while(posicio > text.length()) {
                     text = text + text;
                 }
                 System.out.print("'" + text.charAt(posicio) + "'");
