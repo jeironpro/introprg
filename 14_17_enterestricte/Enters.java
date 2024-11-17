@@ -22,9 +22,12 @@ public class Enters {
                         enter = false;
                     } 
                     
-                    if (i == 0 && (text.charAt(i) != '-' || text.charAt(i) != '+')) {
-                        if (i == 1 && !Character.isDigit(text.charAt(i))) {
-                            enter = false;
+                    if (i == 0) {
+                        if (text.charAt(i) == '-' || text.charAt(i) == '+') {
+                            i = i + 1;
+                            if (i == 1 && Character.isDigit(text.charAt(i))) {
+                                enter = true;
+                            }                            
                         }
                     }
                 }
