@@ -22,7 +22,7 @@ public class AnalitzaCaracter {
                         System.out.println(" és una lletra minúscula");
                     }            
                 } else if (Character.isDigit(text.charAt(posicio))) {
-                    System.out.println(" és un digit");
+                    System.out.println(" és un dígit");
                 } else {
                     System.out.println(" és una altra cosa");
                 }
@@ -38,7 +38,7 @@ public class AnalitzaCaracter {
                         System.out.println(" és una lletra minúscula");
                     }            
                 } else if (Character.isDigit(text.charAt(posicio))) {
-                    System.out.println(" és un digit");
+                    System.out.println(" és un dígit");
                 } else {
                     System.out.println(" és una altra cosa");
                 }
@@ -51,7 +51,7 @@ public class AnalitzaCaracter {
                         System.out.println(" és una lletra minúscula");
                     }            
                 } else if (Character.isDigit(text.charAt(posicio))) {
-                    System.out.println(" és un digit");
+                    System.out.println(" és un dígit");
                 } else {
                     System.out.println(" és una altra cosa");
                 }
