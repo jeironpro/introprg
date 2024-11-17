@@ -22,19 +22,12 @@ public class Enters {
                     if (Character.isLetter(text.charAt(i))) {
                         enter = false;
                     }
-                    if (i == 0) {
-                        if (Character.isWhitespace(text.charAt(i))) {
-                            i = i + 1;
-                            if (text.charAt(i) == '-' || text.charAt(i) == '+') {
-                                enter = true;
-                            }
-                        }
-                    }
-                    if (i == 1) {
+                    
+                    /*if (i == 1) {
                         if (text.charAt(i) == '-' || text.charAt(i) == '+') {
                             enter = false;
                         }
-                    }
+                    }*/
                 }
                 if (enter == true) {
                     System.out.println("És enter");
