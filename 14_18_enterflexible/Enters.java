@@ -26,7 +26,7 @@ public class Enters {
                         if (Character.isWhitespace(text.charAt(i))) {
                             i = i + 1;
                             if (text.charAt(i) == '-' || text.charAt(i) == '+') {
-                                enter = false;
+                                enter = true;
                             }
                         }
                     }
