@@ -26,8 +26,9 @@ public class AnalitzaCaracter {
                 } else {
                     System.out.println(" és una altra cosa");
                 }
-            } else if (posicio > text.length()) {
-                while(posicio > text.length()) {
+            } else if (posicio >= text.length()) {
+                posicio = posicio -1;
+                while(posicio > text.length()-1) {
                     text = text + text;
                 }
                 System.out.print("'" + text.charAt(posicio) + "'");
@@ -43,9 +44,6 @@ public class AnalitzaCaracter {
                     System.out.println(" és una altra cosa");
                 }
             } else {
-                if (posicio == text.length()) {
-                    posicio = posicio -1;
-                }
                 System.out.print("'" + text.charAt(posicio) + "'");
                 if (Character.isLetter(text.charAt(posicio))) {
                     if (Character.isUpperCase(text.charAt(posicio))) {
