@@ -24,7 +24,7 @@ public class AnalitzaCaracter {
                 } else if (Character.isDigit(text.charAt(posicio))) {
                     System.out.println(" és un digit");
                 } else {
-                    System.out.println(" és un sìmbol");
+                    System.out.println(" és una altra cosa");
                 }
             } else if (posicio >= text.length()) {
                 while(posicio > text.length()-1) {
@@ -40,7 +40,7 @@ public class AnalitzaCaracter {
                 } else if (Character.isDigit(text.charAt(posicio))) {
                     System.out.println(" és un digit");
                 } else {
-                    System.out.println(" és un sìmbol");
+                    System.out.println(" és una altra cosa");
                 }
             } else {
                 System.out.print("'" + text.charAt(posicio) + "'");
@@ -53,7 +53,7 @@ public class AnalitzaCaracter {
                 } else if (Character.isDigit(text.charAt(posicio))) {
                     System.out.println(" és un digit");
                 } else {
-                    System.out.println(" és un sìmbol");
+                    System.out.println(" és una altra cosa");
                 }
             }            
         } else {
