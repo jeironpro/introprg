@@ -22,7 +22,11 @@ public class Enters {
                     if (Character.isLetter(text.charAt(i))) {
                         enter = false;
                     }
-                    
+                    if (i == 0) {
+                        if (text.charAt(i) == '_' || text.charAt(i) == '.') {
+                            enter = false;
+                        }
+                    }
                     if (i == 0) {
                         if (text.charAt(i) == '-' || text.charAt(i) == '+') {
                             i = i + 1;
