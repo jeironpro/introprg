@@ -31,6 +31,17 @@ public class Enters {
                             enter = false;
                         }
                     }
+                    
+                    if (i == 0) {
+                        if (Character.isWhitespace(text.charAt(i))) {
+                            if (i == text.length()-1) {
+                                if (Character.isWhitespace(text.charAt(i))) {
+                                    enter = false;
+                                }
+                            } 
+                        }
+                    }
+                    
                     if (i == 0) {
                         if (text.charAt(i) == '-' || text.charAt(i) == '+') {
                             i = i + 1;
