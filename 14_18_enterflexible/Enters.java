@@ -22,6 +22,11 @@ public class Enters {
                     if (Character.isLetter(text.charAt(i))) {
                         enter = false;
                     }
+                    if (i == 1) {
+                        if (text.charAt(i) == '+' || text.charAt(i) == '-') {
+                            enter = false;
+                        }
+                    }
                 }
                 if (enter == true) {
                     System.out.println("És enter");
