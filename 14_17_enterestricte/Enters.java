@@ -22,7 +22,7 @@ public class Enters {
                 !Character.isWhitespace(text.charAt(0)) && 
                 !Character.isWhitespace(text.charAt(text.length()-1))) || 
                 (Character.isDigit(text.charAt(0)) && 
-                Character.isDigit(text.charAt(text.length()-1)) && !text.contains(".-_"))
+                Character.isDigit(text.charAt(text.length()-1)) && !text.contains("."))
                 ) 
                 {
                     System.out.println("És enter");                
