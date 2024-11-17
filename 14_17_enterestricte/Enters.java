@@ -6,6 +6,7 @@ public class Enters {
     public static void main(String[] args) {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
         String text = "true";
+        boolean enter = false;
         
         // El bucle s'executarà quan el text no sigui buit
         while (!text.isEmpty()) {
@@ -14,18 +15,20 @@ public class Enters {
             
             // Verificar si el text és buit
             if (!text.isEmpty()) {
-                if (
-                (text.charAt(0) == '-' && 
-                Character.isDigit(text.charAt(1)) || 
-                text.charAt(0) == '+' && 
-                Character.isDigit(text.charAt(1)) && 
-                !Character.isWhitespace(text.charAt(0)) && 
-                !Character.isWhitespace(text.charAt(text.length()-1))) || 
-                (Character.isDigit(text.charAt(0)) && 
-                Character.isDigit(text.charAt(text.length()-1)) && !text.contains(".") && !text.contains("_"))
-                ) 
-                {
-                    System.out.println("És enter");                
+                enter = true;
+                for (int i = 0; i < text.length(); i++) {
+                    
+                    if (!Character.isDigit(text.charAt(i))) {
+                        enter = false;
+                    } else if (text.charAt(0) != '-'  || text.charAt(0) != '+') {
+                        i = i + 1;
+                        if (!Character.isDigit(text.charAt(i))) {
+                            enter = false;
+                        }
+                    }
+                }
+                if (enter == true) {
+                    System.out.println("És enter");
                 } else {
                     System.out.println("No és enter");
                 }
