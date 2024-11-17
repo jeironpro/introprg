@@ -25,15 +25,20 @@ public class Enters {
                     if (i == 0) {
                         if (text.charAt(i) == '_' || text.charAt(i) == '.') {
                             enter = false;
-                        } else if (Character.isWhitespace(text.charAt(i))) {
-                            i = text.length()-1;
-                            if (Character.isWhitespace(text.charAt(i))) {
-                                enter = false;
-                            } 
                         }
                     } else if (i == text.length()-1) {
                         if (text.charAt(i) == '.' || text.charAt(i) == '.') {
                             enter = false;
+                        }
+                    }
+                    
+                    if (i == 0) {
+                        if (Character.isWhitespace(text.charAt(i))) {
+                            if (i == text.length()-1) {
+                                if (Character.isWhitespace(text.charAt(i))) {
+                                    enter = false;
+                                }
+                            } 
                         }
                     }
                     
