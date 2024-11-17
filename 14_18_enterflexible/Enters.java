@@ -34,7 +34,7 @@ public class Enters {
                     
                     if (i == 0) {
                         if (Character.isWhitespace(text.charAt(i))) {
-                            if (i == text.length()-1) {
+                            if (i == text.length()) {
                                 if (Character.isWhitespace(text.charAt(i))) {
                                     enter = false;
                                 }
