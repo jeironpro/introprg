@@ -34,7 +34,7 @@ public class AnalitzaCaracter {
                 }
             } else if (posicio >= nuevoText.length()) {
                 while(posicio > nuevoText.length()-1) {
-                    text = text + text;
+                    nuevoText = nuevoText + nuevoText;
                 }
                 System.out.print("'" + nuevoText.charAt(posicio) + "'");
                 if (Character.isLetter(nuevoText.charAt(posicio))) {
