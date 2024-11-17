@@ -23,11 +23,11 @@ public class CadenaContinua {
                    System.out.print(text.charAt(i)); 
                 }
             } else {
-                for (int i = 0; i < text.length(); i++) {
+                for (int j = 0; j < text.length(); j++) {
                     if (nombre > text.length()) {
                         nombre = nombre - text.length();
-                        for (int j = 0; j < nombre; j++) {
-                            text += text.charAt(j);
+                        for (int k = 0; k < nombre; k++) {
+                            text += text.charAt(k);
                         }
                     }
                 }
