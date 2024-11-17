@@ -42,7 +42,21 @@ public class AnalitzaCaracter {
                 } else {
                     System.out.println(" és una altra cosa");
                 }
-            } else {
+            } else if (posicio == text.length()) {
+                System.out.println("'" + text.charAt(posicio-1) + "'");
+                 if (Character.isLetter(text.charAt(posicio))) {
+                    if (Character.isUpperCase(text.charAt(posicio))) {
+                        System.out.println(" és una lletra majúscula");
+                    } else {
+                        System.out.println(" és una lletra minúscula");
+                    }            
+                } else if (Character.isDigit(text.charAt(posicio))) {
+                    System.out.println(" és un dígit");
+                } else {
+                    System.out.println(" és una altra cosa");
+                }
+            } 
+            else {
                 System.out.print("'" + text.charAt(posicio) + "'");
                 if (Character.isLetter(text.charAt(posicio))) {
                     if (Character.isUpperCase(text.charAt(posicio))) {
