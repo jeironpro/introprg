@@ -27,10 +27,10 @@ public class AnalitzaCaracter {
                     System.out.println(" és una altra cosa");
                 }
             } else if (posicio >= text.length()) {
+                posicio = posicio - text.length();
                 while(posicio >= text.length()) {
                     text = text + text;
                 }
-                posicio = posicio - text.length();
                 System.out.print("'" + text.charAt(posicio) + "'");
                 if (Character.isLetter(text.charAt(posicio))) {
                     if (Character.isUpperCase(text.charAt(posicio))) {
