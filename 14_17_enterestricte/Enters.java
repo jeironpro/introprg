@@ -14,13 +14,8 @@ public class Enters {
             
             // Verificar si el text és buit
             if (!text.isEmpty()) {
-                for (int i = 0; i < text.length(); i++) {
-                    if (Character.isDigit(text.charAt(i))) {
-                        System.out.println("És enter");
-                    } else {
-                        System.out.println("No és enter");
-                    }
-                }
+                int enter = Integer.parseInt(text);
+                System.out.println("És enter");
             // Del contrari, fer la verificació si és enter o no
             } else {
                 // Finalitzar el programa
