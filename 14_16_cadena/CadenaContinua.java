@@ -16,8 +16,12 @@ public class CadenaContinua {
             System.out.println("Nombre?");
             int nombre = Integer.parseInt(Entrada.readLine());
             
-            if (nombre < text.length()) {
+            if (nombre < 0) {
                 System.out.print("");
+            } else if (nombre < text.length()) {
+                for (int i = 0; i < nombre; i++) {
+                   System.out.print(text.charAt(i)); 
+                }
             } else {
                 for (int i = 0; i < text.length(); i++) {
                     if (nombre > text.length()) {
@@ -29,7 +33,6 @@ public class CadenaContinua {
                 }
                 System.out.println(text);
             }
-            
         }        
     }
 }
