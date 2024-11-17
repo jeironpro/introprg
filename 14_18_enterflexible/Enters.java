@@ -26,6 +26,10 @@ public class Enters {
                         if (text.charAt(i) == '_' || text.charAt(i) == '.') {
                             enter = false;
                         }
+                    } else if (i == text.length()-1) {
+                        if (text.charAt(i) == '.' || text.charAt(i) == '.') {
+                            enter = false;
+                        }
                     }
                     if (i == 0) {
                         if (text.charAt(i) == '-' || text.charAt(i) == '+') {
