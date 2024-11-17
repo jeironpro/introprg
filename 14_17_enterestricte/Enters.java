@@ -20,9 +20,10 @@ public class Enters {
                     
                     if (!Character.isDigit(text.charAt(i))) {
                         enter = false;
-                    } else if (text.charAt(0) != '-'  || text.charAt(0) != '+') {
-                        i = i + 1;
-                        if (!Character.isDigit(text.charAt(i))) {
+                    } 
+                    
+                    if (i == 0 && (text.charAt(i) != '-' || text.charAt(i) != '+')) {
+                        if (i == 1 && !Character.isDigit(text.charAt(i))) {
                             enter = false;
                         }
                     }
