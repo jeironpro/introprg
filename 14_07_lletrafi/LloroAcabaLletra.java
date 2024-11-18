@@ -15,7 +15,7 @@ public class LloroAcabaLletra {
             // Verificar si el caracter és una lletra
             if (Character.isLetter(ultimCaracter)) {
                 // Verificar que el caràcter no sigui una vocal
-                if (ultimCaracter != 'a' || ultimCaracter != 'e' || ultimCaracter != 'i' || ultimCaracter != 'o' || ultimCaracter != 'u') {
+                if (ultimCaracter != 'a' && ultimCaracter != 'e' && ultimCaracter != 'i' && ultimCaracter != 'o' && ultimCaracter != 'u') {
                     // Com es una lletra i no és vocal repetir la paraula
                     System.out.println("Repeteixo: " + paraula);
                 }
