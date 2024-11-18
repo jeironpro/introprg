@@ -14,11 +14,11 @@ public class AnalitzaCaracter {
             if (posicio < 0) {
                 posicio = Math.abs(posicio);
                 String invertido = "";
-                for (int i = text.length() -1; i > 0; i--) {
+                for (int i = text.length()-1; i > 0; i--) {
                     invertido += text.charAt(i); 
                 }
                 if (posicio < text.length()) {
-                    caracter += invertido.charAt(posicio);                 
+                    caracter += invertido.charAt(posicio-1);                 
                 } else {
                     posicio = posicio % text.length();
                     caracter += invertido.charAt(posicio); 
