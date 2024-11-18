@@ -22,37 +22,22 @@ public class Enters {
                     if (Character.isLetter(text.charAt(i))) {
                         enter = false;
                     }
-                    if (i == 0) {
-                        if (text.charAt(i) == '_' || text.charAt(i) == '.') {
-                            enter = false;
-                        }
-                    } else if (i == text.length()-1) {
-                        if (text.charAt(i) == '.' || text.charAt(i) == '.') {
-                            enter = false;
-                        }
-                    }
-                    
-                    if (i == 0) {
-                        if (Character.isWhitespace(text.charAt(i))) {
-                            if (i == text.length()-1) {
-                                if (Character.isWhitespace(text.charAt(i))) {
-                                    enter = false;
-                                }
-                            } 
-                        }
-                    }
-                    
-                    if (i == 0) {
-                        if (text.charAt(i) == '-' || text.charAt(i) == '+') {
-                            i = i + 1;
-                            if (i == 1) {
-                                if (text.charAt(i) == '-' || text.charAt(i) == '+') {
-                                    enter = false;
-                                }
-                            }                            
-                        }
-                    }
                 }
+                if (text.charAt(0) == '_' || text.charAt(0) == '.') {
+                    enter = false;
+                } else if (text.charAt(text.length()-1) == '.' || text.charAt(text.length()-1) == '.') {
+                    enter = false;
+                }
+                if (Character.isWhitespace(text.charAt(0))) {
+                    if (Character.isWhitespace(text.charAt(text.length()-1))) {
+                        enter = false;
+                    } 
+                }
+                if (text.charAt(0) == '-' || text.charAt(0) == '+') {
+                    if (text.charAt(1) == '-' || text.charAt(1) == '+') {
+                        enter = false;
+                    }
+                } 
                 if (enter == true) {
                     System.out.println("És enter");
                 } else {
