@@ -26,8 +26,8 @@ public class AnalitzaCaracter {
                 } else {
                     System.out.println(" és una altra cosa");
                 }
-            } else if (posicio > text.length()-1) {
-                posicio = posicio - text.length();
+            } else if (posicio > text.length()) {
+                posicio = posicio - text.length()-1;
                 while(posicio > text.length()) {
                     text = text + text;
                 }
