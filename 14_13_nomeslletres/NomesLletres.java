@@ -10,7 +10,7 @@ public class NomesLletres {
                 if (i < text.length()-1) {
                     System.out.print(text.charAt(i) + ", ");
                 } else {
-                    System.out.print(text.charAt(i));
+                    System.out.print(text.charAt(i-1));
                 }
             }
         }
