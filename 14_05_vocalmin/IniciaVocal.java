@@ -15,11 +15,10 @@ public class IniciaVocal {
                 // Repetir la paraula
                 System.out.println("El lloro diu: " + paraula);
             // Del contrari, no és vocal
-            } else {
-                // Demanar paraula a dins del bucle
-                System.out.println("El lloro pregunta paraula que comenci amb vocal en minúscules");
-                paraula = Entrada.readLine();            
             }
+            // Demanar paraula a dins del bucle
+            System.out.println("El lloro pregunta paraula que comenci amb vocal en minúscules");
+            paraula = Entrada.readLine();            
         }
         // Quan surti del bucle, mostrar aquest missatge
         System.out.println("Adéu");
