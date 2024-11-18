@@ -4,36 +4,29 @@ public class MatriculaValida {
     public static void main(String[] args) {
         System.out.println("Introduïu una matrícula");
         String matricula = Entrada.readLine();
-        boolean primerPatro = false;
-        boolean segonPatro = false;
-        boolean tercerPatro = false;
         
         if (matricula.length() == 7) {
-            for (int i = 0; i < matricula.length(); i++) {
-                if (i <= 1) {
-                    if (Character.isUpperCase(matricula.charAt(i)) && matricula.charAt(i) >= 'A' && matricula.charAt(i) <= 'Z' && matricula.charAt(i) != 'I' && matricula.charAt(i) != 'O' && matricula.charAt(i) != 'Q' && matricula.charAt(i) != 'U') {
-                        primerPatro = true;
-                    }                
-                }
-                if (i > 1 && i <= 4) {
-                    if (Character.isDigit(matricula.charAt(i))) {
-                        segonPatro = true;
+            if (Character.isUpperCase(matricula.charAt(0))) {
+                if (matricula.charAt(0) >= 'A' && matricula.charAt(0) <= 'Z' && matricula.charAt(0) != 'I' &&matricula.charAt(0) != 'O' && matricula.charAt(0) != 'Q' && matricula.charAt(0) != 'U') {
+                    if (Character.isUpperCase(matricula.charAt(1))) {
+                        if (matricula.charAt(1) >= 'A' && matricula.charAt(1) <= 'Z' && matricula.charAt(1) != 'I' && matricula.charAt(1) != 'O' && matricula.charAt(1) != 'Q' && matricula.charAt(1) != 'U') {
+                            if (Character.isDigit(matricula.charAt(2)) && Character.isDigit(matricula.charAt(3)) && Character.isDigit(matricula.charAt(4))) {
+                                if (Character.isUpperCase(matricula.charAt(5))) {
+                                    if (matricula.charAt(5) >= 'A' && matricula.charAt(5) <= 'Z' && matricula.charAt(5) != 'I' && matricula.charAt(5) != 'O' && matricula.charAt(5) != 'Q' && matricula.charAt(5) != 'U') {
+                                        if (Character.isUpperCase(matricula.charAt(6))) {
+                                            if (matricula.charAt(6) >= 'A' && matricula.charAt(6) <= 'Z' && matricula.charAt(6) != 'I' && matricula.charAt(6) != 'O' && matricula.charAt(6) != 'Q' && matricula.charAt(6) != 'U') {        
+                                                System.out.println("És una matrícula italiana vàlida");
+                                            } else {
+                                                System.out.println("No és una matrícula italiana vàlida");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                if (i >= 5) {
-                    if (Character.isUpperCase(matricula.charAt(i)) && matricula.charAt(i) >= 'A' && matricula.charAt(i) <= 'Z' && matricula.charAt(i) != 'I' && matricula.charAt(i) != 'O' && matricula.charAt(i) != 'Q' && matricula.charAt(i) != 'U') {
-                        tercerPatro = true;
-                    }                
-                }
-                
-            }        
-            if (primerPatro == true && segonPatro == true && tercerPatro == true) {
-                System.out.println("És una matrícula italiana vàlida"); 
-            } else {
-                System.out.println("No és una matrícula italiana vàlida");
             }
-        } else {
-            System.out.println("No és una matrícula italiana vàlida");
         }
     }
 }
