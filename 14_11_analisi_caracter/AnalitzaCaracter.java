@@ -18,7 +18,7 @@ public class AnalitzaCaracter {
                 for (int i = text.length()-1; i >= 0; i--) {
                     textInvertit += text.charAt(i);
                 }
-                if (posicio >= text.length()) {
+                if (posicio > text.length()) {
                     posicio = posicio % text.length();
                     caracter += textInvertit.charAt(posicio-1);
                 } else {
