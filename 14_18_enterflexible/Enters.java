@@ -27,7 +27,7 @@ public class Enters {
                         signe += text.charAt(i);
                     }
                     
-                    if (signe.length() > 1) {
+                    if (signe.length() > 2) {
                         enter = false;
                     }
                 }
