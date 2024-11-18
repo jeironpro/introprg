@@ -21,10 +21,12 @@ public class AnalitzaCaracter {
                     caracter += invertido.charAt(posicio-1);                 
                 } else if (posicio > text.length()) {
                     posicio = posicio % text.length();
-                    caracter += invertido.charAt(posicio-1); 
+                    caracter += invertido.charAt(Math.abs(posicio-1)); 
                 } else {
                     caracter += text.charAt(0); 
                 }
+                
+                System.out.println(posicio);
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
             } else if (posicio > text.length()) {
