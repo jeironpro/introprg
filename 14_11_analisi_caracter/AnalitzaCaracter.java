@@ -19,17 +19,17 @@ public class AnalitzaCaracter {
                 }
                 if (posicio < text.length()) {
                     caracter += invertido.charAt(posicio-1);                 
-                } else {
+                } else if (posicio > text.length()) {
                     posicio = posicio % text.length();
                     caracter += invertido.charAt(posicio); 
+                } else {
+                    caracter += text.charAt(0); 
                 }
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
             } else if (posicio > text.length()) {
                 posicio = posicio % text.length();
                 caracter += text.charAt(posicio);
-            } else {
-                caracter += text.charAt(0);
             }
             
             if (Character.isLetter(caracter.charAt(0))) {
