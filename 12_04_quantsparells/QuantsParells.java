@@ -5,7 +5,7 @@
 public class QuantsParells {
     public static void main(String[] args) {
         // Declarar e inicialitzar la variable valor amb 0
-        int valor = 0;
+        int valor = 1;
         // Declarar e inicialitzar la variable valorParell amb 0
         // Aquesta variable emmagatzema la quantitat de vegades que el bucle troba un numero parell
         int valorParell = 0;
