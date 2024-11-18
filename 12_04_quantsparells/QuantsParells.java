@@ -11,7 +11,7 @@ public class QuantsParells {
         int valorParell = 0;
         
         // El bucle s'executarà mentra el valor sigui positiu
-        while (valor > 0) {
+        while (valor >= 0) {
             // Demanar el valor
             System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine());
