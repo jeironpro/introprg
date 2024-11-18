@@ -23,11 +23,12 @@ public class AnalitzaCaracter {
                     posicio = posicio % text.length();
                     if (posicio == 0) {
                         caracter += text.charAt(posicio);
+                    } else {
+                        while (posicio >= text.length()) {
+                            posicio--;
+                        }
+                        caracter += textInvertit.charAt(Math.abs(posicio-1));                    
                     }
-                    while (posicio >= text.length()) {
-                        posicio--;
-                    }
-                    caracter += textInvertit.charAt(Math.abs(posicio-1));
                 } else {
                     caracter += textInvertit.charAt(Math.abs(posicio-1));
                 }
