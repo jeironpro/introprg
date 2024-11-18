@@ -8,13 +8,13 @@ public class LloroVocalIniFi {
         // Demanar la paraula
         System.out.println("Paraula?");
         String paraula = Entrada.readLine();
-        // Declarar e inicialitzar la variable primerCaracter amb el primer caràcter de la paraula en minúscula
-        char primerCaracter = Character.toLowerCase(paraula.charAt(0));
-        // Declarar e inicialitzar la variable ultimCaracter amb l'ultim caràcter de la paraula en minúscula
-        char ultimCaracter = Character.toLowerCase(paraula.charAt(paraula.length()-1));
         
         // El bucle s'executarà mentre la paraula no està buida
         while (!paraula.isEmpty()) {
+            // Declarar e inicialitzar la variable primerCaracter amb el primer caràcter de la paraula en minúscula
+            char primerCaracter = Character.toLowerCase(paraula.charAt(0));
+            // Declarar e inicialitzar la variable ultimCaracter amb l'ultim caràcter de la paraula en minúscula
+            char ultimCaracter = Character.toLowerCase(paraula.charAt(paraula.length()-1));
             // Verificar si el primer caràcter és una vocal
             if (primerCaracter == 'a' || primerCaracter == 'e' || primerCaracter == 'i' || primerCaracter == 'o' || primerCaracter == 'u') {
                 // Verificar si l'últim caràcter és una vocal
