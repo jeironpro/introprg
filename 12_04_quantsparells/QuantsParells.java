@@ -5,7 +5,7 @@
 public class QuantsParells {
     public static void main(String[] args) {
         // Declarar e inicialitzar la variable valor amb 0
-        int valor = 1;
+        int valor = 0;
         // Declarar e inicialitzar la variable valorParell amb 0
         // Aquesta variable emmagatzema la quantitat de vegades que el bucle troba un numero parell
         int valorParell = 0;
@@ -16,10 +16,13 @@ public class QuantsParells {
             System.out.println("Introdueix un valor");
             valor = Integer.parseInt(Entrada.readLine());
             
-            // Verificar si el valor és parell
-            if (valor % 2 == 0) {
-                // Sumar un cada vegades que trobe un valor parell
-                valorParell = valorParell + 1;
+            // Verificar que el valor sigui major o igual a 0        
+            if (valor >= 0) {
+                // Verificar si el valor és parell
+                if (valor % 2 == 0) {
+                    // Sumar un cada vegades que trobe un valor parell
+                    valorParell = valorParell + 1;
+                }            
             }
         }
         // Mostrar la quantitat de números parell trobats
