@@ -24,14 +24,6 @@ public class Enters {
                     }
                 }
                 
-                for (int j = 0; j < text.length(); j++) {
-                    if (j % 2 == 0) {
-                        if (Character.isWhitespace(text.charAt(j))) {
-                            enter = false;
-                        }
-                    }
-                }
-                
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
                 if (text.charAt(0) == '-' && text.charAt(1) == '-') {
