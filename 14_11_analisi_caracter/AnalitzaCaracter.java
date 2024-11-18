@@ -15,18 +15,13 @@ public class AnalitzaCaracter {
                 posicio = Math.abs(posicio);
                            
                 String textInvertit = "";
-                
                 for (int i = text.length()-1; i >= 0; i--) {
                     textInvertit += text.charAt(i);
                 }
                 if (posicio > text.length()) {
-                    while (posicio > text.length()) {
-                        posicio--;
-                    }
-                    caracter += text.charAt(posicio);
-                } else {
-                    caracter += textInvertit.charAt(Math.abs(posicio-1));             
+                    posicio = posicio % text.length();
                 }
+                caracter += textInvertit.charAt(Math.abs(posicio-1));             
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
             } else if (posicio > text.length()) {
