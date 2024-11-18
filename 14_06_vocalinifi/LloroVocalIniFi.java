@@ -19,6 +19,7 @@ public class LloroVocalIniFi {
             if (primerCaracter == 'a' || primerCaracter == 'e' || primerCaracter == 'i' || primerCaracter == 'o' || primerCaracter == 'u') {
                 // Verificar si l'últim caràcter és una vocal
                 if (ultimCaracter == 'a' || ultimCaracter == 'e' || ultimCaracter == 'i' || ultimCaracter == 'o' || ultimCaracter == 'u') {
+                    // Verificar si el primer caràcter i l'últim són iguals
                     if (primerCaracter == ultimCaracter) {
                         // Com comença i acaba en vocal, mostrar la paraula
                         System.out.println("Repeteixo: " + paraula);                        
