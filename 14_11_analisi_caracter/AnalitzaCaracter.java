@@ -28,7 +28,7 @@ public class AnalitzaCaracter {
                     System.out.println("'" + caracter + "'" + " és una lletra minúscula");
                 }
             } else if (Character.isDigit(caracter.charAt(0))) {
-                System.out.println("'" + caracter + "'" + " és un digit");
+                System.out.println("'" + caracter + "'" + " és un dígit");
             } else {
                 System.out.println("'" + caracter + "'" + " és una altra cosa");
             }
