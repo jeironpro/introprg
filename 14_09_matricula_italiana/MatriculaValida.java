@@ -10,7 +10,7 @@ public class MatriculaValida {
         
         if (matricula.length() == 7) {
             for (int i = 0; i < matricula.length(); i++) {
-                if (i >= 0 && i <= 1 && i >= 5 && i <= 6) {
+                if (i != 2 && i != 3 && i != 4) {
                     if (Character.isUpperCase(matricula.charAt(i)) && matricula.charAt(i) >= 'A' && matricula.charAt(i) <= 'Z' && matricula.charAt(i) != 'I' && matricula.charAt(i) != 'O' && matricula.charAt(i) != 'Q' && matricula.charAt(i) != 'U') {
                         primerPatro = true;
                     }
