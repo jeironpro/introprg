@@ -11,27 +11,19 @@ public class TresEnOrdre {
         System.out.println("Tercer?");
         int tercer = Integer.parseInt(Entrada.readLine());
         
-        if (primer > segon && primer > tercer && segon > tercer) {
-            System.out.println(tercer + ", " + segon + " i " + primer);
-        } else if (segon > primer && segon > tercer && primer > tercer) {
-            System.out.println(tercer + ", " + primer + " i " + segon);
-        } else if (tercer > primer && tercer > segon && primer > segon) {
+        // Aplicant la tècnica de la línia recta, apresa a classe
+        if (primer <= segon && segon <= tercer) {
+            System.out.println(primer + ", " + segon + " i " + tercer);
+        } else if (primer <= tercer && tercer <= segon) {
+            System.out.println(primer + ", " + tercer + " i " + segon);
+        } else if (segon <= primer && segon <= tercer) {
             System.out.println(segon + ", " + primer + " i " + tercer);
-        } else if (primer > segon && primer > tercer && tercer > segon) {
+        } else if (segon <= tercer && tercer <= primer) {
             System.out.println(segon + ", " + tercer + " i " + primer);
-        } else if (segon > primer && segon > tercer && tercer > primer) {
-            System.out.println(primer + ", " + tercer + " i " + segon);
-        } else if (primer > segon && primer > tercer && segon == tercer) {
-            System.out.println(segon + ", " + tercer + " i " + primer);
-        } else if (segon > primer && segon > tercer && primer == tercer) {
-            System.out.println(primer + ", " + tercer + " i " + segon);
-        }   else if (tercer > primer && tercer > segon && primer == segon) {
-            System.out.println(primer + ", " + segon + " i " + tercer);
-        } else if (primer > segon && tercer > segon) {
-            System.out.println(segon + ", " + tercer + " i " + primer);
-        } 
-        else {
-            System.out.println(primer + ", " + segon + " i " + tercer);
+        } else if (tercer <= primer && primer <= segon) {
+            System.out.println(tercer + ", " + primer + " i " + segon);
+        } else {
+            System.out.println(tercer + ", " + segon + " i " + primer);
         }
     }
 }
