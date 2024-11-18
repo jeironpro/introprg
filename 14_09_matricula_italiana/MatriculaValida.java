@@ -14,7 +14,7 @@ public class MatriculaValida {
                         primerPatro = true;
                     }
                 }
-                if (i >= 2 && i <=4) {
+                if (i == 2 && i == 3 && i == 4) {
                     if (Character.isDigit(matricula.charAt(i))) {
                         segonPatro = true;
                     }
