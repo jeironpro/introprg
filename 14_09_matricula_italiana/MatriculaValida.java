@@ -21,7 +21,7 @@ public class MatriculaValida {
                 }
             }        
         }
-        if (matricula.length() == 7 && primerPatro == true && segonPatro == true) {
+        if (primerPatro == true && segonPatro == true) {
             System.out.println("És una matrícula italiana vàlida"); 
         } else {
             System.out.println("No és una matrícula italiana vàlida");
