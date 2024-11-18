@@ -24,6 +24,8 @@ public class AnalitzaCaracter {
                         posicio--;
                     }
                     caracter += textInvertit.charAt(Math.abs(posicio-1));
+                } else {
+                    caracter += textInvertit.charAt(posicio-1);
                 }
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
