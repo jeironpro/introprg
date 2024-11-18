@@ -9,7 +9,7 @@ public class MatriculaValida {
         
         if (matricula.length() == 7) {
             for (int i = 0; i < matricula.length(); i++) {
-                if (i == 2 && i == 3 && i == 4) {
+                if (i == 2 || i == 3 || i == 4) {
                     if (Character.isDigit(matricula.charAt(i))) {
                         segonPatro = true;
                     }
