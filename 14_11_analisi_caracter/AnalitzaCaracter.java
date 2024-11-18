@@ -28,7 +28,7 @@ public class AnalitzaCaracter {
                 }
             } else if (posicio > text.length()) {
                 posicio = posicio - text.length();
-                while(posicio > text.length()) {
+                while(posicio > text.length()-1) {
                     text = text + text;
                 }
                 System.out.print("'" + text.charAt(posicio) + "'");
