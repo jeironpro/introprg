@@ -7,14 +7,13 @@ public class Semafor {
         System.out.println("Color?");
         String color = Entrada.readLine();
         
-        if (color.equals("verd")) {
-            System.out.println("passa");
-        } else if (color.equals("vermell")) {
-            System.out.println("espera");
-        } else if (color.equals("groc")) {
-            System.out.println("corre!");
-        } else {
-            System.out.println("ves a l'oculista");
-        }
+        // Utilitzant Switch Expressions
+        String indicacio = switch (color) {
+            case "verd" -> "passa";
+            case "vermell" -> "espera";
+            case "groc" -> "corre!";
+            default -> "ves a l'oculista";
+        };
+        System.out.println(indicacio);
     }
 }
