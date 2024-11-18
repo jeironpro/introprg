@@ -25,8 +25,6 @@ public class AnalitzaCaracter {
                 } else {
                     caracter += text.charAt(0); 
                 }
-                
-                System.out.println(posicio);
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
             } else if (posicio > text.length()) {
