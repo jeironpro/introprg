@@ -12,20 +12,23 @@ public class AnalitzaCaracter {
             int posicio = Integer.parseInt(Entrada.readLine());
             
             if (posicio < 0) {
-                posicio = Math.abs(posicio);
-                           
+                posicio = Math.abs(posicio);   
                 String textInvertit = "";
+                
                 for (int i = text.length()-1; i >= 0; i--) {
                     textInvertit += text.charAt(i);
                 }
+                
                 if (posicio > text.length()) {
                     posicio = posicio % text.length();
                     while (posicio >= text.length()) {
                         posicio--;
                     }
                     caracter += textInvertit.charAt(Math.abs(posicio-1));
-                } else {
+                } else if (posicio < text.length()) {
                     caracter += textInvertit.charAt(Math.abs(posicio-1));
+                } else {
+                    caracter += textInvertit.charAt(0);
                 }
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
