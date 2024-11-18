@@ -10,28 +10,33 @@ public class Ascensor {
         System.out.println("botó?");
         String boto = Entrada.readLine();
         
-        if (pis.equals("planta baixa") && boto.equals("pujar un")) {
-            System.out.println("primer pis");
-        } else if (pis.equals("") && boto.equals("")) {
+        // Utilitzant la tècnica apreasa a classe
+        if (pis.equals("planta baixa")) {
+            if (boto.equals("pujar un")) {
+                System.out.println("primer pis");
+            } else if (boto.equals("pujar dos")) {
+                System.out.println("segon pis");
+            } else {
+                System.out.println("error");
+            }
+        } else if (pis.equals("primer pis")) {
+            if (boto.equals("bajar un")) {
+                System.out.println("planta baixa");
+            } else if (boto.equals("pujar un")) {
+                System.out.println("segon pis");
+            } else {
+                System.out.println("error");
+            }
+        } else if (pis.equals("segon pis")) {
+            if (boto.equals("baixar un")) {
+                System.out.println("primer pis");
+            } else if (boto.equals("baixar dos")) {
+                System.out.println("planta baixa");
+            } else {
+                System.out.println("error");
+            }
+        } else {
             System.out.println("error");
-        } else if (pis.equals("planta baixa") && boto.equals("pujar dos")) {
-            System.out.println("segon pis");
-        } else if (pis.equals("planta baixa") && (!boto.equals("pujar un") || !boto.equals("pujar dos"))) {
-            System.out.println("error");
-        } else if (pis.equals("primer pis") && boto.equals("baixar un")) {
-            System.out.println("planta baixa");
-        } else if (pis.equals("primer pis") && boto.equals("pujar un")) {
-            System.out.println("segon pis");
-        } else if (pis.equals("primer pis") && (!boto.equals("baixar un") || !boto.equals("pujar un"))) {
-            System.out.println("error");
-        } else if (pis.equals("segon pis") && boto.equals("baixar un")) {
-            System.out.println("primer pis");
-        } else if (pis.equals("segon pis") && boto.equals("baixar dos")) {
-            System.out.println("planta baixa");
-        } else if (pis.equals("segon pis") && (!boto.equals("baixar un") || !boto.equals("baixar dos"))) {
-            System.out.println("error");
-        } else if (!pis.equals("planta baixa") || !pis.equals("primer pis") || !pis.equals("segon pis") && boto.equals("baixar un") || boto.equals("baixar dos") || boto.equals("pujar un") || boto.equals("pujar dos")) {
-        System.out.println("error");
         }
     }
 }
