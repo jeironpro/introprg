@@ -25,7 +25,7 @@ public class Enters {
                 }
                 
                 if (text.charAt(0) == '-' || text.charAt(0) == '+') {
-                    if (text.charAt(text.length()-1) == '-' || text.charAt(text.length()-1) == '-') {
+                    if (text.charAt(1) == '-' || text.charAt(1) == '-') {
                         enter = false;
                     }
                 }
