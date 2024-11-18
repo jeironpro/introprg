@@ -22,7 +22,7 @@ public class MatriculaValida {
                 }
                 
             }        
-            if (primerPatro == true && segonPatro == true && tercerPatro == true) {
+            if (primerPatro == true && segonPatro == true) {
                 System.out.println("És una matrícula italiana vàlida"); 
             } else {
                 System.out.println("No és una matrícula italiana vàlida");
