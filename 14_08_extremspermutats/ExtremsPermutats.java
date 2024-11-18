@@ -12,10 +12,7 @@ public class ExtremsPermutats {
             paraula = Entrada.readLine();
     
             // Verificar si la paraula no és buida
-            if (paraula.isEmpty()) {
-                paraula = "";
-                System.out.println("Adéu");                
-            } else {
+            if (!paraula.isEmpty()) {
                 // Verificar si la paraula té una longitud de més de quatre lletra
                 if (paraula.length() > 1) {
                     // Verificar si el index 0 és una lletra
@@ -31,7 +28,13 @@ public class ExtremsPermutats {
                         }
                     }
                 }
+            // Del contrai, la paraula està buida
+            } else {
+                // Possar-li un valor buit a la variable paraula per finalitzar el bucle
+                paraula = "";
             }
         }      
+        // Quan surti del bucle, mostrar aquest missatge
+        System.out.println("Adéu"); 
     }
 }
