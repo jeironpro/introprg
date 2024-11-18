@@ -13,7 +13,8 @@ public class MatriculaValida {
                     if (Character.isUpperCase(matricula.charAt(i)) && matricula.charAt(i) >= 'A' && matricula.charAt(i) <= 'Z' && matricula.charAt(i) != 'I' && matricula.charAt(i) != 'O' && matricula.charAt(i) != 'Q' && matricula.charAt(i) != 'U') {
                         primerPatro = true;
                     }
-                } else {
+                }
+                if (i >= 2 && i <=4) {
                     if (Character.isDigit(matricula.charAt(i))) {
                         segonPatro = true;
                     }
