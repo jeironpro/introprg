@@ -20,7 +20,7 @@ public class Ascensor {
                 System.out.println("error");
             }
         } else if (pis.equals("primer pis")) {
-            if (boto.equals("bajar un")) {
+            if (boto.equals("baixar un")) {
                 System.out.println("planta baixa");
             } else if (boto.equals("pujar un")) {
                 System.out.println("segon pis");
