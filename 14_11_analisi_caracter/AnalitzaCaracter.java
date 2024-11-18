@@ -10,53 +10,14 @@ public class AnalitzaCaracter {
             int posicio = Integer.parseInt(Entrada.readLine());
             
             if (posicio < 0) {
-                posicio = text.length() + Math.abs(posicio);
-                while (posicio >= text.length()-1) {
-                    posicio--;
-                }
-                System.out.print("'" + text.charAt(posicio) + "'");
-                if (Character.isLetter(text.charAt(posicio))) {
-                    if (Character.isUpperCase(text.charAt(posicio))) {
-                        System.out.println(" és una lletra majúscula");
-                    } else {
-                        System.out.println(" és una lletra minúscula");
-                    }            
-                } else if (Character.isDigit(text.charAt(posicio))) {
-                    System.out.println(" és un dígit");
-                } else {
-                    System.out.println(" és una altra cosa");
-                }
-            } else if (posicio > text.length()-1) {
-                posicio = posicio - text.length()-1;
-                while(posicio > text.length()) {
-                    text = text + text;
-                }
-                System.out.print("'" + text.charAt(posicio) + "'");
-                if (Character.isLetter(text.charAt(posicio))) {
-                    if (Character.isUpperCase(text.charAt(posicio))) {
-                        System.out.println(" és una lletra majúscula");
-                    } else {
-                        System.out.println(" és una lletra minúscula");
-                    }            
-                } else if (Character.isDigit(text.charAt(posicio))) {
-                    System.out.println(" és un dígit");
-                } else {
-                    System.out.println(" és una altra cosa");
-                }
-            } else {
-                System.out.print("'" + text.charAt(posicio) + "'");
-                if (Character.isLetter(text.charAt(posicio))) {
-                    if (Character.isUpperCase(text.charAt(posicio))) {
-                        System.out.println(" és una lletra majúscula");
-                    } else {
-                        System.out.println(" és una lletra minúscula");
-                    }            
-                } else if (Character.isDigit(text.charAt(posicio))) {
-                    System.out.println(" és un dígit");
-                } else {
-                    System.out.println(" és una altra cosa");
-                }
-            }            
+                posicio = Math.abs(posicio) % text.length();
+                System.out.println(text.charAt(posicio));
+            } else if (posicio < text.length()) {
+                System.out.println(text.charAt(posicio));                     
+            } else if (posicio > text.length()) {
+                posicio = posicio % text.length();
+                System.out.println(text.charAt(posicio));
+            }
         } else {
             System.out.println("Text buit");
         }

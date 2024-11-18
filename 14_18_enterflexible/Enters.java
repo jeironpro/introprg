@@ -9,7 +9,6 @@ public class Enters {
         // Declarar e incializar text amb caracters
         String text = "true";
         boolean enter = false;
-        String signe = "";
         
         // El bucle s'executarà quan el text no sigui buit
         while (!text.isEmpty()) {
@@ -23,15 +22,7 @@ public class Enters {
                     if (Character.isLetter(text.charAt(i))) {
                         enter = false;
                     }
-                    if (text.charAt(i) == '+' || text.charAt(i) == '-') {
-                        signe += text.charAt(i);
-                    }
-                    
-                    if (signe.length() > 2) {
-                        enter = false;
-                    }
                 }
-                
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
                 if (text.charAt(0) == '-' && text.charAt(1) == '-') {
