@@ -20,6 +20,11 @@ public class Enters {
             if (!text.isEmpty()) {
                 // Com el text no està buit, enter és true
                 enter = true;
+                for (int i = 0; i < text.length(); i++) {
+                    if (!Character.isDigit(text.charAt(i))) {
+                        enter = false;
+                    }
+                }
                 // Verificar si el caràcter 0 és un signe de - o +
                 if (text.charAt(0) == '-' || text.charAt(0) == '+') {
                     // Verificar si el caràcter 1 és un dígit
