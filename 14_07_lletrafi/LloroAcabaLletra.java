@@ -4,14 +4,27 @@
 
 public class LloroAcabaLletra {
     public static void main(String[] args) {
+        // Demanar la paraula
         System.out.println("Paraula?");
         String paraula = Entrada.readLine();
         
+        // El bucle s'executarà mentre la paraula no està buida
         while (!paraula.isEmpty()) {
-            System.out.print((Character.isLetter(paraula.charAt(paraula.length()-1)) && (paraula.charAt(paraula.length()-1) != 'a') && (paraula.charAt(paraula.length()-1) != 'A') && (paraula.charAt(paraula.length()-1) != 'e') && (paraula.charAt(paraula.length()-1) != 'E') && (paraula.charAt(paraula.length()-1) != 'i') && (paraula.charAt(paraula.length()-1) != 'I') && (paraula.charAt(paraula.length()-1) != 'o') && (paraula.charAt(paraula.length()-1) != 'O') && (paraula.charAt(paraula.length()-1) != 'u') && (paraula.charAt(paraula.length()-1) != 'U') ? "Repeteixo: " + paraula + "\n" : ""));
+            // Declarar e incialitzar la variable ultimCaracter amb l'últim caràcter de la paraula
+            char ultimCaracter = Character.toLowerCase(paraula.charAt(paraula.length()-1));
+            // Verificar si el caracter és una lletra
+            if (Character.isLetter(ultimCaracter)) {
+                // Verificar que el caràcter no sigui una vocal
+                if (ultimCaracter != 'a' || ultimCaracter != 'e' || ultimCaracter != 'i' || ultimCaracter != 'o' || ultimCaracter != 'u') {
+                    // Com es una lletra i no és vocal repetir la paraula
+                    System.out.println("Repeteixo: " + paraula);
+                }
+            }
+            // Demanar la paraula a dins del bucle
             System.out.println("Paraula?");
             paraula = Entrada.readLine();
         }
+        // Quan surti del bucle, mostrar aquest missatge
         System.out.println("Adéu");
     }
 }
