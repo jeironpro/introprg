@@ -13,26 +13,18 @@ public class AnalitzaCaracter {
             
             if (posicio < 0) {
                 posicio = Math.abs(posicio);
-                String textInvertido = "";
-                int posicioInvertida = 0;
-                for (int i = text.length()-1; i > 0; i--) {
-                    textInvertido += text.charAt(i); 
+                
+                                
+                String textInvertit = "";
+                for (int i = text.length()-1; i >= 0; i--) {
+                    textInvertit += text.charAt(i);
                 }
-                if (posicio < text.length()) {
-                    caracter += textInvertido.charAt(posicio-1);                 
-                } else if (posicio > text.length()) {  
-                    if (posicio >= text.length()*2) {
-                        posicio = posicio % text.length();
-                        caracter += textInvertido.charAt(Math.abs(posicio));
-                    } else {
-                        while (posicio > text.length()-1) {
-                            posicio = posicio - text.length(); 
-                        }
-                        caracter += textInvertido.charAt(Math.abs(posicio));                    
-                    }
+                if (posicio > text.length()) {
+                    posicio = posicio % text.length();
+                    caracter += textInvertit.charAt(posicio);
                 } else {
-                    caracter += text.charAt(0); 
-                }
+                    caracter += text.charAt(posicio);                 
+                }               
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
             } else if (posicio > text.length()) {
