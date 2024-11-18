@@ -34,6 +34,10 @@ public class Enters {
                     enter = false;
                 }
                 
+                if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
+                    enter = false;
+                }
+                
                 
                 if (enter == true) {
                     System.out.println("És enter");
