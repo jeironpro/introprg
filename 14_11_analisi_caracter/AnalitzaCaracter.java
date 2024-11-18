@@ -20,15 +20,15 @@ public class AnalitzaCaracter {
                 }
                 if (posicio < text.length()) {
                     caracter += textInvertido.charAt(posicio-1);                 
-                } else if (posicio > text.length()) {
-                    while (posicio > text.length()-1) {
-                        posicio = posicio - text.length(); 
-                    }
-                    
-                    if (posicio > text.length()*2) {
+                } else if (posicio > text.length()) {  
+                    if (posicio >= text.length()*2) {
+                        posicio = posicio % text.length();
                         caracter += text.charAt(Math.abs(posicio));
                     } else {
-                        caracter += textInvertido.charAt(Math.abs(posicio-1));                    
+                        while (posicio > text.length()-1) {
+                            posicio = posicio - text.length(); 
+                        }
+                        caracter += textInvertido.charAt(Math.abs(posicio));                    
                     }
                 } else {
                     caracter += text.charAt(0); 
