@@ -23,7 +23,7 @@ public class AnalitzaCaracter {
                     posicio = posicio % text.length();
                     caracter += textInvertit.charAt(posicio);
                 } else {
-                    caracter += text.charAt(posicio);                 
+                    caracter += textInvertit.charAt(posicio);                 
                 }               
             } else if (posicio < text.length()) {
                 caracter += text.charAt(posicio);                     
