@@ -24,7 +24,13 @@ public class Enters {
                     }
                 }
                 
-                if (text.charAt(0) == '-' && text.charAt(1) == '-' || text.charAt(1) == '+' && text.charAt(1) == '+') {
+                if (text.charAt(0) == '-' && text.charAt(1) == '-') {
+                    enter = false;
+                } else if (text.charAt(1) == '+' && text.charAt(1) == '+') {
+                    enter = false;
+                } else if (text.charAt(0) == '+' && text.charAt(1) == '-') {
+                    enter = false;
+                } else if (text.charAt(0) == '-' && text.charAt(1) == '+') {
                     enter = false;
                 }
                 
