@@ -24,6 +24,7 @@ public class Enters {
                     }
                 }
                 
+                // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
                 if (text.charAt(0) == '-' && text.charAt(1) == '-') {
                     enter = false;
                 } else if (text.charAt(0) == '+' && text.charAt(1) == '+') {
