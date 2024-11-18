@@ -31,7 +31,7 @@ public class AnalitzaCaracter {
                 while(posicio > text.length()) {
                     text = text + text;
                 }
-                System.out.print("'" + text.charAt(posicio) + "'");
+                System.out.print("'" + text.charAt(posicio+1) + "'");
                 if (Character.isLetter(text.charAt(posicio))) {
                     if (Character.isUpperCase(text.charAt(posicio))) {
                         System.out.println(" és una lletra majúscula");
