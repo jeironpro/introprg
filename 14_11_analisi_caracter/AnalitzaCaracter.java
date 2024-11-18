@@ -20,7 +20,7 @@ public class AnalitzaCaracter {
                 }
                 if (posicio > text.length()) {
                     posicio = posicio % text.length();
-                    while (posicio > text.length()) {
+                    while (posicio >= text.length()) {
                         posicio--;
                     }
                     caracter += text.charAt(posicio);
