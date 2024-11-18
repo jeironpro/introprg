@@ -6,7 +6,6 @@ public class MatriculaValida {
         String matricula = Entrada.readLine();
         boolean primerPatro = false;
         boolean segonPatro = false;
-        boolean tercerPatro = false;
         
         if (matricula.length() == 7) {
             for (int i = 0; i < matricula.length(); i++) {
@@ -14,8 +13,7 @@ public class MatriculaValida {
                     if (Character.isUpperCase(matricula.charAt(i)) && matricula.charAt(i) >= 'A' && matricula.charAt(i) <= 'Z' && matricula.charAt(i) != 'I' && matricula.charAt(i) != 'O' && matricula.charAt(i) != 'Q' && matricula.charAt(i) != 'U') {
                         primerPatro = true;
                     }
-                }
-                if (i >= 2 && i <=4) {
+                } else {
                     if (Character.isDigit(matricula.charAt(i))) {
                         segonPatro = true;
                     }
@@ -27,6 +25,8 @@ public class MatriculaValida {
             } else {
                 System.out.println("No és una matrícula italiana vàlida");
             }
+        } else {
+            System.out.println("No és una matrícula italiana vàlida");
         }
     }
 }
