@@ -5,14 +5,29 @@
 
 public class LloroVocalIniFi {
     public static void main(String[] args) {
+        // Demanar la paraula
         System.out.println("Paraula?");
         String paraula = Entrada.readLine();
+        // Declarar e inicialitzar la variable primerCaracter amb el primer caràcter de la paraula en minúscula
+        char primerCaracter = Character.toLowerCase(paraula.charAt(0));
+        // Declarar e inicialitzar la variable ultimCaracter amb l'ultim caràcter de la paraula en minúscula
+        char ultimCaracter = Character.toLowerCase(paraula.charAt(paraula.length()-1));
         
+        // El bucle s'executarà mentre la paraula no està buida
         while (!paraula.isEmpty()) {
-            System.out.print(((paraula.charAt(0) == 'a' || paraula.charAt(0) == 'A') && (paraula.charAt(paraula.length()-1) == 'a' || paraula.charAt(paraula.length()-1) == 'A') || (paraula.charAt(0) == 'e' || paraula.charAt(0) == 'E') && (paraula.charAt(paraula.length()-1) == 'e' || paraula.charAt(paraula.length()-1) == 'E') || (paraula.charAt(0) == 'i' || paraula.charAt(0) == 'I') && (paraula.charAt(paraula.length()-1) == 'i' || paraula.charAt(paraula.length()-1) == 'I') || (paraula.charAt(0) == 'o' || paraula.charAt(0) == 'O') && (paraula.charAt(paraula.length()-1) == 'o' || paraula.charAt(paraula.length()-1) == 'O') || (paraula.charAt(0) == 'u' || paraula.charAt(0) == 'U') && (paraula.charAt(paraula.length()-1) == 'u' || paraula.charAt(paraula.length()-1) == 'U') ? "Repeteixo: " + paraula + "\n" : ""));
+            // Verificar si el primer caràcter és una vocal
+            if (primerCaracter == 'a' || primerCaracter == 'e' || primerCaracter == 'i' || primerCaracter == 'o' || primerCaracter == 'u') {
+                // Verificar si l'últim caràcter és una vocal
+                if (ultimCaracter == 'a' || ultimCaracter == 'e' || ultimCaracter == 'i' || ultimCaracter == 'o' || ultimCaracter == 'u') {
+                    // Com comença i acaba en vocal, mostrar la paraula
+                    System.out.println("Repeteixo: " + paraula);
+                }
+            }
+            // Demanar la paraula a dins del bucle
             System.out.println("Paraula?");
             paraula = Entrada.readLine();
         }
+        // Quan surti del bucle, mostrar aquest missatge
         System.out.println("Adéu");
     }
 }
