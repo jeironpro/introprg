@@ -20,8 +20,11 @@ public class Enters {
             if (!text.isEmpty()) {
                 // Com el text no està buit, enter és true
                 enter = true;
+                // Fer un for per iterar tots els caràcters del text
                 for (int i = 0; i < text.length(); i++) {
+                    // Verificar si tots el caràcter no son dígits
                     if (!Character.isDigit(text.charAt(i))) {
+                        // Com no lo són, enter es false
                         enter = false;
                     }
                 }
