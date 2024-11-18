@@ -19,10 +19,14 @@ public class AnalitzaCaracter {
                 }
                 if (posicio < text.length()) {
                     caracter += invertido.charAt(posicio-1);                 
-                } else if (posicio > text.length()) {
+                } else if (posicio > text.length() *2) {
                     posicio = posicio % text.length();
                     caracter += text.charAt(Math.abs(posicio)); 
-                } else {
+                } else if (posicio > text.length()) {
+                    posicio = posicio % text.length();
+                    caracter += invertido.charAt(Math.abs(posicio-1));
+                }
+                 else {
                     caracter += text.charAt(0); 
                 }
             } else if (posicio < text.length()) {
