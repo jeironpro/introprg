@@ -27,7 +27,7 @@ public class AnalitzaCaracter {
                 // Convertir a positiva
                 posicio = Math.abs(posicio) % text.length();
                 // Obtenir el residu de posicio entre la longitud del text 
-                posicio = posicio % (text.length()-1);
+                posicio = posicio % text.length();
                 
                 caracter += text.charAt(posicio);
             // Verificar si la posició és menor a la longitud del text
