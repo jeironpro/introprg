@@ -27,7 +27,6 @@ public class Enters {
                         nouText += text.charAt(i);
                     }
                 }
-                System.out.println(nouText);
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
                 if (nouText.charAt(0) == '-' && nouText.charAt(1) == '-') {
