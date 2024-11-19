@@ -40,7 +40,7 @@ public class Enters {
                 }
                 
                 
-                if (enter == true) {
+                if (enter) {
                     System.out.println("És enter");
                 } else {
                     System.out.println("No és enter");
