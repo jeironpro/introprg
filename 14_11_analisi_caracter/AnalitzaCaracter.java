@@ -28,7 +28,7 @@ public class AnalitzaCaracter {
                 posicio = text.length() - Math.abs(posicio);
                 // Obtenir el residu de posicio entre la longitud del text
                 
-                caracter += text.charAt(posicio);
+                caracter += text.charAt(posicio-1);
             // Verificar si la posició és menor a la longitud del text
             } else if (posicio < text.length()) {
                 // Guardar el caracter de la posició
