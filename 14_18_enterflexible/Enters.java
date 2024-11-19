@@ -29,15 +29,15 @@ public class Enters {
                 }
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
-                if (nouText.charAt(0) == '-' && nouText.charAt(1) == '-') {
+                if (text.charAt(0) == '-' || nouText.charAt(0) == '-' && text.charAt(1) == '-' || nouText.charAt(1) == '-') {
                     enter = false;
-                } else if (nouText.charAt(0) == '+' && nouText.charAt(1) == '+') {
+                } else if (text.charAt(0) == '+' || nouText.charAt(0) == '+' && text.charAt(1) == '+' || nouText.charAt(1) == '+') {
                     enter = false;
-                } else if (nouText.charAt(0) == '+' && nouText.charAt(1) == '-') {
+                } else if (text.charAt(0) == '+' || nouText.charAt(0) == '+' && text.charAt(1) == '-' || nouText.charAt(1) == '-') {
                     enter = false;
-                } else if (nouText.charAt(0) == '-' && nouText.charAt(1) == '+') {
+                } else if (text.charAt(0) == '-' || nouText.charAt(0) == '-' && text.charAt(1) == '+' || nouText.charAt(1) == '+') {
                     enter = false;
-                } else if (nouText.charAt(0) == '_' || nouText.charAt(nouText.length()-1) == '.') {
+                } else if (text.charAt(0) == '_' || nouText.charAt(0) == '_' || text.charAt(text.length()-1) == '.' || nouText.charAt(nouText.length()-1) == '.') {
                     enter = false;
                 }
                 
