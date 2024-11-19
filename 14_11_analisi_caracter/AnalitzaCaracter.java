@@ -26,11 +26,7 @@ public class AnalitzaCaracter {
             if (posicio < 0) {
                 if (Math.abs(posicio) > text.length()) {
                     posicio = Math.abs(posicio) % text.length();
-                    if (posicio == 1) {
-                        posicio = text.length()-1;                    
-                    } else {
-                        posicio = posicio - 1;
-                    }
+                    posicio = text.length()-1; 
                 } else {
                     posicio = text.length() - Math.abs(posicio);                
                 }
