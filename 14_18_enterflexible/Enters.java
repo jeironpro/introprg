@@ -27,6 +27,7 @@ public class Enters {
                         nouText += text.charAt(i);
                     }
                 }
+                System.out.println(nouText);
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
                 if (nouText.charAt(0) == '-' && nouText.charAt(1) == '-') {
@@ -35,7 +36,7 @@ public class Enters {
                     enter = false;
                 } else if (nouText.charAt(0) == '+' && nouText.charAt(1) == '-') {
                     enter = false;
-                } else if (text.charAt(0) == '-' && nouText.charAt(1) == '+') {
+                } else if (nouText.charAt(0) == '-' && nouText.charAt(1) == '+') {
                     enter = false;
                 } else if (nouText.charAt(0) == '_' || nouText.charAt(nouText.length()-1) == '.') {
                     enter = false;
