@@ -25,39 +25,11 @@ public class AnalitzaCaracter {
             // Verificar si la posició es negativa
             if (posicio < 0) {
                 // Convertir a positiva
-                posicio = Math.abs(posicio);
-                // Declarar e inicialitzar la variable textInvertit perquè guardi el text de manera invertida   
-                String textInvertit = "";
+                posicio = Math.abs(posicio) + text.length();
+                // Obtenir el residu de posicio entre la longitud del text 
+                posicio = posicio % text.length();
                 
-                // Aquest for inverteix el text rebut
-                for (int i = text.length()-1; i >= 0; i--) {
-                    // Guardar el text invertit
-                    textInvertit += text.charAt(i);
-                }
-                
-                // Verificar si la posició és major a la longitud del text
-                if (posicio > text.length()) {
-                    // Obtenir el residu de posicio entre la longitud del text 
-                    posicio = posicio % text.length();
-                    // Verificar si el residuo és 0
-                    if (posicio == 0) {
-                        // Guardar el caràcter de la posicio 0
-                        caracter += text.charAt(posicio);
-                    // Del contrari, és major a 0
-                    } else {
-                        // Fer un while para obtenir la posició decrementant
-                        while (posicio >= text.length()) {
-                            // Decrementar la posició
-                            posicio--;
-                        }
-                        // Guardar el caracter del text invertit i amb la posicio invertida - 1
-                        caracter += textInvertit.charAt(Math.abs(posicio-1));                    
-                    }
-                // Del contrari, posicio és més menor que la longitud del text
-                } else {
-                    // D'igual manera guardo el caracter del text invertit i amb la posicio invertida - 1
-                    caracter += textInvertit.charAt(Math.abs(posicio-1));
-                }
+                caracter += text.charAt(posicio);
             // Verificar si la posició és menor a la longitud del text
             } else if (posicio < text.length()) {
                 // Guardar el caracter de la posició
