@@ -18,24 +18,23 @@ public class Enters {
             // Verificar si el text està buit
             if (!text.isEmpty()) {
                 enter = true;
+                text = text.strip();
                 for (int i = 0; i < text.length(); i++) {
                     if (Character.isLetter(text.charAt(i))) {
-                        enter = false;
-                    }
-                    if (text.charAt(0) == '-' && text.charAt(1) == '-') {
-                        enter = false;
-                    } else if (text.charAt(0) == '+' && text.charAt(1) == '+') {
-                        enter = false;
-                    } else if (text.charAt(0) == '+' && text.charAt(1) == '-') {
-                        enter = false;
-                    } else if (text.charAt(0) == '-' && text.charAt(1) == '+') {
                         enter = false;
                     }
                 }
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
-                
-                if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
+                if (text.charAt(0) == '-' && text.charAt(1) == '-') {
+                    enter = false;
+                } else if (text.charAt(0) == '+' && text.charAt(1) == '+') {
+                    enter = false;
+                } else if (text.charAt(0) == '+' && text.charAt(1) == '-') {
+                    enter = false;
+                } else if (text.charAt(0) == '-' && text.charAt(1) == '+') {
+                    enter = false;
+                } else if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
                     enter = false;
                 }
                 
