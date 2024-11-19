@@ -26,9 +26,9 @@ public class AnalitzaCaracter {
             if (posicio < 0) {
                 if (Math.abs(posicio) > text.length()) {
                     posicio = text.length();
+                } else {
+                    posicio = text.length() - Math.abs(posicio);                
                 }
-                // Convertir a positiva
-                posicio = text.length() - Math.abs(posicio);
                
                 caracter += text.charAt(Math.abs(posicio));
                
