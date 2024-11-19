@@ -24,11 +24,7 @@ public class AnalitzaCaracter {
             
             // Verificar si la posició es negativa
             if (posicio < 0) {
-                if (Math.abs(posicio) > text.length()) {
-                    posicio = text.length()-1; 
-                } else {
-                    posicio = text.length() - Math.abs(posicio);                
-                }
+                posicio = posicio % text.length();
                 
                 caracter += text.charAt(Math.abs(posicio));
                
