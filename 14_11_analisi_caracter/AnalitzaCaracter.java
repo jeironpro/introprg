@@ -29,10 +29,7 @@ public class AnalitzaCaracter {
                 } else {
                     posicio = text.length() - Math.abs(posicio);                
                 }
-                posicio = posicio % text.length();
-                if (posicio > 1) {
-                    posicio = text.length() - posicio -1;  
-                }
+                
                 caracter += text.charAt(Math.abs(posicio));
                
             // Verificar si la posició és menor a la longitud del text
