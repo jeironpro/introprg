@@ -9,7 +9,6 @@ public class Enters {
         // Declarar e incializar text amb caracters
         String text = "true";
         boolean enter = false;
-        String nouText = "";
         
         // El bucle s'executarà quan el text no sigui buit
         while (!text.isEmpty()) {
@@ -24,20 +23,20 @@ public class Enters {
                         enter = false;
                     }
                     if (!Character.isWhitespace(text.charAt(i))) {
-                        nouText += text.charAt(i);
+                        text += text.charAt(i);
                     }
                 }
                 
                 // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
-                if (text.charAt(0) == '-' || nouText.charAt(0) == '-' && text.charAt(1) == '-' || nouText.charAt(1) == '-') {
+                if (text.charAt(0) == '-' && text.charAt(1) == '-') {
                     enter = false;
-                } else if (text.charAt(0) == '+' || nouText.charAt(0) == '+' && text.charAt(1) == '+' || nouText.charAt(1) == '+') {
+                } else if (text.charAt(0) == '+' && text.charAt(1) == '+') {
                     enter = false;
-                } else if (text.charAt(0) == '+' || nouText.charAt(0) == '+' && text.charAt(1) == '-' || nouText.charAt(1) == '-') {
+                } else if (text.charAt(0) == '+' && text.charAt(1) == '-') {
                     enter = false;
-                } else if (text.charAt(0) == '-' || nouText.charAt(0) == '-' && text.charAt(1) == '+' || nouText.charAt(1) == '+') {
+                } else if (text.charAt(0) == '-' && text.charAt(1) == '+') {
                     enter = false;
-                } else if (text.charAt(0) == '_' || nouText.charAt(0) == '_' || text.charAt(text.length()-1) == '.' || nouText.charAt(nouText.length()-1) == '.') {
+                } else if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
                     enter = false;
                 }
                 
