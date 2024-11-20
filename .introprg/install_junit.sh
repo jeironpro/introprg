@@ -6,7 +6,7 @@ scriptdir=$(dirname "$0")
 JUNITDEST=$(realpath "$scriptdir")
 JUNITJAR=junit-platform-console-standalone.jar
 JUNITJARPATH="$JUNITDEST/$JUNITJAR"
-JUNITVERSION=1.10.1
+JUNITVERSION=1.10.3
 JUNITURL=https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/${JUNITVERSION}/junit-platform-console-standalone-${JUNITVERSION}.jar
 
 function show_ok() {
