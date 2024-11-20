@@ -42,7 +42,7 @@ public class EndevinaNombre {
                 break;            
             }
             if (valor == valorEndevinar) {
-                System.out.println("Has encertat!");
+                System.out.println("Encertat!");
                 break;
             } else {
                 System.out.println("Introdueix un valor");
