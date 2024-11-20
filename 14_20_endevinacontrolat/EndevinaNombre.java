@@ -45,19 +45,16 @@ public class EndevinaNombre {
                 } else if (valor < valorEndevinar) {
                     System.out.println("Massa petit");
                 }
-            }
-            
-            if (cadena.isEmpty()) {
+                if (valor == valorEndevinar) {
+                    System.out.println("Encertat!");
+                    break;
+                }
+            } else {
                 System.out.println("Cancel·lat!");
                 break;            
             }
-            if (valor == valorEndevinar) {
-                System.out.println("Encertat!");
-                break;
-            } else {
-                System.out.println("Nombre?");
-                cadena = Entrada.readLine();                
-            }
+            System.out.println("Nombre?");
+            cadena = Entrada.readLine();
         }
     }
 }
