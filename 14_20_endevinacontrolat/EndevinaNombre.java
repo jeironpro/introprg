@@ -31,9 +31,10 @@ public class EndevinaNombre {
                 // Verificar si el caràcter 0 és un signe de - o +
                 if (cadena.charAt(0) == '-' || cadena.charAt(0) == '+') continue;
                 // Verificar si el caràcter 1 és un dígit
-                if (Character.isDigit(cadena.charAt(1))) continue;
-                // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
-                enter = true;
+                if (Character.isDigit(cadena.charAt(1))) {
+                    // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
+                    enter = true;
+                }
                 
                 if (!enter) {
                     System.out.println("Només nombres");
