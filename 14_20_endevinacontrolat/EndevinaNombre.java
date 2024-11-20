@@ -21,10 +21,11 @@ public class EndevinaNombre {
         while (true) {
             if (!cadena.isEmpty()) {
                 for (int i = 0; i < cadena.length(); i++) {
-                    if (!Character.isDigit(cadena.charAt(i))) {
-                        enter = false;
-                    } else {
+                    if (Character.isDigit(cadena.charAt(i))) {
+                        enter = true;
                         valor = Integer.parseInt(cadena);
+                    } else {
+                        enter = false;
                     }
                 }
                 // Verificar si el caràcter 0 és un signe de - o +
