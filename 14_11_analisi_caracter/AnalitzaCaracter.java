@@ -30,7 +30,7 @@ public class AnalitzaCaracter {
                 posicio = posicio + text.length();
                 // Tornar a obtenir el residu, però ara del nombre positiu
                 posicio = posicio % text.length();  
-                System.out.println(posicio);              
+                // Guardar el caràcter de la posició obtinguda           
                 caracter += text.charAt(Math.abs(posicio));
             // Verificar si la posició és menor a la longitud del text
             } else if (posicio < text.length()) {
