@@ -23,8 +23,8 @@ public class EndevinaNombre {
                 for (int i = 0; i < cadena.length(); i++) {
                     enter = false;
                     if (Character.isDigit(cadena.charAt(i))) continue;
-                    valor = Integer.parseInt(cadena);
                     enter = true;
+                    valor = Integer.parseInt(cadena);
                 }
                 // Verificar si el caràcter 0 és un signe de - o +
                 if (cadena.charAt(0) == '-' || cadena.charAt(0) == '+') {
