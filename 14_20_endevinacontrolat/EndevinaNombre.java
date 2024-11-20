@@ -44,8 +44,7 @@ public class EndevinaNombre {
                     System.out.println("Massa gran");
                 } else if (valor < valorEndevinar) {
                     System.out.println("Massa petit");
-                }
-                if (valor == valorEndevinar) {
+                } else {
                     System.out.println("Encertat!");
                     break;
                 }
