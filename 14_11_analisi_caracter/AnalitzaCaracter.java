@@ -24,11 +24,14 @@ public class AnalitzaCaracter {
             
             // Verificar si la posició es negativa
             if (posicio < 0) {
+                // Obtenir el residu del nombre negatiu
                 posicio = posicio % text.length();
+                // sumar-li la longitud del text (l'operació serà una resta ya que el primer operand és negatiu i el segon operand es positiu)
                 posicio = posicio + text.length();
-                posicio = posicio % text.length();                
+                // Tornar a obtenir el residu, però ara del nombre positiu
+                posicio = posicio % text.length();  
+                System.out.println(posicio);              
                 caracter += text.charAt(Math.abs(posicio));
-               
             // Verificar si la posició és menor a la longitud del text
             } else if (posicio < text.length()) {
                 // Guardar el caracter de la posició
