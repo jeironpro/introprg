@@ -27,7 +27,7 @@ public class EndevinaNombre {
                     }                            
                 }
                 if (enter == false) {
-                    System.out.println("Només lletres");
+                    System.out.println("Només nombres");
                 } else if (valor <= 0 || valor > 100) {
                     System.out.println("Fora de rang");                    
                 } else if (valor > valorEndevinar) {
