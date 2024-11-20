@@ -1,4 +1,14 @@
-/**/
+/* Aquest programa és un petit joc que repta els usuaris a endevinar un nombre. 
+* El nombre es passa per línia de comandes.
+* Els usuaris ha d'introduir enters entre el 1 i el 100 fins que endevini el 
+* nombre que s'ha passat per la línia de comandes.
+* Si s'introdueix un nombre més petit, més gran o fora de rang 
+* us mostrarà un missatge indicant aquestes condicions.
+* Quan ho endevini us mostrarà un missatge que l'heu endevinat.
+* Ara si vols finalitzar l'execució pots fer-ho pressionant enter.
+* Aquesta nova versió acepta ell signes + i -
+* Si s'introdueix lletres et mostrarà un missatge dient que "només nombres".
+*/
 
 public class EndevinaNombre {
     public static void main(String[] args) {
@@ -26,7 +36,7 @@ public class EndevinaNombre {
                         enter = true;
                     }                            
                 }
-                if (enter == false) {
+                if (!enter) {
                     System.out.println("Només nombres");
                 } else if (valor <= 0 || valor > 100) {
                     System.out.println("Fora de rang");                    
