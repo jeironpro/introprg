@@ -45,7 +45,7 @@ public class EndevinaNombre {
                 System.out.println("Encertat!");
                 break;
             } else {
-                System.out.println("Introdueix un valor");
+                System.out.println("Nombre");
                 cadena = Entrada.readLine();                
             }
         }
