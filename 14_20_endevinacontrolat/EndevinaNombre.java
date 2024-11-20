@@ -20,13 +20,13 @@ public class EndevinaNombre {
            
         while (true) {
             if (!cadena.isEmpty()) {
+                // Com el text no està buit, enter és true
                 enter = true;
                 for (int i = 0; i < cadena.length(); i++) {
                     if (!Character.isDigit(cadena.charAt(i))) {
                         enter = false;
-                    } else {
-                        valor = Integer.parseInt(cadena);
-                    }
+                    } 
+                    valor = Integer.parseInt(cadena);
                 }
                 // Verificar si el caràcter 0 és un signe de - o +
                 if (cadena.charAt(0) == '-' || cadena.charAt(0) == '+') {
