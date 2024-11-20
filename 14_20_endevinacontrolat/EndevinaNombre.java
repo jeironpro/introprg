@@ -21,20 +21,20 @@ public class EndevinaNombre {
         while (true) {
             if (!cadena.isEmpty()) {
                 for (int i = 0; i < cadena.length(); i++) {
-                    if (Character.isDigit(cadena.charAt(i))) {
-                        enter = true;
-                        valor = Integer.parseInt(cadena);
-                    } else {
-                        enter = false;
-                    }
+                    enter = false;
+                    if (Character.isDigit(cadena.charAt(i))) continue;
+                    valor = Integer.parseInt(cadena);
+                    enter = true;
                 }
                 // Verificar si el caràcter 0 és un signe de - o +
-                if (cadena.charAt(0) == '-' || cadena.charAt(0) == '+') continue;
-                // Verificar si el caràcter 1 és un dígit
-                if (Character.isDigit(cadena.charAt(1))) continue;
-                // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
-                enter = true;
-                    
+                if (cadena.charAt(0) == '-' || cadena.charAt(0) == '+') {
+                    // Verificar si el caràcter 1 és un dígit
+                    if (Character.isDigit(cadena.charAt(1))) {
+                        // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
+                        enter = true;
+                    }                            
+                }
+                
                 if (!enter) {
                     System.out.println("Només nombres");
                 } else if (valor <= 0 || valor > 100) {
