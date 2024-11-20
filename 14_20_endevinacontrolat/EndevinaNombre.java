@@ -1,6 +1,6 @@
 /**/
 
-public class Endevina {
+public class EndevinaNombre {
     public static void main(String[] args) {
         System.out.println("Nombre?");
         String cadena = Entrada.readLine();
