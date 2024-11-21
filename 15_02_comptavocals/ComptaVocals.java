@@ -8,10 +8,11 @@ public class ComptaVocals {
         String text = Entrada.readLine();
         // Declarar e inicialitzar la variable contador amb 0
         int contador = 0;
+        String vocals = "aàeéèiíïoóòuúü";
         
         // Fer un for per iterar tots els caràcter del text
-        for (int i = 0; i <= text.length(); i++) {
-            // Verificar si alguns dels caràcters coincideixen amb les vocals
+        for (int i = 0; i < text.length(); i++) {
+            /*// Verificar si alguns dels caràcters coincideixen amb les vocals
             if (
             text.charAt(i) == 'a' || 
             text.charAt(i) == 'à' || 
@@ -29,6 +30,11 @@ public class ComptaVocals {
             text.charAt(i) == 'ü') {
                 // Si algun coincideix, sumar-li 1 a contador
                contador += 1;
+            }*/
+            for (int j = 0; j < vocals.length(); j++) {
+                if (text.charAt(i) == vocals.charAt(j)) {
+                    contador += 1;
+                }
             }
         }
         // Mostrar la quantitat de vocals hi ha al text
