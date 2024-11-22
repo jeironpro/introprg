@@ -6,7 +6,6 @@ public class ComptaVocals {
         // Demanar el text
         System.out.println("Text?");
         String text = Entrada.readLine();
-        text = text.toLowerCase();
         // Declarar e inicialitzar la variable contador amb 0
         int contador = 0;
         // Declarar e incialitzar la variable vocals amb les vocals
@@ -17,7 +16,7 @@ public class ComptaVocals {
             // Fer un for per iterar las vocals
             for (int j = 0; j < vocals.length(); j++) {
                 // Verificar si els caràcters del text és una vocal
-                if (text.charAt(i) == vocals.charAt(j)) {
+                if (character.toLowerCase(text.charAt(i)) == Character.toLowerCase(vocals.charAt(j))) {
                     // Si és una vocal, sumar-li 1 a contador
                     contador += 1;
                 }
