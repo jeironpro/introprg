@@ -20,7 +20,7 @@ public class ConteDarrer {
             // Declarar un boolean en false
             boolean conte = false; 
             // Obtenir el ultim caràcter del text
-            char ultimCaracter = text.charAt(text.length()-1);
+            char ultimCaracter = Character.toLowerCase(text.charAt(text.length()-1));
             // Tornar a demanar el text a dins del bucle
             text = Entrada.readLine();
            
