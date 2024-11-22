@@ -21,7 +21,7 @@ public class TransformaText {
                     esNombre = true;
                 }
             }
-            if (esNombre) {
+            if (esNombre && !Character.isWhitespace(text.charAt(i)) || !Character.isLetter(text.charAt(i))) {
                  nouText += "(" + text.charAt(i) + ")";
             }
             if (
