@@ -46,8 +46,7 @@ public class TransformaText {
                 nouText += text.charAt(i);
             } 
             if (Character.isDigit(text.charAt(i))) {
-                nouText += "(" + nombre + ")"; 
-                break;  
+                nouText += "(" + nombre + ")";
             }
         }
         System.out.println(nouText);
