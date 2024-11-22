@@ -27,7 +27,7 @@ public class Enters {
                         nouText += text.charAt(i);
                     }
                     if (Character.isDigit(text.charAt(i))) {
-                        if (!Character.isDigit(text.charAt(i+1))) {
+                        if (!Character.isDigit(text.charAt(i))) {
                             enter = false;
                         }
                     }
