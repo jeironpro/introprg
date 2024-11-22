@@ -20,9 +20,9 @@ public class TransformaText {
                     nombre += 1;
                 }
             }
-            if (nombre >= 1) {
+            if (Character.isDigit(text.charAt(i))) {
                 nouText += "(";
-                if (Character.isDigit(text.charAt(i))) {
+                if (nombre >= 1) {
                     nouText += text.charAt(i);
                 }
                 nouText += ")";
