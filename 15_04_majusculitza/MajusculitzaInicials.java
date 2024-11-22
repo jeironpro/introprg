@@ -24,7 +24,9 @@ public class MajusculitzaInicials {
                     esMajuscula = true;
                 } 
                 
+                // Verificar si no són letter y no son dígits
                 if (!Character.isLetter(text.charAt(i)) && !Character.isDigit(text.charAt(i))) {
+                    // Assignarle true a esMajuscula
                     esMajuscula = true;
                 }
                 
