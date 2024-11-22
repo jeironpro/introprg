@@ -12,17 +12,14 @@ public class TransformaText {
         String nouText = "";
         // String vocals = "aàeèéiíïoòóuúü";
         String nombres = "0123456789";
-        boolean esNombre = false;
         
         for (int i = 0; i < text.length(); i++) {
-           
-            for (int j = 0; j < nombres.length(); j++) {
-                if (text.charAt(i) == nombres.charAt(j)) {
-                    esNombre = true;
+            if (i < text.length()-1) {
+                if (Character.isDigit(text.charAt(i))) {
+                    if (Character.isDigit(text.charAt(i+1))) {
+                        nouText += "(" + text.charAt(i) + "" + text.charAt(i+1) + ")";
+                    }
                 }
-            }
-            if (esNombre && !Character.isWhitespace(text.charAt(i)) || !Character.isLetter(text.charAt(i))) {
-                 nouText += "(" + text.charAt(i) + ")";
             }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
