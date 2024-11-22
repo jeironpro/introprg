@@ -22,7 +22,7 @@ public class TransformaText {
             }
             if (Character.isDigit(text.charAt(i))) {
                 if (nombre >= 1) {
-                    nouText += "(" + text.charAt(i) + "" + text.charAt(nombre) + ")";
+                    nouText += "(" + text.charAt(i) + "" + text.charAt(i+nombre) + ")";
                 }
             }
             if (
