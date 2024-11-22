@@ -16,8 +16,8 @@ public class TransformaText {
         for (int i = 0; i < text.length(); i++) {
             if (Character.isDigit(text.charAt(i))) {
                 nombre += text.charAt(i);
-                nouText += nombre;
             }
+            nouText += "(" + nombre + ")";
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
