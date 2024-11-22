@@ -26,6 +26,11 @@ public class Enters {
                     if (!Character.isWhitespace(text.charAt(i))) {
                         nouText += text.charAt(i);
                     }
+                    if (Character.isDigit(text.charAt(i))) {
+                        if (!Character.isDigit(text.charAt(i+1))) {
+                            enter = false;
+                        }
+                    }
                 }
                 
                 if (nouText.charAt(0) == '-' && nouText.charAt(1) == '-') {
