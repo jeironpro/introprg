@@ -12,13 +12,17 @@ public class TransformaText {
         String nouText = "";
         // String vocals = "aàeèéiíïoòóuúü";
         String nombres = "0123456789";
+        int nombre = 0;
         
         for (int i = 0; i < text.length(); i++) {
-            if (i < text.length()-1) {
-                if (Character.isDigit(text.charAt(i))) {
-                    if (Character.isDigit(text.charAt(i+1))) {
-                        nouText += "(" + text.charAt(i) + "" + text.charAt(i+1) + ")";
-                    }
+            for (int j = 0; j < nombres.length(); j++) {
+                if (text.charAt(i) == nombres.charAt(j)) {
+                    nombre += 1;
+                }
+            }
+            if (Character.isDigit(text.charAt(i))) {
+                if (nombre >= 1) {
+                    nouText += "(" + text.charAt(i) + ")";
                 }
             }
             if (
