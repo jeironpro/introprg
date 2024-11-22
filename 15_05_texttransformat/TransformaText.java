@@ -19,10 +19,13 @@ public class TransformaText {
                 if (text.charAt(i) == nombres.charAt(j)) {
                     nombre += 1;
                 }
+                if (Character.isDigit(text.charAt(i))) {
+                    if (nombre >= 1) {
+                        nouText += "(" + text.charAt(i) + ")";
+                    }
+                }
             }
-            if (nombre >= 1) {
-                nouText += "(" + text.charAt(i) + ")";
-            } else if (
+            if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
             Character.toLowerCase(text.charAt(i)) == 'e' || 
