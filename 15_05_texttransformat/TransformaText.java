@@ -21,8 +21,8 @@ public class TransformaText {
                 }
             }
             if (Character.isDigit(text.charAt(i))) {
-                if (nombre >= 1) {
-                    nouText += "(" + text.charAt(i) + "" + text.charAt(i+nombre) + ")";
+                for (int k = 0; k < nombre; k++) {
+                    nouText += "(" + text.charAt(i) + "" + text.charAt(i+nombre) + ")";    
                 }
             }
             if (
