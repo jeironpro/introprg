@@ -20,6 +20,11 @@ public class TransformaText {
                     nombre += 1;
                 }
             }
+            if (Character.isDigit(text.charAt(i))) {
+                if (nombre >= 1) {
+                    nouText += "(" + text.charAt(i) + "" + text.charAt(i+nombre) + ")";
+                }
+            }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
@@ -41,10 +46,6 @@ public class TransformaText {
                 nouText += Character.toUpperCase(text.charAt(i));            
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
-            } else {
-                if (nombre >= 1) {
-                    nouText += "(" + text.charAt(i) + ")";
-                }
             }
         }
         System.out.println(nouText);
