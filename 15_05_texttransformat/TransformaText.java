@@ -20,6 +20,9 @@ public class TransformaText {
                     nombre += text.charAt(i);                    
                 }
             }
+        }
+        
+        for (int i = 0; i < text.length(); i++) {
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
