@@ -22,10 +22,8 @@ public class TransformaText {
                     nombreGuardat += text.charAt(i); 
                 }
             }
-            if (Character.isDigit(text.charAt(i))) {
-                if (nombre >= 1) {
-                    nouText += "(" + nombreGuardat + ")";
-                }
+            if (nombre >= 1) {
+                nouText += "(" + nombreGuardat + ")";
             }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
