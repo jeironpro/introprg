@@ -49,8 +49,8 @@ public class TransformaText {
                 contadorNombre = 1;
                 if (contadorNombre == 1) {
                     nouText += "(" + nombre + ")";
-                    contadorNombre = 0;            
                 }
+                contadorNombre = 0;            
             }
         }
         System.out.println(nouText);
