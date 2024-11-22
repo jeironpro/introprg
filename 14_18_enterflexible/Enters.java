@@ -25,10 +25,9 @@ public class Enters {
                     if (!Character.isDigit(text.charAt(i)) && !Character.isWhitespace(text.charAt(i))) {
                         enter = false;
                     }
-                    
-                    if ((text.charAt(i) != '-' || text.charAt(i) != '+') && !Character.isDigit(text.charAt(i))) {
-                        enter = false;
-                    }
+                }
+                if ((text.charAt(0) != '-' || text.charAt(0) != '+') && !Character.isDigit(text.charAt(1))) {
+                    enter = false;
                 }
                 
                 
