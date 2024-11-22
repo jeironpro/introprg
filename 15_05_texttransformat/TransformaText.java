@@ -14,13 +14,20 @@ public class TransformaText {
         
         for (int i = 0; i < text.length(); i++) {
             if (
-            text.charAt(i) == 'a' || text.charAt(i) == 'à' ||
-            text.charAt(i) == 'e' || text.charAt(i) == 'è' ||
-            text.charAt(i) == 'é' || text.charAt(i) == 'i' ||
-            text.charAt(i) == 'í' || text.charAt(i) == 'ï' ||
-            text.charAt(i) == 'o' || text.charAt(i) == 'ó' ||
-            text.charAt(i) == 'ò' || text.charAt(i) == 'u' ||
-            text.charAt(i) == 'ú' || text.charAt(i) == 'ü'
+            Character.toLowerCase(text.charAt(i)) == 'a' ||
+            Character.toLowerCase(text.charAt(i)) == 'à' ||
+            Character.toLowerCase(text.charAt(i)) == 'e' || 
+            Character.toLowerCase(text.charAt(i)) == 'è' ||
+            Character.toLowerCase(text.charAt(i)) == 'é' || 
+            Character.toLowerCase(text.charAt(i)) == 'i' ||
+            Character.toLowerCase(text.charAt(i)) == 'í' ||
+            Character.toLowerCase(text.charAt(i)) == 'ï' || 
+            Character.toLowerCase(text.charAt(i)) == 'o' ||
+            Character.toLowerCase(text.charAt(i)) == 'ó' ||
+            Character.toLowerCase(text.charAt(i)) == 'ò' || 
+            Character.toLowerCase(text.charAt(i)) == 'u' ||
+            Character.toLowerCase(text.charAt(i)) == 'ú' || 
+            Character.toLowerCase(text.charAt(i)) == 'ü'
             ) {
                 nouText += Character.toLowerCase(text.charAt(i));
             } else if (Character.isDigit(text.charAt(i))) {
