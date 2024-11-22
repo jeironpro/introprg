@@ -44,7 +44,8 @@ public class TransformaText {
                 nouText += Character.toUpperCase(text.charAt(i));            
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
-            } else if (Character.isDigit(text.charAt(i))) {
+            } 
+            if (Character.isDigit(text.charAt(i))) {
                 nouText += "(" + nombre + ")"; 
                 break;  
             }
