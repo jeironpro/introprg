@@ -18,7 +18,7 @@ public class MajusculitzaInicials {
             // Assignarle false a esMajuscula per reiniciar el boolean en la iteració
             esMajuscula = false; 
             // Verificar si es un espai en blanc o es el signe -
-            if (Character.isWhitespace(text.charAt(i)) || text.charAt(i) == '-') {
+            if (Character.isWhitespace(text.charAt(i)) || text.charAt(i) == '-' || !Character.isLetter(text.charAt(i)) || !Character.isDigit(text.charAt(i))) {
                 // Assignarle true a esMajuscula
                 esMajuscula = true;
             }
