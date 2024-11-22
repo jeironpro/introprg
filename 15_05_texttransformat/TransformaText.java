@@ -17,8 +17,6 @@ public class TransformaText {
                 if (Character.isDigit(text.charAt(i))) {
                     if (Character.isDigit(text.charAt(i+1))) {
                         nouText += "(" + text.charAt(i) + "" + text.charAt(i+1) + ")";
-                    } else {
-                        nouText += "(" + text.charAt(i) + ")";
                     }
                 }
             }
