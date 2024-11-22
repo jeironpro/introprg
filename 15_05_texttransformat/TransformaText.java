@@ -16,6 +16,8 @@ public class TransformaText {
             for (int j = 0; j < vocals.length(); j++) {
                 if (Character.toLowerCase(text.charAt(i)) == vocals.charAt(j)) {
                     nouText += Character.toLowerCase(text.charAt(i));
+                } else {
+                    nouText += Character.toUpperCase(text.charAt(i));                
                 }
             }
             
@@ -25,8 +27,6 @@ public class TransformaText {
                 }
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
-            } else if (Character.isLetter(text.charAt(i))) {
-                nouText += Character.toUpperCase(text.charAt(i));            
             }
         }
         System.out.println(nouText);
