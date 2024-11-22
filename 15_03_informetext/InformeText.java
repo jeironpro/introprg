@@ -36,6 +36,7 @@ public class InformeText {
         // Vocals en minúscules (incloent les català)
         String vocalsMinuscules = "aàeéèiíïoóòuúü";
         
+        // Verificar que el text no està buit
         if (!text.isEmpty()) {
             // Fer un for per iterar tots els caràcters del text
             for (int i = 0; i < text.length(); i++) {
@@ -89,7 +90,9 @@ public class InformeText {
             System.out.printf("altres caràcters: %d (%.2f%%)%n", contadorAltresCaracter, 100.0 * contadorAltresCaracter / totalCaracter);
             // Mostrar la longitud del text
             System.out.println("total caràcters: " + totalCaracter);
+        // Del contrari
         } else {
+            // Mostrar aquest missatge
             System.out.println("Cadena buida");
         }
     }
