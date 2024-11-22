@@ -2,7 +2,7 @@
 * a capitalize (el primer caràcter de cada paraula en majúscula).
 */
 
-public class Majusculitza {
+public class MajusculitzaInicials {
     public static void main(String[] args) {
         // Demanar el text
         System.out.println("Text?");
