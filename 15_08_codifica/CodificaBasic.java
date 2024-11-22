@@ -13,6 +13,8 @@ public class CodificaBasic {
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) >= 'a' && text.charAt(i) < 'z') {
                 nouText += (char)(text.charAt(i) + 1);
+            } else if (text.charAt(i) == 'z') {
+                nouText += 'a';
             } else {
                 nouText += text.charAt(i);
             }
