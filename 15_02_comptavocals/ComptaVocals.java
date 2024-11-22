@@ -16,7 +16,7 @@ public class ComptaVocals {
             // Fer un for per iterar las vocals
             for (int j = 0; j < vocals.length(); j++) {
                 // Verificar si els caràcters del text és una vocal
-                if (character.toLowerCase(text.charAt(i)) == Character.toLowerCase(vocals.charAt(j))) {
+                if (Character.toLowerCase(text.charAt(i)) == Character.toLowerCase(vocals.charAt(j))) {
                     // Si és una vocal, sumar-li 1 a contador
                     contador += 1;
                 }
