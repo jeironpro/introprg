@@ -20,9 +20,6 @@ public class TransformaText {
                     nombre += 1;
                 }
             }
-            for (int k = 0; k < nombre; k++) {
-                nouText += "(" + text.charAt(i) + "" + text.charAt(i) + ")";    
-            }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
@@ -44,6 +41,10 @@ public class TransformaText {
                 nouText += Character.toUpperCase(text.charAt(i));            
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
+            } else {
+                for (int k = 0; k < nombre; k++) {
+                    nouText += "(" + text.charAt(i) + "" + text.charAt(i) + ")";    
+                }
             }
         }
         System.out.println(nouText);
