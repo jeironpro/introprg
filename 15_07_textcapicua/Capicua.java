@@ -7,15 +7,13 @@ public class Capicua {
         // Demanar el text
         System.out.println("Text?");
         String text = Entrada.readLine();
-        // Convertir el text en minúscules
-        text = text.toLowerCase();
         // Declarar e inicialitzar la variable textInvertit buida
         String textInvertit = "";
         
         // Fer un for per iterar tots els caràcters del text
         for (int i = text.length()-1; i >= 0; i--) {
             // Guardar tots el caràcter del text en la variable textInvertit
-            textInvertit += text.charAt(i);            
+            textInvertit += Character.toLowerCase(text.charAt(i));            
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
