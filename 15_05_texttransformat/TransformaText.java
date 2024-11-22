@@ -11,12 +11,12 @@ public class TransformaText {
         String text = Entrada.readLine();
         String nouText = "";
         // String vocals = "aàeèéiíïoòóuúü";
-        String nombres = "123456789";
+        String nombres = "0123456789";
         String nombre = "";
         
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j < nombres.length(); j++) {
-                if (text.charAt(i) == nombres.charAt(i)) {
+                if (text.charAt(i) == nombres.charAt(j)) {
                     nombre += text.charAt(i);                    
                 }
             }
