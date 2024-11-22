@@ -13,7 +13,7 @@ public class Capicua {
             textInvertit += text.charAt(i);            
         }
         
-        if (text.equals(textInvertit)) {
+        if (!text.isEmpty() && !textInvertit.isEmpty() && text.equals(textInvertit)) {
             System.out.println("És capicua");                    
         } else {
             System.out.println("No és capicua");                    
