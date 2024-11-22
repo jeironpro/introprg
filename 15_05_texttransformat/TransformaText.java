@@ -13,7 +13,7 @@ public class TransformaText {
         // String vocals = "aàeèéiíïoòóuúü";
         
         for (int i = 0; i < text.length(); i++) {
-            if (i < text.length()) {
+            if (i < text.length()-1) {
                 if (Character.isDigit(text.charAt(i))) {
                     if (Character.isDigit(text.charAt(i+1))) {
                         nouText += "(" + text.charAt(i) + "" + text.charAt(i+1) + ")";
