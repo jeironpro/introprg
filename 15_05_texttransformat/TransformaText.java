@@ -11,19 +11,12 @@ public class TransformaText {
         String text = Entrada.readLine();
         String nouText = "";
         // String vocals = "aàeèéiíïoòóuúü";
-        String nombres = "0123456789";
-        int nombre = 0;
-        String nombreGuardat = "";
+        String nombre = "";
         
         for (int i = 0; i < text.length(); i++) {
-            for (int j = 0; j < nombres.length(); j++) {
-                if (text.charAt(i) == nombres.charAt(j)) {
-                    nombre += 1;
-                    nombreGuardat += text.charAt(i); 
-                }
-            }
             if (Character.isDigit(text.charAt(i))) {
-                nouText += "(" + nombreGuardat + ")";
+                nombre += text.charAt(i);
+                nouText += nombre;
             }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
