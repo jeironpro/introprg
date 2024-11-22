@@ -34,8 +34,6 @@ public class Enters {
                     }
                 } else if ((text.charAt(0) == '+' || text.charAt(0) == '-') && Character.isWhitespace(text.charAt(1))) {
                     enter = false;
-                }else {
-                    enter = true;
                 }
                 
                 
