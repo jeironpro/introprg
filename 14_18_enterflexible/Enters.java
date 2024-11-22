@@ -36,7 +36,7 @@ public class Enters {
                     enter = true;
                 }
                 
-                if (Character.isWhitespace(text.charAt(0)) && !Character.isDigit(text.charAt(1))) {
+                if (Character.isWhitespace(text.charAt(0)) && (text.charAt(1) == '+' || text.charAt(1) == '-')) {
                     enter = false;
                 }
                 
