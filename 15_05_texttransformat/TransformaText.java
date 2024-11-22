@@ -22,7 +22,7 @@ public class TransformaText {
                     posNombre = i;
                 }
             }
-            if (Character.isDigit(text.charAt(i))) {
+            if (!Character.isLetter(text.charAt(i))) {
                 if (nombre >= 1) {
                     nouText += "(";
                     nouText += text.charAt(i);
