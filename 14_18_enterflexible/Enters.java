@@ -28,11 +28,15 @@ public class Enters {
                 }
                 if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
                     enter = true;
-                } else if (Character.isWhitespace(text.charAt(0))) {
+                }
+                
+                if (Character.isWhitespace(text.charAt(0))) {
                     if (text.charAt(1) == '+' || text.charAt(1) == '-') {
                         enter = false;
                     }
-                } else if ((text.charAt(0) == '+' || text.charAt(0) == '-') && Character.isWhitespace(text.charAt(1))) {
+                }
+                
+                if ((text.charAt(0) == '+' || text.charAt(0) == '-') && Character.isWhitespace(text.charAt(1))) {
                     enter = false;
                 }
                 
