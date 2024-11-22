@@ -35,9 +35,7 @@ public class TransformaText {
                     nouText += "(" + text.charAt(i) + "" + text.charAt(i+1) + ")";
                 }
             } else if (Character.isWhitespace(text.charAt(i))) {
-                if (Character.isLetter(text.charAt(i+1))) {
-                    nouText += text.charAt(i);
-                }
+                nouText += text.charAt(i);
             } else if (Character.isLetter(text.charAt(i))) {
                 nouText += Character.toUpperCase(text.charAt(i));            
             }
