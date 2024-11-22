@@ -13,20 +13,11 @@ public class TransformaText {
         // String vocals = "aàeèéiíïoòóuúü";
         String nombres = "0123456789";
         int nombre = 0;
-        int posNombre = 0;
         
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j < nombres.length(); j++) {
                 if (text.charAt(i) == nombres.charAt(j)) {
                     nombre += 1;
-                    posNombre = i;
-                }
-            }
-            if (!Character.isLetter(text.charAt(i))) {
-                if (nombre >= 1) {
-                    nouText += "(";
-                    nouText += text.charAt(i);
-                    nouText += ")";
                 }
             }
             if (
@@ -50,6 +41,10 @@ public class TransformaText {
                 nouText += Character.toUpperCase(text.charAt(i));            
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
+            } else {
+                if (nombre >= 1) {
+                    nouText += "(" + text.charAt(i) + ")";
+                }
             }
         }
         System.out.println(nouText);
