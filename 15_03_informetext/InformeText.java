@@ -89,6 +89,8 @@ public class InformeText {
             System.out.printf("altres caràcters: %d (%.2f%%)%n", contadorAltresCaracter, 100.0 * contadorAltresCaracter / totalCaracter);
             // Mostrar la longitud del text
             System.out.println("total caràcters: " + totalCaracter);
+        } else {
+            System.out.println("Cadena buida");
         }
     }
 }
