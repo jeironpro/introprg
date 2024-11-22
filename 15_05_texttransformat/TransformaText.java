@@ -24,7 +24,9 @@ public class TransformaText {
             }
             if (Character.isDigit(text.charAt(i))) {
                 if (nombre >= 1) {
-                    nouText += "(" + text.charAt(posNombre) + ")";
+                    nouText += "(";
+                    nouText += text.charAt(i);
+                    nouText += ")";
                 }
             }
             if (
