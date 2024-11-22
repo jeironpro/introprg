@@ -13,18 +13,18 @@ public class TransformaText {
         // String vocals = "aàeèéiíïoòóuúü";
         String nombres = "0123456789";
         int nombre = 0;
+        String nombreGuardat = "";
         
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j < nombres.length(); j++) {
                 if (text.charAt(i) == nombres.charAt(j)) {
                     nombre += 1;
+                    nombreGuardat += text.charAt(i); 
                 }
             }
             if (Character.isDigit(text.charAt(i))) {
                 if (nombre >= 1) {
-                    nouText += "(";
-                    nouText += text.charAt(i);
-                    nouText += ")";
+                    nouText += "(" + nombreGuardat + ")";
                 }
             }
             if (
