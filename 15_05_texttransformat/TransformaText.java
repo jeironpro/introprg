@@ -22,8 +22,7 @@ public class TransformaText {
             }
             if (nombre >= 1) {
                 nouText += "(" + text.charAt(i) + ")";
-            }
-            if (
+            } else if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
             Character.toLowerCase(text.charAt(i)) == 'e' || 
