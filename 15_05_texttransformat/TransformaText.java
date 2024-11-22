@@ -21,11 +21,11 @@ public class TransformaText {
                 }
             }
             if (Character.isDigit(text.charAt(i))) {
-                nouText += "(";
                 if (nombre >= 1) {
+                    nouText += "(";
                     nouText += text.charAt(i);
+                    nouText += ")";
                 }
-                nouText += ")";
             }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
