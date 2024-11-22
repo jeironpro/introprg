@@ -83,7 +83,7 @@ public class InformeText {
         // Mostrar la quantitat de totes les vocals i el seu percentage
         System.out.printf("total vocals: %d (%.2f%%)%n", (contadorVocalMajuscula + contadorVocalMinuscula), 100.0 * (contadorVocalMajuscula + contadorVocalMinuscula) / totalCaracter);
         // Mostrar la quantitat de tots els dígits i el seu percentage
-        System.out.printf("dígits: %d (%.2f%%)%n", contadorDigit, 100.0 * contadorDigit / totalCaracter);
+        System.out.printf("digits: %d (%.2f%%)%n", contadorDigit, 100.0 * contadorDigit / totalCaracter);
         // Mostrar la quantitat de altres caràcters i el seu percentage
         System.out.printf("altres caràcters: %d (%.2f%%)%n", contadorAltresCaracter, 100.0 * contadorAltresCaracter / totalCaracter);
         // Mostrar la longitud del text
