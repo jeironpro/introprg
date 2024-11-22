@@ -19,7 +19,7 @@ public class TransformaText {
             for (int j = 0; j < nombres.length(); j++) {
                 if (text.charAt(i) == nombres.charAt(j)) {
                     nombre += 1;
-                    posNombre = i;
+                    posNombre += i;
                 }
             }
             if (
