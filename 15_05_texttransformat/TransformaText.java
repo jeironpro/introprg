@@ -20,10 +20,8 @@ public class TransformaText {
                     nombre += 1;
                 }
             }
-            if (Character.isDigit(text.charAt(i))) {
-                if (nombre >= 1) {
-                    nouText += "(" + text.charAt(i) + ")";
-                }
+            if (nombre >= 1) {
+                nouText += "(" + text.charAt(i) + ")";
             }
             if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
