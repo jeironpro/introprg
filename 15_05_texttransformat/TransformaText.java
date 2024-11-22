@@ -13,11 +13,13 @@ public class TransformaText {
         // String vocals = "aàeèéiíïoòóuúü";
         String nombres = "0123456789";
         int nombre = 0;
+        int posNombre = 0;
         
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j < nombres.length(); j++) {
                 if (text.charAt(i) == nombres.charAt(j)) {
                     nombre += 1;
+                    posNombre = i;
                 }
             }
             if (
@@ -43,9 +45,11 @@ public class TransformaText {
                 nouText += text.charAt(i);
             } else {
                 for (int k = 0; k < nombre; k++) {
-                    nouText += "(" + text.charAt(i) + "" + text.charAt(i) + ")";    
                 }
             }
+        }
+        if (nombre >= 1) {
+            nouText += "(" + text.charAt(posNombre) + ")";            
         }
         System.out.println(nouText);
     }
