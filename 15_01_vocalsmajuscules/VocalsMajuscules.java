@@ -8,18 +8,17 @@ public class VocalsMajuscules {
         System.out.println("Text?");
         String text = Entrada.readLine();
         // Declarar e inicialitzar la variable nouText buida
+        String vocals = "aeiouAEIOU";
         String nouText = "";
         
         // Fer un for per iterar tots els caràcters 
         for (int i = 0; i < text.length(); i++) {
-            // Verificar si el caràcter és una vocal
-            if (text.charAt(i) == 'a' || text.charAt(i) == 'e' || text.charAt(i) == 'i' || text.charAt(i) == 'o' || text.charAt(i) == 'u') {
-                // Com és una vocal guardar-la en majúscula en nouText 
-                nouText += Character.toUpperCase(text.charAt(i));
-            // Del contrari
-            } else {
-                // Guarda el caràcter tal qual
-                nouText += Character.toLowerCase(text.charAt(i));
+            for (int j = 0; j < vocals.length(); j++) {
+                if (text.charAt(i) == vocals.charAt(j)) {
+                    nouText += Character.toUpperCase(text.charAt(i));
+                } else {
+                    nouText += Character.toLowerCase(text.charAt(i));                
+                }
             }
         }
         // Mostrar el text transformat
