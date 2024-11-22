@@ -20,9 +20,7 @@ public class TransformaText {
                     }
                 }
             }
-            if (Character.isLetter(text.charAt(i))) {
-                nouText += Character.toUpperCase(text.charAt(i));            
-            } else if (
+            if (
             Character.toLowerCase(text.charAt(i)) == 'a' ||
             Character.toLowerCase(text.charAt(i)) == 'à' ||
             Character.toLowerCase(text.charAt(i)) == 'e' || 
@@ -39,6 +37,8 @@ public class TransformaText {
             Character.toLowerCase(text.charAt(i)) == 'ü'
             ) {
                 nouText += Character.toLowerCase(text.charAt(i));
+            } else if (Character.isLetter(text.charAt(i))) {
+                nouText += Character.toUpperCase(text.charAt(i));            
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
             }
