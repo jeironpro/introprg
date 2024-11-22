@@ -25,6 +25,10 @@ public class Enters {
                     }
                     if (!Character.isWhitespace(text.charAt(i))) {
                         nouText += text.charAt(i);
+                    } else {
+                        if (text.charAt(i+1) == '_' || text.charAt(i+1) == '.') {
+                            enter = false;
+                        }
                     }
                 }
                 
