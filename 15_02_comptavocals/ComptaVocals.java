@@ -8,6 +8,7 @@ public class ComptaVocals {
         String text = Entrada.readLine();
         // Declarar e inicialitzar la variable contador amb 0
         int contador = 0;
+        // Declarar e incialitzar la variable vocals amb les vocals
         String vocals = "aàeéèiíïoóòuúü";
         
         // Fer un for per iterar tots els caràcter del text
@@ -22,6 +23,6 @@ public class ComptaVocals {
             }
         }
         // Mostrar la quantitat de vocals hi ha al text
-        System.out.println(contador+1);
+        System.out.println(contador);
     }
 }
