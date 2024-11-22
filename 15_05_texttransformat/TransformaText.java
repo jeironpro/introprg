@@ -13,13 +13,11 @@ public class TransformaText {
         // String vocals = "aàeèéiíïoòóuúü";
         String nombres = "0123456789";
         String nombre = "";
-        int contadorNombre = 0;
         
         for (int i = 0; i < text.length(); i++) {
             for (int j = 0; j < nombres.length(); j++) {
                 if (text.charAt(i) == nombres.charAt(j)) {
-                    nombre += text.charAt(i);
-                    contadorNombre = 1;                    
+                    nombre += text.charAt(i);                  
                 }
             }
         }
@@ -46,8 +44,9 @@ public class TransformaText {
                 nouText += Character.toUpperCase(text.charAt(i));            
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
-            } else if (Character.isDigit(text.charAt(i)) && contadorNombre == 1) {
-                nouText += "(" + nombre + ")";   
+            } else if (Character.isDigit(text.charAt(i))) {
+                nouText += "(" + nombre + ")"; 
+                break;  
             }
         }
         System.out.println(nouText);
