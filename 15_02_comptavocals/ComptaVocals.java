@@ -6,6 +6,7 @@ public class ComptaVocals {
         // Demanar el text
         System.out.println("Text?");
         String text = Entrada.readLine();
+        text = text.toLowerCase();
         // Declarar e inicialitzar la variable contador amb 0
         int contador = 0;
         // Declarar e incialitzar la variable vocals amb les vocals
