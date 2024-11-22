@@ -11,7 +11,7 @@ public class CodificaBasic {
         String nouText = "";
         
         for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) >= 'a' && text.charAt(i) <= 'z') {
+            if (text.charAt(i) >= 'a' && text.charAt(i) < 'z') {
                 nouText += (char)(text.charAt(i) + 1);
             } else {
                 nouText += text.charAt(i);
