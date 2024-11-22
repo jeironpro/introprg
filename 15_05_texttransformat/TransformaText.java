@@ -21,6 +21,7 @@ public class TransformaText {
                     nombre += 1;
                     nombreGuardat += text.charAt(i); 
                 }
+                nombreGuardat += text.charAt(i);
             }
             if (Character.isDigit(text.charAt(i))) {
                 if (nombre >= 1) {
