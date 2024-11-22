@@ -23,7 +23,7 @@ public class MajusculitzaInicials {
                 esMajuscula = true;
             } 
             
-            if (!Character.isLetter(text.charAt(i)) || !Character.isDigit(text.charAt(i))) {
+            if (!Character.isLetter(text.charAt(i)) && !Character.isDigit(text.charAt(i))) {
                 esMajuscula = true;
             }
             
