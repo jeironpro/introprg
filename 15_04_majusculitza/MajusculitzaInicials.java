@@ -21,11 +21,8 @@ public class MajusculitzaInicials {
             if (Character.isWhitespace(text.charAt(i)) || text.charAt(i) == '-') {
                 // Assignarle true a esMajuscula
                 esMajuscula = true;
-            } else {
-                if (!Character.isLetter(text.charAt(i)) || !Character.isDigit(text.charAt(i))) {
-                    esMajuscula = true;
-                }
-            
+            } else if (!Character.isLetter(text.charAt(i)) || !Character.isDigit(text.charAt(i))) {
+                esMajuscula = true;
             }
             
             
