@@ -19,7 +19,7 @@ public class VocalsMajuscules {
             // Del contrari
             } else {
                 // Guarda el caràcter tal qual
-                nouText += text.charAt(i);
+                nouText += Character.toLowerCase(text.charAt(i));
             }
         }
         // Mostrar el text transformat
