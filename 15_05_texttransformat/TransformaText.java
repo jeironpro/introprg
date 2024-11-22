@@ -31,7 +31,7 @@ public class TransformaText {
             ) {
                 nouText += Character.toLowerCase(text.charAt(i));
             } else if (Character.isDigit(text.charAt(i))) {
-                nouText += "(" + text.charAt(i) + ")";
+                nouText += "(" + text.charAt(i) + "" + text.charAt(i) + ")";
             } else if (Character.isWhitespace(text.charAt(i))) {
                 nouText += text.charAt(i);
             } else if (Character.isLetter(text.charAt(i))) {
