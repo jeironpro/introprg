@@ -9,7 +9,6 @@ public class Enters {
         // Declarar e incializar text amb caracters
         String text = "true";
         boolean enter = false;
-        String nouText = "";
         
         // El bucle s'executarà quan el text no sigui buit
         while (!text.isEmpty()) {
@@ -23,36 +22,7 @@ public class Enters {
                     if (Character.isLetter(text.charAt(i))) {
                         enter = false;
                     }
-                    if (!Character.isWhitespace(text.charAt(i))) {
-                        nouText += text.charAt(i);
-                    }
-                }
-                
-                if (nouText.charAt(0) == '-' && nouText.charAt(1) == '-') {
-                    enter = false;
-                } else if (nouText.charAt(0) == '+' && nouText.charAt(1) == '+') {
-                    enter = false;
-                } else if (nouText.charAt(0) == '+' && nouText.charAt(1) == '-') {
-                    enter = false;
-                } else if (nouText.charAt(0) == '-' && nouText.charAt(1) == '+') {
-                    enter = false;
-                }
-                
-                // Verificar que no hi hagi dos signes seguits (sense importar la combinació)
-                if (text.charAt(0) == '-' && text.charAt(1) == '-') {
-                    enter = false;
-                } else if (text.charAt(0) == '+' && text.charAt(1) == '+') {
-                    enter = false;
-                } else if (text.charAt(0) == '+' && text.charAt(1) == '-') {
-                    enter = false;
-                } else if (text.charAt(0) == '-' && text.charAt(1) == '+') {
-                    enter = false;
-                } else if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
-                    enter = false;
-                } else if ((text.charAt(0) == '_' && text.charAt(1) == '_') || (text.charAt(0) == '.' && text.charAt(1) == '.') || (text.charAt(0) == '.' && text.charAt(1) == '_') || (text.charAt(0) == '.' && Character.isWhitespace(text.charAt(1)))) {
-                    enter= false;
-                } else if (Character.isDigit(text.charAt(0))) {
-                    if (!Character.isDigit(text.charAt(1))) {
+                    if (!Character.isDigit(text.charAt(i)) && !Character.isWhitespace(text.charAt(i))) {
                         enter = false;
                     }
                 }
