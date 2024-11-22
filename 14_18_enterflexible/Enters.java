@@ -25,10 +25,6 @@ public class Enters {
                     }
                     if (!Character.isWhitespace(text.charAt(i))) {
                         nouText += text.charAt(i);
-                    } else {
-                        if (text.charAt(i) == '_' || text.charAt(i) == '.') {
-                            enter = false;
-                        }
                     }
                 }
                 
@@ -53,7 +49,7 @@ public class Enters {
                     enter = false;
                 } else if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
                     enter = false;
-                } else if ((text.charAt(0) == '_' && text.charAt(1) == '_') || (text.charAt(0) == '.' && text.charAt(1) == '.')) {
+                } else if ((text.charAt(0) == '_' && text.charAt(1) == '_') || (text.charAt(0) == '.' && text.charAt(1) == '.') || (text.charAt(0) == '.' && text.charAt(1) == '_') || (text.charAt(0) == '.' && Character.isWhitespace(text.charAt(1)))) {
                     enter= false;
                 }
                 
