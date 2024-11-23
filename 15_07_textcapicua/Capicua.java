@@ -15,11 +15,11 @@ public class Capicua {
         for (int i = text.length()-1; i >= 0; i--) {
             // Guardar tots el caràcter del text en la variable textInvertit
             textInvertit += Character.toLowerCase(text.charAt(i));     
-            for (int j = 0; j < text.length(); j++) {
-                if (text.charAt(j) == textInvertit.charAt(j)) {
-                    esCapicua = true;
-                }                   
-            }
+        }
+        for (int j = 0; j < text.length(); j++) {
+            if (text.charAt(j) == textInvertit.charAt(j)) {
+                esCapicua = true;
+            }                   
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
