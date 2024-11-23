@@ -9,6 +9,7 @@ public class Capicua {
         String text = Entrada.readLine();
         // Declarar e inicialitzar la variable textInvertit buida
         String textInvertit = "";
+        String textIntroduit = text;
         boolean esCapicua = false;
         
         // Fer un for per iterar tots els caràcters del text
@@ -16,7 +17,7 @@ public class Capicua {
             // Guardar tots el caràcter del text en la variable textInvertit
             textInvertit += Character.toLowerCase(text.charAt(i));     
         }
-        if (text == textInvertit) {
+        if (textIntroduit == textInvertit) {
             esCapicua = true;
         }
         
