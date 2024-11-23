@@ -15,6 +15,8 @@ public class Capicua {
             for (int j = 0; j < text.length(); j++) {
                 if (text.charAt(j) != text.charAt(i)) {
                     esCapicua = false;
+                    System.out.println(text.charAt(i));
+                    System.out.println(text.charAt(j));
                 }    
             }
         }
