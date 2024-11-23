@@ -16,7 +16,7 @@ public class Capicua {
             // Guardar tots el caràcter del text en la variable textInvertit
             textInvertit += Character.toLowerCase(text.charAt(i));     
             for (int j = 0; j < text.length(); j++) {
-                if (text.charAt(i) == textInvertit.charAt(i)) {
+                if (text.charAt(j) == textInvertit.charAt(j)) {
                     esCapicua = true;
                 }                   
             }
