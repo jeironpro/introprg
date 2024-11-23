@@ -17,7 +17,7 @@ public class Capicua {
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
-        if (!text.isEmpty() && !textInvertit.isEmpty() && text.equals(textInvertit)) {
+        if (!text.isEmpty() && !textInvertit.isEmpty() && text == textInvertit) {
             // Mostrar aquest missatge           
             System.out.println("És capicua");                    
         // Del contrari
