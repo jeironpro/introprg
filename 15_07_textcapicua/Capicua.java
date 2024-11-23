@@ -7,13 +7,17 @@ public class Capicua {
         // Demanar el text
         System.out.println("Text?");
         String text = Entrada.readLine();
-        boolean esCapicua = true;
+        // Declarar e inicialitzar la variable textInvertit buida
+        String textInvertit = "";
+        boolean esCapicua = false;
         
         // Fer un for per iterar tots els caràcters del text
         for (int i = text.length()-1; i >= 0; i--) {
+            // Guardar tots el caràcter del text en la variable textInvertit
+            textInvertit += Character.toLowerCase(text.charAt(i));     
             for (int j = 0; j < text.length(); j++) {
-                if (text.charAt(j) != text.charAt(i)) {
-                    esCapicua = false;
+                if (text.charAt(j) == textInvertit.charAt(i)) {
+                    esCapicua = true;
                 }                   
             }
         }
