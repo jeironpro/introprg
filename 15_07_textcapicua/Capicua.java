@@ -9,15 +9,19 @@ public class Capicua {
         String text = Entrada.readLine();
         // Declarar e inicialitzar la variable textInvertit buida
         String textInvertit = "";
+        boolean esCapicua = false;
         
         // Fer un for per iterar tots els caràcters del text
         for (int i = text.length()-1; i >= 0; i--) {
             // Guardar tots el caràcter del text en la variable textInvertit
-            textInvertit += Character.toLowerCase(text.charAt(i));            
+            textInvertit += Character.toLowerCase(text.charAt(i));     
+            if (text.charAt(i) == textInvertit.charAt(i)) {
+                esCapicua = true;
+            }       
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
-        if (!text.isEmpty() && !textInvertit.isEmpty() && text == textInvertit) {
+        if (!text.isEmpty() && !textInvertit.isEmpty() && esCapicua) {
             // Mostrar aquest missatge           
             System.out.println("És capicua");                    
         // Del contrari
