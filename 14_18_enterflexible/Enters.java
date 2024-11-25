@@ -30,8 +30,8 @@ public class Enters {
                     enter = true;
                 }
                 
-                if ((text.charAt(0) == '-' || text.charAt(0) == '+') && text.charAt(1) == '-' || text.charAt(1) == '+') {
-                    enter = false;
+                if ((text.charAt(0) == '-' || text.charAt(0) == '+') && (text.charAt(1) == '-' || text.charAt(1) == '+')) {
+                    enter = true;
                 }
                 
                 if (Character.isWhitespace(text.charAt(0))) {
