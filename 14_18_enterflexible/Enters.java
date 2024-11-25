@@ -8,24 +8,23 @@ public class Enters {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
         // Declarar e incializar text amb caracters
         String text = "true";
-        boolean enter = false;
+        String nombre = "";
         
         // El bucle s'executarà quan el text no sigui buit
         while (!text.isEmpty()) {
+            boolean enter = false;
             // Rebent els texts
             text = Entrada.readLine();
             
             // Verificar si el text està buit
             if (!text.isEmpty()) {
-                enter = true;
                 for (int i = 0; i < text.length(); i++) {
-                    if (Character.isDigit(text.charAt(i))) {
-                        enter = true;
-                        if (text.charAt(i) == '_' || text.charAt(i) == '.') {
-                            enter = true;
-                        }
+                    if (text.charAt(i) == '-' || text.charAt(i) == '+' || text.charAt(i) == '_' || text.charAt(i) == '.' || Character.isDigit(text.charAt(i))) {
+                        nombre += text.charAt(i);
                     }
                 }
+                
+                System.out.println(nombre);
                 if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
                     enter = true;
                 } else if ((text.charAt(0) == '-' || text.charAt(0) == '+') && (text.charAt(1) == '-' || text.charAt(1) == '+')) {
