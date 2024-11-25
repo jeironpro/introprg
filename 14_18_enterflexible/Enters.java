@@ -25,7 +25,7 @@ public class Enters {
                             enter = true;
                         }
                     }
-                    if (text.charAt(i) == '_') {
+                    if (text.charAt(i) == '_' || text.charAt(i) == '.') {
                             enter = true;
                     }
                 }
