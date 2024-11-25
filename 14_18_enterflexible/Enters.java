@@ -25,9 +25,7 @@ public class Enters {
                         enter = true;
                     }
                 }
-                if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
-                    enter = true;
-                } else if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
+                if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
                     enter = true;
                 } else if ((text.charAt(0) == '-' || text.charAt(0) == '+') && (text.charAt(1) == '-' || text.charAt(1) == '+')) {
                     enter = false;
