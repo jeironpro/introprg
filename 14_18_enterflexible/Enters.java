@@ -19,20 +19,17 @@ public class Enters {
             if (!text.isEmpty()) {
                 enter = true;
                 for (int i = 0; i < text.length(); i++) {
-                    if (Character.isLetter(text.charAt(i))) {
-                        enter = false;
-                    }
-                    if (!Character.isDigit(text.charAt(i)) && !Character.isWhitespace(text.charAt(i))) {
-                        enter = false;
-                    }
-                    if (text.charAt(i) == '.' || text.charAt(i) == '_') {
-                        if (Character.isDigit(text.charAt(i-1)) && Character.isDigit(text.charAt(i+1))) {
+                    if (Character.isDigit(text.charAt(i))) { 
+                        enter = true;
+                        if (Character.isWhitespace(text.charAt(i))) {
                             enter = true;
                         }
                     }
-                    
-                    if (text.charAt(i) != '.' || text.charAt(i) != '_') {
+                    if (text.charAt(i) == '.' || text.charAt(i) == '_') {
                         enter = true;
+                        if (Character.isDigit(text.charAt(i-1)) && Character.isDigit(text.charAt(i+1))) {
+                            enter = true;
+                        }
                     }
                 }
                 if (
