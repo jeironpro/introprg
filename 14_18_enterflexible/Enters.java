@@ -21,10 +21,18 @@ public class Enters {
                 for (int i = 0; i < text.length(); i++) {
                     if (text.charAt(i) == '-' || text.charAt(i) == '+' || text.charAt(i) == '_' || text.charAt(i) == '.' || Character.isDigit(text.charAt(i))) {
                         nombre += text.charAt(i);
+                        enter = true;
                     }
                 }
                 
-                System.out.println(nombre);
+                for (int j = 0; j < nombre.length(); j++) {
+                    if (nombre.charAt(j) == '+' || nombre.charAt(j) == '-' || nombre.charAt(j) == '_' || nombre.charAt(j) == '.') {
+                        if (Character.isDigit(nombre.charAt(j+1))) {
+                            enter = true;
+                        }
+                    }
+                }
+                
                 if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
                     enter = true;
                 } else if ((text.charAt(0) == '-' || text.charAt(0) == '+') && (text.charAt(1) == '-' || text.charAt(1) == '+')) {
