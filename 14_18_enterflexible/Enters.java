@@ -21,8 +21,9 @@ public class Enters {
                 for (int i = 0; i < text.length(); i++) {
                     if (Character.isDigit(text.charAt(i))) {
                         enter = true;
-                    } else if (text.charAt(i) == '_' && Character.isDigit(text.charAt(i+1))) {
-                        enter = true;
+                        if (text.charAt(i) == '_' || text.charAt(i) == '.') {
+                            enter = true;
+                        }
                     }
                 }
                 if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
