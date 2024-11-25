@@ -19,8 +19,8 @@ public class Enters {
             if (!text.isEmpty()) {
                 enter = true;
                 for (int i = 0; i < text.length(); i++) {
-                    if (Character.isDigit(text.charAt(i))) {
-                        enter = true;
+                    if (!Character.isDigit(text.charAt(i))) {
+                        enter = false;
                     } else if (text.charAt(i) == '_') {
                         enter = true;
                     }
