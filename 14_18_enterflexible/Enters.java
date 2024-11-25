@@ -20,9 +20,7 @@ public class Enters {
                 enter = true;
                 for (int i = 0; i < text.length(); i++) {
                     if (Character.isDigit(text.charAt(i))) {
-                        if (Character.isWhitespace(text.charAt(i))) {
                             enter = true;
-                        }
                     }
                 }
                 if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
