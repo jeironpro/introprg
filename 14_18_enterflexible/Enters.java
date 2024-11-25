@@ -29,6 +29,9 @@ public class Enters {
                         enter = true;
                     }
                 }
+                if (text.charAt(0) == '_' || text.charAt(text.length()-1) == '.') {
+                    enter = true;
+                }
                 
                 if (
                 (text.charAt(0) == '-' || text.charAt(0) == '+') && 
