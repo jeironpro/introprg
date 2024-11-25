@@ -26,7 +26,7 @@ public class Enters {
                 }
                 
                 for (int j = 0; j < nombre.length(); j++) {
-                    if (nombre.charAt(j) == '+' || nombre.charAt(j) == '-' || nombre.charAt(j) == '_' || nombre.charAt(j) == '.') {
+                    if (nombre.charAt(j) == '_' || nombre.charAt(j) == '.') {
                         enter = true;
                     }
                 }
