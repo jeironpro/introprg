@@ -8,6 +8,7 @@ public class Enters {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
         // Declarar e incializar text amb caracters
         String text = "true";
+        int pos = 0;
         
         // El bucle s'executarà quan el text no sigui buit
         while (!text.isEmpty()) {
@@ -20,13 +21,13 @@ public class Enters {
                 for (int i = 0; i < text.length(); i++) {
                     if (text.charAt(i) == '-' || text.charAt(i) == '+' || text.charAt(i) == '_' || text.charAt(i) == '.' || Character.isDigit(text.charAt(i))) {
                         enter = true;
-                    }
-                    if (enter && Character.isDigit(text.charAt(i+1))) {
-                        enter = true;
+                        pos = i;
                     }
                 }
                 
-                
+                if (enter && Character.isDigit(text.charAt(pos+1))) {
+                    enter = true;
+                }
                 if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
                     enter = true;
                 } else if ((text.charAt(0) == '-' || text.charAt(0) == '+') && (text.charAt(1) == '-' || text.charAt(1) == '+')) {
