@@ -25,6 +25,11 @@ public class Enters {
                     if (!Character.isDigit(text.charAt(i)) && !Character.isWhitespace(text.charAt(i))) {
                         enter = false;
                     }
+                    if (text.charAt(i) == '.' || text.charAt(i) == '_') {
+                        if (Character.isDigit(text.charAt(i-1)) && Character.isDigit(text.charAt(i+1))) {
+                            enter = true;
+                        }
+                    }
                 }
                 if (
                 (text.charAt(0) == '-' || text.charAt(0) == '+') && 
@@ -45,7 +50,10 @@ public class Enters {
                     }
                 }
                 
-                if ((text.charAt(0) == '+' || text.charAt(0) == '-') && Character.isWhitespace(text.charAt(1))) {
+                if (
+                (text.charAt(0) == '+' || text.charAt(0) == '-') && 
+                Character.isWhitespace(text.charAt(1))
+                ) {
                     enter = false;
                 }
                 
