@@ -30,6 +30,10 @@ public class Enters {
                             enter = true;
                         }
                     }
+                    
+                    if (text.charAt(i) != '.' || text.charAt(i) != '_') {
+                        enter = true;
+                    }
                 }
                 if (
                 (text.charAt(0) == '-' || text.charAt(0) == '+') && 
