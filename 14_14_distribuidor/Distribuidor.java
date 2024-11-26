@@ -40,17 +40,15 @@ public class Distribuidor {
                 // Fer un for per iterar les vocals que s'accepten
                 for (int j = 0; j < vocalAccept.length(); j++) {
                     // Vericar si els caràcters del text coincideixen amb els caràcters de vocalAccept
-                    if (text.charAt(i) == vocalAccept.charAt(j)) {
+                    if (Character.toLowerCase(text.charAt(i)) == vocalAccept.charAt(j)) {
                         // esVocal serà true
                         esVocal = true;
                         conteVocal = true;
                     }
                 }
                 for (int j = 0; j < consonants.length(); j++) {
-                    if (!esVocal) {
-                        if (Character.toUpperCase(text.charAt(i)) == consonants.charAt(j)) {
-                            conteConsonant = true;
-                        }
+                    if (Character.toUpperCase(text.charAt(i)) == consonants.charAt(j)) {
+                        conteConsonant = true;
                     }
                 }
                 for (int j = 0; j < nombres.length(); j++) {
