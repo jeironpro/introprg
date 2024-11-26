@@ -43,6 +43,10 @@ public class Distribuidor {
                     if (Character.toLowerCase(text.charAt(i)) == vocalAccept.charAt(j)) {
                         // esVocal serà true
                         esVocal = true;
+                    }
+                }
+                for (int j = 0; j < vocals.length(); j++) {
+                    if (Character.toUpperCase(text.charAt(i)) == vocals.charAt(j)) {
                         conteVocal = true;
                     }
                 }
