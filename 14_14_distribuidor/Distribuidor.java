@@ -52,8 +52,10 @@ public class Distribuidor {
                     }
                 }
                 for (int j = 0; j < consonants.length(); j++) {
-                    if (Character.toUpperCase(text.charAt(i)) == consonants.charAt(j)) {
-                        conteConsonant = true;
+                    if (!esVocal) {
+                        if (Character.toUpperCase(text.charAt(i)) == consonants.charAt(j)) {
+                            conteConsonant = true;
+                        }
                     }
                 }
                 for (int j = 0; j < nombres.length(); j++) {
@@ -72,7 +74,7 @@ public class Distribuidor {
                         vocals += Character.toUpperCase(text.charAt(i));                    
                     }
                     conteVocal = true;
-                } else if (Character.toLowerCase(text.charAt(i)) >= 'a' && Character.toLowerCase(text.charAt(i)) <= 'z' && !esVocal) {
+                } else if (Character.toLowerCase(text.charAt(i)) >= 'a' && Character.toLowerCase(text.charAt(i)) <= 'z') {
                     if (!conteConsonant) {
                         consonants += Character.toUpperCase(text.charAt(i));                    
                     }
