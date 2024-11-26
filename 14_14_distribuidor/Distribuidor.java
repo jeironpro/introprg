@@ -89,16 +89,16 @@ public class Distribuidor {
             }
         }
         if (vocals.length() > 0) {
-            System.out.println("Vocals:" + vocals);
+            System.out.println("Vocals: " + vocals);
         }
         if (consonants.length() > 0) {
-            System.out.println("Consonants:" + consonants);
+            System.out.println("Consonants: " + consonants);
         }
         if (nombres.length() > 0) {
-            System.out.println("Nombres:" + nombres);
+            System.out.println("Nombres: " + nombres);
         }
         if (simbols.length() > 0) {
-            System.out.println("Símbols:" + simbols);
+            System.out.println("Símbols: " + simbols);
         }
     }
 }
