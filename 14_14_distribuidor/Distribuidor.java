@@ -43,20 +43,14 @@ public class Distribuidor {
                     if (text.charAt(i) == vocalAccept.charAt(j)) {
                         // esVocal serà true
                         esVocal = true;
-                    }
-                }
-                
-                for (int j = 0; j < vocals.length(); j++) {
-                    if (Character.toUpperCase(text.charAt(i)) == vocals.charAt(j)) {
                         conteVocal = true;
                     }
                 }
                 for (int j = 0; j < consonants.length(); j++) {
                     if (!esVocal) {
-                    
-                    }
-                    if (Character.toUpperCase(text.charAt(i)) == consonants.charAt(j)) {
-                        conteConsonant = true;
+                        if (Character.toUpperCase(text.charAt(i)) == consonants.charAt(j)) {
+                            conteConsonant = true;
+                        }
                     }
                 }
                 for (int j = 0; j < nombres.length(); j++) {
