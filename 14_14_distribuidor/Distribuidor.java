@@ -71,20 +71,17 @@ public class Distribuidor {
                         vocals += Character.toUpperCase(text.charAt(i));                    
                     }
                     conteVocal = true;
-                } 
-                if (!esVocal && Character.isLetter(text.charAt(i))) {
+                } else if (Character.isLetter(text.charAt(i))) {
                     if (!conteConsonant) {
                         consonants += Character.toUpperCase(text.charAt(i));                    
                     }
                     conteConsonant = true;
-                }
-                if (Character.isDigit(text.charAt(i))) {
+                } else if (Character.isDigit(text.charAt(i))) {
                     if (!conteNombre) {
                         nombres += text.charAt(i);                    
                     }
                     conteNombre = true;
-                } 
-                if (!esVocal && !Character.isWhitespace(text.charAt(i)) && !Character.isLetter(text.charAt(i))) {
+                } else if (!Character.isWhitespace(text.charAt(i))) {
                     if (!conteSimbol) {
                         simbols += text.charAt(i);
                     }
