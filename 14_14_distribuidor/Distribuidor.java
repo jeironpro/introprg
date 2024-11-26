@@ -76,7 +76,7 @@ public class Distribuidor {
                     }
                     conteVocal = true;
                 } else {
-                    if (Character.toLowerCase(text.charAt(i)) >= 'a' && Character.toLowerCase(text.charAt(i)) <= 'z') {
+                    if (!esVocal && Character.isLetter(text.charAt(i))) {
                         if (!conteConsonant) {
                             consonants += Character.toUpperCase(text.charAt(i));                    
                         }
