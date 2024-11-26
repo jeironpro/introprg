@@ -80,14 +80,17 @@ public class Distribuidor {
                         if (!conteConsonant) {
                             consonants += Character.toUpperCase(text.charAt(i));                    
                         }
+                        conteConsonant = true;
                     } else if (Character.isDigit(text.charAt(i))) {
                         if (!conteNombre) {
                             nombres += text.charAt(i);                    
                         }
+                        conteNombre = true;
                     } else if (!Character.isWhitespace(text.charAt(i)) && !Character.isLetter(text.charAt(i))) {
                         if (!conteSimbol) {
                             simbols += text.charAt(i);
                         }
+                        conteSimbol = true;
                     }
                 }
             }
