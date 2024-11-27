@@ -19,12 +19,7 @@ public class TriangleLletres {
         // Llegir el text
         String text = Entrada.readLine();
         
-        // Verificar si el text està buit
-        if (text.isEmpty()) {
-            // Mostrar aquest missatge
-            System.out.println("Cadena buida");
-        // Del contrari
-        } else {
+        
             // Fer un for per iterar tots els caràcters del text
             for (int i = 0; i < text.length(); i++) {
                 // Fer un for per iterar la posició del caracter
@@ -42,6 +37,5 @@ public class TriangleLletres {
                 // Fer un salt de línia en cada iteració de i
                 System.out.println();
             }
-        }
     }
 }
