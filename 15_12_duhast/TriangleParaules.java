@@ -8,7 +8,7 @@ public class TriangleParaules {
         
         for (int i = 0; i < nouText.length(); i++) {
             if (Character.isWhitespace(nouText.charAt(i))) {
-                for (int j = 0; j <= i+1; j++) {
+                for (int j = 0; j <= i; j++) {
                     System.out.print(nouText.charAt(j));
                 }
                 System.out.println();            
