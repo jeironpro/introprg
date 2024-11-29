@@ -20,7 +20,7 @@ public class Capicua {
         // Fer un for per iterar tots els caràcters del text
         for (int i = 0; i < text.length(); i++) {
             // Verificar si els caràcters són lletres
-            if (Character.isLetter(text.charAt(i))) {
+            if (text.charAt(i) >= 'a' && text.charAt(i) <= 'z') {
                 // Verificar si és una ç
                 if (Character.toLowerCase(text.charAt(i)) == 'ç') {
                     // Guardar-la com una c
