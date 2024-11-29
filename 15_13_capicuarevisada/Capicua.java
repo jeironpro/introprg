@@ -72,7 +72,7 @@ public class Capicua {
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
-        if (!text.isEmpty() || esCapicua) {
+        if (!text.isEmpty() && esCapicua) {
             // Mostrar aquest missatge           
             System.out.println("\"" + text + "\"" + " és capicua");                    
         // Del contrari
