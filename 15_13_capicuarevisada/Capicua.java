@@ -74,11 +74,11 @@ public class Capicua {
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
         if (!text.isEmpty() && esCapicua) {
             // Mostrar aquest missatge           
-            System.out.println("És capicua");                    
+            System.out.println("" + text + " és capicua");                    
         // Del contrari
         } else {
             // Mostrar aquest missatge
-            System.out.println("No és capicua");                    
+            System.out.println("" + text + " no és capicua");                    
         }
     }   
 }
