@@ -15,7 +15,7 @@ public class Capicua {
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
         // Declarar el boolean esCapicua amb true
-        boolean esCapicua = false;
+        boolean esCapicua = true;
         
         // Fer un for per iterar tots els caràcters del text
         for (int i = 0; i < text.length(); i++) {
@@ -61,17 +61,14 @@ public class Capicua {
             }
         }
         
-        if (nouText.length() > 1) {
-            // Fer un for per iterar tots els caràcters del nouText
-            for (int i = 0; i < nouText.length(); i++) {
-                    // Verificar si qualsevol caràcter del nouText és diferent al del textInvertit
-                    if (nouText.charAt(i) == textInvertit.charAt(i)) {
-                        // Assignarle false a esCapicua
-                        esCapicua = true;
-                    }
-            }        
-        } else {
-            esCapicua = false;
+        // Fer un for per iterar tots els caràcters del nouText
+        for (int i = 0; i < nouText.length(); i++) {
+                // Verificar si qualsevol caràcter del nouText és diferent al del textInvertit
+                if (nouText.charAt(i) != textInvertit.charAt(i)) {
+                    // Assignarle false a esCapicua
+                    esCapicua = false;
+                    break;
+                }
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
