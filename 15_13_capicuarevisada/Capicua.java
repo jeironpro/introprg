@@ -63,12 +63,14 @@ public class Capicua {
         
         // Fer un for per iterar tots els caràcters del nouText
         for (int i = 0; i < nouText.length(); i++) {
-            // Verificar si qualsevol caràcter del nouText és diferent al del textInvertit
-            if (nouText.charAt(i) != textInvertit.charAt(i)) {
-                // Assignarle false a esCapicua
-                esCapicua = false;
-                break;
-            } 
+            if (Character.isLetter(nouText.charAt(i))) {
+                // Verificar si qualsevol caràcter del nouText és diferent al del textInvertit
+                if (nouText.charAt(i) != textInvertit.charAt(i)) {
+                    // Assignarle false a esCapicua
+                    esCapicua = false;
+                    break;
+                } 
+            }
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
