@@ -61,6 +61,7 @@ public class Capicua {
             }
         } 
         
+        // Verificar si el nouText no està buit
         if (!nouText.isEmpty()) {
             // Fer un for per iterar tots els caràcters del nouText
             for (int i = 0; i < nouText.length(); i++) {
@@ -71,8 +72,10 @@ public class Capicua {
                         break;
                     }
             }
+        // Del contrari
         } else {
-           esCapicua = false; 
+            // esCapicua serà false
+            esCapicua = false; 
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
