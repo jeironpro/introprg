@@ -58,6 +58,9 @@ public class Capicua {
             if (Character.isLetter(nouText.charAt(i))) {
                 // Guardar tots el caràcter del nouText en la variable textInvertit
                 textInvertit += nouText.charAt(i);
+            } else {
+                esCapicua = false;
+                break;
             }
         }
         
