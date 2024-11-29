@@ -52,7 +52,6 @@ public class Capicua {
                 }
             } 
         }
-        System.out.println(nouText);
         
         // Fer un for per iterar tots els caràcters del nouText de manera decreixent
         for (int i = nouText.length()-1; i >= 0; i--) {
