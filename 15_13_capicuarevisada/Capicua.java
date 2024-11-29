@@ -20,7 +20,7 @@ public class Capicua {
         // Fer un for per iterar tots els caràcters del text
         for (int i = 0; i < text.length(); i++) {
             // Verificar si els caràcters són lletres
-            if (Character.toLowerCase(text.charAt(i)) >= 'a' && Character.toLowerCase(text.charAt(i)) <= 'z') {
+            if (Character.isLetter(text.charAt(i))) {
                 // Verificar si és una ç
                 if (Character.toLowerCase(text.charAt(i)) == 'ç') {
                     // Guardar-la com una c
@@ -59,7 +59,7 @@ public class Capicua {
                 // Guardar tots el caràcter del nouText en la variable textInvertit
                 textInvertit += nouText.charAt(i);
             }
-        }
+        } 
         
         if (!nouText.isEmpty()) {
             // Fer un for per iterar tots els caràcters del nouText
