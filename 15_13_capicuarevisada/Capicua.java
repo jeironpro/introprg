@@ -52,6 +52,7 @@ public class Capicua {
                 }
             } 
         }
+        System.out.println(nouText);
         
         // Fer un for per iterar tots els caràcters del nouText de manera decreixent
         for (int i = nouText.length()-1; i >= 0; i--) {
@@ -71,7 +72,7 @@ public class Capicua {
         }
         
         // Verificar si el text i textInvertit no estem buit i que sigui iguals
-        if (!text.isBlank() && esCapicua) {
+        if (!text.isBlank() && !nouText.isEmpty() && !textInvertit.isEmpty() && esCapicua) {
             // Mostrar aquest missatge           
             System.out.println("\"" + text + "\"" + " és capicua");                    
         // Del contrari
