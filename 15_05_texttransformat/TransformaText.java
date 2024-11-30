@@ -7,52 +7,64 @@
 
 public class TransformaText {
     public static void main(String[] args) {
+        // Demanar el text
         System.out.println("Text?");
+        // Llegir el text
         String text = Entrada.readLine();
+        // Declarar e inicialitzar el String nouText buit
         String nouText = "";
-        // String vocals = "aàeèéiíïoòóuúü";
-        String nombres = "0123456789";
+        // Declarar e inicialitzar el String vocals amb les vocals que s'accepten
+        String vocals = "aàeéèiíïoòuúü";
+        // Declarar e inicialitzar el String nombre buit
         String nombre = "";
-        int contadorNombre = 0;
         
+        // Fer un for per iterar tots els caràcters del text
         for (int i = 0; i < text.length(); i++) {
-            for (int j = 0; j < nombres.length(); j++) {
-                if (text.charAt(i) == nombres.charAt(j)) {
-                    nombre += text.charAt(i);                  
-                }
+            // Declarar e inicialitzar el boolean esVocal en false
+            boolean esVocal = false;
+            // Declarar e inicialitzar el boolean esNombre en false
+            boolean esNombre = false;
+            
+            // Fer un for per iterar totes les vocals que s'accepten
+            for (int j = 0; j < vocals.length(); j++) {
+                // Verificar si els caràcters del texts són vocals
+                if (Character.toLowerCase(text.charAt(i)) == vocals.charAt(j)) {
+                    // esVocal serà true
+                    esVocal = true;
+                } 
             }
-        }
-        
-        for (int i = 0; i < text.length(); i++) {
-            if (
-            Character.toLowerCase(text.charAt(i)) == 'a' ||
-            Character.toLowerCase(text.charAt(i)) == 'à' ||
-            Character.toLowerCase(text.charAt(i)) == 'e' || 
-            Character.toLowerCase(text.charAt(i)) == 'è' ||
-            Character.toLowerCase(text.charAt(i)) == 'é' || 
-            Character.toLowerCase(text.charAt(i)) == 'i' ||
-            Character.toLowerCase(text.charAt(i)) == 'í' ||
-            Character.toLowerCase(text.charAt(i)) == 'ï' || 
-            Character.toLowerCase(text.charAt(i)) == 'o' ||
-            Character.toLowerCase(text.charAt(i)) == 'ó' ||
-            Character.toLowerCase(text.charAt(i)) == 'ò' || 
-            Character.toLowerCase(text.charAt(i)) == 'u' ||
-            Character.toLowerCase(text.charAt(i)) == 'ú' || 
-            Character.toLowerCase(text.charAt(i)) == 'ü'
-            ) {
+            
+            // Verificar si és un dígits
+            if (Character.isDigit(text.charAt(i))) {
+                // Guardar els dígits en el String nombre
+                nombre += text.charAt(i);
+            // Del contrari, verificar si el String nombre no està buit
+            } else if (!nombre.isEmpty()) {
+                // Guardar els nombres en el String nouText
+                nouText += "(" + nombre + ")";
+                // Tornar a possar el String nombre buit, perquè guardi els altres nombres
+                nombre = "";
+            }
+            
+            // Verificar si esVocal és true
+            if (esVocal) {
+                // Guardar la vocal en el String nouText 
                 nouText += Character.toLowerCase(text.charAt(i));
-            } else if (Character.isLetter(text.charAt(i))) {
-                nouText += Character.toUpperCase(text.charAt(i));            
-            } else if (Character.isWhitespace(text.charAt(i))) {
+            }
+            
+            // Verificar si és un lletra
+            if (Character.isLetter(text.charAt(i)) && !esVocal) {
+                // Guardar la lletra en el String nouText
+                nouText += Character.toUpperCase(text.charAt(i)); 
+            }
+            
+            // Verificar si és un espai en blanc
+            if (Character.isWhitespace(text.charAt(i))) {
+                // Guardar l'espai en el String nouText
                 nouText += text.charAt(i);
-            } else if (Character.isDigit(text.charAt(i))) {
-                contadorNombre = 1;
-                if (contadorNombre == 1) {
-                    nouText += "(" + nombre + ")";
-                }
-                contadorNombre = 0;            
             }
         }
+        // Mostrar el text transformat
         System.out.println(nouText);
     }
 }
