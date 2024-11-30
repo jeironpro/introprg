@@ -11,6 +11,8 @@ public class TransformaText {
         System.out.println("Text?");
         // Llegir el text
         String text = Entrada.readLine();
+        // Afegirle un espai al final del text
+        // Per poder mostrar els texts (de lletres o nombres) que no tinguin espai al final
         text = text + " ";
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
@@ -41,7 +43,7 @@ public class TransformaText {
                 nombre += text.charAt(i);
             // Del contrari, verificar si el String nombre no està buit
             } else if (!nombre.isEmpty()) {
-                // Guardar els nombres en el String nouText
+                // Guardar els nombres en el String nouText amb els parèntesis
                 nouText += "(" + nombre + ")";
                 // Tornar a possar el String nombre buit, perquè guardi els altres nombres
                 nombre = "";
@@ -59,8 +61,10 @@ public class TransformaText {
                 nouText += Character.toUpperCase(text.charAt(i)); 
             }
             
-            // Verificar si és un espai en blanc
+            // Verificar que i sigui diferent a la longitud del text
+            // Per evitar mostrar l'espai al final del text
             if (i != text.length()-1) {
+                // Verificar si és un espai en blanc
                 if (Character.isWhitespace(text.charAt(i))) {
                     // Guardar l'espai en el String nouText
                     nouText += text.charAt(i);
