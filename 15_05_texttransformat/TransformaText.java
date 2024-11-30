@@ -14,7 +14,7 @@ public class TransformaText {
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
         // Declarar e inicialitzar el String vocals amb les vocals que s'accepten
-        String vocals = "aàeéèiíïoòuúü";
+        String vocals = "aàeèéiíïoòóuúü";
         // Declarar e inicialitzar el String nombre buit
         String nombre = "";
         
