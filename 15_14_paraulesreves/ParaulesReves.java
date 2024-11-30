@@ -20,14 +20,23 @@ public class ParaulesReves {
             if (Character.isLetter(text.charAt(i))) {
                 // Guardar les lletres a paraula
                 paraula += text.charAt(i);
+            // Del contrari
             } else {
+                // Fer un for per iterar de manera invetida la paraula guardada
                 for (int j = paraula.length()-1; j >= 0; j--) {
+                    // Mostrar la paraula de manera invertida
                     System.out.print(paraula.charAt(j));
                 }
+                // Reinciar la paraula, després que s'hagi mostrat
+                // Guardar la següent paraula 
                 paraula = "";
             }
+            // Per a evitar mostrar l'espai al final del text
+            // Verificar si i és diferent a la longitud del text -1
             if (i != text.length()-1) {
-                if (!Character.isLetter(text.charAt(i)) || Character.isWhitespace(text.charAt(i))) {
+                // Verificar que el caràcter no sigui una lletra o sigui un espai
+                if (!Character.isLetter(text.charAt(i))) {
+                    // Mostrar 
                     System.out.print(text.charAt(i));            
                 }            
             }
