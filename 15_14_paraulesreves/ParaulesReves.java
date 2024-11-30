@@ -9,18 +9,23 @@ public class ParaulesReves {
         String text = Entrada.readLine();
         String paraula = "";
         
-        for (int i = 0; i < text.length(); i++) {
-            if (Character.isLetter(text.charAt(i))) {
-                paraula += text.charAt(i);
-            } else if (!Character.isLetter(text.charAt(i))) {
-                for (int j = paraula.length()-1; j >= 0; j--) {
-                    System.out.print(paraula.charAt(j));
+        if (text.length() <= 1) {
+            System.out.println(text);
+        } else {
+            for (int i = 0; i < text.length(); i++) {
+                if (Character.isLetter(text.charAt(i))) {
+                    paraula += text.charAt(i);
+                } else if (!Character.isLetter(text.charAt(i))) {
+                    for (int j = paraula.length()-1; j >= 0; j--) {
+                        System.out.print(paraula.charAt(j));
+                    }
+                    paraula = "";
                 }
-                paraula = "";
-            }
-            if (!Character.isLetter(text.charAt(i)) || Character.isWhitespace(text.charAt(i))) {
-                System.out.print(text.charAt(i));            
+                if (!Character.isLetter(text.charAt(i)) || Character.isWhitespace(text.charAt(i))) {
+                    System.out.print(text.charAt(i));            
+                }
             }
         }
+        
     }
 }
