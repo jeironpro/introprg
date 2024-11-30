@@ -34,9 +34,9 @@ public class ParaulesReves {
             // Per a evitar mostrar l'espai al final del text
             // Verificar si i és diferent a la longitud del text -1
             if (i != text.length()-1) {
-                // Verificar que el caràcter no sigui una lletra o sigui un espai
+                // Verificar que el caràcter no sigui una lletra
                 if (!Character.isLetter(text.charAt(i))) {
-                    // Mostrar 
+                    // Mostrar els caràcter que no sigui una lletra després de cada paraula
                     System.out.print(text.charAt(i));            
                 }            
             }
