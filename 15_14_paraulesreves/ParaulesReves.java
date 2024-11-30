@@ -7,23 +7,22 @@ public class ParaulesReves {
         System.out.println("Text?");
         // Llegir el text
         String text = Entrada.readLine();
+        text = text + " ";
         String paraula = "";
         
-        if (text.length() <= 1) {
-            System.out.println(text);
-        } else {
-            for (int i = 0; i < text.length(); i++) {
-                if (Character.isLetter(text.charAt(i))) {
-                    paraula += text.charAt(i);
-                } else if (!Character.isLetter(text.charAt(i))) {
-                    for (int j = paraula.length()-1; j >= 0; j--) {
-                        System.out.print(paraula.charAt(j));
-                    }
-                    paraula = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (Character.isLetter(text.charAt(i))) {
+                paraula += text.charAt(i);
+            } else if (!Character.isLetter(text.charAt(i))) {
+                for (int j = paraula.length()-1; j >= 0; j--) {
+                    System.out.print(paraula.charAt(j));
                 }
+                paraula = "";
+            }
+            if (i != text.length()-1) {
                 if (!Character.isLetter(text.charAt(i)) || Character.isWhitespace(text.charAt(i))) {
                     System.out.print(text.charAt(i));            
-                }
+                }            
             }
         }
         
