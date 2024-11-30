@@ -11,6 +11,7 @@ public class TransformaText {
         System.out.println("Text?");
         // Llegir el text
         String text = Entrada.readLine();
+        text = text + " ";
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
         // Declarar e inicialitzar el String vocals amb les vocals que s'accepten
