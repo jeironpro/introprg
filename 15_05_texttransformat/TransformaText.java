@@ -60,9 +60,11 @@ public class TransformaText {
             }
             
             // Verificar si és un espai en blanc
-            if (Character.isWhitespace(text.charAt(i))) {
-                // Guardar l'espai en el String nouText
-                nouText += text.charAt(i);
+            if (i != text.length()-1) {
+                if (Character.isWhitespace(text.charAt(i))) {
+                    // Guardar l'espai en el String nouText
+                    nouText += text.charAt(i);
+                }
             }
         }
         // Mostrar el text transformat
