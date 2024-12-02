@@ -5,7 +5,7 @@
 public class Enters {
     public static void main(String[] args) {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
-        String text = "true";
+        String text = Entrada.readLine();
         String nouText = "";
                  
         while(!text.isEmpty()) {
