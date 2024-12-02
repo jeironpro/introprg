@@ -33,8 +33,10 @@ public class Enters {
                             esEnter = true;
                         } else {
                             esEnter = false;
+                            break;
                         }                            
-                    } else if (c == '.' || c == '_') {
+                    } 
+                    if (c == '.' || c == '_') {
                         if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
                             if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 esEnter = true;
