@@ -50,6 +50,7 @@ public class Enters {
                         }
                     }              
                 }
+                System.out.println(nouText);
                 nouText = "";
                 
                 if (esEnter) {
