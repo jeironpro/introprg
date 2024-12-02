@@ -31,10 +31,11 @@ public class Enters {
                         } 
                     }   
                 } 
+                if (nouText.charAt(0) == '_' || nouText.charAt(0) == '.') {
+                    esEnter = false;                          
+                }
                 if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
-                    // Verificar si el caràcter 1 és un dígit
                     if (Character.isDigit(nouText.charAt(1))) {
-                        // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
                         esEnter = true;
                     }                            
                 }
