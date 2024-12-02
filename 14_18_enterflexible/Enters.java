@@ -20,14 +20,6 @@ public class Enters {
                     }
                 }
                 
-                if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
-                    // Verificar si el caràcter 1 és un dígit
-                    if (Character.isDigit(nouText.charAt(1))) {
-                        // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
-                        esEnter = true;
-                    }                            
-                }
-                
                 for (int i = 0; i < nouText.length(); i++) {
                     char c = nouText.charAt(i);      
                     if (!Character.isDigit(c)) {
@@ -39,6 +31,13 @@ public class Enters {
                         } 
                     }   
                 } 
+                if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                    // Verificar si el caràcter 1 és un dígit
+                    if (Character.isDigit(nouText.charAt(1))) {
+                        // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
+                        esEnter = true;
+                    }                            
+                }
                 nouText = "";
                 if (esEnter) {
                     System.out.println("És enter");
