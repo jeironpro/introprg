@@ -10,7 +10,7 @@ public class Enters {
                  
         while(!text.isEmpty()) {
             text = Entrada.readLine();
-            boolean esEnter = false;
+            boolean esEnter = true;
             
             if (!text.isEmpty()) {
                 for (int i = 0; i < text.length(); i++) {
@@ -20,9 +20,6 @@ public class Enters {
                     }
                     if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                         nouText += c;
-                    } else {
-                        esEnter = false;
-                        break;
                     }
                 }
                 
@@ -36,7 +33,6 @@ public class Enters {
                             esEnter = true;
                         } else {
                             esEnter = false;
-                            break;
                         }                            
                     } 
                     if (c == '.' || c == '_') {
@@ -45,11 +41,9 @@ public class Enters {
                                 esEnter = true;
                             } else {
                                 esEnter = false;
-                                break;
                             }
                         } else {
                             esEnter = false;
-                            break;
                         }
                     }              
                 }
