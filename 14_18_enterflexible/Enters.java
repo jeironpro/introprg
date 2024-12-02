@@ -28,7 +28,7 @@ public class Enters {
                     // Verificar si el caràcter 0 és un signe de - o +
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
                         // Verificar si el caràcter 1 és un dígit
-                        if (Character.isDigit(nouText.charAt(1))) {
+                        if (Character.isDigit(nouText.charAt(i))) {
                             // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
                             esEnter = true;
                         } else {
