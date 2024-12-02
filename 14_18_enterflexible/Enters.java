@@ -15,7 +15,7 @@ public class Enters {
                 esEnter = true;
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
-                    if (!Character.isDigit(c)) {
+                    if (Character.isLetter(c)) {
                         esEnter = false;
                     } 
                     if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
