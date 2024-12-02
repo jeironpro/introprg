@@ -21,7 +21,7 @@ public class Enters {
                     if (c >= 'a' && c <= 'z') {
                         esEnter = false;
                     } else {
-                        if (!Character.isWhitespace(c) && (c == '-' || c == '+' || c == '.' || c == '_')) {
+                        if (!Character.isWhitespace(c) && (Character.isDigit(c) && c == '-' || c == '+' || c == '.' || c == '_')) {
                             nouText += c;
                         }                    
                     }
