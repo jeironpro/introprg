@@ -58,9 +58,11 @@ public class Enters {
                             if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 // enter serà true
                                 enter = true;;
-                            } 
+                            } else {
+                                enter = false;
+                            }
                         }   
-                    } 
+                    }
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
                         enter = true;
                         for (int i = 1; i < nouText.length(); i++) {
