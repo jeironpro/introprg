@@ -26,18 +26,17 @@ public class Enters {
                 for (int i = 0; i < nouText.length(); i++) {
                     char c = nouText.charAt(i);
                     // Verificar si el caràcter 0 és un signe de - o +
-                    if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                    if (c == '-' || c == '+') {
                         // Verificar si el caràcter 1 és un dígit
-                        if (Character.isDigit(nouText.charAt(1))) {
+                        if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                             // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
                             esEnter = true;
                         } else {
                             esEnter = false;
-                            break;
                         }                            
                     } else if (c == '.' || c == '_') {
                         if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
-                            if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
+                            if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 esEnter = true;
                             } else {
                                 esEnter = false;
