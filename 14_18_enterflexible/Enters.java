@@ -1,53 +1,70 @@
 /* Aquest programa demana texts fins que rebre una entrada buida.
 * Per cada text introduït et dira si és un enter o no.
+* Aquesta versió ignora els espais en blanc, els punts i guions baixos
+* sempre que es trobin entre dos números.
 */
 
 public class Enters {
     public static void main(String[] args) {
+        // Demanar els texts
         System.out.println("Introdueix texts (enter sol per finalitzar)");
+        // Declarar e incialitzar el String text no buit, perquè s'execute el bucle al menys una vegada
         String text = "true";
+        // Declarar e inicialitzar el String nouText buit
         String nouText = "";
-        boolean esEnter = false;
-                 
+        // Declarar e incialitzar el boolean enter en false
+        boolean enter = false;
+        
+        // El bucle s'executarà sempre i quan el text no està buit         
         while(!text.isEmpty()) {
+            // Tornar a llegir el text a dins del bucle
             text = Entrada.readLine();
-            if (!text.isEmpty()) {            
-                esEnter = true;
+            
+            // Verificar si el text no està buit
+            if (!text.isEmpty()) { 
+                 // Com el text no està buit, enter és true           
+                enter = true;
+                
+                // Fer un for per iterar tots els caràcters del text
                 for (int i = 0; i < text.length(); i++) {
+                    // Declarar e inicialitzar el char c amb cada caràcter del text
                     char c = text.charAt(i);
+                    // Verificar si el caràcter és una lletra
                     if (Character.isLetter(c)) {
-                        esEnter = false;
+                        enter = false;
+                    } else {                
+                        if (!Character.isWhitespace(c) && (c == '-' || c == '+' || c == '.' || c == '_')) {
+                            nouText += c;
+                        }
                     } 
-                    if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
-                        nouText += c;
-                    }
                 }
                 
                 if (!nouText.isEmpty()) {
                     for (int i = 0; i < nouText.length(); i++) {
                         char c = nouText.charAt(i);      
                         if (!Character.isDigit(c)) {
-                            esEnter = false;
+                            enter = false;
                         }           
                         if (c == '.' || c == '_') {
                             if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
-                                esEnter = true;;
+                                enter = true;;
                             } 
                         }   
                     } 
                     if (nouText.charAt(0) == '_' || nouText.charAt(0) == '.') {
-                        esEnter = false;                          
+                        enter = false;                          
                     }
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                        enter = true;
                         for (int i = 1; i < nouText.length(); i++) {
                             if (!Character.isDigit(nouText.charAt(i))) {
-                                esEnter = false;                                
+                                enter = false;                                
                             }
                         }                            
                     }
                 }
                 nouText = "";
-                if (esEnter) {
+                if (enter) {
                     System.out.println("És enter");
                 } else {
                     System.out.println("No és enter");
