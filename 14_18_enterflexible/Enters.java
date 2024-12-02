@@ -44,9 +44,11 @@ public class Enters {
                                 esEnter = true;
                             } else {
                                 esEnter = false;
+                                break;
                             }
                         } else {
                             esEnter = false;
+                            break;
                         }
                     }              
                 }
