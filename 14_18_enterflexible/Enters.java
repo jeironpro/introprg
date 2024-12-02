@@ -34,8 +34,7 @@ public class Enters {
                         } else {
                             esEnter = false;
                         }                            
-                    } 
-                    if (c == '.' || c == '_') {
+                    } else if (c == '.' || c == '_') {
                         if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
                             if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 esEnter = true;
