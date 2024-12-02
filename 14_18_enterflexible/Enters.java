@@ -32,11 +32,10 @@ public class Enters {
                     // Verificar si el caràcter és una lletra
                     if (Character.isLetter(c)) {
                         enter = false;
-                    } else {                
-                        if (!Character.isWhitespace(c) && (c == '-' || c == '+' || c == '.' || c == '_')) {
-                            nouText += c;
-                        }
-                    } 
+                    }               
+                    if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
+                        nouText += c;
+                    }
                 }
                 
                 if (!nouText.isEmpty()) {
