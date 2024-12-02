@@ -34,28 +34,33 @@ public class Enters {
                         // enter serà false
                         enter = false;
                     }               
-                    // Verificar si el caràcter no és un espai i no és una lletra, però si un simbol com -, +, . i _
+                    // Verificar si el caràcter no és un digit, o un simbol com -, +, . o _
                     if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
-                        // Guardar 
+                        // Guardar aquests caràcters a nouText
                         nouText += c;
                     }
                 }
                 
+                // Verificar si el nouText no està buit
                 if (!nouText.isEmpty()) {
+                    // Fer un for per iterar tots els caràcters del nouText
                     for (int i = 0; i < nouText.length(); i++) {
-                        char c = nouText.charAt(i);      
+                        // Declarar e inicialitzar el char c amb cada caràcter del nouText
+                        char c = nouText.charAt(i);  
+                        // Verificar si els caràcters no és digit    
                         if (!Character.isDigit(c)) {
+                            // enter serà false
                             enter = false;
                         }           
+                        // Verificar si els caràcter és un punt o un guion baix
                         if (c == '.' || c == '_') {
+                            // Verificar si el caràcter anterior i següent al punt o guió és un digit
                             if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
+                                // enter serà true
                                 enter = true;;
                             } 
                         }   
                     } 
-                    if (nouText.charAt(0) == '_' || nouText.charAt(0) == '.') {
-                        enter = false;                          
-                    }
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
                         enter = true;
                         for (int i = 1; i < nouText.length(); i++) {
