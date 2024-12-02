@@ -10,7 +10,7 @@ public class Enters {
                  
         while(!text.isEmpty()) {
             text = Entrada.readLine();
-            boolean esEnter = true;
+            boolean esEnter = false;
             
             if (!text.isEmpty()) {
                 for (int i = 0; i < text.length(); i++) {
