@@ -14,7 +14,9 @@ public class Enters {
         String nouText = "";
         // Declarar e incialitzar el boolean enter en false
         boolean enter = false;
+        // Declarar e inicialitzar el int posAnt en 0
         int posAnt = 0;
+        // Declarar e inicialitzar el int posSeg en 0
         int posSeg = 0;
         
         // El bucle s'executarà sempre i quan el text no està buit         
@@ -60,9 +62,11 @@ public class Enters {
                         
                         // Verificar si els caràcter és un punt o un guion baix
                         if (c == '.' || c == '_') {
-                            // Verificar si el caràcter anterior i següent al punt o guió és un dígit
+                            // Assignar-li el valor de i-1 (posició anterior al caràcter trobat) a posAnt
                             posAnt = i-1;
+                            // Assignar-li el valor de i+1 (posició següent al caràcter trobat) a posSeg
                             posSeg = i+1;
+                            // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
                             if (posAnt >= 0 && Character.isDigit(nouText.charAt(posAnt)) && posSeg < nouText.length() && Character.isDigit(nouText.charAt(posSeg))) {
                                 // enter serà true
                                 enter = true;;
