@@ -11,7 +11,7 @@ public class Enters {
                  
         while(!text.isEmpty()) {
             text = Entrada.readLine();
-            
+            esEnter = true;
             for (int i = 0; i < text.length(); i++) {
                 char c = text.charAt(i);
                 if (Character.isLetter(c)) {
