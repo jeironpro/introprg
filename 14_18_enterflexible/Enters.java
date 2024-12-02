@@ -36,13 +36,19 @@ public class Enters {
                         if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                             // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
                             esEnter = true;
-                        }                          
+                        } else {
+                            esEnter = false;
+                        }                            
                     } 
                     if (c == '.' || c == '_') {
                         if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
                             if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 esEnter = true;
+                            } else {
+                                esEnter = false;
                             }
+                        } else {
+                            esEnter = false;
                         }
                     }              
                 }
