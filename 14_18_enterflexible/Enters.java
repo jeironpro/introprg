@@ -7,13 +7,12 @@ public class Enters {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
         String text = "true";
         String nouText = "";
-        boolean esEnter = false;
                  
         while(!text.isEmpty()) {
             text = Entrada.readLine();
+            boolean esEnter = false;
             
             if (!text.isEmpty()) {
-                esEnter = true;
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
                     if (Character.isDigit(c)) {
@@ -21,6 +20,7 @@ public class Enters {
                     }
                     if (Character.isLetter(c)) {
                         esEnter = false;
+                        break;
                     } else {
                         if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                             nouText += c;
@@ -38,6 +38,7 @@ public class Enters {
                             esEnter = true;
                         } else {
                             esEnter = false;
+                            break;
                         }                            
                     } 
                     if (c == '.' || c == '_') {
@@ -46,9 +47,11 @@ public class Enters {
                                 esEnter = true;
                             } else {
                                 esEnter = false;
+                                break;
                             }
                         } else {
                             esEnter = false;
+                            break;
                         }
                     }              
                 }
