@@ -4,50 +4,56 @@
 
 public class Enters {
     public static void main(String[] args) {
-        // Demanar els texts
         System.out.println("Introdueix texts (enter sol per finalitzar)");
-        // Declarar e incializar text amb caracters
         String text = "true";
-        int pos = 0;
-        
-        // El bucle s'executarà quan el text no sigui buit
-        while (!text.isEmpty()) {
-            boolean enter = false;
-            // Rebent els texts
+        String nouText = "";
+                 
+        while(!text.isEmpty()) {
             text = Entrada.readLine();
+            boolean esEnter = false;
             
-            // Verificar si el text està buit
-            if (!text.isEmpty()) {
-                for (int i = 0; i < text.length(); i++) {
-                    if (text.charAt(i) == '-' || text.charAt(i) == '+' || text.charAt(i) == '_' || text.charAt(i) == '.' || Character.isDigit(text.charAt(i))) {
-                        enter = true;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                if (Character.isDigit(c)) {
+                    esEnter = true;
+                }
+                if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
+                    nouText += c;
+                }
+            }
+            if (!nouText.isEmpty()) {
+                // Verificar si el caràcter 0 és un signe de - o +
+                if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                    // Verificar si el caràcter 1 és un dígit
+                    if (Character.isDigit(nouText.charAt(1))) {
+                        // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
+                        esEnter = true;
+                    } else {
+                        esEnter = false;
+                    }                            
+                }            
+            }
+            
+            for (int i = 0; i < nouText.length(); i++) {
+                char c = nouText.charAt(i);
+                
+                if (c == '.' || c == '_') {
+                    if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
+                        esEnter = true;
+                    } else {
+                        esEnter = false;
+                        break;
                     }
                 }
-                
-                
-                if ((text.charAt(0) == '-' || text.charAt(0) == '+') && Character.isDigit(text.charAt(1))) {
-                    enter = true;
-                } else if ((text.charAt(0) == '-' || text.charAt(0) == '+') && (text.charAt(1) == '-' || text.charAt(1) == '+')) {
-                    enter = false;
-                } else if (Character.isWhitespace(text.charAt(0))) {
-                    if (text.charAt(1) == '+' || text.charAt(1) == '-') {
-                        enter = true;
-                    }
-                } else if ((text.charAt(0) == '+' || text.charAt(0) == '-') && Character.isWhitespace(text.charAt(1))) {
-                    enter = false;
-                }
-                
-                if (enter) {
-                    System.out.println("És enter");
-                } else {
-                    System.out.println("No és enter");
-                }
+            }
+            nouText = "";
+            
+            if (esEnter) {
+                System.out.println("És enter");
             } else {
-                // Finalitzar el programa
-                text = "";
-                // Mostrar un missatge de comiat
-                System.out.println("Adéu");             
+                System.out.println("No és enter");
             }
         }
+        System.out.println("Adéu");
     }
 }
