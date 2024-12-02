@@ -33,6 +33,7 @@ public class Enters {
                             esEnter = true;
                         } else {
                             esEnter = false;
+                            break;
                         }                            
                     } 
                     if (c == '.' || c == '_') {
@@ -41,9 +42,11 @@ public class Enters {
                                 esEnter = true;
                             } else {
                                 esEnter = false;
+                                break;
                             }
                         } else {
                             esEnter = false;
+                            break;
                         }
                     }              
                 }
