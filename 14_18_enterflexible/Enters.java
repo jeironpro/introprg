@@ -9,15 +9,15 @@ public class Enters {
         String nouText = "";
                  
         while(!text.isEmpty()) {
+            boolean esEnter = false;
             text = Entrada.readLine();
-            boolean esEnter = true;
             
             if (!text.isEmpty()) {
+                esEnter = true;
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
                     if (Character.isLetter(c)) {
                         esEnter = false;
-                        break;
                     } else {
                         if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                             nouText += c;
@@ -54,11 +54,11 @@ public class Enters {
                 }
                 nouText = "";
                 
-                if (esEnter) {
-                    System.out.println("És enter");
-                } else {
-                    System.out.println("No és enter");
-                }
+            }
+            if (esEnter) {
+                System.out.println("És enter");
+            } else {
+                System.out.println("No és enter");
             }
         }
         System.out.println("Adéu");
