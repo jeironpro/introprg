@@ -38,7 +38,7 @@ public class Enters {
                 for (int i = 0; i < nouText.length(); i++) {
                     char c = nouText.charAt(i);
                     
-                    if (i > 0) {
+                    if (i != 0) {
                         if (c == '.' || c == '_') {
                             if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 esEnter = true;
