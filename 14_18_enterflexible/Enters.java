@@ -15,11 +15,9 @@ public class Enters {
             if (!text.isEmpty()) {
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
-                    if (Character.isDigit(c)) {
-                        esEnter = true;
-                    }
                     if (Character.isLetter(c)) {
                         esEnter = false;
+                        break;
                     } else {
                         if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                             nouText += c;
@@ -37,6 +35,7 @@ public class Enters {
                             esEnter = true;
                         } else {
                             esEnter = false;
+                            break;
                         }                            
                     } 
                     if (c == '.' || c == '_') {
@@ -45,6 +44,7 @@ public class Enters {
                                 esEnter = true;
                             } else {
                                 esEnter = false;
+                                break;
                             }
                         } else {
                             esEnter = false;
