@@ -22,7 +22,9 @@ public class Enters {
                         nouText += c;
                     }
                 }
-                if (!nouText.isEmpty()) {
+                
+                for (int i = 0; i < nouText.length(); i++) {
+                    char c = nouText.charAt(i);
                     // Verificar si el caràcter 0 és un signe de - o +
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
                         // Verificar si el caràcter 1 és un dígit
@@ -32,12 +34,7 @@ public class Enters {
                         } else {
                             esEnter = false;
                         }                            
-                    }            
-                }
-                
-                for (int i = 0; i < nouText.length(); i++) {
-                    char c = nouText.charAt(i);
-                    
+                    } 
                     if (c == '.' || c == '_') {
                         if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
                             if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
