@@ -18,7 +18,7 @@ public class Enters {
                     if (Character.isDigit(c)) {
                         esEnter = true;
                     }
-                    if (Character.isLetter(c)) {
+                    if (c >= 'a' && c <= 'z') {
                         esEnter = false;
                     } else {
                         if (!Character.isWhitespace(c) && (c == '-' || c == '+' || c == '.' || c == '_')) {
