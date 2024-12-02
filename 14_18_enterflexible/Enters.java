@@ -7,10 +7,10 @@ public class Enters {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
         String text = "true";
         String nouText = "";
+        boolean esEnter = false;
                  
         while(!text.isEmpty()) {
             text = Entrada.readLine();
-            boolean esEnter = false;
             
             for (int i = 0; i < text.length(); i++) {
                 char c = text.charAt(i);
