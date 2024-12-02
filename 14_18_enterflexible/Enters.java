@@ -42,13 +42,14 @@ public class Enters {
                         if (c == '_' || c == '.') {
                             esEnter = false;
                         }
-                    }
-                    if (c == '.' || c == '_') {
-                        if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
-                            esEnter = true;
-                        } else {
-                            esEnter = false;
-                            break;
+                    } else {                
+                        if (c == '.' || c == '_') {
+                            if (i + 1 < text.length() && Character.isDigit(nouText.charAt(i+1))) {
+                                esEnter = true;
+                            } else {
+                                esEnter = false;
+                                break;
+                            }
                         }
                     }
                 }
