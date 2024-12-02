@@ -15,9 +15,6 @@ public class Enters {
                 esEnter = true;
                 for (int i = 0; i < text.length(); i++) {
                     char c = text.charAt(i);
-                    if (!Character.isDigit(c)) {
-                        esEnter = false;
-                    }
                     if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                         nouText += c;
                     }
@@ -32,7 +29,10 @@ public class Enters {
                 }
                 
                 for (int i = 0; i < nouText.length(); i++) {
-                    char c = nouText.charAt(i);                 
+                    char c = nouText.charAt(i);      
+                    if (!Character.isDigit(c)) {
+                        esEnter = false;
+                    }           
                     if (c == '.' || c == '_') {
                         if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                             esEnter = true;;
