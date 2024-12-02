@@ -17,6 +17,9 @@ public class Enters {
                     char c = text.charAt(i);
                     if (Character.isDigit(c)) {
                         esEnter = true;
+                    } else {
+                        esEnter = false;
+                        break;
                     }
                     if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                         nouText += c;
