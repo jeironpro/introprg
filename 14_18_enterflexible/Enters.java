@@ -7,54 +7,50 @@ public class Enters {
         System.out.println("Introdueix texts (enter sol per finalitzar)");
         String text = Entrada.readLine();
         String nouText = "";
+        boolean esEnter = false;
                  
         while(!text.isEmpty()) {
-            boolean esEnter = false;
             text = Entrada.readLine();
             
-            if (!text.isEmpty()) {
-                esEnter = true;
-                for (int i = 0; i < text.length(); i++) {
-                    char c = text.charAt(i);
-                    if (Character.isLetter(c)) {
-                        esEnter = false;
-                    } else {
-                        if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
-                            nouText += c;
-                        }                    
-                    }
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                if (Character.isLetter(c)) {
+                    esEnter = false;
+                } else {
+                    if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
+                        nouText += c;
+                    }                    
                 }
-                
-                for (int i = 0; i < nouText.length(); i++) {
-                    char c = nouText.charAt(i);
-                    // Verificar si el caràcter 0 és un signe de - o +
-                    if (c == '-' || c == '+') {
-                        // Verificar si el caràcter 1 és un dígit
+            }
+            
+            for (int i = 0; i < nouText.length(); i++) {
+                char c = nouText.charAt(i);
+                // Verificar si el caràcter 0 és un signe de - o +
+                if (c == '-' || c == '+') {
+                    // Verificar si el caràcter 1 és un dígit
+                    if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
+                        // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
+                        esEnter = true;
+                    } else {
+                        esEnter = false;
+                        break;
+                    }                            
+                } 
+                if (c == '.' || c == '_') {
+                    if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
                         if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
-                            // Com el caràcter 0 es un signe i el caràcter 1 és un dígit, enter es true
                             esEnter = true;
                         } else {
                             esEnter = false;
                             break;
-                        }                            
-                    } 
-                    if (c == '.' || c == '_') {
-                        if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1))) {
-                            if (i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
-                                esEnter = true;
-                            } else {
-                                esEnter = false;
-                                break;
-                            }
-                        } else {
-                            esEnter = false;
-                            break;
                         }
-                    }              
-                }
-                nouText = "";
-                
+                    } else {
+                        esEnter = false;
+                        break;
+                    }
+                }              
             }
+            nouText = "";
             if (esEnter) {
                 System.out.println("És enter");
             } else {
