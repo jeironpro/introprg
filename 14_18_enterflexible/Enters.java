@@ -39,8 +39,11 @@ public class Enters {
                         esEnter = false;                          
                     }
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
-                        if (Character.isDigit(nouText.charAt(1))) {
-                            esEnter = true;
+                        esEnter = true;
+                        for (int i = 1; i < nouText.length(); i++) {
+                            if (!Character.isDigit(nouText.charAt(i))) {
+                                esEnter = false;                                
+                            }
                         }                            
                     }
                 }
