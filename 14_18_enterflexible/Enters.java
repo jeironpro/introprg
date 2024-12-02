@@ -31,9 +31,12 @@ public class Enters {
                     char c = text.charAt(i);
                     // Verificar si el caràcter és una lletra
                     if (Character.isLetter(c)) {
+                        // enter serà false
                         enter = false;
                     }               
-                    if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
+                    // Verificar si el caràcter no és un espai i no és una lletra, però si un simbol com -, +, . i _
+                    if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
+                        // Guardar 
                         nouText += c;
                     }
                 }
