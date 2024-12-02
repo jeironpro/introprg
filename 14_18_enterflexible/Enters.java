@@ -20,6 +20,7 @@ public class Enters {
                     }
                     if (Character.isLetter(c)) {
                         esEnter = false;
+                        break;
                     } else {
                         if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                             nouText += c;
