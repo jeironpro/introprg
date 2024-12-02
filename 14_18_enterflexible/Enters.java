@@ -20,6 +20,9 @@ public class Enters {
                     }
                     if (!Character.isWhitespace(c) && (!Character.isLetter(c) || c == '-' || c == '+' || c == '.' || c == '_')) {
                         nouText += c;
+                    } else {
+                        esEnter = false;
+                        break;
                     }
                 }
                 
@@ -50,7 +53,6 @@ public class Enters {
                         }
                     }              
                 }
-                System.out.println(nouText);
                 nouText = "";
                 
                 if (esEnter) {
