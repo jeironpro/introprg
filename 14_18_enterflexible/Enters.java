@@ -28,7 +28,7 @@ public class Enters {
                     // Declarar e inicialitzar el char c amb cada caràcter del text
                     char c = text.charAt(i);
                     // Verificar si els caràcters no és dígit    
-                    if (Character.isLetter(c)) {
+                    if (!Character.isDigit(c)) {
                         // enter serà false
                         enter = false;
                     }
