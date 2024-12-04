@@ -41,7 +41,7 @@ public class Enters {
                         // Declarar e inicialitzar el char c amb cada caràcter del nouText
                         char c = nouText.charAt(i);
                         // Verificar si els caràcters no és dígit    
-                        if (!Character.isDigit(c)) {
+                        if (Character.isLetter(c)) {
                             // enter serà false
                             enter = false;
                         }
