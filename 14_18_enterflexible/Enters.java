@@ -14,10 +14,6 @@ public class Enters {
         String nouText = "";
         // Declarar e incialitzar el boolean enter en false
         boolean enter = false;
-        // Declarar e inicialitzar el int posAnt en 0
-        int posAnt = 0;
-        // Declarar e inicialitzar el int posSeg en 0
-        int posSeg = 0;
         
         // El bucle s'executarà sempre i quan el text no està buit         
         while(!text.isEmpty()) {
@@ -33,14 +29,7 @@ public class Enters {
                 for (int i = 0; i < text.length(); i++) {
                     // Declarar e inicialitzar el char c amb cada caràcter del text
                     char c = text.charAt(i);
-                    
-                    // Verificar si el caràcter és una lletra
-                    if (Character.isLetter(c)) {
-                        // enter serà false
-                        enter = false;
-                    }             
-                      
-                    // Verificar si el caràcter no és un dígit, o un simbol com -, +, . o _
+                    // Verificar si el caràcter és un dígit, o un simbol com -, +, . o _
                     if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
@@ -62,12 +51,8 @@ public class Enters {
                         
                         // Verificar si els caràcter és un punt o un guion baix
                         if (c == '.' || c == '_') {
-                            // Assignar-li el valor de i-1 (posició anterior al caràcter trobat) a posAnt
-                            posAnt = i-1;
-                            // Assignar-li el valor de i+1 (posició següent al caràcter trobat) a posSeg
-                            posSeg = i+1;
                             // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
-                            if (posAnt >= 0 && Character.isDigit(nouText.charAt(posAnt)) && posSeg < nouText.length() && Character.isDigit(nouText.charAt(posSeg))) {
+                            if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                                 // enter serà true
                                 enter = true;;
                             } 
