@@ -55,12 +55,9 @@ public class Enters {
                             // Fer un for per iterar tots els caràcters a partir de la posició 1
                             for (int j = i+1; j < nouText.length(); j++) {
                                 // Verificar si els caràcter no són dígit
-                                if (nouText.charAt(j) == '-' || nouText.charAt(j) == '+') {
-                                    enter = false;
-                                }
-                                if (!Character.isDigit(nouText.charAt(j))) {
+                                if (Character.isDigit(nouText.charAt(j))) {
                                     // enter serà false
-                                    enter = false;                                
+                                    enter = true;                                
                                 }
                             } 
                         } 
