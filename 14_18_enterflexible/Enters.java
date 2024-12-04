@@ -27,8 +27,13 @@ public class Enters {
                 for (int i = 0; i < text.length(); i++) {
                     // Declarar e inicialitzar el char c amb cada caràcter del text
                     char c = text.charAt(i);
+                    // Verificar si els caràcters no és dígit    
+                    if (Character.isLetter(c)) {
+                        // enter serà false
+                        enter = false;
+                    }
                     // Verificar si el caràcter és un dígit, o un simbol com -, +, . o _
-                    if (!Character.isWhitespace(c)) {
+                    if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
                     } 
@@ -40,11 +45,6 @@ public class Enters {
                     for (int i = 0; i < nouText.length(); i++) {
                         // Declarar e inicialitzar el char c amb cada caràcter del nouText
                         char c = nouText.charAt(i);
-                        // Verificar si els caràcters no és dígit    
-                        if (Character.isLetter(c)) {
-                            // enter serà false
-                            enter = false;
-                        }
                         if (i == 0 && (c == '.' || c == '_')) {
                             enter = false;
                         }
