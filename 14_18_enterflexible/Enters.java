@@ -53,7 +53,7 @@ public class Enters {
                         }
                         if (i == 0 && (c == '-' || c == '+')) {
                             // Fer un for per iterar tots els caràcters a partir de la posició 1
-                            for (int j = 1; j < nouText.length(); j++) {
+                            for (int j = i+1; j < nouText.length(); j++) {
                                 // Verificar si els caràcter no són dígit
                                 if (nouText.charAt(j) == '-' || nouText.charAt(j) == '+') {
                                     enter = false;
