@@ -47,8 +47,8 @@ public class Enters {
                             enter = false;
                         } 
                         if (i == 0) {
-                            if (c == '.' || c == '_') {
-                                enter = false;
+                            if (c != '.' || c != '_') {
+                                enter = true;
                             }
                             if (c == '-' || c == '+') {
                                 // Fer un for per iterar tots els caràcters a partir de la posició 1
