@@ -50,16 +50,6 @@ public class Enters {
                         }
                         if (i == nouText.length()-1 && (c == '.' || c == '_')) {
                             enter = false;
-                        }
-                        if (i == 0 && (c == '-' || c == '+')) {
-                            // Fer un for per iterar tots els caràcters a partir de la posició 1
-                            for (int j = i+1; j < nouText.length(); j++) {
-                                // Verificar si els caràcter no són dígit
-                                if (Character.isDigit(nouText.charAt(j))) {
-                                    // enter serà false
-                                    enter = true;                                
-                                }
-                            } 
                         } 
                         if (i >= 1 && (c == '.' || c == '_')) {
                             // Verificar si els caràcter és un punt o un guió baix
@@ -71,6 +61,20 @@ public class Enters {
                                 } 
                             }                                                 
                         } 
+                    }
+                    // Verificar que el caràcter en la posició 0 és un signe de menys o més 
+                    if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                        // enter serà true
+                        enter = true;
+                        
+                        // Fer un for per iterar tots els caràcters a partir de la posició 1
+                        for (int i = 1; i < nouText.length(); i++) {
+                            // Verificar si els caràcter no són dígit
+                            if (!Character.isDigit(nouText.charAt(i))) {
+                                // enter serà false
+                                enter = false;                                
+                            }
+                        }                            
                     }
                 }
                 // Reiniciar el String nouText per tornar a guardar el text processat
