@@ -45,36 +45,30 @@ public class Enters {
                         if (Character.isDigit(c)) {
                             // enter serà false
                             enter = true;
-                        }           
+                        }          
                         
-                        // Verificar si els caràcter és un punt o un guion baix
-                        if (c == '.' || c == '_') {
-                            // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
-                            if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
-                                // enter serà true
-                                enter = true;;
+                        if (i == 0) {
+                            if (c == '-' || c == '+') {
+                                // Fer un for per iterar tots els caràcters a partir de la posició 1
+                                for (int j = 1; j < nouText.length(); j++) {
+                                    // Verificar si els caràcter no són dígit
+                                    if (Character.isDigit(nouText.charAt(j))) {
+                                        // enter serà false
+                                        enter = true;                                
+                                    }
+                                } 
                             } 
-                        }   
-                    } 
-                    // Verificar que el caràcter en la posició 0 no sigui un punt o un guió 
-                    if (nouText.charAt(0) != '.' || nouText.charAt(0) != '_') {
-                        // enter serà false
-                        enter = true;                          
-                    }
-                    
-                    // Verificar que el caràcter en la posició 0 és un signe de menys o més 
-                    if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
-                        // enter serà true
-                        enter = true;
+                        } else {
+                            // Verificar si els caràcter és un punt o un guion baix
+                            if (c == '.' || c == '_') {
+                                // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
+                                if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
+                                    // enter serà true
+                                    enter = true;;
+                                } 
+                            }                         
+                        }
                         
-                        // Fer un for per iterar tots els caràcters a partir de la posició 1
-                        for (int i = 1; i < nouText.length(); i++) {
-                            // Verificar si els caràcter no són dígit
-                            if (Character.isDigit(nouText.charAt(i))) {
-                                // enter serà false
-                                enter = true;                                
-                            }
-                        }                            
                     }
                 }
                 // Reiniciar el String nouText per tornar a guardar el text processat
