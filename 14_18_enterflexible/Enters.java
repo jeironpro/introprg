@@ -59,9 +59,9 @@ public class Enters {
                                 // Verificar si els caràcter és un punt o un guió baix
                                 if (i > 0 && i < nouText.length()-1) {
                                     // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
-                                    if (Character.isDigit(nouText.charAt(i-1)) && Character.isDigit(nouText.charAt(i+1))) {
+                                    if (!Character.isDigit(nouText.charAt(i-1)) && !Character.isDigit(nouText.charAt(i+1))) {
                                         // enter serà true
-                                        enter = true;;
+                                        enter = false;
                                     } 
                                 }                                                 
                             }                        
