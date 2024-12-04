@@ -57,14 +57,16 @@ public class Enters {
                                 } 
                             }
                         } 
-                        // Verificar si els caràcter és un punt o un guió baix
-                        if (c == '.' || c == '_') {
-                            // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
-                            if (i - 1 > 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
-                                // enter serà true
-                                enter = true;;
-                            } 
-                        }                         
+                        if (i > 0) {
+                            // Verificar si els caràcter és un punt o un guió baix
+                            if (c == '.' || c == '_') {
+                                // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
+                                if (i - 1 > 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
+                                    // enter serà true
+                                    enter = true;;
+                                } 
+                            }                                                 
+                        }
                     }
                 }
                 // Reiniciar el String nouText per tornar a guardar el text processat
