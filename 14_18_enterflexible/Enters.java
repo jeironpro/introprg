@@ -64,6 +64,8 @@ public class Enters {
                     
                     // Verificar que el caràcter en la posició 0 és un signe de menys o més 
                     if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                        // enter serà true
+                        enter = true;
                         
                         // Fer un for per iterar tots els caràcters a partir de la posició 1
                         for (int i = 1; i < nouText.length(); i++) {
