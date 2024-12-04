@@ -64,7 +64,7 @@ public class Enters {
                         }
                         
                         // Verificar si els caràcters no és dígit    
-                        if (!Character.isDigit(c)) {
+                        if (Character.isLetter(c)) {
                             // enter serà false
                             enter = false;
                         } 
