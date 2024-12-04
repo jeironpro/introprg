@@ -56,7 +56,7 @@ public class Enters {
                                         enter = false;                                
                                     }
                                 } 
-                            } else {
+                            } else if (c == '.' || c == '_') {
                                 enter = false;
                             }
                         } else {
