@@ -28,7 +28,7 @@ public class Enters {
                     // Declarar e inicialitzar el char c amb cada caràcter del text
                     char c = text.charAt(i);
                     // Verificar si el caràcter és un dígit, o un simbol com -, +, . o _
-                    if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
+                    if (!Character.isWhitespace(c)) {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
                     } 
