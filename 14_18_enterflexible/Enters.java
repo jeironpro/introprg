@@ -45,21 +45,19 @@ public class Enters {
                             // enter serà false
                             enter = false;
                         } 
-                        if (i == 0) {
-                            if (Character.isDigit(c) || c == '-' || c == '+') {
-                                // Fer un for per iterar tots els caràcters a partir de la posició 1
-                                for (int j = 1; j < nouText.length(); j++) {
-                                    // Verificar si els caràcter no són dígit
-                                    if (!Character.isDigit(nouText.charAt(j))) {
-                                        // enter serà false
-                                        enter = false;                                
-                                    }
-                                } 
-                            }
+                        if (i == 0 && (c == '-' || c == '+')) {
+                            // Fer un for per iterar tots els caràcters a partir de la posició 1
+                            for (int j = 1; j < nouText.length(); j++) {
+                                // Verificar si els caràcter no són dígit
+                                if (!Character.isDigit(nouText.charAt(j))) {
+                                    // enter serà false
+                                    enter = false;                                
+                                }
+                            } 
                         } 
-                        if (i > 0 && i < nouText.length()-1) {
+                        if (i >= 1 && (c == '.' || c == '_')) {
                             // Verificar si els caràcter és un punt o un guió baix
-                            if (c == '.' || c == '_') {
+                            if (i > 0 && i < nouText.length()-1) {
                                 // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
                                 if (Character.isDigit(nouText.charAt(i-1)) && Character.isDigit(nouText.charAt(i+1))) {
                                     // enter serà true
