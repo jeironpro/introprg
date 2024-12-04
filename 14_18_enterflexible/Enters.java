@@ -12,18 +12,16 @@ public class Enters {
         String text = "true";
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
-        // Declarar e incialitzar el boolean enter en false
-        boolean enter = false;
         
         // El bucle s'executarà sempre i quan el text no està buit         
         while(!text.isEmpty()) {
+            // Declarar e incialitzar el boolean enter en false
+            boolean enter = true;
             // Tornar a llegir el text a dins del bucle
             text = Entrada.readLine();
             
             // Verificar si el text no està buit
-            if (!text.isEmpty()) { 
-                 // Com el text no està buit, enter és true           
-                enter = true;
+            if (!text.isEmpty()) {
                 
                 // Fer un for per iterar tots els caràcters del text
                 for (int i = 0; i < text.length(); i++) {
@@ -33,8 +31,6 @@ public class Enters {
                     if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
-                    } else {
-                        enter = false;
                     }
                 }
                 
@@ -54,9 +50,9 @@ public class Enters {
                         // Verificar si els caràcter és un punt o un guion baix
                         if (c == '.' || c == '_') {
                             // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
-                            if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
+                            if (i - 1 >= 0 && !Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && !Character.isDigit(nouText.charAt(i+1))) {
                                 // enter serà true
-                                enter = true;;
+                                enter = false;;
                             } 
                         }   
                     } 
@@ -67,9 +63,9 @@ public class Enters {
                     }
                     
                     // Verificar que el caràcter en la posició 0 és un signe de menys o més 
-                    if (nouText.charAt(0) == '-' || nouText.charAt(0) == '+') {
+                    if (nouText.charAt(0) != '-' || nouText.charAt(0) != '+') {
                         // enter serà true
-                        enter = true;
+                        enter = false;
                         
                         // Fer un for per iterar tots els caràcters a partir de la posició 1
                         for (int i = 1; i < nouText.length(); i++) {
