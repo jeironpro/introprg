@@ -22,7 +22,7 @@ public class Enters {
             
             // Verificar si el text no està buit
             if (!text.isEmpty()) {
-                enter = false;
+                enter = true;
                 // Fer un for per iterar tots els caràcters del text
                 for (int i = 0; i < text.length(); i++) {
                     // Declarar e inicialitzar el char c amb cada caràcter del text
