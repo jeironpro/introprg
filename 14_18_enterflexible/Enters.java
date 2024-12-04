@@ -33,6 +33,8 @@ public class Enters {
                     if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
+                    } else {
+                        enter = false;
                     }
                 }
                 
