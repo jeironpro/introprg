@@ -28,7 +28,7 @@ public class Enters {
                     // Declarar e inicialitzar el char c amb cada caràcter del text
                     char c = text.charAt(i);
                     // Verificar si els caràcters no és dígit    
-                    if (!Character.isDigit(c)) {
+                    if (Character.isLetter(c)) {
                         // enter serà false
                         enter = false;
                     }
@@ -63,7 +63,7 @@ public class Enters {
                         } 
                         if (i >= 1 && (c == '.' || c == '_')) {
                             // Verificar si els caràcter és un punt o un guió baix
-                            if (i > 0 && i < nouText.length()-1) {
+                            if (i > 0 && i < nouText.length()) {
                                 // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
                                 if (!Character.isDigit(nouText.charAt(i-1)) && !Character.isDigit(nouText.charAt(i+1))) {
                                     // enter serà true
