@@ -45,7 +45,7 @@ public class Enters {
                             // enter serà false
                             enter = false;
                         } else {
-                            if (i == 0 || i < nouText.length()-1 && (c == '.' || c == '_')) {
+                            if (i == 0 || i == nouText.length()-1 && (c == '.' || c == '_')) {
                                 enter = false;
                             }
                             if (i == 0 && (c == '-' || c == '+')) {
