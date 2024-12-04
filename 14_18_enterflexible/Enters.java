@@ -32,6 +32,11 @@ public class Enters {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
                     }
+                    // Verificar si els caràcters no és dígit    
+                    if (!Character.isDigit(c)) {
+                        // enter serà false
+                        enter = false;
+                    }  
                 }
                 
                 // Verificar si el nouText no està buit
@@ -39,13 +44,7 @@ public class Enters {
                     // Fer un for per iterar tots els caràcters del nouText
                     for (int i = 0; i < nouText.length(); i++) {
                         // Declarar e inicialitzar el char c amb cada caràcter del nouText
-                        char c = nouText.charAt(i);  
-                        
-                        // Verificar si els caràcters no és dígit    
-                        if (!Character.isDigit(c)) {
-                            // enter serà false
-                            enter = false;
-                        }          
+                        char c = nouText.charAt(i);          
                         
                         if (i == 0) {
                             if (c == '-' || c == '+') {
