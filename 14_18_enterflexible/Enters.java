@@ -45,7 +45,8 @@ public class Enters {
                             // enter serà false
                             enter = false;
                         } else {
-                            if (i == 0 && (c == '-' || c == '+')) {
+                            if (i == 0 && (c != '-' || c != '+')) {
+                                enter = false;
                                 // Fer un for per iterar tots els caràcters a partir de la posició 1
                                 for (int j = 1; j < nouText.length(); j++) {
                                     // Verificar si els caràcter no són dígit
