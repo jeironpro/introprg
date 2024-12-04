@@ -47,9 +47,6 @@ public class Enters {
                             enter = false;
                         } 
                         if (i == 0) {
-                            if (c != '.' || c != '_') {
-                                enter = true;
-                            }
                             if (c == '-' || c == '+') {
                                 // Fer un for per iterar tots els caràcters a partir de la posició 1
                                 for (int j = 1; j < nouText.length(); j++) {
@@ -60,9 +57,10 @@ public class Enters {
                                     }
                                 } 
                             } 
-                        } else if (i >= 1) {
+                        } else {
                             // Verificar si els caràcter és un punt o un guion baix
                             if (c == '.' || c == '_') {
+                                enter = true;
                                 // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
                                 if (i - 1 >= 0 && Character.isDigit(nouText.charAt(i-1)) && i + 1 < nouText.length() && Character.isDigit(nouText.charAt(i+1))) {
                                     // enter serà true
