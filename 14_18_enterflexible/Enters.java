@@ -40,7 +40,9 @@ public class Enters {
                     for (int i = 0; i < nouText.length(); i++) {
                         // Declarar e inicialitzar el char c amb cada caràcter del nouText
                         char c = nouText.charAt(i);          
-                        
+                        if (nouText.charAt(0) == '.' || nouText.charAt(0) == '_') {
+                            enter = false;
+                        }
                         // Verificar si els caràcters no és dígit    
                         if (Character.isLetter(c)) {
                             // enter serà false
@@ -56,9 +58,6 @@ public class Enters {
                                         enter = false;                                
                                     }
                                 } 
-                            }
-                            if (c == '.' || c == '_') {
-                                enter = false;
                             }
                         } else {
                             // Verificar si els caràcter és un punt o un guió baix
