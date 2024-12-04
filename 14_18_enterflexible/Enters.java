@@ -41,7 +41,15 @@ public class Enters {
                         // Declarar e inicialitzar el char c amb cada caràcter del nouText
                         char c = nouText.charAt(i);          
                         
+                        // Verificar si els caràcters no és dígit    
+                        if (Character.isLetter(c)) {
+                            // enter serà false
+                            enter = false;
+                        } 
                         if (i == 0) {
+                            if (c == '.' || c == '_') {
+                                enter = false;
+                            }
                             if (c == '-' || c == '+') {
                                 // Fer un for per iterar tots els caràcters a partir de la posició 1
                                 for (int j = 1; j < nouText.length(); j++) {
@@ -62,13 +70,6 @@ public class Enters {
                                 } 
                             }                         
                         }
-                        
-                        // Verificar si els caràcters no és dígit    
-                        if (Character.isLetter(c)) {
-                            // enter serà false
-                            enter = false;
-                        } 
-                        
                     }
                 }
                 // Reiniciar el String nouText per tornar a guardar el text processat
