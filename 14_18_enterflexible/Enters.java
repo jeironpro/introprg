@@ -31,12 +31,7 @@ public class Enters {
                     if (Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
                         // Guardar aquests caràcters a nouText
                         nouText += c;
-                    }
-                    // Verificar si els caràcters no és dígit    
-                    if (!Character.isDigit(c)) {
-                        // enter serà false
-                        enter = false;
-                    }  
+                    } 
                 }
                 
                 // Verificar si el nouText no està buit
@@ -67,6 +62,12 @@ public class Enters {
                                 } 
                             }                         
                         }
+                        
+                        // Verificar si els caràcters no és dígit    
+                        if (!Character.isDigit(c)) {
+                            // enter serà false
+                            enter = false;
+                        } 
                         
                     }
                 }
