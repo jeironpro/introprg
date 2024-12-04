@@ -60,7 +60,7 @@ public class Enters {
                                     }
                                 } 
                             } 
-                        } else {
+                        } else if (i >= 1) {
                             // Verificar si els caràcter és un punt o un guion baix
                             if (c == '.' || c == '_') {
                                 // Verificar si el caràcter en la posició anterior i següent al punt o guió és un dígit
