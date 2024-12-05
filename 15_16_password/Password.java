@@ -68,7 +68,7 @@ public class Password {
                 }
                 
                 // Veriificar si la contrasenta conté simbol
-                if (Character.isLetter(c) && Character.isDigit(c) && !Character.isWhitespace(c)) {
+                if (Character.isLetter(c) && Character.isDigit(c)) {
                     System.out.println("El password ha de contenir com a mínim un símbol.");
                     break;
                 } else {
