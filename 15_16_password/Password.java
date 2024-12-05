@@ -9,8 +9,6 @@ public class Password {
         if (contrasenya.isEmpty()) {
             System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         } else {
-            // Demanar la contrasenya
-            System.out.println("Contrasenya?");
             // Declarar e inicialitzar el boolean conteDigit en false
             boolean conteDigit = false;
             // Declarar e inicialitzar el boolean conteMajuscula en false
