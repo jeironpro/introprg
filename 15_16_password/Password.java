@@ -43,6 +43,11 @@ public class Password {
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
+                // Verificar si la contrasenya conté espai en blanc
+                if (Character.isWhitespace(c)) {
+                    // conteEspai serà true
+                    conteEspai = true;
+                }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
                     // Sumar-li 1 a comptadorDigit
@@ -51,36 +56,26 @@ public class Password {
                     digit += c;
                     // conteDigit serà true
                     conteDigit = true;
-                }
                 // Verificar si la contrasenya conté majúscula
-                if (Character.isUpperCase(c)) {
+                } else if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
-                    break;
-                }
                 // Verificar si la contrasenya conté minúscula
-                if (Character.isLowerCase(c)) {
+                } else if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
-                    break;
-                } 
-                // Verificar si la contrasenya conté espai en blanc
-                if (Character.isWhitespace(c)) {
-                    // conteEspai serà true
-                    conteEspai = true;
-                    break;
-                }
                 // Del contrari, veriificar si la contrasenta conté simbol
-                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)){
+                } else {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
                 }
+                
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
                 for (int j = i+1; j < contrasenya.length(); j++) {
                     // Declarar e inicialitzar el char ch amb els caracter contrasenya a partir de la posició 1
@@ -99,10 +94,7 @@ public class Password {
                     quatresSeguit = true;
                 }
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
-                if (comptadorMajuscula >= comptadorMinuscula) {
-                    majusculesSuperior = true;           
-                    break;     
-                }
+                majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
