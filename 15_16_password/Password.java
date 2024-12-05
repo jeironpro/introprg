@@ -43,11 +43,6 @@ public class Password {
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
-                // Verificar si la contrasenya conté espai en blanc
-                if (Character.isWhitespace(c)) {
-                    // conteEspai serà true
-                    conteEspai = true;
-                }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
                     // Sumar-li 1 a comptadorDigit
@@ -68,6 +63,10 @@ public class Password {
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
+                // Verificar si la contrasenya conté espai en blanc
+                } else if (Character.isWhitespace(c)) {
+                    // conteEspai serà true
+                    conteEspai = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
                     // Sumar-li 1 a comptadorSimbol
