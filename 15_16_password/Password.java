@@ -61,33 +61,26 @@ public class Password {
                 if (!Character.isWhitespace(c)) {
                     continue;
                 }
-                // Verificar si la contrasenya conté espai en blanc
-                if (Character.isWhitespace(c)) {
-                    System.out.println("El password no pot contenir espais en blanc.");
-                    return;
-                }
                 
-                // Verificar si la contrasenya conté dígit
+                
                 if (!Character.isDigit(c)) {
                     System.out.println("El password ha de contenir com a mínim un numero.");
                     return;
                 }
-                
-                // Verificar si la contrasenya conté majúscula
                 if (!Character.isUpperCase(c)) {
                     System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
                     return;
                 }
-                
-                // Verificar si la contrasenya conté minúscula
                 if (!Character.isLowerCase(c)) {
                     System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
                     return;
                 }
-                
-                // Veriificar si la contrasenta conté simbol
                 if (Character.isLetter(c) && Character.isDigit(c)){
                     System.out.println("El password ha de contenir com a mínim un símbol.");
+                    return;
+                }
+                if (Character.isWhitespace(c)) {
+                    System.out.println("El password no pot contenir espais en blanc.");
                     return;
                 }
                 
