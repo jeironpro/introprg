@@ -121,7 +121,7 @@ public class Password {
         // Del contrari
         } else {
             // Mostrar aquest missatge
-            System.out.println("Fora de rang"); // Aquest missatge provisional
+            System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         }
     }
 }
