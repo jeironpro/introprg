@@ -10,18 +10,6 @@ public class Password {
         if (contrasenya.length() < 8 || contrasenya.length() > 16) {
             System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         } else {
-            // Declarar e inicialitzar el boolean conteDigit en false
-            boolean conteDigit = false;
-            // Declarar e inicialitzar el boolean conteMajuscula en false
-            boolean conteMajuscula = false;
-            // Declarar e inicialitzar el boolean conteMinuscula en false
-            boolean conteMinuscula = false;
-            // Declarar e inicialitzar el boolean conteSimbol en false
-            boolean conteSimbol = false;
-            // Declarar e inicialitzar el boolean majusculesSuperior en false
-            boolean majusculesSuperior = false;
-            // Declarar e inicialitzar el boolean conteEspai en false
-            boolean conteEspai = false;
             // Declarar e inicialitzar el boolean caracterRepetit en false
             boolean caracterRepetit = false;
             // Declarar e inicialitzar el boolean quatresSeguit en false
@@ -55,8 +43,6 @@ public class Password {
                     comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
-                    // conteDigit serà true
-                    conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
                 } else {
                     System.out.println("El password ha de contenir com a mínim un numero.");
@@ -66,8 +52,6 @@ public class Password {
                 if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
-                    // conteMajuscula serà true
-                    conteMajuscula = true;
                 // Verificar si la contrasenya conté minúscula
                 } else {
                     System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
@@ -77,8 +61,6 @@ public class Password {
                 if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
-                    // conteMinuscula serà true
-                    conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
                     System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
@@ -88,8 +70,6 @@ public class Password {
                 if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)){
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
-                    // conteSimbol serà true
-                    conteSimbol = true;
                 } else {
                     System.out.println("El password ha de contenir com a mínim un símbol.");
                     break;
