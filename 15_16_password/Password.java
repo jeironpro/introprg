@@ -57,12 +57,14 @@ public class Password {
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
+                    break;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
+                    break;
                 // Verificar si la contrasenya conté espai en blanc
                 } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
