@@ -31,12 +31,6 @@ public class Password {
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
-                // Verificar si la contrasenya conté espai en blanc
-                if (Character.isWhitespace(c)) {
-                    System.out.println("El password no pot contenir espais en blanc.");
-                    break;
-                }
-                
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
                     // Sumar-li 1 a comptadorDigit
@@ -72,6 +66,12 @@ public class Password {
                     comptadorSimbol++;
                 } else {
                     System.out.println("El password ha de contenir com a mínim un símbol.");
+                    break;
+                }
+                
+                // Verificar si la contrasenya conté espai en blanc
+                if (Character.isWhitespace(c)) {
+                    System.out.println("El password no pot contenir espais en blanc.");
                     break;
                 }
                 
