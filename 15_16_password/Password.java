@@ -113,7 +113,10 @@ public class Password {
                     quatresSeguit = true;
                 }
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
-                majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
+                if (comptadorMajuscula <= comptadorMinuscula) {
+                    System.out.println("El password no pot contenir menys majúscules que minúscules.");
+                    break; 
+                }
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
@@ -138,10 +141,6 @@ public class Password {
                 // tresDigitConsecutius serà true
                 tresDigitConsecutius = true;
             }
-            
-            if (!majusculesSuperior) {
-                System.out.println("El password no pot contenir menys majúscules que minúscules.");
-            } 
         }
     }
 }
