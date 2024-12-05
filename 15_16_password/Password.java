@@ -47,6 +47,7 @@ public class Password {
                 if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
+                    System.out.println("El password no pot contenir espais en blanc.");
                 }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
