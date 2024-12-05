@@ -43,6 +43,10 @@ public class Password {
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
+                // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
+                if (comptadorMajuscula >= comptadorMinuscula) {
+                    majusculesSuperior = true;;
+                }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
                     // Sumar-li 1 a comptadorDigit
@@ -73,8 +77,6 @@ public class Password {
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
-                    // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
-                    majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
