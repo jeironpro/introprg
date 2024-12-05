@@ -50,8 +50,7 @@ public class Password {
                     digit += c;
                     // conteDigit serà true
                     conteDigit = true;
-                } else {
-                    break;
+                    continue;
                 }
                 
                 // Verificar si la contrasenya conté majúscula
@@ -60,8 +59,7 @@ public class Password {
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
-                } else {
-                    break;
+                    continue;
                 }
                 
                 // Verificar si la contrasenya conté minúscula
@@ -70,8 +68,15 @@ public class Password {
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
-                } else {
-                    break;
+                    continue;
+                }
+                // Veriificar si la contrasenta conté simbol
+                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                    // Sumar-li 1 a comptadorSimbol
+                    comptadorSimbol++;
+                    // conteSimbol serà true
+                    conteSimbol = true;
+                    continue;
                 }
                 
                 // Verificar si la contrasenya conté espai en blanc
@@ -80,15 +85,6 @@ public class Password {
                     break;
                 }
                 
-                // Veriificar si la contrasenta conté simbol
-                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
-                    // Sumar-li 1 a comptadorSimbol
-                    comptadorSimbol++;
-                    // conteSimbol serà true
-                    conteSimbol = true;
-                } else {
-                    break;
-                }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
                 for (int j = i+1; j < contrasenya.length(); j++) {
