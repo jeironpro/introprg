@@ -51,36 +51,29 @@ public class Password {
                     // conteDigit serà true
                     conteDigit = true;
                     continue;
-                }
-                
                 // Verificar si la contrasenya conté majúscula
-                if (Character.isUpperCase(c)) {
+                } else if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
                     continue;
-                }
-                
                 // Verificar si la contrasenya conté minúscula
-                if (Character.isLowerCase(c)) {
+                } else if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
                     continue;
-                }
                 // Veriificar si la contrasenta conté simbol
-                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
                     continue;
-                }
-                
                 // Verificar si la contrasenya conté espai en blanc
-                if (Character.isWhitespace(c)) {
+                } else if (Character.isWhitespace(c)) {
                     System.out.println("El password no pot contenir espais en blanc.");
                     break;
                 }
