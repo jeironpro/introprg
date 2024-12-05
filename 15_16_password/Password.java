@@ -49,15 +49,6 @@ public class Password {
                     break;
                 }
                 
-                if (Character.isLowerCase(c)) {
-                    // Sumar-li 1 a comptadorMinuscula
-                    comptadorMinuscula++;
-                // Del contrari, veriificar si la contrasenta conté simbol
-                } else {
-                    System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-                    break;
-                }
-                
                 if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
@@ -67,6 +58,14 @@ public class Password {
                     break;
                 }
                 
+                if (Character.isLowerCase(c)) {
+                    // Sumar-li 1 a comptadorMinuscula
+                    comptadorMinuscula++;
+                // Del contrari, veriificar si la contrasenta conté simbol
+                } else {
+                    System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
+                    break;
+                }
                 
                 if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)){
                     // Sumar-li 1 a comptadorSimbol
