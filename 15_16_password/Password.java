@@ -98,22 +98,16 @@ public class Password {
                 
                 if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
-                break;
             } else if (!conteMajuscula) {
                 System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
-                break;
             } else if (!conteMinuscula) {
                 System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-                break;
             } else if (!conteSimbol) {
                 System.out.println("El password ha de contenir com a mínim un símbol.");
-                break;
             } else if (!majusculesSuperior) {
                 System.out.println("El password no pot contenir menys majúscules que minúscules.");
-                break;
             } else if (!conteEspai) {
                 System.out.println("El password no pot contenir espais en blanc.");
-                break;
             }
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
