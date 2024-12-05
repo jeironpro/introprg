@@ -68,7 +68,7 @@ public class Password {
                     // conteEspai serà true
                     conteEspai = true;
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
-                } else if (comptadorMajuscula >= comptadorMinuscula) {
+                } else if (comptadorMajuscula <= comptadorMinuscula) {
                     majusculesSuperior = true;;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
