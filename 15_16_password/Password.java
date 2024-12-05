@@ -96,8 +96,6 @@ public class Password {
                     quatresSeguit = true;
                 }
             }
-            System.out.println(comptadorMajuscula);
-            System.out.println(comptadorMinuscula);
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
             // Fer un for per iterar tots el caràcter dígits
