@@ -93,7 +93,8 @@ public class Password {
                 }
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
                 if (comptadorMajuscula >= comptadorMinuscula) {
-                    majusculesSuperior = true;                
+                    majusculesSuperior = true;           
+                    break;     
                 }
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
