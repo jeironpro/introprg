@@ -65,16 +65,12 @@ public class Password {
                 } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
-                }
-                
                 // Veriificar si la contrasenta conté simbol
-                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
-                } else {
-                    break;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
