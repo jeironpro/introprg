@@ -45,9 +45,6 @@ public class Password {
                 char c = contrasenya.charAt(i);
                 // Verificar si la contrasenya conté espai en blanc
                 if (Character.isWhitespace(c)) {
-                    // conteEspai serà true
-                    conteEspai = true;
-                } else {
                     System.out.println("El password no pot contenir espais en blanc.");
                     break;
                 }
