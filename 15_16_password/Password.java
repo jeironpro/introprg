@@ -73,6 +73,8 @@ public class Password {
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
+                    // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
+                    majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
@@ -92,8 +94,6 @@ public class Password {
                     // quatresSeguit serà true
                     quatresSeguit = true;
                 }
-                // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
-                majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
