@@ -6,6 +6,7 @@ public class Password {
         // Llegir la contrasenya
         String contrasenya = Entrada.readLine();
         
+        // Verificar si la contrasenya està a dins del rang permet
         if (contrasenya.length() < 8 || contrasenya.length() > 16) {
             System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         } else {
@@ -38,88 +39,89 @@ public class Password {
             // Declarar e inicialitzar el String digit buit
             String digit = "";
             
-            // Verificar si la contrasenya està a dins del rang permet
-            if (contrasenya.length() >= 8 && contrasenya.length() <= 16) {
-                // Fer un for per iterar tots els caràcters de la contrasenya 
-                for (int i = 0; i < contrasenya.length(); i++) {
-                    // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
-                    char c = contrasenya.charAt(i);
-                    // Verificar si la contrasenya conté espai en blanc
-                    if (Character.isWhitespace(c)) {
-                        // conteEspai serà true
-                        conteEspai = true;
-                    }
-                    // Verificar si la contrasenya conté dígit
-                    if (Character.isDigit(c)) {
-                        // Sumar-li 1 a comptadorDigit
-                        comptadorDigit++;
-                        // Guardar en el String digit el caràcters que ho són
-                        digit += c;
-                        // conteDigit serà true
-                        conteDigit = true;
-                    // Verificar si la contrasenya conté majúscula
-                    } else if (Character.isUpperCase(c)) {
-                        // Sumar-li 1 a comptadorMajuscula
-                        comptadorMajuscula++;
-                        // conteMajuscula serà true
-                        conteMajuscula = true;
-                    // Verificar si la contrasenya conté minúscula
-                    } else if (Character.isLowerCase(c)) {
-                        // Sumar-li 1 a comptadorMinuscula
-                        comptadorMinuscula++;
-                        // conteMinuscula serà true
-                        conteMinuscula = true;
-                    // Del contrari, veriificar si la contrasenta conté simbol
-                    } else {
-                        // Sumar-li 1 a comptadorSimbol
-                        comptadorSimbol++;
-                        // conteSimbol serà true
-                        conteSimbol = true;
-                    }
-                    
-                    // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
-                    for (int j = i+1; j < contrasenya.length(); j++) {
-                        // Declarar e inicialitzar el char ch amb els caracter contrasenya a partir de la posició 1
-                        char ch = contrasenya.charAt(j);
-                        // Verificar si el caracter c és igual es ch
-                        if (c == ch) {
-                            // caracterRepetit serà true
-                            caracterRepetit = true;
-                            // Finalitzar el bucle
-                            break;
-                        }
-                    }
-                    // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-                    if (comptadorMajuscula > 4 || comptadorMinuscula > 4 || comptadorDigit > 4 || comptadorSimbol > 4) {
-                        // quatresSeguit serà true
-                        quatresSeguit = true;
-                    }
-                    // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
-                    majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
+            // Fer un for per iterar tots els caràcters de la contrasenya 
+            for (int i = 0; i < contrasenya.length(); i++) {
+                // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
+                char c = contrasenya.charAt(i);
+                // Verificar si la contrasenya conté espai en blanc
+                if (Character.isWhitespace(c)) {
+                    // conteEspai serà true
+                    conteEspai = true;
                 }
-                // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
-                int comptadorDigitConsecutius = 0;
-                // Fer un for per iterar tots el caràcter dígits
-                for (int i = 0; i < digit.length(); i++) {
-                    // Declarar e inicialitzar el char d amb tots els digits
-                    char d = digit.charAt(i);
-                    // Fer un for per iterar el caràcter dígits a partir del seguent dígit
-                    for (int j = i+1; j < digit.length(); j++) {
-                        // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
-                        char di = digit.charAt(j);
-                        // Verificar si el digit +1 és igual a di
-                        // Aquest verifica si és consecutius
-                        if (d+1 == di) {
-                            // Sumar-li 1 a comptadorDigitConsecutius
-                            comptadorDigitConsecutius++;
-                        }                    
+                // Verificar si la contrasenya conté dígit
+                if (Character.isDigit(c)) {
+                    // Sumar-li 1 a comptadorDigit
+                    comptadorDigit++;
+                    // Guardar en el String digit el caràcters que ho són
+                    digit += c;
+                    // conteDigit serà true
+                    conteDigit = true;
+                // Verificar si la contrasenya conté majúscula
+                } else if (Character.isUpperCase(c)) {
+                    // Sumar-li 1 a comptadorMajuscula
+                    comptadorMajuscula++;
+                    // conteMajuscula serà true
+                    conteMajuscula = true;
+                // Verificar si la contrasenya conté minúscula
+                } else if (Character.isLowerCase(c)) {
+                    // Sumar-li 1 a comptadorMinuscula
+                    comptadorMinuscula++;
+                    // conteMinuscula serà true
+                    conteMinuscula = true;
+                // Del contrari, veriificar si la contrasenta conté simbol
+                } else {
+                    // Sumar-li 1 a comptadorSimbol
+                    comptadorSimbol++;
+                    // conteSimbol serà true
+                    conteSimbol = true;
+                }
+                
+                // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
+                for (int j = i+1; j < contrasenya.length(); j++) {
+                    // Declarar e inicialitzar el char ch amb els caracter contrasenya a partir de la posició 1
+                    char ch = contrasenya.charAt(j);
+                    // Verificar si el caracter c és igual es ch
+                    if (c == ch) {
+                        // caracterRepetit serà true
+                        caracterRepetit = true;
+                        // Finalitzar el bucle
+                        break;
                     }
                 }
-                // Verificar si la contrasenya conté tres dígits consecutius
-                if (comptadorDigitConsecutius >= 3) {
-                    // tresDigitConsecutius serà true
-                    tresDigitConsecutius = true;
+                // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
+                if (comptadorMajuscula > 4 || comptadorMinuscula > 4 || comptadorDigit > 4 || comptadorSimbol > 4) {
+                    // quatresSeguit serà true
+                    quatresSeguit = true;
                 }
+                // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
+                majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
+            }
+            // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
+            int comptadorDigitConsecutius = 0;
+            // Fer un for per iterar tots el caràcter dígits
+            for (int i = 0; i < digit.length(); i++) {
+                // Declarar e inicialitzar el char d amb tots els digits
+                char d = digit.charAt(i);
+                // Fer un for per iterar el caràcter dígits a partir del seguent dígit
+                for (int j = i+1; j < digit.length(); j++) {
+                    // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
+                    char di = digit.charAt(j);
+                    // Verificar si el digit +1 és igual a di
+                    // Aquest verifica si és consecutius
+                    if (d+1 == di) {
+                        // Sumar-li 1 a comptadorDigitConsecutius
+                        comptadorDigitConsecutius++;
+                    }                    
+                }
+            }
+            // Verificar si la contrasenya conté tres dígits consecutius
+            if (comptadorDigitConsecutius >= 3) {
+                // tresDigitConsecutius serà true
+                tresDigitConsecutius = true;
+            }
+            
+            if (!conteDigit) {
+                System.out.println("El password ha de contenir com a mínim un numero.");
             }
         }
     }
