@@ -122,9 +122,7 @@ public class Password {
             
             if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
-            }
-            
-            if (!conteMajuscula) {
+            } else if (!conteMajuscula) {
                 System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
             }
         }
