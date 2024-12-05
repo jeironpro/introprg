@@ -6,7 +6,7 @@ public class Password {
         // Llegir la contrasenya
         String contrasenya = Entrada.readLine();
         
-        if (contrasenya.isEmpty()) {
+        if (contrasenya.isEmpty() || contrasenya.length() <= 8 && contrasenya.length() >= 16) {
             System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         } else {
             // Declarar e inicialitzar el boolean conteDigit en false
@@ -120,10 +120,6 @@ public class Password {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
                 }
-            // Del contrari
-            } else {
-                // Mostrar aquest missatge
-                System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
             }
         }
     }
