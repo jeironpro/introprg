@@ -73,6 +73,8 @@ public class Password {
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
+                } else {
+                    break;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
