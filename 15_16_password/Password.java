@@ -41,6 +41,7 @@ public class Password {
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
+                
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
                     // Sumar-li 1 a comptadorDigit
@@ -49,28 +50,44 @@ public class Password {
                     digit += c;
                     // conteDigit serà true
                     conteDigit = true;
+                } else {
+                    break;
+                }
+                
                 // Verificar si la contrasenya conté majúscula
-                } else if (Character.isUpperCase(c)) {
+                if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
+                } else {
+                    break;
+                }
+                
                 // Verificar si la contrasenya conté minúscula
-                } else if (Character.isLowerCase(c)) {
+                if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
+                } else {
+                    break;
+                }
+                
                 // Verificar si la contrasenya conté espai en blanc
-                } else if (Character.isWhitespace(c)) {
+                if (Character.isWhitespace(c)) {
                     System.out.println("El password no pot contenir espais en blanc.");
                     break;
+                }
+                
                 // Veriificar si la contrasenta conté simbol
-                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
+                } else {
+                    break;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
