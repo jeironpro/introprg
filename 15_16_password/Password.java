@@ -68,14 +68,11 @@ public class Password {
                 }
                 
                 // Veriificar si la contrasenta conté simbol
-                if (Character.isLetter(c) && Character.isDigit(c)) {
-                    System.out.println("El password ha de contenir com a mínim un símbol.");
-                    break;
-                } else {
-                    if (!Character.isWhitespace(c)) {
-                        // Sumar-li 1 a comptadorSimbol
-                        comptadorSimbol++;
-                    }
+                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                    // Sumar-li 1 a comptadorSimbol
+                    comptadorSimbol++;
+                    // conteSimbol serà true
+                    conteSimbol = true;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
@@ -130,6 +127,8 @@ public class Password {
                 System.out.println("El password no pot contenir menys majúscules que minúscules.");
             } else if (conteEspai) {
                 System.out.println("El password no pot contenir espais en blanc.");
+            } else if (!conteSimbol) {
+                System.out.println("El password ha de contenir com a mínim un símbol.");
             }
         }
     }
