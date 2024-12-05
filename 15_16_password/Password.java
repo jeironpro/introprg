@@ -47,7 +47,7 @@ public class Password {
                 if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
-                    break;
+                    return;
                 }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
