@@ -57,19 +57,31 @@ public class Password {
                     // conteDigit serà true
                     conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
-                } else if (Character.isUpperCase(c)) {
+                } else {
+                    return;
+                }
+                
+                if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
                 // Verificar si la contrasenya conté minúscula
-                } else if (Character.isLowerCase(c)) {
+                } else {
+                    return;
+                }
+                
+                if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
+                    return;
+                }
+                
+                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)){
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
