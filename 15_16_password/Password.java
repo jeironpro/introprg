@@ -65,23 +65,23 @@ public class Password {
                 
                 if (!Character.isDigit(c)) {
                     System.out.println("El password ha de contenir com a mínim un numero.");
-                    return;
+                    break;
                 }
                 if (!Character.isUpperCase(c)) {
                     System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
-                    return;
+                    break;
                 }
                 if (!Character.isLowerCase(c)) {
                     System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-                    return;
+                    break;
                 }
                 if (Character.isLetter(c) && Character.isDigit(c)){
                     System.out.println("El password ha de contenir com a mínim un símbol.");
-                    return;
+                    break;
                 }
                 if (Character.isWhitespace(c)) {
                     System.out.println("El password no pot contenir espais en blanc.");
-                    return;
+                    break;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
