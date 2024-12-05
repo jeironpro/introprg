@@ -96,6 +96,8 @@ public class Password {
                     quatresSeguit = true;
                 }
             }
+            System.out.println(comptadorMajuscula);
+            System.out.println(comptadorMinuscula);
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
             // Fer un for per iterar tots el caràcter dígits
@@ -126,10 +128,10 @@ public class Password {
                 System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
             } else if (!conteMinuscula) {
                 System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-            } else if (!conteSimbol) {
-                System.out.println("El password ha de contenir com a mínim un símbol.");
             } else if (!majusculesSuperior) {
                 System.out.println("El password no pot contenir menys majúscules que minúscules.");
+            } else if (!conteSimbol) {
+                System.out.println("El password ha de contenir com a mínim un símbol.");
             } else if (!conteEspai) {
                 System.out.println("El password no pot contenir espais en blanc.");
             }
