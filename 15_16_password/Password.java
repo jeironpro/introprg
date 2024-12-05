@@ -6,7 +6,7 @@ public class Password {
         // Llegir la contrasenya
         String contrasenya = Entrada.readLine();
         
-        if (contrasenya.length() <= 8 || contrasenya.length() >= 16) {
+        if (contrasenya.length() < 8 || contrasenya.length() > 16) {
             System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         } else {
             // Declarar e inicialitzar el boolean conteDigit en false
