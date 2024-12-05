@@ -31,6 +31,36 @@ public class Password {
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
+                
+                if (Character.isDigit(c)) {
+                    // Sumar-li 1 a comptadorDigit
+                    comptadorDigit++;
+                    // Guardar en el String digit el caràcters que ho són
+                    digit += c;
+                    continue;
+                }
+                
+                if (Character.isUpperCase(c)) {
+                    // Sumar-li 1 a comptadorMajuscula
+                    comptadorMajuscula++;
+                    continue;
+                }
+                
+                if (Character.isLowerCase(c)) {
+                    // Sumar-li 1 a comptadorMinuscula
+                    comptadorMinuscula++;
+                    continue;
+                }
+                
+                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                    // Sumar-li 1 a comptadorSimbol
+                    comptadorSimbol++;
+                    continue;
+                }
+                
+                if (!Character.isWhitespace(c)) {
+                    continue;
+                }
                 // Verificar si la contrasenya conté espai en blanc
                 if (Character.isWhitespace(c)) {
                     System.out.println("El password no pot contenir espais en blanc.");
@@ -38,39 +68,25 @@ public class Password {
                 }
                 
                 // Verificar si la contrasenya conté dígit
-                if (Character.isDigit(c)) {
-                    // Sumar-li 1 a comptadorDigit
-                    comptadorDigit++;
-                    // Guardar en el String digit el caràcters que ho són
-                    digit += c;
-                // Verificar si la contrasenya conté majúscula
-                } else {
+                if (!Character.isDigit(c)) {
                     System.out.println("El password ha de contenir com a mínim un numero.");
                     return;
                 }
                 
-                if (Character.isUpperCase(c)) {
-                    // Sumar-li 1 a comptadorMajuscula
-                    comptadorMajuscula++;
-                // Verificar si la contrasenya conté minúscula
-                } else {
+                // Verificar si la contrasenya conté majúscula
+                if (!Character.isUpperCase(c)) {
                     System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
                     return;
                 }
                 
-                if (Character.isLowerCase(c)) {
-                    // Sumar-li 1 a comptadorMinuscula
-                    comptadorMinuscula++;
-                // Del contrari, veriificar si la contrasenta conté simbol
-                } else {
+                // Verificar si la contrasenya conté minúscula
+                if (!Character.isLowerCase(c)) {
                     System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
                     return;
                 }
                 
-                if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)){
-                    // Sumar-li 1 a comptadorSimbol
-                    comptadorSimbol++;
-                } else {
+                // Veriificar si la contrasenta conté simbol
+                if (Character.isLetter(c) && Character.isDigit(c)){
                     System.out.println("El password ha de contenir com a mínim un símbol.");
                     return;
                 }
