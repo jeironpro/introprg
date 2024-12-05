@@ -71,9 +71,10 @@ public class Password {
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
-                } else if (comptadorMajuscula < comptadorMinuscula) {
+                }
+                
+                if (comptadorMajuscula < comptadorMinuscula) {
                     System.out.println("El password no pot contenir menys majúscules que minúscules.");
-                    break;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
