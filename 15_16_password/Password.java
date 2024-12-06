@@ -52,33 +52,28 @@ public class Password {
                     comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
-                    continue;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
                     // conteMajuscula serà true
                     conteMajuscula = true;
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
-                    continue;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
                     // conteMinuscula serà true
                     conteMinuscula = true;
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
-                    continue;
                 // Veriificar si la contrasenta conté simbol
                 } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
-                    continue;
                 // Verificar si la contrasenya conté espai en blanc
                 } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
-                    continue;
                 }
                 if (i == contrasenya.length()-1) {
                     if (!conteDigit) {
