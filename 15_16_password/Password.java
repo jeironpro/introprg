@@ -69,7 +69,7 @@ public class Password {
                     // conteEspai serà true
                     conteEspai = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
-                } else {
+                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
