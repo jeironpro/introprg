@@ -89,7 +89,7 @@ public class Password {
                         System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
                         break;
                     }
-                    if (conteDigit && conteMajuscula && conteMinuscula && comptadorMajuscula > comptadorMinuscula && !conteSimbol) {
+                    if (conteDigit && conteMajuscula && conteMinuscula && comptadorMajuscula >= comptadorMinuscula && !conteSimbol) {
                         System.out.println("El password ha de contenir com a mínim un símbol.");
                         break;
                     }
