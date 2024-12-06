@@ -80,6 +80,7 @@ public class Password {
                     conteEspai = true;
                     continue;
                 }
+                if (i == contrasenya.length()-1) {
                     if (!conteDigit) {
                         System.out.println("El password ha de contenir com a mínim un numero.");
                         break;
@@ -104,7 +105,7 @@ public class Password {
                         System.out.println("El password no pot contenir espais en blanc.");
                         break;
                     }
-                
+                }
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
                 for (int j = i+1; j < contrasenya.length(); j++) {
                     // Declarar e inicialitzar el char ch amb els caracter contrasenya a partir de la posició 1
