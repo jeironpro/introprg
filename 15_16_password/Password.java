@@ -50,18 +50,21 @@ public class Password {
                     digit += c;
                     // conteDigit serà true
                     conteDigit = true;
+                    break;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
+                    break;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
+                    break;
                 // Veriificar si la contrasenta conté simbol
                 } else {
                     // Sumar-li 1 a comptadorSimbol
