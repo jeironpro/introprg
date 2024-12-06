@@ -66,11 +66,12 @@ public class Password {
                     conteMinuscula = true;
                     break;
                 // Veriificar si la contrasenta conté simbol
-                } else {
+                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
+                    break;
                 }
                 
                 if (!conteDigit) {
