@@ -46,34 +46,34 @@ public class Password {
                 
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
+                    // conteDigit serà true
+                    conteDigit = true;
                     // Sumar-li 1 a comptadorDigit
                     comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
-                    // conteDigit serà true
-                    conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
-                    // Sumar-li 1 a comptadorMajuscula
-                    comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
+                    // Sumar-li 1 a comptadorMajuscula
+                    comptadorMajuscula++;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
-                    // Sumar-li 1 a comptadorMinuscula
-                    comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
-                // Verificar si la contrasenya conté espai en blanc
-                } else if (Character.isWhitespace(c)) {
-                    // conteEspai serà true
-                    conteEspai = true;
-                // Del contrari, veriificar si la contrasenta conté simbol
+                    // Sumar-li 1 a comptadorMinuscula
+                    comptadorMinuscula++;
+                // Veriificar si la contrasenta conté simbol
                 } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
+                // Verificar si la contrasenya conté espai en blanc
+                } else if (Character.isWhitespace(c)) {
+                    // conteEspai serà true
+                    conteEspai = true;
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
@@ -119,6 +119,8 @@ public class Password {
             }
             if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
+            } else if (conteEspai) {
+                System.out.println("El password no pot contenir espais en blanc.");
             } else if (!conteMajuscula) {
                 System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
             } else if (!conteMinuscula) {
@@ -127,9 +129,7 @@ public class Password {
                 System.out.println("El password ha de contenir com a mínim un símbol.");
             } else if (comptadorMajuscula < comptadorMinuscula) {
                 System.out.println("El password no pot contenir menys majúscules que minúscules.");
-            } else if (conteEspai) {
-                System.out.println("El password no pot contenir espais en blanc.");
-            } 
+            }
         }
     }
 }
