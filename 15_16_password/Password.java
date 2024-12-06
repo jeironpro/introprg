@@ -80,19 +80,24 @@ public class Password {
                     if (!conteDigit) {
                         System.out.println("El password ha de contenir com a mínim un numero.");
                         break;
-                    } else if (!conteMajuscula) {
+                    }
+                    if (!conteMajuscula) {
                         System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
                         break;
-                    } else if (!conteMinuscula) {
+                    } 
+                    if (!conteMinuscula) {
                         System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
                         break;
-                    } else if (comptadorMajuscula < comptadorMinuscula) {
+                    }
+                    if (comptadorMajuscula < comptadorMinuscula) {
                         System.out.println("El password no pot contenir menys majúscules que minúscules.");
                         break;
-                    } else if (!conteSimbol) {
+                    }
+                    if (!conteSimbol) {
                         System.out.println("El password ha de contenir com a mínim un símbol.");
                         break;
-                    } else if (conteEspai) {
+                    }
+                    if (conteEspai) {
                         System.out.println("El password no pot contenir espais en blanc.");
                         break;
                     }
