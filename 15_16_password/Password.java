@@ -64,9 +64,6 @@ public class Password {
                     conteMinuscula = true;
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
-                } else if (comptadorMajuscula < comptadorMinuscula) {
-                    System.out.println("El password no pot contenir menys majúscules que minúscules.");
-                    break;
                 // Veriificar si la contrasenta conté simbol
                 } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
@@ -84,19 +81,23 @@ public class Password {
                         System.out.println("El password ha de contenir com a mínim un numero.");
                         break;
                     }
-                    if (!conteMajuscula) {
+                    if (conteDigit && !conteMajuscula) {
                         System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
                         break;
                     } 
-                    if (!conteMinuscula) {
+                    if (conteDigit && conteMajuscula && !conteMinuscula) {
                         System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
                         break;
                     }
-                    if (!conteSimbol) {
+                    if (conteDigit && conteMajuscula && conteMinuscula && !conteSimbol) {
                         System.out.println("El password ha de contenir com a mínim un símbol.");
                         break;
                     }
-                    if (conteEspai) {
+                    if (conteMajuscula && conteMinuscula && comptadorMajuscula < comptadorMinuscula) {
+                        System.out.println("El password no pot contenir menys majúscules que minúscules.");
+                        break;
+                    }
+                    if (conteDigit && conteMajuscula && conteMinuscula && conteEspai) {
                         System.out.println("El password no pot contenir espais en blanc.");
                         break;
                     }
