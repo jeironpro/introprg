@@ -80,16 +80,21 @@ public class Password {
                 
                 if (i == contrasenya.length()-1) {
                     if (!conteDigit) {
-                    System.out.println("El password ha de contenir com a mínim un numero.");
-                } else if (!conteMajuscula) {
-                    System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
-                } else if (!conteMinuscula) {
-                    System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-                } else if (!conteSimbol) {
-                    System.out.println("El password ha de contenir com a mínim un símbol.");
-                } else if (comptadorMajuscula < comptadorMinuscula) {
-                    System.out.println("El password no pot contenir menys majúscules que minúscules.");
-                }
+                        System.out.println("El password ha de contenir com a mínim un numero.");
+                        break;
+                    } else if (!conteMajuscula) {
+                        System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
+                        break;
+                    } else if (!conteMinuscula) {
+                        System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
+                        break;
+                    } else if (!conteSimbol) {
+                        System.out.println("El password ha de contenir com a mínim un símbol.");
+                        break;
+                    } else if (comptadorMajuscula < comptadorMinuscula) {
+                        System.out.println("El password no pot contenir menys majúscules que minúscules.");
+                        break;
+                    }
                 }
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
