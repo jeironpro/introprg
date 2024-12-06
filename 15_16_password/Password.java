@@ -18,6 +18,8 @@ public class Password {
             boolean conteMinuscula = false;
             // Declarar e inicialitzar el boolean conteSimbol en false
             boolean conteSimbol = false;
+            // Declarar e inicialitzar el boolean majusculesSuperior en false
+            boolean majusculesSuperior = false;
             // Declarar e inicialitzar el boolean conteEspai en false
             boolean conteEspai = false;
             // Declarar e inicialitzar el boolean caracterRepetit en false
@@ -50,49 +52,30 @@ public class Password {
                     digit += c;
                     // conteDigit serà true
                     conteDigit = true;
-                    break;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
-                    break;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
+                // Verificar si la contrasenya conté espai en blanc
+                } else if (Character.isWhitespace(c)) {
+                    // conteEspai serà true
+                    conteEspai = true;
                     break;
-                // Veriificar si la contrasenta conté simbol
-                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                // Del contrari, veriificar si la contrasenta conté simbol
+                } else {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
-                    break;
                 }
-                
-                if (!conteDigit) {
-                    System.out.println("El password ha de contenir com a mínim un numero.");
-                    break;
-                } else if (!conteMajuscula) {
-                    System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
-                    break;
-                } else if (!conteMinuscula) {
-                    System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-                    break;
-                } else if (!conteSimbol) {
-                    System.out.println("El password ha de contenir com a mínim un símbol.");
-                    break;
-                } else if (comptadorMajuscula < comptadorMinuscula) {
-                    System.out.println("El password no pot contenir menys majúscules que minúscules.");
-                } else if (Character.isWhitespace(c)) {
-                    System.out.println("El password no pot contenir espais en blanc.");
-                    break;
-                }
-                
                 
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
                 for (int j = i+1; j < contrasenya.length(); j++) {
@@ -134,6 +117,19 @@ public class Password {
             if (comptadorDigitConsecutius >= 3) {
                 // tresDigitConsecutius serà true
                 tresDigitConsecutius = true;
+            }
+            if (!conteDigit) {
+                System.out.println("El password ha de contenir com a mínim un numero.");
+            } else if (!conteMajuscula) {
+                System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
+            } else if (!conteMinuscula) {
+                System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
+            } else if (!conteSimbol) {
+                System.out.println("El password ha de contenir com a mínim un símbol.");
+            } else if (!conteEspai) {
+                System.out.println("El password no pot contenir espais en blanc.");
+            } else if (comptadorMajuscula < comptadorMinuscula) {
+                System.out.println("El password no pot contenir menys majúscules que minúscules.");
             }
         }
     }
