@@ -68,7 +68,6 @@ public class Password {
                 } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
-                    System.out.println("El password no pot contenir espais en blanc.");
                     break;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else if (comptadorMajuscula < comptadorMinuscula) {
@@ -130,7 +129,9 @@ public class Password {
                 System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
             } else if (!conteSimbol) {
                 System.out.println("El password ha de contenir com a mínim un símbol.");
-            }
+            } else if (!conteEspai) {
+                System.out.println("El password no pot contenir espais en blanc.");
+            } 
         }
     }
 }
