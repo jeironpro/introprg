@@ -68,7 +68,6 @@ public class Password {
                 } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
-                    break;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
                     // Sumar-li 1 a comptadorSimbol
