@@ -64,6 +64,9 @@ public class Password {
                     conteMinuscula = true;
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
+                } else if (comptadorMajuscula < comptadorMinuscula) {
+                    System.out.println("El password no pot contenir menys majúscules que minúscules.");
+                    break;
                 // Veriificar si la contrasenta conté simbol
                 } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
                     // Sumar-li 1 a comptadorSimbol
@@ -91,10 +94,6 @@ public class Password {
                     }
                     if (!conteSimbol) {
                         System.out.println("El password ha de contenir com a mínim un símbol.");
-                        break;
-                    }
-                    if (comptadorMajuscula < comptadorMinuscula) {
-                        System.out.println("El password no pot contenir menys majúscules que minúscules.");
                         break;
                     }
                     if (conteEspai) {
