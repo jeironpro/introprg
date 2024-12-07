@@ -116,6 +116,10 @@ public class Password {
                 // tresDigitConsecutius serà true
                 tresDigitConsecutius = true;
             }
+        // Del contrari
+        } else {
+            // Mostrar aquest missatge
+            System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
         }
     }
 }
