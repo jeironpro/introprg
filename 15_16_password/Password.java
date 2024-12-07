@@ -5,99 +5,74 @@ public class Password {
     public static void main(String[] args) {
         // Llegir la contrasenya
         String contrasenya = Entrada.readLine();
+        // Declarar e inicialitzar el boolean conteDigit en false
+        boolean conteDigit = false;
+        // Declarar e inicialitzar el boolean conteMajuscula en false
+        boolean conteMajuscula = false;
+        // Declarar e inicialitzar el boolean conteMinuscula en false
+        boolean conteMinuscula = false;
+        // Declarar e inicialitzar el boolean conteSimbol en false
+        boolean conteSimbol = false;
+        // Declarar e inicialitzar el boolean majusculesSuperior en false
+        boolean majusculesSuperior = false;
+        // Declarar e inicialitzar el boolean conteEspai en false
+        boolean conteEspai = false;
+        // Declarar e inicialitzar el boolean caracterRepetit en false
+        boolean caracterRepetit = false;
+        // Declarar e inicialitzar el boolean quatresSeguit en false
+        boolean quatresSeguit = false;
+        // Declarar e inicialitzar el boolean tresDigitConsecutius en false
+        boolean tresDigitConsecutius = false;
+        // Declarar e inicialitzar el int comptadorMajuscula en 0
+        int comptadorMajuscula = 0;
+        // Declarar e inicialitzar el int comptadorMinuscula en 0
+        int comptadorMinuscula = 0;
+        // Declarar e inicialitzar el int comptadorDigit en 0
+        int comptadorDigit = 0;
+        // Declarar e inicialitzar el int comptadorSimbol en 0
+        int comptadorSimbol = 0;
+        // Declarar e inicialitzar el String digit buit
+        String digit = "";
         
         // Verificar si la contrasenya està a dins del rang permet
-        if (contrasenya.length() < 8 || contrasenya.length() > 16) {
-            System.out.println("El password ha de tenir entre 8 i 16 caràcters.");
-        } else {
-            // Declarar e inicialitzar el boolean conteDigit en false
-            boolean conteDigit = false;
-            // Declarar e inicialitzar el boolean conteMajuscula en false
-            boolean conteMajuscula = false;
-            // Declarar e inicialitzar el boolean conteMinuscula en false
-            boolean conteMinuscula = false;
-            // Declarar e inicialitzar el boolean conteSimbol en false
-            boolean conteSimbol = false;
-            // Declarar e inicialitzar el boolean conteEspai en false
-            boolean conteEspai = false;
-            // Declarar e inicialitzar el boolean caracterRepetit en false
-            boolean caracterRepetit = false;
-            // Declarar e inicialitzar el boolean quatresSeguit en false
-            boolean quatresSeguit = false;
-            // Declarar e inicialitzar el boolean tresDigitConsecutius en false
-            boolean tresDigitConsecutius = false;
-            // Declarar e inicialitzar el int comptadorMajuscula en 0
-            int comptadorMajuscula = 0;
-            // Declarar e inicialitzar el int comptadorMinuscula en 0
-            int comptadorMinuscula = 0;
-            // Declarar e inicialitzar el int comptadorDigit en 0
-            int comptadorDigit = 0;
-            // Declarar e inicialitzar el int comptadorSimbol en 0
-            int comptadorSimbol = 0;
-            // Declarar e inicialitzar el String digit buit
-            String digit = "";
-            
+        if (contrasenya.length() >= 8 && contrasenya.length() <= 16) {
             // Fer un for per iterar tots els caràcters de la contrasenya 
             for (int i = 0; i < contrasenya.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
-                
+                // Verificar si la contrasenya conté espai en blanc
+                if (Character.isWhitespace(c)) {
+                    // conteEspai serà true
+                    conteEspai = true;
+                }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
-                    // conteDigit serà true
-                    conteDigit = true;
                     // Sumar-li 1 a comptadorDigit
                     comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
+                    // conteDigit serà true
+                    conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
-                    // conteMajuscula serà true
-                    conteMajuscula = true;
                     // Sumar-li 1 a comptadorMajuscula
                     comptadorMajuscula++;
+                    // conteMajuscula serà true
+                    conteMajuscula = true;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
-                    // conteMinuscula serà true
-                    conteMinuscula = true;
                     // Sumar-li 1 a comptadorMinuscula
                     comptadorMinuscula++;
-                // Veriificar si la contrasenta conté simbol
-                } else if (!Character.isLetter(c) && !Character.isDigit(c) && !Character.isWhitespace(c)) {
+                    // conteMinuscula serà true
+                    conteMinuscula = true;
+                // Del contrari, veriificar si la contrasenta conté simbol
+                } else {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
-                // Verificar si la contrasenya conté espai en blanc
-                } else if (Character.isWhitespace(c)) {
-                    // conteEspai serà true
-                    conteEspai = true;
-                } else if (i == contrasenya.length()-1) {
-                    if (!conteDigit) {
-                        System.out.println("El password ha de contenir com a mínim un numero.");
-                        break;
-                    }
-                    if (conteDigit && !conteMajuscula) {
-                        System.out.println("El password ha de contenir com a mínim una lletra majúscula.");
-                        break;
-                    } 
-                    if (conteDigit && conteMajuscula && !conteMinuscula) {
-                        System.out.println("El password ha de contenir com a mínim una lletra minúscula.");
-                        break;
-                    }
-                    if (conteDigit && conteMajuscula && conteMinuscula && !conteSimbol) {
-                        System.out.println("El password ha de contenir com a mínim un símbol.");
-                        break;
-                    }
-                    if (conteDigit && conteMajuscula && conteMinuscula && conteSimbol && comptadorMajuscula < comptadorMinuscula) {
-                        System.out.println("El password no pot contenir menys majúscules que minúscules.");
-                        break;
-                    }
-                    if (conteDigit && conteMajuscula && conteMinuscula && conteEspai) {
-                        System.out.println("El password no pot contenir espais en blanc.");
-                        break;
-                    }
                 }
+                
                 // Fer un for per iterar els caràcters de contrasenya a partir de la posició 1
                 for (int j = i+1; j < contrasenya.length(); j++) {
                     // Declarar e inicialitzar el char ch amb els caracter contrasenya a partir de la posició 1
@@ -115,6 +90,8 @@ public class Password {
                     // quatresSeguit serà true
                     quatresSeguit = true;
                 }
+                // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
+                majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
