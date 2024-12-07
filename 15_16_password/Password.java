@@ -111,7 +111,8 @@ public class Password {
                 if (comptadorDigitConsecutius >= 3) {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
-                } else if (d >= 4) {
+                }
+                if (!tresDigitConsecutius && d >= 4) {
                     quatresSeguit = true;
                 } 
             }
