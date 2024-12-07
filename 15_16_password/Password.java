@@ -41,13 +41,12 @@ public class Password {
                 // Declarar e inicialitzar el char c amb tots els caràcters de la contrasenya
                 char c = contrasenya.charAt(i);
                 // Verificar si la contrasenya conté espai en blanc
-                if (Character.isWhitespace(c)) {
-                    // conteEspai serà true
-                    conteEspai = true;
-                }
+                conteEspai = Character.isWhitespace(c);
+                
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
-                    
+                    // Sumar-li 1 a comptadorDigit
+                    comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
                     // conteDigit serà true
@@ -86,7 +85,7 @@ public class Password {
                 majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
                 
                 // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorSimbol >= 4) {
+                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
                     quatresSeguit = true;
                 }
             }
@@ -112,9 +111,6 @@ public class Password {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
                 }
-                if (!tresDigitConsecutius && d >= 4) {
-                    quatresSeguit = true;
-                } 
             }
             
             if (!conteDigit) {
@@ -131,7 +127,7 @@ public class Password {
                 System.out.println("El password no pot contenir espais en blanc.");
             } else if (caracterRepetit) {
                 System.out.println("El password no pot contenir caràcters repetits.");
-            } else if (quatresSeguit || comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorSimbol >= 4) {
+            } else if (quatresSeguit) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
             } else if (tresDigitConsecutius) {
                 System.out.println("El password no pot contenir més de 3 números consecutius."); 
