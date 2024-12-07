@@ -87,7 +87,6 @@ public class Password {
                 if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
                     // quatresSeguit serà true
                     quatresSeguit = true;
-                    break;
                 }
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
                 majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
