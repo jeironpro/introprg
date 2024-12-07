@@ -18,8 +18,6 @@ public class Password {
             boolean conteMinuscula = false;
             // Declarar e inicialitzar el boolean conteSimbol en false
             boolean conteSimbol = false;
-            // Declarar e inicialitzar el boolean majusculesSuperior en false
-            boolean majusculesSuperior = false;
             // Declarar e inicialitzar el boolean conteEspai en false
             boolean conteEspai = false;
             // Declarar e inicialitzar el boolean caracterRepetit en false
@@ -74,8 +72,7 @@ public class Password {
                 } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
-                }
-                if (i == contrasenya.length()-1) {
+                } else if (i == contrasenya.length()-1) {
                     if (!conteDigit) {
                         System.out.println("El password ha de contenir com a mínim un numero.");
                         break;
