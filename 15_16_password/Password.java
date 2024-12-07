@@ -81,8 +81,6 @@ public class Password {
                     if (c == ch) {
                         // caracterRepetit serà true
                         caracterRepetit = true;
-                        // Finalitzar el bucle
-                        break;
                     }
                 }
                 // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
@@ -129,6 +127,8 @@ public class Password {
                 System.out.println("El password no pot contenir menys majúscules que minúscules.");
             } else if (conteEspai) {
                 System.out.println("El password no pot contenir espais en blanc.");
+            } else if (caracterRepetit) {
+                System.out.println("El password no pot contenir caràcters repetits.");
             }
         // Del contrari
         } else {
