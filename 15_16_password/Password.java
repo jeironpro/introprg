@@ -116,6 +116,10 @@ public class Password {
                 // tresDigitConsecutius serà true
                 tresDigitConsecutius = true;
             }
+            
+            if (!conteDigit) {
+                System.out.println("El password ha de contenir com a mínim un numero.");
+            }
         // Del contrari
         } else {
             // Mostrar aquest missatge
