@@ -108,11 +108,11 @@ public class Password {
                     }                    
                 }
                 // Verificar si la contrasenya conté tres dígits consecutius
-                if (comptadorDigitConsecutius >= 3) {
+                if (d >= 4) {
+                    quatresSeguit = true;
+                } else if (comptadorDigitConsecutius >= 3) {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
-                } else if (d >= 4) {
-                    quatresSeguit = true;
                 }
             }
             
@@ -130,10 +130,10 @@ public class Password {
                 System.out.println("El password no pot contenir espais en blanc.");
             } else if (caracterRepetit) {
                 System.out.println("El password no pot contenir caràcters repetits.");
-            } else if (tresDigitConsecutius) {
-                System.out.println("El password no pot contenir més de 3 números consecutius."); 
             } else if (quatresSeguit) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
+            } else if (tresDigitConsecutius) {
+                System.out.println("El password no pot contenir més de 3 números consecutius."); 
             }
         // Del contrari
         } else {
