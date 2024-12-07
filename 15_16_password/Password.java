@@ -108,12 +108,12 @@ public class Password {
                     }                    
                 }
                 // Verificar si la contrasenya conté tres dígits consecutius
-                if (d >= 4) {
-                    quatresSeguit = true;
-                } else if (comptadorDigitConsecutius >= 3) {
+                if (comptadorDigitConsecutius >= 3) {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
-                }
+                } else if (d >= 4) {
+                    quatresSeguit = true;
+                } 
             }
             
             if (!conteDigit) {
