@@ -62,7 +62,7 @@ public class Password {
                     // conteMinuscula serà true
                     conteMinuscula = true;
                 // Verificar si la contrasenya conté espai en blanc
-                } if (Character.isWhitespace(c)) {
+                } else if (Character.isWhitespace(c)) {
                     // conteEspai serà true
                     conteEspai = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
