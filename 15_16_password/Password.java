@@ -47,8 +47,7 @@ public class Password {
                 }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
-                    // Sumar-li 1 a comptadorDigit
-                    comptadorDigit++;
+                    
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
                     // conteDigit serà true
@@ -113,7 +112,7 @@ public class Password {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
                 }
-                if (comptadorDigitConsecutius >= 4) {
+                if (d >= 4) {
                     quatresSeguit = true;
                 }
             }
