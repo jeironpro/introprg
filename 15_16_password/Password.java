@@ -131,6 +131,8 @@ public class Password {
                 System.out.println("El password no pot contenir caràcters repetits.");
             } else if (quatresSeguit) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
+            } else if (tresDigitConsecutius) {
+                System.out.println("El password no pot contenir més de 3 números consecutius.");
             }
         // Del contrari
         } else {
