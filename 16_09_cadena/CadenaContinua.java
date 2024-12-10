@@ -18,8 +18,9 @@ public class CadenaContinua {
             System.out.println("Nombre?");
             // Llegir el nombre
             int nombre = Integer.parseInt(Entrada.readLine());
-            
+            // Verificar si el nombre és major o igual a 0
             if (nombre >= 0) {
+                // Passar-li els valors llegits al módul
                 mostraCadenaContinua(text, nombre);
             }
         // Del contrari
