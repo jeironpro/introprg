@@ -9,15 +9,15 @@ public class Quadrat {
      public static void dibuixaQuadrat(int num) {
         // Fer les línies
         for (int linia = 1; linia <= num; linia++) {
-            dibuixaLinia();
+            dibuixaLinia(num);
             // Salt de línia que separa cada línia de X's dibuixada
             System.out.println();
         }
     }
     
-    public static void dibuixaLinia() {
+    public static void dibuixaLinia(int num) {
         // Fer les columnes
-        for (int columna = 1; columna <= 5; columna++) {
+        for (int columna = 1; columna <= num; columna++) {
             // Mostrar les X
             System.out.print(" X");
         }
