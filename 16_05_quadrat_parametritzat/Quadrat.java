@@ -4,7 +4,7 @@ public class Quadrat {
         // Agafar el argument 0 
         int num = Integer.parseInt(args[0]);
         
-        if (num > 1) {
+        if (num >= 1) {
             // Fer les línies
             for (int linia = 1; linia <= num; linia++) {
                 // Fer les columnes
