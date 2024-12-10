@@ -14,8 +14,6 @@ public class Quadrats {
         // Fer la quantitat de quadrat como s'indique
         for (int i = 0; i < quantitat; i++) {
             dibuixaQuadrat();    
-            // Línia que separa els quadrats
-            System.out.println();
         }        
     }
 
@@ -24,6 +22,8 @@ public class Quadrats {
         for (int linia = 1; linia <= 5; linia++) {
             dibuixaLinia();
         }
+        // Línia que separa els quadrats
+        System.out.println();
     }
     
     public static void dibuixaLinia() {
