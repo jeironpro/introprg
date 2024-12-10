@@ -17,7 +17,7 @@ public class NomesLletres {
             // Verificar si els caràcters són lletres
             if (Character.isLetter(c)) {
                 // Verificar si i és igual a 0
-                if (i < text.length()-1) {
+                if (i == 0) {
                     // Mostrar el caràcter sense coma
                     System.out.print(c);
                 // Del contrari
