@@ -23,7 +23,7 @@ public class Quadrats {
         // Fer les línies
         for (int linia = 1; linia <= 5; linia++) {
             dibuixaLinia();
-            // Salt de línia que separa cada línia de X's
+            // Salt de línia que separa cada línia de X's dibuixada
             System.out.println();
         }
     }
