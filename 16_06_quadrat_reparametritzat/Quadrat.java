@@ -3,7 +3,9 @@ public class Quadrat {
     public static void main(String[] args) {
         // Agafar el argument 0 
         int num = Integer.parseInt(args[0]);
+        // Agafar el argument 1
         char caracter = args[1].charAt(0);
+        // Possar-li els argument al mòdul
         dibuixaQuadrat(num, caracter);
     }
     
