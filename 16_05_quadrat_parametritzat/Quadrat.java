@@ -6,9 +6,9 @@ public class Quadrat {
         
         if (num > 1) {
             // Fer les línies
-            for (int linia = 1; linia <= 5; linia++) {
+            for (int linia = 1; linia <= num; linia++) {
                 // Fer les columnes
-                for (int columna = 1; columna <= num; columna++) {
+                for (int columna = 1; columna <= 5; columna++) {
                     // Mostrar les X
                     System.out.print(" X");
                 }
