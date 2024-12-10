@@ -13,13 +13,17 @@ public class Quadrats {
         
         // Fer la quantitat de quadrat como s'indique
         for (int i = 0; i < quantitat; i++) {
-            // Fer les línies
-            for (int linia = 1; linia <= 5; linia++) {
-                dibuixaLinia();
-            }        
+            dibuixaQuadrat();    
             // Línia que separa els quadrats
             System.out.println();
         }        
+    }
+    
+    public static void dibuixaQuadrat() {
+        // Fer les línies
+        for (int linia = 1; linia <= 5; linia++) {
+            dibuixaLinia();
+        }
     }
     
     public static void dibuixaLinia() {
