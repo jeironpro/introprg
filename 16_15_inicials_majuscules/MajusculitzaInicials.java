@@ -16,7 +16,7 @@ public class MajusculitzaInicials {
         // For per iterar tots els caràcters del text
         for (int i = 1; i < text.length(); i++) {
             // Verificar si el caràcter abans a i és un espai en blanc o un guió
-            if (Character.isWhitespace(text.charAt(i-1)) || text.charAt(i-1) == '-') {
+            if ((!Character.isLetter(text.charAt(i)) && !Character.isDigit(text.charAt(i))) || Character.isWhitespace(text.charAt(i-1)) || text.charAt(i-1) == '-') {
                 // Mostrar el caràcter en majúscula
                 System.out.print(Character.toUpperCase(text.charAt(i)));
             // Del contrari
