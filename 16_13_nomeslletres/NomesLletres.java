@@ -18,12 +18,12 @@ public class NomesLletres {
             if (Character.isLetter(c)) {
                 // Verificar si i és igual a 0
                 if (i < text.length()-1) {
-                    // Mostrar el caràcter amb coma
-                    System.out.print(c + ", ");
-                // Del contrari
-                } else {
                     // Mostrar el caràcter sense coma
                     System.out.print(c);
+                // Del contrari
+                } else {
+                    // Mostrar una coma abans del caràcter
+                    System.out.print(", " + c);
                 }
             }
         }
