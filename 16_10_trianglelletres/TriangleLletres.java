@@ -17,7 +17,7 @@ public class TriangleLletres {
         System.out.println("Text?");
         // Llegir el text
         String text = Entrada.readLine();
-        
+        // Passar-li el valor del text al mòdul
         dibuixaTriangle(text);
     }
     
