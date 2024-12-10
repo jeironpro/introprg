@@ -25,11 +25,11 @@ public class NomesLletres {
         // Fer un for per iterar tots els caràcters del nou text.
         for (int i = 0; i < nouText.length(); i++) {
             // Declarar e inicialitzar el char c amb els caràcters del nouText
-            char c = text.charAt(i);
+            char c = nouText.charAt(i);
             // Verificar si i és menor a la longitud del text - 1
             if (i < nouText.length()-1) {
                 // Mostrar els caràcters separat amb coma en aquesta longitud
-                System.out.print(c+ ", ");
+                System.out.print(c + ", ");
             // Del contrari, es igual a la longitud
             } else {
                 // Mostrar el caràcter final sense coma
