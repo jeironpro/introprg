@@ -24,8 +24,6 @@ public class Quadrats {
         for (int linia = 1; linia <= 5; linia++) {
             dibuixaLinia();
         }
-        // Salt de línia que separa cada línia de X's
-        System.out.println();
     }
     
     public static void dibuixaLinia() {
@@ -34,5 +32,7 @@ public class Quadrats {
             // Mostrar les X
             System.out.print(" X");
         }
+        // Salt de línia que separa cada línia de X's
+        System.out.println();
     }
 }
