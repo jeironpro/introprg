@@ -20,7 +20,7 @@ public class CodificaBasic {
     
     public static void codifica(String text, int quants) {
         // Verificar que quants sigui major o igual a 0
-        if (quants >= 0) {
+        if (quants > 0) {
             int contador = 0;
             // Fer un for per iterar els caràcters del text
             for (int i = 0; i < text.length(); i++) {
@@ -55,6 +55,8 @@ public class CodificaBasic {
                 }
             }   
         // Del contrari     
+        } else if (quants == 0) {
+            System.out.println(text);
         } else {
             // Mostrar aquest missatge d'error
             System.out.println("No s'accepten números negatius");
