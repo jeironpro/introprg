@@ -35,9 +35,7 @@ public class CodificaBasic {
                     // Verificar si el caràcter es l'z i quant es major a 0
                     if (c == 'z' && quants > 0) {
                         // El caràcter serà l'a
-                        c = 'a';
-                        // Quant serà el seu valor actual - 1
-                        quants = quants - 1;
+                        c = 96;
                     }  
                     
                     if ((c + quants) < 123) {
