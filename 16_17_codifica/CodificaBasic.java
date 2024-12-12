@@ -33,7 +33,7 @@ public class CodificaBasic {
                        contador++;
                     }
                     
-                    if (quants > 27) {
+                    if (quants > 26) {
                         quants = quants - 26;
                     }
                     // Verificar si el caràcter es l'z i quant es major a 0
