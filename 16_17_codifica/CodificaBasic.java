@@ -32,15 +32,16 @@ public class CodificaBasic {
                     if ((c + quants) > 122) {
                        contador++;
                     }
-                    // Verificar si el caràcter es l'z i quant es major a 0
-                    if (c == 'z' && quants > 0) {
-                        // El caràcter serà el ASCI 96
-                        c = 96;
-                    }  
                     
                     if (quants > 27) {
                         quants = quants - 26;
                     }
+                    // Verificar si el caràcter es l'z i quant es major a 0
+                    if (c == 'z' && quants > 0) {
+                        // El caràcter serà el ASCI 96
+                        c = 96;
+                        quants = quants - 1;
+                    }  
                     
                     if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
