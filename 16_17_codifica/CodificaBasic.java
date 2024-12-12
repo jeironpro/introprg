@@ -20,7 +20,7 @@ public class CodificaBasic {
     
     public static void codifica(String text, int quants) {
         // Verificar que quants sigui major o igual a 0
-        if (quants > 0) {
+        if (quants >= 0) {
             int contador = 0;
             // Fer un for per iterar els caràcters del text
             for (int i = 0; i < text.length(); i++) {
@@ -29,24 +29,25 @@ public class CodificaBasic {
                 
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
                 if (Character.isLetter(c)) {
-                    /*if ((c + quants) > 122) {
+                    if ((c + quants) > 122) {
                        contador++;
-                    }*/
+                    }
                     // Verificar si el caràcter es l'z i quant es major a 0
                     if (c == 'z' && quants > 0) {
                         // El caràcter serà l'a
-                        c = 96;
-                    }
-                    quants = quants % text.length();
-                    System.out.print((char)(c+quants));   
-                    /*if ((c + quants) < 123) {
+                        c = 'a';
+                        // Quant serà el seu valor actual - 1
+                        quants = quants - 1;
+                    }  
+                    
+                    if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+quants));                    
                     } else {
                         c = 96;
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+contador));   
-                    }*/
+                    }
                 // Del contrari
                 } else {
                     // Mostrar els altres caràcters 
@@ -54,8 +55,6 @@ public class CodificaBasic {
                 }
             }   
         // Del contrari     
-        } else if (quants == 0) {
-            System.out.println(text);
         } else {
             // Mostrar aquest missatge d'error
             System.out.println("No s'accepten números negatius");
