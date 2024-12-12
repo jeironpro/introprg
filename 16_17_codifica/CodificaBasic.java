@@ -56,6 +56,8 @@ public class CodificaBasic {
                 }
             }   
         // Del contrari     
+        } else if (quants == 0) {
+            System.out.println(text);
         } else {
             // Mostrar aquest missatge d'error
             System.out.println("No s'accepten números negatius");
