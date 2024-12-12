@@ -39,7 +39,7 @@ public class CodificaBasic {
                         // Quant serà el seu valor actual - 1
                         quants = quants - 1;
                     }  
-                    quants = quants % 27;
+                    quants = quants % i;
                     System.out.print((char)(c+quants));   
                     /*if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
