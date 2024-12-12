@@ -40,11 +40,11 @@ public class CodificaBasic {
                     if ((c + quants) < 123) {
                         if (c == 'z' && quants > 0) {
                             // El caràcter serà el ASCI 96
-                            c = 'a';
-                            quants = quants - 1;
+                            c = 96;
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
+                        c = 96;
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+contador));   
                     }
