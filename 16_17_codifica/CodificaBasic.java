@@ -45,9 +45,8 @@ public class CodificaBasic {
                         System.out.print((char)(c+quants));                    
                     } else {
                         c = 96;
-                        quants = contador;
                         // Mostrar el caràcter corresponent a la suma
-                        System.out.print((char)(c+quants));   
+                        System.out.print((char)(c+contador));   
                     }
                 // Del contrari
                 } else {
