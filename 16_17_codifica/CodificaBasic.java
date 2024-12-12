@@ -29,7 +29,7 @@ public class CodificaBasic {
                 
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
                 if (Character.isLetter(c)) {
-                    if ((c + quants) > 122) {
+                    if ((c + quants) > 122 && quants < 27) {
                        contador++;
                     }
                     
