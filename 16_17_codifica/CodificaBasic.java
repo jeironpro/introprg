@@ -37,7 +37,7 @@ public class CodificaBasic {
                         // El caràcter serà l'a
                         c = 'a';
                     }
-                    quants = quants % i;
+                    quants = quants % text.length();
                     System.out.print((char)(c+quants));   
                     /*if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
