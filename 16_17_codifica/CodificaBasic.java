@@ -38,8 +38,10 @@ public class CodificaBasic {
                         c = 'a';
                         // Quant serà el seu valor actual - 1
                         quants = quants - 1;
+                    }
+                    if (c != 'a' && i > 0) {
+                        quants = quants % i;
                     }  
-                    quants = quants % i;
                     System.out.print((char)(c+quants));   
                     /*if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
