@@ -38,6 +38,10 @@ public class CodificaBasic {
                         c = 96;
                     }  
                     
+                    if (quants > 27) {
+                        quants = quants - 27;
+                    }
+                    
                     if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+quants));                    
