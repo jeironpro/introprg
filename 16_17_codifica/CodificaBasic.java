@@ -40,7 +40,7 @@ public class CodificaBasic {
                     if ((c + quants) < 123) {
                         if (c == 'z' && quants > 0) {
                             // El caràcter serà el ASCI 96
-                            c = 96;
+                            c = 'a';
                             quants = quants - 1;
                         }  
                         System.out.print((char)(c+quants));                    
