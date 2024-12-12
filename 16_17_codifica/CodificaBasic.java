@@ -39,7 +39,7 @@ public class CodificaBasic {
                     }  
                     
                     if (quants > 27) {
-                        quants = quants - 27;
+                        quants = quants - 26;
                     }
                     
                     if ((c + quants) < 123) {
