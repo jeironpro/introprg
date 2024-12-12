@@ -27,16 +27,23 @@ public class CodificaBasic {
                 char c = text.charAt(i);
                 
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
-                if (c >= 'a' && c <= 'z') {
+                if (Character.isLetter(c)) {
+                    if ((c + quants) > 122) {
+                        c = 96;
+                        quants = 1;
+                    }
                     // Verificar si el caràcter es l'z i quant es major a 0
                     if (c == 'z' && quants > 0) {
                         // El caràcter serà l'a
                         c = 'a';
                         // Quant serà el seu valor actual - 1
-                        quants  = quants - 1;
+                        quants = quants - 1;
+                    }  
+                    
+                    if ((c + quants) < 123) {
+                        // Mostrar el caràcter corresponent a la suma
+                        System.out.print((char)(c+quants));                    
                     }
-                    // Mostrar el caràcter corresponent a la suma
-                    System.out.print((char)(c+quants));
                 // Del contrari
                 } else {
                     // Mostrar els altres caràcters 
