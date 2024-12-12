@@ -35,7 +35,7 @@ public class CodificaBasic {
                     // Verificar si el caràcter es l'z i quant es major a 0
                     if (c == 'z' && quants > 0) {
                         // El caràcter serà l'a
-                        c = 'a';
+                        c = 96;
                     }
                     quants = quants % text.length();
                     System.out.print((char)(c+quants));   
