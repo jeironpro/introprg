@@ -21,6 +21,7 @@ public class CodificaBasic {
     public static void codifica(String text, int quants) {
         // Verificar que quants sigui major o igual a 0
         if (quants >= 0) {
+            int contador = 0;
             // Fer un for per iterar els caràcters del text
             for (int i = 0; i < text.length(); i++) {
                 // Declarar e inicialitzar el char c amb els caràcters del text
@@ -29,8 +30,7 @@ public class CodificaBasic {
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
                 if (Character.isLetter(c)) {
                     if ((c + quants) > 122) {
-                        c = 96;
-                        quants = 1;
+                       contador++;
                     }
                     // Verificar si el caràcter es l'z i quant es major a 0
                     if (c == 'z' && quants > 0) {
@@ -43,6 +43,10 @@ public class CodificaBasic {
                     if ((c + quants) < 123) {
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+quants));                    
+                    } else {
+                        c = 'a';
+                        // Mostrar el caràcter corresponent a la suma
+                        System.out.print((char)(c+contador));   
                     }
                 // Del contrari
                 } else {
