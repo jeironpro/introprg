@@ -31,6 +31,7 @@ public class CodificaBasic {
                 if (Character.isLetter(c)) {
                     if ((c + quants) > 122) {
                        contador++;
+                       quants = quants % 27; 
                     }
                     // Verificar si el caràcter es l'z i quant es major a 0
                     if (c == 'z' && quants > 0) {
@@ -45,7 +46,6 @@ public class CodificaBasic {
                         System.out.print((char)(c+quants));                    
                     } else {
                         c = 96;
-                        quants = quants % 27;
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+quants));   
                     }
