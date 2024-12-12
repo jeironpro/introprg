@@ -33,7 +33,7 @@ public class CodificaBasic {
                        contador++;
                     }
                     // Verificar si el caràcter es l'z i quant es major a 0
-                    if (c == 'z') {
+                    if (c == 'z' && quants > 0) {
                         // El caràcter serà el ASCI 96
                         c = 96;
                     }  
