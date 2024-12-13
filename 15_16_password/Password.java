@@ -103,13 +103,13 @@ public class Password {
                         comptadorDigitConsecutius++;
                     }                    
                 }
+                // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
+                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
+                    quatresSeguit = true;
                 // Verificar si la contrasenya conté tres dígits consecutius
-                if (comptadorDigitConsecutius >= 3) {
+                } else if (comptadorDigitConsecutius >= 3) {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
-                // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-                } else if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
-                    quatresSeguit = true;
                 }
             }
             
