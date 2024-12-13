@@ -29,7 +29,7 @@ public class CodificaBasic {
                 
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
                 if (c >= 'a' && c <= 'z') {
-                    if ((c + quants) > 122 && quants < 27) {
+                    while ((c + quants) > 122 && quants < 27) {
                        quants = (c + quants) - 122;
                        c = 96;
                     }
