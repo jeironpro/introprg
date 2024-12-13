@@ -36,10 +36,10 @@ public class CodificaBasic {
                     if (quants > 26) {
                         quants = quants % 26;
                     }
-                    if ((c + quants) < 123) {
+                    if ((c + quants) <= 122) {
                         if (c == 'z') {
                             // El caràcter serà el ASCII 96
-                            c = 96;
+                            c = 'a';
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
