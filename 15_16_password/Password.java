@@ -128,7 +128,7 @@ public class Password {
                         }                    
                     }
                     // Verificar si la contrasenya conté tres dígits consecutius
-                    if (comptadorDigitConsecutius > 3) {
+                    if (comptadorDigitConsecutius >= 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutius = true;
                     }
@@ -149,7 +149,7 @@ public class Password {
                         }                    
                     }
                     // Verificar si la contrasenya conté tres dígits consecutius
-                    if (comptadorDigitConsecutiusDecreixent > 3) {
+                    if (comptadorDigitConsecutiusDecreixent >= 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutiusDecreixent = true;
                     }
