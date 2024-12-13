@@ -39,11 +39,11 @@ public class CodificaBasic {
                     if ((c + quants) <= 122) {
                         if (c == 'z') {
                             // El caràcter serà l'a
-                            c = 96;
+                            c = 'a';
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
-                        c = 96;
+                        c = 'a';
                         quants++;
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+Math.abs(quants)));   
