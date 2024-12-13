@@ -113,7 +113,7 @@ public class Password {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutius = true;
                         break;
-                    } else if (comptadorDigitConsecutius >= 4) {
+                    } else if (digit.length() >= 4) {
                         quatresSeguit = true;
                     }
                 }
