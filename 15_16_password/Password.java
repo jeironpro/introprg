@@ -93,39 +93,48 @@ public class Password {
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
-            // Fer un for per iterar tots el caràcter dígits
-            for (int i = 0; i < digit.length(); i++) {
-                // Declarar e inicialitzar el char d amb tots els digits
-                char d = digit.charAt(i);
-                // Fer un for per iterar el caràcter dígits a partir del seguent dígit
-                for (int j = i+1; j < digit.length(); j++) {
-                    // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
-                    char di = digit.charAt(j);
-                    // Verificar si el digit +1 és igual a di
-                    // Aquest verifica si és consecutius
-                    if (d+1 == di) {
-                        // Sumar-li 1 a comptadorDigitConsecutius
-                        comptadorDigitConsecutius++;
-                    }                    
+            if (!digit.isEmpty()) {
+                // Fer un for per iterar tots el caràcter dígits
+                for (int i = 0; i < digit.length(); i++) {
+                    // Declarar e inicialitzar el char d amb tots els digits
+                    char d = digit.charAt(i);
+                    // Fer un for per iterar el caràcter dígits a partir del seguent dígit
+                    for (int j = i+1; j < digit.length(); j++) {
+                        // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
+                        char di = digit.charAt(j);
+                        // Verificar si el digit +1 és igual a di
+                        // Aquest verifica si és consecutius
+                        if (d+1 == di) {
+                            // Sumar-li 1 a comptadorDigitConsecutius
+                            comptadorDigitConsecutius++;
+                        }                    
+                    }
+                    // Verificar si la contrasenya conté tres dígits consecutius
+                    if (comptadorDigitConsecutius >= 3) {
+                        // tresDigitConsecutius serà true
+                        tresDigitConsecutius = true;
+                    }
                 }
                 
-                for (int j = digit.length()-1; j > i+1; j--) {
-                    // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
-                    char di = digit.charAt(j);
-                    // Verificar si el digit +1 és igual a di
-                    // Aquest verifica si és consecutius
-                    if (d+1 == di) {
-                        // Sumar-li 1 a comptadorDigitConsecutius
-                        comptadorDigitConsecutius++;
-                    }                    
-                }
-                // Verificar si la contrasenya conté tres dígits consecutius
-                if (comptadorDigitConsecutius >= 3) {
-                    // tresDigitConsecutius serà true
-                    tresDigitConsecutius = true;
+                // Fer un for per iterar tots el caràcter dígits
+                for (int i = digit.length()-1; i >= 0; i--) {
+                    // Fer un for per iterar el caràcter dígits a partir del seguent dígit
+                    for (int j = i-1; j >= 0; j--) {
+                        // Verificar si el digit +1 és igual a di
+                        // Aquest verifica si és consecutius
+                        if (i-1 == j) {
+                            // Sumar-li 1 a comptadorDigitConsecutius
+                            comptadorDigitConsecutius++;
+                        }                    
+                    }
+                    // Verificar si la contrasenya conté tres dígits consecutius
+                    if (comptadorDigitConsecutius >= 3) {
+                        // tresDigitConsecutius serà true
+                        tresDigitConsecutius = true;
+                    }
                 }
             }
-            
+            System.out.println(comptadorDigitConsecutius);
             if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
             } else if (!conteMajuscula) {
