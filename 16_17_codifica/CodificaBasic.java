@@ -32,7 +32,7 @@ public class CodificaBasic {
                     if ((c + quants) > 122 && quants <= 26) {
                         contador = (c + quants) - 122;
                         c = 96;
-                        System.out.print((char)(c+quants)); 
+                        System.out.print((char)(c+contador)); 
                     }
                     
                     if (quants > 26) {
