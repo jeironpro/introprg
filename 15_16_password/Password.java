@@ -117,12 +117,13 @@ public class Password {
                 for (int i = 0; i < digit.length(); i++) {
                     // Declarar e inicialitzar el char d amb tots els digits
                     char d = digit.charAt(i);
-                    int num = Integer.parseInt(String.valueOf(d));
+                    String dig = "" + d;
+                    int num = Integer.parseInt(dig);
                     if (i < digit.length()-1) {
                         // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
                         char di = digit.charAt(i+1);
-                        String dig = "" + di;
-                        int numAnt = Integer.parseInt(dig);
+                        String digi = "" + di;
+                        int numAnt = Integer.parseInt(digi);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
                         if (num-1 == numAnt) {
@@ -138,10 +139,12 @@ public class Password {
                 }
                 for (int i = digit.length()-1; i >= 0; i--) {
                     char d = digit.charAt(i);
-                    int num = Integer.parseInt(String.valueOf(d));
+                    String dig = "" + d;
+                    int num = Integer.parseInt(dig);
                     if (i > 0) {
-                        char di = di = digit.charAt(i-1); 
-                        int numAnt = Integer.parseInt(String.valueOf(di));
+                        char di = di = digit.charAt(i-1);
+                        String digi = "" + di; 
+                        int numAnt = Integer.parseInt(digi);
                     
                         if (num-1 == numAnt) {
                             // Sumar-li 1 a comptadorDigitConsecutiusDecreixent
