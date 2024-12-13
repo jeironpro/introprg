@@ -170,7 +170,7 @@ public class Password {
                     // Verificar si i és major a 0
                     if (i > 0) {
                         // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició de i-1
-                        char di = di = digit.charAt(i-1);
+                        char di = digit.charAt(i-1);
                         // Declarar e inicialitzar el String digi que converteix el caràcter (di) següent a i en un String
                         String digi = "" + di; 
                         // Declarar e inicialitzar el int num que converteix el String dig (que contè el caràcter di) en enter
