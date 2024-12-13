@@ -134,7 +134,6 @@ public class Password {
                     }
                 }
             }
-            System.out.println(comptadorDigitConsecutius);
             if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
             } else if (!conteMajuscula) {
