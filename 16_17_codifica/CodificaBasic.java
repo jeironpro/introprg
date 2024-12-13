@@ -39,7 +39,7 @@ public class CodificaBasic {
                     if ((c + quants) <= 122) {
                         if (c == 'z') {
                             // El caràcter serà l'a
-                            c = 'a';
+                            c = 96;
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
