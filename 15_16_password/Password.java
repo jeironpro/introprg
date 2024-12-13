@@ -85,6 +85,11 @@ public class Password {
                 }
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
                 majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
+                
+                // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
+                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
+                    quatresSeguit = true;
+                }
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
@@ -103,12 +108,8 @@ public class Password {
                         comptadorDigitConsecutius++;
                     }                    
                 }
-                // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
-                    quatresSeguit = true;
-                } 
                 // Verificar si la contrasenya conté tres dígits consecutius
-                if (comptadorDigitConsecutius >= 3 && comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorSimbol >= 4) {
+                if (comptadorDigitConsecutius == 3) {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
                 }
@@ -130,10 +131,8 @@ public class Password {
                 System.out.println("El password no pot contenir caràcters repetits.");
             } else if (quatresSeguit) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
-                return;
             } else if (tresDigitConsecutius) {
                 System.out.println("El password no pot contenir més de 3 números consecutius."); 
-                return;
             }
         // Del contrari
         } else {
