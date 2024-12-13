@@ -114,15 +114,11 @@ public class Password {
             if (!digit.isEmpty()) {
                 // Fer un for per iterar tots el caràcter dígits
                 for (int i = 0; i < digit.length(); i++) {
-                    // Declarar e inicialitzar el char d amb tots els digits
-                    char d = digit.charAt(i);
                     // Fer un for per iterar el caràcter dígits a partir del seguent dígit
                     for (int j = i+1; j < digit.length(); j++) {
-                        // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
-                        char di = digit.charAt(j);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if (d+1 == di) {
+                        if (i+1 == j) {
                             // Sumar-li 1 a comptadorDigitConsecutius
                             comptadorDigitConsecutius++;
                         }                    
