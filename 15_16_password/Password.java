@@ -24,13 +24,13 @@ public class Password {
         // Declarar e inicialitzar el boolean tresDigitConsecutius en false
         boolean tresDigitConsecutius = false;
         // Declarar e inicialitzar el int comptadorMajuscula en 0
-        int comptadorMajuscula = 0;
+        int comptadorMajuscula = 1;
         // Declarar e inicialitzar el int comptadorMinuscula en 0
-        int comptadorMinuscula = 0;
+        int comptadorMinuscula = 1;
         // Declarar e inicialitzar el int comptadorDigit en 0
-        int comptadorDigit = 0;
+        int comptadorDigit = 1;
         // Declarar e inicialitzar el int comptadorSimbol en 0
-        int comptadorSimbol = 0;
+        int comptadorSimbol = 1;
         // Declarar e inicialitzar el String digit buit
         String digit = "";
         
@@ -47,7 +47,6 @@ public class Password {
                 }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
-                    comptadorDigit = 1;
                     if (i < contrasenya.length()-1) {
                         if (Character.isDigit(contrasenya.charAt(i+1))) {
                             // Sumar-li 1 a comptadorDigit
@@ -60,7 +59,6 @@ public class Password {
                     conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
-                    comptadorMajuscula = 1;
                     if (i < contrasenya.length()-1) {
                         if (Character.isUpperCase(contrasenya.charAt(i+1))) {
                             // Sumar-li 1 a comptadorMajuscula
@@ -71,7 +69,6 @@ public class Password {
                     conteMajuscula = true;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
-                    comptadorMinuscula = 1;
                     if (i < contrasenya.length()-1) {
                         if (Character.isLowerCase(contrasenya.charAt(i+1))) {              
                             // Sumar-li 1 a comptadorMinuscula
@@ -82,7 +79,6 @@ public class Password {
                     conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
-                    comptadorSimbol = 1;
                     if (i < contrasenya.length()-1) {
                         if (!Character.isLetter(contrasenya.charAt(i+1)) && !Character.isDigit(contrasenya.charAt(i+1)) && !Character.isWhitespace(contrasenya.charAt(i+1))) {
                             // Sumar-li 1 a comptadorSimbol
