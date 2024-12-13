@@ -117,12 +117,12 @@ public class Password {
                     // Declarar e inicialitzar el char d amb tots els digits
                     char d = digit.charAt(i);
                     // Fer un for per iterar el caràcter dígits a partir del seguent dígit
-                    for (int j = i+1; j < digit.length(); j++) {
+                    for (int j = 1; j < digit.length(); j++) {
                         // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
                         char di = digit.charAt(j);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if ((int)(d+1) == (int)(di)) {
+                        if (d+1 == di) {
                             // Sumar-li 1 a comptadorDigitConsecutius
                             comptadorDigitConsecutius++;
                         }                    
@@ -138,12 +138,12 @@ public class Password {
                     // Declarar e inicialitzar el char d amb tots els digits
                     char d = digit.charAt(i);
                     // Fer un for per iterar el caràcter dígits a partir del seguent dígit
-                    for (int j = i-1; j >= 0; j--) {
+                    for (int j = digit.length()-2; j >= 0; j--) {
                         // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
                         char di = digit.charAt(j);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if ((int)(d-1) == (int)(di)) {
+                        if (d+1 == di) {
                             // Sumar-li 1 a comptadorDigitConsecutiusDecreixent
                             comptadorDigitConsecutiusDecreixent++;
                         }                    
