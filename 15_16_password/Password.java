@@ -139,10 +139,11 @@ public class Password {
                     for (int j = i-1; j >= 0; j--) {
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if (i-1 == j) {
-                            // Sumar-li 1 a comptadorDigitConsecutius
-                            comptadorDigitConsecutiusDecreixent++;
+                        if (i-1 != j) {
+                            continue;
                         }                    
+                        // Sumar-li 1 a comptadorDigitConsecutius
+                        comptadorDigitConsecutiusDecreixent++;
                     }
                     // Verificar si la contrasenya conté tres dígits consecutius
                     if (comptadorDigitConsecutiusDecreixent >= 3) {
