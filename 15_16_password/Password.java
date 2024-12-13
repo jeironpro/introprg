@@ -115,7 +115,7 @@ public class Password {
                         tresDigitConsecutius = true;
                     }
                 }
-                
+                int comptadorDigitConsecutiusDecreixent = 0;
                 // Fer un for per iterar tots el caràcter dígits
                 for (int i = digit.length()-1; i >= 0; i--) {
                     // Fer un for per iterar el caràcter dígits a partir del seguent dígit
@@ -124,17 +124,17 @@ public class Password {
                         // Aquest verifica si és consecutius
                         if (i-1 == j) {
                             // Sumar-li 1 a comptadorDigitConsecutius
-                            comptadorDigitConsecutius++;
+                            comptadorDigitConsecutiusDecreixent++;
                         }                    
                     }
                     // Verificar si la contrasenya conté tres dígits consecutius
-                    if (comptadorDigitConsecutius >= 3) {
+                    if (comptadorDigitConsecutiusDecreixent >= 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutius = true;
                     }
                 }
             }
-            
+            System.out.println(comptadorDigitConsecutius);
             if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
             } else if (!conteMajuscula) {
@@ -153,6 +153,8 @@ public class Password {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
             } else if (tresDigitConsecutius) {
                 System.out.println("El password no pot contenir més de 3 números consecutius."); 
+            } else {
+                System.out.println("El maleït password és vàlid!");
             }
         // Del contrari
         } else {
