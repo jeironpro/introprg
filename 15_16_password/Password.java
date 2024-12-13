@@ -108,6 +108,17 @@ public class Password {
                         comptadorDigitConsecutius++;
                     }                    
                 }
+                
+                for (int j = digit.length()-1; j > i+1; j--) {
+                    // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
+                    char di = digit.charAt(j);
+                    // Verificar si el digit +1 és igual a di
+                    // Aquest verifica si és consecutius
+                    if (d+1 == di) {
+                        // Sumar-li 1 a comptadorDigitConsecutius
+                        comptadorDigitConsecutius++;
+                    }                    
+                }
                 // Verificar si la contrasenya conté tres dígits consecutius
                 if (comptadorDigitConsecutius >= 3) {
                     // tresDigitConsecutius serà true
