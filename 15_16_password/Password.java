@@ -66,7 +66,7 @@ public class Password {
                     // conteMinuscula serà true
                     conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
-                } else {
+                } else if (!Character.isWhitespace(c)){
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
