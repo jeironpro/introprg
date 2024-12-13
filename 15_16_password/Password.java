@@ -112,12 +112,12 @@ public class Password {
                         }
                     }
                 }
+                // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
+                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4  || comptadorSimbol >= 4) {
+                    quatresSeguit = true;
+                }
             }
             
-            // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-            if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4  || comptadorSimbol >= 4) {
-                quatresSeguit = true;
-            }
             
             if (!conteDigit) {
                 System.out.println("El password ha de contenir com a mínim un numero.");
