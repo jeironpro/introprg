@@ -130,7 +130,7 @@ public class Password {
             } else if (quatresSeguit) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
                 return;
-            } else if (tresDigitConsecutius) {
+            } else if (!quatresSeguit && tresDigitConsecutius) {
                 System.out.println("El password no pot contenir més de 3 números consecutius."); 
                 return;
             }
