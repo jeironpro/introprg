@@ -29,21 +29,19 @@ public class CodificaBasic {
                 
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
                 if (c >= 'a' && c <= 'z') {
-                    if ((c + quants) > 122 && quants < 27) {
-                       contador++;
-                    }
                     
                     if (quants > 26) {
                         quants = quants % 26;
                     }
                     if ((c + quants) <= 122) {
                         if (c == 'z') {
-                            // El caràcter serà el ASCII 96
+                            // El caràcter serà l'a
                             c = 'a';
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
                         c = 96;
+                        contador++;
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(c+contador));   
                     }
