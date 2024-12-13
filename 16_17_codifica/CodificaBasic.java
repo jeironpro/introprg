@@ -40,8 +40,8 @@ public class CodificaBasic {
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
-                        c = 96;
                         quants = (c + quants) - 122;
+                        c = 96;
                         // Mostrar el caràcter corresponent a la suma
                         System.out.print((char)(Math.abs(c+quants)));   
                     }
