@@ -122,7 +122,7 @@ public class Password {
                         char di = digit.charAt(j);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if (d+1 == di) {
+                        if ((int)(d+1) == (int)(di)) {
                             // Sumar-li 1 a comptadorDigitConsecutius
                             comptadorDigitConsecutius++;
                         }                    
@@ -143,8 +143,8 @@ public class Password {
                         char di = digit.charAt(j);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if (d-1 == di) {
-                            // Sumar-li 1 a comptadorDigitConsecutius
+                        if ((int)(d-1) == (int)(di)) {
+                            // Sumar-li 1 a comptadorDigitConsecutiusDecreixent
                             comptadorDigitConsecutiusDecreixent++;
                         }                    
                     }
