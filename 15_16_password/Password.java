@@ -121,7 +121,8 @@ public class Password {
                     if (i < digit.length()-1) {
                         // Declarar e inicialitzar el char di amb els digits a partir del digit en la posició 1
                         char di = digit.charAt(i+1);
-                        int numAnt = Integer.parseInt(String.valueOf(di));
+                        String dig = "" + di;
+                        int numAnt = Integer.parseInt(dig);
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
                         if (num-1 == numAnt) {
