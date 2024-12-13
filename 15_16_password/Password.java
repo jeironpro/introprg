@@ -23,6 +23,7 @@ public class Password {
         boolean quatresSeguit = false;
         // Declarar e inicialitzar el boolean tresDigitConsecutius en false
         boolean tresDigitConsecutius = false;
+        boolean tresDigitConsecutiusDecreixent = false;
         // Declarar e inicialitzar el int comptadorMajuscula en 0
         int comptadorMajuscula = 1;
         // Declarar e inicialitzar el int comptadorMinuscula en 0
@@ -146,7 +147,7 @@ public class Password {
                     // Verificar si la contrasenya conté tres dígits consecutius
                     if (comptadorDigitConsecutiusDecreixent >= 3) {
                         // tresDigitConsecutius serà true
-                        tresDigitConsecutius = true;
+                        tresDigitConsecutiusDecreixent = true;
                     }
                 }
             }
@@ -166,7 +167,7 @@ public class Password {
                 System.out.println("El password no pot contenir caràcters repetits.");
             } else if (quatresSeguit) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
-            } else if (tresDigitConsecutius) {
+            } else if (tresDigitConsecutius || tresDigitConsecutiusDecreixent) {
                 System.out.println("El password no pot contenir més de 3 números consecutius."); 
             } else {
                 System.out.println("El maleït password és vàlid!");
