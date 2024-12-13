@@ -60,20 +60,35 @@ public class Password {
                     conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
-                    // Sumar-li 1 a comptadorMajuscula
-                    comptadorMajuscula++;
+                    comptadorMajuscula = 1;
+                    if (i < contrasenya.length()-1) {
+                        if (Character.isUpperCase(contrasenya.charAt(i+1))) {
+                            // Sumar-li 1 a comptadorMajuscula
+                            comptadorMajuscula++;                    
+                        }                    
+                    }
                     // conteMajuscula serà true
                     conteMajuscula = true;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
-                    // Sumar-li 1 a comptadorMinuscula
-                    comptadorMinuscula++;
+                    comptadorMinuscula = 1;
+                    if (i < contrasenya.length()-1) {
+                        if (Character.isLowerCase(contrasenya.charAt(i+1))) {              
+                            // Sumar-li 1 a comptadorMinuscula
+                            comptadorMinuscula++;
+                        }                    
+                    }
                     // conteMinuscula serà true
                     conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
-                    // Sumar-li 1 a comptadorSimbol
-                    comptadorSimbol++;
+                    comptadorSimbol = 1;
+                    if (i < contrasenya.length()-1) {
+                        if (!Character.isLetter(contrasenya.charAt(i+1)) && !Character.isDigit(contrasenya.charAt(i+1)) && !Character.isWhitespace(contrasenya.charAt(i+1))) {
+                            // Sumar-li 1 a comptadorSimbol
+                            comptadorSimbol++;               
+                        }                    
+                    } 
                     // conteSimbol serà true
                     conteSimbol = true;
                 }
