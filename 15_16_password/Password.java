@@ -47,36 +47,28 @@ public class Password {
                 }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
-                    if (comptadorMajuscula == 0 && comptadorMinuscula == 0 && comptadorSimbol == 0) {
-                        // Sumar-li 1 a comptadorDigit
-                        comptadorDigit++;
-                    }
+                    // Sumar-li 1 a comptadorDigit
+                    comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
                     // conteDigit serà true
                     conteDigit = true;
                 // Verificar si la contrasenya conté majúscula
                 } else if (Character.isUpperCase(c)) {
-                    if (comptadorDigit == 0 && comptadorMinuscula == 0 && comptadorSimbol == 0) {
-                        // Sumar-li 1 a comptadorMajuscula
-                        comptadorMajuscula++;
-                    }
+                    // Sumar-li 1 a comptadorMajuscula
+                    comptadorMajuscula++;
                     // conteMajuscula serà true
                     conteMajuscula = true;
                 // Verificar si la contrasenya conté minúscula
                 } else if (Character.isLowerCase(c)) {
-                    if (comptadorDigit == 0 && comptadorMajuscula == 0 && comptadorSimbol == 0) {
-                        // Sumar-li 1 a comptadorMinuscula
-                        comptadorMinuscula++;
-                    }
+                    // Sumar-li 1 a comptadorMinuscula
+                    comptadorMinuscula++;
                     // conteMinuscula serà true
                     conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
                 } else {
-                    if (comptadorDigit == 0 && comptadorMajuscula == 0 && comptadorMinuscula == 0) {
-                        // Sumar-li 1 a comptadorSimbol
-                        comptadorSimbol++;
-                    }
+                    // Sumar-li 1 a comptadorSimbol
+                    comptadorSimbol++;
                     // conteSimbol serà true
                     conteSimbol = true;
                 }
