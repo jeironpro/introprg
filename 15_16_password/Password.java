@@ -66,7 +66,7 @@ public class Password {
                     // conteMinuscula serà true
                     conteMinuscula = true;
                 // Del contrari, veriificar si la contrasenta conté simbol
-                } else if (!Character.isWhitespace(c)){
+                } else {
                     // Sumar-li 1 a comptadorSimbol
                     comptadorSimbol++;
                     // conteSimbol serà true
@@ -106,14 +106,10 @@ public class Password {
                 // Verificar si la contrasenya conté tres dígits consecutius
                 if (comptadorDigitConsecutius >= 3) {
                     // tresDigitConsecutius serà true
-                    // tresDigitConsecutius = true;
-                    System.out.println("El password no pot contenir més de 3 números consecutius."); 
-                    return;
+                    tresDigitConsecutius = true;
                 // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
                 } else if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
-                    // quatresSeguit = true;
-                    System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
-                    return;
+                    quatresSeguit = true;
                 }
             }
             
@@ -131,6 +127,12 @@ public class Password {
                 System.out.println("El password no pot contenir espais en blanc.");
             } else if (caracterRepetit) {
                 System.out.println("El password no pot contenir caràcters repetits.");
+            } else if (quatresSeguit) {
+                System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
+                return;
+            } else if (tresDigitConsecutius) {
+                System.out.println("El password no pot contenir més de 3 números consecutius."); 
+                return;
             }
         // Del contrari
         } else {
