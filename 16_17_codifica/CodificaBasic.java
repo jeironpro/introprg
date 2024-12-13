@@ -29,8 +29,8 @@ public class CodificaBasic {
                 
                 // Verificar si el caràcter està en el rang des de l'a fins a l'z
                 if (c >= 'a' && c <= 'z') {
-                    if ((c + quants) > 122) {
-                        quants = (c + quants) - 123;
+                    if ((c + quants) > 122 && quants < 27) {
+                       contador++;
                     }
                     
                     if (quants > 26) {
@@ -43,10 +43,9 @@ public class CodificaBasic {
                         }  
                         System.out.print((char)(c+quants));                    
                     } else {
-                        c = 'a';
-                        quants++;
+                        c = 96;
                         // Mostrar el caràcter corresponent a la suma
-                        System.out.print((char)(c+Math.abs(quants)));   
+                        System.out.print((char)(c+contador));   
                     }
                 // Del contrari
                 } else {
