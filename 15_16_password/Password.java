@@ -27,6 +27,8 @@ public class Password {
         int comptadorMajuscula = 0;
         // Declarar e inicialitzar el int comptadorMinuscula en 0
         int comptadorMinuscula = 0;
+        // Declarar e inicialitzar el int comptadorDigit en 0
+        int comptadorDigit = 0;
         // Declarar e inicialitzar el int comptadorSimbol en 0
         int comptadorSimbol = 0;
         // Declarar e inicialitzar el String digit buit
@@ -45,6 +47,8 @@ public class Password {
                 }
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
+                    // Sumar-li 1 a comptadorDigit
+                    comptadorDigit++;
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
                     // conteDigit serà true
@@ -108,7 +112,8 @@ public class Password {
                     if (!quatresSeguit && comptadorDigitConsecutius == 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutius = true;
-                    } else if (digit.length() >= 4) {
+                        break;
+                    } else if (comptadorDigit >= 4) {
                         quatresSeguit = true;
                     }
                 }
