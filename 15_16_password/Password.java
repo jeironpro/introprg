@@ -112,7 +112,7 @@ public class Password {
                     }
                 }
                 // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-                if (!tresDigitConsecutius && comptadorMajuscula >= 4 || comptadorMinuscula >= 4  || comptadorDigit >= 4 || comptadorSimbol >= 4) {
+                if (!tresDigitConsecutius && (comptadorMajuscula >= 4 || comptadorMinuscula >= 4  || comptadorDigit >= 4 || comptadorSimbol >= 4)) {
                     quatresSeguit = true;
                 }
             }
