@@ -85,6 +85,7 @@ public class Password {
                         caracterRepetit = true;
                     }
                 }
+                
                 // Verificar que la quantitat de majúscules es major a la quantitat de minúscules
                 majusculesSuperior = comptadorMajuscula >= comptadorMinuscula;
                 
@@ -111,7 +112,7 @@ public class Password {
                     }
                 }
                 // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
-                if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4  || comptadorDigit >= 4 || comptadorSimbol >= 4) {
+                if (!tresDigitConsecutius && comptadorMajuscula >= 4 || comptadorMinuscula >= 4  || comptadorDigit >= 4 || comptadorSimbol >= 4) {
                     quatresSeguit = true;
                 }
             }
