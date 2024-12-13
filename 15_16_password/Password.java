@@ -105,7 +105,7 @@ public class Password {
                     }                    
                     
                     // Verificar si la contrasenya conté tres dígits consecutius
-                    if (comptadorDigitConsecutius == 3) {
+                    if (!quatresSeguit && comptadorDigitConsecutius == 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutius = true;
                     } else if (digit.length() >= 4) {
