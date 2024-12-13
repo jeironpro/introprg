@@ -48,9 +48,11 @@ public class Password {
                 // Verificar si la contrasenya conté dígit
                 if (Character.isDigit(c)) {
                     comptadorDigit = 1;
-                    if (Character.isDigit(contrasenya.charAt(i+1))) {
-                        // Sumar-li 1 a comptadorDigit
-                        comptadorDigit++;                    
+                    if (i < contrasenya.length()) {
+                        if (Character.isDigit(contrasenya.charAt(i+1))) {
+                            // Sumar-li 1 a comptadorDigit
+                            comptadorDigit++;                    
+                        }                    
                     }
                     // Guardar en el String digit el caràcters que ho són
                     digit += c;
