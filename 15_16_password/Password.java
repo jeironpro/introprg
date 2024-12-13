@@ -127,7 +127,7 @@ public class Password {
                 System.out.println("El password no pot contenir espais en blanc.");
             } else if (caracterRepetit) {
                 System.out.println("El password no pot contenir caràcters repetits.");
-            } else if (quatresSeguit) {
+            } else if (quatresSeguit && !tresDigitConsecutius) {
                 System.out.println("El password no pot contenir més de 4 caràcters seguits del mateix tipus.");
                 return;
             } else if (!quatresSeguit && tresDigitConsecutius) {
