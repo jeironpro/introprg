@@ -106,8 +106,9 @@ public class Password {
                 // Verificar si la contrasenya conté 4 caràcters seguits del mateix tipus
                 if (comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorDigit >= 4 || comptadorSimbol >= 4) {
                     quatresSeguit = true;
+                } 
                 // Verificar si la contrasenya conté tres dígits consecutius
-                } else if (comptadorDigitConsecutius >= 3) {
+                if (comptadorDigitConsecutius >= 3 && comptadorMajuscula >= 4 || comptadorMinuscula >= 4 || comptadorSimbol >= 4) {
                     // tresDigitConsecutius serà true
                     tresDigitConsecutius = true;
                 }
