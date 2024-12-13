@@ -36,10 +36,9 @@ public class CodificaBasic {
                     if (quants > 26) {
                         quants = quants % 26;
                     }
-                    // Verificar si el caràcter es l'z i quant es major a 0
                     if ((c + quants) < 123) {
-                        if (c == 'z' && quants > 0) {
-                            // El caràcter serà el ASCI 96
+                        if (c == 'z') {
+                            // El caràcter serà el ASCII 96
                             c = 96;
                         }  
                         System.out.print((char)(c+quants));                    
