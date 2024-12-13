@@ -110,6 +110,7 @@ public class Password {
             }
             // Declarar e inicialitzar el int comptadorDigitConsecutius en 0
             int comptadorDigitConsecutius = 0;
+            int comptadorDigitConsecutiusDecreixent = 0;
             if (!digit.isEmpty()) {
                 // Fer un for per iterar tots el caràcter dígits
                 for (int i = 0; i < digit.length(); i++) {
@@ -127,26 +128,24 @@ public class Password {
                         }                    
                     }
                     // Verificar si la contrasenya conté tres dígits consecutius
-                    if (comptadorDigitConsecutius >= 3) {
+                    if (comptadorDigitConsecutius > 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutius = true;
                     }
                 }
-                int comptadorDigitConsecutiusDecreixent = 0;
                 // Fer un for per iterar tots el caràcter dígits
                 for (int i = digit.length()-1; i >= 0; i--) {
                     // Fer un for per iterar el caràcter dígits a partir del seguent dígit
                     for (int j = i-1; j >= 0; j--) {
                         // Verificar si el digit +1 és igual a di
                         // Aquest verifica si és consecutius
-                        if (i-1 != j) {
-                            continue;
+                        if (i-1 == j) {
+                            // Sumar-li 1 a comptadorDigitConsecutius
+                            comptadorDigitConsecutiusDecreixent++;
                         }                    
-                        // Sumar-li 1 a comptadorDigitConsecutius
-                        comptadorDigitConsecutiusDecreixent++;
                     }
                     // Verificar si la contrasenya conté tres dígits consecutius
-                    if (comptadorDigitConsecutiusDecreixent >= 3) {
+                    if (comptadorDigitConsecutiusDecreixent > 3) {
                         // tresDigitConsecutius serà true
                         tresDigitConsecutiusDecreixent = true;
                     }
