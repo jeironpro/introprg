@@ -1,5 +1,4 @@
-/* Aquest programa demana un text i et mostra cada paraula del text de manera
-* invertida */
+/* Aquest programa demana un text i et mostra cada paraula del text de manera invertida */
 
 public class ParaulesReves {
     public static void main(String[] args) {
