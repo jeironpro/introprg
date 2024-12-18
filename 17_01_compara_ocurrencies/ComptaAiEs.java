@@ -6,15 +6,9 @@ public class ComptaAiEs {
         System.out.println("Introdueix un text");
         String text = Entrada.readLine();
         
-        System.out.println("Introdueix la primera lletra");
-        char lletra1 = Entrada.readLine().charAt(0);
-        
-        System.out.println("Introdueix la segona lletra");
-        char lletra2 = Entrada.readLine().charAt(0);
-        
-        comptaLletra(text, lletra1);
-        comptaLletra(text, lletra2);
-        comparaOcurrencies(text, lletra1, lletra2);
+        comptaLletra(text, 'a');
+        comptaLletra(text, 'e');
+        comparaOcurrencies(text, 'a', 'e');
     }
     
     public static void comptaLletra(String text, char lletra) {
