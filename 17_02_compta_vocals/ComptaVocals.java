@@ -8,7 +8,7 @@ public class ComptaVocals {
         System.out.println("Introdueix un text");
         // Llegir el text
         String text = Entrada.readLine();
-        // Declarar e incialitzar la variable vocals amb les vocals
+        // Declarar e incialitzar el String vocals amb les vocals
         String vocals = "aàeèéiíïoóòuúü";
         
         // Fer un for per iterar totes les vocals
