@@ -1,7 +1,7 @@
 /* Programa que demana un text i dues lletres i et mostra quantes vegades 
 * apareix cada lletra en el text. */
 
-public class ComptaOcurrencies {
+public class ComptaAiEs {
     public static void main(String[] args) {
         System.out.println("Introdueix un text");
         String text = Entrada.readLine();
