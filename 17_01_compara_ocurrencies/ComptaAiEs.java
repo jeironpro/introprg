@@ -9,10 +9,10 @@ public class ComptaAiEs {
         String text = Entrada.readLine();
         // Cridar el mòdul comptaLletra i passar-li els argument text i el caràcter
         // Es crida dos vegades el mòdul comptaLletra, primero comptar la a, i després la e
-        comptaLletra(text, 'a');
-        comptaLletra(text, 'e');
+        comptaLletra(text, 'i');
+        comptaLletra(text, 'o');
         // Cridar el mòdul comparaOcurrencies i passar-li els arguments text, el primer i segon caràcter
-        comparaOcurrencies(text, 'a', 'e');
+        comparaOcurrencies(text, 'i', 'o');
     }
     
     public static void comptaLletra(String text, char lletra) {
