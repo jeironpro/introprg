@@ -39,12 +39,12 @@ public class MatriculaValida {
         // Verificar si verificarLletra i verificarNombre són true
         if (verificarLletra && verificarNombre) {
             // Mostrar aquest missatge
-            System.out.println("És una matrícula vàlida");
+            System.out.println("És una matrícula italiana vàlida");
         }
         // Verificar si la longitud de la matrícula no és correcta o verificarLletra és false o verificarNombre és false
         if (matricula.length() > 7 || !verificarLletra || !verificarNombre) {
             // Mostrar aquest missatge
-            System.out.println("No és una matrícula vàlida");
+            System.out.println("No és una matrícula italiana vàlida");
         }
         
     }
