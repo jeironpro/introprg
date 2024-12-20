@@ -5,15 +5,20 @@ public class MatriculaValida {
         System.out.println("Introduïu una matrícula");
         String matricula = Entrada.readLine();
         boolean verificarLletra = false;
+        
         if (matricula.length() == 7) {
             for (int i = 0; i < matricula.length(); i++) {
                 char c = matricula.charAt(i);
                 verificarLletra = esLletraValidaPerMatriculaItaliana(c);
+                
+                if (i >= 2 && i <=4) {
+                    continue;
+                }
             }
         } else {
             System.out.println("No és una matrícula italiana vàlida");
         }
-        if (verificarLletra) {
+        if (verificarLletra && Character.isDigit(matricula.charAt(2)) && Character.isDigit(matricula.charAt(3)) && Character.isDigit(matricula.charAt(4))) {
             System.out.println("És una matrícula italiana vàlida");
         }
     }
