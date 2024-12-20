@@ -15,14 +15,12 @@ public class MatriculaValida {
                     continue;
                 }
             }
-        } else {
-            System.out.println("No és una matrícula italiana vàlida");
-        }
-        if (verificarLletra && Character.isDigit(matricula.charAt(2)) && Character.isDigit(matricula.charAt(3)) && Character.isDigit(matricula.charAt(4))) {
+        } else if (verificarLletra && Character.isDigit(matricula.charAt(2)) && Character.isDigit(matricula.charAt(3)) && Character.isDigit(matricula.charAt(4))) {
             System.out.println("És una matrícula italiana vàlida");
         } else {
             System.out.println("No és una matrícula italiana vàlida");
         }
+        
     }
     
     public static boolean esLletraValidaPerMatriculaItaliana(char c) {
