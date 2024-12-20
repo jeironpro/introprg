@@ -5,6 +5,7 @@ public class MatriculaValida {
         System.out.println("Introduïu una matrícula");
         String matricula = Entrada.readLine();
         boolean verificarLletra = false;
+        boolean nombreValid = false;
         
         if (matricula.length() == 7) {
             for (int i = 0; i < matricula.length(); i++) {
@@ -15,10 +16,15 @@ public class MatriculaValida {
                     continue;
                 }
             }
-        } else if (verificarLletra && Character.isDigit(matricula.charAt(2)) && Character.isDigit(matricula.charAt(3)) && Character.isDigit(matricula.charAt(4))) {
-            System.out.println("És una matrícula italiana vàlida");
-        } else {
-            System.out.println("No és una matrícula italiana vàlida");
+            if (Character.isDigit(matricula.charAt(2)) && Character.isDigit(matricula.charAt(3)) && Character.isDigit(matricula.charAt(4))) {
+                nombreValid = true;
+            }
+        }
+        
+        if (verificarLletra && nombreValid) {
+            System.out.println("És una matrícula italiana vàlida");        
+        } else if (matricula.length() > 7 || !verificarLletra || !nombreValid) {
+            System.out.println("No és una matrícula italiana vàlida");        
         }
         
     }
