@@ -57,7 +57,7 @@ public class MatriculaValida {
             // Declarar e inicialitzar el char ch amb tots els caràcters de lletresEspecials
             char ch = lletresEspecials.charAt(i);
             // Verificar si la lletra és majúscula o el caràcter que rep la funció és igual a els que no s'accepten
-            if (!Character.isUpperCase(c) || c == ch) {
+            if (!(c >= 'A' && c <= 'Z') || c == ch) {
                 // La funció retornarà false
                 return false;
             }
