@@ -23,8 +23,11 @@ public class LloroVocalIniciFi {
                     System.out.println("El lloro diu: " + paraula);
                 }  
             } else {
-                // Aturar el bucle
-                break;            
+                System.out.println("El lloro demana confirmació per finalitzar");
+                if (UtilitatsConfirmacio.respostaABoolean(Entrada.readLine())) {
+                    // Aturar el bucle
+                    break;                                
+                }
             }
         }
         // Quan surti del bucle, mostrar aquest missatge
