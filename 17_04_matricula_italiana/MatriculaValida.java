@@ -62,7 +62,7 @@ public class MatriculaValida {
                 return false;
             }
         } 
-        // La funció retorna true per defecte
+        // Si no es compleix la condicio del for, la funció retornarà true
         return true;
     }
 }
