@@ -108,6 +108,8 @@ public class UtilString {
     }
     
     public static boolean esEnter(String text) {
+        // Eliminar els espais que apareixen davant i darrere del text
+        text = text.trim();
         // Declarar e inicialitzar el char signe amb el carácter en la posició 0
         char signe = text.charAt(0);
         // Si el char signe és diferent a - i + i un dígit 

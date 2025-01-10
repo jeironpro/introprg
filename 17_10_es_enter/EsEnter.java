@@ -1,4 +1,6 @@
-/**/
+/* Aquest programa demana texts fins que rebre una entrada buida.
+* Per cada text introduït et dira si és un enter o no amb móduls.
+*/
 
 public class EsEnter {
     public static void main(String[] args) {
