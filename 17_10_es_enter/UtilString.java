@@ -120,9 +120,8 @@ public class UtilString {
                     // Retornar false
                     return false;
                 }            
-            } else {
-                return false;
             }
+            
             // Fer un for per iterar tots els caràcters de text des de la posicio 1
             for (int i = 1; i < text.length(); i++) {
                 // Declarar e inicialitzar el char c amb tots els caràcter del text
