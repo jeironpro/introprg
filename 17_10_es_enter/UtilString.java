@@ -110,8 +110,6 @@ public class UtilString {
     public static boolean esEnter(String text) {
         // Si el text no está buit
         if (!text.isBlank()) {
-            // Eliminar els espais que apareixen davant i darrere del text
-            text = text.trim();
             if (text.length() > 1) {
                 // Declarar e inicialitzar el char signe amb el carácter en la posició 0
                 char signe = text.charAt(0);
@@ -121,6 +119,8 @@ public class UtilString {
                     return false;
                 }            
             }
+            // Eliminar els espais que apareixen davant i darrere del text
+            text = text.trim();
             
             // Fer un for per iterar tots els caràcters de text des de la posicio 1
             for (int i = 1; i < text.length(); i++) {
