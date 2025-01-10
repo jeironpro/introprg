@@ -1,5 +1,5 @@
 /* Aquest programa demana texts fins que rebre una entrada buida.
-* Per cada text introduït et dira si és un enter o no amb móduls.
+* Per cada text introduït et dira si és un enter o no amb móduls de un altre fitxer.
 */
 
 public class EsEnter {
