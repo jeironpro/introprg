@@ -2,10 +2,10 @@
 
 public class EsEnter {
     public static void main(String[] args) {
+        // Demanar els texts
+        System.out.println("Introdueix texts (enter sol per finalitzar)");
         // Bucle infinit
         while (true) {
-            // Demanar els texts
-            System.out.println("Introdueix texts (enter sol per finalitzar)");
             // Llegir els texts
             String text = Entrada.readLine();
             // Si el text no está buit
