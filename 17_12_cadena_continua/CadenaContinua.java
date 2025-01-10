@@ -1,4 +1,9 @@
-/**/
+/* Aquest programa demana un text i un nombre enter, i et mostra
+* tots els caràcters del text fins a arribar al nombre indicat, si rep
+* un nombre major a la longitud del text, et mostrarà tots els caràcters
+* del text i tornarà a començar des del primer caràcter fins a l'últim
+* i així sucessivament fins a arribar al nombre indicat. Amb móduls de un altre fitxer. 
+*/
 
 public class CadenaContinua {
     public static void main(String[] args) {
