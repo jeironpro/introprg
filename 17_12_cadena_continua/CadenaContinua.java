@@ -23,6 +23,9 @@ public class CadenaContinua {
                 // Mostrar aquest missatge
                 System.out.println("error");
             }        
+        } else {
+            // Mostrar aquest missatge
+            System.out.println("error");
         }
     }
 }
