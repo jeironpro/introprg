@@ -109,7 +109,7 @@ public class UtilString {
     
     public static boolean esEnter(String text) {
         // Si el text no está buit
-        if (!text.isBlank()) {
+        if (!text.isBlank() && text.length() > 1) {
             // Eliminar els espais que apareixen davant i darrere del text
             text = text.trim();
             // Declarar e inicialitzar el char signe amb el carácter en la posició 0
