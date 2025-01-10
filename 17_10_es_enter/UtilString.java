@@ -108,7 +108,9 @@ public class UtilString {
     }
     
     public static boolean esEnter(String text) {
-            
+        // Si el text no está buit
+        if (!text.isBlank()) {
+            // Si la longitud del text és major a 1
             if (text.length() > 1) {
                 // Declarar e inicialitzar el char signe amb el carácter en la posició 0
                 char signe = text.charAt(0);
@@ -119,16 +121,22 @@ public class UtilString {
                 }            
             }
             
-            // Fer un for per iterar tots els caràcters de text des de la posicio 1
+            // Fer un for per iterar tots els caràcters del text des de la posicio 1
             for (int i = 1; i < text.length(); i++) {
-                // Declarar e inicialitzar el char c amb tots els caràcter del text
+                // Declarar e inicialitzar el char c amb tots els caràcter del text des de la posicio 1
                 char c = text.charAt(i);
                 // Si el carácter no és un dígit
                 if (!Character.isDigit(c)) {
+                    // Retornar false
                     return false;
                 }
             }
             // Si cap de les condicions anterior no es compleixen, retornar true
-            return true;
+            return true; 
+        // Del contrari       
+        } else {
+            // Retornar false
+            return false;
+        }
     }
 }
