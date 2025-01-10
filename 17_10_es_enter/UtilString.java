@@ -108,8 +108,7 @@ public class UtilString {
     }
     
     public static boolean esEnter(String text) {
-        // Si el text no está buit
-        if (!text.isBlank()) {
+            
             if (text.length() > 1) {
                 // Declarar e inicialitzar el char signe amb el carácter en la posició 0
                 char signe = text.charAt(0);
@@ -130,12 +129,6 @@ public class UtilString {
                 }
             }
             // Si cap de les condicions anterior no es compleixen, retornar true
-            return true; 
-            
-        // Del contrari       
-        } else {
-            // Retornar false
-            return false;
-        }
+            return true;
     }
 }
