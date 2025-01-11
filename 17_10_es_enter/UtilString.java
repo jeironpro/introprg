@@ -108,35 +108,30 @@ public class UtilString {
     }
     
     public static boolean esEnter(String text) {
-        // Si el text no está buit
-        if (!text.isBlank()) {
-            // Si la longitud del text és major a 1
-            if (text.length() > 1) {
-                // Declarar e inicialitzar el char signe amb el carácter en la posició 0
-                char signe = text.charAt(0);
-                // Si el char signe és diferent a - i + i un dígit 
-                if (signe != '-' && signe != '+' && !Character.isDigit(signe)) {
-                    // Retornar false
-                    return false;
-                }            
-            }
-            
-            // Fer un for per iterar tots els caràcters del text des de la posicio 1
-            for (int i = 1; i < text.length(); i++) {
-                // Declarar e inicialitzar el char c amb tots els caràcter del text des de la posicio 1
-                char c = text.charAt(i);
-                // Si el carácter no és un dígit
-                if (!Character.isDigit(c)) {
+        // Si el text está buit
+        if (text.isBlank()) {
+            // Retornar false
+            return false;     
+        } 
+        
+        // Fer un for per iterar tots els caràcters del text
+        for (int i = 0; i < text.length(); i++) {
+            // Declarar e inicialitzar el char c amb tots els caràcter del text
+            char c = text.charAt(i);
+            // Si la longitud del text és major a 1 i el primer carácter és '-' o '+'
+            if (text.length() > 1 && i == 0 && (c == '-' || c == '+')) {
+                // Si el següent carácter no és un dígit 
+                if (!Character.isDigit(text.charAt(i+1))) {
                     // Retornar false
                     return false;
                 }
+            // Del contrari, si el carácter no és un dígit
+            } else if (!Character.isDigit(c)) {
+                // Retornar false
+                return false;
             }
-            // Si cap de les condicions anterior no es compleixen, retornar true
-            return true; 
-        // Del contrari       
-        } else {
-            // Retornar false
-            return false;
         }
+        // Si cap de les condicions anterior no es compleixen, retornar true
+        return true; 
     }
 }
