@@ -16,16 +16,6 @@
 * Una funció que rep un text i el converteix a enter des del mètode Integer.parseInt, el valor pot ser negatiu o positiu, o pot tenir espai en blanc en qualsevol joc, punt o guió baix entre dos nombres (aEnter flexible).
 *
 * Una funció que rep un text i una quantitat i retorna un String format per la repetició circular de carácters fins a la quantitat (cadenaContinua).
-*
-* Una funció que rep un text i un subtext i retornar si és substring o no, com l'utilitat de String contains (esSubstring estricte).
-*
-* Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retornar si és substring o no, com la utilitat de String contains (esSubstring flexible).
-*
-* Una funció que filtra un text normalitzant les vocals catalanes per les vocals normals (filtraVocalsCatala(versió 1 amb dos for) i filtraVocalsCatala(versió 2 amb un for i un switch)).
-*
-* Una funció que rep un carácter i retorna si és simból o no (esSimbol).
-*
-* Una funció que rep un text i retorna el text sense espai (cadenaSenseEspais).
 */
 public class UtilString {
     public static boolean esVocal(char caracter) {
