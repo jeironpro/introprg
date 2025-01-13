@@ -510,6 +510,7 @@ public class UtilString {
         for (int i = text.length()-1; i >= 0; i--) {
             // Si el carácter de sufix i de text en la darrera posició son igual 
             if (sufix.charAt(j) == text.charAt(i)) {
+                System.out.println(sufix.charAt(j) + " == " + text.charAt(i));
                 // Sumar-li 1 a igualtat, per verificar sí tots els caràcters del sufix estén en el text de manera seqüencial
                 igualtat++;
             }
@@ -532,7 +533,7 @@ public class UtilString {
         // Si estricte és true
         if (estricte) {
             // Retornar el resultat de la funció esSufix amb el text i sufix com arguments
-            return esPrefix(text, sufix);
+            return esSufix(text, sufix);
         // Del contrari
         } else {
             // Si la longitud del text és igual a 0 o la longitud del sufix és major a la longitud del text 
