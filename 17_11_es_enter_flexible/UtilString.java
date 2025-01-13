@@ -227,8 +227,8 @@ public class UtilString {
         } else {
             // Declarar e inicialitzar el String nouText buit
             String nouText = "";
-            // Si la funció esEnter(String) retorna true
-            if (esEnter(text)) {
+            // Si la funció esEnter(String, boolean) retorna true
+            if (esEnter(text, estricte)) {
                 // Fer un for per iterar tots el carácters del text
                 for (int i = 0; i < text.length(); i++) {
                     // Agafar els caràcters del String text en la posició de i
