@@ -19,7 +19,7 @@
 *
 * Una funció que rep un text i un subtext i retornar si és substring o no, com l'utilitat de String contains (esSubstring estricte).
 *
-* Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retornar si és substring o no, com la utilitat de String contains (esSubstring estricte).
+* Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retornar si és substring o no, com la utilitat de String contains (esSubstring flexible).
 *
 * Una funció que filtra un text normalitzant les vocals catalanes per les vocals normals (filtraVocalsCatala(versió 1 amb dos for) i filtraVocalsCatala(versió 2 amb un for i un switch)).
 *
