@@ -317,9 +317,9 @@ public class UtilString {
         // Declarar e inicialitzar el String nouText buit 
         String nouText = "";
         // Declarar e inicialitzar el String vocalsCatala amb les vocals catalanes, com addicional incloem la ç
-        String vocalsCatala = "àèéíïòóùüç";
+        String vocalsCatala = "àèéíïòóùúüç";
         // Declarar e inicialitzar el String vocalsCatala amb les vocals, com addicional incloem la c
-        String vocals = "aeeiioouuc";
+        String vocals = "aeeiioouuuc";
         
         // Fer un for per iterar tots els carácters del text
         for (int i = 0; i < text.length(); i++) {
