@@ -302,10 +302,14 @@ public class UtilString {
             }
             // Converteix el text a minúscula
             text = text.toLowerCase();
-            // Declarar e incialitzar el String nouSubtext amb la funció filtraVocalsCatala i li passem el subtext en minúscula
-            String nouSubtext = filtraVocalsCatala(subtext.toLowerCase());
-            // Retornar el resultat de esSubstring amb el text i el nouSubtext com argument
-            return esSubstring(text, nouSubtext);    
+            // Converteix el subtext a minúscula
+            subtext = subtext.toLowerCase();
+            // Declarar e incialitzar el String nouSubtext amb la funció filtraVocalsCatala i li passem el subtext
+            String nouSubtext = filtraVocalsCatala(subtext);
+            // Declarar e incialitzar el String nouSubtext amb la funció filtraVocalsCatala i li passem el subtext
+            String nouText = filtraVocalsCatala(text);
+            // Retornar el resultat de esSubstring amb el nouText i el nouSubtext com arguments
+            return esSubstring(nouText, nouSubtext);    
         }
     }
     
