@@ -13,7 +13,7 @@ public class EsEnter {
             // Si el text no está buit
             if (!text.isBlank()) {
                 // Eliminar els espais que apareixen davant i darrere del text
-                text = text.trim();
+                text = text.strip();
                 // Declarar e inicialitzar el boolean confirmaEnter amb la funció esEnter(li passem el text com argument) que está en el fitxer UtilString
                 boolean confirmaEnter = UtilString.esEnter(text);
                 // Si confirmaEnter és true
