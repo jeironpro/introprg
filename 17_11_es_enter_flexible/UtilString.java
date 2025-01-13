@@ -227,14 +227,17 @@ public class UtilString {
         } else {
             // Declarar e inicialitzar el String nouText buit
             String nouText = "";
-            // Fer un for per iterar tots el carácters del text
-            for (int i = 0; i < text.length(); i++) {
-                // Agafar els caràcters del String text en la posició de i
-                char c = text.charAt(i);
-                // Si el carácter és un dígit o '-' o '+'
-                if (Character.isDigit(c) || c == '-' || c == '+') {
-                    // Guardar en nouText el carácter
-                    nouText += c;
+            // Si la funció esEnter(String) retorna true
+            if (esEnter(text)) {
+                // Fer un for per iterar tots el carácters del text
+                for (int i = 0; i < text.length(); i++) {
+                    // Agafar els caràcters del String text en la posició de i
+                    char c = text.charAt(i);
+                    // Si el carácter és un dígit o '-' o '+'
+                    if (Character.isDigit(c) || c == '-' || c == '+') {
+                        // Guardar en nouText el carácter
+                        nouText += c;
+                    }
                 }
             }
             // Retornar el nouText convertit a enter
