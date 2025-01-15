@@ -352,7 +352,7 @@ public class UtilString {
             char caracter = Character.toLowerCase(text.charAt(i));
             // Fer un switch expression que retorna un carácter
             char vocalCatala = switch (caracter) {
-                case 'à' -> 'a';
+                case 'à', 'ä' -> 'a';
                 case 'è', 'é' -> 'e';
                 case 'í', 'ï' -> 'i';
                 case 'ò', 'ó' -> 'o';
