@@ -63,7 +63,7 @@ public class NotaMesAlta {
                 }
             }
             // Mostrar el missatge de la nota més alta i la resta de notes introduïdes
-            System.out.println("La nota més alta és " + notaAlta + ". La resta de notes: " + notesFormatat);
+            System.out.println("La nota més alta és " + notaAlta + ". La resta de notes és: " + notesFormatat);
         // Del contrari
         } else {
             // Mostrar aquest missatge
