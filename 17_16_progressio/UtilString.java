@@ -635,7 +635,29 @@ public class UtilString {
         return false;
     }
     
-    // public static boolean esCreixent(String text, boolean estricta) {}
+    public static boolean esCreixent(String text, boolean estricta) {
+        if (estricta) {
+            return esCreixent(text);
+        } else {
+            boolean textCreixent = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-1) {            
+                    if ((int)(c) <= (int)(text.charAt(i+1))) {
+                        textCreixent = true;                
+                    } else {
+                        return false;
+                    }
+                }
+                
+            }
+            if (textCreixent) {
+                return true;
+            } 
+            return false;        
+        }
+    }
 
     public static boolean esDecreixent(String text) {
         boolean textDecreixent = false;
@@ -657,7 +679,29 @@ public class UtilString {
         return false;
     }
 
-    // public static boolean esDecreixent(String text, boolean estricta) {}
+    public static boolean esDecreixent(String text, boolean estricta) {
+        if (estricta) {
+            return esDecreixent(text);
+        } else {
+            boolean textDecreixent = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-1) {            
+                    if ((int)(c) >= (int)(text.charAt(i+1))) {
+                        textDecreixent = true;                
+                    } else {
+                        return false;
+                    }
+                }
+                
+            }
+            if (textDecreixent) {
+                return true;
+            } 
+            return false;
+        }
+    }
     
     public static boolean esCreixiDecri(String text) {
         boolean textCreixiDecri = false;
@@ -665,7 +709,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if ((int)(c) <= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) >= (int)(text.charAt(i+2))) {
+                if ((int)(c) < (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) > (int)(text.charAt(i+2))) {
                     textCreixiDecri = true;                
                 } else {
                     return false;
@@ -679,7 +723,29 @@ public class UtilString {
         return false;
     }
 
-    // public static boolean esCreixiDecri(String test, boolean estricta) {}
+    public static boolean esCreixiDecri(String text, boolean estricta) {
+        if (estricta) {
+            return esCreixiDecri(text);
+        } else {
+            boolean textCreixiDecri = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-2) {            
+                    if ((int)(c) <= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) >= (int)(text.charAt(i+2))) {
+                        textCreixiDecri = true;                
+                    } else {
+                        return false;
+                    }
+                }
+                
+            }
+            if (textCreixiDecri) {
+                return true;
+            } 
+            return false;
+        }
+    }
     
     public static boolean esDecriCreixi(String text) {
         boolean textDecriCreixi = false;
@@ -687,7 +753,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if ((int)(c) >= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) <= (int)(text.charAt(i+2))) {
+                if ((int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) < (int)(text.charAt(i+2))) {
                     textDecriCreixi = true;                
                 } else {
                     return false;
@@ -701,7 +767,29 @@ public class UtilString {
         return false;
     }
     
-    // public static boolean esDecriCreixi(String test, boolean estricta) {}
+    public static boolean esDecriCreixi(String text, boolean estricta) {
+        if (estricta) {
+            return esDecriCreixi(text);
+        } else {
+            boolean textDecriCreixi = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-2) {            
+                    if ((int)(c) >= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) <= (int)(text.charAt(i+2))) {
+                        textDecriCreixi = true;                
+                    } else {
+                        return false;
+                    }
+                }
+                
+            }
+            if (textDecriCreixi) {
+                return true;
+            } 
+            return false;
+        }
+    }
     
     public static String filtraAlfabetCatala(String text) {
         String nouText = "";
