@@ -352,7 +352,7 @@ public class UtilString {
             char caracter = Character.toLowerCase(text.charAt(i));
             // Fer un switch expression que retorna un carácter
             char vocalCatala = switch (caracter) {
-                case 'à', 'ä' -> 'a';
+                case 'à' -> 'a';
                 case 'è', 'é' -> 'e';
                 case 'í', 'ï' -> 'i';
                 case 'ò', 'ó' -> 'o';
@@ -663,7 +663,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if ((int)(c) < (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) > (int)(text.charAt(i+2))) {
+                if ((int)(c) < (int)(text.charAt(i+1)) || (int)(c) > (int)(text.charAt(i+1))) {
                     //System.out.println(text.charAt(i) + " <= " + text.charAt(i+1) + " i " + text.charAt(i+2) + " >= " + text.charAt(i+3));
                     textCreixiDecri = true;                
                 } else {
@@ -685,7 +685,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if ((int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) < (int)(text.charAt(i+2))) {
+                if ((int)(c) > (int)(text.charAt(i+1)) || (int)(c) > (int)(text.charAt(i+1))) {
                     //System.out.println(text.charAt(i) + " >= " + text.charAt(i+1) + " i " + text.charAt(i+2) + " <= " + text.charAt(i+3));
                     textDecriCreixi = true;                
                 } else {
