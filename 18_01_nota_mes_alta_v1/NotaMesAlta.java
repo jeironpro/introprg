@@ -16,13 +16,15 @@ public class NotaMesAlta {
             if (notaAlta < nota) {
                 // Assignar-li el valor de nota a notaAlta
                 notaAlta = nota;
-                // Augmentar en 1 quants
-                quants++;
             }
             // Si la nota és negativa
             if (nota < 0) {
                 // Finalitzar el bucle
                 break;
+            // Del contrari
+            } else {
+                // Augmentar en 1 quants
+                quants++;
             }
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
