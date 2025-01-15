@@ -662,7 +662,6 @@ public class UtilString {
             
             if (i < text.length()-2) {            
                 if ((int)(c) >= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) <= (int)(text.charAt(i+2))) {
-                    System.out.println((int)(c) + " menor o igual a " + (int)(text.charAt(i+1)) + " i " + (int)(text.charAt(i+1)) + " major o igual a " + (int)(text.charAt(i+2)));
                     textCreixiDecri = true;                
                 } else {
                     return false;
