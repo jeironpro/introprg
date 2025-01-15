@@ -709,7 +709,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if ((int)(c) <= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) >= (int)(text.charAt(i+2))) {
+                if ((int)(c) < (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) > (int)(text.charAt(i+2))) {
                     textCreixiDecri = true;                
                 } else {
                     return false;
@@ -753,7 +753,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if ((int)(c) >= (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) <= (int)(text.charAt(i+2))) {
+                if ((int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) < (int)(text.charAt(i+2))) {
                     textDecriCreixi = true;                
                 } else {
                     return false;
