@@ -38,12 +38,18 @@ public class NotaMesAlta {
             }
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
-        if (quants > 1) {   
+        if (quants > 1) {
             // Fer un for per iterar les notes     
             for (int i = 0; i < notes.length(); i++) {
                 // Declarar e inicialitzar el int notesAEnter, que almacena el char de notes i el converteix a enter
                 int notesAEnter = Integer.parseInt("" + notes.charAt(i));
                 // Si la nota del String notes convertit a enter és igual a la nota més alta
+                if (notes.length() <= 2) {
+                    if (notesAEnter == notaAlta) {
+                        System.out.println("La nota més alta és " + notaAlta + ". No queda cap altra nota.");
+                        return;
+                    }
+                }
                 if (notesAEnter == notaAlta) {
                     // Ignorar la nota
                    continue;
