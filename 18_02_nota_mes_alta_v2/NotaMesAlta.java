@@ -33,7 +33,7 @@ public class NotaMesAlta {
             } else {
                 if (nota <= 10) {
                     // Guardar la nota en el String notes
-                    notes += nota;
+                    notes += nota + ", ";
                     // Augmentar en 1 quants
                     quants++;                
                 }
@@ -41,20 +41,20 @@ public class NotaMesAlta {
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
         if (quants > 1) {   
-            // Fer un for per iterar les notes     
-            for (int i = 0; i < notes.length(); i++) {
-                // Si i és 0
-                if (i == 0) {
-                    // Guardar la nota tal qual en el String notesFormatat
-                    notesFormatat += notes.charAt(i);
-                // Del contrari, si i és major 0 i menor a la longitud de les notes -1
-                } else if (i > 0  && i < notes.length()-1) {
-                    // Guardar la nota amb una coma i un espais abans en el String notesFormatat
-                    notesFormatat += ", " + notes.charAt(i);
-                // Del contrari, si i és igual a longitud de les notes -1
+            // Declarar e inicialitzar el int longitudNotes amb la longitude de les notes -2
+            int longitudNotes = notes.length()-2;
+            // Fer un for per iterar les notes en la longitudNotes    
+            for (int i = 0; i < longitudNotes; i++) {
+                // Agafar el carácter de notes en la posició de i
+                char c = notes.charAt(i);
+                // Si i és igual a la longitud del text menys 3 o menys 4 i el carácter és igual a una coma
+                if ((i == longitudNotes-3 || i == longitudNotes-4) && c == ',') {
+                    // Guardar en notesFormatat un espai i la i
+                    notesFormatat += " i";
+                // Del contrari
                 } else {
-                    // Guardar la nota amb una i abans en el String notesFormatat
-                    notesFormatat += " i " + notes.charAt(i);
+                    // Guardar el carácter tal qual
+                    notesFormatat += c;
                 }
             }
             // Mostrar el missatge de la nota més alta i les notes introduïdes
