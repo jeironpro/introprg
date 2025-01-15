@@ -663,7 +663,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-3) {            
-                if ((int)(c) < (int)(text.charAt(i+1)) && (int)(text.charAt(i+2)) > (int)(text.charAt(i+3))) {
+                if ((int)(c) < (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) > (int)(text.charAt(i+2)) || (int)(c) < (int)(text.charAt(i+1)) && (int)(text.charAt(i+2)) > (int)(text.charAt(i+3))) {
                     //System.out.println(text.charAt(i) + " <= " + text.charAt(i+1) + " i " + text.charAt(i+2) + " >= " + text.charAt(i+3));
                     textCreixiDecri = true;                
                 } else {
@@ -685,7 +685,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-3) {            
-                if ((int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+2)) < (int)(text.charAt(i+3))) {
+                if ((int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) < (int)(text.charAt(i+2)) || (int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+2)) < (int)(text.charAt(i+3))) {
                     //System.out.println(text.charAt(i) + " >= " + text.charAt(i+1) + " i " + text.charAt(i+2) + " <= " + text.charAt(i+3));
                     textDecriCreixi = true;                
                 } else {
