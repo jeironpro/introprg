@@ -2,7 +2,7 @@
 
 public class Progressio {
     public static void main(String[] args) {
-        System.out.println("Intruduïu text. Enter per finalitzar.");
+        System.out.println("Introduïu text. Enter per finalitzar.");
         
         while (true) {
             String text = Entrada.readLine();
