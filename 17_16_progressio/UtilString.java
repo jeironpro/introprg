@@ -685,9 +685,7 @@ public class UtilString {
             char c = text.charAt(i);
             
             if (i < text.length()-2) {            
-                if (
-                (int)(c) > (int)(text.charAt(i+1)) && (int)(text.charAt(i+1)) < (int)(text.charAt(i+2))
-                ) {
+                if ((int)(c) > (int)(text.charAt(i+1)) && (int)(c) > (int)(text.charAt(i+1))) {
                     //System.out.println(text.charAt(i) + " >= " + text.charAt(i+1) + " i " + text.charAt(i+2) + " <= " + text.charAt(i+3));
                     textDecriCreixi = true;                
                 } else {
