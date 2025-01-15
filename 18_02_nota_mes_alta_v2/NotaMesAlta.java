@@ -20,8 +20,8 @@ public class NotaMesAlta {
         while (true) {
             // Llegir la nota
             int nota = Integer.parseInt(Entrada.readLine());
-            // Si la notaAlta és menor a la nota
-            if (notaAlta < nota) {
+            // Si la nota és menor o igual a 10 i la notaAlta és menor a la nota
+            if (nota <= 10 && notaAlta < nota) {
                 // Assignar-li el valor de nota a notaAlta
                 notaAlta = nota;
             }
@@ -31,10 +31,12 @@ public class NotaMesAlta {
                 break;
             // Del contrari
             } else {
-                // Guardar la nota en el String notes
-                notes += nota;
-                // Augmentar en 1 quants
-                quants++;
+                if (nota <= 10) {
+                    // Guardar la nota en el String notes
+                    notes += nota;
+                    // Augmentar en 1 quants
+                    quants++;                
+                }
             }
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota

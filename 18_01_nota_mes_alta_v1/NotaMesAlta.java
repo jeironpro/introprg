@@ -23,8 +23,11 @@ public class NotaMesAlta {
                 break;
             // Del contrari
             } else {
-                // Augmentar en 1 quants
-                quants++;
+                // Si la nota és menor o igual a 10
+                if (nota <= 10) {
+                    // Augmentar en 1 quants
+                    quants++;
+                }
             }
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
