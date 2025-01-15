@@ -12,8 +12,8 @@ public class NotaMesAlta {
         while (true) {
             // Llegir la nota
             int nota = Integer.parseInt(Entrada.readLine());
-            // Si la notaAlta és menor a la nota
-            if (notaAlta < nota) {
+            // Si la nota és menor o igual a 10 i la notaAlta és menor a la nota
+            if (nota <= 10 && notaAlta < nota) {
                 // Assignar-li el valor de nota a notaAlta
                 notaAlta = nota;
             }

@@ -44,18 +44,16 @@ public class NotaMesAlta {
                 // Declarar e inicialitzar el int notesAEnter, que almacena el char de notes i el converteix a enter
                 int notesAEnter = Integer.parseInt("" + notes.charAt(i));
                 // Si la nota del String notes convertit a enter és igual a la nota més alta
-                if (notes.length() <= 2) {
-                    if (notesAEnter == notaAlta) {
-                        System.out.println("La nota més alta és " + notaAlta + ". No queda cap altra nota.");
-                        return;
-                    }
+                if (notes.length() <= 2 && notes.charAt(0) == notes.charAt(1)) {
+                    System.out.println("La nota més alta és " + notaAlta + ". No queda cap altra nota.");
+                    return;
                 }
                 if (notesAEnter == notaAlta) {
                     // Ignorar la nota
                    continue;
                 }
-                // Si i és 0
-                if (i == 0) {
+                // Si i és 0 o la longitud de les notes és menor o igual a 2
+                if (i == 0 || notes.length() <= 2) {
                     // Guardar la nota tal qual en el String notesFormatat
                     notesFormatat += notes.charAt(i);
                 // Del contrari, si i és major 0 i menor a la longitud de les notes -1
