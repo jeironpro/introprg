@@ -24,8 +24,6 @@ public class NotaMesAlta {
             if (notaAlta < nota) {
                 // Assignar-li el valor de nota a notaAlta
                 notaAlta = nota;
-                // Augmentar en 1 quants
-                quants++;
             }
             // Si la nota és negativa
             if (nota < 0) {
@@ -35,6 +33,8 @@ public class NotaMesAlta {
             } else {
                 // Guardar la nota en el String notes
                 notes += nota;
+                // Augmentar en 1 quants
+                quants++;
             }
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
