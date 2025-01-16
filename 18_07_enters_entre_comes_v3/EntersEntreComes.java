@@ -14,12 +14,10 @@ public class EntersEntreComes {
         int comptador = 0;
         // Declarar e incialitzar el int numValor en 1
         int numValor = 1;
-        // Declarar el array de enters numeros
-        int[] numeros;
         // Si valor és major a 0
         if (valors > 0) {
-            // Inicialitzar el array de enters numeros amb el valor introduït per l'usuari
-            numeros = new int[valors];        
+            // Declarar e inicialitzar el array de enters numeros amb el valor introduït per l'usuari
+            int[] numeros = new int[valors];        
             // Fer un while que s'execute mentre comptador sigui menor que la longitud del array numeros
             while (comptador < numeros.length) {
                 // Demanar el(s) valor(s)
@@ -42,6 +40,8 @@ public class EntersEntreComes {
             }
             // Fer un salt de línia
             System.out.println();
+        } else {
+            System.out.println("Res a fer");
         }
     }
 }
