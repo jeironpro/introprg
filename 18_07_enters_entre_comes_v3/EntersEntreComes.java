@@ -7,7 +7,7 @@
 public class EntersEntreComes {
     public static void main(String[] args) {
         // Demanar la quantitat de valors del array
-        System.out.println("Quants valors?");
+        System.out.println("Quants?");
         // Llegir la quantitat de valors
         int valors = Integer.parseInt(Entrada.readLine());
         // Declarar e inicialitzar el array de enters numeros amb el valor introduït per l'usuari
