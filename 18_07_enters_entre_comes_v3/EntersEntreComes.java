@@ -1,5 +1,5 @@
 /* 
-* Programa que demana els valors a introduir en un array en enters, 
+* Programa que demana els valors positiu a introduir en un array de enters, 
 * els valors en cada posició de l'index per emmagatzemar-ho en el array
 * i mostra aquest valor separat per coma.
 */
