@@ -36,6 +36,7 @@ public class Progressio {
                         }
                     }                
                     paraula = "";
+                    paraulaNormal = "";
                 }
             }
             if (!paraulaValida) {
