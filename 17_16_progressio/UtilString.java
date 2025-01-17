@@ -714,34 +714,122 @@ public class UtilString {
     /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */    
     public static boolean esCreixent(String text, boolean estricta) {
         if (estricta) {
+            text = filtraVocalsCatala(text);
             return esCreixent(text);
+        } else {
+            boolean paraulaCreixent = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-1) {            
+                    char cs = text.charAt(i+1);
+
+                    if ((int)(c) <= (int)(cs)) {
+                        paraulaCreixent = true;                
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            if (paraulaCreixent) {
+                return true;
+            } 
+            return false;       
         }
-        text = filtraVocalsCatala(text);
-        return esCreixent(text);
     }
     
     public static boolean esDecreixent(String text, boolean estricta) {
         if (estricta) {
+            text = filtraVocalsCatala(text);
             return esDecreixent(text);
+        } else {
+            boolean paraulaDecreixent = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-1) {            
+                    char cs = text.charAt(i+1);
+                    
+                    if ((int)(c) >= (int)(cs)) {
+                        paraulaDecreixent = true;                
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            if (paraulaDecreixent) {
+                return true;
+            } 
+            return false;
         }
-        text = filtraVocalsCatala(text);
-        return esDecreixent(text);
     }
     
     public static boolean esCreixiDecri(String text, boolean estricta) {
         if (estricta) {
+            text = filtraVocalsCatala(text);
             return esCreixiDecri(text);
+        } else {
+            boolean paraulaCreixent = false;
+            boolean paraulaCreixiDecri = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-1) {            
+                    char cs = text.charAt(i+1);
+                    
+                    if ((int)(c) <= (int)(cs)) {
+                        paraulaCreixent = true;
+                    } else {
+                        return false;
+                    }
+                    
+                    if ((int)(c) >= (int)(cs)) {
+                        paraulaCreixent = false;
+                        paraulaCreixiDecri = true;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            if (paraulaCreixiDecri) {
+                return true;
+            } 
+            return false;
         }
-        text = filtraVocalsCatala(text);
-        return esCreixiDecri(text);
     }
     
     public static boolean esDecriCreixi(String text, boolean estricta) {
         if (estricta) {
+            text = filtraVocalsCatala(text);
             return esDecriCreixi(text);
+        } else {
+            boolean paraulaDecreixent= false;
+            boolean paraulaDecriCreixi = false;
+            for (int i = 0; i < text.length(); i++) {
+                char c = text.charAt(i);
+                
+                if (i < text.length()-1) {   
+                    char cs = text.charAt(i+1);        
+                    if ((int)(c) >= (int)(cs)) {
+                        paraulaDecreixent = true;
+                    } else {
+                        return false;
+                    }
+                    
+                    if ((int)(c) <= (int)(cs)) {
+                        paraulaDecreixent = false;
+                        paraulaDecriCreixi = true;
+                    } else {
+                        return false;
+                    }
+                }
+                
+            }
+            if (paraulaDecriCreixi) {
+                return true;
+            } 
+            return false;
         }
-        text = filtraVocalsCatala(text);
-        return esDecriCreixi(text);
     }
     
     public static String filtraAlfabetCatala(String text) {
