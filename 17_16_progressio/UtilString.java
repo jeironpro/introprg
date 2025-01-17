@@ -714,7 +714,6 @@ public class UtilString {
     /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */    
     public static boolean esCreixent(String text, boolean estricta) {
         if (estricta) {
-            text = filtraVocalCatala(text);
             return esCreixent(text);
         } else {
             boolean paraulaCreixent = false;
@@ -740,7 +739,6 @@ public class UtilString {
     
     public static boolean esDecreixent(String text, boolean estricta) {
         if (estricta) {
-            text = filtraVocalCatala(text);
             return esDecreixent(text);
         } else {
             boolean paraulaDecreixent = false;
@@ -766,7 +764,6 @@ public class UtilString {
     
     public static boolean esCreixiDecri(String text, boolean estricta) {
         if (estricta) {
-            text = filtraVocalCatala(text);
             return esCreixiDecri(text);
         } else {
             boolean paraulaCreixent = false;
@@ -800,7 +797,6 @@ public class UtilString {
     
     public static boolean esDecriCreixi(String text, boolean estricta) {
         if (estricta) {
-            text = filtraVocalCatala(text);
             return esDecriCreixi(text);
         } else {
             boolean paraulaDecreixent= false;
