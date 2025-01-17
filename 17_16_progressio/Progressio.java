@@ -19,16 +19,15 @@ public class Progressio {
                 if (!Character.isWhitespace(c)) {
                     paraula += c;
                 } else {
-                    String paraulaFiltrat = UtilString.filtraAlfabetCatala(paraula);
-                    if (paraulaFiltrat.length() >= 3) {
+                    if (paraula.length() >= 3) {
                         paraulaValida = true;
-                        if (UtilString.esCreixent(paraulaFiltrat)) {
+                        if (UtilString.esCreixent(paraula)) {
                             System.out.println("\"" + paraula + "\"" + " és creixent");
-                        } else if (UtilString.esDecreixent(paraulaFiltrat)) {
+                        } else if (UtilString.esDecreixent(paraula)) {
                             System.out.println("\"" + paraula + "\"" + " és decreixent");
-                        } else if (UtilString.esCreixiDecri(paraulaFiltrat)) {
+                        } else if (UtilString.esCreixiDecri(paraula)) {
                             System.out.println("\"" + paraula + "\"" + " és creixidecri");
-                        } else if (UtilString.esDecriCreixi(paraulaFiltrat)) {
+                        } else if (UtilString.esDecriCreixi(paraula)) {
                             System.out.println("\"" + paraula + "\"" + " és decricreixi");
                         } else {
                             System.out.println("\"" + paraula + "\"" + " és normaleta");
