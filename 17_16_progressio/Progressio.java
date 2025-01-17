@@ -19,7 +19,7 @@ public class Progressio {
                 if (!Character.isWhitespace(c)) {
                     paraula += c;
                 } else {
-                    String paraulaFiltrat = UtilString.filtraAlfabetCatala(paraula);
+                    String paraulaFiltrat = paraula;
                     if (paraulaFiltrat.length() >= 3) {
                         paraulaValida = true;
                         if (UtilString.esCreixent(paraulaFiltrat)) {
