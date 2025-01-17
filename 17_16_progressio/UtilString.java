@@ -713,18 +713,34 @@ public class UtilString {
     }
     /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */    
     public static boolean esCreixent(String text, boolean estricta) {
+        if (estricta) {
+            return esCreixent(text);
+        }
+        text = filtraVocalsCatala(text);
         return esCreixent(text);
     }
     
     public static boolean esDecreixent(String text, boolean estricta) {
+        if (estricta) {
+            return esDecreixent(text);
+        }
+        text = filtraVocalsCatala(text);
         return esDecreixent(text);
     }
     
     public static boolean esCreixiDecri(String text, boolean estricta) {
+        if (estricta) {
+            return esCreixiDecri(text);
+        }
+        text = filtraVocalsCatala(text);
         return esCreixiDecri(text);
     }
     
     public static boolean esDecriCreixi(String text, boolean estricta) {
+        if (estricta) {
+            return esDecriCreixi(text);
+        }
+        text = filtraVocalsCatala(text);
         return esDecriCreixi(text);
     }
     
