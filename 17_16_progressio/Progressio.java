@@ -13,30 +13,28 @@ public class Progressio {
             text = text.strip();
             text = text + " ";
             String paraula = "";
-            String paraulaNormal = "";
             boolean paraulaValida = false;
             for (int i = 0; i < text.length(); i++) {
                 char c = text.charAt(i);
                 if (!Character.isWhitespace(c)) {
-                    paraula += Character.toLowerCase(c);
-                    paraulaNormal += c;
+                    paraula += c;
                 } else {
-                    if (paraula.length() >= 3) {
+                    String paraulaFiltrat = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
+                    if (paraulaFiltrat.length() >= 3) {
                         paraulaValida = true;
-                        if (UtilString.esCreixent(UtilString.filtraVocalCatala(paraula))) {
-                            System.out.println("\"" + paraulaNormal + "\"" + " és creixent");
-                        } else if (UtilString.esDecreixent(UtilString.filtraVocalCatala(paraula))) {
-                            System.out.println("\"" + paraulaNormal + "\"" + " és decreixent");
-                        } else if (UtilString.esCreixiDecri(UtilString.filtraVocalCatala(paraula))) {
-                            System.out.println("\"" + paraulaNormal + "\"" + " és creixidecri");
-                        } else if (UtilString.esDecriCreixi(UtilString.filtraVocalCatala(paraula))) {
-                            System.out.println("\"" + paraulaNormal + "\"" + " és decricreixi");
+                        if (UtilString.esCreixent(paraulaFiltrat)) {
+                            System.out.println("\"" + paraula + "\"" + " és creixent");
+                        } else if (UtilString.esDecreixent(paraulaFiltrat)) {
+                            System.out.println("\"" + paraula + "\"" + " és decreixent");
+                        } else if (UtilString.esCreixiDecri(paraulaFiltrat)) {
+                            System.out.println("\"" + paraula + "\"" + " és creixidecri");
+                        } else if (UtilString.esDecriCreixi(paraulaFiltrat)) {
+                            System.out.println("\"" + paraula + "\"" + " és decricreixi");
                         } else {
-                            System.out.println("\"" + paraulaNormal + "\"" + " és normaleta");
+                            System.out.println("\"" + paraula + "\"" + " és normaleta");
                         }
                     }                
                     paraula = "";
-                    paraulaNormal = "";
                 }
             }
             if (!paraulaValida) {
