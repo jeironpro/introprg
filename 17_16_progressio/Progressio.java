@@ -13,24 +13,26 @@ public class Progressio {
             text = text.strip();
             text = text + " ";
             String paraula = "";
+            String paraulaNormal = "";
             boolean paraulaValida = false;
             for (int i = 0; i < text.length(); i++) {
-                char c = Character.toLowerCase(text.charAt(i));
+                char c = text.charAt(i);
                 if (!Character.isWhitespace(c)) {
-                    paraula += c;
+                    paraula += Character.toLowerCase(c);
+                    paraulaNormal += c;
                 } else {
                     if (paraula.length() >= 3) {
                         paraulaValida = true;
                         if (UtilString.esCreixent(paraula)) {
-                            System.out.println("\"" + paraula + "\"" + " és creixent");
+                            System.out.println("\"" + paraulaNormal + "\"" + " és creixent");
                         } else if (UtilString.esDecreixent(paraula)) {
-                            System.out.println("\"" + paraula + "\"" + " és decreixent");
+                            System.out.println("\"" + paraulaNormal + "\"" + " és decreixent");
                         } else if (UtilString.esCreixiDecri(paraula)) {
-                            System.out.println("\"" + paraula + "\"" + " és creixidecri");
+                            System.out.println("\"" + paraulaNormal + "\"" + " és creixidecri");
                         } else if (UtilString.esDecriCreixi(paraula)) {
-                            System.out.println("\"" + paraula + "\"" + " és decricreixi");
+                            System.out.println("\"" + paraulaNormal + "\"" + " és decricreixi");
                         } else {
-                            System.out.println("\"" + paraula + "\"" + " és normaleta");
+                            System.out.println("\"" + paraulaNormal + "\"" + " és normaleta");
                         }
                     }                
                     paraula = "";

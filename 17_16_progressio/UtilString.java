@@ -842,5 +842,4 @@ public class UtilString {
         }
         return nouText;
     }
-    
 }
