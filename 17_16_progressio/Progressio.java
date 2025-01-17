@@ -15,7 +15,7 @@ public class Progressio {
             String paraula = "";
             boolean paraulaValida = false;
             for (int i = 0; i < text.length(); i++) {
-                char c = text.charAt(i);
+                char c = Character.toLowerCase(text.charAt(i));
                 if (!Character.isWhitespace(c)) {
                     paraula += c;
                 } else {
