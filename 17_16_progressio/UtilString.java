@@ -713,53 +713,11 @@ public class UtilString {
     }
     /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */    
     public static boolean esCreixent(String text, boolean estricta) {
-        if (estricta) {
-            return esCreixent(text);
-        } else {
-            boolean paraulaCreixent = false;
-            for (int i = 0; i < text.length(); i++) {
-                char c = text.charAt(i);
-                
-                if (i < text.length()-1) {            
-                    char cs = text.charAt(i+1);
-
-                    if ((int)(c) <= (int)(cs)) {
-                        paraulaCreixent = true;                
-                    } else {
-                        return false;
-                    }
-                }
-            }
-            if (paraulaCreixent) {
-                return true;
-            } 
-            return false;       
-        }
+        return esCreixent(text);
     }
     
     public static boolean esDecreixent(String text, boolean estricta) {
-        if (estricta) {
-            return esDecreixent(text);
-        } else {
-            boolean paraulaDecreixent = false;
-            for (int i = 0; i < text.length(); i++) {
-                char c = text.charAt(i);
-                
-                if (i < text.length()-1) {            
-                    char cs = text.charAt(i+1);
-                    
-                    if ((int)(c) >= (int)(cs)) {
-                        paraulaDecreixent = true;                
-                    } else {
-                        return false;
-                    }
-                }
-            }
-            if (paraulaDecreixent) {
-                return true;
-            } 
-            return false;
-        }
+        return esDecreixent(text);
     }
     
     public static boolean esCreixiDecri(String text, boolean estricta) {
