@@ -797,9 +797,6 @@ public class UtilString {
     
     public static boolean esDecriCreixi(String text, boolean estricta) {
         if (estricta) {
-            text = text.toLowerCase();
-            text = UtilString.filtraVocalCatala(text);
-            System.out.println(text);
             return esDecriCreixi(text);
         } else {
             boolean paraulaDecreixent= false;
