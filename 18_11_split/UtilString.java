@@ -47,9 +47,9 @@
 *
 * Una funció que rep un String i si el String no està buit agafar el primer caràcter del text i ho retorna com separador, en cas que el String està buit retornar la coma com separador (separadorArray).
 *
-* Una funció que rep un text i retorna un array de String sense separador (espai en blanc) separa(String).
+* Una funció que rep un text i retorna un array de String sense separador (espai en blanc), com la utilitat de String split (separa(String)).
 *
-* Una funció que rep un text i un boolean, si el boolean és false retorna el resultat de la funció separa(String), en cas que el boolean sigui true retorna un array de String amb  els espais inclòs separa(String, boolean).
+* Una funció que rep un text i un boolean, si el boolean és false retorna el resultat de la funció separa(String), en cas que el boolean sigui true retorna un array de String amb  els espais inclòs, com la utilitat de String split (separa(String, boolean)).
 *
 * Una funció que verifica si un text acaba en un espai o lletra, en cas que no retorna el text amb l'espai o la lletra agregat segons correspon (ultimCaracterEsEspaiEsLletra).
 *
