@@ -876,7 +876,7 @@ public class UtilString {
     
     public static String junta(String[] cadenes, String separador, String darrerSeparador) {
         // Si el darrerSeparador està buit
-        if (darrerSeparador.isEmpty) {
+        if (darrerSeparador.isEmpty()) {
             // Fer servir la funció junta(String[], String) i retornar el seu resultat
             return junta(cadenes, separador);
         }
