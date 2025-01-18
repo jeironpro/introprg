@@ -691,7 +691,7 @@ public class UtilString {
             
             if (i < text.length()-1) {   
                 char cs = text.charAt(i+1);        
-                if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
+                if ((int)(c) > (int)(cs)) {
                     if (!paraulaDecreixent) {
                         return false;
                     }
