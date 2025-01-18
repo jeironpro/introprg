@@ -665,10 +665,8 @@ public class UtilString {
                 char cs = text.charAt(i+1);
                 
                 if ((int)(c) < (int)(cs)) {
-                    System.out.println(c + " < " + cs);
                     paraulaCreixent = true;
                 } else if (paraulaCreixent && (int)(c) > (int)(cs)) {
-                    System.out.println(c + " < " + cs);
                     paraulaCreixent = false;
                     paraulaCreixiDecri = true;
                 } else {
