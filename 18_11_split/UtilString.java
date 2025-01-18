@@ -686,35 +686,40 @@ public class UtilString {
     }
     
     public static String[] separa(String text) {
-        // Declarar e inicialitzar el Array de String amb la quantitat de element que retorna la funció quantsParaulesSenseBlancs
-        String[] paraulesSenseBlanc = new String[UtilString.quantsParaules(text)];
-        // Declarar e inicialitzar el String paraula buit
-        String paraula = "";
-        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
-        String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
-        // Declarar e inicialitzar el int index en 0
-        int index = 0;
-        
-        // Fer un for per iterar tots els carácters del nouText
-        for (int i = 0; i < nouText.length(); i++) {
-            // Agafar els carácters de nouText en la posició de i
-            char c = nouText.charAt(i);
-            // Si el carácter no és un espai
-            if (!Character.isWhitespace(c)) {
-                // Guardar el carácter en paraula
-                paraula += c;
-            // Del contrari, si la paraula no està buida
-            } else if (!paraula.isEmpty()) {
-                // Guardar la paraula en el array paraulesSenseBlanc i en la posició de index
-                paraulesSenseBlanc[index] = paraula;
-                // Augmentar en 1 index
-                index++;
-                // Reiniciar la paraula
-                paraula = "";
+        // Si el text no està buit
+        if (!text.isEmpty()) {
+            // Declarar e inicialitzar el Array de String amb la quantitat de element que retorna la funció quantsParaulesSenseBlancs
+            String[] paraulesSenseBlanc = new String[UtilString.quantsParaules(text)];
+            // Declarar e inicialitzar el String paraula buit
+            String paraula = "";
+            // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
+            String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
+            // Declarar e inicialitzar el int index en 0
+            int index = 0;
+            
+            // Fer un for per iterar tots els carácters del nouText
+            for (int i = 0; i < nouText.length(); i++) {
+                // Agafar els carácters de nouText en la posició de i
+                char c = nouText.charAt(i);
+                // Si el carácter no és un espai
+                if (!Character.isWhitespace(c)) {
+                    // Guardar el carácter en paraula
+                    paraula += c;
+                // Del contrari, si la paraula no està buida
+                } else if (!paraula.isEmpty()) {
+                    // Guardar la paraula en el array paraulesSenseBlanc i en la posició de index
+                    paraulesSenseBlanc[index] = paraula;
+                    // Augmentar en 1 index
+                    index++;
+                    // Reiniciar la paraula
+                    paraula = "";
+                }
             }
+            // Retornar el array de paraules sense espais
+            return paraulesSenseBlanc;
+        } else {
+            return null;
         }
-        // Retornar el array de paraules sense espais
-        return paraulesSenseBlanc;
     }
     
     public static String[] separa(String text, boolean inclouBlancs) {
@@ -723,51 +728,55 @@ public class UtilString {
             // Retornar el text separat desde la funció separa(String)
             return separa(text);
         }
-        
-        // Declarar e inicialitzar el Array de String amb la quantitat de element que retorna la suma de les funcions quantsParaules + quantsEspais
-        String[] paraulesAmbBlanc = new String[UtilString.quantsParaules(text) + UtilString.quantsEspais(text)];
-        // Declarar e inicialitzar el String paraula buit
-        String paraula = "";
-        // Declarar e inicialitzar el String blancs buit
-        String blancs = "";
-        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
-        String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
-        // Declarar e inicialitzar el int index en 0
-        int index = 0;
-        
-        // Fer un for per iterar tots els carácters del nouText
-        for (int i = 0; i <= nouText.length()-1; i++) {
-            // Agafar els carácters de nouText en la posició de i
-            char c = nouText.charAt(i);
-            // Si el carácter no és un espai
-            if (!Character.isWhitespace(c)) {
-                // Guardar el carácter en paraula
-                paraula += c;
-            // Del contrari, si la paraula no està buida
-            } else if (!paraula.isEmpty()) {
-                // Guardar la paraula en el array paraulesAmbBlanc i en la posició de index
-                paraulesAmbBlanc[index] = paraula;
-                // Augmentar en 1 index
-                index++;
-                // Reiniciar la paraula
-                paraula = "";
+        // Si el text no està buit
+        if (!text.isEmpty()) {
+            // Declarar e inicialitzar el Array de String amb la quantitat de element que retorna la suma de les funcions quantsParaules + quantsEspais
+            String[] paraulesAmbBlanc = new String[UtilString.quantsParaules(text) + UtilString.quantsEspais(text)];
+            // Declarar e inicialitzar el String paraula buit
+            String paraula = "";
+            // Declarar e inicialitzar el String blancs buit
+            String blancs = "";
+            // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
+            String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
+            // Declarar e inicialitzar el int index en 0
+            int index = 0;
+            
+            // Fer un for per iterar tots els carácters del nouText
+            for (int i = 0; i <= nouText.length()-1; i++) {
+                // Agafar els carácters de nouText en la posició de i
+                char c = nouText.charAt(i);
+                // Si el carácter no és un espai
+                if (!Character.isWhitespace(c)) {
+                    // Guardar el carácter en paraula
+                    paraula += c;
+                // Del contrari, si la paraula no està buida
+                } else if (!paraula.isEmpty()) {
+                    // Guardar la paraula en el array paraulesAmbBlanc i en la posició de index
+                    paraulesAmbBlanc[index] = paraula;
+                    // Augmentar en 1 index
+                    index++;
+                    // Reiniciar la paraula
+                    paraula = "";
+                }
+                // Si el carácter és un espai
+                if (Character.isWhitespace(c)) {
+                    // Guardar l'espai en blancs
+                    blancs += c;
+                // Del contrari, si blanc no està buit
+                } else if (!blancs.isEmpty()) {
+                    // // Guardar l'espai en el array paraulesAmbBlanc i en la posició de index
+                    paraulesAmbBlanc[index] = blancs;
+                    // Augmentar en 1 index
+                    index++;
+                    // Reiniciar blancs
+                    blancs = "";
+                }
             }
-            // Si el carácter és un espai
-            if (Character.isWhitespace(c)) {
-                // Guardar l'espai en blancs
-                blancs += c;
-            // Del contrari, si blanc no està buit
-            } else if (!blancs.isEmpty()) {
-                // // Guardar l'espai en el array paraulesAmbBlanc i en la posició de index
-                paraulesAmbBlanc[index] = blancs;
-                // Augmentar en 1 index
-                index++;
-                // Reiniciar blancs
-                blancs = "";
-            }
+            // Retornar el array de paraules amb espais
+            return paraulesAmbBlanc;
+        } else {
+            return null;
         }
-        // Retornar el array de paraules amb espais
-        return paraulesAmbBlanc;
     }
     
     public static String ultimCaracterEsEspaiEsLletra(String text) {
