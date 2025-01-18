@@ -773,21 +773,24 @@ public class UtilString {
     public static String ultimCaracterEsEspaiEsLletra(String text) {
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
-        // Agafar l'ultim carácter del text
-        char ultimCaracter = text.charAt(text.length()-1); 
-        
-        // Si l'ultim caràcter no és un espai
-        if (!Character.isWhitespace(ultimCaracter)) {
-            // Assignar a nouText el text i un espai al final
-            nouText = text + " ";
-        // Del contrari, si l'ultim caràcter no és una lletra
-        } else if (!Character.isLetter(ultimCaracter)) {
-            // Assignar a nouText el text i una lletra al final
-            nouText = text + "a";
-        // Del contrari
-        } else {
-            // Assignar a nouText el text tal qual
-            nouText = text;
+        // Si el text no està buit
+        if (!text.isEmpty()) {
+            // Agafar l'ultim carácter del text
+            char ultimCaracter = text.charAt(text.length()-1); 
+            
+            // Si l'ultim caràcter no és un espai
+            if (!Character.isWhitespace(ultimCaracter)) {
+                // Assignar a nouText el text i un espai al final
+                nouText = text + " ";
+            // Del contrari, si l'ultim caràcter no és una lletra
+            } else if (!Character.isLetter(ultimCaracter)) {
+                // Assignar a nouText el text i una lletra al final
+                nouText = text + "a";
+            // Del contrari
+            } else {
+                // Assignar a nouText el text tal qual
+                nouText = text;
+            }        
         }
         // Retornar el nouText
         return nouText;
