@@ -4,9 +4,8 @@ public class Arguments {
     public static void main(String[] args) {
         // Fer un for per iterar la longitud de arguments introduït
         for (int i = 0; i < args.length; i++) {
-            int valorEnter = Integer.parseInt(args[i]);
             // Si el argument en la posició de i és enter
-            if (valorEnter < 0 || valorEnter > 0) {
+            if (UtilString.esEnter(args[i])) {
                 // Mostrar aquest missatge
                 System.out.println("[" + i + "] " + "\"" + args[i] + "\":" + " és enter");
             // Del contrari
