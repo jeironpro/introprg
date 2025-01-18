@@ -736,7 +736,7 @@ public class UtilString {
         int index = 0;
         
         // Fer un for per iterar tots els carácters del nouText
-        for (int i = 0; i <= nouText.length()-1; i++) {
+        for (int i = 0; i < nouText.length(); i++) {
             // Agafar els carácters de nouText en la posició de i
             char c = nouText.charAt(i);
             // Si el carácter no és un espai
