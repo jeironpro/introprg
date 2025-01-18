@@ -572,7 +572,9 @@ public class UtilString {
     }
     
     public static int quants(String text, String subtext) {
+        // Si la longitud del text és igual a 0 o la longitud del subtext eś igual a 0
         if (text.length() == 0 || subtext.length() == 0) {
+            // Retornar 0
             return 0;
         }
         // Declarar e inicialitzar el int subtextRepetit en 0
