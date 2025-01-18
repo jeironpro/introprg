@@ -622,7 +622,6 @@ public class UtilString {
             
             if (i < text.length()-1) {            
                 char cs = text.charAt(i+1);
-
                 if ((int)(c) < (int)(cs)) {
                     paraulaCreixent = true;                
                 } else {
@@ -643,7 +642,6 @@ public class UtilString {
             
             if (i < text.length()-1) {            
                 char cs = text.charAt(i+1);
-                
                 if ((int)(c) > (int)(cs)) {
                     paraulaDecreixent = true;                
                 } else {
@@ -668,7 +666,9 @@ public class UtilString {
                 
                 if ((int)(c) < (int)(cs)) {
                         paraulaCreixent = true;
-                } else if ((int)(c) > (int)(cs)) {
+                } 
+                
+                if ((int)(c) > (int)(cs)) {
                     paraulaCreixent = false;
                     paraulaCreixiDecri = true;
                 } else {
@@ -684,7 +684,7 @@ public class UtilString {
 
     
     public static boolean esDecriCreixi(String text) {
-        boolean paraulaDecreixent= true;
+        boolean paraulaDecreixent= false;
         boolean paraulaDecriCreixi = false;
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
@@ -693,7 +693,9 @@ public class UtilString {
                 char cs = text.charAt(i+1);        
                 if ((int)(c) > (int)(cs)) {
                     paraulaDecreixent = true;
-                } else if ((int)(c) < (int)(cs)) {
+                } 
+                
+                if ((int)(c) < (int)(cs)) {
                     paraulaDecreixent = false;
                     paraulaDecriCreixi = true;
                 } else {
