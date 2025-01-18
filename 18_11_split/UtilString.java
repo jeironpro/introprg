@@ -51,11 +51,11 @@
 *
 * Una funció que rep un text i un boolean, si el boolean és false retorna el resultat de la funció separa(String), en cas que el boolean sigui true retorna un array de String amb  els espais inclòs separa(String, boolean).
 *
-* Una funció que verifica si un text acaba en un espai, en cas que no retorna el text amb l'espai agregat (ultimCaracterEsEspai).
+* Una funció que verifica si un text acaba en un espai o lletra, en cas que no retorna el text amb l'espai o la lletra agregat segons correspon (ultimCaracterEsEspaiEsLletra).
 *
 * Una funció que rep un text i compta quantes paraules hi ha en el text i retorna aquesta quantitat. Aquesta funció fa servir la funció ultimCaracterEsEspai per agregar l'espai al text i comptar de manera funcional les paraules (quantsParaules).
 *
-* Una funció que rep un text i compta quants espais en blanc té i retorna aquesta quantitat (quantsEspais).
+* Una funció que rep un text i compta quants espais en blanc té i retorna aquesta quantitat. Aquesta funció fa servir la funció ultimCaracterEsEspai per agregar la lletra al text i comptar de manera funcional els espais (quantsEspais).
 */
 public class UtilString {
     public static boolean esVocal(char caracter) {
