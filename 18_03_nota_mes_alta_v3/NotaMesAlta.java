@@ -33,7 +33,7 @@ public class NotaMesAlta {
             } else {
                 if (nota <= 10) {
                     // Guardar la nota en el String notes
-                    notes += nota + ", ";
+                    notes += nota;
                     // Augmentar en 1 quants
                     quants++;                
                 }
