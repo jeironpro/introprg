@@ -55,7 +55,7 @@
 *
 * Una funció que rep un text i compta quantes paraules hi ha en el text i retorna aquesta quantitat. Aquesta funció fa servir la funció ultimCaracterEsEspai per agregar l'espai al text i comptar de manera funcional les paraules (quantsParaules).
 *
-* Una funció que rep un text i compta quants espais en blanc té i retorna aquesta quantitat. Aquesta funció fa servir la funció ultimCaracterEsEspai per agregar l'espai al text, però no compta aquest espai (quantsEspais).
+* Una funció que rep un text i compta quants espais en blanc té i retorna aquesta quantitat (quantsEspais).
 */
 public class UtilString {
     public static boolean esVocal(char caracter) {
@@ -690,8 +690,8 @@ public class UtilString {
         String[] paraulesSenseBlanc = new String[UtilString.quantsParaules(text)];
         // Declarar e inicialitzar el String paraula buit
         String paraula = "";
-        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai al darrer del text si no té
-        String nouText = UtilString.ultimCaracterEsEspai(text);
+        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
+        String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
         // Declarar e inicialitzar el int index en 0
         int index = 0;
         
@@ -730,13 +730,13 @@ public class UtilString {
         String paraula = "";
         // Declarar e inicialitzar el String blancs buit
         String blancs = "";
-        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai al darrer del text si no té
-        String nouText = UtilString.ultimCaracterEsEspai(text);
+        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
+        String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
         // Declarar e inicialitzar el int index en 0
         int index = 0;
         
         // Fer un for per iterar tots els carácters del nouText
-        for (int i = 0; i < nouText.length(); i++) {
+        for (int i = 0; i <= nouText.length()-1; i++) {
             // Agafar els carácters de nouText en la posició de i
             char c = nouText.charAt(i);
             // Si el carácter no és un espai
@@ -770,28 +770,32 @@ public class UtilString {
         return paraulesAmbBlanc;
     }
     
-    public static String ultimCaracterEsEspai(String text) {
+    public static String ultimCaracterEsEspaiEsLletra(String text) {
         // Declarar e inicialitzar el String nouText buit
         String nouText = "";
         // Agafar l'ultim carácter del text
         char ultimCaracter = text.charAt(text.length()-1); 
         
-        // Si l'ultim carácter és un espai
-        if (Character.isWhitespace(ultimCaracter)) {
-            // Assignar a nouText el text tal qual
-            nouText = text;
-        // Del contrari
-        } else {
+        // Si l'ultim caràcter no és un espai
+        if (!Character.isWhitespace(ultimCaracter)) {
             // Assignar a nouText el text i un espai al final
             nouText = text + " ";
+        // Del contrari, si l'ultim caràcter no és una lletra
+        } else if (!Character.isLetter(ultimCaracter)) {
+            // Assignar a nouText el text i una lletra al final
+            nouText = text + "a";
+        // Del contrari
+        } else {
+            // Assignar a nouText el text tal qual
+            nouText = text;
         }
         // Retornar el nouText
         return nouText;
     }
     
     public static int quantsParaules(String text) {
-        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai al darrer del text si no té
-        String nouText = UtilString.ultimCaracterEsEspai(text);
+        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
+        String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
         // Declarar e inicialitzar el String paraula buit
         String paraula = "";
         // Declarar e inicialitzar el int quants en 0
@@ -818,8 +822,8 @@ public class UtilString {
     }
     
     public static int quantsEspais(String text) {
-        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai al darrer del text si no té
-        String nouText = UtilString.ultimCaracterEsEspai(text);
+        // Declarar e inicialitzar el String nouText amb la funció que afegeix un espai o una lletra al darrer del text si no té
+        String nouText = UtilString.ultimCaracterEsEspaiEsLletra(text);
         // Declarar e inicialitzar el String blancs buit
         String blancs = "";
         // Declarar e inicialitzar el int quants en 0
@@ -840,7 +844,7 @@ public class UtilString {
                 blancs = "";
             }
         }
-        // Retornar quants espais hi ha en el nouText
+        // Retornar quants espais hi ha en el text
         return quants;
     }
 }
