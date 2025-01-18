@@ -5,7 +5,7 @@ public class Arguments {
         // Fer un for per iterar la longitud de arguments introduït
         for (int i = 0; i < args.length; i++) {
             // Si el argument en la posició de i és enter
-            if (UtilString.esEnter(args[i], true)) {
+            if (UtilString.esEnter(args[i])) {
                 // Mostrar aquest missatge
                 System.out.println("[" + i + "] " + "\"" + args[i] + "\":" + " és enter");
             // Del contrari

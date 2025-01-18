@@ -179,91 +179,14 @@ public class UtilString {
         return true; 
     }
     
-    public static boolean esEnter(String text, boolean estricte) {
-        // Si estricte és true
-        if (estricte) {
-            // Retornar el resultat del text passat com argument a la funció esEnter(String)
-            return esEnter(text);
-        // Del contrari
-        } else {
-            // Si el text está buit
-            if (text.isBlank()) {
-                // Retornar false
-                return false;
-            }
-            // Declarar e inicialitzar el nouText buit
-            String nouText = "";
-            // Fer un for per iterar tots els carácter del text
-            for (int i = 0; i < text.length(); i++) {
-                // Agafar els caràcters del String text en la posició de i
-                char c = text.charAt(i);
-                // Si el carácter és una lletra o un dígit o '-' o '+' o '.' o '_'
-                if (Character.isLetter(c) || Character.isDigit(c) || c == '-' || c == '+' || c == '.' || c == '_') {
-                    // Guardar el carácter en el nouText
-                    nouText += c;
-                }
-            }
-            
-            // Fer un for per iterar tots els caràcters del nouText
-            for (int i = 0; i < nouText.length(); i++) {
-                // Agafar els caràcters del String nouText en la posició de i
-                char c = nouText.charAt(i);
-                // Si la longitud del nouText és major a 1 i el primer carácter és '-' o '+'
-                if (nouText.length() > 1 && i == 0 && (c == '-' || c == '+')) {
-                    // Si el següent carácter no és un dígit 
-                    if (!Character.isDigit(nouText.charAt(i+1))) {
-                        // Retornar false
-                        return false;
-                    }
-                // Del contrari, si el carácter és '.' o '_' i no es troba en els laterals 
-                } else if (i-1 >= 0 && i+1 < nouText.length() && (c == '.' || c == '_')) {
-                    // Si el carácter anterior i el següent no és un dígit
-                    if (!Character.isDigit(nouText.charAt(i-1)) || !Character.isDigit(nouText.charAt(i+1))) {
-                        // Retornar false
-                        return false;
-                    }
-                // Del contrari, si no és un dígit
-                } else if (!Character.isDigit(c)) {
-                    // Retornar false
-                    return false;
-                }
-            }
-            // Si cap de les condicions anterior no es compleixen, retornar true
-            return true;
-        }
-    }
+    /* Aquest exercici no permet la funció esEnter(String, boolean) */
     
     public static int aEnter(String text) {
         // Retornar el text convertit a enter
         return Integer.parseInt(text);
     }
     
-    public static int aEnter(String text, boolean estricte) {
-        // Si estrice és true
-        if (estricte) {
-            // Retornar el resultat del text passat a la funció aEnter(String)
-            return aEnter(text);  
-        // Del contrari      
-        } else {
-            // Declarar e inicialitzar el String nouText buit
-            String nouText = "";
-            // Si la funció esEnter(String, boolean) retorna true
-            if (esEnter(text, estricte)) {
-                // Fer un for per iterar tots el carácters del text
-                for (int i = 0; i < text.length(); i++) {
-                    // Agafar els caràcters del String text en la posició de i
-                    char c = text.charAt(i);
-                    // Si el carácter és un dígit o '-' o '+'
-                    if (Character.isDigit(c) || c == '-' || c == '+') {
-                        // Guardar en nouText el carácter
-                        nouText += c;
-                    }
-                }
-            }
-            // Retornar el nouText convertit a enter
-            return Integer.parseInt(nouText);        
-        }
-    }
+    /* Aquest exercici no permet la funció aEnter(String, boolean) */
     
     public static String cadenaContinua(String text, int quantitat) {
         // Declarar e inicialitzar el String caractersResultant buit
