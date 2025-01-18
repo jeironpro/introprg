@@ -665,10 +665,10 @@ public class UtilString {
                 char cs = text.charAt(i+1);
                 
                 if ((int)(c) < (int)(cs)) {
+                    System.out.println(c + " < " + cs);
                     paraulaCreixent = true;
-                } 
-                
-                if (paraulaCreixent && (int)(c) > (int)(cs)) {
+                } else if (paraulaCreixent && (int)(c) > (int)(cs)) {
+                    System.out.println(c + " < " + cs);
                     paraulaCreixent = false;
                     paraulaCreixiDecri = true;
                 } else {
@@ -693,9 +693,7 @@ public class UtilString {
                 char cs = text.charAt(i+1);        
                 if ((int)(c) > (int)(cs)) {
                     paraulaDecreixent = true;
-                } 
-                
-                if (paraulaDecreixent && (int)(c) < (int)(cs)) {
+                } else if (paraulaDecreixent && (int)(c) < (int)(cs)) {
                     paraulaDecreixent = false;
                     paraulaDecriCreixi = true;
                 } else {
