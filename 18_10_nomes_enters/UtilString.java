@@ -48,7 +48,7 @@
 * Una funció que rep un String i si el String no està buit agafar el primer caràcter del text i ho retorna com separador, en cas que el String està buit retornar la coma com separador (separadorArray).
 */
 public class UtilString {
-    public static boolean esVocal(char caracter) {
+    /*public static boolean esVocal(char caracter) {
         // Almacenar en el String vocals les vocals inclòs les catalanes
         String vocals = "aàeèéiíïoóòuúü";
         // Fer un for per iterar totes les vocals
@@ -149,7 +149,7 @@ public class UtilString {
             // Retornar els carácters guardat en el intervalCaracters
             return intervalCaracters;
         }
-    }
+    }*/
     
     public static boolean esEnter(String text) {
         // Si el text está buit
@@ -179,7 +179,7 @@ public class UtilString {
         return true; 
     }
     
-    public static boolean esEnter(String text, boolean estricte) {
+    /*public static boolean esEnter(String text, boolean estricte) {
         // Si estricte és true
         if (estricte) {
             // Retornar el resultat del text passat com argument a la funció esEnter(String)
@@ -348,7 +348,7 @@ public class UtilString {
             // Retornar el resultat de esSubstring amb el nouText i el nouSubtext com arguments
             return esSubstring(nouText, nouSubtext);    
         }
-    }
+    }*/
     
     // Versió 1
     /*public static String filtraVocalsCatala(String text) {
@@ -382,7 +382,7 @@ public class UtilString {
     }*/
     
     // Versió 2
-    public static String filtraVocalsCatala(String text) {
+    /*public static String filtraVocalsCatala(String text) {
         // Declarar e inicialitzar el String nouText buit 
         String nouText = "";
         // Almacenar en el String vocals les vocals catalanes, com addicional incloem la ç
@@ -630,11 +630,11 @@ public class UtilString {
             // Retornar el resultat de quants amb el nouText i el nouSubtext com arguments
             return quants(nouText, nouSubtext);    
         }
-    }
+    }*/
     
     /* Falten les funcions de l'exercici 17_16 */
     
-    public static String entreComes(int[] numeros, char separador) {
+    /*public static String entreComes(int[] numeros, char separador) {
         // Declarar e inicialitzar el String arraySeparat buit
         String arraySeparat = "";
         // Fer un for per iterar la longitud de l'array numeros  
@@ -673,6 +673,5 @@ public class UtilString {
             // Retornar com separador el primer carácter del text
             return separador.charAt(0);
         }
-    }
+    }*/
 }
-
