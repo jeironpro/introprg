@@ -863,7 +863,7 @@ public class UtilString {
             // Si i és menor a la longitud de l'array -1
             if (i < cadenes.length-1) {
                 // Guardar en nouCadena, la cadena en la posició de i més el separador i un espai
-                nouCadena += cadenes[i] + separador.charAt(0) + " ";
+                nouCadena += cadenes[i] + UtilString.separadorArrayAvanzat(separador) + " ";
             // Del contrari
             } else {
                 // Guardar en nouCadena, la cadena en la posició de i tal qual
@@ -887,11 +887,11 @@ public class UtilString {
             // Si i és menor a la longitud de l'array -2
             if (i < cadenes.length-2) {
                 // Guardar en nouCadena, la cadena en la posició de i més el separador i un espai
-                nouCadena += cadenes[i] + separador.charAt(0) + " ";
+                nouCadena += cadenes[i] + UtilString.separadorArrayAvanzat(separador) + " ";
             // Del contrari, si i és igual a la longitud de l'array -2
             } else if (i == cadenes.length-2) {
                 // Guardar en nouCadena, la cadena en la posició de i més un espai, el darrer separador i un espai
-                nouCadena += cadenes[i] + " " + darrerSeparador.charAt(0) + " ";
+                nouCadena += cadenes[i] + " " + UtilString.separadorArrayAvanzat(darrerSeparador) + " ";
             // Del contrari
             } else {
                 // Guardar en nouCadena, la cadena en la posició de i tal qual
@@ -901,4 +901,30 @@ public class UtilString {
         // Retornar nouCadena amb les cadenes separat
         return nouCadena;
     }
+    
+    public static char separadorArrayAvanzat(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (!Character.isWhitespace(c)) {
+                return c;
+            }
+        }
+        return ',';
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
