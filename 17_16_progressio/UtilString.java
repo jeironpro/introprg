@@ -668,7 +668,7 @@ public class UtilString {
                     if (!paraulaCreixent) {
                         return false;
                     }
-                } else if (paraulaCreixent && (int)(c) > (int)(cs)) {
+                } else if ((int)(c) > (int)(cs)) {
                     paraulaCreixent = false;
                     paraulaCreixiDecri = true;
                 } else {
@@ -691,11 +691,11 @@ public class UtilString {
             
             if (i < text.length()-1) {   
                 char cs = text.charAt(i+1);        
-                if ((int)(c) > (int)(cs)) {
+                if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
                     if (!paraulaDecreixent) {
                         return false;
                     }
-                } else if (paraulaDecreixent && (int)(c) < (int)(cs)) {
+                } else if ((int)(c) < (int)(cs)) {
                     paraulaDecreixent = false;
                     paraulaDecriCreixi = true;
                 } else {
