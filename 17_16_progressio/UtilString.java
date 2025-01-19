@@ -666,7 +666,7 @@ public class UtilString {
                 
                 if (!paraulaCreixiDecri && (int)(c) < (int)(cs)) {
                     paraulaCreixent = true;
-                } else if (paraulaCreixent && (int)(c) > (int)(cs)) {
+                } else if ((int)(c) > (int)(cs)) {
                     paraulaCreixent = false;
                     paraulaCreixiDecri = true;
                 } else {
