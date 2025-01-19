@@ -6,15 +6,12 @@ public class NotaMesAlta {
     public static void main(String[] args) {
         // Demanar les notes
         System.out.println("Introdueix les notes (-1 per finalitzar)");
-        
         // Declarar e inicialitzar el int notaAlta en 0
         int notaAlta = 0;
         // Declarar e inicialitzar el int quants en 0
         int quants = 0;
-        // Declarar e inicialitzar el String notes buit
-        String notes = "";
-        // Declarar e inicialitzar el String notesFormatat buit
-        String notesFormatat = "";
+        // Declarar e inicialitzar el String restNotes buit
+        String restNotes = "";
         
         // Fer un while infinit
         while (true) {
@@ -25,6 +22,7 @@ public class NotaMesAlta {
                 // Assignar-li el valor de nota a notaAlta
                 notaAlta = nota;
             }
+            
             // Si la nota és negativa
             if (nota < 0) {
                 // Finalitzar el bucle
@@ -32,8 +30,8 @@ public class NotaMesAlta {
             // Del contrari
             } else {
                 if (nota <= 10) {
-                    // Guardar la nota en el String notes
-                    notes += nota;
+                    // Guardar la nota en restNotes
+                    restNotes += nota + ",";
                     // Augmentar en 1 quants
                     quants++;                
                 }
@@ -41,39 +39,80 @@ public class NotaMesAlta {
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
         if (quants > 1) {
-            // Fer un for per iterar les notes     
-            for (int i = 0; i < notes.length(); i++) {
-                // Declarar e inicialitzar el int notesAEnter, que almacena el char de notes i el converteix a enter
-                int notesAEnter = Integer.parseInt("" + notes.charAt(i));
-                // Si la nota del String notes convertit a enter és igual a la nota més alta
-                if (notes.length() <= 2 && notes.charAt(0) == notes.charAt(1)) {
-                    System.out.println("La nota més alta és " + notaAlta + ". No queda cap altra nota.");
-                    return;
-                }
-                if (notesAEnter == notaAlta) {
-                    // Ignorar la nota
-                   continue;
-                }
-                // Si i és 0 o la longitud de les notes és menor o igual a 2
-                if (i == 0 || notes.length() <= 2) {
-                    // Guardar la nota tal qual en el String notesFormatat
-                    notesFormatat += notes.charAt(i);
-                // Del contrari, si i és major 0 i menor a la longitud de les notes -1
-                } else if (i > 0  && i < notes.length()-1) {
-                    // Guardar la nota amb una coma i un espais abans en el String notesFormatat
-                    notesFormatat += ", " + notes.charAt(i);
-                // Del contrari, si i és igual a longitud de les notes -1
-                } else {
-                    // Guardar la nota amb una i abans en el String notesFormatat
-                    notesFormatat += " i " + notes.charAt(i);
+            // Declarar e inicialitzar el String notesASeparar buit
+            String notesASeparar = "";
+            // Declarar e inicialitzar el String notaPerEnter buit
+            String notaPerEnter = "";
+            // Declarar e inicialitzar el boolean notesIguals en false
+            boolean notesIguals = false;
+            // Declarar e inicialitzar el boolean notesIguals en false
+            boolean notesDiferent = false;
+            
+            // Fer un for per iterar el rest de notes
+            for (int i = 0; i < restNotes.length(); i++) {
+                // Agafar el carácter de restNotes en la posició de i
+                char c = restNotes.charAt(i);
+                // Si el caràcter és un dígit
+                if (Character.isDigit(c)) {
+                    // Guardar el caràcter en notaPerEnter
+                    notaPerEnter += c;
+                // Del contrari, si notaPerEnter no està buit
+                } else if (!notaPerEnter.isEmpty()) {
+                    // Converteix notaPerEnter a enter
+                    int notaEnter = Integer.parseInt(notaPerEnter);
+                    // Si la notaEnter és diferent a notaAlta
+                    if (notaEnter != notaAlta) {
+                        // notesDiferent serà true
+                        notesDiferent = true;
+                        // Guardar la nota convertit en notesASeparar
+                        notesASeparar += notaEnter + ", ";
+                    // Del contrari
+                    } else {
+                        // notesIguals serà true
+                        notesIguals = true;
+                    }
+                    // Reiniciar notaPerEnter
+                    notaPerEnter = "";
                 }
             }
-            // Mostrar el missatge de la nota més alta i la resta de notes introduïdes
-            System.out.println("La nota més alta és " + notaAlta + ". La resta de notes és: " + notesFormatat);
+            // Si notesIguals és true i notesDiferent és false
+            if (notesIguals && !notesDiferent) {
+                // Mostrar aquest missatge
+                System.out.println("La nota més alta és " + notaAlta + ". No queda cap altra nota.");   
+            // Del contrari 
+            } else {
+                // Obtener del mòdul separadorNotes les notes separat
+                String notesFinal = separadorNotes(notesASeparar);
+                // Mostrar aquest missatge
+                System.out.println("La nota més alta és " + notaAlta + ". La resta de notes és: " + notesFinal);
+            }
         // Del contrari
-        } else {
+        } else {    
             // Mostrar aquest missatge
             System.out.println("Com a mínim calen dues notes");
         }
+    }
+    
+    public static String separadorNotes(String notes) {
+        // Declarar e inicialitzar el String notesSeparat buit
+        String notesSeparat = "";
+        // Declarar e inicialitzar el int longitudNotes amb la longitud de les notes -2
+        int longitudNotes = notes.length()-2;
+        // Fer un for per iterar les notes en la longitudNotes    
+        for (int i = 0; i < longitudNotes; i++) {
+            // Agafar el carácter de notes en la posició de i
+            char c = notes.charAt(i);
+            // Si i és igual a la longitud de les notes menys 3 o menys 4 i el carácter és igual a una coma
+            if ((i == longitudNotes-3 || i == longitudNotes-4) && c == ',') {
+                // Guardar en notesSeparat un espai i la i
+                notesSeparat += " i";
+            // Del contrari
+            } else {
+                // Guardar el carácter tal qual
+                notesSeparat += c;
+            }
+        }
+        // Retornar les notes separat correctament
+        return notesSeparat;
     }
 }
