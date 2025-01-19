@@ -2,6 +2,8 @@
 * Programa que demana les notes obtinguda i et mostra la nota més alta 
 * i les notes introduïdes sense la més alta. 
 */
+
+/* Aquest programa no m'agrada, molt redundant. Trobaré altre forma més simplificat de fer-ho */
 public class NotaMesAlta {
     public static void main(String[] args) {
         // Demanar les notes
