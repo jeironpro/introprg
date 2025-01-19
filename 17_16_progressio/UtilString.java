@@ -689,7 +689,7 @@ public class UtilString {
             
             if (i < text.length()-1) {   
                 char cs = text.charAt(i+1);        
-                if ((int)(c) > (int)(cs)) {
+                if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
                     paraulaDecreixent = true;
                 } else if ((int)(c) < (int)(cs)) {
                     paraulaDecreixent = false;
