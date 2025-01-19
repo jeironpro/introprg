@@ -38,6 +38,24 @@
 * Una funció que rep un text i un subtext i retorna quantes vegades es troba el subtex en el text, com la utilitat de String count de altres llenguatges de programació (quants estricte).
 *
 * Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retorna quantes vegades es troba el subtext en el text, com la utilitat de String count de altres llenguatges de programació (quants flexible).
+*
+* Una funció que rep una paraula i retornar si és creixent de manera estricta o no (esCreixent(String)).
+*
+* Una funció que rep una paraula i retornar si és decreixent de manera estricta o no (esDecreixent(String)).
+*
+* Una funció que rep una paraula i retornar si és creixidecri de manera estricta o no (esCreixiDecri(String)).
+*
+* Una funció que rep una paraula i retornar si és decricreixi de manera estricta o no (esDecriCreixi(String)).
+*
+* Una funció que rep una paraula i retornar si és creixent de manera flexible o no (esCreixent(String, boolean)).
+*
+* Una funció que rep una paraula i retornar si és decreixent de manera flexible o no (esDecreixent(String, boolean)).
+*
+* Una funció que rep una paraula i retornar si és creixidecri de manera flexible o no (esCreixiDecri(String, boolean)).
+*
+* Una funció que rep una paraula i retornar si és decricreixi de manera flexible (esDecriCreixi(String, boolean)).
+*
+* Una funció que un text i retornar un nou text filtrat amb nomès les lletres del alfabet catalá inclosa l'ç (filtraAlfabetCatala(String))
 */
 public class UtilString {
     public static boolean esVocal(char caracter) {
@@ -615,188 +633,323 @@ public class UtilString {
         }
     }
     
-    public static boolean esCreixent(String text) {
+    public static boolean esCreixent(String paraula) {
+        // Declarar e inicialitzar el boolean paraulaCreixent en false
         boolean paraulaCreixent = false;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            
-            if (i < text.length()-1) {            
-                char cs = text.charAt(i+1);
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {
+                // Agafar els caràcters de la paraula en la posicio de i+1
+                char cs = paraula.charAt(i+1);
+                // Si el caràcter actual és menor al següent caràcter de la paraula
                 if ((int)(c) < (int)(cs)) {
-                    paraulaCreixent = true;                
+                    // paraulaCreixent serà true
+                    paraulaCreixent = true;     
+                // Del contrari           
                 } else {
+                    // Retornar false
                     return false;
                 }
             }
         }
+        // Si paraulaCreixent és true
         if (paraulaCreixent) {
+            // Retornar true
             return true;
         } 
+        // Retornar false, per defecte
         return false;
     }
 
-    public static boolean esDecreixent(String text) {
+    public static boolean esDecreixent(String paraula) {
+        // Declarar e inicialitzar el boolean paraulaDereixent en false
         boolean paraulaDecreixent = false;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            
-            if (i < text.length()-1) {            
-                char cs = text.charAt(i+1);
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {  
+                // Agafar els caràcters de la paraula en la posicio de i+1
+                char cs = paraula.charAt(i+1);
+                // Si el caràcter actual és major al següent caràcter de la paraula
                 if ((int)(c) > (int)(cs)) {
-                    paraulaDecreixent = true;                
+                    // paraulaDecreixent serà true
+                    paraulaDecreixent = true;   
+                // Del contrari              
                 } else {
+                    // Retornar false
                     return false;
                 }
             }
         }
+        // Si paraulaDecreixent és true
         if (paraulaDecreixent) {
+            // Retornar true
             return true;
         } 
+        // Retornar false, per defecte
         return false;
     }
     
-    public static boolean esCreixiDecri(String text) {
+    public static boolean esCreixiDecri(String paraula) {
+        // Declarar e inicialitzar el boolean paraulaCreixent en false
         boolean paraulaCreixent = false;
+        // Declarar e inicialitzar el boolean paraulaCreixiDecri en false
         boolean paraulaCreixiDecri = false;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            
-            if (i < text.length()-1) {            
-                char cs = text.charAt(i+1);
-                
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {     
+                // Agafar els caràcters de la paraula en la posicio de i+1       
+                char cs = paraula.charAt(i+1);
+                // Si paraulaCreixiDecri és false i el caràcter actual és menor al següent caràcter de la paraula
                 if (!paraulaCreixiDecri && (int)(c) < (int)(cs)) {
+                    // paraulaCreixent serà true
                     paraulaCreixent = true;
+                // Del contrari, si el caràcter actual és major al següent caràcter de la paraula
                 } else if ((int)(c) > (int)(cs)) {
+                    // paraulaCreixent serà false
                     paraulaCreixent = false;
+                    // paraulaCreixiDecri serà true
                     paraulaCreixiDecri = true;
+                // Del contrari
                 } else {
+                    // Retornar false
                     return false;
                 }
             }
         }
+        // Si paraulaCreixiDecri és true
         if (paraulaCreixiDecri) {
+            // Retornar true
             return true;
         } 
+        // Retornar false, per defecte
         return false;
     }
 
     
-    public static boolean esDecriCreixi(String text) {
+    public static boolean esDecriCreixi(String paraula) {
+        // Declarar e inicialitzar el boolean paraulaDereixent en false
         boolean paraulaDecreixent= false;
+        // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
         boolean paraulaDecriCreixi = false;
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            
-            if (i < text.length()-1) {   
-                char cs = text.charAt(i+1);        
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {   
+                // Agafar els caràcters de la paraula en la posicio de i+1  
+                char cs = paraula.charAt(i+1);    
+                // Si paraulaDecriCreixi és false i el caràcter actual és major al següent caràcter de la paraula
                 if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
+                    // paraulaDecreixent serà true
                     paraulaDecreixent = true;
+                // Del contrari, si el caràcter actual és menor al següent caràcter de la paraula
                 } else if ((int)(c) < (int)(cs)) {
+                    // paraulaDecreixent serà false
                     paraulaDecreixent = false;
+                    // paraulaDecriCreixi serà true
                     paraulaDecriCreixi = true;
+                // Del contrari
                 } else {
+                    // Retornar false
                     return false;
                 }
             }
             
         }
+        // Si paraulaDecriCreixi és true
         if (paraulaDecriCreixi) {
+            // Retornar true
             return true;
         } 
+        // Retornar false, per defecte
         return false;
     }
-    /* ----------------------------------------------------------------------------------------------------------------------------------------------------------- */    
-    public static boolean esCreixent(String text, boolean estricta) {
+       
+    public static boolean esCreixent(String paraula, boolean estricta) {
+        // Si estricta és true
         if (estricta) {
-            return esCreixent(text);
-        } else {
-            boolean paraulaCreixent = false;
-            for (int i = 0; i < text.length(); i++) {
-                char c = text.charAt(i);
-                
-                if (i < text.length()-1) {            
-                    char cs = text.charAt(i+1);
-
-                    if ((int)(c) <= (int)(cs)) {
-                        paraulaCreixent = true;                
-                    } else {
-                        return false;
-                    }
+            // Retornar el resultat de la funció estricta
+            return esCreixent(paraula);
+        }
+        // Declarar e inicialitzar el boolean paraulaCreixent en false
+        boolean paraulaCreixent = false;
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {
+                // Agafar els caràcters de la paraula en la posicio de i+1
+                char cs = paraula.charAt(i+1);
+                // Si el caràcter actual és menor o igual al següent caràcter de la paraula
+                if ((int)(c) <= (int)(cs)) {
+                    // paraulaCreixent serà true
+                    paraulaCreixent = true;     
+                // Del contrari           
+                } else {
+                    // Retornar false
+                    return false;
                 }
             }
-            if (paraulaCreixent) {
-                return true;
-            } 
-            return false;       
         }
+        // Si paraulaCreixent és true
+        if (paraulaCreixent) {
+            // Retornar true
+            return true;
+        } 
+        // Retornar false, per defecte
+        return false;
     }
     
-    public static boolean esDecreixent(String text, boolean estricta) {
+    public static boolean esDecreixent(String paraula, boolean estricta) {
+        // Si estricta és true
         if (estricta) {
-            return esDecreixent(text);
-        } else {
-            boolean paraulaDecreixent = false;
-            for (int i = 0; i < text.length(); i++) {
-                char c = text.charAt(i);
-                
-                if (i < text.length()-1) {            
-                    char cs = text.charAt(i+1);
-                    
-                    if ((int)(c) >= (int)(cs)) {
-                        paraulaDecreixent = true;                
-                    } else {
-                        return false;
-                    }
+            // Retornar el resultat de la funció estricta
+            return esDecreixent(paraula);
+        } 
+        // Declarar e inicialitzar el boolean paraulaDecreixent en false
+        boolean paraulaDecreixent = false;
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {  
+                // Agafar els caràcters de la paraula en la posicio de i+1
+                char cs = paraula.charAt(i+1);
+                // Si el caràcter actual és major o igual al següent caràcter de la paraula
+                if ((int)(c) >= (int)(cs)) {
+                    // paraulaDecreixent serà true
+                    paraulaDecreixent = true;   
+                // Del contrari              
+                } else {
+                    // Retornar false
+                    return false;
                 }
             }
-            if (paraulaDecreixent) {
-                return true;
-            } 
-            return false;
         }
+        // Si paraulaDecreixent és true
+        if (paraulaDecreixent) {
+            // Retornar true
+            return true;
+        } 
+        // Retornar false, per defecte
+        return false;
     }
     
-    public static boolean esCreixiDecri(String text, boolean estricta) {
+    public static boolean esCreixiDecri(String paraula, boolean estricta) {
+        // Si estricta és true
         if (estricta) {
-            return esCreixiDecri(text);
-        } else {
-            boolean paraulaCreixent = false;
-            boolean paraulaCreixiDecri = false;
-            for (int i = 0; i < text.length(); i++) {
-                char c = text.charAt(i);
-                
-                if (i < text.length()-1) {            
-                    char cs = text.charAt(i+1);
-                    
-                    if ((int)(c) <= (int)(cs)) {
-                        paraulaCreixent = true;
-                    } else if ((int)(c) >= (int)(cs)) {
-                        paraulaCreixent = false;
-                        paraulaCreixiDecri = true;
-                    } else {
-                        return false;
-                    }
+            // Retornar el resultat de la funció estricta
+            return esCreixiDecri(paraula);
+        }
+        // Declarar e inicialitzar el boolean paraulaCreixent en false
+        boolean paraulaCreixent = false;
+        // Declarar e inicialitzar el boolean paraulaCreixiDecri en false
+        boolean paraulaCreixiDecri = false;
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {     
+                // Agafar els caràcters de la paraula en la posicio de i+1       
+                char cs = paraula.charAt(i+1);
+                // Si paraulaCreixiDecri és false i el caràcter actual és menor o igual al següent caràcter de la paraula
+                if (!paraulaCreixiDecri && (int)(c) <= (int)(cs)) {
+                    // paraulaCreixent serà true
+                    paraulaCreixent = true;
+                // Del contrari, si el caràcter actual és major o igual al següent caràcter de la paraula
+                } else if ((int)(c) >= (int)(cs)) {
+                    // paraulaCreixent serà false
+                    paraulaCreixent = false;
+                    // paraulaCreixiDecri serà true
+                    paraulaCreixiDecri = true;
+                // Del contrari
+                } else {
+                    // Retornar false
+                    return false;
                 }
             }
-            if (paraulaCreixiDecri) {
-                return true;
-            } 
-            return false;
         }
+        // Si paraulaCreixiDecri és true
+        if (paraulaCreixiDecri) {
+            // Retornar true
+            return true;
+        } 
+        // Retornar false, per defecte
+        return false;
     }
     
-    public static boolean esDecriCreixi(String text, boolean estricta) {
-            return esDecriCreixi(text);
+    public static boolean esDecriCreixi(String paraula, boolean estricta) {
+        // Si estricta és true
+        if (estricta) {
+            // Retornar el resultat de la funció estricta
+            return esDecriCreixi(paraula);        
+        }
+        // Declarar e inicialitzar el boolean paraulaDecreixent en false
+        boolean paraulaDecreixent= false;
+        // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
+        boolean paraulaDecriCreixi = false;
+        // Fer un for per iterar tots els caràcters de la paraula
+        for (int i = 0; i < paraula.length(); i++) {
+            // Agafar els caràcters de la paraula en la posicio de i
+            char c = paraula.charAt(i);
+            // Si i és menor a la longitud de la paraula -1
+            if (i < paraula.length()-1) {   
+                // Agafar els caràcters de la paraula en la posicio de i+1  
+                char cs = paraula.charAt(i+1);    
+                // Si paraulaDecriCreixi és false i el caràcter actual és major al següent caràcter de la paraula
+                if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
+                    // paraulaDecreixent serà true
+                    paraulaDecreixent = true;
+                // Del contrari, si el caràcter actual és menor al següent caràcter de la paraula
+                } else if ((int)(c) < (int)(cs)) {
+                    // paraulaDecreixent serà false
+                    paraulaDecreixent = false;
+                    // paraulaDecriCreixi serà true
+                    paraulaDecriCreixi = true;
+                // Del contrari
+                } else {
+                    // Retornar false
+                    return false;
+                }
+            }
+            
+        }
+        // Si paraulaDecriCreixi és true
+        if (paraulaDecriCreixi) {
+            // Retornar true
+            return true;
+        } 
+        // Retornar false, per defecte
+        return false;
     }
     
     public static String filtraAlfabetCatala(String text) {
+        // Declarar e inicialitzar el String nouText buit
         String nouText = "";
+        // Fer un for per iterar tots els caràcters del text
         for (int i = 0; i < text.length(); i++) {
+            // Agafar els caràcters del text i convertir-ho a minùscula
             char c = Character.toLowerCase(text.charAt(i));
+            // Si el carácter és una lletra de l'alfabet catala o l'ç
             if (c >= 'a' && c <= 'z' || c == 'ç') {
+                // Guardar el caràcter en nouText
                 nouText += c;
             }
         }
+        // Retornar el nouText filtrat
         return nouText;
     }
 }
