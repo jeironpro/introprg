@@ -56,8 +56,6 @@ public class TresEnRatlla {
             } else {
                 // Mostrar aquest missatge d'error
                 System.out.printf("Columna %d està fora de rang%n", columna);
-                // Finalitzar el programa
-                return;
             }
         // Del contrari
         } else {
