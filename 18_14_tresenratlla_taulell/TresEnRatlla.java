@@ -32,13 +32,14 @@ public class TresEnRatlla {
         System.out.println("Fila del següent moviment?");
         int fila = Integer.parseInt(Entrada.readLine());
         
+        // Demanar la columna
+        System.out.println("Columna del següent moviment?");
+        // Llegir la columna
+        int columna = Integer.parseInt(Entrada.readLine());
+        
         // marquem el nou moviment
         // Si fila està a dins del rang
         if (fila >= 0 && fila <= 2) {
-            // Demanar la columna
-            System.out.println("Columna del següent moviment?");
-            // Llegir la columna
-            int columna = Integer.parseInt(Entrada.readLine());
             // Si fila està a dins del rang
             if (columna >= 0 && columna <= 2) {
                 // Si la casella està desocupat
