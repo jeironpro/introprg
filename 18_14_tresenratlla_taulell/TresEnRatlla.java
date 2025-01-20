@@ -48,7 +48,7 @@ public class TresEnRatlla {
                 // Del contrari              
                 } else {
                     // Mostrar aquest missatge d'error
-                    System.out.printf("La casella [%d, %d] està ocupat per '%c'%n", fila, columna, taulell[fila][columna]);
+                    System.out.printf("Posició ocupada");
                     // Finalitzar el programa
                     return;
                 }
