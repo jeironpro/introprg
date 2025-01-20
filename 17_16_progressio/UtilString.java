@@ -636,6 +636,7 @@ public class UtilString {
     public static boolean esCreixent(String paraula) {
         // Declarar e inicialitzar el boolean paraulaCreixent en false
         boolean paraulaCreixent = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -667,6 +668,7 @@ public class UtilString {
     public static boolean esDecreixent(String paraula) {
         // Declarar e inicialitzar el boolean paraulaDereixent en false
         boolean paraulaDecreixent = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -700,6 +702,7 @@ public class UtilString {
         boolean paraulaCreixent = false;
         // Declarar e inicialitzar el boolean paraulaCreixiDecri en false
         boolean paraulaCreixiDecri = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -784,6 +787,7 @@ public class UtilString {
         }
         // Declarar e inicialitzar el boolean paraulaCreixent en false
         boolean paraulaCreixent = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -820,6 +824,7 @@ public class UtilString {
         } 
         // Declarar e inicialitzar el boolean paraulaDecreixent en false
         boolean paraulaDecreixent = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -858,6 +863,7 @@ public class UtilString {
         boolean paraulaCreixent = false;
         // Declarar e inicialitzar el boolean paraulaCreixiDecri en false
         boolean paraulaCreixiDecri = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -902,6 +908,7 @@ public class UtilString {
         boolean paraulaDecreixent= false;
         // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
         boolean paraulaDecriCreixi = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
