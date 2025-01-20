@@ -856,7 +856,7 @@ public class UtilString {
                     if ((int)(c) > (int)(cs)) {
                         // paraulaDecreixent serà true
                         paraulaDecreixent = true;   
-                    } else if ((int)(c) == (int)(cs)) {
+                    } else if (paraula.length() >= 4 && (int)(c) == (int)(cs)) {
                         quantsIguals++;
                     // Del contrari              
                     } else {
