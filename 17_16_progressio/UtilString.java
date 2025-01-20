@@ -839,6 +839,7 @@ public class UtilString {
         } 
         // Declarar e inicialitzar el boolean paraulaDecreixent en false
         boolean paraulaDecreixent = false;
+        int quantsIguals = 0;
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Si la longitud de la paraula és major o igual a 3
@@ -853,6 +854,7 @@ public class UtilString {
                     char cs = paraula.charAt(i+1);
                     // Si el caràcter actual és major o igual al següent caràcter de la paraula
                     if ((int)(c) >= (int)(cs)) {
+                        quantsIguals++;
                         // paraulaDecreixent serà true
                         paraulaDecreixent = true;   
                     // Del contrari              
@@ -863,7 +865,7 @@ public class UtilString {
                 }
             }
             // Si paraulaDecreixent és true
-            if (paraulaDecreixent) {
+            if (paraulaDecreixent && quantsIguals <= 2) {
                 // Retornar true
                 return true;
             } 
