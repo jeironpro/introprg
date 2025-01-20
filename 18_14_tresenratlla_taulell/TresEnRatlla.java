@@ -48,7 +48,7 @@ public class TresEnRatlla {
                 // Del contrari              
                 } else {
                     // Mostrar aquest missatge d'error
-                    System.out.printf("Posició ocupada");
+                    System.out.println("Posició ocupada");
                 }
                 // tornem a mostrar el taulell
                 System.out.println("La posició final del taulell:");
