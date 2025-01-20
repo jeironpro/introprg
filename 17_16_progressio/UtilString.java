@@ -786,6 +786,8 @@ public class UtilString {
                 // Retornar true
                 return true;
             }
+        } else {
+            return false;
         }
         return false;
     }
