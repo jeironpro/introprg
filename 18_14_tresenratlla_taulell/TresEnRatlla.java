@@ -1,6 +1,7 @@
 /*
 * Programa que mostra la representació d'una partida del joc tic tac toe 
 * amb combinacions establertes i permetent fer un movement al jugador X
+* i mostra el taulell con el movement fet.
 */
 
 public class TresEnRatlla {
@@ -38,11 +39,11 @@ public class TresEnRatlla {
         int columna = Integer.parseInt(Entrada.readLine());
         
         // marquem el nou moviment
-        // Si fila està a dins del rang
+        // Si fila i la columna esten a dins del rang
         if ((fila >= 0 && fila <= 2) && (columna >= 0 && columna <= 2)) {
             // Si la casella està desocupat
             if (taulell[fila][columna] == '·') {
-                // Marca l'X en la posició corresponent
+                // Marca la X en la posició corresponent
                 taulell[fila][columna] = 'X';  
             // Del contrari              
             } else {
