@@ -30,7 +30,9 @@ public class TresEnRatlla {
         mostraFila(taulell[2]);     // mostra la línia 2
         
         // demana coordenades del moviment del jugador X
+        // Demanar la fila
         System.out.println("Fila del següent moviment?");
+        // Llegir la fila
         int fila = Integer.parseInt(Entrada.readLine());
         
         // Demanar la columna
@@ -50,7 +52,9 @@ public class TresEnRatlla {
                 // Mostrar aquest missatge d'error
                 System.out.println("Posició ocupada");
             }
+        // Del contrari
         } else {
+            // Mostrar aquest missatge d'error
             System.out.println("Coordenades incorrectes");
         }
         // tornem a mostrar el taulell
