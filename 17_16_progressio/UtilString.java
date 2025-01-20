@@ -866,7 +866,7 @@ public class UtilString {
                 }
             }
             // Si paraulaDecreixent és true
-            if (paraulaDecreixent && quantsIguals <= 1) {
+            if (paraulaDecreixent && quantsIguals >= 1) {
                 // Retornar true
                 return true;
             } 
