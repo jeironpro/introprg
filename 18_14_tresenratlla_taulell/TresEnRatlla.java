@@ -51,13 +51,13 @@ public class TresEnRatlla {
                     // Mostrar aquest missatge d'error
                     System.out.println("Posició ocupada");
                 }
-                // tornem a mostrar el taulell
-                System.out.println("La posició final del taulell:");
-                mostraFila(taulell[0]);     // mostra la línia 0
-                mostraFila(taulell[1]);     // mostra la línia 1
-                mostraFila(taulell[2]);     // mostra la línia 2
             } 
         } 
+        // tornem a mostrar el taulell
+        System.out.println("La posició final del taulell:");
+        mostraFila(taulell[0]);     // mostra la línia 0
+        mostraFila(taulell[1]);     // mostra la línia 1
+        mostraFila(taulell[2]);     // mostra la línia 2
     }
     // mostra el contingut de la fila per sortida estàndard
     public static void mostraFila(char[] fila) {
