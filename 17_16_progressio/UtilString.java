@@ -673,7 +673,6 @@ public class UtilString {
         boolean paraulaDecreixent = false;
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
-        System.out.println(paraula);
         // Si la longitud de la paraula és major o igual a 3
         if (paraula.length() >= 3) {
             // Fer un for per iterar tots els caràcters de la paraula
