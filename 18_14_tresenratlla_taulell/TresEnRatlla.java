@@ -39,20 +39,19 @@ public class TresEnRatlla {
         
         // marquem el nou moviment
         // Si fila està a dins del rang
-        if (fila >= 0 && fila <= 2) {
-            // Si fila està a dins del rang
-            if (columna >= 0 && columna <= 2) {
-                // Si la casella està desocupat
-                if (taulell[fila][columna] == '·') {
-                    // Marca l'X en la posició corresponent
-                    taulell[fila][columna] = 'X';  
-                // Del contrari              
-                } else {
-                    // Mostrar aquest missatge d'error
-                    System.out.println("Posició ocupada");
-                }
-            } 
-        } 
+        if ((fila >= 0 && fila <= 2) && (columna >= 0 && columna <= 2)) {
+            // Si la casella està desocupat
+            if (taulell[fila][columna] == '·') {
+                // Marca l'X en la posició corresponent
+                taulell[fila][columna] = 'X';  
+            // Del contrari              
+            } else {
+                // Mostrar aquest missatge d'error
+                System.out.println("Posició ocupada");
+            }
+        } else {
+            System.out.println("Coordenades incorrectes");
+        }
         // tornem a mostrar el taulell
         System.out.println("La posició final del taulell:");
         mostraFila(taulell[0]);     // mostra la línia 0
