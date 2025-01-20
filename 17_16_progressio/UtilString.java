@@ -740,6 +740,7 @@ public class UtilString {
         boolean paraulaDecreixent= false;
         // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
         boolean paraulaDecriCreixi = false;
+        paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
