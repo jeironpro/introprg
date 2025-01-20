@@ -853,7 +853,7 @@ public class UtilString {
                     // Agafar els caràcters de la paraula en la posicio de i+1
                     char cs = paraula.charAt(i+1);
                     // Si el caràcter actual és major o igual al següent caràcter de la paraula
-                    if ((int)(c) >= (int)(cs)) {
+                    if ((int)(c) > (int)(cs)) {
                         // paraulaDecreixent serà true
                         paraulaDecreixent = true;   
                     } else if ((int)(c) == (int)(cs)) {
