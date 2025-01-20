@@ -49,26 +49,14 @@ public class TresEnRatlla {
                 } else {
                     // Mostrar aquest missatge d'error
                     System.out.printf("Posició ocupada");
-                    // Finalitzar el programa
-                    return;
                 }
-            // Del contrari
-            } else {
-                // Mostrar aquest missatge d'error
-                System.out.printf("Columna %d està fora de rang%n", columna);
-            }
-        // Del contrari
-        } else {
-            // Mostrar aquest missatge d'error
-            System.out.printf("Fila %d està fora de rang%n", fila);
-            // Finalitzar el programa
-            return;
-        }
-        // tornem a mostrar el taulell
-        System.out.println("La posició final del taulell:");
-        mostraFila(taulell[0]);     // mostra la línia 0
-        mostraFila(taulell[1]);     // mostra la línia 1
-        mostraFila(taulell[2]);     // mostra la línia 2
+                // tornem a mostrar el taulell
+                System.out.println("La posició final del taulell:");
+                mostraFila(taulell[0]);     // mostra la línia 0
+                mostraFila(taulell[1]);     // mostra la línia 1
+                mostraFila(taulell[2]);     // mostra la línia 2
+            } 
+        } 
     }
     // mostra el contingut de la fila per sortida estàndard
     public static void mostraFila(char[] fila) {
