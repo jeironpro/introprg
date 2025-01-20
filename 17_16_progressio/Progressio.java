@@ -26,6 +26,7 @@ public class Progressio {
             text = text + " ";
             // Declarar e inicialitzar el String paraula buit
             String paraula = "";
+            // Declarar e inicialitzar el boolean paraulaValdia en false
             boolean paraulaValida = false;
             // Fer un for per iterar tots els caràcters del text
             for (int i = 0; i < text.length(); i++) {
@@ -37,32 +38,36 @@ public class Progressio {
                     paraula += c;
                 // Del contrari
                 } else {
-                    if (paraula.length() >= 3) {
+                    // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
+                    String paraulaFiltrat = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
+                    // Si la paraula filtrat té una longitud més gran igual a 3
+                    if (paraulaFiltrat.length() >= 3) {
+                        // paraulaValida serà treu
                         paraulaValida = true;
                         // La funció esCreixent de UtilString verifica si la paraula és creixent
-                        if (UtilString.esCreixent(paraula)) {
+                        if (UtilString.esCreixent(paraulaFiltrat)) {
                             // Mostrar aquest missatge
                             System.out.println("\"" + paraula + "\"" + " és creixent");
                         // Del contrari, la funció esDecreixent de UtilString verifica si la paraula és decreixent
-                        } else if (UtilString.esDecreixent(paraula)) {
+                        } else if (UtilString.esDecreixent(paraulaFiltrat)) {
                             // Mostrar aquest missatge
                             System.out.println("\"" + paraula + "\"" + " és decreixent");
                         // Del contrari, la funció esCreixiDecri de UtilString verifica si la paraula és creixidecri
-                        } else if (UtilString.esCreixiDecri(paraula)) {
+                        } else if (UtilString.esCreixiDecri(paraulaFiltrat)) {
                             // Mostrar aquest missatge
                             System.out.println("\"" + paraula + "\"" + " és creixidecri");
                         // Del contrari, la funció esDecriCreixi de UtilString verifica si la paraula és decricreixi
-                        } else if (UtilString.esDecriCreixi(paraula)) {
+                        } else if (UtilString.esDecriCreixi(paraulaFiltrat)) {
                             // Mostrar aquest missatge
                             System.out.println("\"" + paraula + "\"" + " és decricreixi");
                         // Del contrari, és normaleta
                         } else {
                             // Mostrar aquest missatge
                             System.out.println("\"" + paraula + "\"" + " és normaleta");
-                        }   
-                        // Reiniciar el String paraula          
-                        paraula = "";
-                    }
+                        }
+                    }      
+                    // Reiniciar el String paraula          
+                    paraula = "";
                 }
             }
             // Si cap paraula és vàlida
