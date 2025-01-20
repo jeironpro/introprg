@@ -909,7 +909,6 @@ public class UtilString {
         // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
         boolean paraulaDecriCreixi = false;
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
-        System.out.println(paraula);
         // Fer un for per iterar tots els caràcters de la paraula
         for (int i = 0; i < paraula.length(); i++) {
             // Agafar els caràcters de la paraula en la posicio de i
@@ -953,9 +952,11 @@ public class UtilString {
             // Agafar els caràcters del text i convertir-ho a minùscula
             char c = Character.toLowerCase(text.charAt(i));
             // Si el carácter és una lletra de l'alfabet catala o l'ç
-            if (c >= 'a' && c <= 'z' || c == 'ç') {
+            if (c >= 'a' && c <= 'z') {
                 // Guardar el caràcter en nouText
                 nouText += c;
+            } else if (c == 'ç') {
+                nouText += 'c';
             }
         }
         // Retornar el nouText filtrat
