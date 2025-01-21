@@ -803,8 +803,7 @@ public class UtilString {
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Si la longitud de la paraula és major o igual a 3
-        if (paraula.length() >= 3) {
-            if (quantsCaracterDiferent(paraula) >= 3) {
+        if (paraula.length() >= 3 && quantsCaracterDiferent(paraula) >= 3) {
                 // Fer un for per iterar tots els caràcters de la paraula
                 for (int i = 0; i < paraula.length(); i++) {
                     // Agafar els caràcters de la paraula en la posicio de i
@@ -829,7 +828,6 @@ public class UtilString {
                     // Retornar true
                     return true;
                 } 
-            }
         }
         // Retornar false, per defecte
         return false;
