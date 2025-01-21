@@ -752,6 +752,7 @@ public class UtilString {
         boolean paraulaDecreixent= false;
         // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
         boolean paraulaDecriCreixi = false;
+        int decri = 0;
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Si la longitud de la paraula és major o igual a 3
@@ -768,8 +769,9 @@ public class UtilString {
                     if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
                         // paraulaDecreixent serà true
                         paraulaDecreixent = true;
+                        decri++;
                     // Del contrari, si el caràcter actual és menor al següent caràcter de la paraula
-                    } else if ((int)(c) < (int)(cs)) {
+                    } else if (decri > 0 && (int)(c) < (int)(cs)) {
                         // paraulaDecreixent serà false
                         paraulaDecreixent = false;
                         // paraulaDecriCreixi serà true
