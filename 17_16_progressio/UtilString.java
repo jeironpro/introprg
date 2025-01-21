@@ -841,7 +841,6 @@ public class UtilString {
         } 
         // Declarar e inicialitzar el boolean paraulaDecreixent en false
         boolean paraulaDecreixent = false;
-        int quantsIguals = 0;
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Si la longitud de la paraula és major o igual a 3
@@ -867,7 +866,7 @@ public class UtilString {
                     }
                 }
                 // Si paraulaDecreixent és true
-                if (paraulaDecreixent && quantsIguals >= 1) {
+                if (paraulaDecreixent) {
                     // Retornar true
                     return true;
                 }             
@@ -998,8 +997,8 @@ public class UtilString {
     }
     
     public static int quantsCaracterDiferent(String text) {
-        // Declarar e inicialitzar el int quants en 0
-        int quants = 0;
+        // Declarar e inicialitzar el int quants en 1
+        int quants = 1;
         
         // Fer un for per iterar els caràcters del text
         for (int i = 0; i < text.length(); i++) {
@@ -1014,6 +1013,7 @@ public class UtilString {
                 if (c != cs) {
                     // Augmentar en 1 quants
                     quants++;
+                    System.out.println(quants);
                 }
             }
         }
