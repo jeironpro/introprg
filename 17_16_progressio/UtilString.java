@@ -804,30 +804,32 @@ public class UtilString {
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Si la longitud de la paraula és major o igual a 3
         if (paraula.length() >= 3) {
-            // Fer un for per iterar tots els caràcters de la paraula
-            for (int i = 0; i < paraula.length(); i++) {
-                // Agafar els caràcters de la paraula en la posicio de i
-                char c = paraula.charAt(i);
-                // Si i és menor a la longitud de la paraula -1
-                if (i < paraula.length()-1) {
-                    // Agafar els caràcters de la paraula en la posicio de i+1
-                    char cs = paraula.charAt(i+1);
-                    // Si el caràcter actual és menor o igual al següent caràcter de la paraula
-                    if ((int)(c) <= (int)(cs)) {
-                        // paraulaCreixent serà true
-                        paraulaCreixent = true;     
-                    // Del contrari           
-                    } else {
-                        // Retornar false
-                        return false;
+            if (quantsCaracterDiferent(paraula) >= 3) {
+                // Fer un for per iterar tots els caràcters de la paraula
+                for (int i = 0; i < paraula.length(); i++) {
+                    // Agafar els caràcters de la paraula en la posicio de i
+                    char c = paraula.charAt(i);
+                    // Si i és menor a la longitud de la paraula -1
+                    if (i < paraula.length()-1) {
+                        // Agafar els caràcters de la paraula en la posicio de i+1
+                        char cs = paraula.charAt(i+1);
+                        // Si el caràcter actual és menor o igual al següent caràcter de la paraula
+                        if ((int)(c) <= (int)(cs)) {
+                            // paraulaCreixent serà true
+                            paraulaCreixent = true;     
+                        // Del contrari           
+                        } else {
+                            // Retornar false
+                            return false;
+                        }
                     }
                 }
+                // Si paraulaCreixent és true
+                if (paraulaCreixent) {
+                    // Retornar true
+                    return true;
+                } 
             }
-            // Si paraulaCreixent és true
-            if (paraulaCreixent) {
-                // Retornar true
-                return true;
-            } 
         }
         // Retornar false, per defecte
         return false;
