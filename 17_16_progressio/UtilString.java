@@ -1051,7 +1051,6 @@ public class UtilString {
                 if (c != cs) {
                     // Augmentar en 1 quants
                     quants++;
-                    System.out.println(quants);
                 }
             }
         }
