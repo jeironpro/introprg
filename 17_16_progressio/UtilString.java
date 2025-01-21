@@ -953,11 +953,11 @@ public class UtilString {
                         continue;
                     }   
                     // Si paraulaDecriCreixi és false i el caràcter actual és major al següent caràcter de la paraula
-                    if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
+                    if (!paraulaDecriCreixi && (int)(c) >= (int)(cs)) {
                         // paraulaDecreixent serà true
                         paraulaDecreixent = true;
                     // Del contrari, si el caràcter actual és menor al següent caràcter de la paraula
-                    } else if ((int)(c) < (int)(cs)) {
+                    } else if ((int)(c) <= (int)(cs)) {
                         // paraulaDecreixent serà false
                         paraulaDecreixent = false;
                         // paraulaDecriCreixi serà true
