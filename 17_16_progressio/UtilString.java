@@ -946,9 +946,12 @@ public class UtilString {
                 // Agafar els caràcters de la paraula en la posicio de i
                 char c = paraula.charAt(i);
                 // Si i és menor a la longitud de la paraula -1
-                if (i < paraula.length()-1) {   
+                if (i < paraula.length()-1) {
                     // Agafar els caràcters de la paraula en la posicio de i+1  
                     char cs = paraula.charAt(i+1);    
+                    if (Character.isWhitespace(c) || Character.isWhitespace(cs)) {
+                        continue;
+                    }   
                     // Si paraulaDecriCreixi és false i el caràcter actual és major al següent caràcter de la paraula
                     if (!paraulaDecriCreixi && (int)(c) > (int)(cs)) {
                         // paraulaDecreixent serà true
