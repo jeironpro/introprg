@@ -1,8 +1,13 @@
 /* Aquest programa és la meva biblioteca on es troben algunes utilitats de Strings com:
+
 * Una funció per verificar si una paraula comença o acaba per vocal i retorna un valor boolean (esVocal).
+
 *
+
 * Una funció que filtra un text i retorna un String amb només les lletres del text (nomesLletres).
+
 *
+
 * Una funció que separa un text de només lletres i retorna un String amb les lletres separat per comes (lletresSeparades).
 *
 * Una funció que rep un text, un valor inicial i un valor final i retorna un interval del text en el rang d'inici i final ambdós inclosos (intervalString).
@@ -15,29 +20,29 @@
 *
 * Una funció que rep un text i el converteix a enter des del mètode Integer.parseInt, el valor pot ser negatiu o positiu, o pot tenir espai en blanc en qualsevol joc, punt o guió baix entre dos nombres (aEnter flexible).
 *
-* Una funció que rep un text i una quantitat i retorna un String format per la repetició circular de carácters fins a la quantitat (cadenaContinua).
+* Una funció que rep un text i una quantitat i retorna un String format per la repetició circular de caràcters fins a la quantitat (cadenaContinua).
 *
-* Una funció que rep un text i un subtext i retornar si és substring o no, com l'utilitat de String contains (esSubstring estricte).
+* Una funció que rep un text i un subtext i retornar si és substring o no, com la utilitat de String contains (esSubstring estricte).
 *
 * Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retornar si és substring o no, com la utilitat de String contains (esSubstring flexible).
 *
-* Una funció que filtra un text normalitzant les vocals catalanes per les vocals normals (filtraVocalsCatala(versió 1 amb dos for) i filtraVocalsCatala(versió 2 amb un for i un switch)).
+* Una funció que filtra un text normalitzant les vocals catalanes per les vocals normals (filtraVocalsCatala(versió 1 amb dos fors) i filtraVocalsCatala(versió 2 amb un for i un switch)).
 *
-* Una funció que rep un carácter i retorna si és simból o no (esSimbol).
+* Una funció que rep un caràcter i retorna si és símbol o no (esSimbol).
 *
 * Una funció que rep un text i retorna el text sense espai (cadenaSenseEspais).
 *
-* Una funció que rep un text i un prefix i retornar si és el començament del text de manera seqüencial o no, com l'utilitat de String startsWith (esPrefix estricte).
+* Una funció que rep un text i un prefix i retornar si és el començament del text de manera seqüencial o no, com la utilitat de String startsWith (esPrefix estricte).
 *
 * Una funció que rep un text i un prefix (el text i prefix pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retornar si és el prefix és el començament del text de manera seqüencial o no, com la utilitat de String startsWith (esPrefix flexible).
 *
-* Una funció que rep un text i un sufix i retornar si és la terminació del text de manera seqüencial o no, com l'utilitat de String endsWith (esSufix estricte).
+* Una funció que rep un text i un sufix i retornar si és la terminació del text de manera seqüencial o no, com la utilitat de String endsWith (esSufix estricte).
 *
 * Una funció que rep un text i un sufix (el text i sufix pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retornar si és el sufix és la terminació del text de manera seqüencial o no, com la utilitat de String endsWith (esSufix flexible).
 *
 * Una funció que rep un text i un subtext i retorna quantes vegades es troba el subtex en el text, com la utilitat de String count de altres llenguatges de programació (quants estricte).
 *
-* Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retorna quantes vegades es troba el subtext en el text, com la utilitat de String count de altres llenguatges de programació (quants flexible).
+* Una funció que rep un text i un subtext (el text i subtext pot ser en majúscules, minúscules, contenir vocals catalanes i la ç) i un boolean i retorna quantes vegades es troba el subtext en el text, com la utilitat de String count d'altres llenguatges de programació (quants flexible).
 *
 * Una funció que rep una paraula i retornar si és creixent de manera estricta o no (esCreixent(String)).
 *
@@ -55,7 +60,7 @@
 *
 * Una funció que rep una paraula i retornar si és decricreixi de manera flexible (esDecriCreixi(String, boolean)).
 *
-* Una funció que un text i retornar un nou text filtrat amb nomès les lletres del alfabet catalá inclosa l'ç (filtraAlfabetCatala(String))
+* Una funció que un text i retornar un nou text filtrat amb només les lletres de l'alfabet català inclosa la ç (filtraAlfabetCatala(String))
 */
 public class UtilString {
     public static boolean esVocal(char caracter) {
