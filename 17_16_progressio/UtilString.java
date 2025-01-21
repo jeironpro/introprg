@@ -846,32 +846,34 @@ public class UtilString {
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         // Si la longitud de la paraula és major o igual a 3
         if (paraula.length() >= 3) {
-            // Fer un for per iterar tots els caràcters de la paraula
-            for (int i = 0; i < paraula.length(); i++) {
-                // Agafar els caràcters de la paraula en la posicio de i
-                char c = paraula.charAt(i);
-                // Si i és menor a la longitud de la paraula -1
-                if (i < paraula.length()-1) {  
-                    // Agafar els caràcters de la paraula en la posicio de i+1
-                    char cs = paraula.charAt(i+1);
-                    // Si el caràcter actual és major o igual al següent caràcter de la paraula
-                    if ((int)(c) > (int)(cs)) {
-                        // paraulaDecreixent serà true
-                        paraulaDecreixent = true;   
-                    } else if (paraula.length() >= 4 && (int)(c) == (int)(cs)) {
-                        quantsIguals++;
-                    // Del contrari              
-                    } else {
-                        // Retornar false
-                        return false;
+            if (quantsCaracterDiferent(paraula) >= 3) {
+                // Fer un for per iterar tots els caràcters de la paraula
+                for (int i = 0; i < paraula.length(); i++) {
+                    // Agafar els caràcters de la paraula en la posicio de i
+                    char c = paraula.charAt(i);
+                    // Si i és menor a la longitud de la paraula -1
+                    if (i < paraula.length()-1) {  
+                        // Agafar els caràcters de la paraula en la posicio de i+1
+                        char cs = paraula.charAt(i+1);
+                        // Si el caràcter actual és major o igual al següent caràcter de la paraula
+                        if ((int)(c) >= (int)(cs)) {
+                            // paraulaDecreixent serà true
+                            paraulaDecreixent = true;   
+                        // Del contrari              
+                        } else {
+                            // Retornar false
+                            return false;
+                        }
                     }
                 }
+                // Si paraulaDecreixent és true
+                if (paraulaDecreixent && quantsIguals >= 1) {
+                    // Retornar true
+                    return true;
+                }             
+            } else {
+                return false;
             }
-            // Si paraulaDecreixent és true
-            if (paraulaDecreixent && quantsIguals >= 1) {
-                // Retornar true
-                return true;
-            } 
         }
         // Retornar false, per defecte
         return false;
@@ -993,5 +995,29 @@ public class UtilString {
         }
         // Retornar el nouText filtrat
         return nouText;
+    }
+    
+    public static int quantsCaracterDiferent(String text) {
+        // Declarar e inicialitzar el int quants en 0
+        int quants = 0;
+        
+        // Fer un for per iterar els caràcters del text
+        for (int i = 0; i < text.length(); i++) {
+            // Agafar el caràcter en la posició de i
+            char c = text.charAt(i);
+            
+            // Si i és menor a la longitud del text -1
+            if (i < text.length()-1) {
+                // Agafar el caràcter en la posició de i+1
+                char cs = text.charAt(i+1);
+                // Si el caràcter actual és diferents al següent caràcter
+                if (c != cs) {
+                    // Augmentar en 1 quants
+                    quants++;
+                }
+            }
+        }
+        // Retornar quants paraules diferents
+        return quants;   
     }
 }
