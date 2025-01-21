@@ -652,6 +652,12 @@ public class UtilString {
                     // Agafar els caràcters de la paraula en la posició de i+1
                     char cs = paraula.charAt(i+1);
                     
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
+                    
                     // Si el caràcter actual és menor al següent caràcter de la paraula
                     if ((int)(ca) < (int)(cs)) {
                         // paraulaCreixent serà true
@@ -693,6 +699,12 @@ public class UtilString {
                 if (i < paraula.length()-1) {  
                     // Agafar els caràcters de la paraula en la posició de i+1
                     char cs = paraula.charAt(i+1);
+                    
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
                     
                     // Si el caràcter actual és major al següent caràcter de la paraula
                     if ((int)(ca) > (int)(cs)) {
@@ -740,6 +752,12 @@ public class UtilString {
                     // Agafar els caràcters de la paraula en la posició de i+1       
                     char cs = paraula.charAt(i+1);
                     
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
+                    
                     // Si paraulaCreixiDecri és false i el caràcter actual és menor al següent caràcter de la paraula
                     if (!paraulaCreixiDecri && (int)(ca) < (int)(cs)) {
                         // paraulaCreixent serà true
@@ -783,8 +801,8 @@ public class UtilString {
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
         
-        // Si la longitud de la paraula és major o igual a 3
-        if (paraula.length() >= 3) {
+        // Si la longitud de la paraula és major o igual a 3 i conté 3 o més caràcters diferents
+        if (paraula.length() >= 3 && quantsCaracterDiferent(paraula) >= 3) {
             // Fer un for per iterar tots els caràcters de la paraula
             for (int i = 0; i < paraula.length(); i++) {
                 // Agafar els caràcters de la paraula en la posició de i
@@ -794,6 +812,12 @@ public class UtilString {
                 if (i < paraula.length()-1) {   
                     // Agafar els caràcters de la paraula en la posició de i+1  
                     char cs = paraula.charAt(i+1);    
+                    
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
                     
                     // Si paraulaDecriCreixi és false i el caràcter actual és major al següent caràcter de la paraula
                     if (!paraulaDecriCreixi && (int)(ca) > (int)(cs)) {
@@ -831,38 +855,50 @@ public class UtilString {
             // Retornar el resultat de la funció estricta
             return esCreixent(paraula);
         }
+        
         // Declarar e inicialitzar el boolean paraulaCreixent en false
         boolean paraulaCreixent = false;
+        
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
-        // Si la longitud de la paraula és major o igual a 3
+        
+        // Si la longitud de la paraula és major o igual a 3 i conté 3 o més caràcters diferents
         if (paraula.length() >= 3 && quantsCaracterDiferent(paraula) >= 3) {
-                // Fer un for per iterar tots els caràcters de la paraula
-                for (int i = 0; i < paraula.length(); i++) {
-                    // Agafar els caràcters de la paraula en la posicio de i
-                    char c = paraula.charAt(i);
-                    // Si i és menor a la longitud de la paraula -1
-                    if (i < paraula.length()-1) {
-                        // Agafar els caràcters de la paraula en la posicio de i+1
-                        char cs = paraula.charAt(i+1);
-                        // Si el caràcter actual és menor o igual al següent caràcter de la paraula
-                        if ((int)(c) <= (int)(cs)) {
-                            // paraulaCreixent serà true
-                            paraulaCreixent = true;     
-                        // Del contrari           
-                        } else {
-                            // Retornar false
-                            return false;
-                        }
+            // Fer un for per iterar tots els caràcters de la paraula
+            for (int i = 0; i < paraula.length(); i++) {
+                // Agafar els caràcters de la paraula en la posició de i
+                char ca = paraula.charAt(i);
+                
+                // Si i és menor a la longitud de la paraula -1
+                if (i < paraula.length()-1) {
+                    // Agafar els caràcters de la paraula en la posició de i+1
+                    char cs = paraula.charAt(i+1);
+                    
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
+                    
+                    // Si el caràcter actual és menor o igual al següent caràcter de la paraula
+                    if ((int)(ca) <= (int)(cs)) {
+                        // paraulaCreixent serà true
+                        paraulaCreixent = true;     
+                    // Del contrari           
+                    } else {
+                        // Retornar false
+                        return false;
                     }
                 }
-                // Si paraulaCreixent és true
-                if (paraulaCreixent) {
-                    // Retornar true
-                    return true;
-                } 
+            }
+            // Si paraulaCreixent és true
+            if (paraulaCreixent) {
+                // Retornar true
+                return true;
+            } 
         }
-        // Retornar false, per defecte
+        
+        // Retornar false, quan cap de les condicions anterior no es compleix
         return false;
     }
     
@@ -872,42 +908,50 @@ public class UtilString {
             // Retornar el resultat de la funció estricta
             return esDecreixent(paraula);
         } 
+        
         // Declarar e inicialitzar el boolean paraulaDecreixent en false
         boolean paraulaDecreixent = false;
+        
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
-        // Si la longitud de la paraula és major o igual a 3
-        if (paraula.length() >= 3) {
-            if (quantsCaracterDiferent(paraula) >= 3) {
-                // Fer un for per iterar tots els caràcters de la paraula
-                for (int i = 0; i < paraula.length(); i++) {
-                    // Agafar els caràcters de la paraula en la posicio de i
-                    char c = paraula.charAt(i);
-                    // Si i és menor a la longitud de la paraula -1
-                    if (i < paraula.length()-1) {  
-                        // Agafar els caràcters de la paraula en la posicio de i+1
-                        char cs = paraula.charAt(i+1);
-                        // Si el caràcter actual és major o igual al següent caràcter de la paraula
-                        if ((int)(c) >= (int)(cs)) {
-                            // paraulaDecreixent serà true
-                            paraulaDecreixent = true;   
-                        // Del contrari              
-                        } else {
-                            // Retornar false
-                            return false;
-                        }
+        
+        // Si la longitud de la paraula és major o igual a 3 i conté 3 o més caràcters diferents
+        if (paraula.length() >= 3 && quantsCaracterDiferent(paraula) >= 3) {
+            // Fer un for per iterar tots els caràcters de la paraula
+            for (int i = 0; i < paraula.length(); i++) {
+                // Agafar els caràcters de la paraula en la posició de i
+                char ca = paraula.charAt(i);
+                
+                // Si i és menor a la longitud de la paraula -1
+                if (i < paraula.length()-1) {  
+                    // Agafar els caràcters de la paraula en la posició de i+1
+                    char cs = paraula.charAt(i+1);
+                    
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
+                    
+                    // Si el caràcter actual és major o igual al següent caràcter de la paraula
+                    if ((int)(ca) >= (int)(cs)) {
+                        // paraulaDecreixent serà true
+                        paraulaDecreixent = true;   
+                    // Del contrari              
+                    } else {
+                        // Retornar false
+                        return false;
                     }
                 }
-                // Si paraulaDecreixent és true
-                if (paraulaDecreixent) {
-                    // Retornar true
-                    return true;
-                }             
-            } else {
-                return false;
+            }
+            // Si paraulaDecreixent és true
+            if (paraulaDecreixent) {
+                // Retornar true
+                return true;
             }
         }
-        // Retornar false, per defecte
+        
+        // Retornar false, quan cap de les condicions anterior no es compleix
         return false;
     }
     
@@ -917,28 +961,44 @@ public class UtilString {
             // Retornar el resultat de la funció estricta
             return esCreixiDecri(paraula);
         }
+        
         // Declarar e inicialitzar el boolean paraulaCreixent en false
         boolean paraulaCreixent = false;
         // Declarar e inicialitzar el boolean paraulaCreixiDecri en false
         boolean paraulaCreixiDecri = false;
+        
+        // Declarar e inicialitzar el int creixi en 0
+        int creixi = 0;
+        
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
-        // Si la longitud de la paraula és major o igual a 3
-        if (paraula.length() >= 3) {
+        
+        // Si la longitud de la paraula és major o igual a 3 i conté 3 o més caràcters diferents
+        if (paraula.length() >= 3 && quantsCaracterDiferent(paraula) >= 3) {
             // Fer un for per iterar tots els caràcters de la paraula
             for (int i = 0; i < paraula.length(); i++) {
-                // Agafar els caràcters de la paraula en la posicio de i
-                char c = paraula.charAt(i);
+                // Agafar els caràcters de la paraula en la posició de i
+                char ca = paraula.charAt(i);
+                
                 // Si i és menor a la longitud de la paraula -1
                 if (i < paraula.length()-1) {     
-                    // Agafar els caràcters de la paraula en la posicio de i+1       
+                    // Agafar els caràcters de la paraula en la posició de i+1       
                     char cs = paraula.charAt(i+1);
+                    
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
+                        continue;
+                    }  
+                    
                     // Si paraulaCreixiDecri és false i el caràcter actual és menor o igual al següent caràcter de la paraula
-                    if (!paraulaCreixiDecri && (int)(c) <= (int)(cs)) {
+                    if (!paraulaCreixiDecri && (int)(ca) <= (int)(cs)) {
                         // paraulaCreixent serà true
                         paraulaCreixent = true;
+                        // Augmentar en 1 creixi
+                        creixi++;
                     // Del contrari, si el caràcter actual és major o igual al següent caràcter de la paraula
-                    } else if ((int)(c) >= (int)(cs)) {
+                    } else if (creixi > 0 && (int)(ca) >= (int)(cs)) {
                         // paraulaCreixent serà false
                         paraulaCreixent = false;
                         // paraulaCreixiDecri serà true
@@ -956,7 +1016,8 @@ public class UtilString {
                 return true;
             }         
         }
-        // Retornar false, per defecte
+        
+        // Retornar false, quan cap de les condicions anterior no es compleix
         return false;
     }
     
@@ -966,33 +1027,44 @@ public class UtilString {
             // Retornar el resultat de la funció estricta
             return esDecriCreixi(paraula);        
         }
+        
         // Declarar e inicialitzar el boolean paraulaDecreixent en false
         boolean paraulaDecreixent= false;
         // Declarar e inicialitzar el boolean paraulaDecriCreixi en false
         boolean paraulaDecriCreixi = false;
+        
+        // Declarar e inicialitzar el int decri en 0
         int decri = 0;
+        
         // Filtrar la paraula, només s'accepten lletres de l'alfabet catala i vocals normal
         paraula = UtilString.filtraAlfabetCatala(UtilString.filtraVocalCatala(paraula));
+        
         // Si la longitud de la paraula és major o igual a 3
         if (paraula.length() >= 3) {
             // Fer un for per iterar tots els caràcters de la paraula
             for (int i = 0; i < paraula.length(); i++) {
-                // Agafar els caràcters de la paraula en la posicio de i
-                char c = paraula.charAt(i);
+                // Agafar els caràcters de la paraula en la posició de i
+                char ca = paraula.charAt(i);
+                
                 // Si i és menor a la longitud de la paraula -1
                 if (i < paraula.length()-1) {
-                    // Agafar els caràcters de la paraula en la posicio de i+1  
-                    char cs = paraula.charAt(i+1);    
-                    if (Character.isWhitespace(c) || Character.isWhitespace(cs)) {
+                    // Agafar els caràcters de la paraula en la posició de i+1  
+                    char cs = paraula.charAt(i+1);  
+                    
+                    // Si el caràcter actual o següent és un espai
+                    if (Character.isWhitespace(ca) || Character.isWhitespace(cs)) {
+                        // ignorar-ho
                         continue;
                     }   
-                    // Si paraulaDecriCreixi és false i el caràcter actual és major al següent caràcter de la paraula
-                    if (!paraulaDecriCreixi && (int)(c) >= (int)(cs)) {
+                    
+                    // Si paraulaDecriCreixi és false i el caràcter actual és major o igual al següent caràcter de la paraula
+                    if (!paraulaDecriCreixi && (int)(ca) >= (int)(cs)) {
                         // paraulaDecreixent serà true
                         paraulaDecreixent = true;
+                        // Augmentar en 1 decri
                         decri++;
                     // Del contrari, si el caràcter actual és menor al següent caràcter de la paraula
-                    } else if (decri > 0 && (int)(c) <= (int)(cs)) {
+                    } else if (decri > 0 && (int)(ca) <= (int)(cs)) {
                         // paraulaDecreixent serà false
                         paraulaDecreixent = false;
                         // paraulaDecriCreixi serà true
@@ -1011,7 +1083,8 @@ public class UtilString {
                 return true;
             } 
         }
-        // Retornar false, per defecte
+        
+        // Retornar false, quan cap de les condicions anterior no es compleix
         return false;
     }
     
