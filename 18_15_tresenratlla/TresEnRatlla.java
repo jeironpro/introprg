@@ -79,7 +79,7 @@ public class TresEnRatlla {
             // Si la funció retorna true, el jugador actual és el ganador
             if (jugadorGuanya(taulell, jugadorActual)) {
                 // Mostrar aquest missatge
-                System.out.printf("%c ha guanyat%n", jugadorActual);
+                System.out.printf("%c guanya%n", jugadorActual);
                 // Aturar el bucle
                 break;
             }
