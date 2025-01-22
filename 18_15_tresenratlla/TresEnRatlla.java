@@ -1,6 +1,9 @@
 /*
-* Programa que representa el joc tic tac toe, com el mateix joc té dos jugadors X i O.
-* Hi ha només un guanyador i té 8 combinacions per guanyar.
+* Programa que representa el joc tic tac toe, com el mateix joc té dos jugadors X i O:
+*   - Hi ha només un guanyador i té 8 combinacions per guanyar.
+*   - Si cap jugador ha guanyat, el joc mostrarà un missatge indicant empat.
+*   - Si el jugador introdueix una coordenada no vàlida, mostrarà un missatge d'error i tornarà a demanar la coordenada.
+*   - Si la coordenada està ocupat, mostrarà un missatge indicant que ho està i tornarà a demanar una altra coordenada.
 */
 
 public class TresEnRatlla {
