@@ -70,7 +70,7 @@ public class TresEnRatlla {
                 // Si el jugador introdueix l'a, el jugador abandona
                 if (posicioJugador.equals("a")) {
                     // Mostrar aquest missatge
-                    System.out.printf("%c ha abandonat%n", jugadorActual);
+                    System.out.printf("%c abandona%n", jugadorActual);
                     // Aturar el bucle
                     return;
                 }
