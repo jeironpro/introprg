@@ -59,7 +59,7 @@ public class TresEnRatlla {
                     }
                 } else {
                     // Mostrar aquest missatge d'error
-                    System.out.println("Coordenades invalides");                
+                    System.out.println("Coordenades no vàlides");                
                 }
                 // Mostrar el taulell amb el nou moviment
                 mostraTaulell(taulell);
