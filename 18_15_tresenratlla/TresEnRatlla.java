@@ -55,7 +55,7 @@ public class TresEnRatlla {
                         break;
                     } else {
                         // Mostrar aquest missatge d'error
-                        System.out.println("La casella ocupada");
+                        System.out.println("Casella ocupada");
                     }
                 } else {
                     // Mostrar aquest missatge d'error
