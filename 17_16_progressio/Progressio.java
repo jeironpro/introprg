@@ -20,10 +20,8 @@ public class Progressio {
                 // Aturar el bucle
                 break;
             }
-            // Eliminar els espais en blancs dels laterals del text
-            text = text.strip();
             // Afegir un espai en blanc al final del text
-            text = text + " ";
+            text = UtilString.ultimCaracterEsEspai(text);
             // Declarar e inicialitzar el String paraula buit
             String paraula = "";
             // Declarar e inicialitzar el boolean paraulaValdia en false

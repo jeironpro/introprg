@@ -61,6 +61,10 @@
 * Una funció que rep una paraula i retornar si és decricreixi de manera flexible (esDecriCreixi(String, boolean)).
 *
 * Una funció que un text i retornar un nou text filtrat amb només les lletres de l'alfabet català inclosa la ç (filtraAlfabetCatala(String))
+*
+* Una funció que rep un text i compta quants caràcters diferents té i retorna la quantitat. (quantsCaracterDiferent)
+*
+* Una funció que rep un text i verifica si el text acaba amb espai o no, s'acaba en espai li agrega una lletra, si no li agrega un espai. (ultimCaracterEsEspai)
 */
 public class UtilString {
     public static boolean esVocal(char caracter) {
@@ -335,7 +339,7 @@ public class UtilString {
         return false;
     }
     
-    public static boolean esSubstring(String text, String subtext, boolean estricte) {
+    /*public static boolean esSubstring(String text, String subtext, boolean estricte) {
         // Si estricte és true
         if (estricte) {
             // Retorna el resultat de la funció esSubstrig(amb el text com argument)
@@ -363,7 +367,7 @@ public class UtilString {
             // Retornar el resultat de esSubstring amb el nouText i el nouSubtext com arguments
             return esSubstring(nouText, nouSubtext);    
         }
-    }
+    }*/
     
     // Versió 1
     public static String filtraVocalCatala(String text) {
@@ -488,7 +492,7 @@ public class UtilString {
         return false;
     }
     
-    public static boolean esPrefix(String text, String prefix, boolean estricte) {
+    /*public static boolean esPrefix(String text, String prefix, boolean estricte) {
         // Si estricte és true
         if (estricte) {
             // Retornar el resultat de la funció esPrefix amb el text i sufix com arguments
@@ -517,7 +521,7 @@ public class UtilString {
             // Retornar el resultat de esPrefix amb el nouText i el nouPrefix com arguments
             return esPrefix(nouText, nouPrefix);    
         }
-    }
+    }*/
     
     public static boolean esSufix(String text, String sufix) {
         // Si la longitud del text és igual a 0 o la longitud del sufix és major a la longitud del text 
@@ -556,7 +560,7 @@ public class UtilString {
         return false;
     }
     
-    public static boolean esSufix(String text, String sufix, boolean estricte) {
+    /*public static boolean esSufix(String text, String sufix, boolean estricte) {
         // Si estricte és true
         if (estricte) {
             // Retornar el resultat de la funció esSufix amb el text i sufix com arguments
@@ -585,7 +589,7 @@ public class UtilString {
             // Retornar el resultat de esPrefix amb el nouText i el nouSufix com arguments
             return esSufix(nouText, nouSufix);    
         }
-    }
+    }*/
     
     public static int quants(String text, String subtext) {
         if (text.length() == 0 || subtext.length() == 0) {
@@ -618,7 +622,7 @@ public class UtilString {
         return subtextRepetit;
     }
     
-    public static int quants(String text, String subtext, boolean estricte) {
+    /*public static int quants(String text, String subtext, boolean estricte) {
         // Si estricte és true
         if (estricte) {
             // Retornar el resultat de quants amb el text i subtext com arguments
@@ -636,7 +640,7 @@ public class UtilString {
             // Retornar el resultat de quants amb el nouText i el nouSubtext com arguments
             return quants(nouText, nouSubtext);    
         }
-    }
+    }*/
     
     public static boolean esCreixent(String paraula) {
         // Declarar e inicialitzar el boolean paraulaCreixent en false
@@ -1134,5 +1138,32 @@ public class UtilString {
         }
         // Retornar quants paraules diferents
         return quants;   
+    }
+    
+    public static String ultimCaracterEsEspai(String text) {
+        // Declarar e inicialitzar el String nouText buit
+        String nouText = "";
+        
+        // Si el text no està buit
+        if (!text.isEmpty()) {
+            // Agafar l'ultim caràcter del text
+            char ultimCaracter = text.charAt(text.length()-1); 
+            
+            // Si l'ùltim caràcter és un espai
+            if (Character.isWhitespace(ultimCaracter)) {
+                // Assignar a nouText el text i una lletra al final
+                nouText = text + "a";
+            // Del contrari, si l'ùltim caràcter no és un espai
+            } else if (!Character.isWhitespace(ultimCaracter)) {
+                // Assignar a nouText el text i un espai al final
+                nouText = text + " ";
+            // Del contrari
+            } else {
+                // Assignar a nouText el text tal qual
+                nouText = text;
+            }        
+        }
+        // Retornar el nouText
+        return nouText;
     }
 }
