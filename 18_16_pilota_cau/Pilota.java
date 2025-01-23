@@ -9,6 +9,7 @@ public class Pilota {
     public static final int N_COLS = 13;
 
     public static void netejaPantalla() {
+        // Vaig fer una investigació de aquest dos System.out.
         // Codi per netejar la pantalla 
         // \033 caràcter d'escap (ESC)
         // [H Mou el cursor a la posició inicial (fila 1, columna)
