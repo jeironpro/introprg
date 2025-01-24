@@ -1,4 +1,4 @@
-/* XXX */
+/* Programa que demana un text i et mostra només los nombres amb funció recursiva */
 
 public class ExtreuNombres {
     public static void main(String[] args){
