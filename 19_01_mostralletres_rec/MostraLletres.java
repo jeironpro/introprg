@@ -25,7 +25,7 @@ public class MostraLletres {
         // Si el caràcter és una lletra
         if (Character.isLetter(primer)) {
             // Mostrar el caràcter
-            System.out.println(primer);
+            System.out.print(primer);
         }
         
         // considerem les lletres que conté la resta del text
