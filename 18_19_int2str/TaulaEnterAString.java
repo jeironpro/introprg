@@ -44,7 +44,7 @@ public class TaulaEnterAString {
          * corresponent als primers dígits. Per exemple, si especificacio
          * és "12x5", retornarà 12.
          * Altrament, retornarà el valor -1.  */
-        /*…*/
+         
         String files = "";     
         if (especificacioCorrecta(especificacio)) {
             for (int i = 0; i < especificacio.length(); i++) {
@@ -65,7 +65,6 @@ public class TaulaEnterAString {
          * corresponent als segons dígits. Per exemple, si especificacio
          * és "12x5", retornarà 5.
          * Altrament, retornarà el valor -1.  */
-        /*…*/
         
         String columnes = ""; 
         if (especificacioCorrecta(especificacio)) {
