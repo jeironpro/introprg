@@ -163,7 +163,7 @@ public class DigitArt {
         
         // Fer un switch pel char ch
         switch (ch) {
-            // Si el caràcter és el número 1, agafar la representació del 0 en una taula
+            // Si el caràcter és el número 0, agafar la representació del 0 en una taula
             case '0': origen = construeix0();
                 break;
             // Si el caràcter és el número 1, agafar la representació de l'1 en una taula
