@@ -164,9 +164,11 @@ public class UtilTaula {
                 // Assignar-li false a la posició de fila, col
                 taula[fila][col] = false;
             }
-        }
-        for (int fila = 0; fila < taula.length; fila++) {
-            taula[fila][taula[0].length - 1 - fila] = true;
+            int colSeg = taula[0].length -1 -fila;
+            if (colSeg >= 0 && colSeg < taula[0].length) {
+                taula[fila][colSeg] = true;            
+            }
+            
         }
     }
     
