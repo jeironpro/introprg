@@ -130,7 +130,6 @@ public class Formes {
         }
         if (!files.isEmpty()) {
             if (Integer.parseInt(files) >= 1 && Integer.parseInt(files) <= 99) {
-                System.out.println(files);
                 return Integer.parseInt(files);            
             }
         }
@@ -162,7 +161,6 @@ public class Formes {
         }
         if (!columnes.isEmpty()) {
             if (Integer.parseInt(columnes) >= 1 && Integer.parseInt(columnes) <= 99) {
-                System.out.println(columnes);
                 return Integer.parseInt(columnes);            
             }
         }
