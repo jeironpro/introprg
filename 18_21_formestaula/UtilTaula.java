@@ -189,10 +189,6 @@ public class UtilTaula {
     }
     
     public static void inicialitzaCreu(boolean[][] taula) {
-        // Declarar e inicialitzar el int colDiagonal en 0
-        int colDiagonal = 0;
-        // Declarar e inicialitzar el int colSegDiagonal amb la longitud de la columna -1
-        int colSegDiagonal = taula[0].length-1;
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
             // Fer un for per iterar les columnes
@@ -202,23 +198,13 @@ public class UtilTaula {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][col] = true;
                 // Del contrari
-                } else if ((fila + taula[col].length-col) == taula[col].length-col) {
+                } else if ((fila + taula[col].length)-col == (taula[col].length)-col) {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][taula[col].length-col] = true;
                 } else  {
                     // Assignar-li false a la posició de fila, col
                     taula[fila][col] = false;
                 }
-            }
-            // Per cada iteració de fila, si colDiagonal és menor a la longitud de la columna -1
-            if (colDiagonal < taula[0].length-1) {
-                // Augmentar en 1 colDiagonal
-                colDiagonal++;            
-            }
-            // Per cada iteració de fila, si la colSegDiagonal eś major a 0
-            if (colSegDiagonal >= 0) {
-                // Disminuir en 1 colSegDiagonal
-                colSegDiagonal--;            
             }
         }
     }
