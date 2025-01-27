@@ -198,14 +198,11 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Si fila és igual a colDiagonal
-                if (fila == col) {
+                if (fila == col && (fila+taula[col].length-1) == taula[col].length-1) {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][col] = true;
-                } else if (fila == taula[col].length-1) {
-                    // Assignar-li true a la posicio de fila, colSegDiagonal
-                    taula[fila][col] = true;                
                 // Del contrari
-                } else {
+                } else  {
                     // Assignar-li false a la posició de fila, col
                     taula[fila][col] = false;
                 }
