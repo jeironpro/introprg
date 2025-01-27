@@ -190,6 +190,7 @@ public class UtilTaula {
     
     public static void inicialitzaCreu(boolean[][] taula) {
         // Fer un for per iterar les files
+        int indexSegDia = 0;
         for (int fila = 0; fila < taula.length; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
@@ -198,13 +199,14 @@ public class UtilTaula {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][col] = true;
                 // Del contrari
-                } else if ((fila + taula[col].length)-col == (taula[col].length)-col) {
-                    // Assignar-li true a la posicio de fila, colDiagonal
-                    taula[fila][taula[col].length-1] = true;
-                } else  {
+                } else {
                     // Assignar-li false a la posició de fila, col
                     taula[fila][col] = false;
                 }
+            }
+            if (fila >= 0) {
+                taula[fila][taula[indexSegDia].length - 1 - indexSegDia] = true;
+                indexSegDia++;
             }
         }
     }
