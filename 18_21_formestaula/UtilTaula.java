@@ -173,7 +173,6 @@ public class UtilTaula {
     }
     
     public static void inicialitzaCreu(boolean[][] taula) {
-        int indexSegDia = 0;
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
             // Fer un for per iterar les columnes
@@ -188,8 +187,7 @@ public class UtilTaula {
                     taula[fila][col] = false;
                 }
             }
-            taula[fila][taula[indexSegDia].length - 1 - indexSegDia] = true;
-            indexSegDia++;
+            taula[fila][taula[fila].length - 1 - fila] = true;
         }
     }
     
