@@ -174,7 +174,6 @@ public class UtilTaula {
     
     public static void inicialitzaCreu(boolean[][] taula) {
         // Fer un for per iterar les files
-        int indexSegDia = 0;
         for (int fila = 0; fila < taula.length; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
@@ -188,9 +187,9 @@ public class UtilTaula {
                     taula[fila][col] = false;
                 }
             }
-            if (fila >= 0) {
-                taula[fila][taula[indexSegDia].length - 1 - indexSegDia] = true;
-                indexSegDia++;
+            int colSeg = taula[0].length -1 -fila;
+            if (colSeg >= 0 && colSeg < taula[0].length) {
+                taula[fila][colSeg] = true;            
             }
         }
     }
