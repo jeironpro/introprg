@@ -186,7 +186,8 @@ public class UtilTaula {
                     taula[fila][col] = false;
                 }
             }
-            taula[fila][taula[fila].length - 1 - fila] = true;
+            int indexSegDia = taula[fila].length - 1 - fila;
+            taula[fila][indexSegDia] = true;
         }
     }
     
