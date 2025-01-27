@@ -193,6 +193,7 @@ public class UtilTaula {
                 // Assignar-li true a posició de fila, indexSegDia
                 taula[fila][indexSegDia] = true;
             }
+            // Assignar-li true a posició de fila, fila
             taula[fila][fila] = true;
         }
     }
