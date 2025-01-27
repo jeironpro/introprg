@@ -188,10 +188,8 @@ public class UtilTaula {
                     taula[fila][col] = false;
                 }
             }
-            if (fila >= 0) {
-                taula[fila][taula[indexSegDia].length - 1 - indexSegDia] = true;
-                indexSegDia++;
-            }
+            taula[fila][taula[indexSegDia].length - 1 - indexSegDia] = true;
+            indexSegDia++;
         }
     }
     
