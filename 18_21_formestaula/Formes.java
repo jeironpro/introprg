@@ -124,10 +124,13 @@ public class Formes {
             char c = especificacio.charAt(i);
             if (Character.isDigit(c)) {          
                 files += c;
-            } else if (!files.isEmpty()) {
-                if (Integer.parseInt(files) >= 1 && Integer.parseInt(files) <= 99) {
-                    return Integer.parseInt(files);            
-                }
+            } else {
+                break;
+            }
+        }
+        if (!files.isEmpty()) {
+            if (Integer.parseInt(files) >= 1 && Integer.parseInt(files) <= 99) {
+                return Integer.parseInt(files);            
             }
         }
         return -1;
