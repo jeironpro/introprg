@@ -159,9 +159,7 @@ public class UtilTaula {
     public static void inicialitzaSegonaDiagonal(boolean[][] taula) {
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
-            if (fila >= 0) {
-                taula[fila][taula[0].length - 1 - fila] = true;
-            }
+            taula[fila][taula[0].length - 1 - fila] = true;
         }
     }
     
