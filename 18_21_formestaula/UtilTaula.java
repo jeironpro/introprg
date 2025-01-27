@@ -175,13 +175,13 @@ public class UtilTaula {
     public static void inicialitzaCreu(boolean[][] taula) {
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
+            taula[fila][taula[0].length -1 -fila] = true;            
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Si fila és igual a colDiagonal
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][col] = true;
-                    taula[fila][taula[0].length -1 -fila] = true;            
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
