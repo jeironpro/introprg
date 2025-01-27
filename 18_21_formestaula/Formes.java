@@ -124,10 +124,14 @@ public class Formes {
             char c = especificacio.charAt(i);
             if (Character.isDigit(c)) {          
                 files += c;
-            } else if (!files.isEmpty()) {
-                if (Integer.parseInt(files) > 0 && Integer.parseInt(files) <= 99) {
-                    return Integer.parseInt(files);            
-                }
+            } else {
+                break;
+            }
+        }
+        if (!files.isEmpty()) {
+            if (Integer.parseInt(files) >= 1 && Integer.parseInt(files) <= 99) {
+                System.out.println(files);
+                return Integer.parseInt(files);            
             }
         }
         return -1;
@@ -157,7 +161,8 @@ public class Formes {
             }
         }
         if (!columnes.isEmpty()) {
-            if (Integer.parseInt(columnes) > 0 && Integer.parseInt(columnes) <= 99) {
+            if (Integer.parseInt(columnes) >= 1 && Integer.parseInt(columnes) <= 99) {
+                System.out.println(columnes);
                 return Integer.parseInt(columnes);            
             }
         }
