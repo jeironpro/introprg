@@ -239,7 +239,6 @@ public class Formes {
                     // Per defecte cridar inicialitzaFalse
                     default: UtilTaula.inicialitzaFalse(taula);
                 }
-                System.out.println(especificacio);
                 // Declarar e inicialitzar el String resultat amb la funció taulaToString
                 String resultat = UtilTaula.taulaToString(taula, 'X', '·');
                 // Mostrar la taula cridat a especificacio convertida a String
