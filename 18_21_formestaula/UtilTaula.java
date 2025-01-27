@@ -181,15 +181,12 @@ public class UtilTaula {
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][col] = true;
+                    taula[fila][taula[0].length -1 -fila] = true;            
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
                     taula[fila][col] = false;
                 }
-            }
-            int colSeg = taula[0].length -1 -fila;
-            if (colSeg >= 0 && colSeg < taula[0].length) {
-                taula[fila][colSeg] = true;            
             }
         }
     }
