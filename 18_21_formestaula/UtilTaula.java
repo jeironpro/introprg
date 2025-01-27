@@ -157,20 +157,10 @@ public class UtilTaula {
     }
     
     public static void inicialitzaSegonaDiagonal(boolean[][] taula) {
-        boolean segDia = false;
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
             if (fila >= 0) {
                 taula[fila][taula[0].length - 1 - fila] = true;
-                segDia = true;
-            }
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Si fila és igual a colDiagonal
-                if (!segDia) {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
             }
         }
     }
