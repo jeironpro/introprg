@@ -159,9 +159,19 @@ public class UtilTaula {
     public static void inicialitzaSegonaDiagonal(boolean[][] taula) {
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
-            int colSegDia = taula[fila].length -1 -fila;
-            if (colSegDia >= 0 && colSegDia < taula[fila].length) {
-                taula[fila][colSegDia] = true;
+            // Totes les posicions en false
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Assignar-li false a la posició de fila, col
+                taula[fila][col] = false;
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Si l'index és major a 0 i menor a la longitud de les columnes de la taula
+            if (indexSegDia >= 0 && indexSegDia < taula[fila].length) {
+                // Assignar-li true a posició de fila, indexSegDia
+                taula[fila][indexSegDia] = true;
             }
         }
     }
