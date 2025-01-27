@@ -78,26 +78,19 @@ public class UtilTaula {
     }
     
     public static void inicialitzaPrimeraDiagonal(boolean[][] taula) {
-        // Declarar e inicialitzar el int colDiagonal en 0
-        int colDiagonal = 0;
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
-                // Si fila és igual a colDiagonal
-                if (fila == colDiagonal) {
-                    // Assignar-li true a la posicio de fila, colDiagonal
-                    taula[fila][colDiagonal] = true;
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Del contrari
                 } else {
                     // Assignar-li false a la posicio de fila, col
                     taula[fila][col] = false;
                 }
-            }
-            // Per cada iteració de fila, si colDiagonal és menor a la longitud de la columna -1
-            if (colDiagonal < taula[0].length-1) {
-                // Augmentar en 1 colDiagonal
-                colDiagonal++;            
             }
         }
     }
