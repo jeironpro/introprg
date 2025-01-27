@@ -202,7 +202,7 @@ public class UtilTaula {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][col] = true;
                 // Del contrari
-                } else if ((fila + taula[col].length-(col-1)) == taula[col].length-1) {
+                } else if ((fila + taula[col].length-1) == taula[col].length-1) {
                     // Assignar-li true a la posicio de fila, colDiagonal
                     taula[fila][taula[col].length-col] = true;
                 } else  {
