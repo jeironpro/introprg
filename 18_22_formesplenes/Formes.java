@@ -49,19 +49,19 @@
 *   - 2x3?: taula buida
 *
 *   Formes plenes
-*   - *\ -> primera diagonal amb primer triangle ple
-*   - \* -> primera diagonal amb segon triangle ple
-*   - *\/ -> segona diagonal amb primer triangle ple
-*   - /* -> segona diagonal amb segon triangle ple
-*   - *| -> vertical al mig amb primer costat ple
-*   - |* -> vertical al mig amb segon costat ple
-*   - *- -> horitzontal al mig amb primer costat ple
-*   - -* -> horitzontal al mig amb segon costat ple
-*   - *+ -> quarts amb quadrant nord-oest ple
-*   - **+ -> quarts amb quadrant sud-oest ple
-*   - +* -> quarts amb quadrant nord-est ple
-*   - +** -> quarts amb quadrant sud-est ple
-*   - *+** -> quarts amb quadrant nord-oest i sud-est plens
+*   - 6x6*\ -> primera diagonal amb primer triangle ple
+*   - 6x6\* -> primera diagonal amb segon triangle ple
+*   - 6x6*\/ -> segona diagonal amb primer triangle ple
+*   - 6x6/* -> segona diagonal amb segon triangle ple
+*   - 6x6|* -> vertical al mig amb segon costat ple
+*   - 6x6*- -> horitzontal al mig amb primer costat ple
+*   - 6x6*| -> vertical al mig amb primer costat ple
+*   - 6x6-* -> horitzontal al mig amb segon costat ple
+*   - 6x6*+ -> quarts amb quadrant nord-oest ple
+*   - 6x6**+ -> quarts amb quadrant sud-oest ple
+*   - 6x6+* -> quarts amb quadrant nord-est ple
+*   - 6x6+** -> quarts amb quadrant sud-est ple
+*   - 6x6*+** -> quarts amb quadrant nord-oest i sud-est plens
 *   - **+* -> quarts amb quadrant sud-oest i nord-est plens
 *   - *x -> creu amb quadrant nord ple
 *   - **x -> creu amb quadrant oest ple

@@ -25,45 +25,45 @@
 *
 * Un procediment que inicialitza les files i columnes senar ++ de un array bidimensional en true i la resta a false. (inicialitzaEscacs)
 *
-* Un procediment
+* Un procediment que inicialitza la primera diagonal amb el primer triangle ple. (inicialitzaPrimeraDiagonalPrimerPle)
 *
-* Un procediment
+* Un procediment que inicialitza la primera diagonal amb el segon triangle ple. (inicialitzaPrimeraDiagonalSegonPle)
 *
-* Un procediment
+* Un procediment que inicialitza la segona diagonal amb el primer triangle ple. (inicialitzaSegonaDiagonalPrimerPle) 
 *
-* Un procediment
+* Un procediment que inicialitza la segona diagonal amb el segon triangle ple.(inicialitzaSegonaDiagonalSegonPle)
 *
-* Un procediment
-*z
-* Un procediment
+* Un procediment que inicialitza la vertical del mig amb el primer costat ple. (inicialitzaVerticalMigPrimerPle)
 *
-* Un procediment
+* Un procediment que inicialitza la vertical del mig amb el segon costat ple. (inicialitzaVerticalMigSegonPle)
 *
-* Un procediment
+* Un procediment que inicialitza la horizontal del mig amb el primer costat ple. (inicialitzaHoritzontalMigPrimerPle)
 *
-* Un procediment
+* Un procediment que inicialitza la horizontal del mig amb el segon costat ple. (inicialitzaHoritzontalMigSegonPle)
 *
-* Un procediment
+* Un procediment que inicialitza els quarts amb el quadrant nord-oest ple. (inicialitzaQuartsNOPle)
 *
-* Un procediment
+* Un procediment que inicialitza els quarts amb el quadrant sud-oest ple. (inicialitzaQuartsSOPle)
 *
-* Un procediment
+* Un procediment que inicialitza els quarts amb el quadrant nord-est ple. (inicialitzaQuartsNEPle)
 *
-* Un procediment
+* Un procediment que inicialitza els quarts amb el quadrant sud-est ple. (inicialitzaQuartsSEPle)
 *
-* Un procediment
+* Un procediment que inicialitza els quarts amb els quadrants nord-oest i sud-est plens  (inicialitzaQuartsNOSEPlens)
 *
-* Un procediment
+* Un procediment que inicialitza els quarts amb els quadrants sud-oest i nord-est plens. (inicialitzaQuartsSONEPlens)
 *
-* Un procediment
+* Un procediment que inicialitza la creu amb el quadrant nord ple. (inicialitzaCreuNPle)
 *
-* Un procediment
+* Un procediment que inicialitza la creu amb el quadrant oest ple. (inicialitzaCreuOPle)
 *
-* Un procediment
+* Un procediment que inicialitza la creu amb el quadrant sud ple. (inicialitzaCreuSPle)
 *
-* Un procediment
+* Un procediment que inicialitza la creu amb el quadrant est ple. (inicialitzaCreuEPle)
 *
-* Un procediment
+* Un procediment que inicialitza la creu amb els quadrants nord i sud plnes. (inicialitzaCreuNSPlens)
+*
+* Un procediment que inicialitza la creu amb els quadrants oest i est plens. (inicialitzaCreuOEPlens)
 *
 * Un procediment que inicialitza les files i columnes a false de un array bidimensional. (inicialitzaFalse)
 *
@@ -219,12 +219,13 @@ public class UtilTaula {
         for (int fila = 0; fila < taula.length; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
-                // Si la columna més 1 és igual a la longitud de la columna menys fila
-                if (col+1 == taula.length-fila) {
+                
+                // Si la columna és igual a la fila
+                if (col == fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
-                // Del contrari, si col és igual a fila
-                } else if (col == fila) {
+                // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
+                } else if (col+1 == taula.length-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -624,7 +625,7 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Primera diagonal
-                // Si fila és igual a col
+                // Si la fila és igual a la columna
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
@@ -634,9 +635,9 @@ public class UtilTaula {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant oest
-                // Del contrari, si col és menor a la mitad arrodonida de la longitud de la col -1 
+                // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1 
                 } else if (col < Math.round(taula[0].length/2.00)-1 ) {
-                    // Si fila-col és major o igual a 0 i fila+col és menor a la longitud de la taula -1
+                    // Si la fila menys la columna és major o igual a 0 i la fila més la columna és menor a la longitud de la taula menys 1
                     if (fila-col >= 0 && fila+col < taula.length-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
@@ -656,7 +657,7 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Primera diagonal
-                // Si fila és igual a col
+                // Si la fila és igual a la columna
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
@@ -666,9 +667,9 @@ public class UtilTaula {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant sur
-                // Del contrari, si la fila és menor a la longitud arrodonida de la taula -1
+                // Del contrari, si la fila és menor a la longitud arrodonida de la taula menys 1
                 } else if (fila > Math.round(taula.length/2.00)-1) {
-                    // Si col+fila divit entre 2 és major a la mitad arrodonida de la longitud de la col -1 i col és menor o igual a fila
+                    // Si la columna més la fila divit entre 2 és major a la mitad arrodonida de la longitud de la columna menys 1 i la columna és menor o igual a fila
                     if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {   
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
@@ -688,7 +689,7 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Primera diagonal
-                // Si fila és igual a col
+                // Si la fila és igual a la columna
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
@@ -698,9 +699,9 @@ public class UtilTaula {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant est
-                // Del contrari, si col és menor a la mitad arrodonida de la longitud de la col -1
+                // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
                 } else if (col > Math.round(taula[0].length/2.00)-1 ) {
-                    // Si fila+col divit entre 2 és major a la mitad arrodonida de la longitud de la taula -1 i fila és menor o igual a la col
+                    // Si la fila més la columna divit entre 2 és major a la mitad arrodonida de la longitud de la taula menys 1 i la fila és menor o igual a la columna
                     if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
@@ -720,7 +721,7 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Primera diagonal
-                // Si fila és igual a col
+                // Si la fila és igual a la columna
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
@@ -730,17 +731,17 @@ public class UtilTaula {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant nord
-                // Del contrari, si fila és major a la mitad arrodonida de la longitud de la taula -1
+                // Del contrari, si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1
                 } else if (fila < Math.round(taula.length/2.00)-1 ) {
-                    // Si col-fila és major a 0 i col+fila és menor a la longitud de la taula -1
+                    // Si la columna menys la fila és major a 0 i la columna més la fila és menor a la longitud de la taula menys 1
                     if (col-fila > 0 && col+fila < taula[0].length-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
                 // Llenado del quadrant sur
-                // Del contrari, si la fila és major a la mitad arrodonida de la longitud de la taula -1
+                // Del contrari, si la fila és major a la mitad arrodonida de la longitud de la taula menys 1
                 } else if (fila > Math.round(taula.length/2.00)-1) {
-                    // Si col+fila divit entre 2 és major a la mitad arrodonida de la longitud de la col -1 i col és menor o igual a la fila
+                    // Si la columna més la fila divit entre 2 és major a la mitad arrodonida de la longitud de la columna menys 1 i la columna és menor o igual a la fila
                     if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
@@ -760,7 +761,7 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
                 // Primera diagonal
-                // Si fila és igual a col
+                // Si la fila és igual a la columna
                 if (fila == col) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
@@ -770,17 +771,17 @@ public class UtilTaula {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant oest
-                // Del contrari, si col és menor a la mitad arrodonida de la longitud de la col -1
+                // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
                 } else if (col < Math.round(taula[0].length/2.00)-1 ) {
-                    // Si fila-col és major a 0 i fila+col és menor a la longitud de la taula -1
+                    // Si la fila menys la columna és major a 0 i la fila més la columna és menor a la longitud de la taula menys 1
                     if (fila-col >= 0 && fila+col < taula.length-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
                 // Llenado del quadrant est
-                // Del contrari, si col és major a la mitad arrodonida de la longitud de la col -1
+                // Del contrari, si la columna és major a la mitad arrodonida de la longitud de la col menys 1
                 } else if (col > Math.round(taula[0].length/2.00)-1 ) {
-                    // Si fila+col divit entre 2 és major a la mitad arrodonida de la longitud de la taula -1 i fila és menor o igual a col
+                    // Si la fila més la columna divit entre 2 és major a la mitad arrodonida de la longitud de la taula menys 1 i la fila és menor o igual a la columna
                     if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
