@@ -1,5 +1,5 @@
 /*
-* programa que rep per línia de comanda especificacions de taules i les dibuixa.
+* programa que rep per línia de comanda especificacions de taules (amb formes plenes) i les dibuixa.
 *
 * Les especificacions permesa són:
 *   - \: primera diagonal
@@ -13,7 +13,30 @@
 *   - ++: taulell d'escacs
 *   - ?: taula buida
 *
+*   Formes plenes
+*   - *\: primera diagonal amb primer triangle ple
+*   - \*: primera diagonal amb segon triangle ple
+*   - *\/: segona diagonal amb primer triangle ple
+*   - /*: segona diagonal amb segon triangle ple
+*   - *|: vertical al mig amb primer costat ple
+*   - |*: vertical al mig amb segon costat ple
+*   - *-: horitzontal al mig amb primer costat ple
+*   - -*: horitzontal al mig amb segon costat ple
+*   - *+: quarts amb quadrant nord-oest ple
+*   - **+: quarts amb quadrant sud-oest ple
+*   - +*: quarts amb quadrant nord-est ple
+*   - +**: quarts amb quadrant sud-est ple
+*   - *+**: quarts amb quadrant nord-oest i sud-est plens
+*   - **+*: quarts amb quadrant sud-oest i nord-est plens
+*   - *x: creu amb quadrant nord ple
+*   - **x: creu amb quadrant oest ple
+*   - x*: creu amb quadrant est ple
+*   - x**: creu amb quadrant est ple
+*   - *x*: creu amb quadrants nord i sud plens
+*   - **x**: creu amb quadrants oest i est plens
+*
 * Exemple per cada especificació:
+*   Especificacions
 *   - 5x6\ -> primera diagonal
 *   - 4x4| -> vertical al mig
 *   - 7x5- -> horizontal al mig
@@ -24,6 +47,28 @@
 *   - 4x7|| -> zebra
 *   - 8x8++ -> taulell d'escacs
 *   - 2x3?: taula buida
+*
+*   Formes plenes
+*   - *\ -> primera diagonal amb primer triangle ple
+*   - \* -> primera diagonal amb segon triangle ple
+*   - *\/ -> segona diagonal amb primer triangle ple
+*   - /* -> segona diagonal amb segon triangle ple
+*   - *| -> vertical al mig amb primer costat ple
+*   - |* -> vertical al mig amb segon costat ple
+*   - *- -> horitzontal al mig amb primer costat ple
+*   - -* -> horitzontal al mig amb segon costat ple
+*   - *+ -> quarts amb quadrant nord-oest ple
+*   - **+ -> quarts amb quadrant sud-oest ple
+*   - +* -> quarts amb quadrant nord-est ple
+*   - +** -> quarts amb quadrant sud-est ple
+*   - *+** -> quarts amb quadrant nord-oest i sud-est plens
+*   - **+* -> quarts amb quadrant sud-oest i nord-est plens
+*   - *x -> creu amb quadrant nord ple
+*   - **x -> creu amb quadrant oest ple
+*   - x* -> creu amb quadrant est ple
+*   - x** -> creu amb quadrant est ple
+*   - *x* -> creu amb quadrants nord i sud plens
+*   - **x** -> creu amb quadrants oest i est plens
 *
 * Si s'introduiex cap de les especificacions anteriors, mostrar un missatge d'error.
 */
@@ -48,21 +93,30 @@ public class Formes {
                 // Declarar e inicialitzar l'array bidemensional a dimension obtingudes de files x columnes
                 boolean[][] taula = new boolean[files][columnes];
                 
+                // Declarar e inicialitzar el String valorPerEspecificacio buit
+                String valorPerEspecificacio = "";
                 // Declarar e inicialitzar el String especificacio buit
                 String especificacio = "";
-                String valorPerEspecificacio = "";
                 
+                // Fer un for decreixent per iterar l'argument en la posició de i
                 for (int j = args[i].length()-1; j >= 0; j--) {
+                    // Agafar el caràcter de args[i] en la posicio de j
                     char c = args[i].charAt(j);
                     
+                    // Si el caràcter no és un dígit ni un espai
                     if (!Character.isDigit(c) && !Character.isWhitespace(c)) {
+                        // Guardar el caràcter en valorPerEspecificacio
                         valorPerEspecificacio += c;
+                    // del contrari
                     } else {
+                        // Aturar el bucle
                         break;
                     }
                 }
                 
+                // Fer un for decreixent per iterar valorPerEspecificacio
                 for (int j = valorPerEspecificacio.length()-1; j >= 0; j--) {
+                    // Guardar els caràcter en especificacio
                     especificacio += valorPerEspecificacio.charAt(j);
                 }
                 
@@ -89,50 +143,70 @@ public class Formes {
                     // Caràcter per cridar inicialitzaPasVianants
                     case "=": UtilTaula.inicialitzaPasVianants(taula);
                         break;
-                    // Caràcter per cridar inicialitzaZebra
+                    // Caràcters per cridar inicialitzaZebra
                     case "||": UtilTaula.inicialitzaZebra(taula);
                         break;
-                    // Caràcter per cridar inicialitzaEscacs
+                    // Caràcters per cridar inicialitzaEscacs
                     case "++": UtilTaula.inicialitzaEscacs(taula);
                         break;
+                    // Caràcters per cridar inicialitzaPrimeraDiagonalPrimerPle
                     case "*\\": UtilTaula.inicialitzaPrimeraDiagonalPrimerPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaPrimeraDiagonalSegonPle
                     case "\\*": UtilTaula.inicialitzaPrimeraDiagonalSegonPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaSegonaaDiagonalPrimerPle
                     case "*/": UtilTaula.inicialitzaSegonaDiagonalPrimerPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaSegonaDiagonalSegonPle
                     case "/*": UtilTaula.inicialitzaSegonaDiagonalSegonPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaVerticalMigPrimerPle
                     case "*|": UtilTaula.inicialitzaVerticalMigPrimerPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaVerticalMigSegonPle
                     case "|*": UtilTaula.inicialitzaVerticalMigSegonPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaHoritzontalMigPrimerPle
                     case "*-": UtilTaula.inicialitzaHoritzontalMigPrimerPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaHoritzontalMigSegonPle
                     case "-*": UtilTaula.inicialitzaHoritzontalMigSegonPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaQuartsNOPle
                     case "*+": UtilTaula.inicialitzaQuartsNOPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaQuartsSOPle
                     case "**+": UtilTaula.inicialitzaQuartsSOPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaQuartsNEPle
                     case "+*": UtilTaula.inicialitzaQuartsNEPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaQuartsSEPle
                     case "+**": UtilTaula.inicialitzaQuartsSEPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaQuartsNOSEPlens
                     case "*+**": UtilTaula.inicialitzaQuartsNOSEPlens(taula);
                         break;
+                    // Caràcters per cridar inicialitzaQuartsSONEPlens
                     case "**+*": UtilTaula.inicialitzaQuartsSONEPlens(taula);
                         break;
+                    // Caràcters per cridar inicialitzaCreuNPle
                     case "*x": UtilTaula.inicialitzaCreuNPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaCreuOPle
                     case "**x": UtilTaula.inicialitzaCreuOPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaCreuSPle
                     case "x*": UtilTaula.inicialitzaCreuSPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaCreuEPle
                     case "x**": UtilTaula.inicialitzaCreuEPle(taula);
                         break;
+                    // Caràcters per cridar inicialitzaCreuNSPlens
                     case "*x*": UtilTaula.inicialitzaCreuNSPlens(taula);
                         break;
+                    // Caràcters per cridar inicialitzaCreuOEPlens
                     case "**x**": UtilTaula.inicialitzaCreuOEPlens(taula);
                         break;
                     // Per defecte cridar inicialitzaFalse

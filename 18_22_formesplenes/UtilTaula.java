@@ -25,6 +25,46 @@
 *
 * Un procediment que inicialitza les files i columnes senar ++ de un array bidimensional en true i la resta a false. (inicialitzaEscacs)
 *
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*z
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
+* Un procediment
+*
 * Un procediment que inicialitza les files i columnes a false de un array bidimensional. (inicialitzaFalse)
 *
 * Una funció que rep un array de int bidimensional i compon un String amb els valors de l'array separant les files amb espais en blanc des de 7 fins a 0 depenent del nombre de dígits en cada posició de l'array i retornar el String resultant. (taulaToString)
@@ -258,6 +298,506 @@ public class UtilTaula {
         }
     }
     
+    public static void inicialitzaPrimeraDiagonalPrimerPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si la col és menor o igual a la fila
+                if (col <= fila) {
+                    // Assignar-li true a la posició fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaPrimeraDiagonalSegonPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si la col és menor o igual a la fila
+                if (col <= fila) {
+                    // Assignar-li true a la posició col, fila
+                    taula[col][fila] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaSegonaDiagonalPrimerPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si col es menor a la longitud de la col -fila
+                if (col < taula[0].length-fila) {
+                    // Assignar-li true a la posició fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaSegonaDiagonalSegonPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si la fila és menor o igual a la longitud de la taula -1 i col +1 és major o igual a la longitud de la taula -fila
+                if (fila <= taula.length-1 && col+1 >= taula.length-fila) {
+                    // Assignar-li true a la posició fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si la col és menor o igual a la mitad redondeada de la longitud de la col -1
+                if (col <= Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaVerticalMigSegonPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si col és major o igual a la mitad redondeada de la longitud de la col -1
+                if (col >= Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaHoritzontalMigPrimerPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és menor o igual a la mitad redondeada de la longitud de la taula -1
+                if (fila <= Math.round(taula.length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaHoritzontalMigSegonPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és major o igual a la mitad redondeada de la longitud de la taula -1
+                if (fila >= Math.round(taula.length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaQuartsNOPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és menor a la mitad redondeada de la longitud de la taula -1 i col és menor a la mitad redondeada de la longitud de la col -1
+                if (fila < Math.round(taula.length/2.00)-1 && col < Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si fila és igual a la mitad redondeada de la longitud de la taula -1
+                } else if (fila == Math.round(taula.length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si col és igual a la mitad redondeada de la longitud de la col -1
+                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaQuartsSOPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és major a la mitad redondeada de la longitud de la taula -1 i  col és menor a la mitad redondeada de la longitud de la col -1
+                if (fila > Math.round(taula.length/2.00)-1 && col < Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si fila és igual a la mitad redondeada de la longitud de la taula -1
+                } else if (fila == Math.round(taula.length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si col és igual a la mitad redondeada de la longitud de la col -1
+                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaQuartsNEPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és menor a la mitad redondeada de la longitud de la taula -1 i col és major a la mitad redondeada de la longitud de la col -1
+                if (fila < Math.round(taula.length/2.00)-1 && col > Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si fila és igual a la mitad redondeada de la longitud de la taula -1
+                } else if (fila == Math.round(taula.length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si col és igual a la mitad redondeada de la longitud de la col -1
+                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaQuartsSEPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és major a la mitad redondeada de la longitud de la taula -1 i col és major a la mitad redondeada de la longitud de la col -1
+                if (fila > Math.round(taula.length/2.00)-1 && col > Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si fila és igual a la mitad redondeada de la longitud de la taula -1
+                } else if (fila == Math.round(taula.length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si col és igual a la mitad redondeada de la longitud de la col -1
+                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaQuartsNOSEPlens(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és menor o igual a la mitad redondeada de la longitud de la taula -1 i col és menor o igual a la mitad redondeada de la longitud de la col -1
+                if (fila <= Math.round(taula.length/2.00)-1 && col <= Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si fila és major o igual a la mitad redondeada de la longitud de la taula -1 i col és major o igual a la mitad redondeada de la longitud de la col -1
+                } else if (fila >= Math.round(taula.length/2.00)-1 && col >= Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaQuartsSONEPlens(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Si fila és major o igual a la mitad redondeada de la longitud de la taula -1 i col és menor o igual a la mitad redondeada de la longitud de la col -1
+                if (fila >= Math.round(taula.length/2.00)-1 && col <= Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari, si fila és menor o igual a la mitad redondeada de la longitud de la taula -1 i col és major o igual a la mitad redondeada de la longitud de la col -1
+                } else if (fila <= Math.round(taula.length/2.00)-1 && col >= Math.round(taula[0].length/2.00)-1) {
+                    // Assignar-li true a la posició de fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+        }
+    }
+    
+    public static void inicialitzaCreuNPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Primera diagonal
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                // Llenado del quadrant nord
+                // Del contrari, si fila és menor a la mitad redondeada de la longitud de la taula -1
+                } else if (fila < Math.round(taula.length/2.00)-1 ) {
+                    // Si col-fila és major a 0 i col+fila és menor a la longitud de la col -1
+                    if (col-fila > 0 && col+fila < taula[0].length-1) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Assignar-li true a posició de fila, indexSegDia
+            taula[fila][indexSegDia] = true;
+        }
+    }
+    
+    public static void inicialitzaCreuOPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Primera diagonal
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                // Llenado del quadrant oest
+                // Del contrari, si col és menor a la mitad redondeada de la longitud de la col -1 
+                } else if (col < Math.round(taula[0].length/2.00)-1 ) {
+                    // Si fila-col és major o igual a 0 i fila+col és menor a la longitud de la taula -1
+                    if (fila-col >= 0 && fila+col < taula.length-1) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Assignar-li true a posició de fila, indexSegDia
+            taula[fila][indexSegDia] = true;
+        }
+    }
+    
+    public static void inicialitzaCreuSPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Primera diagonal
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                // Llenado del quadrant sur
+                // Del contrari, si la fila és menor a la longitud redondeada de la taula -1
+                } else if (fila > Math.round(taula.length/2.00)-1) {
+                    // Si col+fila divit entre 2 és major a la mitad redondeada de la longitud de la col -1 i col és menor o igual a fila
+                    if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {   
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Assignar-li true a posició de fila, indexSegDia
+            taula[fila][indexSegDia] = true;
+        }
+    }
+    
+    public static void inicialitzaCreuEPle(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Primera diagonal
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                // Llenado del quadrant est
+                // Del contrari, si col és menor a la mitad redondeada de la longitud de la col -1
+                } else if (col > Math.round(taula[0].length/2.00)-1 ) {
+                    // Si fila+col divit entre 2 és major a la mitad redondeada de la longitud de la taula -1 i fila és menor o igual a la col
+                    if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Assignar-li true a posició de fila, indexSegDia
+            taula[fila][indexSegDia] = true;
+        }
+    }
+    
+    public static void inicialitzaCreuNSPlens(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Primera diagonal
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                // Llenado del quadrant nord
+                // Del contrari, si fila és major a la mitad redondeada de la longitud de la taula -1
+                } else if (fila < Math.round(taula.length/2.00)-1 ) {
+                    // Si col-fila és major a 0 i col+fila és menor a la longitud de la taula -1
+                    if (col-fila > 0 && col+fila < taula[0].length-1) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Llenado del quadrant sur
+                // Del contrari, si la fila és major a la mitad redondeada de la longitud de la taula -1
+                } else if (fila > Math.round(taula.length/2.00)-1) {
+                    // Si col+fila divit entre 2 és major a la mitad redondeada de la longitud de la col -1 i col és menor o igual a la fila
+                    if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Assignar-li true a posició de fila, indexSegDia
+            taula[fila][indexSegDia] = true;
+        }
+    }
+    
+    public static void inicialitzaCreuOEPlens(boolean[][] taula) {
+        // Fer un for per iterar les files
+        for (int fila = 0; fila < taula.length; fila++) {
+            // Fer un for per iterar les columnes
+            for (int col = 0; col < taula[0].length; col++) {
+                // Primera diagonal
+                // Si fila és igual a col
+                if (fila == col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                // Llenado del quadrant oest
+                // Del contrari, si col és menor a la mitad redondeada de la longitud de la col -1
+                } else if (col < Math.round(taula[0].length/2.00)-1 ) {
+                    // Si fila-col és major a 0 i fila+col és menor a la longitud de la taula -1
+                    if (fila-col >= 0 && fila+col < taula.length-1) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Llenado del quadrant est
+                // Del contrari, si col és major a la mitad redondeada de la longitud de la col -1
+                } else if (col > Math.round(taula[0].length/2.00)-1 ) {
+                    // Si fila+col divit entre 2 és major a la mitad redondeada de la longitud de la taula -1 i fila és menor o igual a col
+                    if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
+                        // Assignar-li true a la posicio de fila, col
+                        taula[fila][col] = true;
+                    }
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició de fila, col
+                    taula[fila][col] = false;
+                }
+            }
+            // Segona diagonal
+            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
+            int indexSegDia = taula[fila].length -1 -fila;
+            // Assignar-li true a posició de fila, indexSegDia
+            taula[fila][indexSegDia] = true;
+        }
+    }
+    
     public static void inicialitzaFalse(boolean[][] taula) {
         // Fer un for per iterar les files
         for (int fila = 0; fila < taula.length; fila++) {
@@ -312,470 +852,5 @@ public class UtilTaula {
 
         // Retornar el resultat
         return resultat;
-    }
-    
-    public static void inicialitzaPrimeraDiagonalPrimerPle(boolean[][] taula) {
-        for (int fila = taula.length-1; fila >= 0; fila--) {
-            for (int col = taula[0].length-1; col >= 0; col--) {
-               if (fila == col) {
-                    taula[fila][col] = true;
-                } else {
-                    taula[col][fila] = true;
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaPrimeraDiagonalSegonPle(boolean[][] taula) {
-        for (int fila = 0; fila < taula.length; fila++) {
-            for (int col = 0; col < taula[0].length; col++) {
-                if (fila == col) {
-                    taula[fila][col] = true;
-                } else {
-                    taula[col][fila] = true;
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaSegonaDiagonalPrimerPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Totes les posicions en false
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Assignar-li false a la posició de fila, col
-                if (col == 0) {
-                    taula[fila][col] = true;
-                } else if (col < taula[0].length-fila) {
-                    taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaSegonaDiagonalSegonPle(boolean[][] taula) {
-        for (int fila = taula.length-1; fila >= 0; fila--) {
-            for (int col = taula[0].length-1; col >= 0; col--) {
-                // Assignar-li false a la posició de fila, col
-                if (fila == taula.length-1) {
-                    taula[fila][col] = true;
-                } else if (fila < taula.length-1 && col+1 >= taula.length-fila) {
-                    taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
-        for (int fila = 0; fila < taula.length; fila++) {
-            for (int col = 0; col < taula[0].length; col++) {
-                if (col <= Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaVerticalMigSegonPle(boolean[][] taula) {
-        for (int fila = 0; fila < taula.length; fila++) {
-            for (int col = 0; col < taula[0].length; col++) {
-                if (col >= Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaHoritzontalMigPrimerPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila <= Math.round(taula.length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaHoritzontalMigSegonPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila >= Math.round(taula.length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaQuartsNOPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila < Math.round(taula.length/2.00)-1 && col < Math.round(taula[0].length/2.00)-1) {
-                    taula[fila][col] = true;
-                } else if (fila == Math.round(taula.length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad redondeada del nombre de columnes menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaQuartsSOPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila > Math.round(taula.length/2.00)-1 && col < Math.round(taula[0].length/2.00)-1) {
-                    taula[fila][col] = true;
-                } else if (fila == Math.round(taula.length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad redondeada del nombre de columnes menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaQuartsNEPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila < Math.round(taula.length/2.00)-1 && col > Math.round(taula[0].length/2.00)-1) {
-                    taula[fila][col] = true;
-                }else if (fila == Math.round(taula.length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad redondeada del nombre de columnes menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaQuartsSEPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila > Math.round(taula.length/2.00)-1 && col > Math.round(taula[0].length/2.00)-1) {
-                    taula[fila][col] = true;
-                }else if (fila == Math.round(taula.length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad redondeada del nombre de columnes menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaQuartsNOSEPlens(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila <= Math.round(taula.length/2.00)-1 && col <= Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad redondeada del nombre de columnes menys 1
-                } else if (fila >= Math.round(taula.length/2.00)-1 && col >= Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaQuartsSONEPlens(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
-                // Si fila és igual a la mitad redondeada del nombre de columnes menys 1
-                if (fila >= Math.round(taula.length/2.00)-1 && col <= Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad redondeada del nombre de columnes menys 1
-                } else if (fila <= Math.round(taula.length/2.00)-1 && col >= Math.round(taula[0].length/2.00)-1) {
-                    // Assignar-li true a la posició de fila, col
-                    taula[fila][col] = true;
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-            }
-        }
-    }
-    
-    public static void inicialitzaCreuNPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Primera diagonal
-                // Si fila és igual a col
-                if (fila == col) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, resta de posicions
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-                
-                if (fila < Math.round(taula.length/2.00)-1 ) {
-                    if (col-fila > 0 && col+fila < taula[0].length-1) {
-                        taula[fila][col] = true;
-                    }
-                }
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Assignar-li true a posició de fila, indexSegDia
-            taula[fila][indexSegDia] = true;
-        }
-    }
-    
-    public static void inicialitzaCreuOPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Primera diagonal
-                // Si fila és igual a col
-                if (fila == col) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, resta de posicions
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-                
-                if (col < Math.round(taula[0].length/2.00)-1 ) {
-                    if (fila-col >= 0 && fila+col < taula.length-1) {
-                        taula[fila][col] = true;
-                    }
-                }
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Assignar-li true a posició de fila, indexSegDia
-            taula[fila][indexSegDia] = true;
-        }
-    }
-    
-    public static void inicialitzaCreuSPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Primera diagonal
-                // Si fila és igual a col
-                if (fila == col) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, resta de posicions
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-                
-                if (fila > Math.round(taula.length/2.00)-1) {
-                    if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {
-                        taula[fila][col] = true;
-                    }
-                }
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Assignar-li true a posició de fila, indexSegDia
-            taula[fila][indexSegDia] = true;
-        }
-    }
-    
-    public static void inicialitzaCreuEPle(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Primera diagonal
-                // Si fila és igual a col
-                if (fila == col) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, resta de posicions
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-                
-                if (col > Math.round(taula[0].length/2.00)-1 ) {
-                    if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
-                        taula[fila][col] = true;
-                    }
-                }
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Assignar-li true a posició de fila, indexSegDia
-            taula[fila][indexSegDia] = true;
-        }
-    }
-    
-    public static void inicialitzaCreuNSPlens(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Primera diagonal
-                // Si fila és igual a col
-                if (fila == col) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, resta de posicions
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-                
-                if (fila < Math.round(taula.length/2.00)-1 ) {
-                    if (col-fila > 0 && col+fila < taula[0].length-1) {
-                        taula[fila][col] = true;
-                    }
-                }
-                
-                if (fila > Math.round(taula.length/2.00)-1) {
-                    if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {
-                        taula[fila][col] = true;
-                    }
-                }
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Assignar-li true a posició de fila, indexSegDia
-            taula[fila][indexSegDia] = true;
-        }
-    }
-    
-    public static void inicialitzaCreuOEPlens(boolean[][] taula) {
-        // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
-            // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
-                // Primera diagonal
-                // Si fila és igual a col
-                if (fila == col) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                // Del contrari, resta de posicions
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
-                }
-                
-                if (col < Math.round(taula[0].length/2.00)-1 ) {
-                    if (fila-col >= 0 && fila+col < taula.length-1) {
-                        taula[fila][col] = true;
-                    }
-                }
-                
-                if (col > Math.round(taula[0].length/2.00)-1 ) {
-                    if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
-                        taula[fila][col] = true;
-                    }
-                }
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Assignar-li true a posició de fila, indexSegDia
-            taula[fila][indexSegDia] = true;
-        }
     }
 }
