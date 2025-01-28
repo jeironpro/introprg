@@ -162,16 +162,15 @@ public class UtilTaula {
             // Totes les posicions en false
             // Fer un for per iterar les columnes
             for (int col = 0; col < taula[0].length; col++) {
-                // Assignar-li false a la posició de fila, col
-                taula[fila][col] = false;
-            }
-            // Segona diagonal
-            // Declarar e inicialitzar el int indexSegDia amb la longitud de les columnes -1 -fila
-            int indexSegDia = taula[fila].length -1 -fila;
-            // Si l'index és major a 0 i menor a la longitud de les columnes de la taula
-            if (indexSegDia >= 0 && indexSegDia < taula[fila].length) {
-                // Assignar-li true a posició de fila, indexSegDia
-                taula[fila][indexSegDia] = true;
+                // Si col es menor a la longitud de la columna menys fila
+                if (col+1 == taula[0].length-fila) {
+                    // Assignar-li true a la posició fila, col
+                    taula[fila][col] = true;
+                // Del contrari
+                } else {
+                    // Assignar-li false a la posició fila, col
+                    taula[fila][col] = false;
+                }
             }
         }
     }
