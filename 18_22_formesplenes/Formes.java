@@ -50,15 +50,20 @@ public class Formes {
                 
                 // Declarar e inicialitzar el String especificacio buit
                 String especificacio = "";
+                String valorPerEspecificacio = "";
                 
                 for (int j = args[i].length()-1; j >= 0; j--) {
                     char c = args[i].charAt(j);
                     
-                    if (Character.isLetter(c) || esSimbol(c)) {
-                        especificacio += c;
+                    if (!Character.isDigit(c) && !Character.isWhitespace(c)) {
+                        valorPerEspecificacio += c;
                     } else {
                         break;
                     }
+                }
+                
+                for (int j = valorPerEspecificacio.length()-1; j >= 0; j--) {
+                    especificacio += valorPerEspecificacio.charAt(j);
                 }
                 
                 // Fer un switch per especificacio
@@ -133,6 +138,7 @@ public class Formes {
                     // Per defecte cridar inicialitzaFalse
                     default: UtilTaula.inicialitzaFalse(taula);
                 }
+                System.out.println(especificacio);
                 // Declarar e inicialitzar el String resultat amb la funció taulaToString
                 String resultat = UtilTaula.taulaToString(taula, 'X', '·');
                 // Mostrar la taula cridat a especificacio convertida a String
@@ -194,15 +200,5 @@ public class Formes {
             }
         }
         return -1;        
-    }
-    
-    public static boolean esSimbol(char caracter) {
-        // Si el carácter no és una lletra i no és un dígit i no és un espai
-        if (!Character.isLetter(caracter) && !Character.isDigit(caracter) && !Character.isWhitespace(caracter)) {
-            // Retornar true
-            return true;
-        }
-        // Retornar false
-        return false;
     }
 }
