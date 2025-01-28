@@ -51,120 +51,14 @@ public class Formes {
                 // Declarar e inicialitzar el String especificacio buit
                 String especificacio = "";
                 
-                // Agafar l'últim caràcter de l'argument en posició de i
-                char ultimCaracter = args[i].charAt(args[i].length()-1);
-                // Agafar el penultim caràcter de l'argument en posició de i
-                char penultimCaracter = args[i].charAt(args[i].length()-2);
-                char anPenultimCaracter = args[i].charAt(args[i].length()-3);
-                char anAnPenultimCaracter = args[i].charAt(args[i].length()-4);
-                char anAnAnPenultimCaracter = args[i].charAt(args[i].length()-5);
-                
-                // Si l'últim caràcter i el penultim caracàter són aquest caràcter '|'
-                if (ultimCaracter == '|' && penultimCaracter == '|') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += ultimCaracter;
-                    especificacio += penultimCaracter;
-                // Del contrari, si l'últim caràcter i el penultim caracàter són aquest caràcter '+'
-                } else if (ultimCaracter == '+' && penultimCaracter == '+') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += ultimCaracter;
-                    especificacio += penultimCaracter;
-                // Del contrari
-                } else if (penultimCaracter == '*' && ultimCaracter == '\\') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '\\' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '/') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '/' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '|') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '|' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '-') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '-' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anAnAnPenultimCaracter == '*' && anAnPenultimCaracter == '*' && anPenultimCaracter == 'x' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anAnAnPenultimCaracter;
-                    especificacio += anAnPenultimCaracter;
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anAnPenultimCaracter == '*' && anPenultimCaracter == '+' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anAnPenultimCaracter;
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anAnPenultimCaracter == '*' && anPenultimCaracter == '*' && penultimCaracter == '+' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anAnPenultimCaracter;
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == '*' && penultimCaracter == '*' && ultimCaracter == '+') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == '+' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                }  else if (anPenultimCaracter == '*' && penultimCaracter == '*' && ultimCaracter == 'x') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == 'x' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == '*' && penultimCaracter == 'x' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '+') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '+' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == 'x') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == 'x' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else {
-                    // Guardar l'últim caràcter en especificacio
-                    especificacio += ultimCaracter;
+                for (int j = args[i].length()-1; j >= 0; j--) {
+                    char c = args[i].charAt(j);
+                    
+                    if (Character.isLetter(c) || esSimbol(c)) {
+                        especificacio += c;
+                    } else {
+                        break;
+                    }
                 }
                 
                 // Fer un switch per especificacio
@@ -300,5 +194,15 @@ public class Formes {
             }
         }
         return -1;        
+    }
+    
+    public static boolean esSimbol(char caracter) {
+        // Si el carácter no és una lletra i no és un dígit i no és un espai
+        if (!Character.isLetter(caracter) && !Character.isDigit(caracter) && !Character.isWhitespace(caracter)) {
+            // Retornar true
+            return true;
+        }
+        // Retornar false
+        return false;
     }
 }
