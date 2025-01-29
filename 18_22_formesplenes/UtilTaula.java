@@ -442,7 +442,7 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és major a la mitad arrodonida de la longitud de la columna menys 1
-                if (col > M_COLS) {
+                if (col >= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
