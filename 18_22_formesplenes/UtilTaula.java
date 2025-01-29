@@ -872,42 +872,26 @@ public class UtilTaula {
         final int N_COLS = taula[0].length;
         final float M_FILES = Math.round(N_FILES/2.00)-1;
         final float M_COLS = Math.round(N_COLS/2.00)-1;
-        
-        // Fila < mitad && col < fila i  al inreves
+
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Primera diagonal
                 // Si la fila és igual a la columna
-                if (fila == col) {
+                if (fila <= M_FILES && col <= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                // Segona diagonal
-                // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == N_COLS-fila) {
+                } else if (fila >= M_FILES && col >= fila) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                } else if (col+1 <= N_COLS-fila && col < fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
-                // Llenado del quadrant oest
-                // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col < M_COLS) {
-                    // Si la fila menys la columna és major a 0 i la fila més la columna és menor a la longitud de la taula menys 1
-                    if (fila-col >= 0 && fila+col < N_FILES-1) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
-                // Llenado del quadrant est
-                // Del contrari, si la columna és major a la mitad arrodonida de la longitud de la col menys 1
-                } else if (col > M_COLS) {
-                    // Si la fila més la columna divit entre 2 és major a la mitad arrodonida de la longitud de la taula menys 1 i la fila és menor o igual a la columna
-                    if (fila+col/2 > M_FILES && fila <= col) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
-                // Del contrari
-                } else {
-                    // Assignar-li false a la posició de fila, col
-                    taula[fila][col] = false;
+                }
+
+                if (col >= N_COLS-fila && fila <= M_FILES || col+1 == N_COLS-fila) {
+                    // Assignar-li true a la posició fila, col
+                    taula[fila][col] = true;
                 }
             }
         }
