@@ -118,10 +118,13 @@ public class UtilTaula {
     }
     
     public static void inicialitzaPrimeraDiagonal(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+         
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si fila és igual a col
                 if (fila == col) {
                     // Assignar-li true a la posició de fila, col
@@ -136,13 +139,17 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaVerticalMig(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
                 // Si col és igual a la mitad arrodonida de la longitud de la columna menys 1
-                if (col == Math.round(taula[0].length/2.00)-1) {
+                if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -155,13 +162,17 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaHoritzontalMig(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
                 // Si fila és igual a la mitad arrodonida de la longitud de la taula menys 1
-                if (fila == Math.round(taula.length/2.00)-1) {
+                if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -174,17 +185,22 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaQuarts(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
                 // Si fila és igual a la mitad arrodonida de la longitud de la taula menys 1
-                if (fila == Math.round(taula.length/2.00)-1) {
+                if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si col és igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -197,12 +213,15 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaSegonaDiagonal(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna més 1 és igual a la longitud de la columna menys fila
-                if (col+1 == taula[0].length-fila) {
+                if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -215,17 +234,20 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreu(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 
                 // Si la columna és igual a la fila
                 if (col == fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula.length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -238,10 +260,13 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaPasVianants(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és senar
                 if (fila % 2 != 0) {
                     // Assignar-li true a la posició de fila, col
@@ -256,10 +281,13 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaZebra(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és senar
                 if (col % 2 != 0) {
                     // Assignar-li true a la posició de fila, col
@@ -274,10 +302,13 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaEscacs(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és parell i la columna és senar
                 if (fila % 2 == 0 && col % 2 != 0) {
                     // Assignar-li true a la posició de fila, col
@@ -296,10 +327,13 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaPrimeraDiagonalPrimerPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és menor o igual a fila
                 if (col <= fila) {
                     // Assignar-li true a la posició fila, col
@@ -314,10 +348,13 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaPrimeraDiagonalSegonPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és menor o igual a fila
                 if (col <= fila) {
                     // Assignar-li true a la posició col, fila
@@ -332,12 +369,15 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaSegonaDiagonalPrimerPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és menor a la longitud de la columna menys fila
-                if (col < taula.length-fila) {
+                if (col < N_FILES-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -350,12 +390,15 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaSegonaDiagonalSegonPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és menor o igual a la longitud de la taula menys 1 i col més 1 és major o igual a la longitud de la taula menys fila
-                if (fila <= taula.length-1 && col+1 >= taula.length-fila) {
+                if (fila <= N_FILES-1 && col+1 >= N_FILES-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -368,12 +411,16 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és menor o igual a la mitad arrodonida de la longitud de la columna menys 1
-                if (col <= Math.round(taula[0].length/2.00)-1) {
+                if (col <= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -386,12 +433,16 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaVerticalMigSegonPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la columna és major o igual a la mitad arrodonida de la longitud de la columna menys 1
-                if (col >= Math.round(taula[0].length/2.00)-1) {
+                if (col >= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -404,12 +455,16 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaHoritzontalMigPrimerPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és menor o igual a la mitad arrodonida de la longitud de la taula menys 1
-                if (fila <= Math.round(taula.length/2.00)-1) {
+                if (fila <= M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -422,12 +477,16 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaHoritzontalMigSegonPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és major o igual a la mitad arrodonida de la longitud de la taula menys 1
-                if (fila >= Math.round(taula.length/2.00)-1) {
+                if (fila >= M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -440,20 +499,25 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaQuartsNOPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1 i la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
-                if (fila < Math.round(taula.length/2.00)-1 && col < Math.round(taula[0].length/2.00)-1) {
+                if (fila < M_FILES && col < M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la fila és igual a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila == Math.round(taula.length/2.00)-1) {
+                } else if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la columna és igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -466,20 +530,25 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaQuartsSOPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és major a la mitad arrodonida de la longitud de la taula menys 1 i la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
-                if (fila > Math.round(taula.length/2.00)-1 && col < Math.round(taula[0].length/2.00)-1) {
+                if (fila > M_FILES && col < M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la fila és igual a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila == Math.round(taula.length/2.00)-1) {
+                } else if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la columna és igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -492,20 +561,25 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaQuartsNEPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1 i la columna és major a la mitad arrodonida de la longitud de la columna menys 1
-                if (fila < Math.round(taula.length/2.00)-1 && col > Math.round(taula[0].length/2.00)-1) {
+                if (fila < M_FILES && col > M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la fila és igual a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila == Math.round(taula.length/2.00)-1) {
+                } else if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la columna és igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -518,20 +592,25 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaQuartsSEPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és major a la mitad arrodonida de la longitud de la taula menys 1 i la columna és major a la mitad arrodonida de la longitud de la columna menys 1
-                if (fila > Math.round(taula.length/2.00)-1 && col > Math.round(taula[0].length/2.00)-1) {
+                if (fila > M_FILES && col > M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la fila és igual a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila == Math.round(taula.length/2.00)-1) {
+                } else if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la columna és igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col == Math.round(taula[0].length/2.00)-1) {
+                } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -544,16 +623,21 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaQuartsNOSEPlens(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és menor o igual a la mitad arrodonida de la longitud de la taula menys 1 i la columna és menor o igual a la mitad arrodonida de la longitud de la columna menys 1
-                if (fila <= Math.round(taula.length/2.00)-1 && col <= Math.round(taula[0].length/2.00)-1) {
+                if (fila <= M_FILES && col <= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la fila és major o igual a la mitad arrodonida de la longitud de la taula menys 1 i la columna és major o igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (fila >= Math.round(taula.length/2.00)-1 && col >= Math.round(taula[0].length/2.00)-1) {
+                } else if (fila >= M_FILES && col >= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -565,17 +649,22 @@ public class UtilTaula {
         }
     } // Correcte
     
-    public static void inicialitzaQuartsSONEPlens(boolean[][] taula) {
+    public static void inicialitzaQuartsSONEPlens(boolean[][] taula) {  
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és major o igual a la mitad arrodonida de la longitud de la taula menys 1 i la columna és menor o igual a la mitad arrodonida de la longitud de la columna menys 1
-                if (fila >= Math.round(taula.length/2.00)-1 && col <= Math.round(taula[0].length/2.00)-1) {
+                if (fila >= M_FILES && col <= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari, si la fila és menor o igual a la mitad arrodonida de la longitud de la taula menys 1 i la columna és major o igual a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (fila <= Math.round(taula.length/2.00)-1 && col >= Math.round(taula[0].length/2.00)-1) {
+                } else if (fila <= M_FILES && col >= M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -588,10 +677,14 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreuNPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Primera diagonal
                 // Si la fila és igual a la columna
                 if (fila == col) {
@@ -599,14 +692,14 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Segona diagonal
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula[0].length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant nord
                 // Del contrari, si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila < Math.round(taula.length/2.00)-1 ) {
+                } else if (fila < M_FILES) {
                     // Si la columna menys la fila és major a 0 i la columna més la fila és menor a la longitud de la columna menys 1
-                    if (col-fila > 0 && col+fila < taula[0].length-1) {
+                    if (col-fila > 0 && col+fila < N_COLS-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
@@ -620,10 +713,14 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreuOPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Primera diagonal
                 // Si la fila és igual a la columna
                 if (fila == col) {
@@ -631,14 +728,14 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Segona diagonal
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula[0].length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant oest
                 // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1 
-                } else if (col < Math.round(taula[0].length/2.00)-1 ) {
+                } else if (col < M_COLS) {
                     // Si la fila menys la columna és major o igual a 0 i la fila més la columna és menor a la longitud de la taula menys 1
-                    if (fila-col >= 0 && fila+col < taula.length-1) {
+                    if (fila-col >= 0 && fila+col < N_FILES-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
@@ -652,10 +749,15 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreuSPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Primera diagonal
                 // Si la fila és igual a la columna
                 if (fila == col) {
@@ -663,14 +765,14 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Segona diagonal
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula[0].length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant sur
                 // Del contrari, si la fila és menor a la longitud arrodonida de la taula menys 1
-                } else if (fila > Math.round(taula.length/2.00)-1) {
+                } else if (fila > M_FILES) {
                     // Si la columna més la fila divit entre 2 és major a la mitad arrodonida de la longitud de la columna menys 1 i la columna és menor o igual a fila
-                    if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {   
+                    if (col+fila/2 > M_COLS && col <= fila) {   
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
@@ -684,10 +786,15 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreuEPle(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Primera diagonal
                 // Si la fila és igual a la columna
                 if (fila == col) {
@@ -695,14 +802,14 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Segona diagonal
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula[0].length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant est
                 // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col > Math.round(taula[0].length/2.00)-1 ) {
+                } else if (col > M_COLS) {
                     // Si la fila més la columna divit entre 2 és major a la mitad arrodonida de la longitud de la taula menys 1 i la fila és menor o igual a la columna
-                    if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
+                    if (fila+col/2 > M_FILES && fila <= col) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
@@ -716,10 +823,15 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreuNSPlens(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Primera diagonal
                 // Si la fila és igual a la columna
                 if (fila == col) {
@@ -727,22 +839,22 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Segona diagonal
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula[0].length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant nord
                 // Del contrari, si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila < Math.round(taula.length/2.00)-1 ) {
+                } else if (fila < M_FILES) {
                     // Si la columna menys la fila és major a 0 i la columna més la fila és menor a la longitud de la taula menys 1
-                    if (col-fila > 0 && col+fila < taula[0].length-1) {
+                    if (col-fila > 0 && col+fila < N_COLS-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
                 // Llenado del quadrant sur
                 // Del contrari, si la fila és major a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila > Math.round(taula.length/2.00)-1) {
+                } else if (fila > M_FILES) {
                     // Si la columna més la fila divit entre 2 és major a la mitad arrodonida de la longitud de la columna menys 1 i la columna és menor o igual a la fila
-                    if (col+fila/2 > Math.round(taula[0].length/2.00)-1 && col <= fila) {
+                    if (col+fila/2 > M_COLS && col <= fila) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
@@ -756,10 +868,16 @@ public class UtilTaula {
     } // Correcte
     
     public static void inicialitzaCreuOEPlens(boolean[][] taula) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        final int M_FILES = Math.round(N_FILES/2)-1;
+        final int M_COLS = Math.round(N_COLS/2)-1;
+        
+        // Fila < mitad && col < fila i  al inreves
         // Fer un for per iterar les files
-        for (int fila = 0; fila < taula.length; fila++) {
+        for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
-            for (int col = 0; col < taula[0].length; col++) {
+            for (int col = 0; col < N_COLS; col++) {
                 // Primera diagonal
                 // Si la fila és igual a la columna
                 if (fila == col) {
@@ -767,22 +885,22 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Segona diagonal
                 // Del contrari, si la columna més 1 és igual a la longitud de la columna menys fila
-                } else if (col+1 == taula[0].length-fila) {
+                } else if (col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 // Llenado del quadrant oest
                 // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col < Math.round(taula[0].length/2.00)-1 ) {
+                } else if (col < M_COLS) {
                     // Si la fila menys la columna és major a 0 i la fila més la columna és menor a la longitud de la taula menys 1
-                    if (fila-col >= 0 && fila+col < taula.length-1) {
+                    if (fila-col >= 0 && fila+col < N_FILES-1) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
                 // Llenado del quadrant est
                 // Del contrari, si la columna és major a la mitad arrodonida de la longitud de la col menys 1
-                } else if (col > Math.round(taula[0].length/2.00)-1 ) {
+                } else if (col > M_COLS) {
                     // Si la fila més la columna divit entre 2 és major a la mitad arrodonida de la longitud de la taula menys 1 i la fila és menor o igual a la columna
-                    if (fila+col/2 > Math.round(taula.length/2.00)-1 && fila <= col) {
+                    if (fila+col/2 > M_FILES && fila <= col) {
                         // Assignar-li true a la posicio de fila, col
                         taula[fila][col] = true;
                     }
