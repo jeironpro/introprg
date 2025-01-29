@@ -887,11 +887,11 @@ public class UtilTaula {
                 } else if (col+1 <= N_COLS-fila && col < fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
-                }
-
-                if (col >= N_COLS-fila && fila <= M_FILES || col+1 == N_COLS-fila) {
+                } else if (col >= N_COLS-fila && fila <= M_FILES || col+1 == N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
