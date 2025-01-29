@@ -881,10 +881,10 @@ public class UtilTaula {
                 if (fila <= M_FILES && col <= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (fila >= M_FILES && col >= fila) {
+                } else if (fila > M_FILES && col >= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (col+1 <= N_COLS-fila && col < fila) {
+                } else if (col+1 < N_COLS-fila && col < fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
                 } else if (col >= N_COLS-fila && fila <= M_FILES || col+1 == N_COLS-fila) {
