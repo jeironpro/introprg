@@ -366,7 +366,7 @@ public class UtilTaula {
                 }
             }
         }
-    } // Correcte
+    } // Error (col, fila)
     
     public static void inicialitzaSegonaDiagonalPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
@@ -441,8 +441,8 @@ public class UtilTaula {
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Si la columna és major o igual a la mitad arrodonida de la longitud de la columna menys 1
-                if (col >= M_COLS) {
+                // Si la columna és major a la mitad arrodonida de la longitud de la columna menys 1
+                if (col > M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -512,11 +512,11 @@ public class UtilTaula {
                 if (fila < M_FILES && col < M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
-                // Del contrari, si la fila és igual a la mitad arrodonida de la longitud de la taula menys 1
+                    // Del contrari, si la fila és igual a la mitad arrodonida de la longitud de la taula menys 1
                 } else if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
-                // Del contrari, si la columna és igual a la mitad arrodonida de la longitud de la columna menys 1
+                    // Del contrari, si la columna és igual a la mitad arrodonida de la longitud de la columna menys 1
                 } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
@@ -697,12 +697,9 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant nord
                 // Del contrari, si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila < M_FILES) {
-                    // Si la columna menys la fila és major a 0 i la columna més la fila és menor a la longitud de la columna menys 1
-                    if (col-fila > 0 && col+fila < N_COLS-1) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
+                } else if (fila < M_FILES && col-fila > 0 && col+fila < N_COLS-1) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
@@ -733,12 +730,9 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant oest
                 // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1 
-                } else if (col < M_COLS) {
-                    // Si la fila menys la columna és major o igual a 0 i la fila més la columna és menor a la longitud de la taula menys 1
-                    if (fila-col >= 0 && fila+col < N_FILES-1) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
+                } else if (col < M_COLS && fila-col >= 0 && fila+col < N_FILES-1) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
@@ -770,12 +764,9 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant sur
                 // Del contrari, si la fila és menor a la longitud arrodonida de la taula menys 1
-                } else if (fila > M_FILES) {
-                    // Si la columna més la fila divit entre 2 és major a la mitad arrodonida de la longitud de la columna menys 1 i la columna és menor o igual a fila
-                    if (col+fila/2 > M_COLS && col <= fila) {   
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
+                } else if (fila > M_FILES && col+fila/2 > M_COLS && col <= fila) { 
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
@@ -807,12 +798,9 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant est
                 // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1
-                } else if (col > M_COLS) {
-                    // Si la fila més la columna divit entre 2 és major a la mitad arrodonida de la longitud de la taula menys 1 i la fila és menor o igual a la columna
-                    if (fila+col/2 > M_FILES && fila <= col) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
+                } else if (col > M_COLS && fila+col/2 > M_FILES && fila <= col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
@@ -844,20 +832,14 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant nord
                 // Del contrari, si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila < M_FILES) {
-                    // Si la columna menys la fila és major a 0 i la columna més la fila és menor a la longitud de la taula menys 1
-                    if (col-fila > 0 && col+fila < N_COLS-1) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
+                } else if (fila < M_FILES && col-fila > 0 && col+fila < N_COLS-1) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Llenado del quadrant sur
                 // Del contrari, si la fila és major a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila > M_FILES) {
-                    // Si la columna més la fila divit entre 2 és major a la mitad arrodonida de la longitud de la columna menys 1 i la columna és menor o igual a la fila
-                    if (col+fila/2 > M_COLS && col <= fila) {
-                        // Assignar-li true a la posicio de fila, col
-                        taula[fila][col] = true;
-                    }
+                } else if (fila > M_FILES && col+fila/2 > M_COLS && col <= fila) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
                 // Del contrari
                 } else {
                     // Assignar-li false a la posició de fila, col
@@ -877,12 +859,19 @@ public class UtilTaula {
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Si la fila és igual a la columna
-                if (fila >= col) {
+                if (fila <= M_FILES && col <= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (col+1 >= N_COLS-fila) {
-                    // Assignar-li true a la posició fila, col
+                } else if (fila >= M_FILES && col >= fila) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                }
+
+                if (col <= M_COLS && fila >= col) {
+                    // Assignar-li true a la posicio de fila, col
+                    taula[fila][col] = true;
+                } else if (col >= M_FILES && col >= fila) {
+                    // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 }
             }
