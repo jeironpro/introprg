@@ -878,20 +878,12 @@ public class UtilTaula {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
                 // Si la fila és igual a la columna
-                if (fila <= M_FILES && col <= fila) {
+                if (fila >= col) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (fila > M_FILES && col >= fila) {
-                    // Assignar-li true a la posicio de fila, col
-                    taula[fila][col] = true;
-                } else if (col+1 < N_COLS-fila && col < fila) {
+                } else if (col+1 >= N_COLS-fila) {
                     // Assignar-li true a la posició fila, col
                     taula[fila][col] = true;
-                } else if (col >= N_COLS-fila && fila <= M_FILES || col+1 == N_COLS-fila) {
-                    // Assignar-li true a la posició fila, col
-                    taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
