@@ -676,6 +676,7 @@ public class UtilTaula {
         }
     } // Correcte
     
+    // XXX Reestructurar les logiques dels procediments de CreuPle(ns)
     public static void inicialitzaCreuNPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
@@ -697,7 +698,7 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant nord
                 // Del contrari, si la fila és menor a la mitad arrodonida de la longitud de la taula menys 1
-                } else if (fila < M_FILES && col-fila > 0 && col+fila < N_COLS-1) {
+                } else if (col > 0 && col < N_COLS-1 && fila < M_FILES) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -730,7 +731,7 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant oest
                 // Del contrari, si la columna és menor a la mitad arrodonida de la longitud de la columna menys 1 
-                } else if (col < M_COLS && fila-col >= 0 && fila+col < N_FILES-1) {
+                } else if (col < M_COLS && fila-col > 0 && fila+col < N_FILES-1) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 // Del contrari
@@ -764,7 +765,7 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant sur
                 // Del contrari, si la fila és menor a la longitud arrodonida de la taula menys 1
-                } else if (fila > M_FILES && col+fila/2 > M_COLS && col <= fila) { 
+                } else if (col > 0 && col < N_COLS-1 && fila > M_FILES) { 
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 // Del contrari
