@@ -866,8 +866,10 @@ public class UtilTaula {
                 }
                 if (fila >= M_FILES && col < N_FILES-fila) {
                     taula[fila][col] = true;
-                    taula[2][1] = true;
-                    taula[2][2] = true;
+                    if (taula.length>2) {
+                        taula[2][1] = true;
+                        taula[2][2] = true;
+                    } 
                 }
 
 
