@@ -854,7 +854,6 @@ public class UtilTaula {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
         final int M_FILES = N_FILES/2;
-        System.out.println(M_FILES);
         final int M_COLS = N_COLS/2;
 
         // Fer un for per iterar les files
