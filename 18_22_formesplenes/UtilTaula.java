@@ -863,21 +863,19 @@ public class UtilTaula {
                 if (fila <= M_FILES && col <= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (fila >= M_FILES && col >= fila) {
-                    // Assignar-li true a la posicio de fila, col
+                } else if (fila > M_FILES && col < N_FILES-fila) {
                     taula[fila][col] = true;
                 }
-
-                if (fila < M_FILES && col+1 >= N_COLS-fila) {
+                if (fila <= M_COLS && col >= N_COLS-fila-1) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (fila > M_FILES && col+1 <= N_COLS-fila) {
-                    // Assignar-li true a la posicio de fila, col
+                } else if (fila >= M_COLS && col+M_COLS >= fila+M_FILES) {
                     taula[fila][col] = true;
                 }
+                //System.out.printf("FILA: [%d] -- COL: [%d]%n", fila, col); 
             }
         }
-    } // Correcte
+    }
     
     public static void inicialitzaFalse(boolean[][] taula) {
         // Fer un for per iterar les files
