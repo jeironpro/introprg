@@ -765,7 +765,7 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 // Llenado del quadrant sur
                 // Del contrari, si la fila és menor a la longitud arrodonida de la taula menys 1
-                } else if (col > 0 && col < N_COLS-1 && fila > M_FILES) { 
+                } else if (fila > M_FILES && col+fila/2 > M_COLS && col <= fila) { 
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 // Del contrari
