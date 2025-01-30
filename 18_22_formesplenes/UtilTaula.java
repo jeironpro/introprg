@@ -853,26 +853,31 @@ public class UtilTaula {
     public static void inicialitzaCreuOEPlens(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final float M_FILES = Math.round(N_FILES/2.00)-1;
-        final float M_COLS = Math.round(N_COLS/2.00)-1;
+        final int M_FILES = N_FILES/2;
+        System.out.println(M_FILES);
+        final int M_COLS = N_COLS/2;
 
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                if (fila <= M_FILES && col <= fila) {
+                if (fila < M_FILES && col <= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (fila > M_FILES && col < N_FILES-fila) {
-                    taula[fila][col] = true;
                 }
-                if (fila <= M_COLS && col >= N_COLS-fila-1) {
+                if (fila >= M_FILES && col < N_FILES-fila) {
+                    taula[fila][col] = true;
+                    taula[2][1] = true;
+                    taula[2][2] = true;
+                }
+
+
+                if (fila <= M_COLS && col >= N_COLS-1-fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 } else if (fila >= M_COLS && col+M_COLS >= fila+M_FILES) {
                     taula[fila][col] = true;
                 }
-                //System.out.printf("FILA: [%d] -- COL: [%d]%n", fila, col); 
             }
         }
     }
