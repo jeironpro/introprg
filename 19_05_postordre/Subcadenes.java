@@ -37,11 +37,11 @@ public class Subcadenes {
         
         if (meitat < fi) preOrdre(text, ini, meitat); // Pas recursiu 1 (meitat de l'esquerra)
         // System.out.printf("CRIDAT MEITAT DE L'ESQUERRA: TEXT:%s DES DE INI: %d FINS A MEITAT: %d%n", text, ini, meitat);
- 
-        System.out.printf("%4d: %s%n", midText.length(), midText); // Mostrar longitud i text inicial i recursiu
 
         if (meitat > ini) preOrdre(text, meitat, fi); // Pas recursiu 2 (meitat de la dreta)
         // System.out.printf("CRIDAT MEITAT DE LA DRETA: TEXT:%s DES DE MEITAT: %d FINS A FI: %d%n", text, meitat, fi);
+        
+        System.out.printf("%4d: %s%n", midText.length(), midText); // Mostrar longitud i text inicial i recursiu
     }
 
     public static String netejaEspais(String text) {
