@@ -169,11 +169,11 @@ public class NotaMesAlta {
             int posNotaMajor = notaMajor.length()+1;
 
             // Si notes comença per notaMajor
-            if (notes.startsWith(notaMajor)) {
+            if (UtilString.esPrefix(notes, notaMajor)) {
                 // notes serà una subcadena de notes eliminant notaMajor del principi
                 notes = notes.substring(posNotaMajor);
             // Del contrari, si notes acaba per notaMajor
-            } else if (notes.endsWith(notaMajor)) {
+            } else if (UtilString.esSufix(notes, notaMajor)) {
                 // notes serà una subcadena de notes eliminant notaMajor del final
                 notes = notes.substring(0, posNotaMajor);
             // Del contrari
