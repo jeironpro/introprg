@@ -18,26 +18,26 @@ public class NotaMesAlta {
         while (true) {
             // Llegir la nota
             int nota = Integer.parseInt(Entrada.readLine());
-            // Si la nota és menor o igual a 10 i la notaAlta és menor a la nota
-            if (nota <= 10 && notaAlta < nota) {
-                // Assignar-li el valor de nota a notaAlta
-                notaAlta = nota;
-            }
             
             // Si la nota és negativa
             if (nota < 0) {
                 // Finalitzar el bucle
                 break;
-            // Del contrari
-            } else {
-                // Si la nota és menor o igual a 10
-                if (nota <= 10) {
-                    // Guardar la nota en restNotes
-                    restNotes += nota + ",";
-                    // Augmentar en 1 quants
-                    quants++;
-                }
             }
+            
+            // Si la nota és menor o igual a 10 
+            if (nota <= 10) {
+                // Si la notaAlta és menor a la nota
+                if (notaAlta < nota) {
+                    // Assignar-li el valor de nota a notaAlta
+                    notaAlta = nota;
+                }
+                // Guardar la nota en restNotes
+                restNotes += nota + ",";
+                // Augmentar en 1 quants
+                quants++;
+            }
+            
         }
         // Quan el bucle finalitzi, si s'introdueix mes d'una nota
         if (quants > 1) {
