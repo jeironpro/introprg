@@ -30,8 +30,8 @@ public class NotaMesAlta {
                 break;
             // Del contrari
             } else {
-                // Si la nota és menor o igual a 10 i la nota no està guardat en restNotes
-                if (nota <= 10 && !restNotes.contains("" + nota)) {
+                // Si la nota és menor o igual a 10
+                if (nota <= 10) {
                     // Guardar la nota en restNotes
                     restNotes += nota + ",";
                     // Augmentar en 1 quants
@@ -62,8 +62,8 @@ public class NotaMesAlta {
                 } else if (!notaPerEnter.isEmpty()) {
                     // Converteix notaPerEnter a enter
                     int notaEnter = Integer.parseInt(notaPerEnter);
-                    // Si la notaEnter és diferent a notaAlta
-                    if (notaEnter != notaAlta) {
+                    // Si la notaEnter és diferent a notaAlta i la notaEnter no està guardat en notesASeparar
+                    if (notaEnter != notaAlta && !notesASeparar.contains("" + notaEnter)) {
                         // notesDiferent serà true
                         notesDiferent = true;
                         // Guardar la nota convertit en notesASeparar
