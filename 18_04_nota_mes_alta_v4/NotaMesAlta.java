@@ -63,7 +63,7 @@ public class NotaMesAlta {
                     // Converteix notaPerEnter a enter
                     int notaEnter = Integer.parseInt(notaPerEnter);
                     // Si la notaEnter és diferent a notaAlta i la notaEnter no està guardat en notesASeparar
-                    if (notaEnter != notaAlta && !notesASeparar.contains("" + notaEnter)) {
+                    if (notaEnter != notaAlta && !UtilString.esSubstring(notesASeparar, "" + notaEnter)) {
                         // notesDiferent serà true
                         notesDiferent = true;
                         // Guardar la nota convertit en notesASeparar
@@ -169,11 +169,11 @@ public class NotaMesAlta {
             int posNotaMajor = notaMajor.length()+1;
 
             // Si notes comença per notaMajor
-            if (UtilString.esPrefix(notes, notaMajor)) {
+            if (notes.startsWith(notaMajor)) {
                 // notes serà una subcadena de notes eliminant notaMajor del principi
                 notes = notes.substring(posNotaMajor);
             // Del contrari, si notes acaba per notaMajor
-            } else if (UtilString.esSufix(notes, notaMajor)) {
+            } else if (notes.endsWith(notaMajor)) {
                 // notes serà una subcadena de notes eliminant notaMajor del final
                 notes = notes.substring(0, posNotaMajor);
             // Del contrari
