@@ -30,11 +30,12 @@ public class NotaMesAlta {
                 break;
             // Del contrari
             } else {
-                if (nota <= 10) {
+                // Si la nota és menor o igual a 10 i la nota no està guardat en restNotes
+                if (nota <= 10 && !restNotes.contains("" + nota)) {
                     // Guardar la nota en restNotes
                     restNotes += nota + ",";
                     // Augmentar en 1 quants
-                    quants++;                
+                    quants++;
                 }
             }
         }
@@ -153,6 +154,7 @@ public class NotaMesAlta {
                         notaComparar = nota;
                         // notaMajor és igual a notaTemp
                         notaMajor = notaTemp;
+                        // Agafar la posició de la nota
                         posNota = i-1;
                     }
                     // Reiniciar notaTemp
