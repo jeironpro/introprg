@@ -860,19 +860,19 @@ public class UtilTaula {
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                if (fila < M_FILES && col <= fila) {
+                if (fila < M_COLS && col <= fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
                 }
-                if (fila >= M_FILES && col < N_FILES-fila) {
+                if (fila >= M_COLS && col-M_COLS <= M_COLS-fila) {
                     taula[fila][col] = true;
                 }
 
-
-                if (fila <= M_COLS && col >= N_COLS-1-fila) {
+                if (fila < M_COLS && col >= N_COLS-1-fila) {
                     // Assignar-li true a la posicio de fila, col
                     taula[fila][col] = true;
-                } else if (fila >= M_COLS && col+M_COLS >= fila+M_FILES) {
+                }
+                if (fila >= M_COLS && col+M_COLS >= fila+M_COLS) {
                     taula[fila][col] = true;
                 }
             }
