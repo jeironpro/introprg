@@ -141,13 +141,12 @@ public class UtilTaula {
     public static void inicialitzaVerticalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = N_COLS/2;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
                 // Si col és igual a la mitad arrodonida de la longitud de la columna menys 1
                 if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
@@ -164,13 +163,12 @@ public class UtilTaula {
     public static void inicialitzaHoritzontalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
                 // Si fila és igual a la mitad arrodonida de la longitud de la taula menys 1
                 if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
@@ -187,14 +185,13 @@ public class UtilTaula {
     public static void inicialitzaQuarts(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Math.round(float a): Torna el més proper inta l'argument, amb els lligams arrodonir fins a l'infinit positiu.
                 // Si fila és igual a la mitad arrodonida de la longitud de la taula menys 1
                 if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
@@ -326,6 +323,7 @@ public class UtilTaula {
         }
     } // Correcte
     
+    // 18_22 ampliacio
     public static void inicialitzaPrimeraDiagonalPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
@@ -413,7 +411,7 @@ public class UtilTaula {
     public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = N_COLS/2;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -435,7 +433,7 @@ public class UtilTaula {
     public static void inicialitzaVerticalMigSegonPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = N_COLS/2;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -457,7 +455,7 @@ public class UtilTaula {
     public static void inicialitzaHoritzontalMigPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -479,7 +477,7 @@ public class UtilTaula {
     public static void inicialitzaHoritzontalMigSegonPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -501,8 +499,8 @@ public class UtilTaula {
     public static void inicialitzaQuartsNOPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -532,8 +530,8 @@ public class UtilTaula {
     public static void inicialitzaQuartsSOPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -563,8 +561,8 @@ public class UtilTaula {
     public static void inicialitzaQuartsNEPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -594,8 +592,8 @@ public class UtilTaula {
     public static void inicialitzaQuartsSEPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -625,8 +623,8 @@ public class UtilTaula {
     public static void inicialitzaQuartsNOSEPlens(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -652,8 +650,8 @@ public class UtilTaula {
     public static void inicialitzaQuartsSONEPlens(boolean[][] taula) {  
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -680,7 +678,7 @@ public class UtilTaula {
     public static void inicialitzaCreuNPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -713,7 +711,7 @@ public class UtilTaula {
     public static void inicialitzaCreuOPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = N_COLS/2;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -746,8 +744,8 @@ public class UtilTaula {
     public static void inicialitzaCreuSPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -780,8 +778,8 @@ public class UtilTaula {
     public static void inicialitzaCreuEPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -814,8 +812,8 @@ public class UtilTaula {
     public static void inicialitzaCreuNSPlens(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
         
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {
@@ -853,8 +851,8 @@ public class UtilTaula {
     public static void inicialitzaCreuOEPlens(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final float M_COLS = Math.round(taula[0].length/2.00)-1;
 
         // Fer un for per iterar les files
         for (int fila = 0; fila < N_FILES; fila++) {

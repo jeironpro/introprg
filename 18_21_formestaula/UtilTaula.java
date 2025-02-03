@@ -152,11 +152,11 @@ public class UtilTaula {
         for (int fila = 0; fila < N_FILES; fila++) {
             // Fer un for per iterar les columnes
             for (int col = 0; col < N_COLS; col++) {
-                // Si fila és igual a la mitad arrodonida de la longitud de la taula menys 1
+                // Si fila és igual a la mitad de les files
                 if (fila == M_FILES) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
-                // Del contrari, si col és igual a la mitad arrodonida de la longitud de la columna menys 1
+                // Del contrari, si col és igual a la mitad de les columnes
                 } else if (col == M_COLS) {
                     // Assignar-li true a la posició de fila, col
                     taula[fila][col] = true;
