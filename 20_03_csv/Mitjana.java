@@ -77,6 +77,7 @@ public class Mitjana {
                 for (int i = 1; i <= quantsExams; i++) {
                     // Si el nom no existeix, aturar el bucle
                     if (!nomExisteix) break;
+                    if (notes[i].isBlank()) continue;
                     
                     // Si la nota és un enter
                     if (UtilString.esEnter(notes[i])) {
