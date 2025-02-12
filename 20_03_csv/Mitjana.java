@@ -43,45 +43,45 @@ public class Mitjana {
         if (linia == null) {
             System.out.println("El fitxer notes.csv no conté cap nota.");
             return;
-        }
-        
-        // Bucle infinit
-        while (true) {
-            // Llegir cada línia, a partir de la primera
-            linia = entrada.readLine();
-            // Si està buit, aturar el bucle 
-            if (linia == null) break;
-            
-            // Float per guardar la suma de les notes
-            float suma = 0;
-            // Boolean per verificar si el nom existeix
-            boolean nomExisteix = false;
-            // Converteix a un array la línia, 
-            String[] notes = linia.split(",");
-            
-            // Si el primer element de l'array notes no està buit i no és un enter
-            if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
-                // Possar a true nomExisteix
-                nomExisteix = true;
-                // Mostrar el nom
-                System.out.printf("%s", notes[0]);
-            }
-                        
-            // For per iterar totes les notes de la quantitat de exàmens indicat
-            for (int i = 1; i <= quantsExams; i++) {
-                // Si el nom no existeix, aturar el bucle
-                if (!nomExisteix) break;
+        } else {
+            // Bucle infinit
+            while (true) {
+                // Float per guardar la suma de les notes
+                float suma = 0;
+                // Boolean per verificar si el nom existeix
+                boolean nomExisteix = false;
+                // Converteix a un array la línia, 
+                String[] notes = linia.split(",");
                 
-                // Si la nota és un enter
-                if (UtilString.esEnter(notes[i])) {
-                    // Converteix la nota a enter
-                    int nota = Integer.parseInt(notes[i]);
-                    // Sumar-li a suma la nota
-                    suma += nota;
+                // Si el primer element de l'array notes no està buit i no és un enter
+                if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
+                    // Possar a true nomExisteix
+                    nomExisteix = true;
+                    // Mostrar el nom
+                    System.out.printf("%s", notes[0]);
                 }
+                            
+                // For per iterar totes les notes de la quantitat de exàmens indicat
+                for (int i = 1; i <= quantsExams; i++) {
+                    // Si el nom no existeix, aturar el bucle
+                    if (!nomExisteix) break;
+                    
+                    // Si la nota és un enter
+                    if (UtilString.esEnter(notes[i])) {
+                        // Converteix la nota a enter
+                        int nota = Integer.parseInt(notes[i]);
+                        // Sumar-li a suma la nota
+                        suma += nota;
+                    }
+                }
+                // Si el nom existeix mostrar la mitjana
+                if (nomExisteix) System.out.printf(" (%.2f)%n", suma/quantsExams);
+               
+                // Llegir cada línia, a partir de la primera
+                linia = entrada.readLine();
+                // Si està buit, aturar el bucle 
+                if (linia == null) break;
             }
-            // Si el nom existeix mostrar la mitjana
-            if (nomExisteix) System.out.printf(" (%.2f)%n", suma/quantsExams);
         }
         // Cerrar el fitxer
         entrada.close();
