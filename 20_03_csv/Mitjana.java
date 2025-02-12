@@ -45,8 +45,10 @@ public class Mitjana {
             // Llegir cada línia, a partir de la primera
             linia = entrada.readLine();
             // Si està buit, aturar el bucle 
-            if (linia == null) break;
-            
+            if (linia == null) {
+                System.out.println("El fitxer notes.csv no conté cap nota.");
+                break;
+            }
             // Float per guardar la suma de les notes
             float suma = 0;
             // Boolean per verificar si el nom existeix
@@ -60,8 +62,6 @@ public class Mitjana {
                 nomExisteix = true;
                 // Mostrar el nom
                 System.out.printf("%s", notes[0]);
-            } else {
-                System.out.println("El fitxer notes.csv no conté cap nota.");
             }
                         
             // For per iterar totes les notes de la quantitat de exàmens indicat
