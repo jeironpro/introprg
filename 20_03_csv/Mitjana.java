@@ -39,10 +39,16 @@ public class Mitjana {
         
         // Agafar la primera línia per ignorar-la
         String linia = entrada.readLine();
+        // Llegir la segona línia
         linia = entrada.readLine();
+        
+        // Si la segona línia és null
         if (linia == null) {
+            // Mostrar aquest missatge
             System.out.println("El fitxer notes.csv no conté cap nota.");
+            // Retornar
             return;
+        // Del contrari
         } else {
             // Bucle infinit
             while (true) {
@@ -51,17 +57,16 @@ public class Mitjana {
                 // Boolean per verificar si el nom existeix
                 boolean nomExisteix = false;
                 // Converteix a un array la línia, 
-                String[] notes = linia.split(",");
+                String[] notes = linia.split(","); 
+                
+                // Si la longitud de les notes és menor a la quantitat d'examens
                 if (notes.length < quantsExams) {
-                    int index = notes.length;
-                    while (notes.length < index) {
-                        notes[index] = "NP";
-                        index++;
-                    }
-                } 
+                    // Cridar el mòdul que crea un nou array en la longitud de la quantitat de examens
+                    notes = novesNotes(notes, quantsExams);
+                }
                 
                 // Si el primer element de l'array notes no està buit i no és un enter
-                if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
+                if (notes[0] != null && !UtilString.esEnter(notes[0])) {
                     // Possar a true nomExisteix
                     nomExisteix = true;
                     // Mostrar el nom
@@ -92,5 +97,29 @@ public class Mitjana {
         }
         // Cerrar el fitxer
         entrada.close();
+    }
+    
+    public static String[] novesNotes(String[] notes, int quantsNotes) {
+        // Crear un nou array amb longitud de la quantitat d'exams
+        String[] nouArray = new String[quantsNotes+1];
+        
+        // For per iterar les posicions del nou array
+        for (int i = 0; i <= quantsNotes; i++) {
+            // Valor buit per cada posició de l'array
+            nouArray[i] = "";
+            
+            // Si i és menor a la longitud de la notes
+            if (i < notes.length) {
+                // Assignar-li el valor de notes al nou array
+                nouArray[i] += notes[i];
+            // Del contrari
+            } else {
+                // Assignar-li "NP" a les altres posicions del nou array
+                nouArray[i] += "NP";
+            }
+        }
+        
+        // Retornar el nou array
+        return nouArray;
     }
 }
