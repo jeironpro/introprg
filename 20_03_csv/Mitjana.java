@@ -39,14 +39,14 @@ public class Mitjana {
         
         // Agafar la primera línia per ignorar-la
         String linia = entrada.readLine();
-        
+        linia = entrada.readLine();
+        if (linia == null) {
+            System.out.println("El fitxer notes.csv no conté cap nota.");
+            return;
+        }
         
         // Bucle infinit
         while (true) {
-            if (linia == null) {
-                System.out.println("El fitxer notes.csv no conté cap nota.");
-                return;
-            }
             // Llegir cada línia, a partir de la primera
             linia = entrada.readLine();
             // Si està buit, aturar el bucle 
