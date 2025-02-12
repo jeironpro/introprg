@@ -59,6 +59,7 @@ public class Mitjana {
                 // Converteix a un array la línia, 
                 String[] notes = linia.split(","); 
                 
+                
                 // Si la longitud de les notes és menor a la quantitat d'examens
                 if (notes.length < quantsExams) {
                     // Cridar el mòdul que crea un nou array en la longitud de la quantitat de examens
@@ -74,10 +75,10 @@ public class Mitjana {
                 }
                             
                 // For per iterar totes les notes de la quantitat de exàmens indicat
+                notes = netejaEspais(notes);
                 for (int i = 1; i <= quantsExams; i++) {
                     // Si el nom no existeix, aturar el bucle
                     if (!nomExisteix) break;
-                    if (notes[i].isBlank()) continue;
                     
                     // Si la nota és un enter
                     if (UtilString.esEnter(notes[i])) {
@@ -117,6 +118,21 @@ public class Mitjana {
             } else {
                 // Assignar-li "NP" a les altres posicions del nou array
                 nouArray[i] += "NP";
+            }
+        }
+        
+        // Retornar el nou array
+        return nouArray;
+    }
+    
+    public static String[] netejaEspais(String[] notes) {
+        String[] nouArray = new String[notes.length];
+        nouArray[0] += notes[0];
+        
+        for (int i = 1; i < notes.length; i++) {
+            nouArray[i] = "";
+            if (!notes[i].isBlank()) {
+                nouArray[i] += notes[i];
             }
         }
         
