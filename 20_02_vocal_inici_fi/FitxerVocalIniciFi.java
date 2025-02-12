@@ -34,26 +34,9 @@ public class FitxerVocalIniciFi {
             char ultimCaracter = linia.charAt(linia.length()-1);
             
             // Si el primer o últim caràcter és una vocal catalana, mostrar la línia
-            if (esVocal(primer) || esVocal(ultimCaracter)) System.out.println(linia);
+            if (UtilString.esVocal(primer) || UtilString.esVocal(ultimCaracter)) System.out.println(linia);
         }
         // Cerrar l'arxiu
         entrada.close();
-    }
-    
-    public static boolean esVocal(char caracter) throws IOException {
-        // Almacenar en el String vocals les vocals inclòs les catalanes
-        String vocals = "aàeèéiíïoóòuúü";
-        // Fer un for per iterar totes les vocals
-        for (int i = 0; i < vocals.length(); i++) {
-            // Agafar els caràcters del String vocals en la posició de i
-            char v = vocals.charAt(i);
-            // Si el caràcter en minúscula és una vocal, retornar true
-            if (Character.toLowerCase(caracter) == v) {
-                // Retornar true
-                return true;                   
-            }
-        }     
-        // Si no retorna true, retornar false
-        return false;
     }
 }
