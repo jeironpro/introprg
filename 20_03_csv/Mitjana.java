@@ -35,7 +35,7 @@ public class Mitjana {
         }
         
         // Mostrar aquest missatge amb el nombre d'exàmens
-        System.out.printf("Càlcul de la mitjana de notes per %d exàmens:%n", quantsExams);
+        System.out.printf("Càlcul de la mitjana de notes per %d exàmens%n", quantsExams);
         
         // Agafar la primera línia per ignorar-la
         String linia = entrada.readLine();
