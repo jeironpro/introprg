@@ -44,10 +44,6 @@ public class Mitjana {
         while(true) {
             // Llegir cada línia, a partir de la primera
             linia = entrada.readLine();
-            if (linia.isEmpty()) {
-                System.out.println("El fitxer notes.csv no conté cap nota.");
-                break;
-            }
             // Si està buit, aturar el bucle 
             if (linia == null) break;
             
@@ -57,6 +53,11 @@ public class Mitjana {
             boolean nomExisteix = false;
             // Converteix a un array la línia, 
             String[] notes = linia.split(",");
+            
+            if (notes.length <= 0) {
+                System.out.println("El fitxer notes.csv no conté cap nota.");
+                break;
+            }
             
             // Si el primer element de l'array notes no està buit i no és un enter
             if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
