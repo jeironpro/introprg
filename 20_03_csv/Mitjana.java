@@ -12,7 +12,7 @@ import java.io.FileReader;
 // Importar IOException des de la seva biblioteca
 import java.io.IOException;
 
-public class CalculaNotes {
+public class Mitjana {
     public static void main(String[] args) throws IOException {
         // Establir la ruta del fitxer en un String
         String ruta = "notes.csv";
