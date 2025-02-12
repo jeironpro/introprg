@@ -24,10 +24,13 @@ public class Mitjana {
         // Enter per guardar el nombre d'exàmens 
         int quantsExams = 0;
         
-        // Si els arguments té longitud major a 0 i l'argument 0 és un enter
-        if (args.length>0 && UtilString.esEnter(args[0])) {
+        // Si els arguments tenen longitud major a 0 i l'argument 0 és un enter
+        if (args.length > 0 && UtilString.esEnter(args[0])) {
+            // Si el nombre d'examens és menor a 2
             if (Integer.parseInt(args[0]) < 2) {
+                // Mostrar aquest missatge
                 System.out.println("Com a mínim 2 exàmens.");
+                // Retornar
                 return;
             }
             // Assignar-li el argument convertit a enter a quantsExamns
@@ -82,6 +85,8 @@ public class Mitjana {
                 for (int i = 1; i <= quantsExams; i++) {
                     // Si el nom no existeix, aturar el bucle
                     if (!nomExisteix) break;
+                    
+                    // Netejar els espais del lateral del string
                     notes[i] = notes[i].strip();
                     
                     // Si la nota és un enter
@@ -92,12 +97,13 @@ public class Mitjana {
                         suma += nota;
                     }
                 }
+                
                 // Si el nom existeix mostrar la mitjana
                 if (nomExisteix) System.out.printf(" (%.2f)%n", suma/quantsExams);
                
-                // Llegir cada línia, a partir de la primera
+                // Llegir cada línia, a partir de la tercera
                 linia = entrada.readLine();
-                // Si està buit, aturar el bucle 
+                // Si la línia està buit, aturar el bucle 
                 if (linia == null) break;
             }
         }
