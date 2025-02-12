@@ -52,6 +52,13 @@ public class Mitjana {
                 boolean nomExisteix = false;
                 // Converteix a un array la línia, 
                 String[] notes = linia.split(",");
+                if (notes.length < quantsExams) {
+                    int index = notes.length;
+                    while (notes.length < index) {
+                        notes[index] = "NP";
+                        index++;
+                    }
+                } 
                 
                 // Si el primer element de l'array notes no està buit i no és un enter
                 if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
