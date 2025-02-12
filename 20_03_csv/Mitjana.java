@@ -60,6 +60,8 @@ public class Mitjana {
                 nomExisteix = true;
                 // Mostrar el nom
                 System.out.printf("%s", notes[0]);
+            } else {
+                System.out.println("El fitxer notes.csv no conté cap nota.");
             }
                         
             // For per iterar totes les notes de la quantitat de exàmens indicat
@@ -78,7 +80,6 @@ public class Mitjana {
             // Si el nom existeix mostrar la mitjana
             if (nomExisteix) System.out.printf(" (%.2f)%n", suma/quantsExams);
         }
-        System.out.println("El fitxer notes.csv no conté cap nota.");
         // Cerrar el fitxer
         entrada.close();
     }
