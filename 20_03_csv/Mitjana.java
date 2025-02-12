@@ -70,7 +70,7 @@ public class Mitjana {
                     // Possar a true nomExisteix
                     nomExisteix = true;
                     // Mostrar el nom
-                    System.out.printf("%s", notes[0]);
+                    System.out.printf("%s", notes[0].strip());
                 }
                             
                 // For per iterar totes les notes de la quantitat de exàmens indicat
