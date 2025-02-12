@@ -26,6 +26,10 @@ public class Mitjana {
         
         // Si els arguments té longitud major a 0 i l'argument 0 és un enter
         if (args.length>0 && UtilString.esEnter(args[0])) {
+            if (Integer.parseInt(args[0]) < 2) {
+                System.out.println("Com a mínim 2 exàmens.");
+                return;
+            }
             // Assignar-li el argument convertit a enter a quantsExamns
             quantsExams = Integer.parseInt(args[0]);
         // Del contrari
