@@ -44,11 +44,13 @@ public class Mitjana {
         while(true) {
             // Llegir cada línia, a partir de la primera
             linia = entrada.readLine();
-            // Si està buit, aturar el bucle 
-            if (linia == null) {
+            if (linia.isEmpty()) {
                 System.out.println("El fitxer notes.csv no conté cap nota.");
                 break;
             }
+            // Si està buit, aturar el bucle 
+            if (linia == null) break;
+            
             // Float per guardar la suma de les notes
             float suma = 0;
             // Boolean per verificar si el nom existeix
