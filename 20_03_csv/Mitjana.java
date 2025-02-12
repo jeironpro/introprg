@@ -54,7 +54,7 @@ public class Mitjana {
             // Converteix a un array la línia, 
             String[] notes = linia.split(",");
             
-            if (notes.length <= 0) {
+            if (notes == null) {
                 System.out.println("El fitxer notes.csv no conté cap nota.");
                 break;
             }
