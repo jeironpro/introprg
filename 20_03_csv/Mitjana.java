@@ -66,7 +66,7 @@ public class Mitjana {
                 }
                 
                 // Si el primer element de l'array notes no està buit i no és un enter
-                if (notes[0] != null && !UtilString.esEnter(notes[0])) {
+                if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
                     // Possar a true nomExisteix
                     nomExisteix = true;
                     // Mostrar el nom
