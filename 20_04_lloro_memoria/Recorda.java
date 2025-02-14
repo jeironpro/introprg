@@ -14,7 +14,7 @@ import java.io.FileWriter;
 // Importar IOException des de la seva biblioteca
 import java.io.IOException;
 
-public class LloroAmbMemoria {
+public class Recorda {
     public static void main(String[] args) throws IOException {
         // Guardar la ruta de l'arxiu en un String
         String ruta = "records.txt";
