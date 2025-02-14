@@ -65,7 +65,7 @@ public class Recorda {
         // Bucle infinit
         while (linia != null) {            
             // Mostrar cada línia
-            System.out.printf("El lloro recorda: %s%n", linia);
+            System.out.printf("El lloro recorda: %s%n", linia.strip());
 
             // Llegir a partir de la segona línia de l'arxiu
             linia = entrada.readLine();
