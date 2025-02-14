@@ -35,13 +35,13 @@ public class Recorda {
             // Demanar paraula
             System.out.println("El lloro pregunta paraula:");
             // Llegir la paraula
-            String paraula = Entrada.readLine();
+            String paraula = Entrada.readLine().strip();
             
             // Si la paraula està buida, surt del bucle
             if (paraula.isEmpty()) break;
             
             // Mostrar que el lloro registreix la paruala
-            System.out.printf("El lloro registra: %s%n", paraula.strip());
+            System.out.printf("El lloro registra: %s%n", paraula);
             // Escruira la paraula en el fixter
             sortida.write(String.format("%s%n", paraula));
         }    
