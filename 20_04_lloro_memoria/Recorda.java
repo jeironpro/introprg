@@ -34,7 +34,7 @@ public class Recorda {
         while (true) {
             // Demanar paraula
             System.out.println("El lloro pregunta paraula:");
-            // Llegir la paraula
+            // Llegir la paraula i netejar els espais dels laterals
             String paraula = Entrada.readLine().strip();
             
             // Si la paraula està buida, surt del bucle
@@ -69,9 +69,6 @@ public class Recorda {
 
             // Llegir a partir de la segona línia de l'arxiu
             linia = entrada.readLine();
-            
-            // Si la línia és null, surt del bucle
-            if (linia == null) break;
         }
         // Mostrar aquest missatge
         System.out.println("Adéu");
