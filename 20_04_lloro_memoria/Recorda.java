@@ -62,7 +62,7 @@ public class Recorda {
             if (linia == null) break;
             
             // Mostrar cada línia
-            System.out.println(linia);
+            System.out.printf("El lloro recorda: %s%n", linia);
         }
         // Mostrar aquest missatge
         System.out.println("Adéu");
