@@ -41,7 +41,7 @@ public class Recorda {
             if (paraula.isEmpty()) break;
             
             // Mostrar que el lloro registreix la paruala
-            System.out.printf("El lloro registra: %s%n", paraula);
+            System.out.printf("El lloro registra: %s%n", paraula.strip());
             // Escruira la paraula en el fixter
             sortida.write(String.format("%s%n", paraula));
         }    
@@ -65,7 +65,7 @@ public class Recorda {
         // Bucle infinit
         while (linia != null) {            
             // Mostrar cada línia
-            System.out.printf("El lloro recorda: %s%n", linia.strip());
+            System.out.printf("El lloro recorda: %s%n", linia);
 
             // Llegir a partir de la segona línia de l'arxiu
             linia = entrada.readLine();
