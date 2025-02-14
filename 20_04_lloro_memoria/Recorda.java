@@ -52,20 +52,26 @@ public class Recorda {
     public static void mostraRecords(String ruta) throws IOException {
         // Lector d'arxiu per llegir línia per línia l'arxiu
         BufferedReader entrada = new BufferedReader(new FileReader(ruta));
+
+        // Llegir la primera línia de l'arxiu
+        String linia = entrada.readLine();
         
+        // Si la primera línia és null
+        if (linia == null) {
+            // Mostrar aquest missatge
+            System.out.println("El lloro no recorda res");
+        }  
+              
         // Bucle infinit
-        while (true) {
-            // Llegir cada línia de l'arxiu
-            String linia = entrada.readLine();
-            
-            // Si la línia és null, surt del bucle
-            if (linia == null) {
-                System.out.println("El lloro no recorda res");
-                break;
-            }
-            
+        while (true) {            
             // Mostrar cada línia
             System.out.printf("El lloro recorda: %s%n", linia);
+
+            // Llegir a partir de la segona línia de l'arxiu
+            linia = entrada.readLine();
+            
+            // Si la línia és null, surt del bucle
+            if (linia == null) break;
         }
         // Mostrar aquest missatge
         System.out.println("Adéu");
