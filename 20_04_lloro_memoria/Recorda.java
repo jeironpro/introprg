@@ -63,7 +63,7 @@ public class Recorda {
         }  
               
         // Bucle infinit
-        while (true) {            
+        while (linia != null) {            
             // Mostrar cada línia
             System.out.printf("El lloro recorda: %s%n", linia);
 
