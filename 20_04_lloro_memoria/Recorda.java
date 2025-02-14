@@ -43,7 +43,7 @@ public class Recorda {
             // Mostrar que el lloro registreix la paruala
             System.out.printf("El lloro registra: %s%n", paraula);
             // Escruira la paraula en el fixter
-            sortida.write(String.format("El lloro recorda: %s%n", paraula));
+            sortida.write(String.format("%s%n", paraula));
         }    
         // Tancar el fitxer
         sortida.close();
