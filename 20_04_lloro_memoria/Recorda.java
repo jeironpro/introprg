@@ -59,7 +59,10 @@ public class Recorda {
             String linia = entrada.readLine();
             
             // Si la línia és null, surt del bucle
-            if (linia == null) break;
+            if (linia == null) {
+                System.out.println("El lloro no recorda res");
+                break;
+            }
             
             // Mostrar cada línia
             System.out.printf("El lloro recorda: %s%n", linia);
