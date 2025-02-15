@@ -35,11 +35,13 @@ public class Log {
         BufferedWriter sortidaError = new BufferedWriter(escriptorError);
         
         // Escriure l'error en el fitxer
-        sortidaError.write(String.format("[%d] ERROR: %s%n", numLog, error));
+        sortidaError.write(String.format("[%d] ERROR: %s", numLog, error));
+        // Escriure un salt de línia
+        sortidaError.newLine();
         // Tancar el fitxer
         sortidaError.close();
         // Retornar l'error
-        return String.format("[%d] ERROR: %s%n", numLog, error);
+        return String.format("[%d] ERROR: %s", numLog, error);
     }
     
     public static String printWarning(String warning) throws IOException {
@@ -51,11 +53,13 @@ public class Log {
         BufferedWriter sortidaWarning = new BufferedWriter(escriptorWarning);
         
         // Escriure el warning en el fitxer
-        sortidaWarning.write(String.format("[%d] WARNING: %s%n", numLog, warning));
+        sortidaWarning.write(String.format("[%d] WARNING: %s", numLog, warning));
+        // Escriure un salt de línia
+        sortidaWarning.newLine();
         // Tancar el fitxer
         sortidaWarning.close();
         // Retornar el warning
-        return String.format("[%d] WARNING: %s%n", numLog, warning);
+        return String.format("[%d] WARNING: %s", numLog, warning);
     }
     
     public static String printInfo(String info) throws IOException {
@@ -67,11 +71,13 @@ public class Log {
         BufferedWriter sortidaInfo = new BufferedWriter(escriptorInfo);
         
         // Escriure l'info en el fitxer
-        sortidaInfo.write(String.format("[%d] INFO: %s%n", numLog, info));
+        sortidaInfo.write(String.format("[%d] INFO: %s", numLog, info));
+        // Escriure un salt de línia
+        sortidaInfo.newLine();
         // Tancar el fitxer
         sortidaInfo.close();
         // Retornar l'info
-        return String.format("[%d] INFO: %s%n", numLog, info);
+        return String.format("[%d] INFO: %s", numLog, info);
     }
     
     public static String printDebug(String debug) throws IOException {
@@ -83,11 +89,13 @@ public class Log {
         BufferedWriter sortidaDebug = new BufferedWriter(escriptorDebug);
         
         // Escriure el debug en el fitxer
-        sortidaDebug.write(String.format("[%d] DEBUG: %s%n", numLog, debug));
+        sortidaDebug.write(String.format("[%d] DEBUG: %s", numLog, debug));
+        // Escriure un salt de línia
+        sortidaDebug.newLine();
         // Tancar el fitxer
         sortidaDebug.close();
         // Retornar el debug
-        return String.format("[%d] DEBUG: %s%n", numLog, debug);
+        return String.format("[%d] DEBUG: %s", numLog, debug);
     }
     
     public static void reset() {
