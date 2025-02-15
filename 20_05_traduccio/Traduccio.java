@@ -28,8 +28,10 @@ public class Traduccio {
             String destinacio = args[2];
             // Cridar el mòdul que fa la traducció i passar-li els arguments
             tradueix(origen, traduccio, destinacio);
+        } else {
+            System.out.println("Cal especificar els fitxers origen, traduccio i destinació");
         }
-    } // Listo
+    }
     
     public static void tradueix(String fitxerOrigen, String fitxerTraduccio, String fitxerDestinacio) throws IOException {
         // Lector d'arxiu per obrir i llegeix caràcter per caràcter l'arxiu de la ruta indicat
@@ -96,29 +98,4 @@ public class Traduccio {
         // Retornar la traducció
         return traduccio;   
     }
-    
-    /*public static int quantesLinies(String fitxer) throws IOException {
-        // Comptador de línies
-        int comptador = 0;
-        // Lector d'arxiu per obrir i llegeix caràcter per caràcter l'arxiu de la ruta indicat
-        FileReader lector = new FileReader(fitxer);
-        // Lector de dades per llegir l'arxiu línia per línia en la ruta indicat
-        BufferedReader entrada = new BufferedReader(lector);
-        
-        // Bucle infinit
-        while (true) {
-            // Llegir cada linia del fitxer
-            String linia = entrada.readLine();
-            
-            // Si la linia és null, surt de bucle
-            if (linia == null) break;
-            
-            // Augmentar comptador en 1
-            comptador++;
-        }
-        // Tancar el fitxer
-        entrada.close();
-        // Retornar la quantitat de línies
-        return comptador;
-    }*/
 }
