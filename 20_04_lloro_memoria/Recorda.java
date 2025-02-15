@@ -3,15 +3,15 @@
  * si la paraula està buida, et mostra totes les paraules guardats anterioment.
  */
 
-// Importar BufferedReader des de la seva biblioteca
+// Importar BufferedReader des del seu paquet
 import java.io.BufferedReader;
-// Importar FileReader des de la seva biblioteca
+// Importar FileReader des del seu paquet
 import java.io.FileReader;
-// Importar BufferedWriter des de la seva biblioteca
+// Importar BufferedWriter des del seu paquet
 import java.io.BufferedWriter;
-// Importar FileWriter des de la seva biblioteca
+// Importar FileWriter des del seu paquet
 import java.io.FileWriter;
-// Importar IOException des de la seva biblioteca
+// Importar IOException des del seu paquet
 import java.io.IOException;
 
 public class Recorda {
