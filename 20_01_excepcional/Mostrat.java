@@ -4,13 +4,13 @@
  * o la ruta indicada està incorrecta o apunta a una altra cosa.
  */
 
-// Importar BufferedReader des de la seva biblioteca
+// Importar BufferedReader des del seu paquet
 import java.io.BufferedReader;
 
-// Importar FileReader des de la seva biblioteca
+// Importar FileReader des del seu paquet
 import java.io.FileReader;
 
-// Importar IOException des de la seva biblioteca
+// Importar IOException des del seu paquet
 import java.io.IOException;
 
 public class Mostrat {
@@ -31,7 +31,7 @@ public class Mostrat {
             // Mostrar cada línia
             System.out.println(linia);
         }
-        // Cerrar l'arxiu
+        // tancar el fitxer
         entrada.close();
     }
 }
