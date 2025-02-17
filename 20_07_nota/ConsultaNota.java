@@ -219,10 +219,6 @@ public class ConsultaNota {
         // Crear un array de la línia amb split        
         String[] liniaNotes = linia.split(",");
         
-        if (numProves > liniaNotes.length-1) {
-            numProves = liniaNotes.length-1;
-        }
-        
         // Llegir la segona línia
         linia = entrada.readLine();
         
@@ -234,7 +230,7 @@ public class ConsultaNota {
             // Tornar a crear un array de la línia amb split        
             liniaNotes = linia.split(",");
             
-            if (liniaNotes.length < numProves) {
+            if (liniaNotes.length-1 < numProves) {
                 liniaNotes = novesNotes(liniaNotes, numProves);
             }
             
