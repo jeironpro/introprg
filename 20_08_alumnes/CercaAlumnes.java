@@ -70,12 +70,11 @@ public class CercaAlumnes {
                         if (UtilString.esSubstring(nomAlumne[i], args[0])) {
                             // Mostrar les dades de l'alumne
                             mostraAlumne(alumne);
-                        } else {
-                            System.out.println("No s'ha trobat cap alumne");
                         }
                     }
                 }
             }
+            System.out.println("No s'ha trobat cap alumne");
             // Tancar el fitexer            
             entrada.close();            
         }
