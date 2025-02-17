@@ -66,6 +66,9 @@ public class ConsultaNota {
                 System.out.println("Alumne:");
                 // Tornar a llegir l'alumne
                 alumne = Entrada.readLine();
+                
+                // Si el alumne està buit, aturar el bucle
+                if (alumne.isEmpty()) return;
             }
             
             // Demanar la prova
