@@ -97,6 +97,11 @@ public class ConsultaNota {
             if (notes[posAlumne][posProva] == -1) {
                 // Mostrar aquest missatge
                 System.out.println("No Presentat");
+            // Del contrari, si la nota és -3
+            } else if (notes[posAlumne][posProva] == -3) {
+                // Mostrar aquest missatge
+                System.out.println("Nota no disponible");
+            // Del contrari
             } else {
                 // Mostrar la nota de l'alumne 
                 System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
