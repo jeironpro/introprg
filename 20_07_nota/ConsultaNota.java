@@ -97,6 +97,10 @@ public class ConsultaNota {
             if (notes[posAlumne][posProva] == -1) {
                 // Mostrar aquest missatge
                 System.out.println("No Presentat");
+            // Del contrari, si la nota és -2
+            } else if (notes[posAlumne][posProva] == -2) {
+                // Mostrar aquest missatge
+                System.out.println("Nota amb valor no numèric o fora de rang");
             // Del contrari, si la nota és -3
             } else if (notes[posAlumne][posProva] == -3) {
                 // Mostrar aquest missatge
