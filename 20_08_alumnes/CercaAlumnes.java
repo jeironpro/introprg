@@ -35,6 +35,8 @@ public class CercaAlumnes {
             // Ignorar la primera línia
             String linia = entrada.readLine();
             
+            int comptador = 0;
+            
             // Bucle infinit
             while (true) {
                 // Llegir la linia
@@ -60,9 +62,11 @@ public class CercaAlumnes {
                 if (nomTrobat(nomAlumne, emailAlumne[0], args[0])) {
                     // Mostrar les dades de l'alumne
                     mostraAlumne(alumne);
-                    continue;
+                    comptador++;
                 } 
-                System.out.println("No s'ha trobat cap alumne");
+                if (comptador == 0) {
+                    System.out.println("No s'ha trobat cap alumne");                
+                }
             }
             
             // Tancar el fitexer            
