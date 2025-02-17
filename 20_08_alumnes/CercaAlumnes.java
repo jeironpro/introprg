@@ -63,11 +63,11 @@ public class CercaAlumnes {
                     // Mostrar les dades de l'alumne
                     mostraAlumne(alumne);
                     comptador++;
-                } else if (!(comptador > 0)) {
-                    System.out.println("No s'ha trobat cap alumne");                
                 }
             }
-            
+            if (comptador == 0) {
+                System.out.println("No s'ha trobat cap alumne");                
+            }
             // Tancar el fitexer            
             entrada.close();            
         }
