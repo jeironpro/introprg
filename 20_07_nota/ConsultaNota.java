@@ -90,18 +90,16 @@ public class ConsultaNota {
                 continue;
             }
             
-            if (posProva <= proves.length) {
-                // Crear un taulell amb les notes
-                int[][] notes = carregaNotes(ruta, noms.length, proves.length);
-                
-                // Si la nota és -1
-                if (notes[posAlumne][posProva] == -1) {
-                    // Mostrar aquest missatge
-                    System.out.println("No Presentat");
-                } else {
-                    // Mostrar la nota de l'alumne 
-                    System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
-                }
+            // Crear un taulell amb les notes
+            int[][] notes = carregaNotes(ruta, noms.length, proves.length);
+            
+            // Si la nota és -1
+            if (notes[posAlumne][posProva] == -1) {
+                // Mostrar aquest missatge
+                System.out.println("No Presentat");
+            } else {
+                // Mostrar la nota de l'alumne 
+                System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
             }
             
         }
@@ -211,23 +209,25 @@ public class ConsultaNota {
             for (int fila = 0; fila < numAlumnes; fila++) {
                 // Iterar la columna
                 for (int col = 0; col < numProves; col++) {
-                    // Si la nota és un enter
-                    if (UtilString.esEnter(liniaNotes[col+1])) {
-                        // Converteix la nota a enter
-                        int valor = Integer.parseInt(liniaNotes[col+1]);
-                        // Si la nota está en el rang entre 0 i 100 
-                        if (valor >= 0 && valor <= 100) {
-                            // Guardar la nota en el taulell
-                            notes[i][col] = valor;
+                    if (col < numProves-1) {
+                        // Si la nota és un enter
+                        if (UtilString.esEnter(liniaNotes[col+1])) {
+                            // Converteix la nota a enter
+                            int valor = Integer.parseInt(liniaNotes[col+1]);
+                            // Si la nota está en el rang entre 0 i 100 
+                            if (valor >= 0 && valor <= 100) {
+                                // Guardar la nota en el taulell
+                                notes[i][col] = valor;
+                            // Del contrari
+                            } else {
+                                // Guardar -2
+                                notes[i][col] = -2;   
+                            }
                         // Del contrari
                         } else {
-                            // Guardar -2
-                            notes[i][col] = -2;   
+                            // Guardar -1
+                            notes[i][col] = -1;
                         }
-                    // Del contrari
-                    } else {
-                        // Guardar -1
-                        notes[i][col] = -1;
                     }
                 }
             }
