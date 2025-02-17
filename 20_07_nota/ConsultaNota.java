@@ -47,6 +47,7 @@ public class ConsultaNota {
         while (true) {
             // Demanar l'alumne
             System.out.println("Alumne:");
+            
             // Llegir l'alumne
             String alumne = Entrada.readLine();
             
@@ -59,16 +60,10 @@ public class ConsultaNota {
             // Agafar la posició on es troba l'alumne en l'array noms
             int posAlumne = filaAlumne(alumne, noms);
             
-            while (posAlumne == -1) {
+            if (posAlumne == -1) {
                 // Mostrar aquest missatge
                 System.out.println("Alumne " + "\"" + alumne + "\"" + " no disponible");
-                // Tornar a demanar l'alumne
-                System.out.println("Alumne:");
-                // Tornar a llegir l'alumne
-                alumne = Entrada.readLine();
-                
-                // Si el alumne està buit, aturar el bucle
-                if (alumne.isEmpty()) return;
+                continue;
             }
             
             // Demanar la prova
