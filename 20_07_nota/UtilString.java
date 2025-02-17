@@ -122,6 +122,7 @@ public class UtilString {
                 case 'í', 'ï' -> 'i';
                 case 'ò', 'ó' -> 'o';
                 case 'ù', 'ú', 'ü' -> 'u';
+                case 'ç' -> 'c';
                 default -> caracter;
             };
             // Guardar el carácter en nouText
