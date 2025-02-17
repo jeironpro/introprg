@@ -3,7 +3,9 @@
 *
 * Una funció que rep un text i retorna si és un valor enter o no, el valor pot ser negatiu o positiu, o pot tenir espai en blanc en els laterals (esEnter estricte).
 *
-* Una funció que rep un text i un boolean i retorna si és un valor enter o no, el valor pot ser negatiu o positiu, o pot tenir espai en blanc en qualsevol joc, o punt o guió baix entre dos nombres (esEnter flexible).
+* Una funció que rep un text i filtra les vocals catalanes, les canvia per les vocals normals i retorna un nou text. (filtraVocalCatala v1).
+*
+* Una funció que rep un text i un subtext i retornar si és substring o no, com l'utilitat de String contains (esSubstring estricte).
 *
 */
 
