@@ -220,7 +220,7 @@ public class ConsultaNota {
         String[] liniaNotes = linia.split(",");
         
         if (numProves > liniaNotes.length-1) {
-            numProves = liniaNotes.length-1;
+            numProves = liniaNotes.length;
         }
         
         // Llegir la segona línia
