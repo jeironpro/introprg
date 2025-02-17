@@ -60,9 +60,11 @@ public class ConsultaNota {
             // Agafar la posició on es troba l'alumne en l'array noms
             int posAlumne = filaAlumne(alumne, noms);
             
+            // Si la posició quer retorna filaAlumne és -1
             if (posAlumne == -1) {
                 // Mostrar aquest missatge
                 System.out.println("Alumne " + "\"" + alumne + "\"" + " no disponible");
+                // Tornar a la següent iteració
                 continue;
             }
             
@@ -80,8 +82,11 @@ public class ConsultaNota {
             // Agafar la posició on es troba la prova en l'array proves
             int posProva = filaAlumne(prova, proves);
             
+            // Si la posició que retorna filaAlumne és -1 
             if (posProva == -1) {
-                System.out.println("Error");
+                // Mostrar aquest missatge
+                System.out.println("Prova " + "\"" + prova + "\"" + " no disponible");
+                // Tornar a la següent iteració
                 continue;
             }
 
