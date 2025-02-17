@@ -196,7 +196,7 @@ public class ConsultaNota {
             proves[i] = "";
             
             // Guardar cada prova en l'array
-            proves[i] += liniaProves[j];
+            proves[i] += liniaProves[j].strip();
             // Augmentar en 1 a j
             j++;
         }
