@@ -215,23 +215,31 @@ public class ConsultaNota {
         
         // Ignorar la primera línia
         String linia = entrada.readLine();
+        
+        // Crear un array de la línia amb split        
+        String[] liniaNotes = linia.split(",");
+        
+        if (numProves > liniaNotes.length-1) {
+            numProves = liniaNotes.length-1;
+        }
+        
         // Llegir la segona línia
         linia = entrada.readLine();
         
-        // i a 0 per utilitzar-ho com index
-        int i = 0;
+        // fila a 0 per utilitzar-ho com index
+        int fila = 0;
         
         // Bucle infinit
         while (true) {  
-            // Crear un array de la línia amb split        
-            String[] liniaNotes = linia.split(",");
+            // Tornar a crear un array de la línia amb split        
+            liniaNotes = linia.split(",");
             
             if (liniaNotes.length < numProves) {
                 liniaNotes = novesNotes(liniaNotes, numProves);
             }
             
             // Iterar les files
-            for (int fila = 0; fila < numAlumnes; fila++) {
+            if (fila < numAlumnes) {
                 // Iterar la columna
                 for (int col = 0; col < numProves; col++) {
                     // Netejar els espais dels laterals
@@ -239,7 +247,7 @@ public class ConsultaNota {
                     // Si el valor de liniaNotes és igual a NP
                     if (liniaNotes[col+1].equals("NP")) {
                         // Guardar -2
-                        notes[i][col] = -1; 
+                        notes[fila][col] = -1; 
                     // Si la nota és un enter
                     } else if (UtilString.esEnter(liniaNotes[col+1])) {
                         // Converteix la nota a enter
@@ -248,23 +256,23 @@ public class ConsultaNota {
                         // Si el valor és -2
                         if (valor == -3) {
                             // Guardar -3
-                            notes[i][col] = -3;
+                            notes[fila][col] = -3;
                         } else if (valor >= 0 && valor <= 100) {
                             // Guardar la nota en el taulell
-                            notes[i][col] = valor;
+                            notes[fila][col] = valor;
                         // Del contrari
                         } else {
                             // Guardar -2
-                            notes[i][col] = -2;   
+                            notes[fila][col] = -2;   
                         }
                     } else {
                         // Guardar -2
-                        notes[i][col] = -2;
+                        notes[fila][col] = -2;
                     }
                 }
-            }
-            // Augmentar en 1 a i
-            i++;                    
+                // Augmentar en 1 a fila
+                fila++;
+            }             
             
             // Llegir la línia
             linia = entrada.readLine();
