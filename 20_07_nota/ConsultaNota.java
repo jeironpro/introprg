@@ -222,6 +222,11 @@ public class ConsultaNota {
             for (int fila = 0; fila < numAlumnes; fila++) {
                 // Iterar la columna
                 for (int col = 0; col < numProves; col++) {
+                    // Si el valor de liniaNotes és igual a NP
+                    if (liniaNotes[col+1] == "NP") {
+                        // Guardar -2
+                        notes[i][col] = -1; 
+                    }
                     // Si la nota és un enter
                     if (UtilString.esEnter(liniaNotes[col+1])) {
                         // Converteix la nota a enter
@@ -239,10 +244,6 @@ public class ConsultaNota {
                             // Guardar -2
                             notes[i][col] = -2;   
                         }
-                    // Del contrari
-                    } else {
-                        // Guardar -1
-                        notes[i][col] = -1;
                     }
                 }
             }
