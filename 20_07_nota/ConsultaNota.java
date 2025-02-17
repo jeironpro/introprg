@@ -230,7 +230,9 @@ public class ConsultaNota {
             // Tornar a crear un array de la línia amb split        
             liniaNotes = linia.split(",");
             
+            // Si la longitud de l'array-1 és menor a numProves
             if (liniaNotes.length-1 < numProves) {
+                // Cridar el mòdul que crea un nou array en la longitud de numProves
                 liniaNotes = novesNotes(liniaNotes, numProves);
             }
             
