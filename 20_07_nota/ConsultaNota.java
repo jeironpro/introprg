@@ -226,9 +226,8 @@ public class ConsultaNota {
                     if (liniaNotes[col+1] == "NP") {
                         // Guardar -2
                         notes[i][col] = -1; 
-                    }
                     // Si la nota és un enter
-                    if (UtilString.esEnter(liniaNotes[col+1])) {
+                    } else if (UtilString.esEnter(liniaNotes[col+1])) {
                         // Converteix la nota a enter
                         int valor = Integer.parseInt(liniaNotes[col+1]);
                         
