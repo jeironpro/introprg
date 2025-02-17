@@ -56,22 +56,10 @@ public class CercaAlumnes {
                 // Filtro pel email
                 emailAlumne[0] = UtilString.filtraVocalCatala(emailAlumne[0]).strip();
                 
-                // Si el nom o criteri és un substring de l'email
-                if (UtilString.esSubstring(emailAlumne[0], args[0])) {
+                // Si el nom es troba en el fitxer
+                if (nomTrobat(nomAlumne, emailAlumne[0], args[0])) {
                     // Mostrar les dades de l'alumne
                     mostraAlumne(alumne);
-                // Del contrari
-                } else if (nomAlumne.length > 0) {
-                    // Iterar la longitud de l'array nomAlumne
-                    for (int i = 0; i < nomAlumne.length; i++) {
-                        // Filtro pel nom
-                        nomAlumne[i] = UtilString.filtraVocalCatala(nomAlumne[i]).strip();
-                        // Si el nom o criteri és un substring del nom complet
-                        if (UtilString.esSubstring(nomAlumne[i], args[0])) {
-                            // Mostrar les dades de l'alumne
-                            mostraAlumne(alumne);
-                        }
-                    }
                 // Del contrari
                 } else {
                     // Mostrar aquest missatge
@@ -82,6 +70,27 @@ public class CercaAlumnes {
             // Tancar el fitexer            
             entrada.close();            
         }
+    }
+    
+    public static boolean nomTrobat(String[] nomAlumne, String emailAlumne, String argsCero) {
+        // Si el nom o criteri és un substring de l'email
+        if (UtilString.esSubstring(emailAlumne, argsCero)) {
+            // Retornar true
+            return true;
+        }
+        
+        // Iterar la longitud de l'array nomAlumne
+        for (int i = 0; i < nomAlumne.length; i++) {
+            // Filtro pel nom
+            nomAlumne[i] = UtilString.filtraVocalCatala(nomAlumne[i]).strip();
+            // Si el nom o criteri és un substring del nom complet
+            if (UtilString.esSubstring(nomAlumne[i], argsCero)) {
+                // Retornar true
+                return true;
+            }
+        }
+        // Si no es trobat, retornar false
+        return false;
     }
     
     public static Alumne construeixAlumne(String nom, 
