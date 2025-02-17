@@ -76,7 +76,7 @@ public class ConsultaNota {
             System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
         }
         // Quan el bucle finalitzi, mostrar aquest missatge
-        System.out.println("Adéu");
+        System.out.println("Arreveure");
     }
     
     public static String[] carregaAlumnes(String nomFitxer) throws IOException {
