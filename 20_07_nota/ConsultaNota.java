@@ -82,6 +82,8 @@ public class ConsultaNota {
             // Agafar la posició on es troba la prova en l'array proves
             int posProva = filaAlumne(prova, proves);
             
+            System.out.println(posProva);
+            
             // Si la posició que retorna filaAlumne és -1 
             if (posProva == -1) {
                 // Mostrar aquest missatge
@@ -209,25 +211,23 @@ public class ConsultaNota {
             for (int fila = 0; fila < numAlumnes; fila++) {
                 // Iterar la columna
                 for (int col = 0; col < numProves; col++) {
-                    if (col < numProves-1) {
-                        // Si la nota és un enter
-                        if (UtilString.esEnter(liniaNotes[col+1])) {
-                            // Converteix la nota a enter
-                            int valor = Integer.parseInt(liniaNotes[col+1]);
-                            // Si la nota está en el rang entre 0 i 100 
-                            if (valor >= 0 && valor <= 100) {
-                                // Guardar la nota en el taulell
-                                notes[i][col] = valor;
-                            // Del contrari
-                            } else {
-                                // Guardar -2
-                                notes[i][col] = -2;   
-                            }
+                    // Si la nota és un enter
+                    if (UtilString.esEnter(liniaNotes[col+1])) {
+                        // Converteix la nota a enter
+                        int valor = Integer.parseInt(liniaNotes[col+1]);
+                        // Si la nota está en el rang entre 0 i 100 
+                        if (valor >= 0 && valor <= 100) {
+                            // Guardar la nota en el taulell
+                            notes[i][col] = valor;
                         // Del contrari
                         } else {
-                            // Guardar -1
-                            notes[i][col] = -1;
+                            // Guardar -2
+                            notes[i][col] = -2;   
                         }
+                    // Del contrari
+                    } else {
+                        // Guardar -1
+                        notes[i][col] = -1;
                     }
                 }
             }
