@@ -60,6 +60,7 @@ public class CercaAlumnes {
                 if (nomTrobat(nomAlumne, emailAlumne[0], args[0])) {
                     // Mostrar les dades de l'alumne
                     mostraAlumne(alumne);
+                    return;
                 // Del contrari
                 } else {
                     // Mostrar aquest missatge
