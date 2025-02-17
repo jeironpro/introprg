@@ -73,7 +73,7 @@ public class ConsultaNota {
             int posProva = filaAlumne(prova, proves);
             
             // Mostrar la nota de l'alumne 
-            System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
+            System.out.printf("Nota: %d%n", (notes[posAlumne][posProva] != -1) ? notes[posAlumne][posProva] : "No Presentat");
         }
         // Quan el bucle finalitzi, mostrar aquest missatge
         System.out.println("Arreveure");
