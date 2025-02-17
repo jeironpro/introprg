@@ -61,7 +61,7 @@ public class CercaAlumnes {
                     // Mostrar les dades de l'alumne
                     mostraAlumne(alumne);
                 // Del contrari
-                } else {
+                } else if (nomAlumne.length > 0) {
                     // Iterar la longitud de l'array nomAlumne
                     for (int i = 0; i < nomAlumne.length; i++) {
                         // Filtro pel nom
@@ -72,9 +72,13 @@ public class CercaAlumnes {
                             mostraAlumne(alumne);
                         }
                     }
+                // Del contrari
+                } else {
+                    // Mostrar aquest missatge
+                    System.out.println("No s'ha trobat cap alumne");
                 }
             }
-            System.out.println("No s'ha trobat cap alumne");
+            
             // Tancar el fitexer            
             entrada.close();            
         }
