@@ -235,31 +235,34 @@ public class ConsultaNota {
                 // Iterar la columna
                 for (int col = 0; col < numProves; col++) {
                     // Netejar els espais dels laterals
-                    liniaNotes[col+1] = liniaNotes[col+1].strip();
-                    // Si el valor de liniaNotes és igual a NP
-                    if (liniaNotes[col+1].equals("NP")) {
-                        // Guardar -2
-                        notes[i][col] = -1; 
-                    // Si la nota és un enter
-                    } else if (UtilString.esEnter(liniaNotes[col+1])) {
-                        // Converteix la nota a enter
-                        int valor = Integer.parseInt(liniaNotes[col+1]);
-                        
-                        // Si el valor és -2
-                        if (valor == -3) {
-                            // Guardar -3
-                            notes[i][col] = -3;
-                        } else if (valor >= 0 && valor <= 100) {
-                            // Guardar la nota en el taulell
-                            notes[i][col] = valor;
-                        // Del contrari
+                    
+                    if (col < numProves-1) {
+                        liniaNotes[col+1] = liniaNotes[col+1].strip();
+                        // Si el valor de liniaNotes és igual a NP
+                        if (liniaNotes[col+1].equals("NP")) {
+                            // Guardar -2
+                            notes[i][col] = -1; 
+                        // Si la nota és un enter
+                        } else if (UtilString.esEnter(liniaNotes[col+1])) {
+                            // Converteix la nota a enter
+                            int valor = Integer.parseInt(liniaNotes[col+1]);
+                            
+                            // Si el valor és -2
+                            if (valor == -3) {
+                                // Guardar -3
+                                notes[i][col] = -3;
+                            } else if (valor >= 0 && valor <= 100) {
+                                // Guardar la nota en el taulell
+                                notes[i][col] = valor;
+                            // Del contrari
+                            } else {
+                                // Guardar -2
+                                notes[i][col] = -2;   
+                            }
                         } else {
                             // Guardar -2
-                            notes[i][col] = -2;   
+                            notes[i][col] = -2;
                         }
-                    } else {
-                        // Guardar -2
-                        notes[i][col] = -2;
                     }
                 }
             }
