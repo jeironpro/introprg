@@ -223,7 +223,7 @@ public class ConsultaNota {
                 // Iterar la columna
                 for (int col = 0; col < numProves; col++) {
                     // Si el valor de liniaNotes és igual a NP
-                    if (liniaNotes[col+1] == "NP") {
+                    if (liniaNotes[col+1].equals("NP")) {
                         // Guardar -2
                         notes[i][col] = -1; 
                     // Si la nota és un enter
