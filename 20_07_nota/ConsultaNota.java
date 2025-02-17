@@ -34,9 +34,17 @@ public class ConsultaNota {
         // Crear un array de la línia amb split
         String[] liniaNotes = linia.split(",");
         // Si en la posició 0, el String no es "alumne"
-        if (!liniaNotes[0].strip().equals("alumne") || liniaNotes.length == 1) {
+        if (!liniaNotes[0].strip().equals("alumne")) {
             // Mostrar aquest missatge d'error
             System.out.println("Error");
+            // Finalitzar el programa
+            return;
+        }
+        
+        // Si la linia no conté les proves
+        if (liniaNotes.length == 1) {
+            // Mostrar aquest missatge d'error
+            System.out.println("El fitxer notes.csv no es vàlid");
             // Finalitzar el programa
             return;
         }
