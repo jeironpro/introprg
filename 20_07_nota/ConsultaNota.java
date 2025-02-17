@@ -53,14 +53,6 @@ public class ConsultaNota {
             // Si el alumne està buit, aturar el bucle
             if (alumne.isEmpty()) break;
             
-            // Demanar la prova
-            System.out.println("Prova:");
-            // Llegir la prova
-            String prova = Entrada.readLine();
-            
-            // Si la prova està buida, aturar el bucle
-            if (prova.isEmpty()) break;
-            
             // Crear un array amb els noms dels alumnes
             String[] noms = carregaAlumnes(ruta);
             // Crear un array amb les proves
@@ -69,6 +61,24 @@ public class ConsultaNota {
             int[][] notes = carregaNotes(ruta, noms.length, proves.length);
             // Agafar la posició on es troba l'alumne en l'array noms
             int posAlumne = filaAlumne(alumne, noms);
+            
+            while (posAlumne == -1) {
+                // Mostrar aquest missatge
+                System.out.println("Alumne " + "\"" + alumne + "\"" + " no disponible");
+                // Tornar a demanar l'alumne
+                System.out.println("Alumne:");
+                // Tornar a llegir l'alumne
+                alumne = Entrada.readLine();
+            }
+            
+            // Demanar la prova
+            System.out.println("Prova:");
+            // Llegir la prova
+            String prova = Entrada.readLine();
+            
+            // Si la prova està buida, aturar el bucle
+            if (prova.isEmpty()) break;
+            
             // Agafar la posició on es troba la prova en l'array proves
             int posProva = filaAlumne(prova, proves);
             
