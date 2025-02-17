@@ -70,6 +70,8 @@ public class CercaAlumnes {
             }
             // Tancar el fitexer            
             entrada.close();            
+        } else {
+            System.out.println("Ús: CercaAlumnes «criteri de cerca»");
         }
     }
     
