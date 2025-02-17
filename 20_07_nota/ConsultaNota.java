@@ -82,8 +82,6 @@ public class ConsultaNota {
             // Agafar la posició on es troba la prova en l'array proves
             int posProva = filaAlumne(prova, proves);
             
-            System.out.println(posProva);
-            
             // Si la posició que retorna filaAlumne és -1 
             if (posProva == -1) {
                 // Mostrar aquest missatge
@@ -207,6 +205,10 @@ public class ConsultaNota {
             // Crear un array de la línia amb split        
             String[] liniaNotes = linia.split(",");
             
+            if (liniaNotes.length < numProves) {
+                liniaNotes = novesNotes(liniaNotes, numProves);
+            }
+            
             // Iterar les files
             for (int fila = 0; fila < numAlumnes; fila++) {
                 // Iterar la columna
@@ -215,8 +217,12 @@ public class ConsultaNota {
                     if (UtilString.esEnter(liniaNotes[col+1])) {
                         // Converteix la nota a enter
                         int valor = Integer.parseInt(liniaNotes[col+1]);
-                        // Si la nota está en el rang entre 0 i 100 
-                        if (valor >= 0 && valor <= 100) {
+                        
+                        // Si el valor és -2
+                        if (valor == -3) {
+                            // Guardar -3
+                            notes[i][col] = -3;
+                        } else if (valor >= 0 && valor <= 100) {
                             // Guardar la nota en el taulell
                             notes[i][col] = valor;
                         // Del contrari
@@ -274,6 +280,30 @@ public class ConsultaNota {
         }
         // Retornar -1 si no retorna cap valor
         return -1;
+    }
+    
+    public static String[] novesNotes(String[] notes, int quantsNotes) {
+        // Crear un nou array amb longitud de la quantitat d'exams
+        String[] nouArray = new String[quantsNotes+1];
+        
+        // For per iterar les posicions del nou array
+        for (int i = 0; i <= quantsNotes; i++) {
+            // Valor buit per cada posició de l'array
+            nouArray[i] = "";
+            
+            // Si i és menor a la longitud de la notes
+            if (i < notes.length) {
+                // Assignar-li el valor de notes al nou array
+                nouArray[i] += notes[i];
+            // Del contrari
+            } else {
+                // Assignar-li "NP" a les altres posicions del nou array
+                nouArray[i] += "-3";
+            }
+        }
+        
+        // Retornar el nou array
+        return nouArray;
     }
     
     public static int quantesLinies(String fitxer) throws IOException {
