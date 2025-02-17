@@ -28,7 +28,7 @@ public class CercaAlumnes {
         // Verificar si hi ha arguments
         if (args.length > 0) {
             // Ruta del fitxer
-            String ruta = "notes.csv";
+            String ruta = "alumnes.csv";
             // Obrir i llegir el fitxer
             BufferedReader entrada = new BufferedReader(new FileReader(ruta));
             
