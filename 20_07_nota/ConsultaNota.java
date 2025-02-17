@@ -76,10 +76,17 @@ public class ConsultaNota {
             
             // Crear un array amb les proves
             String[] proves = carregaProves(ruta);
-            // Crear un taulell amb les notes
-            int[][] notes = carregaNotes(ruta, noms.length, proves.length);
+
             // Agafar la posició on es troba la prova en l'array proves
             int posProva = filaAlumne(prova, proves);
+            
+            if (posProva == -1) {
+                System.out.println("Error");
+                continue;
+            }
+
+            // Crear un taulell amb les notes
+            int[][] notes = carregaNotes(ruta, noms.length, proves.length);
             
             // Si la nota és -1
             if (notes[posAlumne][posProva] == -1) {
