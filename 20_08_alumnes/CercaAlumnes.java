@@ -35,6 +35,7 @@ public class CercaAlumnes {
             // Ignorar la primera línia
             String linia = entrada.readLine();
             
+            // comptador a 0
             int comptador = 0;
             
             // Bucle infinit
@@ -65,12 +66,16 @@ public class CercaAlumnes {
                     comptador++;
                 }
             }
+            // Si comptador és igual a 0
             if (comptador == 0) {
+                // Mostrar aquest missatge
                 System.out.println("No s'ha trobat cap alumne");                
             }
             // Tancar el fitexer            
-            entrada.close();            
+            entrada.close(); 
+        // Del contrari           
         } else {
+            // Mostrar aquest missatge
             System.out.println("Ús: CercaAlumnes «criteri de cerca»");
         }
     }
@@ -144,8 +149,8 @@ public class CercaAlumnes {
         // String buit
         String notesCsv = "";
         
-        // Guardar la primera nota amb una coma en devant
-        notesCsv += ((notes[0] != -1) ? notes[0] : "NP" + ",");
+        // Guardar la primera nota sense coma
+        notesCsv += ((notes[0] != -1) ? notes[0] : "NP");
         // Iterar la longitud de l'array notes
         for (int i = 1; i < notes.length; i++) {
             // Guardar les notes a partir de la primera amb una coma al darrer
