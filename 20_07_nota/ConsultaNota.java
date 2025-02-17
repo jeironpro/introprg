@@ -89,17 +89,19 @@ public class ConsultaNota {
                 // Tornar a la següent iteració
                 continue;
             }
-
-            // Crear un taulell amb les notes
-            int[][] notes = carregaNotes(ruta, noms.length, proves.length);
             
-            // Si la nota és -1
-            if (notes[posAlumne][posProva] == -1) {
-                // Mostrar aquest missatge
-                System.out.println("No Presentat");
-            } else {
-                // Mostrar la nota de l'alumne 
-                System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
+            if (posProva <= proves.length) {
+                // Crear un taulell amb les notes
+                int[][] notes = carregaNotes(ruta, noms.length, proves.length);
+                
+                // Si la nota és -1
+                if (notes[posAlumne][posProva] == -1) {
+                    // Mostrar aquest missatge
+                    System.out.println("No Presentat");
+                } else {
+                    // Mostrar la nota de l'alumne 
+                    System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
+                }
             }
             
         }
