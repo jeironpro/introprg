@@ -72,8 +72,15 @@ public class ConsultaNota {
             // Agafar la posició on es troba la prova en l'array proves
             int posProva = filaAlumne(prova, proves);
             
-            // Mostrar la nota de l'alumne 
-            System.out.printf("Nota: %d%n", (notes[posAlumne][posProva] != -1) ? notes[posAlumne][posProva] : "No Presentat");
+            // Si la nota és -1
+            if (notes[posAlumne][posProva] == -1) {
+                // Mostrar aquest missatge
+                System.out.println("No Presentat");
+            } else {
+                // Mostrar la nota de l'alumne 
+                System.out.printf("Nota: %d%n", notes[posAlumne][posProva]);
+            }
+            
         }
         // Quan el bucle finalitzi, mostrar aquest missatge
         System.out.println("Arreveure");
