@@ -42,17 +42,13 @@ public class ConsultaNota {
             return;
         }
         
-        // Si la linia no conté les proves
-        if (liniaNotes.length == 1) {
-            // Mostrar aquest missatge d'error
-            System.out.println("El fitxer notes.csv no es vàlid");
-            // Finalitzar el programa
-            return;
-        }
-        
+        // Iterar la longitud de l'array de la línia
         for (int i = 0; i < liniaNotes.length; i++) {
-            if (liniaNotes[i].strip().isEmpty()) {
+            // Si la longitud de l'array és 1 o el String en la posicio de i està buit
+            if (liniaNotes.length == 1 || liniaNotes[i].strip().isEmpty()) {
+                // Mostrar aquest missatge d'error
                 System.out.println("El fitxer notes.csv no es vàlid");
+                // Finalitzar el programa
                 return;
             }
         }
