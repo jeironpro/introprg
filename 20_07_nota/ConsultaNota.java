@@ -243,6 +243,9 @@ public class ConsultaNota {
                             // Guardar -2
                             notes[i][col] = -2;   
                         }
+                    } else {
+                        // Guardar -2
+                        notes[i][col] = -2;
                     }
                 }
             }
