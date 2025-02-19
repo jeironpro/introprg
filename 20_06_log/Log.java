@@ -8,11 +8,7 @@
  *
  * Una funció que rep un String amb un debug i el guarda formatat en un fitxer, i retorna un String amb el mateix debug formatat. printDebug(String)
  */
- 
-// Importar BufferedReader des del seu paquet
-import java.io.BufferedReader;
-// Importar FileReader des del seu paquet
-import java.io.FileReader;
+
 // Importar BufferedWriter des del seu paquet
 import java.io.BufferedWriter;
 // Importar FileWriter des del seu paquet
