@@ -21,22 +21,23 @@ public class Mitjana {
         // Lector de dades per llegir l'arxiu línia per línia en la ruta indicat
         BufferedReader entrada = new BufferedReader(lectorArxiu);
         
+        // Processar els arguments
+        int quantsExamsArgs = processaArgument(args);
         // Enter per guardar el nombre d'exàmens 
         int quantsExams = 0;
         
-        // Si els arguments tenen longitud major a 0 i l'argument 0 és un enter
-        if (args.length > 0 && UtilString.esEnter(args[0])) {
-            // Si el nombre d'examens és menor a 2
-            if (Integer.parseInt(args[0]) < 2) {
-                // Mostrar aquest missatge
-                System.out.println("Com a mínim 2 exàmens.");
-                // Tancar fitxer
-                entrada.close();
-                // Retornar
-                return;
-            }
-            // Assignar-li el argument convertit a enter a quantsExamns
-            quantsExams = Integer.parseInt(args[0]);
+        // Si quantsExams és menor a 2
+        if (quantsExamsArgs < 2) {
+            // Mostrar aquest missatge
+            System.out.println("Com a mínim 2 exàmens.");
+            // Tancar fitxer
+            entrada.close();
+            // Retornar
+            return;
+        // Del contrari, si quantsExamsArgs retorna més de 0
+        } else if (quantsExamsArgs > 0) {
+            // Assignar-li el valor a quantsExams
+            quantsExams = quantsExamsArgs;
         // Del contrari
         } else {
             // Assignar-li 6 a quantsExams (Valor per defecte)
@@ -96,6 +97,21 @@ public class Mitjana {
         }
         // Cerrar el fitxer
         entrada.close();
+    }
+
+    public static int processaArgument(String[] arg) {
+        // Si els arguments tenen longitud major a 0 i l'argument 0 és un enter
+        if (arg.length > 0 && UtilString.esEnter(arg[0])) {
+            // Si el nombre d'examens és menor a 2
+            if (Integer.parseInt(arg[0]) < 2) {
+                // Retornar 0
+                return 0;
+            } else {
+                return Integer.parseInt(arg[0]);
+            }
+        }
+        // Retornar 0
+        return 0;
     }
     
     public static String[] novesNotes(String[] notes, int quantsNotes) {
