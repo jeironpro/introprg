@@ -21,27 +21,17 @@ public class Mitjana {
         // Lector de dades per llegir l'arxiu línia per línia en la ruta indicat
         BufferedReader entrada = new BufferedReader(lectorArxiu);
         
-        // Processar els arguments
-        int quantsExamsArgs = processaArgument(args);
         // Enter per guardar el nombre d'exàmens 
-        int quantsExams = 0;
-        
-        // Si quantsExams és menor a 2
-        if (quantsExamsArgs < 2) {
+        int quantsExams = processaArgument(args);
+
+        // Si quantsExams és menor 2
+        if (quantsExams < 2) {
             // Mostrar aquest missatge
             System.out.println("Com a mínim 2 exàmens.");
             // Tancar fitxer
             entrada.close();
             // Retornar
             return;
-        // Del contrari, si quantsExamsArgs retorna més de 0
-        } else if (quantsExamsArgs > 0) {
-            // Assignar-li el valor a quantsExams
-            quantsExams = quantsExamsArgs;
-        // Del contrari
-        } else {
-            // Assignar-li 6 a quantsExams (Valor per defecte)
-            quantsExams = 6;
         }
         
         // Mostrar aquest missatge amb el nombre d'exàmens
@@ -61,10 +51,9 @@ public class Mitjana {
             // Retornar
             return;
         }
+
         // Bucle infinit
         while (true) {
-            // Float per guardar la suma de les notes
-            float suma = 0;
             // Converteix a un array la línia, 
             String[] notes = linia.split(","); 
             
@@ -74,21 +63,12 @@ public class Mitjana {
                 // Cridar el mòdul que crea un nou array en la longitud de la quantitat de examens
                 notes = novesNotes(notes, quantsExams);
             }
-                        
-            // For per iterar totes les notes de la quantitat de exàmens indicat
-            for (int i = 1; i <= quantsExams; i++) {
-                // Netejar els espais dels laterals del string
-                notes[i] = notes[i].strip();
-                
-                // Si la nota és un enter
-                if (UtilString.esEnter(notes[i])) {
-                    // Converteix la nota a enter
-                    int nota = Integer.parseInt(notes[i]);
-                    // Sumar-li a suma la nota
-                    suma += nota;
-                }
-            }
-            if (!notes[0].isBlank()) System.out.printf("%s (%.2f)%n", notes[0].strip(), (suma/quantsExams));
+
+            // Cridar el módul que processa les notes i retorna la mitjana
+            float mitjana = processaNotes(notes, quantsExams);
+
+            // Si el nom existeix, mostrar la mitjana
+            if (!notes[0].isBlank()) System.out.printf("%s (%.2f)%n", notes[0].strip(), mitjana);
             
             // Llegir cada línia, a partir de la tercera
             linia = entrada.readLine();
@@ -99,6 +79,27 @@ public class Mitjana {
         entrada.close();
     }
 
+    public static float processaNotes(String[] notes, int exams) {
+        // Float per guardar la suma de les notes
+        float suma = 0;
+
+        // For per iterar totes les notes de la quantitat de exàmens indicat
+        for (int i = 1; i <= exams; i++) {
+            // Netejar els espais dels laterals del string
+            notes[i] = notes[i].strip();
+            
+            // Si la nota és un enter
+            if (UtilString.esEnter(notes[i])) {
+                // Converteix la nota a enter
+                int nota = Integer.parseInt(notes[i]);
+                // Sumar-li a suma la nota
+                suma += nota;
+            }
+        }
+        // Retornar la suma de les notes
+        return suma / exams;
+    }
+
     public static int processaArgument(String[] arg) {
         // Si els arguments tenen longitud major a 0 i l'argument 0 és un enter
         if (arg.length > 0 && UtilString.esEnter(arg[0])) {
@@ -106,12 +107,16 @@ public class Mitjana {
             if (Integer.parseInt(arg[0]) < 2) {
                 // Retornar 0
                 return 0;
+            // Del contrari
             } else {
+                // Retornar el argument convertit a enter
                 return Integer.parseInt(arg[0]);
             }
+        // Del contrari
+        } else {
+            // Retornar valor per defecte 6
+            return 6;
         }
-        // Retornar 0
-        return 0;
     }
     
     public static String[] novesNotes(String[] notes, int quantsNotes) {
