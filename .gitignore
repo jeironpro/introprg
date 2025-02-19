@@ -33,3 +33,6 @@ gradlew
 gradlew.bat
 .project
 **/.settings/
+
+# No volem els fitxers generats per vscode
+**/.vscode/
