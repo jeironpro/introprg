@@ -30,6 +30,8 @@ public class Mitjana {
             if (Integer.parseInt(args[0]) < 2) {
                 // Mostrar aquest missatge
                 System.out.println("Com a mínim 2 exàmens.");
+                // Tancar fitxer
+                entrada.close();
                 // Retornar
                 return;
             }
@@ -53,59 +55,46 @@ public class Mitjana {
         if (linia == null) {
             // Mostrar aquest missatge
             System.out.println("El fitxer notes.csv no conté cap nota.");
+            // Tancar el fitxer
+            entrada.close();
             // Retornar
             return;
-        // Del contrari
-        } else {
-            // Bucle infinit
-            while (true) {
-                // Float per guardar la suma de les notes
-                float suma = 0;
-                // Boolean per verificar si el nom existeix
-                boolean nomExisteix = false;
-                // Converteix a un array la línia, 
-                String[] notes = linia.split(","); 
-                
-                
-                // Si la longitud de les notes és menor a la quantitat d'examens
-                if (notes.length < quantsExams) {
-                    // Cridar el mòdul que crea un nou array en la longitud de la quantitat de examens
-                    notes = novesNotes(notes, quantsExams);
-                }
-                
-                // Si el primer element de l'array notes no està buit i no és un enter
-                if (!notes[0].isBlank() && !UtilString.esEnter(notes[0])) {
-                    // Possar a true nomExisteix
-                    nomExisteix = true;
-                    // Mostrar el nom
-                    System.out.printf("%s", notes[0].strip());
-                }
-                            
-                // For per iterar totes les notes de la quantitat de exàmens indicat
-                for (int i = 1; i <= quantsExams; i++) {
-                    // Si el nom no existeix, aturar el bucle
-                    if (!nomExisteix) break;
-                    
-                    // Netejar els espais del lateral del string
-                    notes[i] = notes[i].strip();
-                    
-                    // Si la nota és un enter
-                    if (UtilString.esEnter(notes[i])) {
-                        // Converteix la nota a enter
-                        int nota = Integer.parseInt(notes[i]);
-                        // Sumar-li a suma la nota
-                        suma += nota;
-                    }
-                }
-                
-                // Si el nom existeix mostrar la mitjana
-                if (nomExisteix) System.out.printf(" (%.2f)%n", suma/quantsExams);
-               
-                // Llegir cada línia, a partir de la tercera
-                linia = entrada.readLine();
-                // Si la línia està buit, aturar el bucle 
-                if (linia == null) break;
+        }
+        // Bucle infinit
+        while (true) {
+            // Float per guardar la suma de les notes
+            float suma = 0;
+            // Converteix a un array la línia, 
+            String[] notes = linia.split(","); 
+            
+            
+            // Si la longitud de les notes és menor a la quantitat d'examens
+            if (notes.length < quantsExams) {
+                // Cridar el mòdul que crea un nou array en la longitud de la quantitat de examens
+                notes = novesNotes(notes, quantsExams);
             }
+                        
+            // For per iterar totes les notes de la quantitat de exàmens indicat
+            for (int i = 0; i <= quantsExams; i++) {
+                if (notes[0].isBlank() && UtilString.esEnter(notes[0])) continue;
+                
+                // Netejar els espais del lateral del string
+                notes[i] = notes[i].strip();
+                
+                // Si la nota és un enter
+                if (UtilString.esEnter(notes[i])) {
+                    // Converteix la nota a enter
+                    int nota = Integer.parseInt(notes[i]);
+                    // Sumar-li a suma la nota
+                    suma += nota;
+                }
+            }
+            System.out.printf("%s (%.2f)%n", notes[0].strip(), (suma/quantsExams));
+            
+            // Llegir cada línia, a partir de la tercera
+            linia = entrada.readLine();
+            // Si la línia està buit, aturar el bucle 
+            if (linia == null) break;
         }
         // Cerrar el fitxer
         entrada.close();
