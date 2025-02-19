@@ -55,8 +55,7 @@ public class Mitjana {
         // Bucle infinit
         while (true) {
             // Converteix a un array la línia, 
-            String[] notes = linia.split(","); 
-            
+            String[] notes = linia.split(",");
             
             // Si la longitud de les notes és menor a la quantitat d'examens
             if (notes.length < quantsExams) {
@@ -138,7 +137,6 @@ public class Mitjana {
                 nouArray[i] += "NP";
             }
         }
-        
         // Retornar el nou array
         return nouArray;
     }
