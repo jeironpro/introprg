@@ -75,8 +75,8 @@ public class Mitjana {
             }
                         
             // For per iterar totes les notes de la quantitat de exàmens indicat
-            for (int i = 0; i <= quantsExams; i++) {
-                if (notes[0].isBlank() || UtilString.esEnter(notes[0])) break;
+            for (int i = 1; i <= quantsExams; i++) {
+                if (notes[0].isBlank()) continue;
                 
                 // Netejar els espais del lateral del string
                 notes[i] = notes[i].strip();
