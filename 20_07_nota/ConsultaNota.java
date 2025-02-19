@@ -27,6 +27,8 @@ public class ConsultaNota {
         if (linia == null) {
             // Mostrar aquest missatge d'error
             System.out.println("Error");
+            // Tancar el fitxer
+            entrada.close();
             // Finalitzar el programa
             return;
         }
@@ -38,6 +40,8 @@ public class ConsultaNota {
         if (!liniaNotes[0].strip().equals("alumne")) {
             // Mostrar aquest missatge d'error
             System.out.println("Error");
+            // Tancar el fitxer
+            entrada.close();
             // Finalitzar el programa
             return;
         }
@@ -48,6 +52,8 @@ public class ConsultaNota {
             if (liniaNotes.length == 1 || liniaNotes[i].strip().isEmpty()) {
                 // Mostrar aquest missatge d'error
                 System.out.println("El fitxer notes.csv no es vàlid");
+                // Tancar el fitxer
+                entrada.close();
                 // Finalitzar el programa
                 return;
             }
@@ -179,6 +185,8 @@ public class ConsultaNota {
         if (linia == null) {
             // Inicialitzar l'array en 0
             proves = new String[0];
+            // Tancar el fitxer
+            entrada.close();
             // Retornar l'array buit
             return proves;
         }     
