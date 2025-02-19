@@ -78,7 +78,7 @@ public class Mitjana {
             for (int i = 1; i <= quantsExams; i++) {
                 if (notes[0].isBlank()) continue;
                 
-                // Netejar els espais del lateral del string
+                // Netejar els espais dels laterals del string
                 notes[i] = notes[i].strip();
                 
                 // Si la nota és un enter
@@ -89,7 +89,7 @@ public class Mitjana {
                     suma += nota;
                 }
             }
-            System.out.printf("%s (%.2f)%n", notes[0].strip(), (suma/quantsExams));
+            if (!notes[0].isBlank()) System.out.printf("%s (%.2f)%n", notes[0].strip(), (suma/quantsExams));
             
             // Llegir cada línia, a partir de la tercera
             linia = entrada.readLine();
