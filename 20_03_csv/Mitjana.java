@@ -14,13 +14,6 @@ import java.io.IOException;
 
 public class Mitjana {
     public static void main(String[] args) throws IOException {
-        // Establir la ruta del fitxer en un String
-        String ruta = "notes.csv";
-        // Lector d'arxiu per obrir i llegeix caràcter per caràcter l'arxiu de la ruta indicat
-        FileReader lectorArxiu = new FileReader(ruta);
-        // Lector de dades per llegir l'arxiu línia per línia en la ruta indicat
-        BufferedReader entrada = new BufferedReader(lectorArxiu);
-        
         // Enter per guardar el nombre d'exàmens 
         int quantsExams = processaArgument(args);
 
@@ -28,11 +21,16 @@ public class Mitjana {
         if (quantsExams < 2) {
             // Mostrar aquest missatge
             System.out.println("Com a mínim 2 exàmens.");
-            // Tancar fitxer
-            entrada.close();
             // Retornar
             return;
         }
+
+        // Establir la ruta del fitxer en un String
+        String ruta = "notes.csv";
+        // Lector d'arxiu per obrir i llegeix caràcter per caràcter l'arxiu de la ruta indicat
+        FileReader lectorArxiu = new FileReader(ruta);
+        // Lector de dades per llegir l'arxiu línia per línia en la ruta indicat
+        BufferedReader entrada = new BufferedReader(lectorArxiu);        
         
         // Mostrar aquest missatge amb el nombre d'exàmens
         System.out.printf("Càlcul de la mitjana de notes per %d exàmens%n", quantsExams);
@@ -42,18 +40,17 @@ public class Mitjana {
         // Llegir la segona línia
         linia = entrada.readLine();
         
-        // Si la segona línia és null
-        if (linia == null) {
-            // Mostrar aquest missatge
-            System.out.println("El fitxer notes.csv no conté cap nota.");
-            // Tancar el fitxer
-            entrada.close();
-            // Retornar
-            return;
-        }
 
         // Bucle infinit
         while (true) {
+            // Si la segona línia és null
+            if (linia == null) {
+                // Mostrar aquest missatge
+                System.out.println("El fitxer notes.csv no conté cap nota.");
+                // Retornar
+                return;
+            }
+
             // Converteix a un array la línia, 
             String[] notes = linia.split(",");
             
