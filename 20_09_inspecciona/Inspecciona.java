@@ -34,24 +34,23 @@ public class Inspecciona {
             // Mostra l'argument que es processa
             System.out.printf("Processant argument: %s%n%s%n", args[i], "=".repeat(21 + args[i].length()));
             
-            // Si el fitxer o directori no existeix
-            if (!fitxer.exists()) {
+            // Si el fitxer o directori existeix
+            if (fitxer.exists()) {
+                // Obtenir els permisos
+                obtenirPermisos(fitxer); 
+                
+                // Si es un fitxer obtenir el tipus i el contingut
+                if (fitxer.isFile()) processaFitxer(fitxer);
+                // Si es un directori obtenir el tipus i el contingut
+                if (fitxer.isDirectory()) processaDirectori(fitxer);
+                
+                // Mostrar l'inspecció
+                System.out.println(inspeccio + "\n");
+            // Del contrari
+            } else {            
                 // Mostrar aquest missatge
                 System.out.println("No trobat");        
             }
-            
-            // Obtenir els permisos
-            obtenirPermisos(fitxer); 
-            
-            // Si es un fitxer obtenir el tipus i el contingut
-            if (fitxer.isFile()) processaFitxer(fitxer);
-            // Si es un directori obtenir el tipus i el contingut
-            if (fitxer.isDirectory()) processaDirectori(fitxer);
-            
-            // Mostrar l'inspecció
-            System.out.println(inspeccio + "\n");
-            // Reiniciar inspecció
-            inspeccio = "";
         }
     }
     
