@@ -32,7 +32,7 @@ public class Inspecciona {
             File fitxer = new File(args[i]);
             
             // Mostra l'argument que es processa
-            System.out.printf("Processant argument: %s%n%s%n", args[i], "=".repeat(21 + args[i].length()));
+            mostraTitul(args[i]);
             
             // Si el fitxer o directori existeix
             if (fitxer.exists()) {
@@ -53,6 +53,14 @@ public class Inspecciona {
                 System.out.println("No trobat");        
             }
         }
+    }
+    
+    public static void mostraTitul(String arg) {
+        String titol = String.format("Processant argument: %s", arg);
+        String divisio = "=".repeat(titol.length());
+        
+        System.out.println(titol);
+        System.out.println(divisio);
     }
     
     public static void processaFitxer(File fitxer) throws IOException {
