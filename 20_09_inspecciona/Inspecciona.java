@@ -60,7 +60,7 @@ public class Inspecciona {
         String file = "";
         
         // Guardar el tipus en inspeccio
-        file += " fitxer ";
+        file += "fitxer ";
         
         // Si el fitxer té una longitud major a 0
         if (fitxer.length() > 0) {
@@ -94,7 +94,7 @@ public class Inspecciona {
         String directori = "";
         
         // Guardar el tipus en inspeccio
-        directori += " directori ";
+        directori += "directori ";
         
         // Crear un array de String amb list() 
         String[] contingut = fitxer.list();
