@@ -90,7 +90,7 @@ public class Inspecciona {
             // Guardar buit en inspeccio
             arxiu += "buit";
         }
-        System.out.print(arxiu);
+        System.out.println(arxiu);
     }
     
     public static void processaDirectori(File fitxer) {
@@ -121,7 +121,7 @@ public class Inspecciona {
             // Guardar buit en inspeccio
             directori += "buit";
         }
-        System.out.print(directori);
+        System.out.println(directori);
     }
     
     public static void obtenirPermisos(File fitxer) {
