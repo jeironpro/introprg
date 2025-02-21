@@ -82,18 +82,20 @@ public class Inspecciona {
             // Mostrar els continguts del fitxer
             System.out.printf("Amb els continguts:%n");
             
-            // Llegir el fitxer
-            BufferedReader lector = new BufferedReader(new FileReader(fitxer));
-        
-            // Bucle infinit
-            while (true) {
-                // Llegir la línia
-                String linia = lector.readLine();
-                // Si la línia és null retornar
-                if (linia == null) return;
-                
-                // Mostrar cada línia
-                System.out.printf("|%s|%n", linia);
+            if (fitxer.exists()) {
+                // Llegir el fitxer
+                BufferedReader lector = new BufferedReader(new FileReader(fitxer));
+            
+                // Bucle infinit
+                while (true) {
+                    // Llegir la línia
+                    String linia = lector.readLine();
+                    // Si la línia és null retornar
+                    if (linia == null) return;
+                    
+                    // Mostrar cada línia
+                    System.out.printf("|%s|%n", linia);
+                }
             }
         // Del contrari
         } else {
@@ -130,34 +132,13 @@ public class Inspecciona {
     }
     
     public static void obtenirPermisos(File fitxer) {
-        // Si el fitxer o directori té permis de lectura
-        if (fitxer.canRead()) {
-            // Mostrar el simbol de lectura
-            System.out.print("r");
-        // Del contrari
-        } else {
-            // Mostrar el simbol sense permis de lectura
-            System.out.print("-");
-        }
+        // Si el fitxer o directori té permis de lectura o no
+        System.out.print((fitxer.canRead()) ? "r" : "-");
         
-        // Si el fitxer o directori té permis d'escriptura
-        if (fitxer.canWrite()) {
-            // Mostrar el simbol d'escriptura
-            System.out.print("w");
-        // Del contrari
-        } else {
-            // Mostrar el simbol sense permis d'escriptura
-            System.out.print("-");
-        }
+        // Si el fitxer o directori té permis d'escriptura o no
+        System.out.print((fitxer.canWrite()) ? "w" : "-");
         
-        // Si el fitxer o directori té permis d'execució
-        if (fitxer.canExecute()) {
-            // Mostrar el simbol d'execució
-            System.out.print("x ");
-        // Del contrari
-        } else {
-            // Mostrar el simbol sense permis d'execució
-            System.out.print("- ");
-        }
+        // Si el fitxer o directori té permis d'execució o no
+        System.out.print((fitxer.canExecute()) ? "x" : "-");
     }
 }
