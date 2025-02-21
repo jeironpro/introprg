@@ -82,21 +82,20 @@ public class Inspecciona {
             // Mostrar els continguts del fitxer
             System.out.printf("Amb els continguts:%n");
             
-            if (fitxer.exists()) {
-                // Llegir el fitxer
-                BufferedReader lector = new BufferedReader(new FileReader(fitxer));
-            
-                // Bucle infinit
-                while (true) {
-                    // Llegir la línia
-                    String linia = lector.readLine();
-                    // Si la línia és null retornar
-                    if (linia == null) return;
-                    
-                    // Mostrar cada línia
-                    System.out.printf("|%s|%n", linia);
-                }
+            // Llegir el fitxer
+            BufferedReader lector = new BufferedReader(new FileReader(fitxer));
+        
+            // Bucle infinit
+            while (true) {
+                // Llegir la línia
+                String linia = lector.readLine();
+                // Si la línia és null retornar
+                if (linia == null) break;
+                
+                // Mostrar cada línia
+                System.out.printf("|%s|%n", linia);
             }
+            lector.close();
         // Del contrari
         } else {
             // Mostrar buit
