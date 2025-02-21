@@ -66,6 +66,8 @@ public class Inspecciona {
                 // Guardar la mida en inspeccio
                 inspeccio += String.format("de mida en bytes: %d%n", fitxer.length());
                 
+                inspeccio += String.format("Amb els continguts:%n");
+                
                 // Llegir el fitxer
                 BufferedReader lector = new BufferedReader(new FileReader(fitxer));
                 
