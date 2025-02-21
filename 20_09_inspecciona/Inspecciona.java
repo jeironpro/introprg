@@ -56,10 +56,10 @@ public class Inspecciona {
     }
     
     public static void mostraTitul(String arg) {
-        String titol = String.format("Processant argument: %s", arg);
-        String divisio = "=".repeat(titol.length());
+        final String TITOL = String.format("Processant argument: %s", arg);
+        String divisio = "=".repeat(TITOL.length());
         
-        System.out.println(titol);
+        System.out.println(TITOL);
         System.out.println(divisio);
     }
     
