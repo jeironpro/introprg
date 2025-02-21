@@ -29,7 +29,7 @@ public class Inspecciona {
             File fitxer = new File(args[i]);
             
             // Mostra l'argument que es processa
-            mostraTitol(args[i]);
+            mostraArgument(args[i]);
             
             // Si el fitxer o directori existeix
             if (fitxer.exists()) {
@@ -37,9 +37,20 @@ public class Inspecciona {
                 obtenirPermisos(fitxer); 
                 
                 // Si es un fitxer obtenir el tipus i el contingut
-                if (fitxer.isFile()) processaFitxer(fitxer);
+                if (fitxer.isFile()) {
+                    // Mostrar el tipus
+                    System.out.print("fitxer ");
+                    // Processar el fitxer
+                    processaFitxer(fitxer);
+                }
+                
                 // Si es un directori obtenir el tipus i el contingut
-                if (fitxer.isDirectory()) processaDirectori(fitxer);
+                if (fitxer.isDirectory()) {
+                    // Mostrar el tipus
+                    System.out.print("directori ");
+                    // Processa el directori
+                    processaDirectori(fitxer);
+                }
             // Del contrari
             } else {            
                 // Mostrar aquest missatge
@@ -48,56 +59,50 @@ public class Inspecciona {
         }
     }
     
-    // Mostra titol
-    public static void mostraTitol(String arg) {
-        String titol = String.format("Processant argument: %s", arg);
-        String divisio = "=".repeat(titol.length());
+    public static void mostraArgument(String arg) {
+        // Crear amb String format
+        String argument = String.format("Processant argument: %s", arg);
+        // Crear la divisió repetint el separador el num de vegades de la longitud de l'argument
+        String divisio = "=".repeat(argument.length());
         
-        System.out.println(titol);
+        // Mostrar l'argument que es processa
+        System.out.println(argument);
+        // Mostrar la divisió
         System.out.println(divisio);
+        // Fer un salt de línia
         System.out.println();
     }
     
     public static void processaFitxer(File fitxer) throws IOException {
-        // Guardar el tipus en inspeccio
-        System.out.print("fitxer ");
-        
         // Si el fitxer té una longitud major a 0
         if (fitxer.length() > 0) {
-            // Guardar la mida en inspeccio
+            // Mostrar la mida
             System.out.printf("de mida en bytes: %d%n", fitxer.length());
             
+            // Mostrar els continguts del fitxer
             System.out.printf("Amb els continguts:%n");
             
-            // Mostrar contingut del fitxer
-            mostraContingutFitxer(fitxer);
+            // Llegir el fitxer
+            BufferedReader lector = new BufferedReader(new FileReader(fitxer));
+        
+            // Bucle infinit
+            while (true) {
+                // Llegir la línia
+                String linia = lector.readLine();
+                // Si la línia és null retornar
+                if (linia == null) return;
+                
+                // Mostrar cada línia
+                System.out.printf("|%s|%n", linia);
+            }
         // Del contrari
         } else {
-            // Guardar buit en inspeccio
+            // Mostrar buit
             System.out.println("buit");
         }
     }
     
-    public static void mostraContingutFitxer(File fitxer) throws IOException {
-        // Llegir el fitxer
-        BufferedReader lector = new BufferedReader(new FileReader(fitxer));
-            
-        // Bucle infinit
-        while (true) {
-            // Llegir la línia
-            String linia = lector.readLine();
-            // Si la línia és null retornar
-            if (linia == null) return;
-            
-            // Guardar cada línia en inspeccio
-            System.out.printf("|%s|%n", linia);
-        }
-    }
-    
     public static void processaDirectori(File fitxer) {
-        // Guardar el tipus en inspeccio
-        System.out.print("directori ");
-        
         // Crear un array de String amb list() 
         String[] contingut = fitxer.list();
         // Ordenar l'array
@@ -105,54 +110,53 @@ public class Inspecciona {
         
         // Si el contingut és major a 0
         if (contingut.length > 0) {
-            // Guardar el primer element del directori en inspeccio
+            // Mostrar el primer element del directori
             System.out.printf("que conté: %s", contingut[0]);
             
             // Iterar el contigut
             for (int i = 1; i < contingut.length; i++) {
                 // Llegir cada element
                 String conte = contingut[i];
-                // Guardar l'element en inspeccio
+                // Mostrar l'element
                 System.out.printf(", %s", contingut[i]);
             }
+            // Fer un salt de línia
             System.out.println();
         // Del contrari
         } else {
-            // Guardar buit en inspeccio
+            // Mostrar buit
             System.out.print("buit");
         }
     }
     
     public static void obtenirPermisos(File fitxer) {
-        String permisos = "";
-        
         // Si el fitxer o directori té permis de lectura
         if (fitxer.canRead()) {
-            // Guardar el simbol de lectura en inspeccio
+            // Mostrar el simbol de lectura
             System.out.print("r");
         // Del contrari
         } else {
-            // Guardar el simbol sense permis de lectura
+            // Mostrar el simbol sense permis de lectura
             System.out.print("-");
         }
         
         // Si el fitxer o directori té permis d'escriptura
         if (fitxer.canWrite()) {
-            // Guardar el simbol d'escriptura en inspeccio
+            // Mostrar el simbol d'escriptura
             System.out.print("w");
         // Del contrari
         } else {
-            // Guardar el simbol sense permis d'escriptura
+            // Mostrar el simbol sense permis d'escriptura
             System.out.print("-");
         }
         
         // Si el fitxer o directori té permis d'execució
         if (fitxer.canExecute()) {
-            // Guardar el simbol d'execució en inspeccio
+            // Mostrar el simbol d'execució
             System.out.print("x ");
         // Del contrari
         } else {
-            // Guardar el simbol sense permis d'execució
+            // Mostrar el simbol sense permis d'execució
             System.out.print("- ");
         }
     }
