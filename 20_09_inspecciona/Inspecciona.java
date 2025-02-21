@@ -70,7 +70,6 @@ public class Inspecciona {
             
             // Mostrar contingut del fitxer
             mostraContingutFitxer(fitxer);
-            System.out.println();
         // Del contrari
         } else {
             // Guardar buit en inspeccio
@@ -115,6 +114,7 @@ public class Inspecciona {
                 // Guardar l'element en inspeccio
                 System.out.printf(", %s", contingut[i]);
             }
+            System.out.println();
         // Del contrari
         } else {
             // Guardar buit en inspeccio
