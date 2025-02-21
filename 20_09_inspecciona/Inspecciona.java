@@ -95,6 +95,7 @@ public class Inspecciona {
                 // Mostrar cada línia
                 System.out.printf("|%s|%n", linia);
             }
+            // Tancar el fitxer
             lector.close();
         // Del contrari
         } else {
