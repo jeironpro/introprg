@@ -46,6 +46,7 @@ public class Inspecciona {
                 
                 // Mostrar l'inspecció
                 System.out.println(inspeccio + "\n");
+                inspeccio = "";
             // Del contrari
             } else {            
                 // Mostrar aquest missatge
