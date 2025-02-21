@@ -139,6 +139,6 @@ public class Inspecciona {
         System.out.print((fitxer.canWrite()) ? "w" : "-");
         
         // Si el fitxer o directori té permis d'execució o no
-        System.out.print((fitxer.canExecute()) ? "x" : "-");
+        System.out.print((fitxer.canExecute()) ? "x " : "- ");
     }
 }
