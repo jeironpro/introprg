@@ -22,9 +22,6 @@ import java.io.File;
 import java.util.Arrays;
 
 public class Inspecciona {
-    // Variable global que guarda l'inspecció del fitxer o directori 
-    private static String inspeccio = "";
-    
     public static void main(String[] args) throws IOException {
         // Processar arguments
         for (int i = 0; i < args.length; i++) {
@@ -43,10 +40,6 @@ public class Inspecciona {
                 if (fitxer.isFile()) processaFitxer(fitxer);
                 // Si es un directori obtenir el tipus i el contingut
                 if (fitxer.isDirectory()) processaDirectori(fitxer);
-                
-                // Mostrar l'inspecció
-                System.out.println(inspeccio + "\n");
-                inspeccio = "";
             // Del contrari
             } else {            
                 // Mostrar aquest missatge
@@ -64,15 +57,17 @@ public class Inspecciona {
     }
     
     public static void processaFitxer(File fitxer) throws IOException {
+        String file = "";
+        
         // Guardar el tipus en inspeccio
-        inspeccio += " fitxer ";
+        file += " fitxer ";
         
         // Si el fitxer té una longitud major a 0
         if (fitxer.length() > 0) {
             // Guardar la mida en inspeccio
-            inspeccio += String.format("de mida en bytes: %d%n", fitxer.length());
+            file += String.format("de mida en bytes: %d%n", fitxer.length());
             
-            inspeccio += String.format("Amb els continguts:%n");
+            file += String.format("Amb els continguts:%n");
             
             // Llegir el fitxer
             BufferedReader lector = new BufferedReader(new FileReader(fitxer));
@@ -85,18 +80,21 @@ public class Inspecciona {
                 if (linia == null) return;
                 
                 // Guardar cada línia en inspeccio
-                inspeccio += String.format("|%s|%n", linia);
+                file += String.format("|%s|%n", linia);
             }
         // Del contrari
         } else {
             // Guardar buit en inspeccio
-            inspeccio += "buit";
+            file += "buit";
         }
+        System.out.println(file);
     }
     
     public static void processaDirectori(File fitxer) {
+        String directori = "";
+        
         // Guardar el tipus en inspeccio
-        inspeccio += " directori ";
+        directori += " directori ";
         
         // Crear un array de String amb list() 
         String[] contingut = fitxer.list();
@@ -106,51 +104,55 @@ public class Inspecciona {
         // Si el contingut és major a 0
         if (contingut.length > 0) {
             // Guardar el primer element del directori en inspeccio
-            inspeccio += String.format("que conté: %s", contingut[0]);
+            directori += String.format("que conté: %s", contingut[0]);
             
             // Iterar el contigut
             for (int i = 1; i < contingut.length; i++) {
                 // Llegir cada element
                 String conte = contingut[i];
                 // Guardar l'element en inspeccio
-                inspeccio += String.format(", %s", contingut[i]);
+                directori += String.format(", %s", contingut[i]);
             }
         // Del contrari
         } else {
             // Guardar buit en inspeccio
-            inspeccio += "buit";
+            directori += "buit";
         }
+        System.out.println(directori);
     }
     
     public static void obtenirPermisos(File fitxer) {
+        String permisos = "";
+        
         // Si el fitxer o directori té permis de lectura
         if (fitxer.canRead()) {
             // Guardar el simbol de lectura en inspeccio
-            inspeccio += "r";
+            permisos += "r";
         // Del contrari
         } else {
             // Guardar el simbol sense permis de lectura
-            inspeccio += "-";
+            permisos += "-";
         }
         
         // Si el fitxer o directori té permis d'escriptura
         if (fitxer.canWrite()) {
             // Guardar el simbol d'escriptura en inspeccio
-            inspeccio += "w";
+            permisos += "w";
         // Del contrari
         } else {
             // Guardar el simbol sense permis d'escriptura
-            inspeccio += "-";
+            permisos += "-";
         }
         
         // Si el fitxer o directori té permis d'execució
         if (fitxer.canExecute()) {
             // Guardar el simbol d'execució en inspeccio
-            inspeccio += "x";
+            permisos += "x";
         // Del contrari
         } else {
             // Guardar el simbol sense permis d'execució
-            inspeccio += "-";
+            permisos += "-";
         }
+        System.out.printf("%s ", permisos);
     }
 }
