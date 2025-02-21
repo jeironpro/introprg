@@ -55,6 +55,7 @@ public class Inspecciona {
         
         System.out.println(titol);
         System.out.println(divisio);
+        System.out.println();
     }
     
     public static void processaFitxer(File fitxer) throws IOException {
