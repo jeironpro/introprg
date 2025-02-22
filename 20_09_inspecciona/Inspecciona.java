@@ -109,7 +109,7 @@ public class Inspecciona {
         // Del contrari
         } else {
             // Mostrar buit
-            System.out.println("buit\n");
+            System.out.println("buit");
         }
     }
     
@@ -164,7 +164,7 @@ public class Inspecciona {
         // Del contrari
         } else {
             // Mostrar buit
-            System.out.print("buit");
+            System.out.println("buit");
         }
     }
     
