@@ -175,8 +175,6 @@ public class Inspecciona {
                 // Mostrar l'element
                 System.out.printf(", %s", contingut[i]);
             }
-            // Fer un salt de línia
-            System.out.println();
         // Del contrari
         } else {
             // Mostrar buit
