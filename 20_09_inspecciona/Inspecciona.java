@@ -79,7 +79,6 @@ public class Inspecciona {
             // Mostrar la mida
             System.out.printf("de mida en bytes: %d%n", fitxer.length());
             
-            
             // Verifica extensió
             boolean obrir = verificaExtensio(ruta);
             
@@ -87,23 +86,7 @@ public class Inspecciona {
             if (obrir) {
                 // Mostrar els continguts del fitxer
                 System.out.printf("Amb els continguts:%n");
-                // Llegir el fitxer
-                BufferedReader lector = new BufferedReader(new FileReader(fitxer));
-            
-                // Bucle infinit
-                while (true) {
-                    // Llegir la línia
-                    String linia = lector.readLine();
-                    // Si la línia és null retornar
-                    if (linia == null) break;
-                    
-                    // Mostrar cada línia
-                    System.out.printf("|%s|%n", linia);
-                }
-                // Fer un salt de línia
-                System.out.println();
-                // Tancar el fitxer
-                lector.close();            
+                mostraContingutFitxer(fitxer);           
             }
             
         // Del contrari
@@ -113,30 +96,64 @@ public class Inspecciona {
         }
     }
     
+    // Simplificat
     public static boolean verificaExtensio(String ruta) {
+        // Array amb les extensions conegudes
         String[] extensions = new String[] {"txt", "csv", "xml", "html", "yaml", "json"};
+        // Obtenir l'extensió amb el mòdul obtenirExtensio(li passem ruta com argument)
         String extensio = obtenirExtensio(ruta);
         
+        // Iterar les extensions
         for (int i = 0; i < extensions.length; i++) {
+            // Si la extensió és igual a una de les extensions conegudes
             if (extensions[i].equals(extensio)) {
+                // Retornar true
                 return true;
             }
         }
+        // Retornar false
         return false;
     }
     
+    public static void mostraContingutFitxer(File fitxer) throws IOException {
+        // Llegir el fitxer
+        BufferedReader lector = new BufferedReader(new FileReader(fitxer));
+    
+        // Bucle infinit
+        while (true) {
+            // Llegir la línia
+            String linia = lector.readLine();
+            // Si la línia és null retornar
+            if (linia == null) break;
+            
+            // Mostrar cada línia
+            System.out.printf("|%s|%n", linia);
+        }
+        // Tancar el fitxer
+        lector.close(); 
+    }
+    
+    // Simplificat
     public static String obtenirExtensio(String ruta) {
+        // Strin buit pel extensió
         String extensio = "";
         
+        // Iterar la ruta de manera decreixent
         for (int i = ruta.length()-1; i >= 0; i--) {
+            // Agafar el caràcter en la posició de i 
             char c = ruta.charAt(i);
             
+            // Si el caràcter és diferent a '.'
             if (c != '.') {
+                // Guardar el caràcter en extensió
                 extensio += c;
+            // Del contrari
             } else {
+                // Aturar el bucle
                 break;
             }
         }
+        // Retornar l'extensió
         return extensio;
     }
     
