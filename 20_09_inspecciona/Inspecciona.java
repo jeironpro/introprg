@@ -41,7 +41,7 @@ public class Inspecciona {
                     // Mostrar el tipus
                     System.out.print("fitxer ");
                     // Processar el fitxer
-                    processaFitxer(fitxer);
+                    processaFitxer(fitxer, args[i]);
                 }
                 
                 // Si es un directori obtenir el tipus i el contingut
@@ -73,7 +73,7 @@ public class Inspecciona {
         System.out.println();
     }
     
-    public static void processaFitxer(File fitxer) throws IOException {
+    public static void processaFitxer(File fitxer, String ruta) throws IOException {
         // Si el fitxer té una longitud major a 0
         if (fitxer.length() > 0) {
             // Mostrar la mida
@@ -82,26 +82,45 @@ public class Inspecciona {
             // Mostrar els continguts del fitxer
             System.out.printf("Amb els continguts:%n");
             
-            // Llegir el fitxer
-            BufferedReader lector = new BufferedReader(new FileReader(fitxer));
-        
-            // Bucle infinit
-            while (true) {
-                // Llegir la línia
-                String linia = lector.readLine();
-                // Si la línia és null retornar
-                if (linia == null) break;
-                
-                // Mostrar cada línia
-                System.out.printf("|%s|%n", linia);
+            // Verifica extensió
+            boolean obrir = verificaExtensio(ruta);
+            
+            // Si és una extensió coneguda
+            if (obrir) {
+                // Llegir el fitxer
+                BufferedReader lector = new BufferedReader(new FileReader(fitxer));
+            
+                // Bucle infinit
+                while (true) {
+                    // Llegir la línia
+                    String linia = lector.readLine();
+                    // Si la línia és null retornar
+                    if (linia == null) break;
+                    
+                    // Mostrar cada línia
+                    System.out.printf("|%s|%n", linia);
+                }
+                // Tancar el fitxer
+                lector.close();            
             }
-            // Tancar el fitxer
-            lector.close();
+            
         // Del contrari
         } else {
             // Mostrar buit
             System.out.println("buit");
         }
+    }
+    
+    public static boolean verificaExtensio(String ruta) {
+        String[] extensions = new String[] {"txt", "csv", "xml", "html", "yaml", "json"};
+        String[] extensio = ruta.split(".");
+        
+        for (int i = 0; i < extensions.length; i++) {
+            if (extensions[i].equals(extensio[1])) {
+                return true;
+            }
+        }
+        return false;
     }
     
     public static void processaDirectori(File fitxer) {
