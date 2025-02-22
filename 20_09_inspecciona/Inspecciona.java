@@ -79,14 +79,14 @@ public class Inspecciona {
             // Mostrar la mida
             System.out.printf("de mida en bytes: %d%n", fitxer.length());
             
-            // Mostrar els continguts del fitxer
-            System.out.printf("Amb els continguts:%n");
             
             // Verifica extensió
             boolean obrir = verificaExtensio(ruta);
             
             // Si és una extensió coneguda
             if (obrir) {
+                // Mostrar els continguts del fitxer
+                System.out.printf("Amb els continguts:%n");
                 // Llegir el fitxer
                 BufferedReader lector = new BufferedReader(new FileReader(fitxer));
             
@@ -113,14 +113,30 @@ public class Inspecciona {
     
     public static boolean verificaExtensio(String ruta) {
         String[] extensions = new String[] {"txt", "csv", "xml", "html", "yaml", "json"};
-        String[] extensio = ruta.split(".");
+        String extensio = obtenirExtensio(ruta);
         
         for (int i = 0; i < extensions.length; i++) {
-            if (extensions[i].equals(extensio[1])) {
+            if (extensions[i].equals(extensio)) {
                 return true;
             }
         }
         return false;
+    }
+    
+    public static String obtenirExtensio(String ruta) {
+        String extensio = "";
+        
+        for (int i = 0; i < ruta.length(); i++) {
+            char c = ruta.charAt(i);
+            
+            if (c == '.') {
+                for (int j = i+1; j < ruta.length(); j++) {
+                    extensio += ruta.charAt(j);
+                }
+                return extensio;
+            }
+        }
+        return "";
     }
     
     public static void processaDirectori(File fitxer) {
