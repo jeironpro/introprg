@@ -100,6 +100,7 @@ public class Inspecciona {
                     // Mostrar cada línia
                     System.out.printf("|%s|%n", linia);
                 }
+                System.out.println();
                 // Tancar el fitxer
                 lector.close();            
             }
