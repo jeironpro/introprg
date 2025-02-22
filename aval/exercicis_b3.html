@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Resum de resultats</title>
+    <style>
+      div.title-container { display: flex; align-items: center; }
+      h1 { margin-left: 10px; }
+      img { height: 5em; vertical-align: middle; }
+
+      tr.exercise:hover { background-color: #f5f5f5; }
+      th, td { font-weight: normal; padding: 5px 2px; }
+      th { background-color: #1d96b2; color: white; }
+      td { border-bottom: 1px solid #ddd; }
+      tr.header th:first-child { border-top-left-radius: 5px; }
+      tr.header th:last-child { border-top-right-radius: 5px; }
+
+      .questionable { cursor: help; }
+      span.help { cursor: help; }
+      td.attributes { text-align: center; white-space: nowrap; font-size: .6em;}
+      td.result     { text-align: center; padding: .5em; }
+      span.activeattrib { color: blue; font-weight:bolder; text-shadow: 1px 1px 2px #000000; cursor: help;}
+      span.innactiveattrib { color: lightgrey; font-weight: lighter; cursor: help;}
+      a.discrete:link, a.discrete:visited { color: black; text-decoration: none; }
+
+      span.tooltip {
+          background-color: #fffffa;
+          padding: 10px;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+          position: absolute;
+          z-index: 1;
+      }
+      span.clickable { cursor: pointer; }
+      #entry1 { position: relative; }
+      td.overdue { color: grey; font-style: italic; }
+      div.important {
+          background-color: yellow;
+          border: 2px solid grey; /* You can adjust the border color as desired */
+          box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.5); /* Adjust the shadow properties for desired effect */
+          padding: 10px; /* Adjust padding as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-container">
+        <a class="discrete" href="https://gatrenat.github.io/introprgdev/">
+            <img src="https://gatrenat.github.io/introprg//_static/logoprg.png" alt="logo" title="obre els apunts">
+        </a>
+        <h1>Resultats de la correcció automàtica</h1>
+    </div>
+    <p>Hola jeiron</p><p>Aquest és un resum dels resultats de la correcció automàtica dels exercicis del teu repositori: <tt>git@github.com:jeironEC/introprg.git</b>.</tt><table>
+        <tr class="header">
+          <th colspan=2>Exercici</th>
+          <th class="questionable" title="Data límit del lliurament">data límit</th>
+          <th colspan=2>Resultat</th>
+        </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_01_mazegame.html">30_01_mazegame</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_02_propietats.html">30_02_propietats</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_03_ascensor.html">30_03_ascensor</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_04_mutabilitat.html">30_04_mutabilitat</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_05_puja.html">30_05_puja</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_06_multiples.html">30_06_multiples</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_07_ascensors.html">30_07_ascensors</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_08_extern.html">30_08_extern</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_09_extern.html">30_09_extern</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_10_posicio.html">30_10_posicio</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_11_moviment.html">30_11_moviment</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_12_protegides.html">30_12_protegides</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_13_posicio_correcta.html">30_13_posicio_correcta</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_14_ascensor_protegit.html">30_14_ascensor_protegit</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_15_com_esta.html">30_15_com_esta</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_16_ascensor_informatiu.html">30_16_ascensor_informatiu</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_17_ensinistrat.html">30_17_ensinistrat</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_18_assessinable.html">30_18_assessinable</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_19_interactiu.html">30_19_interactiu</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="activeattrib" title="Exercici amb proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+        <tr class="exercise">
+            <td><a class="discrete" target="_blank" title="obre l'enunciat" href="https://gatrenat.github.io/introprg/exercici_30_20_classes_i_objectes.html">30_20_classes_i_objectes</a></td>
+            <td class="attributes">
+              <span class="innactiveattrib" title="Exercici no optatiu">☼</span>
+              <span class="innactiveattrib" title="Exercici amb complexitat estàndard">☆</span>
+              <span class="innactiveattrib" title="Exercici sense proves automàtiques">✓</span>
+            </td>
+            <td>&nbsp;</td>
+            <td class="result">
+               <span class='help' title="NP">✖</span>
+            </td>
+            <td>
+              <span>No lliurat</span>
+                          </td>
+          </tr>
+              </table><p>Darrer commit avaluat #N/A amb data N/A</p><script>
+      // connect results to tooltip
+      document.querySelectorAll('tr.exercise').forEach(function (tr) {
+          const button = tr.querySelector('span.clickable');
+          if (button != null) {
+              button.textContent = "…";
+              button.title = "Click per mostrar detalls";
+              const tooltip = tr.querySelector('span.tooltip');
+              tooltip.style.display = "none";
+              button.addEventListener("click", function () {
+                  if (tooltip.style.display == "inline") {
+                      hideTooltip(tr);
+                  } else {
+                      document.querySelectorAll('span.tooltip:not(hidden)').forEach(function (span) {
+                          hideTooltip(span.parentNode.parentNode);
+                      });
+                      showTooltip(tr);
+                  }
+              })
+          }
+      });
+      // mark due entries as overdue
+      document.querySelectorAll('td[duedate]').forEach(td => {
+          const dueDate = new Date(td.getAttribute('duedate'));
+          const currentDate = new Date();
+          if (dueDate < currentDate) {
+              td.classList.add('overdue');
+              td.classList.add('questionable');
+              td.title = "Superada la data límit de l'exercici";
+          }
+      });
+      function hideTooltip(tr) {
+          const button = tr.querySelector('span.clickable');
+          button.textContent = "…";
+          button.title = "Click per mostrar detalls";
+          const tooltip = tr.querySelector('span.tooltip');
+          tooltip.style.display = "none";
+      }
+      function showTooltip(tr) {
+          const button = tr.querySelector('span.clickable');
+          button.title = "Click per ocultar detalls";
+          button.textContent = "→";
+          const tooltip = tr.querySelector('span.tooltip');
+          tooltip.style.display = "inline";
+      }
+    </script>
+  </body>
+</html>
