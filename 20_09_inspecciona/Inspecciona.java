@@ -59,6 +59,7 @@ public class Inspecciona {
         }
     }
     
+    // Simplificat
     public static void mostraArgument(String arg) {
         // Crear amb String format
         String argument = String.format("Processant argument: %s", arg);
@@ -69,10 +70,9 @@ public class Inspecciona {
         System.out.println(argument);
         // Mostrar la divisió
         System.out.println(divisio);
-        // Fer un salt de línia
-        System.out.println();
     }
     
+    // Simplificat
     public static void processaFitxer(File fitxer, String ruta) throws IOException {
         // Si el fitxer té una longitud major a 0
         if (fitxer.length() > 0) {
@@ -88,7 +88,6 @@ public class Inspecciona {
                 System.out.printf("Amb els continguts:%n");
                 mostraContingutFitxer(fitxer);           
             }
-            
         // Del contrari
         } else {
             // Mostrar buit
@@ -115,6 +114,7 @@ public class Inspecciona {
         return false;
     }
     
+    // Simplificat
     public static void mostraContingutFitxer(File fitxer) throws IOException {
         // Llegir el fitxer
         BufferedReader lector = new BufferedReader(new FileReader(fitxer));
