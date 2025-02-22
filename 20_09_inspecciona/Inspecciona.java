@@ -128,17 +128,16 @@ public class Inspecciona {
     public static String obtenirExtensio(String ruta) {
         String extensio = "";
         
-        for (int i = 0; i < ruta.length(); i++) {
+        for (int i = ruta.length()-1; i >= 0; i--) {
             char c = ruta.charAt(i);
             
-            if (c == '.') {
-                for (int j = i+1; j < ruta.length(); j++) {
-                    extensio += ruta.charAt(j);
-                }
-                return extensio;
+            if (c != '.') {
+                extensio += c;
+            } else {
+                break;
             }
         }
-        return "";
+        return extensio;
     }
     
     public static void processaDirectori(File fitxer) {
@@ -152,7 +151,7 @@ public class Inspecciona {
             // Mostrar el primer element del directori
             System.out.printf("que conté: %s", contingut[0]);
             
-            // Iterar el contigut
+            // Iterar els contiguts
             for (int i = 1; i < contingut.length; i++) {
                 // Llegir cada element
                 String conte = contingut[i];
@@ -168,6 +167,7 @@ public class Inspecciona {
         }
     }
     
+    // Simplificat
     public static void obtenirPermisos(File fitxer) {
         // Si el fitxer o directori té permis de lectura o no
         System.out.print((fitxer.canRead()) ? "r" : "-");
