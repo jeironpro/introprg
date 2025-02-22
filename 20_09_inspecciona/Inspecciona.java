@@ -129,7 +129,7 @@ public class Inspecciona {
     
     public static boolean verificaExtensio(String ruta) {
         // Array amb les extensions conegudes
-        String[] extensions = new String[] {"txt", "java", "csv", "xml", "html", "yaml", "json"};
+        String[] extensions = new String[] {"txt", "java"};
         // Obtenir l'extensió amb el mòdul obtenirExtensio(li passem ruta com argument)
         String extensio = obtenirExtensio(ruta);
         
