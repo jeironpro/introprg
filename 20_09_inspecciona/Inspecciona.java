@@ -59,7 +59,6 @@ public class Inspecciona {
         }
     }
     
-    // Simplificat
     public static void mostraArgument(String arg) {
         // Crear amb String format
         String argument = String.format("Processant argument: %s", arg);
@@ -72,7 +71,17 @@ public class Inspecciona {
         System.out.println(divisio);
     }
     
-    // Simplificat
+    public static void obtenirPermisos(File fitxer) {
+        // Si el fitxer o directori té permis de lectura o no
+        System.out.print((fitxer.canRead()) ? "r" : "-");
+        
+        // Si el fitxer o directori té permis d'escriptura o no
+        System.out.print((fitxer.canWrite()) ? "w" : "-");
+        
+        // Si el fitxer o directori té permis d'execució o no
+        System.out.print((fitxer.canExecute()) ? "x " : "- ");
+    }
+    
     public static void processaFitxer(File fitxer, String ruta) throws IOException {
         // Si el fitxer té una longitud major a 0
         if (fitxer.length() > 0) {
@@ -95,45 +104,6 @@ public class Inspecciona {
         }
     }
     
-    // Simplificat
-    public static boolean verificaExtensio(String ruta) {
-        // Array amb les extensions conegudes
-        String[] extensions = new String[] {"txt", "csv", "xml", "html", "yaml", "json"};
-        // Obtenir l'extensió amb el mòdul obtenirExtensio(li passem ruta com argument)
-        String extensio = obtenirExtensio(ruta);
-        
-        // Iterar les extensions
-        for (int i = 0; i < extensions.length; i++) {
-            // Si la extensió és igual a una de les extensions conegudes
-            if (extensions[i].equals(extensio)) {
-                // Retornar true
-                return true;
-            }
-        }
-        // Retornar false
-        return false;
-    }
-    
-    // Simplificat
-    public static void mostraContingutFitxer(File fitxer) throws IOException {
-        // Llegir el fitxer
-        BufferedReader lector = new BufferedReader(new FileReader(fitxer));
-    
-        // Bucle infinit
-        while (true) {
-            // Llegir la línia
-            String linia = lector.readLine();
-            // Si la línia és null retornar
-            if (linia == null) break;
-            
-            // Mostrar cada línia
-            System.out.printf("|%s|%n", linia);
-        }
-        // Tancar el fitxer
-        lector.close(); 
-    }
-    
-    // Simplificat
     public static String obtenirExtensio(String ruta) {
         // Strin buit pel extensió
         String extensio = "";
@@ -157,6 +127,42 @@ public class Inspecciona {
         return extensio;
     }
     
+    public static boolean verificaExtensio(String ruta) {
+        // Array amb les extensions conegudes
+        String[] extensions = new String[] {"txt", "csv", "xml", "html", "yaml", "json"};
+        // Obtenir l'extensió amb el mòdul obtenirExtensio(li passem ruta com argument)
+        String extensio = obtenirExtensio(ruta);
+        
+        // Iterar les extensions
+        for (int i = 0; i < extensions.length; i++) {
+            // Si la extensió és igual a una de les extensions conegudes
+            if (extensions[i].equals(extensio)) {
+                // Retornar true
+                return true;
+            }
+        }
+        // Retornar false
+        return false;
+    }
+    
+    public static void mostraContingutFitxer(File fitxer) throws IOException {
+        // Llegir el fitxer
+        BufferedReader lector = new BufferedReader(new FileReader(fitxer));
+    
+        // Bucle infinit
+        while (true) {
+            // Llegir la línia
+            String linia = lector.readLine();
+            // Si la línia és null retornar
+            if (linia == null) break;
+            
+            // Mostrar cada línia
+            System.out.printf("|%s|%n", linia);
+        }
+        // Tancar el fitxer
+        lector.close(); 
+    }
+    
     public static void processaDirectori(File fitxer) {
         // Crear un array de String amb list() 
         String[] contingut = fitxer.list();
@@ -165,18 +171,8 @@ public class Inspecciona {
         
         // Si el contingut és major a 0
         if (contingut.length > 0) {
-            // Mostrar el primer element del directori
-            System.out.printf("que conté: %s", contingut[0]);
-            
-            // Iterar els contiguts
-            for (int i = 1; i < contingut.length; i++) {
-                // Llegir cada element
-                String conte = contingut[i];
-                // Mostrar l'element
-                System.out.printf(", %s", contingut[i]);
-            }
-            // Fer un salt de línia
-            System.out.println();
+            // Mostrar el contingut del directori
+            mostraContingutDirectori(contingut);
         // Del contrari
         } else {
             // Mostrar buit
@@ -184,15 +180,18 @@ public class Inspecciona {
         }
     }
     
-    // Simplificat
-    public static void obtenirPermisos(File fitxer) {
-        // Si el fitxer o directori té permis de lectura o no
-        System.out.print((fitxer.canRead()) ? "r" : "-");
+    public static void mostraContingutDirectori(String[] contingut) {
+        // Mostrar el primer element del directori
+        System.out.printf("que conté: %s", contingut[0]);
         
-        // Si el fitxer o directori té permis d'escriptura o no
-        System.out.print((fitxer.canWrite()) ? "w" : "-");
-        
-        // Si el fitxer o directori té permis d'execució o no
-        System.out.print((fitxer.canExecute()) ? "x " : "- ");
+        // Iterar els contiguts
+        for (int i = 1; i < contingut.length; i++) {
+            // Llegir cada element
+            String conte = contingut[i];
+            // Mostrar l'element
+            System.out.printf(", %s", contingut[i]);
+        }
+        // Fer un salt de línia
+        System.out.println();
     }
 }
