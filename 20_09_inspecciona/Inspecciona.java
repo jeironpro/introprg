@@ -100,6 +100,7 @@ public class Inspecciona {
                     // Mostrar cada línia
                     System.out.printf("|%s|%n", linia);
                 }
+                // Fer un salt de línia
                 System.out.println();
                 // Tancar el fitxer
                 lector.close();            
@@ -108,7 +109,7 @@ public class Inspecciona {
         // Del contrari
         } else {
             // Mostrar buit
-            System.out.println("buit");
+            System.out.println("buit\n");
         }
     }
     
