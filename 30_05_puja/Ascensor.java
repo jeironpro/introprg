@@ -17,8 +17,8 @@ public class Ascensor {
     public static void main(String[] args) {
         // Instancia de la clase Ascensor
         Ascensor ascensor = new Ascensor();
-        // Mostrar on es troba l'ascensor
-        System.out.println("L'ascensor està a la planta " + ascensor.pis);
+        // Mostrar on es troba l'ascensor inicialment
+        System.out.println("L'ascensor inicialment està a la planta " + ascensor.pis);
         // Cridar el procediment que puja l'ascensor
         puja(ascensor);
         // Mostrar la nova posició de l'ascensor
