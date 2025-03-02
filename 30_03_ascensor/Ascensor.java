@@ -11,6 +11,6 @@ public class Ascensor {
         // Instancia de la classe Ascensor
         Ascensor ascensor = new Ascensor();
         // Mostrar on es troba l'ascensor
-        System.out.println("L'ascensor está a la planta " + ascensor.pis);
+        System.out.println("L'ascensor està a la planta " + ascensor.pis);
     } 
 }
