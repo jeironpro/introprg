@@ -11,14 +11,12 @@ public class UsaAscensor {
         System.out.println("Pis inicial: " + ascensor.getPis());
         // Mostrar el valor inicial de la propietat moviment des de el mòdul getMoviment de la classe Ascensor
         System.out.println("Moviment inicial: " + ascensor.getMoviment());
-        if (args.length >= 2) {
-            if (UtilString.esEnter(args[0])) {
-                // Setear el nou pis
-                ascensor.setPis(Integer.parseInt(args[0]));
-            }
-            // Setear el nou moviment
-            ascensor.setMoviment(args[1]);
+        if (UtilString.esEnter(args[0])) {
+            // Setear el nou pis
+            ascensor.setPis(Integer.parseInt(args[0]));
         }
+        // Setear el nou moviment
+        ascensor.setMoviment(args[1]);
         
         // Mostrar el valor final de la propietat pis des de el mòdul getPis
         System.out.println("Pis final: " + ascensor.getPis());
