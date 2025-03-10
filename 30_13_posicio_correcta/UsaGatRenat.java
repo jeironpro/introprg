@@ -16,6 +16,6 @@ public class UsaGatRenat {
         // Setear la nova posicio
         renat.setPosicio(Entrada.readLine());
         // Mostrar el valor canviat de la propietat posicio des de el mòdul getPosicio
-        System.out.println("La posició final: " + renat.getPosicio());
+        System.out.println("Posició final: " + renat.getPosicio());
     }
 }
