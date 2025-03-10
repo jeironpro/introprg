@@ -30,12 +30,12 @@ public class Ascensor {
     }
     
     // Mòdul que permet modificar a la propietat moviment des de fora
-    public void setMoviment(String mov) {
+    public void setMoviment(String nouMov) {
         String[] moviments = new String[] {"aturat", "pujant", "baixant"};
         
         for (int i = 0; i < moviments.length; i++) {
-            if (mov.equals(moviments[i])) {
-                moviment = mov;
+            if (nouMov.equals(moviments[i])) {
+                moviment = nouMov;
             }
         }
     }
