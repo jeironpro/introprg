@@ -23,10 +23,16 @@ public class Ascensor {
     }
 
     public static void main(String[] args) {
+        // Si hi ha més de un argument
+        // si l'argument no és pot convertir a enter
+        // el enter es menor a 0
         if (args.length > 1 || !UtilString.esEnter(args[0]) || Integer.parseInt(args[0]) <= 0) {
+            // Mostrar aquest missatge
             System.out.println("Cap ascensor");
+            // Retornar
             return;
         }
+        
         // Agafar el primer argument de la línea de comanda
         int quants = Integer.parseInt(args[0]);
         // Cridar al módul que crea l'array d'ascensors
