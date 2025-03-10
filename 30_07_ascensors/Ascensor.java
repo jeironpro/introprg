@@ -23,8 +23,7 @@ public class Ascensor {
     }
 
     public static void main(String[] args) {
-        if (!UtilString.esEnter(args[0])) return;
-        if (Integer.parseInt(args[0]) <= 0) {
+        if (!UtilString.esEnter(args[0]) || Integer.parseInt(args[0]) <= 0) {
             System.out.println("Cap ascensor");
             return;
         }
