@@ -23,6 +23,10 @@ public class Ascensor {
     }
 
     public static void main(String[] args){
+        if (Integer.parseInt(args[0]) <= 0) {
+            System.out.println("Cap ascensor");
+            return;
+        }
         // Agafar el primer argument de la línea de comanda
         int quants = Integer.parseInt(args[0]);
         // Cridar al módul que crea l'array d'ascensors
