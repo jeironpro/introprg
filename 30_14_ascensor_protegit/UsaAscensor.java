@@ -11,7 +11,7 @@ public class UsaAscensor {
         System.out.println("Pis inicial: " + ascensor.getPis());
         // Mostrar el valor inicial de la propietat moviment des de el mòdul getMoviment de la classe Ascensor
         System.out.println("Moviment inicial: " + ascensor.getMoviment());
-        if (args.length == 2) {
+        if (args.length >= 2) {
             if (UtilString.esEnter(args[0])) {
                 // Setear el nou pis
                 ascensor.setPis(Integer.parseInt(args[0]));
