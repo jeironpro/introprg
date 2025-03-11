@@ -1,5 +1,5 @@
 /*
- * Programa que conté una classe i propietats 
+ * Programa que conté una classe i propietats que s' utilitzaren des de fora
  */
 
 public class GatRenat {
