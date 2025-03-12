@@ -18,24 +18,24 @@ public class Ascensor {
     // Propietat private moviment
     private String moviment = "aturat";
     
-    // Mòdul que permet accedeix a la propietat pis des de fora
+    // Mètode accessor que permet accedeix a la propietat pis des de fora
     public int getPis() {
         return pis;
     }
     
-    // Mòdul que permet modificar a la propietat pis des de fora
+    // Mètode accessor que permet modificar a la propietat pis des de fora
     public void setPis(int nouPis) {
         if (nouPis >= -1 && nouPis <= 10) {
             pis = nouPis;
         }
     }
     
-    // Mòdul que permet accedeix a la propietat moviment des de fora
+    // Mètode accessor que permet accedeix a la propietat moviment des de fora
     public String getMoviment() {
         return moviment;
     }
     
-    // Mòdul que permet modificar a la propietat moviment des de fora
+    // Mètode accessor que permet modificar a la propietat moviment des de fora
     public void setMoviment(String nouMov) {
         String[] moviments = new String[] {"aturat", "pujant", "baixant"};
         
@@ -46,7 +46,7 @@ public class Ascensor {
         }
     }
     
-    // Mòdul que verifica si l'ascensor està abaix
+    // Mètode que verifica si l'ascensor està abaix
     public boolean esAbaix() {
         if (pis == -1) {
             return true;
@@ -54,7 +54,7 @@ public class Ascensor {
         return false;
     }
     
-    // Mòdul que verifica si l'ascensor està adalt
+    // Mètode que verifica si l'ascensor està adalt
     public boolean esAdalt() {
         if (pis == 10) {
             return true;
@@ -62,7 +62,7 @@ public class Ascensor {
         return false;
     }
     
-    // Mòdul que verifica si l'ascensor està aturat
+    // Mètode que verifica si l'ascensor està aturat
     public boolean esAturat() {
         if (moviment.equals("aturat")) {
             return true;
@@ -70,7 +70,7 @@ public class Ascensor {
         return false;
     }
     
-    // Mòdul que verifica si l'ascensor està en moviment
+    // Mètode que verifica si l'ascensor està en moviment
     public boolean esEnMoviment() {
         if (moviment.equals("pujant") || moviment.equals("baixant")) {
             return true;
@@ -78,7 +78,7 @@ public class Ascensor {
         return false;
     }
     
-    // Mòdul que verifica si l'ascensor està pujant
+    // Mètode que verifica si l'ascensor està pujant
     public boolean esPujant() {
         if (moviment.equals("pujant")) {
             return true;
@@ -86,7 +86,7 @@ public class Ascensor {
         return false;
     }
     
-    // Mòdul que verifica si l'ascensor està baixant
+    // Mètode que verifica si l'ascensor està baixant
     public boolean esBaixant() {
         if (moviment.equals("baixant")) {
             return true;
@@ -94,7 +94,7 @@ public class Ascensor {
         return false;
     }
     
-    // Mòdul que verifica l'estat de l'ascensor
+    // Mètode que verifica l'estat de l'ascensor
     public String comEsta() {
         return String.format("%s al pis %d", moviment, pis);   
     } 
