@@ -82,7 +82,7 @@ public class GatRenat {
     public String aixecat() {
         if (!posicio.equals("assegut")) {
             posicio = "assegut";
-            return "Ja m'aixeco";
+            return "ja m'aixeco";
         }
         return "passo de fer res";     
     }
@@ -91,7 +91,7 @@ public class GatRenat {
     public String seu() {
         if (!posicio.equals("dret")) {
             posicio = "dret";
-            return "Ja m'assec";
+            return "ja m'assec";
         }
         return "passo de fer res";  
     }
@@ -100,7 +100,7 @@ public class GatRenat {
     public String estirat() {
         if (!posicio.equals("estirat")) {
             posicio = "estirat";
-            return "Ja m'estiro";
+            return "ja m'estiro";
         }
         return "passo de fer res";  
     }
