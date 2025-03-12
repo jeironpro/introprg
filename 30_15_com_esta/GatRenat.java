@@ -15,24 +15,24 @@ public class GatRenat {
     // Propietat privat posicio
     private String posicio = "estirat";
     
-    // Mòdul que permet accedeix a la propietat vides des de fora
+    // Mètode accessor que permet accedeix a la propietat vides des de fora
     public int getVides() {
         return vides;
     }
     
-    // Mòdul que permet modificar a la propietat vides des de fora
+    // Mètode accessor que permet modificar a la propietat vides des de fora
     public void setVides(int vida) {
         if (vida >= 0) {
             vides = vida;
         }
     }
     
-    // Mòdul que permet accedeix a la propietat posició des de fora
+    // Mètode accessor que permet accedeix a la propietat posició des de fora
     public String getPosicio() {
         return posicio;
     }
     
-    // Mòdul que permet modificar a la propietat posicio des de fora
+    // Mètode accessor que permet modificar a la propietat posicio des de fora
     public void setPosicio(String novaPos) {
         String[] posicions = new String[] {"dret", "assegut", "estirat"};
         
@@ -43,7 +43,7 @@ public class GatRenat {
         }
     }
     
-    // Mòdul que verifica si renat és viu (retorna true o false)
+    // Mètode que verifica si renat és viu (retorna true o false)
     public boolean esViu() {
         if (vides > 0) {
             return true;
@@ -51,7 +51,7 @@ public class GatRenat {
         return false;
     }
     
-    // Mòdul que verifica si renat és dret (retorna true o false)
+    // Mètode que verifica si renat és dret (retorna true o false)
     public boolean esDret() {
         if (posicio.equals("dret")) {
             return true;
@@ -59,7 +59,7 @@ public class GatRenat {
         return false;
     }
     
-    // Mòdul que verifica si renat és assegut (retorna true o false)
+    // Mètode que verifica si renat és assegut (retorna true o false)
     public boolean esAssegut() {
         if (posicio.equals("assegut")) {
             return true;
@@ -67,7 +67,7 @@ public class GatRenat {
         return false;
     }
     
-    // Mòdul que verifica si renat és estirat (retorna true o false)
+    // Mètode que verifica si renat és estirat (retorna true o false)
     public boolean esEstirat() {
         if (posicio.equals("estirat")) {
             return true;
