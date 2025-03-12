@@ -80,7 +80,7 @@ public class GatRenat {
     
     // Mètode que verifica si el renat està assegut, si ho està mostra un missatge, sino ho està li assigna aquesta posició i mostra un missatge de que ho a fet.
     public String aixecat() {
-        if (!posicio.equals("assegut")) {
+        if (!esAssegut()) {
             posicio = "assegut";
             return "ja m'aixeco";
         }
@@ -89,7 +89,7 @@ public class GatRenat {
     
     // Mètode que verifica si el renat està dret, si ho està mostra un missatge, sino ho està li assigna aquesta posició i mostra un missatge de que ho a fet.
     public String seu() {
-        if (!posicio.equals("dret")) {
+        if (!esDret()) {
             posicio = "dret";
             return "ja m'assec";
         }
@@ -98,7 +98,7 @@ public class GatRenat {
     
     // Mètode que verifica si el renat està estirat, si ho està mostra un missatge, sino ho està li assigna aquesta posició i mostra un missatge de que ho a fet.
     public String estirat() {
-        if (!posicio.equals("estirat")) {
+        if (!esEstirat()) {
             posicio = "estirat";
             return "ja m'estiro";
         }
