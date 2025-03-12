@@ -37,7 +37,7 @@ public class GatRenat {
         String[] posicions = new String[] {"dret", "assegut", "estirat"};
         
         for (int i = 0; i < posicions.length; i++) {
-            if (pos.equals(posicions[i])) {
+            if (novaPos.equals(posicions[i])) {
                 posicio = novaPos;
             }
         }
