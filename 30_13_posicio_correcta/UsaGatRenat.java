@@ -8,14 +8,14 @@ public class UsaGatRenat {
         // Crear una instancia de la classe GatRenat
         GatRenat renat = new GatRenat();
         // Mostrar el valor inicial de la propietat vides des de el mòdul getVides de la classe GatRenat
-        System.out.println("Vides inicials: " + renat.getVides());
+        System.out.println("Les vides inicials: " + renat.getVides());
         // Mostrar el valor inicial de la propietat posicio des de el mòdul getPosicio de la classe GatRenat
-        System.out.println("Posició inicial: " + renat.getPosicio());
+        System.out.println("La posició inicial: " + renat.getPosicio());
         // Demanar la nova posicio
         System.out.println("Introdueix nova posició:");
         // Setear la nova posicio
         renat.setPosicio(Entrada.readLine());
         // Mostrar el valor canviat de la propietat posicio des de el mòdul getPosicio
-        System.out.println("Posició final: " + renat.getPosicio());
+        System.out.println("La posició final: " + renat.getPosicio());
     }
 }
