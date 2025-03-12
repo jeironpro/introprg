@@ -22,7 +22,7 @@ public class GatRenat {
     
     // Mòdul que permet modificar a la propietat vides des de fora
     public void setVides(int vida) {
-        if (vida > 0) {
+        if (vida >= 0) {
             vides = vida;
         }
     }
