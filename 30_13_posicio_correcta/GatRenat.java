@@ -10,24 +10,24 @@ public class GatRenat {
     // Propietat privat posicio
     private String posicio = "estirat";
     
-    // Mòdul que permet accedeix a la propietat vides des de fora
+    // Mòdul accessor que permet accedeix a la propietat vides des de fora
     public int getVides() {
         return vides;
     }
     
-    // Mòdul que permet modificar a la propietat vides des de fora
+    // Mòdul accessor que permet modificar a la propietat vides des de fora
     public void setVides(int vida) {
         if (vida > 0) {
             vides = vida;
         }
     }
     
-    // Mòdul que permet accedeix a la propietat posició des de fora
+    // Mòdul accessor que permet accedeix a la propietat posició des de fora
     public String getPosicio() {
         return posicio;
     }
     
-    // Mòdul que permet modificar a la propietat posicio des de fora
+    // Mòdul accessor que permet modificar a la propietat posicio des de fora
     public void setPosicio(String pos) {
         String[] posicions = new String[] {"dret", "assegut", "estirat"};
         
