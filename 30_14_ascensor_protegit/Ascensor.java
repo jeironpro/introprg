@@ -12,24 +12,24 @@ public class Ascensor {
     // Propietat private moviment
     private String moviment = "aturat";
     
-    // Mòdul que permet accedeix a la propietat pis des de fora
+    // Mòdul accessor que permet accedeix a la propietat pis des de fora
     public int getPis() {
         return pis;
     }
     
-    // Mòdul que permet modificar a la propietat pis des de fora
+    // Mòdul accessor que permet modificar a la propietat pis des de fora
     public void setPis(int nouPis) {
         if (nouPis >= -1 && nouPis <= 10) {
             pis = nouPis;
         }
     }
     
-    // Mòdul que permet accedeix a la propietat moviment des de fora
+    // Mòdul accessor que permet accedeix a la propietat moviment des de fora
     public String getMoviment() {
         return moviment;
     }
     
-    // Mòdul que permet modificar a la propietat moviment des de fora
+    // Mòdul accessor que permet modificar a la propietat moviment des de fora
     public void setMoviment(String nouMov) {
         String[] moviments = new String[] {"aturat", "pujant", "baixant"};
         
