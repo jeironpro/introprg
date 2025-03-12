@@ -47,7 +47,7 @@ public class GatRenat {
     }
     
     // Mètode que verifica si renat és viu (retorna true o false)
-    public boolean esViu() {estirat
+    public boolean esViu() {
         if (vides > 0) {
             return true;
         }
