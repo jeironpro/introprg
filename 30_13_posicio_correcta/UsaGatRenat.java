@@ -8,7 +8,7 @@ public class UsaGatRenat {
         // Crear una instancia de la classe GatRenat
         GatRenat renat = new GatRenat();
         // Mostrar el valor inicial de la propietat vides des de el mòdul getVides de la classe GatRenat
-        System.out.println("Les vides inicials son: " + renat.getVides());
+        System.out.println("Les vides inicials són: " + renat.getVides());
         // Mostrar el valor inicial de la propietat posicio des de el mòdul getPosicio de la classe GatRenat
         System.out.println("La posició inicial: " + renat.getPosicio());
         // Demanar la nova posicio
