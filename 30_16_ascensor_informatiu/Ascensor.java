@@ -25,7 +25,7 @@ public class Ascensor {
     
     // Mòdul que permet modificar a la propietat pis des de fora
     public void setPis(int nouPis) {
-        if (pis >= -1 && pis <= 10) {
+        if (nouPis >= -1 && nouPis <= 10) {
             pis = nouPis;
         }
     }
