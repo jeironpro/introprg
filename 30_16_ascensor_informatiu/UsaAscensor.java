@@ -15,7 +15,7 @@ public class UsaAscensor {
         // Demanar el nou pis
         System.out.println("Introdueix nou pis:");
         String nouPis = Entrada.readLine();
-        if (UtilString.esEnter(nouPis) {
+        if (UtilString.esEnter(nouPis)) {
             // Setear el nou pis
             ascensor.setPis(Integer.parseInt(nouPis));
         }
