@@ -135,7 +135,7 @@ public class Ascensor {
     
     // Mètode que canviar de pis a l'ascensor segon el moviment
     public int seguentPis() {
-        if (!esAturat() && pis <= 10) {
+        if (esPujant() && pis <= 10) {
             pis = pis +1;
             
             if (pis > 10) {
@@ -144,7 +144,7 @@ public class Ascensor {
             }
         }
 
-        if (!esAturat() && pis >= -1) {
+        if (esBaixant() && pis >= -1) {
             pis = pis -1;
             
             if (pis < -1) {
