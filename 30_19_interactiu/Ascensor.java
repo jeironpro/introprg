@@ -105,14 +105,11 @@ public class Ascensor {
     
     // Mètode que verifica si l'ascensor està aturat sino ho assigna
     public boolean aturat() {
-        if (!esAturat()) {
-            moviment = "aturat";
-        }
-
-        if (moviment.equals("aturat")) {
-            return true;
-        } else {
+        if (esAturat()) {
             return false;
+        } else {
+            moviment = "aturat";
+            return true;        
         }
     }
     
