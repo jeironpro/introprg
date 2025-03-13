@@ -125,8 +125,7 @@ public class GatRenat {
     
     // Mètode que reviu al renat sumant-li una vida i retorna un missatge, si no estava mor retorna un altre missatge.
     public String reviu() {
-        String mor = mor();
-        if (mor.equals("ximpún") || mor.equals("...")) {
+        if (vides <= 0) {
             vides = vides + 1;
             return "guai!";
         } else {
@@ -136,8 +135,7 @@ public class GatRenat {
     
     // Mètode que reviu al renat sumant-li una vida i retorna un missatge, si no estava mor retorna un altre missatge. Les vides a sumar-li es rebran per l'argument.
     public String reviu(int vida) {
-        String mor = mor();
-        if ((mor.equals("ximpún") || mor.equals("...")) && vida > 0) {
+        if (vides <= 0 && vida > 0) {
             vides = vides + vida;
             return "guai!";
         } else {
