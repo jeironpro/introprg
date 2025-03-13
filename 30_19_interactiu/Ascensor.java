@@ -140,7 +140,7 @@ public class Ascensor {
             moviment = "baixant";
         }
         if (esAbaix()) {
-            pis = 0;
+            pis = -1;
             moviment = "pujant";
         }
         
