@@ -135,22 +135,21 @@ public class Ascensor {
     
     // Mètode que canviar de pis a l'ascensor segon el moviment
     public int seguentPis() {
+        if (esAdalt()) {
+            pis = 10;
+            moviment = "baixant";
+        }
+        if (esAbaix()) {
+            pis = 0;
+            moviment = "pujant";
+        }
+        
         if (esPujant() && pis <= 10) {
             pis = pis +1;
-            
-            if (pis > 10) {
-                pis = 10;
-                moviment = "baixant";
-            }
         }
 
         if (esBaixant() && pis >= -1) {
             pis = pis -1;
-            
-            if (pis < -1) {
-                pis = -1;
-                moviment = "pujant";
-            }
         }
         return pis;
     }
