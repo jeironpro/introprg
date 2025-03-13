@@ -105,11 +105,11 @@ public class Ascensor {
     
     // Mètode que verifica si l'ascensor està aturat sino ho assigna
     public boolean aturat() {
-        if (esAturat()) {
-            return false;
-        } else {
+        if (!esAturat()) {
             moviment = "aturat";
             return true;        
+        } else {
+            return false;
         }
     }
     
@@ -117,9 +117,6 @@ public class Ascensor {
     public boolean arrencaAmunt() {
         if (esAturat()) {
             moviment = "pujant";
-        }
-
-        if (moviment.equals("pujant")) {
             return true;
         } else {
             return false;
@@ -130,9 +127,6 @@ public class Ascensor {
     public boolean arrencaAbaix() {
         if (esAturat()) {
             moviment = "baixant";
-        }
-
-        if (moviment.equals("baixant")) {
             return true;
         } else {
             return false;
