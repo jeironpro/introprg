@@ -1,6 +1,6 @@
 /*
  * Programa que conté dues propietats privades i un getter i setter per a cadascun d'ells.
- * A més inclòs quatres mètodes: 
+ * A més inclòs aquests mètodes: 
  * esViu(): permet verificar si el gat està viu o mort depenent de les vides que tingui.
  * esDret(): permet verificar si el gat està en posició dreta.
  * esAssegut(): permet verificar si el gat està en posició asseguda.
