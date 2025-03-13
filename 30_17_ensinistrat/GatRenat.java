@@ -5,8 +5,8 @@
  * esDret(): permet verificar si el gat està en posició dreta.
  * esAssegut(): permet verificar si el gat està en posició asseguda.
  * esEstirat(): permet verificar si el gat està en posició estirada.
- * aixecat(): permet verificar i assginar la posicio assegut al renat.
- * seu(): permet verificar i assginar la posicio dret al renat.
+ * aixecat(): permet verificar i assginar la posicio dret al renat.
+ * seu(): permet verificar i assginar la posicio assegut al renat.
  * estirat(): permet verificar i assignar la posicio estirat al renat.
  * El getter i setter permet accedeix a aquestes propietats des de fora.
  */
