@@ -30,7 +30,7 @@ public class GatRenat {
     }
     
     // Mètode accesor (setter)
-    private void setVides(int novesVides) {
+    public void setVides(int novesVides) {
         if (novesVides >= 0) {
             vides = novesVides;
         }
