@@ -32,7 +32,7 @@ public class GatRenat {
     
     // Mètode accesor (setter)
     public void setVides(int vides) {
-        if (novesVides >= 0) {
+        if (vides >= 0) {
             this.vides = vides;
         }
     }
@@ -47,7 +47,7 @@ public class GatRenat {
         String[] posicions =  new String[] {"estirat", "assegut", "dret"};
         
         for (int i = 0; i < posicions.length; i++) {
-            if (novaPosicio.equals(posicions[i])) {
+            if (posicio.equals(posicions[i])) {
                 this.posicio = posicio;
             }
         }
