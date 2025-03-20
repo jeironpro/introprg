@@ -50,25 +50,43 @@ public class Hora {
     }
     
     public void setSegons(int segons) {
-        if (segons >= 0 && segons <= 100) {
+        if (segons >= 0 && segons <= 60) {
             this.segons = segons;
         }
     }
     
     public void incrementa() {
-        this.setSegons(this.segons + 1); 
+        if (this.segons + 1 == 60) {
+            this.minuts++;
+        } else {
+            this.setSegons(this.segons + 1);         
+        }
     }
     
     public void decrementa() {
-        this.setSegons(this.segons - 1); 
+        if (this.segons - 1 == 0) {
+            this.minuts--;
+            this.setSegons(59);
+        } else {
+            this.setSegons(this.segons - 1);         
+        }
     }
     
     public void incrementa(int segon) {
-        this.setSegons(this.segons + segon); 
+        if (this.segons + segon == 60) {
+            this.minuts++;
+        } else {
+            this.setSegons(this.segons + segon);         
+        }
     }
     
     public void decrementa(int segon) {
-        this.setSegons(this.segons - segon); 
+        if (this.segons - segon == 0) {
+            this.minuts--;
+            this.setSegons(59);
+        } else {
+            this.setSegons(this.segons - segon);         
+        }
     }
     
     public int compareTo(Hora hora) {
