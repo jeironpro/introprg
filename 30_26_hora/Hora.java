@@ -109,6 +109,8 @@ public class Hora {
             } else {
                 this.minuts -= segonsAMinuts;
             }
+        } else {
+            this.setSegons(this.segons - segon);        
         }
         
         if (this.segons == 0) {
@@ -119,8 +121,6 @@ public class Hora {
                     this.hores--;
                 }
                 this.setMinuts(59);
-            } else {
-                this.minuts--;
             }
             this.setSegons(59);
         } else {
