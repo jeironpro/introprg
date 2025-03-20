@@ -90,21 +90,9 @@ public class Hora {
     }
     
     public void decrementa(int segon) {
-        // Formula para convertir la hora en segundos
-        if (segon >= 60) {
-            int segonsAMinuts = segon / 60;
-            this.minuts -= segonsAMinuts;
-            
-            int resSegonsAMinuts = segon % 60;
-            this.segons -= resSegonsAMinuts;
-            
-            if (segonsAMinuts >= 60) {
-                int minutsAHores = segonsAMinuts / 60;
-                this.hores -= minutsAHores;
-                
-                int resMinutsAHores = segonsAMinuts % 60;
-                this.minuts -= resMinutsAHores;
-            }
+        if (segon == 60) {
+            this.minuts--;
+        } else {
             if (this.segons == 0) {
                 if (this.minuts == 0) {
                     if (this.hores == 0) {
@@ -113,15 +101,14 @@ public class Hora {
                         this.hores--;
                     }
                     this.setMinuts(59);
-                }  else {
+                } else {
                     this.minuts--;
                 }
                 this.setSegons(59);
             } else {
-                this.setSegons(this.segons - segon);  
-            } 
+                this.setSegons(this.segons - segon);         
+            }        
         }
-        
     }
     
     public int compareTo(Hora hora) {
