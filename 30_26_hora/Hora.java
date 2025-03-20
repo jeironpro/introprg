@@ -90,7 +90,7 @@ public class Hora {
     }
     
     public void decrementa(int segon) {
-        if (this.segons == 0 || this.segons - segon == 0) {
+        if (this.segons - segon == 0) {
             if (this.minuts == 0) {
                 if (this.hores == 0) {
                     this.setHores(23);
