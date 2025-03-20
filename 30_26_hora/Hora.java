@@ -93,7 +93,7 @@ public class Hora {
         int segonsAMinuts = 0;
         int minutsAHores = 0;
         
-        if (segon >= 60) {
+        if (segon > 60) {
             segonsAMinuts = segon / 60;
             this.minuts -= segonsAMinuts;
             
