@@ -109,29 +109,23 @@ public class Hora {
             } else {
                 this.minuts -= segonsAMinuts;
             }
-        } else {
-            this.setSegons(this.segons - segon);        
         }
         
-        /*if (segon == 60) {
-            this.minuts--;
-        } else {
-            if (this.segons == 0) {
-                if (this.minuts == 0) {
-                    if (this.hores == 0) {
-                        this.setHores(23);
-                    } else {
-                        this.hores--;
-                    }
-                    this.setMinuts(59);
+        if (this.segons == 0) {
+            if (this.minuts == 0) {
+                if (this.hores == 0) {
+                    this.setHores(23);
                 } else {
-                    this.minuts--;
+                    this.hores--;
                 }
-                this.setSegons(59);
+                this.setMinuts(59);
             } else {
-                this.setSegons(this.segons - segon);  
-            }        
-        }*/
+                this.minuts--;
+            }
+            this.setSegons(59);
+        } else {
+            this.setSegons(this.segons - segon);  
+        } 
     }
     
     public int compareTo(Hora hora) {
