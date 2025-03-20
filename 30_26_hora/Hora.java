@@ -69,8 +69,8 @@ public class Hora {
                 this.setMinuts(59);
             } else {
                 this.minuts--;
-                this.setSegons(59);
             }
+            this.setSegons(59);
         } else {
             this.setSegons(this.segons - 1);         
         }
