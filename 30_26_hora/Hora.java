@@ -65,8 +65,12 @@ public class Hora {
     
     public void decrementa() {
         if (this.segons == 0) {
-            this.minuts--;
-            this.setSegons(59);
+            if (this.minuts == 0) {
+                this.setMinuts(59);
+            } else {
+                this.minuts--;
+                this.setSegons(59);
+            }
         } else {
             this.setSegons(this.segons - 1);         
         }
@@ -81,9 +85,13 @@ public class Hora {
     }
     
     public void decrementa(int segon) {
-        if (this.segons - segon == 0) {
-            this.minuts--;
-            this.setSegons(59);
+        if (this.segons == 0 || this.segons - segon == 0) {
+            if (this.minuts == 0) {
+                this.setMinuts(59);
+            } else {
+                this.minuts--;
+                this.setSegons(59);
+            }
         } else {
             this.setSegons(this.segons - segon);         
         }
