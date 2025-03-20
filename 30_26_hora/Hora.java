@@ -90,7 +90,30 @@ public class Hora {
     }
     
     public void decrementa(int segon) {
-        if (segon == 60) {
+        int segonsAMinuts = 0;
+        int minutsAHores = 0;
+        
+        if (segon >= 60) {
+            segonsAMinuts = segon / 60;
+            this.minuts -= segonsAMinuts;
+            
+            int resSegonsAMinuts = segon % 60;
+            this.segons -= resSegonsAMinuts;
+            
+            if (segonsAMinuts >= 60) {
+                minutsAHores = segonsAMinuts / 60;
+                this.hores -= minutsAHores;
+                
+                int resMinutsAHores = segonsAMinuts % 60;
+                this.minuts -= resMinutsAHores;
+            } else {
+                this.minuts -= segonsAMinuts;
+            }
+        } else {
+            this.setSegons(this.segons - segon);        
+        }
+        
+        /*if (segon == 60) {
             this.minuts--;
         } else {
             if (this.segons == 0) {
@@ -106,9 +129,9 @@ public class Hora {
                 }
                 this.setSegons(59);
             } else {
-                this.setSegons(this.segons - segon);         
+                this.setSegons(this.segons - segon);  
             }        
-        }
+        }*/
     }
     
     public int compareTo(Hora hora) {
