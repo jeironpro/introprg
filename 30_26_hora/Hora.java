@@ -101,7 +101,7 @@ public class Hora {
             if (horesASegons < segon) {
                 horesASegons += 86400;
             }
-            horesASegons -= segon;
+            Math.abs(horesASegons -= segon);
         }
         
         this.setHores(horesASegons / 3600);
