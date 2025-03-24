@@ -56,15 +56,17 @@ public class Hora {
     }
     
     public void incrementa() {
-        if (this.segons + 1 == 60) {
+        incredecre(1, "incrementa");
+        /*if (this.segons + 1 == 60) {
             this.minuts++;
         } else {
             this.setSegons(this.segons + 1);         
-        }
+        }*/
     }
     
     public void decrementa() {
-        if (this.segons == 0) {
+        incredecre(1, "decrementa");
+        /*if (this.segons == 0) {
             if (this.minuts == 0) {
                 if (this.hores == 0) {
                     this.setHores(23);
@@ -78,37 +80,32 @@ public class Hora {
             this.setSegons(59);
         } else {
             this.setSegons(this.segons - 1);         
-        }
+        }*/
     }
     
-    public void incrementa(int segon) {
-        if (this.segons + segon == 60) {
-            this.minuts++;
-        } else {
-            this.setSegons(this.segons + segon);         
-        }
+    public void incrementa(int segons) {
+        incredecre(segons, "incrementa");
     }
     
-    public void decrementa(int segon) {
-        if (segon == 60) {
-            this.minuts--;
-        } else {
-            if (this.segons == 0) {
-                if (this.minuts == 0) {
-                    if (this.hores == 0) {
-                        this.setHores(23);
-                    } else {
-                        this.hores--;
-                    }
-                    this.setMinuts(59);
-                } else {
-                    this.minuts--;
-                }
-                this.setSegons(59);
-            } else {
-                this.setSegons(this.segons - segon);         
-            }        
+    public void decrementa(int segons) {
+        incredecre(segons, "decrementa");
+    }
+    
+    public void incredecre(int segons, String accio) {
+        // Convertir la hora a segon, per poder decrementar els segons
+        int horesASegons = this.hores * 3600 + this.minuts + this.segons;
+        
+        if (accio.equals("incrementa")) {
+            horesASegons += segons;
         }
+        
+        if (accio.equals("decrementa")) {
+            horesASegons -= segons;
+        }
+        
+        this.setHores(horesASegons / 3600);
+        this.setMinuts(horesASegons / 60);
+        this.setSegons(horesASegons % 60);
     }
     
     public int compareTo(Hora hora) {
