@@ -104,7 +104,7 @@ public class Hora {
         }
         
         this.setHores(horesASegons / 3600);
-        this.setMinuts(this.getHores() / 60);
+        this.setMinuts(this.getHores() % 3600);
         this.setSegons(horesASegons % 60);
     }
     
