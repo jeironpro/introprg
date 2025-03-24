@@ -97,10 +97,14 @@ public class Hora {
             horesASegons += segons;
         }
         
+    
         if (accio.equals("decrementa")) {
-            horesASegons = horesASegons - segons;
-            if (horesASegons < 0) {
-                Math.abs(horesASegons += 86400);
+            if (horesASegons < segons) {
+                if (segons > 86400) {
+                    horesASegons = 86400 - (segons % 86400);
+                } else {
+                    horesASegons = 86400 - segons;
+                }
             }
         }
         
@@ -162,7 +166,7 @@ public class Hora {
 
         System.out.println("Incrementem 1 segon a la primera i decrementem 1 segon a la segona");
 
-        hora1.incrementa();
+        hora1.decrementa();
         hora2.decrementa();
 
         System.out.printf("Finalment hora1: %s %s hora2: %s%n",
