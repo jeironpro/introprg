@@ -98,12 +98,15 @@ public class Hora {
         }
         
         if (accio.equals("decrementa")) {
+            if (horesASegons < segons) {
+                horesASegons += 86000;
+            }
             horesASegons -= segons;
         }
         
         this.setHores(horesASegons / 3600);
         this.setMinuts(horesASegons % 3600 / 60);
-        this.setSegons(horesASegons % 60);
+        this.setSegons(horesASegons % 3600 % 60);
     }
     
     public int compareTo(Hora hora) {
