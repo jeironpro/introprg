@@ -99,7 +99,7 @@ public class Hora {
         }
         
         if (accio.equals("decrementa")) {
-            horesASegons -= segons;
+            horesASegons = horesASegons - segons;
             if (horesASegons < 0) {
                 horesASegons += 86400;
             }
