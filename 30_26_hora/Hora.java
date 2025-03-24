@@ -166,7 +166,7 @@ public class Hora {
 
         System.out.println("Incrementem 1 segon a la primera i decrementem 1 segon a la segona");
 
-        hora1.decrementa();
+        hora1.incrementa();
         hora2.decrementa();
 
         System.out.printf("Finalment hora1: %s %s hora2: %s%n",
