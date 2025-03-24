@@ -56,17 +56,15 @@ public class Hora {
     }
     
     public void incrementa() {
-        incredecre(1, "incrementa");
-        /*if (this.segons + 1 == 60) {
+        if (this.segons + 1 == 60) {
             this.minuts++;
         } else {
             this.setSegons(this.segons + 1);         
-        }*/
+        }
     }
     
     public void decrementa() {
-        incredecre(1, "decrementa");
-        /*if (this.segons == 0) {
+        if (this.segons == 0) {
             if (this.minuts == 0) {
                 if (this.hores == 0) {
                     this.setHores(23);
@@ -80,7 +78,7 @@ public class Hora {
             this.setSegons(59);
         } else {
             this.setSegons(this.segons - 1);         
-        }*/
+        }
     }
     
     public void incrementa(int segons) {
