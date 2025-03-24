@@ -91,7 +91,7 @@ public class Hora {
     
     public void incredecre(int segons, String accio) {
         // Convertir la hora a segon, per poder decrementar els segons
-        int horesASegons = this.hores * 3600 + this.minuts * 60 + this.segons;
+        int horesASegons = (this.hores * 3600) + (this.minuts * 60) + this.segons;
         
         if (accio.equals("incrementa")) {
             horesASegons += segons;
