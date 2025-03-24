@@ -105,6 +105,8 @@ public class Hora {
                 } else {
                     horesASegons = 86400 - segons;
                 }
+            } else {
+                horesASegons -= segons;
             }
         }
         
