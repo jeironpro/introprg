@@ -98,20 +98,4 @@ public class GatRenat {
         instancia.posicio = posicio;
         return instancia;
     }
-    
-    public static void main(String[] args) {
-        // Array de tipus GatRenat
-        GatRenat[] renats = {
-            new GatRenat(),         // tot per defecte
-            new GatRenat(8),        // 8 vides i posició per defecte
-            new GatRenat("dret"),   // posicio dret i vides per defecte
-            new GatRenat(8, "dret") // 8 vides i posició dret
-        };
-        
-        // Iterar tots els renats
-        for (GatRenat renat: renats) {
-            // Mostrar cada renat com un String
-            System.out.println(renat);
-        }
-    }
 }
