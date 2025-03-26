@@ -10,38 +10,17 @@
  */
  
 public class GatRenat {
-    // Propietats private de la classe
+    // Propietats privades de la classe
     private int vides;
     private String posicio;
     private static GatRenat instancia;
     
-    /* Constructor per defecte, crida al constructor amb paràmetres
-     * i li passa els arguments per defecte.
-     */
-    private GatRenat() {
-        this(7, "estirat");
-    }
-    
-    /* Constructor amb un paràmetre (vides), crida al constructor amb paràmetres
-     * i li passa l'argument que reb per vides i el valor per defecte de posicio.
-     */
-    private GatRenat(int vides) {
-        this(vides, "estirat");
-    }
-    
-    /* Constructor amb un paràmetre (posicio), crida al constructor amb paràmetres
-     * i li passa el valor per defecte de vides i l'argument que rep per posicio.
-     */
-    private GatRenat(String posicio) {
-        this(7, posicio);
-    }
-    
     /* Constructor amb paràmetres, fa servir this per referir-se als mètodes 
      * accessors de la classe, per modificar les propietats. 
      */
-    private GatRenat(int vides, String posicio) {
-        this.setVides(vides);
-        this.setPosicio(posicio);
+    private GatRenat() {
+        this.vides = 7;
+        this.posicio = "estirat";
     }
     
     // Anotació
@@ -88,28 +67,32 @@ public class GatRenat {
     
     public static GatRenat getInstancia(int vides) {
         if (instancia == null) {
-            instancia = new GatRenat(vides);
+            instancia = new GatRenat();
         }
+        instancia.vides = vides;
         return instancia;
     }
     
     public static GatRenat getInstancia(String posicio) {
         if (instancia == null) {
-            instancia = new GatRenat(posicio);
+            instancia = new GatRenat();
         }
+        instancia.posicio = posicio;
         return instancia;
     }
     
     public static GatRenat getInstancia(int vides, String posicio) {
         if (instancia == null) {
-            instancia = new GatRenat(vides, posicio);
+            instancia = new GatRenat();
         }
+        instancia.vides = vides;
+        instancia.posicio = posicio;
         return instancia;
     }
     
     public static void main(String[] args) {
         // Array de tipus GatRenat
-        GatRenat[] renats = {
+        /*GatRenat[] renats = {
             new GatRenat(),         // tot per defecte
             new GatRenat(8),        // 8 vides i posició per defecte
             new GatRenat("dret"),   // posicio dret i vides per defecte
@@ -120,6 +103,6 @@ public class GatRenat {
         for (GatRenat renat: renats) {
             // Mostrar cada renat com un String
             System.out.println(renat);
-        }
+        }*/
     }
 }
