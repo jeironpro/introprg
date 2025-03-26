@@ -3,6 +3,7 @@
  * agafaPicarol(Picarol): que permet assignar el picarol rebut pel paràmetres.
  * deixaPicarol(): que permet assignar a null el picaroll.
  * hiHaPicarol(): que retorna cert o fals si hi ha o no picarol. 
+ * Conte amb dos constructor un per defecte i un altre que rep paràmetre.
  * A més inclòs aquests mètodes: 
  * esDret(): permet verificar si el gat està en posició dreta.
  * esAssegut(): permet verificar si el gat està en posició asseguda.
