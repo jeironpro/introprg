@@ -1,12 +1,12 @@
 /*
- * Programa que contè dues propietats privades inicialitzades i mes de un constructor 
- * (instàncies de la classe), un per defecte i altres que reben un o més paràmetres, 
- * els constructors fan servir this() per cridar al constructor més adequat per assignar
- * els paràmetres als setter de cada propietat respectivament. També sobreescriu amb 
- * l'anotació @override el mètode toString per representar la conversió de l'object a un 
- * String de manera personalitzada i no com ho faria java per defecte. Ara el programa 
- * utilitza la referencia this. per diferenciar les propietats i mètodes de la classe i 
- * també utilitza this() per cridar a altres constructors.
+ * Programa que contè tres propietats privades, una d'elles és static 
+ * i un constructor per defecte (instàncies de la classe) que fa servir 
+ * this per inicialitzar amb valors per defectes les propietats que no són 
+ * static. També sobreescriu amb l'anotació @override el mètode toString per 
+ * representar la conversió de l'object a un String de manera personalitzada i
+ * no com ho faria java per defecte. A més contè amb quatres mètodes que fan
+ * servir el patro singleton que restringeix la creació una instancia que ja
+ * existeix.
  */
  
 public class GatRenat {
@@ -15,8 +15,8 @@ public class GatRenat {
     private String posicio;
     private static GatRenat instancia;
     
-    /* Constructor amb paràmetres, fa servir this per referir-se als mètodes 
-     * accessors de la classe, per modificar les propietats. 
+    /* Constructor per defecte, fa servir this. per referir-se a les propietats 
+     * de la classe i assignar-li el valor per defecte. 
      */
     private GatRenat() {
         this.vides = 7;
@@ -47,7 +47,7 @@ public class GatRenat {
         return this.posicio;
     }
     
-    // Mètode accesor (setter)
+    // Mètode accessor (setter)
     public void setPosicio(String posicio) {
         String[] posicions =  new String[] {"estirat", "assegut", "dret"};
         
@@ -58,6 +58,9 @@ public class GatRenat {
         }
     }
     
+    // Mètodes del patró singleton
+    // Mètode de instancia sense pàrametres
+    // Aquest mètode crea una instància i les propietats es queden amb els valor per defecte
     public static GatRenat getInstancia() {
         if (instancia == null) {
             instancia = new GatRenat();
@@ -65,6 +68,8 @@ public class GatRenat {
         return instancia;
     }
     
+    // Mètode de instancia amb el pàrametre vides
+    // Aquest mètode crea una instància i assigna els valors rebut a la propietat
     public static GatRenat getInstancia(int vides) {
         if (instancia == null) {
             instancia = new GatRenat();
@@ -73,6 +78,8 @@ public class GatRenat {
         return instancia;
     }
     
+    // Mètode de instancia amb el pàrametre posicio
+    // Aquest mètode crea una instància i assigna els valors rebut a la propietat
     public static GatRenat getInstancia(String posicio) {
         if (instancia == null) {
             instancia = new GatRenat();
@@ -81,6 +88,8 @@ public class GatRenat {
         return instancia;
     }
     
+    // Mètode de instancia amb els pàrametres vides i posicio
+    // Aquest mètode crea una instància i assigna els valors rebut a cada propietat
     public static GatRenat getInstancia(int vides, String posicio) {
         if (instancia == null) {
             instancia = new GatRenat();
@@ -92,7 +101,7 @@ public class GatRenat {
     
     public static void main(String[] args) {
         // Array de tipus GatRenat
-        /*GatRenat[] renats = {
+        GatRenat[] renats = {
             new GatRenat(),         // tot per defecte
             new GatRenat(8),        // 8 vides i posició per defecte
             new GatRenat("dret"),   // posicio dret i vides per defecte
@@ -103,6 +112,6 @@ public class GatRenat {
         for (GatRenat renat: renats) {
             // Mostrar cada renat com un String
             System.out.println(renat);
-        }*/
+        }
     }
 }
