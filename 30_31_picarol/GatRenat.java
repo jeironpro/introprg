@@ -22,6 +22,22 @@ public class GatRenat {
     // Propietat de tipus class picarol (objecte-instància)
     private Picarol picarol;
     
+    /* Constructor per defecte, inicialitza les propietat amb valors
+     * per defecte.
+     */
+    public GatRenat() {
+        this.setVides(7);
+        this.setPosicio("estirat");
+    }
+    
+    /* Constructor amb un paràmetre (posicio), inicialitza vides a el valor
+     * per defecte i posicio amb el valor que rep.
+     */
+    public GatRenat(String posicio) {
+        this.setVides(7);
+        this.setPosicio(posicio);
+    }
+    
     // Mètode que assigna un nou picarol rebut pel arguments
     public Picarol agafaPicarol(Picarol nouPicarol) {
         Picarol anticPicarol = picarol;
