@@ -19,6 +19,8 @@ public class UsaGatRenat {
             novaPosicio = "dret";
          }
          
-         GatRenat.getInstancia(novaPosicio);
+         if (novaPosicio.equals("estirat") || novaPosicio.equals("assegut") || novaPosicio.equals("dret")) {
+             GatRenat.getInstancia(novaPosicio);
+         }
      }
 }
