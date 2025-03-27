@@ -52,26 +52,26 @@ public class GatRenat {
     }
     
     // Mètode que permet modificar a la propietat posicio des de fora
-    public void setPosicio(String novaPos) {
+    public void setPosicio(String posicio) {
         String[] posicions = new String[] {"dret", "assegut", "estirat"};
         
         for (int i = 0; i < posicions.length; i++) {
-            if (novaPos.equals(posicions[i])) {
-                posicio = novaPos;
+            if (posicio.equals(posicions[i])) {
+                this.posicio = posicio;
             }
         }
         
-        if (this.getPosicio().equals("dret")) {
+        if (posicio.equals("dret")) {
             ullDret.obret();
             ullEsquerre.obret();
         }
         
-        if (this.getPosicio().equals("assegut")) {
+        if (posicio.equals("assegut")) {
             ullDret.obret();
             ullEsquerre.tancat();
         }
         
-        if (this.getPosicio().equals("estirat")) {
+        if (posicio.equals("estirat")) {
             ullDret.tancat();
             ullEsquerre.tancat();
         }
@@ -89,7 +89,7 @@ public class GatRenat {
     
     // Mètode que verifica si renat és dret (retorna true o false)
     public boolean esDret() {
-        if (posicio.equals("dret")) {
+        if (this.posicio.equals("dret")) {
             return true;
         }
         return false;
@@ -97,7 +97,7 @@ public class GatRenat {
     
     // Mètode que verifica si renat és assegut (retorna true o false)
     public boolean esAssegut() {
-        if (posicio.equals("assegut")) {
+        if (this.posicio.equals("assegut")) {
             return true;
         }
         return false;
@@ -105,7 +105,7 @@ public class GatRenat {
     
     // Mètode que verifica si renat és estirat (retorna true o false)
     public boolean esEstirat() {
-        if (posicio.equals("estirat")) {
+        if (this.posicio.equals("estirat")) {
             return true;
         }
         return false;
@@ -139,7 +139,7 @@ public class GatRenat {
     }
     
     public static void main(String[] args) {
-        GatRenat renat = new GatRenat("assegut");
+        GatRenat renat = new GatRenat();
         UllDeGat ullDret = renat.getUllDret();
         UllDeGat ullEsquerre = renat.getUllEsquerre();
         
