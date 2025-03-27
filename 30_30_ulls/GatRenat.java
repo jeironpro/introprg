@@ -61,17 +61,17 @@ public class GatRenat {
             }
         }
         
-        if (posicio.equals("dret")) {
+        if (this.posicio.equals("dret")) {
             ullDret.obret();
             ullEsquerre.obret();
         }
         
-        if (posicio.equals("assegut")) {
+        if (this.posicio.equals("assegut")) {
             ullDret.obret();
             ullEsquerre.tancat();
         }
         
-        if (posicio.equals("estirat")) {
+        if (this.posicio.equals("estirat")) {
             ullDret.tancat();
             ullEsquerre.tancat();
         }
