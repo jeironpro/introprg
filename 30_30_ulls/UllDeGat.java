@@ -19,10 +19,7 @@ public class UllDeGat {
      * si es true o false, obre o tanca el ull del gat
      */
     public UllDeGat(boolean obret) {
-        if (obret) {
-            this.obret = true;
-        }
-        this.obret = false;
+        this.obret = obret;
     }
     
     // Mètode que obre el ull del gat

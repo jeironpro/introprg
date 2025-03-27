@@ -60,6 +60,21 @@ public class GatRenat {
                 posicio = novaPos;
             }
         }
+        
+        if (this.getPosicio().equals("dret")) {
+            ullDret.obret();
+            ullEsquerre.obret();
+        }
+        
+        if (this.getPosicio().equals("assegut")) {
+            ullDret.obret();
+            ullEsquerre.tancat();
+        }
+        
+        if (this.getPosicio().equals("estirat")) {
+            ullDret.tancat();
+            ullEsquerre.tancat();
+        }
     }
     
     // Mètode que retorna l'ull dret del gat
@@ -101,9 +116,7 @@ public class GatRenat {
         if (esDret()) {
             return "passo de fer res";     
         }
-        posicio = "dret";
-        ullDret.obret();
-        ullEsquerre.obret();
+        this.setPosicio("dret");
         return "ja m'aixeco";
     }
     
@@ -112,9 +125,7 @@ public class GatRenat {
         if (esAssegut()) {
             return "passo de fer res";  
         }
-        posicio = "assegut";
-        ullDret.obret();
-        ullEsquerre.tancat();
+        this.setPosicio("assegut");
         return "ja m'assec";
     }
     
@@ -123,14 +134,12 @@ public class GatRenat {
         if (esEstirat()) {
             return "passo de fer res";  
         }
-        posicio = "estirat";
-        ullDret.tancat();
-        ullEsquerre.tancat();
+        this.setPosicio("estirat");
         return "ja m'estiro";
     }
     
     public static void main(String[] args) {
-        GatRenat renat = new GatRenat();
+        GatRenat renat = new GatRenat("assegut");
         UllDeGat ullDret = renat.getUllDret();
         UllDeGat ullEsquerre = renat.getUllEsquerre();
         
