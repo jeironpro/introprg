@@ -79,14 +79,12 @@ public class GatRenat {
     
     // Mètode que retorna l'ull dret del gat
     public UllDeGat getUllDret() {
-        UllDeGat copiaDret = ullDret;
-        return copiaDret;
+        return this.ullDret;
     }
     
     // Mètode que retorna l'ull esquerre del gat
     public UllDeGat getUllEsquerre() {
-        UllDeGat copiaEsquerre = ullEsquerre;
-        return copiaEsquerre;
+        return this.ullEsquerre;
     }
     
     // Mètode que verifica si renat és dret (retorna true o false)
