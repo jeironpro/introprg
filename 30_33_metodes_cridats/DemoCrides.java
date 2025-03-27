@@ -1,5 +1,5 @@
 /* 
- * Programa que mostra missatge per sortida estàndard mitjançant
+ * Programa que mostra missatges per sortida estàndard mitjançant
  * la herencia de mètodes de altres classes.
  */
 class DemoCrides extends Feli {

@@ -1,3 +1,8 @@
+/*
+ * Programa que és fa servir com superclasse en altres programas
+ * permetre accediex als metodes de la superclasse i de les subclasses.
+ */
+
 class Feli {
     public Feli() {
         System.out.println("Neix Felí");
