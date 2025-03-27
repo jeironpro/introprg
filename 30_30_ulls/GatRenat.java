@@ -36,19 +36,19 @@ public class GatRenat {
     
     // Mètode que permet accedeix a la propietat vides des de fora
     public int getVides() {
-        return vides;
+        return this.vides;
     }
     
     // Mètode que permet modificar a la propietat vides des de fora
-    public void setVides(int vida) {
-        if (vida >= 0) {
-            vides = vida;
+    public void setVides(int vides) {
+        if (vides >= 0) {
+            this.vides = vides;
         }
     }
     
     // Mètode que permet accedeix a la propietat posició des de fora
     public String getPosicio() {
-        return posicio;
+        return this.posicio;
     }
     
     // Mètode que permet modificar a la propietat posicio des de fora
@@ -79,12 +79,14 @@ public class GatRenat {
     
     // Mètode que retorna l'ull dret del gat
     public UllDeGat getUllDret() {
-        return ullDret;
+        UllDeGat copiaDret = ullDret;
+        return copiaDret;
     }
     
     // Mètode que retorna l'ull esquerre del gat
     public UllDeGat getUllEsquerre() {
-        return ullEsquerre;
+        UllDeGat copiaEsquerre = ullEsquerre;
+        return copiaEsquerre;
     }
     
     // Mètode que verifica si renat és dret (retorna true o false)
