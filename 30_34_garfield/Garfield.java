@@ -41,6 +41,11 @@ class Garfield extends Gat {
             super.setPosicio("dret");        
             return "ja m'aixeco";
         }
+        
+        if (esDret()) {
+            return "Bai Maitea, bai";    
+        }
+        
         return "passo de fer res";      
     }
     
@@ -62,9 +67,10 @@ class Garfield extends Gat {
             return "ja m'estiro";
         }
         
-        if (!esAssegut()) {
+        if (esEstirat()) {  
             return "Bai Maitea, bai";
         }
+        
         return "passo de fer res";  
     }
 }
