@@ -61,6 +61,6 @@ class Garfield extends Gat {
             super.setPosicio("estirat");
             return "ja m'estiro";
         }
-        return "Bai Maitea, bai";  
+        return "passo de fer res";  
     }
 }
