@@ -43,10 +43,10 @@ class Garfield extends Gat {
         }
         
         if (esDret()) {
-            return "Bai Maitea, bai";    
+            return "passo de fer res";      
         }
+        return "Bai Maitea, bai";    
         
-        return "passo de fer res";      
     }
     
     // Mètode que verifica si el renat està dret, si ho està mostra un missatge, sino ho està li assigna aquesta posició i mostra un missatge de que ho a fet.
@@ -68,9 +68,9 @@ class Garfield extends Gat {
         }
         
         if (esEstirat()) {  
-            return "Bai Maitea, bai";
+            return "passo de fer res";  
         }
         
-        return "passo de fer res";  
+        return "Bai Maitea, bai";
     }
 }
