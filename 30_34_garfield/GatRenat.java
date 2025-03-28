@@ -27,32 +27,4 @@ class GatRenat extends Gat {
     public GatRenat(int vides, String posicio) {
         super("Renat", vides, posicio);
     }
-    
-    // Mètode que permet modificar a la propietat vides des de fora
-    /*@Override
-    public void setVides(int vides) {
-        if (vides >= 0 && vides <= 7) {
-            super.setVides(vides);
-        }
-    }
-    
-    // Mètode que permet modificar a la propietat posicio des de fora
-    @Override
-    public void setPosicio(String posicio) {
-        String[] posicions = new String[] {"dret", "assegut", "estirat"};
-        
-        for (int i = 0; i < posicions.length; i++) {
-            if (posicio.equals(posicions[i])) {
-                super.setPosicio(posicio);
-            }
-        }
-    }*/
-    
-    /*public static void main(String[] args) {
-        GatRenat renat = new GatRenat();
-        
-        System.out.println(renat.getNom()); 
-        System.out.println(renat.getVides()); 
-        System.out.println(renat.getPosicio()); 
-    }*/
 }
