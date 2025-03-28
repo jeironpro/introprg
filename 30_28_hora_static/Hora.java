@@ -192,8 +192,8 @@ public class Hora {
         return String.format("%d:%02d:%02d", hores, minuts, segons);
     }
     
-    /* Mètode que composa un operador de aquest (<, >, ==) segons el valor que
-     * retorna el mètode compareTo.
+    /* Mètode static que composa un operador de aquest (<, >, ==) segons el valor
+     * que retorna el mètode compareTo.
      */
     private static String composaOperadorComparacio(Hora hora1, Hora hora2) {
         int comparacio = hora1.compareTo(hora2);
