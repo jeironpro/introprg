@@ -30,6 +30,15 @@ class Gat {
         this.setVides(vides);
     }
     
+    public Gat(String nom, String posicio) {
+        if (nom != null && !nom.isEmpty()) {
+            this.nom = nom;        
+        } else {
+            this.nom = "anònim"; 
+        }
+        this.setPosicio(posicio);
+    }
+    
     public Gat(String nom, int vides, String posicio) {
         if (nom != null && !nom.isEmpty()) {
             this.nom = nom;        
