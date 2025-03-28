@@ -8,6 +8,11 @@
  * 1 mètode que compara dues hores (instàncies) de la classe. 
  * També sobreescriu amb l'anotació @override el mètode toString per representar la conversió del valor de l'object de manera personalitzada i no com ho faria java per defecte.
  * 1 mètode que composa un operador segons el valor que retorna el mètode que compara les dues hores.
+ * Ampliació de mètode:
+ * 1 mètode static que verifica si els valors son vàlid per composar una hora.
+ * 1 mètode static que compara dues hores rebuda per paràmetres
+ * 1 mètode que duplica la hora actual amb el mateixos valors.
+ * 1 mètode static que duplica la hora rebuda per paràmetre amb el mateixos valors. 
  */
 
 public class Hora {
@@ -158,7 +163,7 @@ public class Hora {
         this.setSegons((segonsEnHoraActual % 3600) % 60);
     }
     
-    // Mètode que compara dues hores (instàncies)
+    // Mètode que compara dues hores (actual i una que rep per paràmetre)
     public int compareTo(Hora hora) {
         int hores1 = this.getHores();
         int minuts1 = this.getMinuts();
@@ -202,6 +207,9 @@ public class Hora {
         }
     }
     
+    /* Mètode static que verifica si la hora rebuda per paràmetres composta 
+     * per hora, segons i minuts és vàlida. Retorna true si ho és i false si no.
+     */
     public static boolean esValida(int hores, int minuts, int segons) {
         if (hores >= 0 && hores <= 23) {
             if (minuts >= 0 && minuts <= 59) {
@@ -213,42 +221,34 @@ public class Hora {
         return false;
     }
     
+    // Mètode static que compara dues hores (rebudes per paràmetres)
     public static int compareTo(Hora hora1, Hora hora2) {
-        // Obtenir les hores de la instància
         int hores1 = hora1.hores;
-        // Obtenir els minuts de la instància
         int minuts1 = hora1.minuts;
-        // Obtenir els segons de la instància
         int segons1 = hora1.segons;
         
-        // Obtenir les hores de la instància rebuda
         int hores2 = hora2.hores;
-        // Obtenir els minuts de la instància rebuda
         int minuts2 = hora2.minuts;
-        // Obtenir els segons de la instància rebuda
         int segons2 = hora2.segons;
         
-        // Verificar si la hora completa de la instancia és menor a la de la instància rebuda
         if (segons1 < segons2 || minuts1 < minuts2 || hores1 < hores2) {
-            // Retornar -1
             return -1;
         }
         
-        // Verificar si la hora completa de la instancia és major a la de la instància rebuda
         if (segons1 > segons2 || minuts1 > minuts2 || hores1 > hores2) {
-            // Retornar 1
             return 1;
         }
-        
-        // Si es cap de les condicins anteriors, són iguals 
-        // Retornar 0
         return 0;
     }
     
+    // Mètode que duplica la hora actual amb la mateixa hores, minuts i segons
     public Hora duplica() {
         return new Hora(this.getHores(), this.getMinuts(), this.getSegons());
     }
     
+    /* Mètode static que duplica la hora amb el valor de la hores, minuts i
+     * segons de la hora rebuda per paràmetre.
+     */
     public static Hora duplica(Hora hora) {
         return new Hora(hora.getHores(), hora.getMinuts(), hora.getSegons());
     }
