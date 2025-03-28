@@ -148,7 +148,9 @@ public class Hora {
                 segonsEnHoraActual += 86400;
             }
         } else if (segonsEnHoraActual >= 86400) {
-            segonsEnHoraActual -= 86400;
+            while (segonsEnHoraActual > 1) {
+                segonsEnHoraActual %= 86400;
+            }
         }
         
         this.setHores(segonsEnHoraActual / 3600);
