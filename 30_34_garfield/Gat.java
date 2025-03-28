@@ -66,6 +66,14 @@ class Gat {
         this.posicio = posicio;
     }
     
+    // Mètode que verifica si renat és viu (retorna true o false)
+    public boolean esViu() {
+        if (vides > 0) {
+            return true;
+        }
+        return false;
+    }
+    
     // Mètode que verifica si renat és dret (retorna true o false)
     public boolean esDret() {
         if (this.posicio.equals("dret")) {
