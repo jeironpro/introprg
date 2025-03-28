@@ -29,10 +29,10 @@ class Garfield extends Gat {
     }*/
     
     // Mètode que permet modificar a la propietat posicio des de fora
-    @Override
+    /*@Override
     public void setPosicio(String posicio) {
         super.setPosicio(posicio);
-    }
+    }*/
     
     // Mètode que verifica si el renat està assegut, si ho està mostra un missatge, sino ho està li assigna aquesta posició i mostra un missatge de que ho a fet.
     @Override
