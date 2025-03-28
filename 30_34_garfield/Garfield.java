@@ -10,23 +10,23 @@ class Garfield extends Gat {
     /* Constructor amb un paràmetre (vides), crida al constructor amb paràmetres
      * i li passa l'argument que reb per vides i el valor per defecte de posicio.
      */
-    public Garfield(int vides) {
+    /*public Garfield(int vides) {
         super("Garfield", vides, "estirat");
-    }
+    }*/
     
     /* Constructor amb un paràmetre (posicio), crida al constructor amb paràmetres
      * i li passa el valor per defecte de vides i l'argument que rep per posicio.
      */
-    public Garfield(String posicio) {
+    /*public Garfield(String posicio) {
         super("Garfield", 9, posicio);
-    }
+    }*/
     
     /* Constructor amb paràmetres, fa servir this per referir-se als mètodes 
      * accessors de la classe, per modificar les propietats. 
      */
-    public Garfield(int vides, String posicio) {
+    /*public Garfield(int vides, String posicio) {
         super("Garfield", vides, posicio);
-    }
+    }*/
     
     // Mètode que permet modificar a la propietat posicio des de fora
     @Override
