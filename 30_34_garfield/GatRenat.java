@@ -29,7 +29,7 @@ class GatRenat extends Gat {
     }
     
     // Mètode que permet modificar a la propietat vides des de fora
-    @Override
+    /*@Override
     public void setVides(int vides) {
         if (vides >= 0 && vides <= 7) {
             super.setVides(vides);
@@ -46,7 +46,7 @@ class GatRenat extends Gat {
                 super.setPosicio(posicio);
             }
         }
-    }
+    }*/
     
     /*public static void main(String[] args) {
         GatRenat renat = new GatRenat();
