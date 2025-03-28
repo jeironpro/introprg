@@ -1,3 +1,8 @@
+/*
+ * Programa que comprova la implementació de la superclasse Gat i la subclasses
+ * GatRenat i Garfield. 
+ */
+ 
 class UsaGats {
     public static void main(String[] args) {
         Gat[] gats = new Gat[] {

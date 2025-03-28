@@ -1,8 +1,11 @@
 /*
- *
+ * Programa que utilitza la superclasse Gat per instanciar al GatRenat.
+ * Conté amb: quatres constructor, un per defecte i altres tres que rebren 
+ * paràmetres.
  */
  
 class GatRenat extends Gat {
+    // Constructor per defecte
     public GatRenat() {
         super("Renat", 7, "estirat");
     }
