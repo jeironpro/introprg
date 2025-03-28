@@ -1,5 +1,5 @@
 /*
- * Programa que comprova la implementació de la superclasse Gat i la subclasses
+ * Programa que comprova la implementació de la superclasse Gat i les subclasses
  * GatRenat i Garfield. 
  */
  
