@@ -12,7 +12,7 @@ class Gat {
     private String posicio;
     
     public Gat(String nom) {
-        if (nom != null && !nom.isEmpty()) {
+        if (nom != null && !nom.isBlank()) {
             this.nom = nom;        
         } else {
             this.nom = "anònim"; 
@@ -22,7 +22,7 @@ class Gat {
     }
     
     public Gat(String nom, int vides) {
-        if (nom != null && !nom.isEmpty()) {
+        if (nom != null && !nom.isBlank()) {
             this.nom = nom;        
         } else {
             this.nom = "anònim"; 
@@ -31,7 +31,7 @@ class Gat {
     }
     
     public Gat(String nom, String posicio) {
-        if (nom != null && !nom.isEmpty()) {
+        if (nom != null && !nom.isBlank()) {
             this.nom = nom;        
         } else {
             this.nom = "anònim"; 
@@ -40,7 +40,7 @@ class Gat {
     }
     
     public Gat(String nom, int vides, String posicio) {
-        if (nom != null && !nom.isEmpty()) {
+        if (nom != null && !nom.isBlank()) {
             this.nom = nom;        
         } else {
             this.nom = "anònim"; 
