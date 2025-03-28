@@ -148,7 +148,7 @@ public class Hora {
                 segonsEnHoraActual += 86400;
             }
         } else if (segonsEnHoraActual >= 86400) {
-            while (segonsEnHoraActual > 1) {
+            while (segonsEnHoraActual >= 86400) {
                 segonsEnHoraActual %= 86400;
             }
         }
