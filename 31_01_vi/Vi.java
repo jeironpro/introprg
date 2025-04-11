@@ -70,6 +70,7 @@ public class Vi {
         
         boolean espai = false;
         for (int i = 0; i < nom.length(); i++) {
+            espai = false;
             char c = nom.charAt(i);
             
             if (!Character.isWhitespace(c)) {
