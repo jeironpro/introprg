@@ -51,11 +51,11 @@ public class Botiga {
     }
     
     public Vi cerca(String nom) {
-        nom = nom.toLowerCase();
         nom = Vi.normalitzaNom(nom);
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
-                if (vins[i].getNom().equals(nom)) { 
+                String nomVi = vins[i].getNom().toLowerCase();
+                if (nomVi.equals(nom)) { 
                     return vins[i]; 
                 }
             }
