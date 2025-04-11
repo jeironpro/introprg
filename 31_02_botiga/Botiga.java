@@ -8,7 +8,7 @@
  */
 
 public class Botiga {
-    private final int DEFAULT_MAX_VINS;
+    private static final int DEFAULT_MAX_VINS;
     private Vi[] vins;
     
     public Botiga() {
