@@ -12,12 +12,12 @@
  */
 
 public class Vi {
-    private final String NOM;
+    private final String nom;
     private int preu;
     private int estoc = 0;
     
     public Vi(String nom, int preu) {
-        this.NOM = normalitzaNom(nom);
+        this.nom = normalitzaNom(nom);
         if (preu < 0) {
             this.preu = -1;
         } else {
@@ -26,7 +26,7 @@ public class Vi {
     }
     
     public Vi(String nom, int preu, int estoc) {
-        this.NOM = normalitzaNom(nom);
+        this.nom = normalitzaNom(nom);
         if (preu < 0) {
             this.preu = -1;
         } else {
@@ -40,7 +40,7 @@ public class Vi {
         }
     }
     
-    public String getNom() { return this.NOM; }
+    public String getNom() { return this.nom; }
     
     public int getPreu() { return this.preu; }
     
@@ -55,7 +55,7 @@ public class Vi {
     }
     
     public boolean esValid() {
-        if (this.NOM.equals("NOM NO VÀLID!")) { return false; }
+        if (this.nom.equals("NOM NO VÀLID!")) { return false; }
         if (this.preu == -1) { return false; }
         if (this.estoc == -1) { return false; }
         return true;
