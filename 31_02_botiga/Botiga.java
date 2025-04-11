@@ -8,21 +8,17 @@
  */
 
 public class Botiga {
-    private static final int DEFAULT_MAX_VINS;
+    private static final int DEFAULT_MAX_VINS = 10;
     private Vi[] vins;
     
     public Botiga() {
-        this.DEFAULT_MAX_VINS = 10;
         this.vins = new Vi[DEFAULT_MAX_VINS];
     }
     
     public Botiga(int maxVins) {
         if (maxVins > 1) {
-            this.DEFAULT_MAX_VINS = maxVins;
-        } else {
-            this.DEFAULT_MAX_VINS = 10;
+            this.vins = new Vi[maxVins];
         }
-        this.vins = new Vi[DEFAULT_MAX_VINS];
     }
     
     public Vi afegeix(Vi vi) {
