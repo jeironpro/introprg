@@ -34,14 +34,13 @@ public class Botiga {
     }
     
     public Vi elimina(String nom) {
-        for (int i = 0; i < vins.length; i++) {
-            if (vins[i].getNom() != null && vins[i].getNom().equals(nom)) { 
-                if (vins[i].getEstoc() == 0) { 
-                    vins[i] = null;
-                    return vins[i];
-                } else {
-                    return null; 
-                }
+        Vi vi = cerca(nom);
+        if (vi != null) { 
+            if (vi.getEstoc() == 0) { 
+                vi = null;
+                return vi;
+            } else {
+                return null; 
             }
         }
         return null;
@@ -50,7 +49,11 @@ public class Botiga {
     public Vi cerca(String nom) {
         nom = Vi.normalitzaNom(nom);
         for (int i = 0; i < vins.length; i++) {
-            if (vins[i].getNom().equals(nom)) { return vins[i]; }
+            if (vins[i] != null) {
+                if (vins[i].getNom().equals(nom)) { 
+                    return vins[i]; 
+                }
+            }
         }
         return null;    
     }  
