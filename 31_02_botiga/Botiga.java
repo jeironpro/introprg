@@ -1,6 +1,6 @@
 /*
- * Classe Botiga, dos propietats DEFAULT_MAX_VINS (constant) no es pot modificar,
- * vi és un arreu de vins, dos constructor un per defecte i un altre especifics
+ * Classe Botiga, dues propietats DEFAULT_MAX_VINS (constant) no es pot modificar,
+ * vi és un arreu de vins, dos constructors un per defecte i un altre específics
  * que permet inicialitza la propietat DEFAULT_MAX_VINS amb un valor positiu, del
  * contrari ho inicialitza amb 10. Un mètode (afegeix) que permet afegir vi a
  * l'arreu, un mètode (elimina) que elimina un vi de l'arreu, i un mètode (cerca)
@@ -35,14 +35,12 @@ public class Botiga {
     
     public Vi elimina(String nom) {
         for (int i = 0; i < vins.length; i++) {
-            if (vins[i] != null) {
-                if (vins[i].getNom().equals(nom)) { 
-                    if (vins[i].getEstoc() == 0) { 
-                        vins[i] = null;
-                        return vins[i];
-                    } else {
-                        return null; 
-                    }
+            if (vins[i].getNom() != null && vins[i].getNom().equals(nom)) { 
+                if (vins[i].getEstoc() == 0) { 
+                    vins[i] = null;
+                    return vins[i];
+                } else {
+                    return null; 
                 }
             }
         }
