@@ -68,8 +68,8 @@ public class Vi {
         String nomNormalitzat = "";
         nom = nom.strip();
         
+        boolean espai = false;
         for (int i = 0; i < nom.length(); i++) {
-            boolean espai = false;
             char c = nom.charAt(i);
             
             if (!Character.isWhitespace(c)) {
@@ -77,8 +77,8 @@ public class Vi {
             } else {
                 if (!espai) {
                     nomNormalitzat += " ";
+                    espai = true;
                 }
-                espai = true;
             }            
             
         }
