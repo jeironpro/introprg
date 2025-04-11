@@ -149,6 +149,7 @@ public class Entorn {
     public void processaElimina() {
         System.out.print("nom (enter cancel·la)> ");
         String nomVi = Entrada.readLine();
+        if (nomVi.isBlank()) { return; }
         if (botiga.cerca(nomVi) == null) {
             System.out.println("No trobat");
             return;
