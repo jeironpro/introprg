@@ -66,10 +66,10 @@ public class Vi {
             return "NOM NO VÀLID!";
         }
         String nomNormalitzat = "";
-        boolean espai = false;
         nom = nom.strip();
         
         for (int i = 0; i < nom.length(); i++) {
+            boolean espai = false;
             char c = nom.charAt(i);
             
             if (!Character.isWhitespace(c)) {
