@@ -70,17 +70,17 @@ public class Vi {
         
         boolean espai = false;
         for (int i = 0; i < nom.length(); i++) {
-            espai = false;
             char c = nom.charAt(i);
             
             if (!Character.isWhitespace(c)) {
                 nomNormalitzat += c;
+                espai = false;
             } else {
                 if (!espai) {
                     nomNormalitzat += " ";
-                    espai = true;
+                    espai = true;            
                 }
-            }            
+            }
             
         }
         return nomNormalitzat;
