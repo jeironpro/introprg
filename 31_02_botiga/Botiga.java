@@ -18,13 +18,24 @@ public class Botiga {
     public Botiga(int maxVins) {
         if (maxVins > 1) {
             this.vins = new Vi[maxVins];
+        } else {
+            this.vins = new Vi[DEFAULT_MAX_VINS];
         }
     }
     
     public Vi afegeix(Vi vi) {
         if (!vi.esValid()) { return null; }
+        
+        String nomVi = vi.getNom();
+        
         for (int i = 0; i < vins.length; i++) {
-            if (vins[i] != null && vins[i].getNom().equals(vi.getNom())) { return null; }
+            if (vins[i] != null) { 
+                String nomExistent = vins[i].getNom();
+                
+                if (nomExistent.equals(nomVi)) {
+                    return null; 
+                }
+            }
             if (vins[i] == null) { 
                 vins[i] = vi;
                 return vi; 
@@ -34,16 +45,17 @@ public class Botiga {
     }
     
     public Vi elimina(String nom) {
+        nom = Vi.normalitzaNom(nom);
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
-                if (vins[i].getNom().equals(nom)) { 
-                    if (vins[i].getEstoc() == 0) { 
-                        Vi viTmp = vins[i];
-                        vins[i] = null;
-                        return viTmp;
-                    } else {
+                String nomExistent = vins[i].getNom();
+                if (nomExistent.equals(nom)) { 
+                    if (vins[i].getEstoc() > 0) { 
                         return null; 
                     }
+                    Vi viTmp = vins[i];
+                    vins[i] = null;
+                    return viTmp;
                 }
             }
         }
@@ -51,10 +63,10 @@ public class Botiga {
     }
     
     public Vi cerca(String nom) {
-        nom = Vi.normalitzaNom(nom).toLowerCase();
+        nom = Vi.normalitzaNom(nom);
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
-                String nomVi = vins[i].getNom().toLowerCase();
+                String nomVi = vins[i].getNom();
                 if (nomVi.equals(nom)) { 
                     return vins[i]; 
                 }
