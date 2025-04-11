@@ -37,8 +37,9 @@ public class Botiga {
         for (int i = 0; i < vins.length; i++) {
             if (vins[i].getNom().equals(nom)) { 
                 if (vins[i].getEstoc() == 0) { 
+                    Vi viTmp = vins[i];
                     vins[i] = null;
-                    return vins[i];
+                    return viTmp;
                 } else {
                     return null; 
                 }
