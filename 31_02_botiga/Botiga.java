@@ -35,13 +35,15 @@ public class Botiga {
     
     public Vi elimina(String nom) {
         for (int i = 0; i < vins.length; i++) {
-            if (vins[i].getNom().equals(nom)) { 
-                if (vins[i].getEstoc() == 0) { 
-                    Vi viTmp = vins[i];
-                    vins[i] = null;
-                    return viTmp;
-                } else {
-                    return null; 
+            if (cerca(nom) != null) {
+                if (vins[i].getNom().equals(nom)) { 
+                    if (vins[i].getEstoc() == 0) { 
+                        Vi viTmp = vins[i];
+                        vins[i] = null;
+                        return viTmp;
+                    } else {
+                        return null; 
+                    }
                 }
             }
         }
