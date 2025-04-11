@@ -164,6 +164,8 @@ public class Entorn {
                 return;
             }
             System.out.println("Eliminat"); 
+        } else {
+            return;
         }
     }
     
