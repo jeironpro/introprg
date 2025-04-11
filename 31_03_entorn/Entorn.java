@@ -165,6 +165,7 @@ public class Entorn {
             }
             System.out.println("Eliminat"); 
         } else {
+            System.out.println("No eliminat");
             return;
         }
     }
