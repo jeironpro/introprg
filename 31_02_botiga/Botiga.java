@@ -34,13 +34,14 @@ public class Botiga {
     }
     
     public Vi elimina(String nom) {
-        Vi vi = cerca(nom);
-        if (vi != null) { 
-            if (vi.getEstoc() == 0) { 
-                vi = null;
-                return vi;
-            } else {
-                return null; 
+        for (int i = 0; i < vins.length; i++) {
+            if (vins[i].getNom().equals(nom)) { 
+                if (vins[i].getEstoc() == 0) { 
+                    vins[i] = null;
+                    return vins[i];
+                } else {
+                    return null; 
+                }
             }
         }
         return null;
