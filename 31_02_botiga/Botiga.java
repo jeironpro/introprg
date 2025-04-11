@@ -45,7 +45,8 @@ public class Botiga {
         nom = Vi.normalitzaNom(nom).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
-                if (cerca(nom) != null) { 
+                String nomExistent = vins[i].getNom().toLowerCase();
+                if (nomExistent.equals(nom)) { 
                     if (vins[i].getEstoc() > 0) { 
                         return null; 
                     }
