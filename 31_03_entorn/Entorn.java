@@ -124,7 +124,7 @@ public class Entorn {
                 if (preuEnter >= 0) {
                     vi.setPreu(preuEnter);
                 } else {
-                    System.out.println("ERROR: el valor ha de ser un enter positiu");
+                    System.out.println("ERROR: cal un enter positiu");
                     return;
                 }
             }
@@ -137,7 +137,7 @@ public class Entorn {
                 if (estocEnter >= 0) {
                     vi.setEstoc(estocEnter);
                 } else {
-                    System.out.println("ERROR: el valor ha de ser un enter positiu");
+                    System.out.println("ERROR: cal un enter positiu");
                     return;
                 }
             }
