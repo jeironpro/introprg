@@ -67,6 +67,7 @@ public class Vi {
         }
         String nomNormalitzat = "";
         boolean espai = false;
+        nom = nom.toLowerCase();
         nom = nom.strip();
         
         for (int i = 0; i < nom.length(); i++) {
