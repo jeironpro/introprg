@@ -29,7 +29,7 @@ public class Entorn {
     }
     
     public static void mostraBenvinguda() {
-        System.out.println("Celler la Bona Estrella. Escriviu ajuda per veure opcions.");
+        System.out.println("Celler La Bona Estrella. Escriviu ajuda per veure opcions.");
     }
     
     public static void mostraPrompt() {
