@@ -84,7 +84,12 @@ public class Entorn {
            }
         }
         Vi vi = new Vi(nom, preuEnter, estocEnter);
-        System.out.printf("Introduït:%s%n", botiga.afegeix(vi));
+        Vi afegit = botiga.afegeix(vi);
+        if (afegit == null) {
+            System.out.println("ERROR: no s'ha pogut afegir");
+            return;
+        }
+        System.out.printf("Introduït:%s%n", afegit);
     }
 
     public void processaCerca() {
