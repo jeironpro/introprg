@@ -1,9 +1,9 @@
 /*
- * Programa principal de la Botiga, que conté amb un prompt interatiu que rep
- * comandes per realitzar les accions de afegir, cercar, modificar i eliminar
+ * Programa principal de la Botiga, que conté amb un prompt interactiu que rep
+ * comandes per realitzar les accions d'afegir, cercar, modificar i eliminar
  * vins. Fa servir utilitats de confirmació i utilitats de String. El programa
- * inicialment mostra un missatge de benvinguda, seguit el prompt i un missatge
- * de comiat cuando rep el comanda surt. El comanda ajuda mostra els comandes
+ * inicialment, mostra un missatge de benvinguda, seguit el prompt i un missatge
+ * de comiat quan rep el comanda surt. El comanda ajuda mostra els comandes
  * disponibles.
  * Mètodes de classe:
  *  - mostraBenvinguda() -> mostra el missatge de benvinguda.
@@ -13,23 +13,23 @@
  *    s'introdueix una comanda desconeguda.
  *  - mostraComiat() -> mostra el missatge de comiat.
  *
- * Propietats i mètodes de instància:
+ * Propietats i mètodes d'instància:
  *  - Propietat botiga: instància global de la botiga.
- *  - Mètode processaAfegeix() -> demana un nom per afegir el vi, si no es buit
- *    demana el preu, si el preu buit ni negatiu, demana l`estoc si no es buit 
+ *  - Mètode processaAfegeix() -> demana un nom per afegir el vi, si no és buit
+ *    demana el preu, si el preu buit ni negatiu, demana l'estoc si no és buit 
  *    ni negatiu afegeix el vi.
- *  - Mètode processaCerca() -> demana un nom per cercar un vi, si el vi es 
+ *  - Mètode processaCerca() -> demana un nom per cercar un vi, sí el vi es 
  *    troba en la botiga el mostra.
  *  - Mètode processaModifica() -> demana un nom per modificar un vi, si no és
  *    buit i es troba en la botiga, demana el preu i l'estoc mostrant els valors
- *    anteriors, si el valor introduit per cada dada és major o igual a 0 el
- *    modifica, sino es queda amb els anteriors.  
+ *    anteriors, si el valor introduït per cada dada és major o igual a 0 el
+ *    modifica, sinó es queda amb els anteriors.  
  *  - Mètode processaElimina() -> demana un nom per eliminar un vi, ho elimina
- *    si el nom no és buit i és troba en la botiga, abans de eliminar-ho demana 
- *    confimació.
- * Les accions es poden cancel·lar presionat enter.  
+ *    si el nom no és buit i es troba en la botiga, abans d'eliminar-ho demana 
+ *    Confirmació.
+ * Les accions es poden cancel·lar pressionat enter.  
  */
-
+ 
 public class Entorn {
     private final Botiga botiga = new Botiga();
     public static void main(String[] args) {
