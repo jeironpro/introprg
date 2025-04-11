@@ -66,9 +66,9 @@ public class Vi {
             return "NOM NO VÀLID!";
         }
         String nomNormalitzat = "";
+        boolean espai = false;
         nom = nom.strip();
         
-        boolean espai = false;
         for (int i = 0; i < nom.length(); i++) {
             char c = nom.charAt(i);
             
@@ -78,10 +78,9 @@ public class Vi {
             } else {
                 if (!espai) {
                     nomNormalitzat += " ";
-                    espai = true;            
                 }
+                espai = true;            
             }
-            
         }
         return nomNormalitzat;
     }
