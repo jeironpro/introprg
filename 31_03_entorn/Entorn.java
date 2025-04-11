@@ -51,7 +51,7 @@ public class Entorn {
     }
     
     public static void mostraComiat() {
-        System.out.println("Adéu");
+        System.out.println("adéu");
     }
     
     public void processaAfegeix() {
