@@ -28,14 +28,8 @@ public class Botiga {
         
         String nomVi = vi.getNom();
         
-        for (int i = 0; i < vins.length; i++) {
-            if (vins[i] != null) { 
-                String nomExistent = vins[i].getNom();
-                
-                if (nomExistent.equals(nomVi)) {
-                    return null; 
-                }
-            }
+        if (cerca(nomVi) != null) {
+            return null;
         }
         
         for (int i = 0; i < vins.length; i++) {
