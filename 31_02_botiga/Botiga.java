@@ -16,7 +16,7 @@ public class Botiga {
     }
     
     public Botiga(int maxVins) {
-        if (maxVins >= 1) {
+        if (maxVins > 0) {
             this.vins = new Vi[maxVins];
         } else {
             this.vins = new Vi[DEFAULT_MAX_VINS];
@@ -45,8 +45,7 @@ public class Botiga {
         nom = Vi.normalitzaNom(nom).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
-                String nomExistent = vins[i].getNom().toLowerCase();
-                if (nomExistent.equals(nom)) { 
+                if (cerca(nom) != null) { 
                     if (vins[i].getEstoc() > 0) { 
                         return null; 
                     }
