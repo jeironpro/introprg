@@ -16,7 +16,7 @@ public class Botiga {
     }
     
     public Botiga(int maxVins) {
-        if (maxVins > 1) {
+        if (maxVins >= 1) {
             this.vins = new Vi[maxVins];
         } else {
             this.vins = new Vi[DEFAULT_MAX_VINS];
