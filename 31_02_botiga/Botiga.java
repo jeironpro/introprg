@@ -36,6 +36,9 @@ public class Botiga {
                     return null; 
                 }
             }
+        }
+        
+        for (int i = 0; i < vins.length; i++) {
             if (vins[i] == null) { 
                 vins[i] = vi;
                 return vi; 
@@ -45,10 +48,10 @@ public class Botiga {
     }
     
     public Vi elimina(String nom) {
-        nom = Vi.normalitzaNom(nom);
+        nom = Vi.normalitzaNom(nom).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
-                String nomExistent = vins[i].getNom();
+                String nomExistent = vins[i].getNom().toLowerCase();
                 if (nomExistent.equals(nom)) { 
                     if (vins[i].getEstoc() > 0) { 
                         return null; 
