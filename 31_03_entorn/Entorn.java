@@ -1,3 +1,35 @@
+/*
+ * Programa principal de la Botiga, que conté amb un prompt interatiu que rep
+ * comandes per realitzar les accions de afegir, cercar, modificar i eliminar
+ * vins. Fa servir utilitats de confirmació i utilitats de String. El programa
+ * inicialment mostra un missatge de benvinguda, seguit el prompt i un missatge
+ * de comiat cuando rep el comanda surt. El comanda ajuda mostra els comandes
+ * disponibles.
+ * Mètodes de classe:
+ *  - mostraBenvinguda() -> mostra el missatge de benvinguda.
+ *  - mostraPrompt() -> mostra el prompt.
+ *  - mostraAjuda() -> mostra les comandes disponibles.
+ *  - mostraErrorComandaDesconeguda() -> mostra el missatge d'error quan
+ *    s'introdueix una comanda desconeguda.
+ *  - mostraComiat() -> mostra el missatge de comiat.
+ *
+ * Propietats i mètodes de instància:
+ *  - Propietat botiga: instància global de la botiga.
+ *  - Mètode processaAfegeix() -> demana un nom per afegir el vi, si no es buit
+ *    demana el preu, si el preu buit ni negatiu, demana l`estoc si no es buit 
+ *    ni negatiu afegeix el vi.
+ *  - Mètode processaCerca() -> demana un nom per cercar un vi, si el vi es 
+ *    troba en la botiga el mostra.
+ *  - Mètode processaModifica() -> demana un nom per modificar un vi, si no és
+ *    buit i es troba en la botiga, demana el preu i l'estoc mostrant els valors
+ *    anteriors, si el valor introduit per cada dada és major o igual a 0 el
+ *    modifica, sino es queda amb els anteriors.  
+ *  - Mètode processaElimina() -> demana un nom per eliminar un vi, ho elimina
+ *    si el nom no és buit i és troba en la botiga, abans de eliminar-ho demana 
+ *    confimació.
+ * Les accions es poden cancel·lar presionat enter.  
+ */
+
 public class Entorn {
     private final Botiga botiga = new Botiga();
     public static void main(String[] args) {
@@ -57,9 +89,12 @@ public class Entorn {
     public void processaAfegeix() {
         System.out.print("nom (enter cancel·la)> ");
         String nom = Entrada.readLine();
+        
         if (nom.isBlank()) { return; }
+        
         System.out.print("preu (en cèntims)> ");            
         String preu = Entrada.readLine();
+        
         int preuEnter = 0;
         if (!preu.isBlank()) {
            if (esEnter(preu)) {
@@ -73,6 +108,7 @@ public class Entorn {
         
         System.out.print("estoc (enter sense estoc)> ");
         String estoc = Entrada.readLine();
+        
         int estocEnter = 0;
         if (!estoc.isBlank()) {
            if (esEnter(estoc)) {
@@ -83,8 +119,10 @@ public class Entorn {
                }
            }
         }
+        
         Vi vi = new Vi(nom, preuEnter, estocEnter);
         Vi afegit = botiga.afegeix(vi);
+        
         if (afegit == null) {
             System.out.println("ERROR: no s'ha pogut afegir");
             return;
@@ -95,9 +133,11 @@ public class Entorn {
     public void processaCerca() {
         System.out.print("nom (enter cancel·la)> ");
         String nom = Entrada.readLine();
+        
         if (!nom.isBlank()) {
-            if (botiga.cerca(nom) != null) {
-                System.out.printf("Trobat:%s%n", botiga.cerca(nom));
+            Vi cercat = botiga.cerca(nom);
+            if (cercat != null) {
+                System.out.printf("Trobat:%s%n", cercat);
                 return;
             } else {
                 System.out.println("No trobat");
@@ -110,11 +150,11 @@ public class Entorn {
         String nomVi = Entrada.readLine();
         if (nomVi.isBlank()) { return; }
         
-        if (botiga.cerca(nomVi) == null) {
+        Vi vi = botiga.cerca(nomVi);
+        if (vi == null) {
             System.out.println("No trobat");
             return;
         }
-        Vi vi = botiga.cerca(nomVi);
         
         System.out.printf("preu (enter %d)> ", vi.getPreu());
         String preu = Entrada.readLine();
@@ -143,23 +183,28 @@ public class Entorn {
             }
         }
         
-        System.out.printf("Modificat:%s%n", botiga.cerca(nomVi));
+        System.out.printf("Modificat:%s%n", vi);
     }    
     
     public void processaElimina() {
         System.out.print("nom (enter cancel·la)> ");
         String nomVi = Entrada.readLine();
+        
         if (nomVi.isBlank()) { return; }
-        if (botiga.cerca(nomVi) == null) {
+        
+        Vi cercat = botiga.cerca(nomVi);
+        if (cercat == null) {
             System.out.println("No trobat");
             return;
         }
-        System.out.printf("A eliminar:%s%n", botiga.cerca(nomVi));
+        
+        System.out.printf("A eliminar:%s%n", cercat);
         System.out.print("Segur?> ");
         boolean confirmacio = respostaABoolean(Entrada.readLine());
+        
         if (confirmacio) { 
-            Vi viEliminar = botiga.elimina(nomVi);
-            if (viEliminar == null) {
+            Vi eliminar = botiga.elimina(nomVi);
+            if (eliminar == null) {
                 System.out.println("ERROR: no s'ha pogut eliminar");
                 return;
             }
