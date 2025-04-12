@@ -78,13 +78,13 @@ public class Botiga {
     } 
     
     public Vi getSeguent() {
+        if (indexVi >= vins.length) { return null; }
         if (vins[indexVi] == null) {
             if (indexVi < vins.length) {
                 indexVi++;
             }
         }
         
-        if (indexVi >= vins.length) { return null; }
         
         Vi vi = vins[indexVi];
         
