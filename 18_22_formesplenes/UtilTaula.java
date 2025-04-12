@@ -301,13 +301,13 @@ public class UtilTaula {
         if (N_FILES > N_COLS) {
             N_FILES = N_COLS;
         }
+        
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                
-                if (col+1 == N_COLS-fila || N_FILES <= col+fila) {
-                    taula[fila][col] = true;
-                } else {
+                if (col < N_FILES-fila-1) {
                     taula[fila][col] = false;
+                } else {
+                    taula[fila][col] = true;
                 }
             }
         }
