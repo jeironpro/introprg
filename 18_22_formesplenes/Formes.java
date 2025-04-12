@@ -30,7 +30,7 @@ public class Formes {
                         break;
                     }
                 }*/
-                System.out.println(especificacio);
+                //System.out.println(especificacio);
                 
                 switch (especificacio) {
                     case "\\": UtilTaula.inicialitzaPrimeraDiagonal(taula);
