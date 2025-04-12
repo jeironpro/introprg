@@ -13,24 +13,25 @@ public class Formes {
                 System.out.println("Especificació no vàlida");
             } else {
                 boolean[][] taula = new boolean[files][columnes];
-                //String[] especificacions = { "\\", "|", "-", "+", "/", "x", "=", "||", "++", "*\\", "\\*", "*/", "/*", "*|", "|*", "*-", "-*", "*+", "**+", "+*", "+**", "*+**", "**+*", "*x", "**x", "x*", "x**", "*x*", "**x**" };
+                String especificacioTmp = "";
                 String especificacio = "";
                 String especificacions = args[i];
                 
-                for (int j = 0; j < especificacions.length(); j++) {
+                for (int j = especificacions.length()-1; j >= 0; j--) {
                     char c = especificacions.charAt(j);
-                    if (c != 'x' && !Character.isDigit(c)) {
-                        especificacio += c;
+                    if (!Character.isDigit(c)) {
+                        especificacioTmp += c;
+                    } else {
+                        break;
                     }
                 }
                 
-                /*for (int j = 0; j < especificacions.length; j++) {
-                    if (args[i].endsWith(especificacions[j])) {
-                        especificacio += especificacions[j];
-                        break;
+                for (int j = especificacioTmp.length()-1; j >= 0; j--) {
+                    char c = especificacioTmp.charAt(j);
+                    if (!Character.isDigit(c)) {
+                        especificacio += c;
                     }
-                }*/
-                //System.out.println(especificacio);
+                }
                 
                 switch (especificacio) {
                     case "\\": UtilTaula.inicialitzaPrimeraDiagonal(taula);
