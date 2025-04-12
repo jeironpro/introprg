@@ -190,7 +190,6 @@ public class UtilTaula {
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                
                 if (col == fila) {
                     taula[fila][col] = true;
                 } else if (col+1 == N_COLS-fila) {
@@ -553,21 +552,29 @@ public class UtilTaula {
     }
     
     public static void inicialitzaCreuEPle(boolean[][] taula) {
-        final int N_FILES = taula.length;
-        final int N_COLS = taula[0].length;
-        final float M_FILES = Math.round(taula.length/2.00)-1;
-        final float M_COLS = Math.round(taula[0].length/2.00)-1;
+        int N_FILES = taula.length;
+        int N_COLS = taula[0].length;
+        int M_FILES = (taula.length/2);
+        int M_COLS = (taula[0].length/2);
+        
+        if (N_FILES > N_COLS) {
+            N_FILES = N_COLS;
+        }
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                if (fila == col) {
+                if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
-                } else if (col+1 == N_COLS-fila) {
-                    taula[fila][col] = true;
-                } else if (col > M_COLS && fila+col/2 > M_FILES && fila <= col) {
-                    taula[fila][col] = true;
-                } else {
+                }else if (fila <= M_FILES && col < fila) {
                     taula[fila][col] = false;
+                } else if (fila > M_FILES && col < fila) {
+                    taula[fila][col] = false;
+                } else if (fila < col && col+1 < N_COLS-fila) {
+                    taula[fila][col] = false;
+                } else if (fila >= col+1 && col+fila >= N_COLS) {
+                    taula[fila][col] = false;
+                } else {
+                    taula[fila][col] = true;
                 }
             }
         }
@@ -576,8 +583,8 @@ public class UtilTaula {
     public static void inicialitzaCreuNSPlens(boolean[][] taula) {
         int N_FILES = taula.length;
         int N_COLS = taula[0].length;
-        int M_FILES = (taula.length/2)-1;
-        int M_COLS = (taula[0].length/2)-1;
+        int M_FILES = (taula.length/2);
+        int M_COLS = (taula[0].length/2);
         
         if (N_FILES > N_COLS) {
             N_FILES = N_COLS;
