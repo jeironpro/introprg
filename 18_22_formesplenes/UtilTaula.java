@@ -295,12 +295,16 @@ public class UtilTaula {
     }
     
     public static void inicialitzaSegonaDiagonalSegonPle(boolean[][] taula) {
-        final int N_FILES = taula.length;
-        final int N_COLS = taula[0].length;
+        int N_FILES = taula.length;
+        int N_COLS = taula[0].length;
         
+        if (N_FILES > N_COLS) {
+            N_FILES = N_COLS;
+        }
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                if (fila <= N_FILES-1 && col+1 >= N_FILES-fila) {
+                
+                if (col+1 == N_COLS-fila || N_FILES <= col+fila) {
                     taula[fila][col] = true;
                 } else {
                     taula[fila][col] = false;
@@ -516,7 +520,6 @@ public class UtilTaula {
         int N_FILES = taula.length;
         int N_COLS = taula[0].length;
         int M_FILES = (taula.length/2);
-        int M_COLS = (taula[0].length/2);
         
         if (N_FILES > N_COLS) {
             N_FILES = N_COLS;
