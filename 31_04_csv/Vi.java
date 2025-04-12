@@ -101,7 +101,7 @@ public class Vi {
         if (atributsVi.length < 3 || atributsVi.length > 3) {
             return null;
         }
-        if (!esEnter(atributsVi[1]) || !esEnter(atributsVi[1])) {
+        if (!esEnter(atributsVi[1]) || !esEnter(atributsVi[2])) {
             return null;
         }
         String nom = atributsVi[0];
