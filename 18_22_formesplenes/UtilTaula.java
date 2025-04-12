@@ -270,8 +270,8 @@ public class UtilTaula {
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                if (col <= fila) {
-                    taula[col][fila] = true;
+                if (col >= fila) {
+                    taula[fila][col] = true;
                 } else {
                     taula[fila][col] = false;
                 }
