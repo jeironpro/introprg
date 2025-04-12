@@ -9,6 +9,12 @@
  * Una funció de classe normalitzaNom que rep el nom intruit a la propietat nom
  * i el retorna normalitzat si no és buit, sinó retorna "NOM NO VÀLID!"
  * Sobreescrit el toString per mostra la instància de manera personalitzada.
+ * 
+ * Ara, per poder simplificar la lectura i el guardat del vins de la Botiga
+ * s'han agregat dos mètodes d'instancia:
+ * Mètode aArrayString que converteix un vi en un array de Strings.
+ * Mètode deArrayString que rep un array de Strings i retorna un vi si els
+ * dades són vàlides.
  */
 
 public class Vi {
@@ -121,7 +127,7 @@ public class Vi {
     
     /*
      * Aquestes dues següents funcions estan repetides en dos programa diferents
-     * perquè estic reestructurant el programa UtilString
+     * perquè estic reestructurant la classe UtilString
     */
     public static boolean esEnter(String text) {
         if (text.isBlank()) {

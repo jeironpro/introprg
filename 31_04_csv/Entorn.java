@@ -27,7 +27,17 @@
  *  - Mètode processaElimina() -> demana un nom per eliminar un vi, ho elimina
  *    si el nom no és buit i es troba en la botiga, abans d'eliminar-ho demana 
  *    Confirmació.
- * Les accions es poden cancel·lar pressionant enter.  
+ * Les accions es poden cancel·lar pressionant enter. 
+ *
+ * Ara el programa no perd dades, amb la persistencia poden guardar els dades
+ * dels vins en un fitxer, per fer això s'han agregat una variable global de
+ * classe i dos mètodes d'instància:
+ *  - Variable de classe quantsVins -> compta quants vins hi ha en el fitxer
+ *    botiga.csv.
+ *  - Mètode d'instància carregaVins() -> compta i afegeix els vins que hi ha en
+ *    el fitxer botiga.csv a la Botiga. 
+ *  - Mètode d'instància guardaVins() -> guarda en el fitxer botiga.csv els vins
+ *    que hi ha guardat en la Botiga.
  */
 
 import java.io.File;
@@ -212,7 +222,7 @@ public class Entorn {
         
         System.out.printf("A eliminar:%s%n", cercat);
         System.out.print("Segur?> ");
-        boolean confirmacio = respostaABoolean(Entrada.readLine());
+        boolean confirmacio = UtilitatsConfirmacio.respostaABoolean(Entrada.readLine());
         
         if (confirmacio) { 
             Vi eliminar = botiga.elimina(nomVi);
@@ -266,6 +276,10 @@ public class Entorn {
         System.out.printf("Referències guardades: %s%n", quantsViGuardat);
     }
     
+    /*
+     * Aquestes dues següents funcions estan repetides en dos programa diferents
+     * perquè estic reestructurant la classe UtilString
+    */
     public static boolean esEnter(String text) {
         if (text.isBlank()) {
             return false;     
@@ -286,30 +300,5 @@ public class Entorn {
     
     public static int aEnter(String text) {
         return Integer.parseInt(text);
-    }
-    
-    public static boolean respostaABoolean(String resposta) {
-        String nuevaResposta = "";
-        for (int i = 0; i < resposta.length(); i++) {
-            char c = resposta.charAt(i);
-            if (Character.isLetter(c)) {
-                nuevaResposta += c;
-            }
-        }
-        if (null == nuevaResposta) {     
-            return false;
-        }
-        
-        nuevaResposta = nuevaResposta.toLowerCase();
-        if (nuevaResposta.equals("s") || nuevaResposta.equals("y")) {
-            return true;
-        }
-        if (nuevaResposta.equals("sí") || nuevaResposta.equals("yes")) {
-            return true;
-        }
-        if (nuevaResposta.equals("si") || nuevaResposta.equals("vale") || nuevaResposta.equals("yeah")) {
-            return true;
-        }
-        return false;
     }
 }

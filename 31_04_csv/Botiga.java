@@ -5,6 +5,13 @@
  * contrari ho inicialitza amb 10. Un mètode (afegeix) que permet afegir vi a
  * l'arreu, un mètode (elimina) que elimina un vi de l'arreu, i un mètode (cerca)
  * que cerca un vi pel nom.
+ * 
+ * Ara, per simplificar el guardat del vins de la Botiga s'han agregat una
+ * variable global de classe i dos mètodes d'instància:
+ * Variable indexVi per indexar els vins de l'array vins de la Botiga.
+ * Mètode iniciaRecorregut que inicialitza la variable global indexVi a 0;
+ * Mètode getSeguent que recorre l'array vins i cerca un espai que no sigui null 
+ * i retorna el vi.
  */
 
 public class Botiga {
@@ -79,7 +86,6 @@ public class Botiga {
     
     public Vi getSeguent() {
         while (indexVi < vins.length) {
-            
             if (vins[indexVi] == null) {
                 indexVi++;
                 continue;
