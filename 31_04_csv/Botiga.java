@@ -84,6 +84,8 @@ public class Botiga {
             }
         }
         
+        if (indexVi >= vins.length) { return null; }
+        
         Vi vi = vins[indexVi];
         
         if (indexVi < vins.length) {
