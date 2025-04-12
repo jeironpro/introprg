@@ -524,14 +524,18 @@ public class UtilTaula {
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                if (fila == col) {
+                if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
-                } else if (col+1 == N_COLS-fila) {
-                    taula[fila][col] = true;
-                } else if (col < M_COLS && fila-col > 0 && fila+col < N_FILES-1) {
-                    taula[fila][col] = true;
-                } else {
+                } else if (fila <= M_FILES && col > fila) {
                     taula[fila][col] = false;
+                } else if (fila >= M_FILES && col > fila) {
+                    taula[fila][col] = false;
+                } else if (fila < col && col+1 < N_COLS-fila) {
+                    taula[fila][col] = false;
+                } else if (fila >= col+1 && col+fila >= N_COLS) {
+                    taula[fila][col] = false;
+                } else {
+                    taula[fila][col] = true;
                 }
             }
         }
