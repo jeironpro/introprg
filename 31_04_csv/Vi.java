@@ -98,9 +98,15 @@ public class Vi {
     }
     
     public static Vi deArrayString(String[] atributsVi) {
+        if (atributsVi.length < 3 || atributsVi.length > 3) {
+            return null;
+        }
+        if (!esEnter(atributsVi[1]) || !esEnter(atributsVi[1])) {
+            return null;
+        }
         String nom = atributsVi[0];
-        int preu = Integer.parseInt(atributsVi[1]);
-        int estoc = Integer.parseInt(atributsVi[2]);
+        int preu = aEnter(atributsVi[1]);
+        int estoc = aEnter(atributsVi[2]);
         
         Vi vi = new Vi(nom, preu, estoc);
         
@@ -111,5 +117,31 @@ public class Vi {
     @Override
     public String toString() {
         return String.format("%n    Vi: %s%n    Preu: %d%n    Estoc: %d%n", nom, preu, estoc);
+    }
+    
+    /*
+     * Aquestes dues següents funcions estan repetides en dos programa diferents
+     * perquè estic reestructurant el programa UtilString
+    */
+    public static boolean esEnter(String text) {
+        if (text.isBlank()) {
+            return false;     
+        } 
+        
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (text.length() > 1 && i == 0 && (c == '-' || c == '+')) {
+                if (!Character.isDigit(text.charAt(i+1))) {
+                    return false;
+                }
+            } else if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true; 
+    }
+    
+    public static int aEnter(String text) {
+        return Integer.parseInt(text);
     }
 }
