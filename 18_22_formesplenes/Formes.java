@@ -55,9 +55,6 @@ public class Formes {
                 char ultimCaracter = args[i].charAt(args[i].length()-1);
                 // Agafar el penultim caràcter de l'argument en posició de i
                 char penultimCaracter = args[i].charAt(args[i].length()-2);
-                char anPenultimCaracter = args[i].charAt(args[i].length()-3);
-                char anAnPenultimCaracter = args[i].charAt(args[i].length()-4);
-                char anAnAnPenultimCaracter = args[i].charAt(args[i].length()-5);
                 
                 // Si l'últim caràcter i el penultim caracàter són aquest caràcter '|'
                 if (ultimCaracter == '|' && penultimCaracter == '|') {
@@ -70,98 +67,6 @@ public class Formes {
                     especificacio += ultimCaracter;
                     especificacio += penultimCaracter;
                 // Del contrari
-                } else if (penultimCaracter == '*' && ultimCaracter == '\\') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '\\' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '/') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '/' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '|') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '|' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '-') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '-' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anAnAnPenultimCaracter == '*' && anAnPenultimCaracter == '*' && anPenultimCaracter == 'x' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anAnAnPenultimCaracter;
-                    especificacio += anAnPenultimCaracter;
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anAnPenultimCaracter == '*' && anPenultimCaracter == '+' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anAnPenultimCaracter;
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anAnPenultimCaracter == '*' && anPenultimCaracter == '*' && penultimCaracter == '+' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anAnPenultimCaracter;
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == '*' && penultimCaracter == '*' && ultimCaracter == '+') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == '+' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                }  else if (anPenultimCaracter == '*' && penultimCaracter == '*' && ultimCaracter == 'x') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == 'x' && penultimCaracter == '*' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (anPenultimCaracter == '*' && penultimCaracter == 'x' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += anPenultimCaracter;
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == '+') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '+' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == '*' && ultimCaracter == 'x') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
-                } else if (penultimCaracter == 'x' && ultimCaracter == '*') {
-                    // Guardar els caràcters en especificacio
-                    especificacio += penultimCaracter;
-                    especificacio += ultimCaracter;
                 } else {
                     // Guardar l'últim caràcter en especificacio
                     especificacio += ultimCaracter;
@@ -195,46 +100,6 @@ public class Formes {
                         break;
                     // Caràcter per cridar inicialitzaEscacs
                     case "++": UtilTaula.inicialitzaEscacs(taula);
-                        break;
-                    case "*\\": UtilTaula.inicialitzaPrimeraDiagonalPrimerPle(taula);
-                        break;
-                    case "\\*": UtilTaula.inicialitzaPrimeraDiagonalSegonPle(taula);
-                        break;
-                    case "*/": UtilTaula.inicialitzaSegonaDiagonalPrimerPle(taula);
-                        break;
-                    case "/*": UtilTaula.inicialitzaSegonaDiagonalSegonPle(taula);
-                        break;
-                    case "*|": UtilTaula.inicialitzaVerticalMigPrimerPle(taula);
-                        break;
-                    case "|*": UtilTaula.inicialitzaVerticalMigSegonPle(taula);
-                        break;
-                    case "*-": UtilTaula.inicialitzaHoritzontalMigPrimerPle(taula);
-                        break;
-                    case "-*": UtilTaula.inicialitzaHoritzontalMigSegonPle(taula);
-                        break;
-                    case "*+": UtilTaula.inicialitzaQuartsNOPle(taula);
-                        break;
-                    case "**+": UtilTaula.inicialitzaQuartsSOPle(taula);
-                        break;
-                    case "+*": UtilTaula.inicialitzaQuartsNEPle(taula);
-                        break;
-                    case "+**": UtilTaula.inicialitzaQuartsSEPle(taula);
-                        break;
-                    case "*+**": UtilTaula.inicialitzaQuartsNOSEPlens(taula);
-                        break;
-                    case "**+*": UtilTaula.inicialitzaQuartsSONEPlens(taula);
-                        break;
-                    case "*x": UtilTaula.inicialitzaCreuNPle(taula);
-                        break;
-                    case "**x": UtilTaula.inicialitzaCreuOPle(taula);
-                        break;
-                    case "x*": UtilTaula.inicialitzaCreuSPle(taula);
-                        break;
-                    case "x**": UtilTaula.inicialitzaCreuEPle(taula);
-                        break;
-                    case "*x*": UtilTaula.inicialitzaCreuNSPlens(taula);
-                        break;
-                    case "**x**": UtilTaula.inicialitzaCreuOEPlens(taula);
                         break;
                     // Per defecte cridar inicialitzaFalse
                     default: UtilTaula.inicialitzaFalse(taula);
