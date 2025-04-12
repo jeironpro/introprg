@@ -256,12 +256,9 @@ public class Entorn {
             Vi vi = botiga.getSeguent();
             if (vi == null) break;
     
-            String dadesVi = "";
-            String nom = vi.getNom();
-            int preu = vi.getPreu();
-            int estoc = vi.getEstoc();
-            dadesVi += nom + ";" + preu + ";" + estoc; 
-            escritor.write(dadesVi);
+            String[] dadesVi = vi.aArrayString();
+            String dadesViFormatat = String.join(";", dadesVi);
+            escritor.write(dadesViFormatat);
             escritor.newLine();
             quantsViGuardat++;
         }
