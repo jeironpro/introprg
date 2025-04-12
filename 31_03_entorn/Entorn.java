@@ -200,7 +200,7 @@ public class Entorn {
         
         System.out.printf("A eliminar:%s%n", cercat);
         System.out.print("Segur?> ");
-        boolean confirmacio = respostaABoolean(Entrada.readLine());
+        boolean confirmacio = UtilitatsConfirmacio.respostaABoolean(Entrada.readLine());
         
         if (confirmacio) { 
             Vi eliminar = botiga.elimina(nomVi);
@@ -235,30 +235,5 @@ public class Entorn {
     
     public static int aEnter(String text) {
         return Integer.parseInt(text);
-    }
-    
-    public static boolean respostaABoolean(String resposta) {
-        String nuevaResposta = "";
-        for (int i = 0; i < resposta.length(); i++) {
-            char c = resposta.charAt(i);
-            if (Character.isLetter(c)) {
-                nuevaResposta += c;
-            }
-        }
-        if (null == nuevaResposta) {     
-            return false;
-        }
-        
-        nuevaResposta = nuevaResposta.toLowerCase();
-        if (nuevaResposta.equals("s") || nuevaResposta.equals("y")) {
-            return true;
-        }
-        if (nuevaResposta.equals("sí") || nuevaResposta.equals("yes")) {
-            return true;
-        }
-        if (nuevaResposta.equals("si") || nuevaResposta.equals("vale") || nuevaResposta.equals("yeah")) {
-            return true;
-        }
-        return false;
     }
 }
