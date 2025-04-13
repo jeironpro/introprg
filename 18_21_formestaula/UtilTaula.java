@@ -132,7 +132,8 @@ public class UtilTaula {
     public static void inicialitzaHoritzontalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
+        // XXX
+        final float M_FILES = Math.round(N_FILES/2.00)-1;
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
