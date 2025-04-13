@@ -121,7 +121,7 @@ public class UtilTaula {
     public static void inicialitzaVerticalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final float M_COLS = Math.round(taula[0].length/2.00)-1;
+        final int M_COLS = (taula[0].length/2);
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
@@ -137,7 +137,7 @@ public class UtilTaula {
     public static void inicialitzaHoritzontalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final float M_FILES = Math.round(taula.length/2.00)-1;
+        final int M_FILES = (taula.length/2);
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
@@ -312,7 +312,7 @@ public class UtilTaula {
     public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final float M_COLS = Math.round(taula[0].length/2.00)-1;
+        final int M_COLS = (taula[0].length/2);
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
