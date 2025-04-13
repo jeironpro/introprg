@@ -168,6 +168,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila == col) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -176,12 +178,14 @@ public class UtilTaula {
     public static void inicialitzaVerticalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = N_COLS/2;
+        final float M_COLS = Math.round(N_COLS/2.00)-1;
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
                 if (col == M_COLS) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -190,12 +194,15 @@ public class UtilTaula {
     public static void inicialitzaHoritzontalMig(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
+        // XXX
+        final float M_FILES = Math.round(N_FILES/2.00)-1;
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila == M_FILES) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -204,8 +211,9 @@ public class UtilTaula {
     public static void inicialitzaQuarts(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_FILES = N_FILES/2;
-        final int M_COLS = N_COLS/2;
+        // XXX
+        final float M_FILES = Math.round(N_FILES/2.00)-1;
+        final float M_COLS = Math.round(N_COLS/2.00)-1;
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
@@ -213,6 +221,8 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 } else if (col == M_COLS) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -226,6 +236,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -241,6 +253,8 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 } else if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -254,6 +268,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila % 2 != 0) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false; 
                 }
             }
         }
@@ -267,6 +283,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col % 2 != 0) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false; 
                 }
             }
         }
@@ -282,6 +300,8 @@ public class UtilTaula {
                     taula[fila][col] = true;      
                 } else if (fila % 2 != 0 && col % 2 == 0) {
                     taula[fila][col] = true; 
+                } else {
+                    taula[fila][col] = false; 
                 }
             }
         }
