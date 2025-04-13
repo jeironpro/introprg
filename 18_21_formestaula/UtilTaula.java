@@ -229,6 +229,8 @@ public class UtilTaula {
                     taula[fila][col] = true;      
                 } else if (fila % 2 != 0 && col % 2 == 0) {
                     taula[fila][col] = true; 
+                } else {
+                    taula[fila][col] = false; 
                 }
             }
         }
