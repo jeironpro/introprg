@@ -155,6 +155,8 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 } else if (col == M_COLS) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
