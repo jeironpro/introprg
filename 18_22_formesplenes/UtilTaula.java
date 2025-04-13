@@ -298,13 +298,11 @@ public class UtilTaula {
         int N_FILES = taula.length;
         int N_COLS = taula[0].length;
         
-        if (N_FILES > N_COLS) {
-            N_FILES = N_COLS;
-        }
+        
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                if (col < N_COLS-fila-1) {
+                if (col < N_COLS-fila) {
                     taula[fila][col] = false;
                 } else {
                     taula[fila][col] = true;
