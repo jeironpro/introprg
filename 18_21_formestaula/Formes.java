@@ -1,32 +1,6 @@
 /*
-* programa que rep per línia de comanda especificacions de taules i les dibuixa.
-*
-* Les especificacions permesa són:
-*   - \: primera diagonal
-*   - |: vertical al mig
-*   - -: horitzontal al mig
-*   - +: quarts
-*   - /: segona diagonal
-*   - x: creu
-*   - =: pas de vianants
-*   - ||: zebra
-*   - ++: taulell d'escacs
-*   - ?: taula buida
-*
-* Exemple per cada especificació:
-*   - 5x6\ -> primera diagonal
-*   - 4x4| -> vertical al mig
-*   - 7x5- -> horizontal al mig
-*   - 5x5+ -> quarts
-*   - 7x7/ -> segona diagonal
-*   - 3x5x -> creu
-*   - 7x4= -> pas de vianants
-*   - 4x7|| -> zebra
-*   - 8x8++ -> taulell d'escacs
-*   - 2x3?: taula buida
-*
-* Si s'introduiex cap de les especificacions anteriors, mostrar un missatge d'error.
-*/
+ * programa que rep per línia de comanda especificacions de taules i les dibuixa.
+ */
 
 public class Formes {
     public static void main(String[] args){
