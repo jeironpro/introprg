@@ -74,9 +74,12 @@
 
 public class UtilTaula {
     public static char[][] substitueix(char[][] origen, char inici, char fi) {
-        char[][] resultat = new char[origen.length][origen[0].length];
-        for (int fila = 0; fila < origen.length; fila++) {
-            for (int col = 0; col < origen[0].length; col++) {
+        final int N_FILES = origen.length;
+        final int N_COLS = origen[0].length;
+        char[][] resultat = new char[N_FILES][N_COLS];
+        
+        for (int fila = 0; fila < N_FILES; fila++) {
+            for (int col = 0; col < N_COLS; col++) {
                 if (origen[fila][col] == inici) {
                     resultat[fila][col] = fi;
                 } else {
@@ -88,16 +91,22 @@ public class UtilTaula {
     }
 
     public static void inicialitzaTaula(int[][] taula, int valor) {
-        for (int fila = 0; fila < taula.length; fila++) {
-            for (int col = 0; col < taula[0].length; col++) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
+        for (int fila = 0; fila < N_FILES; fila++) {
+            for (int col = 0; col < N_COLS; col++) {
                 taula[fila][col] = valor;
             }
         }
     }
     
     public static void inicialitzaSequencial(int[][] taula, int valorInicial) {
-        for (int fila = 0; fila < taula.length; fila++) {
-            for (int col = 0; col < taula[0].length; col++) {
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
+        
+        for (int fila = 0; fila < N_FILES; fila++) {
+            for (int col = 0; col < N_COLS; col++) {
                 taula[fila][col] = valorInicial++;
             }
         }
@@ -111,8 +120,6 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila == col) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -127,8 +134,6 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col == M_COLS) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -143,8 +148,6 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila == M_FILES) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -162,8 +165,6 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 } else if (col == M_COLS) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -177,8 +178,6 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -194,8 +193,6 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 } else if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -209,8 +206,6 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila % 2 != 0) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -224,8 +219,6 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col % 2 != 0) {
                     taula[fila][col] = true;
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
@@ -241,8 +234,6 @@ public class UtilTaula {
                     taula[fila][col] = true;      
                 } else if (fila % 2 != 0 && col % 2 == 0) {
                     taula[fila][col] = true; 
-                } else {
-                    taula[fila][col] = false;
                 }
             }
         }
