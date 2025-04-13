@@ -183,6 +183,8 @@ public class UtilTaula {
                     taula[fila][col] = true;
                 } else if (col+1 == N_COLS-fila) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
