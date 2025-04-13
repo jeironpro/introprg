@@ -133,14 +133,14 @@ public class UtilTaula {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
         // XXX
-        final float M_FILES = Math.round(N_FILES/2.00)-1;
+        final float M_FILES = Math.round(taula.length/2.00)-1;
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila == M_FILES) {
                     taula[fila][col] = true;
                 } else {
-                    taula[fila][col] = false; 
+                    taula[fila][col] = false;
                 }
             }
         }
