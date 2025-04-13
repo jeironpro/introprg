@@ -160,7 +160,7 @@ public class UtilTaula {
         }
     }
     
-     public static void inicialitzaPrimeraDiagonal(boolean[][] taula) {
+    public static void inicialitzaPrimeraDiagonal(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
          
