@@ -201,6 +201,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (fila % 2 != 0) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false; 
                 }
             }
         }
