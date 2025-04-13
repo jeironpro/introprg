@@ -312,11 +312,11 @@ public class UtilTaula {
     public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = (taula[0].length/2)+1;
+        final int M_COLS = (taula[0].length/2);
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
-                if (col <= M_COLS) {
+                if (col <= N_COLS/2) {
                     taula[fila][col] = true;
                 } else {
                     taula[fila][col] = false;
