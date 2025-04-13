@@ -295,6 +295,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col <= fila) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -308,6 +310,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col >= fila) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
@@ -321,6 +325,8 @@ public class UtilTaula {
             for (int col = 0; col < N_COLS; col++) {
                 if (col < N_COLS-fila) {
                     taula[fila][col] = true;
+                } else {
+                    taula[fila][col] = false;
                 }
             }
         }
