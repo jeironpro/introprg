@@ -153,8 +153,8 @@ public class UtilTaula {
     public static void inicialitzaQuarts(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final float M_FILES = Math.round(taula.length/2.00)-1;
-        final float M_COLS = Math.round(taula[0].length/2.00)-1;
+        final int M_FILES = (taula.length/2);
+        final int M_COLS = (taula[0].length/2);
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
@@ -295,8 +295,8 @@ public class UtilTaula {
     }
     
     public static void inicialitzaSegonaDiagonalSegonPle(boolean[][] taula) {
-        int N_FILES = taula.length;
-        int N_COLS = taula[0].length;
+        final int N_FILES = taula.length;
+        final int N_COLS = taula[0].length;
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
