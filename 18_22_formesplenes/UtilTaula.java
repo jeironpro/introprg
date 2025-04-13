@@ -313,6 +313,7 @@ public class UtilTaula {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
         final float M_COLS = Math.round(taula[0].length/2.00)-1;
+        System.out.println(M_COLS);
         
         for (int fila = 0; fila < N_FILES; fila++) {
             for (int col = 0; col < N_COLS; col++) {
