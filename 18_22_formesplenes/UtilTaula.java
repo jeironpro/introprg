@@ -312,7 +312,7 @@ public class UtilTaula {
     public static void inicialitzaVerticalMigPrimerPle(boolean[][] taula) {
         final int N_FILES = taula.length;
         final int N_COLS = taula[0].length;
-        final int M_COLS = Math.round(taula[0].length/2)-1;
+        final int M_COLS = Math.round(taula[0].length/2);
         System.out.println(M_COLS);
         
         for (int fila = 0; fila < N_FILES; fila++) {
