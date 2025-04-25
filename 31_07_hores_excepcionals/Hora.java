@@ -43,7 +43,7 @@
     
     // Mètode accessor setter de la propietat hores, aquest mètode llança excepcions
     public void setHores(int hores) throws Exception {
-        if (hores >= 0 && hores <= 24) {
+        if (hores >= 0 && hores <= 23) {
             this.hores = hores;
         } else {
             throw new Exception("hores fora de rang: " + hores);
