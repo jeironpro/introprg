@@ -1,7 +1,8 @@
-/*
- * Aquest programa usa la classe Hora, tot assignant valors incorrectes per 
- * comprovar que la instància acava guardant només valors correctes.
+/* Programa que es fa servir la classe Hora per testejar les funcionalitats afegides
+ * que controlen errors de assignar valors no vàlids en els mètodes setter que
+ * retornen un valor boolean.
  */
+
 public class UsaHora {
     public static void main(String[] args) {
         Hora hora = new Hora();
