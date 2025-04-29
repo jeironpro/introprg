@@ -96,7 +96,7 @@ public class Botiga {
                 continue;
             }
 
-            if (plantilla.getPreu() >= 0 && plantilla.getPreu() <= vi.getPreu()) {
+            if (plantilla.getPreu() >= 0 && plantilla.getPreu() < vi.getPreu()) {
                 continue;
             }
 
