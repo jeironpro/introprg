@@ -128,7 +128,7 @@ public class Botiga {
         indexVi = 0;
     } 
     
-     public Vi getSeguent() {
+    /*public Vi getSeguent() {
         while (indexVi < vins.length) {
             Vi vi = vins[indexVi];
             indexVi++;
@@ -138,5 +138,5 @@ public class Botiga {
 	        return vi;
         }
         return null;
-    } 
+    } */
 }
