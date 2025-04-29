@@ -218,6 +218,35 @@ public class Entorn {
 	    }
     }
     
+    public void processaElimina() {
+        System.out.print("nom (enter cancel·la)> ");
+        String nomVi = Entrada.readLine();
+        
+        if (nomVi.isBlank()) { return; }
+        
+        Vi cercat = botiga.cerca(nomVi);
+        if (cercat == null) {
+            System.out.println("No trobat");
+            return;
+        }
+        
+        System.out.printf("A eliminar:%s%n", cercat);
+        System.out.print("Segur?> ");
+        boolean confirmacio = UtilitatsConfirmacio.respostaABoolean(Entrada.readLine());
+        
+        if (confirmacio) { 
+            Vi eliminar = botiga.elimina(nomVi);
+            if (eliminar == null) {
+                System.out.println("ERROR: no s'ha pogut eliminar");
+                return;
+            }
+            System.out.println("Eliminat"); 
+        } else {
+            System.out.println("No eliminat");
+            return;
+        }
+    }
+    
     public void carregaVins() throws IOException {
         File fitxer = new File(ruta);
         if (fitxer.exists()) {
