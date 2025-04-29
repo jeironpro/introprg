@@ -52,6 +52,7 @@ public class Botiga {
     }
     
     public Vi elimina(String ref) {
+    	System.out.println("Les proves unitaries entren aquí");
         ref = Vi.normalitzaString(ref).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
