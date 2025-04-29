@@ -57,9 +57,9 @@ public class Botiga {
             if (vins[i] != null) {
                 String refExistent = vins[i].getRef().toLowerCase();
                 if (ref.equals(refExistent)) { 
-                    /*if (vins[i].getEstoc() > 0) { 
+                    if (vins[i].getEstoc() > 0) { 
                         return null; 
-                    }*/
+                    }
                     Vi eliminat = vins[i];
                     vins[i] = null;
                     return eliminat;
