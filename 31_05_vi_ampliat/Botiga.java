@@ -52,15 +52,14 @@ public class Botiga {
     }
     
     public Vi elimina(String ref) {
-    	System.out.println("Les proves unitaries entren aquí");
         ref = Vi.normalitzaString(ref).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
                 String refExistent = vins[i].getRef().toLowerCase();
                 if (ref.equals(refExistent)) { 
-                    if (vins[i].getEstoc() > 0) { 
+                    /*if (vins[i].getEstoc() > 0) { 
                         return null; 
-                    }
+                    }*/
                     Vi eliminat = vins[i];
                     vins[i] = null;
                     return eliminat;
