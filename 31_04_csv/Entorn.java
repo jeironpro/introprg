@@ -119,8 +119,8 @@ public class Entorn {
         
         int preuEnter = 0;
         if (!preu.isBlank()) {
-           if (esEnter(preu)) {
-               preuEnter = aEnter(preu);
+           if (UtilString.esEnter(preu)) {
+               preuEnter = UtilString.aEnter(preu);
                if (preuEnter < 0) {
                    System.out.println("ERROR: cal un enter positiu");
                    return;
@@ -133,8 +133,8 @@ public class Entorn {
         
         int estocEnter = 0;
         if (!estoc.isBlank()) {
-           if (esEnter(estoc)) {
-               estocEnter = aEnter(estoc);
+           if (UtilString.esEnter(estoc)) {
+               estocEnter = UtilString.aEnter(estoc);
                if (estocEnter < 0) {
                    System.out.println("ERROR: cal un enter positiu");
                    return;
@@ -181,8 +181,8 @@ public class Entorn {
         System.out.printf("preu (enter %d)> ", vi.getPreu());
         String preu = Entrada.readLine();
         if (!preu.isBlank()) {
-            if (esEnter(preu)) {
-                int preuEnter = aEnter(preu);
+            if (UtilString.esEnter(preu)) {
+                int preuEnter = UtilString.aEnter(preu);
                 if (preuEnter >= 0) {
                     vi.setPreu(preuEnter);
                 } else {
@@ -194,8 +194,8 @@ public class Entorn {
         System.out.printf("estoc (enter %d)> ", vi.getEstoc()); 
         String estoc = Entrada.readLine();
         if (!estoc.isBlank()) {
-            if (esEnter(estoc)) {
-                int estocEnter = aEnter(estoc);
+            if (UtilString.esEnter(estoc)) {
+                int estocEnter = UtilString.aEnter(estoc);
                 if (estocEnter >= 0) {
                     vi.setEstoc(estocEnter);
                 } else {
@@ -274,31 +274,5 @@ public class Entorn {
         }
         escritor.close();
         System.out.printf("Referències guardades: %s%n", quantsViGuardat);
-    }
-    
-    /*
-     * Aquestes dues següents funcions estan repetides en dos programa diferents
-     * perquè estic reestructurant la classe UtilString
-    */
-    public static boolean esEnter(String text) {
-        if (text.isBlank()) {
-            return false;     
-        } 
-        
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (text.length() > 1 && i == 0 && (c == '-' || c == '+')) {
-                if (!Character.isDigit(text.charAt(i+1))) {
-                    return false;
-                }
-            } else if (!Character.isDigit(c)) {
-                return false;
-            }
-        }
-        return true; 
-    }
-    
-    public static int aEnter(String text) {
-        return Integer.parseInt(text);
     }
 }

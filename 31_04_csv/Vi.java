@@ -46,24 +46,40 @@ public class Vi {
         }
     }
     
-    public String getNom() { return this.nom; }
+    public String getNom() { 
+    	return this.nom; 
+	}
     
-    public int getPreu() { return this.preu; }
+    public int getPreu() { 
+    	return this.preu; 
+	}
     
     public void setPreu(int preu) { 
-        if (preu > 0) { this.preu = preu; } 
+        if (preu >= 0) { 
+    		this.preu = preu; 
+		} 
     }
     
-    public int getEstoc() { return this.estoc; }
+    public int getEstoc() { 
+    	return this.estoc; 
+	}
     
     public void setEstoc(int estoc) { 
-        if (estoc > 0) { this.estoc = estoc; } 
+        if (estoc >= 0) { 
+        	this.estoc = estoc; 
+    	} 
     }
     
     public boolean esValid() {
-        if (this.nom.equals("NOM NO VÀLID!")) { return false; }
-        if (this.preu == -1) { return false; }
-        if (this.estoc == -1) { return false; }
+        if (this.nom.equals("NOM NO VÀLID!")) { 
+        	return false; 
+    	}
+        if (this.preu == -1) { 
+        	return false; 
+    	}
+        if (this.estoc == -1) { 
+        	return false; 
+		}
         return true;
     }
     
@@ -107,47 +123,23 @@ public class Vi {
         if (atributsVi.length < 3 || atributsVi.length > 3) {
             return null;
         }
-        if (!esEnter(atributsVi[1]) || !esEnter(atributsVi[2])) {
+        if (!UtilString.esEnter(atributsVi[1]) || !UtilString.esEnter(atributsVi[2])) {
             return null;
         }
         String nom = atributsVi[0];
-        int preu = aEnter(atributsVi[1]);
-        int estoc = aEnter(atributsVi[2]);
+        int preu = UtilString.aEnter(atributsVi[1]);
+        int estoc = UtilString.aEnter(atributsVi[2]);
         
         Vi vi = new Vi(nom, preu, estoc);
         
-        if (!vi.esValid()) { return null; }
+        if (!vi.esValid()) { 
+        	return null; 
+    	}
         return vi;
     }
     
     @Override
     public String toString() {
         return String.format("%n    Vi: %s%n    Preu: %d%n    Estoc: %d%n", nom, preu, estoc);
-    }
-    
-    /*
-     * Aquestes dues següents funcions estan repetides en dos programa diferents
-     * perquè estic reestructurant la classe UtilString
-    */
-    public static boolean esEnter(String text) {
-        if (text.isBlank()) {
-            return false;     
-        } 
-        
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (text.length() > 1 && i == 0 && (c == '-' || c == '+')) {
-                if (!Character.isDigit(text.charAt(i+1))) {
-                    return false;
-                }
-            } else if (!Character.isDigit(c)) {
-                return false;
-            }
-        }
-        return true; 
-    }
-    
-    public static int aEnter(String text) {
-        return Integer.parseInt(text);
     }
 }

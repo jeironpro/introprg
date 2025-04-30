@@ -32,7 +32,9 @@ public class Botiga {
     }
     
     public Vi afegeix(Vi vi) {
-        if (!vi.esValid()) { return null; }
+        if (!vi.esValid()) { 
+        	return null; 
+    	}
         
         String nomVi = vi.getNom();
         
@@ -86,15 +88,13 @@ public class Botiga {
     
     public Vi getSeguent() {
         while (indexVi < vins.length) {
-            if (vins[indexVi] == null) {
-                indexVi++;
-                continue;
-            }
             Vi vi = vins[indexVi];
             indexVi++;
-            return vi;
+            if (vi == null) {
+		        continue;
+            }
+	        return vi;
         }
-        
         return null;
-    } 
+    }
 }
