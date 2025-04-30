@@ -163,7 +163,7 @@ public class Vi {
         if (atributsVi.length != 8) {
             return null;
         }
-        if (!UtilString.esEnter(atributsVi[3])) {
+        if (!UtilString.esEnter(atributsVi[2])) {
             return null;
         }
         if (!UtilString.esEnter(atributsVi[3])) {
