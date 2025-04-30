@@ -196,6 +196,8 @@ public class Entorn {
            if (UtilString.esEnter(valor)) {
                valorEnter = UtilString.aEnter(valor);                   
            }
+        } else {
+        	return 0;
         }
         return valorEnter;
     }
