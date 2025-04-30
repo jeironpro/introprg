@@ -92,17 +92,33 @@ public class Entorn {
         
         if (nom.isBlank()) { return; }
         
-        int preuEnter = processaEnter("preu (en cèntims)> ");
-        if (preuEnter < 0) {
-		   System.out.println("ERROR: cal un enter positiu");
-		   return;
-       	}
+        System.out.print("preu (en cèntims)> ");            
+        String preu = Entrada.readLine();
         
-        int estocEnter = processaEnter("estoc (enter sense estoc)> ");
-		if (estocEnter < 0) {
-		   System.out.println("ERROR: cal un enter positiu");
-		   return;
-		}
+        int preuEnter = 0;
+        if (!preu.isBlank()) {
+           if (UtilString.esEnter(preu)) {
+               preuEnter = UtilString.aEnter(preu);
+               if (preuEnter < 0) {
+                   System.out.println("ERROR: cal un enter positiu");
+                   return;
+               }                   
+           }
+        }
+        
+        System.out.print("estoc (enter sense estoc)> ");
+        String estoc = Entrada.readLine();
+        
+        int estocEnter = 0;
+        if (!estoc.isBlank()) {
+           if (UtilString.esEnter(estoc)) {
+               estocEnter = UtilString.aEnter(estoc);
+               if (estocEnter < 0) {
+                   System.out.println("ERROR: cal un enter positiu");
+                   return;
+               }
+           }
+        }
         
         Vi vi = new Vi(nom, preuEnter, estocEnter);
         Vi afegit = botiga.afegeix(vi);
@@ -140,20 +156,31 @@ public class Entorn {
             return;
         }
         
-        int preuEnter = processaEnter(String.format("preu (enter %d)> ", vi.getPreu()));
-        if (preuEnter >= 0) {
-            vi.setPreu(preuEnter);
-        } else {
-            System.out.println("ERROR: cal un enter positiu");
-            return;
+        System.out.printf("preu (enter %d)> ", vi.getPreu());
+        String preu = Entrada.readLine();
+        if (!preu.isBlank()) {
+            if (UtilString.esEnter(preu)) {
+                int preuEnter = UtilString.aEnter(preu);
+                if (preuEnter >= 0) {
+                    vi.setPreu(preuEnter);
+                } else {
+                    System.out.println("ERROR: cal un enter positiu");
+                    return;
+                }
+            }
         }
-        
-        int estocEnter = processaEnter(String.format("estoc (enter %d)> ", vi.getEstoc()));
-        if (estocEnter >= 0) {
-            vi.setEstoc(estocEnter);
-        } else {
-            System.out.println("ERROR: cal un enter positiu");
-            return;
+        System.out.printf("estoc (enter %d)> ", vi.getEstoc()); 
+        String estoc = Entrada.readLine();
+        if (!estoc.isBlank()) {
+            if (UtilString.esEnter(estoc)) {
+                int estocEnter = UtilString.aEnter(estoc);
+                if (estocEnter >= 0) {
+                    vi.setEstoc(estocEnter);
+                } else {
+                    System.out.println("ERROR: cal un enter positiu");
+                    return;
+                }
+            }
         }
         
         System.out.printf("Modificat:%s%n", vi);
@@ -186,19 +213,5 @@ public class Entorn {
             System.out.println("No eliminat");
             return;
         }
-    }
-    
-    public static int processaEnter(String demana) {
-    	int valorEnter = -1;
-    	System.out.print(demana);
-    	String valor = Entrada.readLine();
-    	if (!valor.isBlank()) {
-           if (UtilString.esEnter(valor)) {
-               valorEnter = UtilString.aEnter(valor);                   
-           }
-        } else {
-        	return 0;
-        }
-        return valorEnter;
     }
 }
