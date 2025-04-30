@@ -82,7 +82,7 @@ public class Vi {
     }
 
     public void setLloc(String lloc) {
-    	if (!lloc.isBlank()) {
+    	if (lloc == null || !lloc.isBlank()) {
 		    this.lloc = normalitzaString(lloc);
     	}
     }
