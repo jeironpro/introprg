@@ -1,6 +1,6 @@
 public class ProvaBotiga {
 	public static void main(String[] args) throws Exception {
-		Botiga botiga = new Botiga(3);
+		/* Botiga botiga = new Botiga(3);
 
 		// Prova al constructor
 		Botiga botiga = new Botiga(-1);
@@ -28,6 +28,6 @@ public class ProvaBotiga {
 		
 		botiga.elimina("");
 		botiga.elimina("CARPATHI20180021");
-		botiga.elimina("MATISNEG20190011");
+		botiga.elimina("MATISNEG20190011"); */
 	}
 }
