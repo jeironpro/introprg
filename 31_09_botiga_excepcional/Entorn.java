@@ -217,7 +217,7 @@ public class Entorn {
 	    }
     }
     
-    public void carregaVins() throws IOException {
+    public void carregaVins() throws IOException, Exception {
         File fitxer = new File(ruta);
         if (fitxer.exists()) {
             BufferedReader lector = new BufferedReader(new FileReader(ruta));
