@@ -117,8 +117,8 @@ public class Entorn {
             return;
         }
         
-        if (!ref.isBlank()) {
-        	try {
+    	try {
+        	if (!ref.isBlank()) {
 		    	Vi cercaRef = botiga.cerca(ref);        	
 		    	if (cercaRef != null) {
 				    System.out.printf("Trobat:%s%n", cercaRef);
@@ -127,13 +127,12 @@ public class Entorn {
 				    System.out.println("No trobat");
 				    return;
 				}
-        	} catch (Exception e) {
-        		throw e;
-        	}
-        	
-        } else {
-            processaCercaPlantilla();
-        }
+		    } else {
+		        processaCercaPlantilla();
+		    }
+        } catch (Exception e) {
+    		System.out.println(e);
+    	}
     }
     
     public void processaCercaPlantilla() throws Exception {
@@ -220,7 +219,7 @@ public class Entorn {
 			    System.out.println("No trobat");
 			}
     	} catch (Exception e) {
-    		throw e;
+    		System.out.println(e);
     	}
         
     }
