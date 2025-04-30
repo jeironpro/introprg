@@ -118,15 +118,19 @@ public class Entorn {
         }
         
         if (!ref.isBlank()) {
-        	Vi cercaRef = botiga.cerca(ref);
+        	try {
+		    	Vi cercaRef = botiga.cerca(ref);        	
+		    	if (cercaRef != null) {
+				    System.out.printf("Trobat:%s%n", cercaRef);
+				    return;
+				} else {
+				    System.out.println("No trobat");
+				    return;
+				}
+        	} catch (Exception e) {
+        		throw e;
+        	}
         	
-        	if (cercaRef != null) {
-		        System.out.printf("Trobat:%s%n", cercaRef);
-		        return;
-		    } else {
-		        System.out.println("No trobat");
-		        return;
-		    }
         } else {
             processaCercaPlantilla();
         }
@@ -207,14 +211,18 @@ public class Entorn {
             }
             break;
         }
-        Vi cercaPlantilla = botiga.cerca(new Vi(ref, nom, preuEnter, estocEnter, lloc, origen, tipus, collita));
+        try {
+		    Vi cercaPlantilla = botiga.cerca(new Vi(ref, nom, preuEnter, estocEnter, lloc, origen, tipus, collita));
+			if (cercaPlantilla != null) {
+			    System.out.printf("Trobat:%s%n", cercaPlantilla);
+			    return;
+			} else {
+			    System.out.println("No trobat");
+			}
+    	} catch (Exception e) {
+    		throw e;
+    	}
         
-	    if (cercaPlantilla != null) {
-	        System.out.printf("Trobat:%s%n", cercaPlantilla);
-	        return;
-	    } else {
-	        System.out.println("No trobat");
-	    }
     }
     
     public void carregaVins() throws IOException, Exception {
