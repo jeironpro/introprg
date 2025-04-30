@@ -82,7 +82,9 @@ public class Vi {
     }
 
     public void setLloc(String lloc) {
-        this.lloc = normalitzaString(lloc);
+    	if (!lloc.isEmpty()) {
+		    this.lloc = normalitzaString(lloc);
+    	}
     }
 
     public String getOrigen() {
