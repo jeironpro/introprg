@@ -24,7 +24,9 @@ public class Botiga {
     }
     
     public Vi afegeix(Vi vi) {
-        if (!vi.esValid()) { return null; }
+        if (!vi.esValid()) { 
+        	return null; 
+    	}
         
         String nomVi = vi.getNom();
         

@@ -40,24 +40,40 @@ public class Vi {
         }
     }
     
-    public String getNom() { return this.nom; }
+    public String getNom() { 
+		return this.nom; 
+	}
     
-    public int getPreu() { return this.preu; }
+    public int getPreu() { 
+    	return this.preu; 
+	}
     
     public void setPreu(int preu) { 
-        if (preu > 0) { this.preu = preu; } 
+        if (preu >= 0) { 
+        	this.preu = preu; 
+    	} 
     }
     
-    public int getEstoc() { return this.estoc; }
+    public int getEstoc() { 
+    	return this.estoc; 
+	}
     
     public void setEstoc(int estoc) { 
-        if (estoc > 0) { this.estoc = estoc; } 
+        if (estoc >= 0) { 
+        	this.estoc = estoc; 
+    	} 
     }
     
     public boolean esValid() {
-        if (this.nom.equals("NOM NO VÀLID!")) { return false; }
-        if (this.preu == -1) { return false; }
-        if (this.estoc == -1) { return false; }
+        if (this.nom.equals("NOM NO VÀLID!")) { 
+        	return false; 
+    	}
+        if (this.preu == -1) { 
+    		return false; 
+		}
+        if (this.estoc == -1) { 
+    		return false; 
+		}
         return true;
     }
     
