@@ -47,7 +47,7 @@ public class Entorn {
     private static final String ruta = "botiga.csv";
     private static int quantsVins = 0;
     
-    public static void main(String[] args) throws IOException Exception {
+    public static void main(String[] args) throws IOException, Exception {
         Entorn entorn = new Entorn();
         mostraBenvinguda();
         entorn.carregaVins();        
@@ -109,7 +109,7 @@ public class Entorn {
     	return valor;
     } 
 
-    public void processaCerca() {
+    public void processaCerca() throws Exception {
         System.out.print("ref> ");
         String ref = Entrada.readLine();
 
@@ -132,7 +132,7 @@ public class Entorn {
         }
     }
     
-    public void processaCercaPlantilla() {
+    public void processaCercaPlantilla() throws Exception {
     	String ref = "";
     	String nom = "";
         String preu = "";
