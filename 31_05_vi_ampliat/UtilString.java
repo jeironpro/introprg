@@ -229,9 +229,13 @@
     }
 
     public static boolean esEnter(String text) {
+    	if (text.isEmpty()) return false;
         text = text.strip();
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
+            if (!Character.isDigit(c)) {
+                return false;
+            }
             if (text.charAt(0) != '-' || text.charAt(0) != '+') {
                 if (i > 0) {
                     if (!Character.isDigit(c)) {
@@ -253,9 +257,10 @@
         }
         
         text = text.strip();
+        if (text.charAt(0) == '.' || text.charAt(0) == '_') return false;
+        if (text.charAt(0) == '.' || text.charAt(text.length()-1) == '_') return false;
+        
         for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(0) == '.' || text.charAt(0) == '_') return false;
-            if (text.charAt(text.length()-1) == '.' || text.charAt(text.length()-1) == '_') return false;
             if (i > 0 && i < text.length()-1) {
                 if (text.charAt(i) == '.' || text.charAt(i) == '_') {
                     if (!Character.isDigit(text.charAt(i-1)) || !Character.isDigit(text.charAt(i+1))) {
