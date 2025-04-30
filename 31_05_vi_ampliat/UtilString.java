@@ -229,22 +229,21 @@
     }
 
     public static boolean esEnter(String text) {
-    	if (text.isEmpty()) return false;
-        text = text.strip();
+        if (text.isBlank()) {
+            return false;     
+        } 
+        
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
-            if (!Character.isDigit(c)) {
+            if (text.length() > 1 && i == 0 && (c == '-' || c == '+')) {
+                if (!Character.isDigit(text.charAt(i+1))) {
+                    return false;
+                }
+            } else if (!Character.isDigit(c)) {
                 return false;
             }
-            if (text.charAt(0) != '-' || text.charAt(0) != '+') {
-                if (i > 0) {
-                    if (!Character.isDigit(c)) {
-                        return false;
-                    }
-                }
-            } 
         }
-        return true;
+        return true; 
     }
 
     public static boolean esEnter(String text, boolean estricte) {
