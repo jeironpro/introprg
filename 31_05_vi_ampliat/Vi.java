@@ -62,7 +62,7 @@ public class Vi {
     }
     
     public void setPreu(int preu) { 
-        if (preu > 0) { 
+        if (preu >= 0) { 
             this.preu = preu; 
         } 
     }
@@ -72,7 +72,7 @@ public class Vi {
     }
     
     public void setEstoc(int estoc) { 
-        if (estoc > 0) { 
+        if (estoc >= 0) { 
             this.estoc = estoc; 
         } 
     }

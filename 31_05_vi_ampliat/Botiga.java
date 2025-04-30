@@ -52,7 +52,7 @@ public class Botiga {
     }
     
     public Vi elimina(String ref) {
-        /*ref = Vi.normalitzaString(ref).toLowerCase();
+        ref = Vi.normalitzaString(ref).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] != null) {
                 String refExistent = vins[i].getRef().toLowerCase();
@@ -65,7 +65,7 @@ public class Botiga {
                     return eliminat;
                 }
             }
-        }*/
+        }
         return null;
     }
     
@@ -130,13 +130,12 @@ public class Botiga {
     
     public Vi getSeguent() {
         while (indexVi < vins.length) {
-            if (vins[indexVi] == null) {
-                indexVi++;
-                continue;
-            }
             Vi vi = vins[indexVi];
             indexVi++;
-            return vi;
+            if (vi == null) {
+		        continue;
+            }
+	        return vi;
         }
         return null;
     }
