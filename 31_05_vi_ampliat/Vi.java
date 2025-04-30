@@ -160,7 +160,7 @@ public class Vi {
     }
     
     public static Vi deArrayString(String[] atributsVi) {
-        if (atributsVi.length < 8 || atributsVi.length > 8) {
+        if (atributsVi.length != 8) {
             return null;
         }
         if (!UtilString.esEnter(atributsVi[2]) || !UtilString.esEnter(atributsVi[3])) {
