@@ -189,7 +189,7 @@ public class Entorn {
     }
     
     public static int processaEnter(String demana) {
-    	int valorEnter = 0;
+    	int valorEnter = -1;
     	System.out.print(demana);
     	String valor = Entrada.readLine();
     	if (!valor.isBlank()) {
