@@ -98,7 +98,6 @@ public class Entorn {
 		   return;
        	}
         
-        
         int estocEnter = processaEnter("estoc (enter sense estoc)> ");
 		if (estocEnter < 0) {
 		   System.out.println("ERROR: cal un enter positiu");
@@ -191,7 +190,7 @@ public class Entorn {
     
     public static int processaEnter(String demana) {
     	int valorEnter = 0;
-    	System.out.println(demana);
+    	System.out.print(demana);
     	String valor = Entrada.readLine();
     	if (!valor.isBlank()) {
            if (UtilString.esEnter(valor)) {
