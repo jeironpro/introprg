@@ -42,7 +42,7 @@ public class Botiga {
         }
         return null;
     }
-    
+
     public Vi elimina(String nom) {
         nom = Vi.normalitzaNom(nom).toLowerCase();
         for (int i = 0; i < vins.length; i++) {
