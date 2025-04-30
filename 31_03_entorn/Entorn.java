@@ -92,33 +92,18 @@ public class Entorn {
         
         if (nom.isBlank()) { return; }
         
-        System.out.print("preu (en cèntims)> ");            
-        String preu = Entrada.readLine();
+        int preuEnter = processaEnter("preu (en cèntims)> ");
+        if (preuEnter < 0) {
+		   System.out.println("ERROR: cal un enter positiu");
+		   return;
+       	}
         
-        int preuEnter = 0;
-        if (!preu.isBlank()) {
-           if (esEnter(preu)) {
-               preuEnter = aEnter(preu);
-               if (preuEnter < 0) {
-                   System.out.println("ERROR: cal un enter positiu");
-                   return;
-               }                   
-           }
-        }
         
-        System.out.print("estoc (enter sense estoc)> ");
-        String estoc = Entrada.readLine();
-        
-        int estocEnter = 0;
-        if (!estoc.isBlank()) {
-           if (esEnter(estoc)) {
-               estocEnter = aEnter(estoc);
-               if (estocEnter < 0) {
-                   System.out.println("ERROR: cal un enter positiu");
-                   return;
-               }
-           }
-        }
+        int estocEnter = processaEnter("estoc (enter sense estoc)> ");
+		if (estocEnter < 0) {
+		   System.out.println("ERROR: cal un enter positiu");
+		   return;
+		}
         
         Vi vi = new Vi(nom, preuEnter, estocEnter);
         Vi afegit = botiga.afegeix(vi);
@@ -156,31 +141,20 @@ public class Entorn {
             return;
         }
         
-        System.out.printf("preu (enter %d)> ", vi.getPreu());
-        String preu = Entrada.readLine();
-        if (!preu.isBlank()) {
-            if (esEnter(preu)) {
-                int preuEnter = aEnter(preu);
-                if (preuEnter >= 0) {
-                    vi.setPreu(preuEnter);
-                } else {
-                    System.out.println("ERROR: cal un enter positiu");
-                    return;
-                }
-            }
+        int preuEnter = processaEnter(String.format("preu (enter %d)> ", vi.getPreu()));
+        if (preuEnter >= 0) {
+            vi.setPreu(preuEnter);
+        } else {
+            System.out.println("ERROR: cal un enter positiu");
+            return;
         }
-        System.out.printf("estoc (enter %d)> ", vi.getEstoc()); 
-        String estoc = Entrada.readLine();
-        if (!estoc.isBlank()) {
-            if (esEnter(estoc)) {
-                int estocEnter = aEnter(estoc);
-                if (estocEnter >= 0) {
-                    vi.setEstoc(estocEnter);
-                } else {
-                    System.out.println("ERROR: cal un enter positiu");
-                    return;
-                }
-            }
+        
+        int estocEnter = processaEnter(String.format("estoc (enter %d)> ", vi.getEstoc()));
+        if (estocEnter >= 0) {
+            vi.setEstoc(estocEnter);
+        } else {
+            System.out.println("ERROR: cal un enter positiu");
+            return;
         }
         
         System.out.printf("Modificat:%s%n", vi);
@@ -215,25 +189,15 @@ public class Entorn {
         }
     }
     
-    public static boolean esEnter(String text) {
-        if (text.isBlank()) {
-            return false;     
-        } 
-        
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            if (text.length() > 1 && i == 0 && (c == '-' || c == '+')) {
-                if (!Character.isDigit(text.charAt(i+1))) {
-                    return false;
-                }
-            } else if (!Character.isDigit(c)) {
-                return false;
-            }
+    public static int processaEnter(String demana) {
+    	int valorEnter = 0;
+    	System.out.println(demana);
+    	String valor = Entrada.readLine();
+    	if (!valor.isBlank()) {
+           if (UtilString.esEnter(valor)) {
+               valorEnter = UtilString.aEnter(valor);                   
+           }
         }
-        return true; 
-    }
-    
-    public static int aEnter(String text) {
-        return Integer.parseInt(text);
+        return valorEnter;
     }
 }
