@@ -1045,7 +1045,6 @@
     	}
     	
     	if (esPrefix(text.toLowerCase(), plantilla.toLowerCase())) {
-    		System.out.println("Comença");
     		return true;
     	}
     	return false;
