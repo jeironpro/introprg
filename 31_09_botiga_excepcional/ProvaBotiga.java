@@ -1,11 +1,25 @@
 public class ProvaBotiga {
 	public static void main(String[] args) {
 		// Prova al constructor
-		try {
+		/*try {
 			Botiga botiga = new Botiga(-1);
 		} catch (BotigaException e) {
 			System.out.println(e);
+		}*/
+		
+		
+		try {
+			Botiga botiga = new Botiga(2);
+			botiga.afegeix(new Vi("LLUMALBA20200001", "Llum d'Alba Blanc", 1750, 12, "P02E03N55D", "Priorat", "blanc", "2020"));
+			botiga.afegeix(new Vi("CARPATHI20180021", "Carpathia Negre", 3450, 0, "P23E01N43D", "Montsant", "negre", "2018"));
+			String ref = null;
+			botiga.cerca(ref);
+		} catch (BotigaException e) {
+			System.out.println(e);
 		}
+		System.out.println("Pot continuar");
+		
+		
 		/* Botiga botiga = new Botiga(3);
 
 		

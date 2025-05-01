@@ -70,94 +70,91 @@ public class Botiga {
     
     public Vi elimina(String ref) throws BotigaException {
     	ref = Vi.normalitzaString(ref);
-    	if (ref != null) {
-    		ref = ref.toLowerCase();
-		    boolean viEqual = false;
-		    for (int i = 0; i < vins.length; i++) {
-		        if (vins[i] != null) {
-		            String refExistent = vins[i].getRef().toLowerCase();
-		            if (ref.equals(refExistent)) { 
-		            	viEqual = true;
-		                if (vins[i].getEstoc() > 0) { 
-		                    throw new IllegalArgumentException("El vi a eliminar no pot tenir estoc"); 
-		                }
-		                Vi eliminat = vins[i];
-		                vins[i] = null;
-		                return eliminat;
-		            }
-		        }
-		    }
-		    if (!viEqual) {
-		    	throw new IllegalArgumentException("La instància a eliminar ha d'estar present");
-		    }
-    	} else {
+    	if (ref == null) {
     		throw new IllegalArgumentException("La referència no pot ser null");
     	}
+    	ref = ref.toLowerCase();
+	    boolean viEqual = false;
+	    for (int i = 0; i < vins.length; i++) {
+	        if (vins[i] != null) {
+	            String refExistent = vins[i].getRef().toLowerCase();
+	            if (ref.equals(refExistent)) { 
+	            	viEqual = true;
+	                if (vins[i].getEstoc() > 0) { 
+	                    throw new IllegalArgumentException("El vi a eliminar no pot tenir estoc"); 
+	                }
+	                Vi eliminat = vins[i];
+	                vins[i] = null;
+	                return eliminat;
+	            }
+	        }
+	    }
+	    if (!viEqual) {
+	    	throw new IllegalArgumentException("La instància a eliminar ha d'estar present");
+	    }
     	return null;
     }
     
     public Vi cerca(String ref) throws BotigaException {
 		ref = Vi.normalitzaString(ref);
-    	if (ref != null) {
-    		ref = ref.toLowerCase();
-		    for (Vi vi: vins) {
-		    	if (vi == null) {
-		    		continue;
-		    	}
-		        String refVi = vi.getRef().toLowerCase();
-		        if (ref.equals(refVi)) { 
-		            return vi; 
-		        }
-		    }    	
-    	} else {
+    	if (ref == null) {
     		throw new IllegalArgumentException("La referència no pot ser null");  
     	}
+		ref = ref.toLowerCase();
+	    for (Vi vi: vins) {
+	    	if (vi == null) {
+	    		continue;
+	    	}
+	        String refVi = vi.getRef().toLowerCase();
+	        if (ref.equals(refVi)) { 
+	            return vi; 
+	        }
+	    }    	
     	return null;
     }
 
     public Vi cerca(Vi plantilla) throws BotigaException {
-    	if (plantilla != null) {
-		    for (Vi vi: vins) {
-		        if (vi == null) {
-		            continue;
-		        }
-		        if (plantilla.getRef() != null && !plantilla.getRef().isEmpty() && !plantilla.getRef().equalsIgnoreCase(vi.getRef())) {
-		            continue;
-		        }
-
-		        if (plantilla.getNom() != null && !plantilla.getNom().isEmpty() && !plantilla.getNom().equalsIgnoreCase(vi.getNom())) {
-		            continue;
-		        }
-
-		        if (plantilla.getPreu() >= 0 && plantilla.getPreu() < vi.getPreu()) {
-		            continue;
-		        }
-
-		        if (plantilla.getEstoc() >= 0 && plantilla.getEstoc() > vi.getEstoc()) {
-		            continue;
-		        }
-
-		        if (plantilla.getLloc() != null && !plantilla.getLloc().isEmpty() && !plantilla.getLloc().equalsIgnoreCase(vi.getLloc())) {
-		            continue;
-		        }
-
-		        if (plantilla.getOrigen() != null && !plantilla.getOrigen().isEmpty() && !plantilla.getOrigen().equalsIgnoreCase(vi.getOrigen())) {
-		            continue;
-		        }
-
-		        if (plantilla.getTipus() != null && !plantilla.getTipus().isEmpty() && !plantilla.getTipus().equalsIgnoreCase(vi.getTipus())) {
-		            continue;
-		        }
-
-		        if (plantilla.getCollita() != null && !plantilla.getCollita().isEmpty() && !plantilla.getCollita().equalsIgnoreCase(vi.getCollita())) {
-		            continue;
-		        }
-		        return vi;
-		    }
-    	} else {
+    	if (plantilla == null) {
     		throw new IllegalArgumentException("La plantilla no pot ser null");
     	}
-        return null;
+        for (Vi vi: vins) {
+	        if (vi == null) {
+	            continue;
+	        }
+	        if (plantilla.getRef() != null && !plantilla.getRef().isEmpty() && !plantilla.getRef().equalsIgnoreCase(vi.getRef())) {
+	            continue;
+	        }
+
+	        if (plantilla.getNom() != null && !plantilla.getNom().isEmpty() && !plantilla.getNom().equalsIgnoreCase(vi.getNom())) {
+	            continue;
+	        }
+
+	        if (plantilla.getPreu() >= 0 && plantilla.getPreu() < vi.getPreu()) {
+	            continue;
+	        }
+
+	        if (plantilla.getEstoc() >= 0 && plantilla.getEstoc() > vi.getEstoc()) {
+	            continue;
+	        }
+
+	        if (plantilla.getLloc() != null && !plantilla.getLloc().isEmpty() && !plantilla.getLloc().equalsIgnoreCase(vi.getLloc())) {
+	            continue;
+	        }
+
+	        if (plantilla.getOrigen() != null && !plantilla.getOrigen().isEmpty() && !plantilla.getOrigen().equalsIgnoreCase(vi.getOrigen())) {
+	            continue;
+	        }
+
+	        if (plantilla.getTipus() != null && !plantilla.getTipus().isEmpty() && !plantilla.getTipus().equalsIgnoreCase(vi.getTipus())) {
+	            continue;
+	        }
+
+	        if (plantilla.getCollita() != null && !plantilla.getCollita().isEmpty() && !plantilla.getCollita().equalsIgnoreCase(vi.getCollita())) {
+	            continue;
+	        }
+	        return vi;
+	    }
+	    return null;
     }
     
     public void iniciaRecorregut() {
