@@ -54,7 +54,6 @@ public class Botiga {
             throw new IllegalArgumentException("Referència de vi repetida");
         }
         boolean botigaPlena = true;
-	    BotigaException botigaException;
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] == null) { 
                 vins[i] = vi;
@@ -64,7 +63,7 @@ public class Botiga {
         }
         
         if (botigaPlena) {
-        	botigaException = new BotigaException("Botiga plena");
+        	new BotigaException("Botiga plena");
         }
         return null;
     }

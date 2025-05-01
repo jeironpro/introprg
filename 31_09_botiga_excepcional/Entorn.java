@@ -135,7 +135,7 @@ public class Entorn {
     	}
     }
     
-    public void processaCercaPlantilla() throws BotigaException {
+    public void processaCercaPlantilla() {
     	String ref = "";
     	String nom = "";
         String preu = "";
@@ -224,7 +224,7 @@ public class Entorn {
         
     }
     
-    public void carregaVins() throws IOException, BotigaException {
+    public void carregaVins() throws IOException {
         File fitxer = new File(ruta);
         if (fitxer.exists()) {
             BufferedReader lector = new BufferedReader(new FileReader(ruta));
