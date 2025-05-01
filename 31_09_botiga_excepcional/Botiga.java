@@ -53,19 +53,13 @@ public class Botiga {
     	} else if (cerca(vi.getRef()) != null) {
             throw new IllegalArgumentException("Referència de vi repetida");
         }
-        boolean botigaPlena = true;
         for (int i = 0; i < vins.length; i++) {
             if (vins[i] == null) { 
                 vins[i] = vi;
-                botigaPlena = false;
                 return vi; 
             }
         }
-        
-        if (botigaPlena) {
-        	new BotigaException("Botiga plena");
-        }
-        return null;
+    	throw new BotigaException("Botiga plena");
     }
     
     public Vi elimina(String ref) {
