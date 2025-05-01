@@ -49,7 +49,7 @@ public class Entorn {
     private static final String ruta = "botiga.csv";
     private static int quantsVins = 0;
     
-    public static void main(String[] args) throws IOException, BotigaException {
+    public static void main(String[] args) throws IOException {
         Entorn entorn = new Entorn();
         mostraBenvinguda();
         entorn.carregaVins();        
@@ -111,23 +111,7 @@ public class Entorn {
     	return valor;
     } 
 
-    public void processaCerca() throws BotigaException {
-    	botiga.afegeix(new Vi("LLUMALBA20200001", "Llum d'Alba Blanc", 1750, 12, "P02E03N55D", "Priorat", "blanc", "2020"));
-		
-		botiga.afegeix(new Vi("CARPATHI20180021", "Carpathia Negre", 3450, 0, "P23E01N43D", "Montsant", "negre", "2018"));
-		
-		botiga.afegeix(new Vi("MATISNEG20190011", "Matís Negre", 1325, 12, "P20E01N12E", "Pla del Bages", "negre", "2019"));
-		
-		botiga.afegeix(new Vi("SAOROSAT20180001", "Saó Rosat", 1040, 0, "P02E45N55D", "Costers del Segre", "negre", "2018"));
-		
-		botiga.afegeix(new Vi("ROURABLA20200232", "Roura blanc", 1012, 42, "P21E45N55E", "Alella", "blanc", "2020"));
-		
-		botiga.afegeix(new Vi("ROURABLA20200201", "Roura blanc", 906, 0, "P21E45N55E", "Alella", "blanc", "2018"));
-		
-		botiga.afegeix(new Vi("CERCIUMX20170002", "Cercium", 565, 30, "P23E01N55D", "Empordà", "negre", "2017"));
-		
-		botiga.afegeix(new Vi("MASIASER20200001", "Masia Serra", 1350, 0, "P02E02N55E", "Empordà", "negre", "2020"));
-		
+    public void processaCerca() {
         System.out.print("ref> ");
         String ref = Entrada.readLine();
 
