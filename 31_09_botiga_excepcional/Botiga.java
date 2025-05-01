@@ -37,7 +37,7 @@ public class Botiga {
         this.vins = new Vi[DEFAULT_MAX_VINS];
     }
     
-    public Botiga(int maxVins) throws Exception {
+    public Botiga(int maxVins) throws BotigaException {
     	if (maxVins > 0) {
         	this.vins = new Vi[maxVins];
     	} else {
@@ -45,7 +45,7 @@ public class Botiga {
     	}
     }
     
-    public Vi afegeix(Vi vi) throws Exception {
+    public Vi afegeix(Vi vi) throws BotigaException {
     	if (vi == null) {
     		throw new IllegalArgumentException("El vi no pot ser null");
     	} else if (!vi.esValid()) {
@@ -69,7 +69,7 @@ public class Botiga {
         return null;
     }
     
-    public Vi elimina(String ref) throws Exception {
+    public Vi elimina(String ref) throws BotigaException {
     	ref = Vi.normalitzaString(ref);
     	if (ref != null) {
     		ref = ref.toLowerCase();
@@ -97,7 +97,7 @@ public class Botiga {
     	return null;
     }
     
-    public Vi cerca(String ref) throws Exception {
+    public Vi cerca(String ref) throws BotigaException {
 		ref = Vi.normalitzaString(ref);
     	if (ref != null) {
     		ref = ref.toLowerCase();
@@ -116,7 +116,7 @@ public class Botiga {
     	return null;
     }
 
-    public Vi cerca(Vi plantilla) throws Exception {
+    public Vi cerca(Vi plantilla) throws BotigaException {
     	if (plantilla != null) {
 		    for (Vi vi: vins) {
 		        if (vi == null) {

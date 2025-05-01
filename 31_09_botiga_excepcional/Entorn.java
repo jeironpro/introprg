@@ -47,7 +47,7 @@ public class Entorn {
     private static final String ruta = "botiga.csv";
     private static int quantsVins = 0;
     
-    public static void main(String[] args) throws IOException, Exception {
+    public static void main(String[] args) throws IOException, BotigaException {
         Entorn entorn = new Entorn();
         mostraBenvinguda();
         entorn.carregaVins();        
@@ -109,7 +109,7 @@ public class Entorn {
     	return valor;
     } 
 
-    public void processaCerca() throws Exception {
+    public void processaCerca() throws BotigaException {
         System.out.print("ref> ");
         String ref = Entrada.readLine();
 
@@ -135,7 +135,7 @@ public class Entorn {
     	}
     }
     
-    public void processaCercaPlantilla() throws Exception {
+    public void processaCercaPlantilla() throws BotigaException {
     	String ref = "";
     	String nom = "";
         String preu = "";
@@ -224,7 +224,7 @@ public class Entorn {
         
     }
     
-    public void carregaVins() throws IOException, Exception {
+    public void carregaVins() throws IOException, BotigaException {
         File fitxer = new File(ruta);
         if (fitxer.exists()) {
             BufferedReader lector = new BufferedReader(new FileReader(ruta));

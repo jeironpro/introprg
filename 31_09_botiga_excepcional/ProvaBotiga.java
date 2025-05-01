@@ -1,9 +1,13 @@
 public class ProvaBotiga {
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
+		// Prova al constructor
+		try {
+			Botiga botiga = new Botiga(-1);
+		} catch (BotigaException e) {
+			System.out.println(e);
+		}
 		/* Botiga botiga = new Botiga(3);
 
-		// Prova al constructor
-		Botiga botiga = new Botiga(-1);
 		
 		// Prova al mètode cerca(String)
 		botiga.cerca("");
