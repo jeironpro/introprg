@@ -109,7 +109,7 @@ public class Entorn {
     	return valor;
     } 
 
-    public void processaCerca() throws BotigaException {
+    public void processaCerca() {
         System.out.print("ref> ");
         String ref = Entrada.readLine();
 
@@ -130,7 +130,7 @@ public class Entorn {
 		    } else {
 		        processaCercaPlantilla();
 		    }
-        } catch (BotigaException e) {
+        } catch (Exception e) {
     		System.out.println(e);
     	}
     }
@@ -218,7 +218,7 @@ public class Entorn {
 			} else {
 			    System.out.println("No trobat");
 			}
-    	} catch (BotigaException e) {
+    	} catch (Exception e) {
     		System.out.println(e);
     	}
         
@@ -238,7 +238,7 @@ public class Entorn {
                 if (vi != null) {
                 	try {
 		                botiga.afegeix(vi);
-                	} catch (BotigaException e) {
+                	} catch (Exception e) {
                 		System.out.println("ERROR: massa entrades a botiga.csv");
                 	}
                     quantsVins++;  
