@@ -224,7 +224,7 @@ public class Entorn {
         
     }
     
-    public void carregaVins() throws IOException {
+    public void carregaVins() throws IOException, BotigaException {
         File fitxer = new File(ruta);
         if (fitxer.exists()) {
             BufferedReader lector = new BufferedReader(new FileReader(ruta));
@@ -238,7 +238,7 @@ public class Entorn {
                 if (vi != null) {
                 	try {
 		                botiga.afegeix(vi);
-                	} catch (Exception e) {
+                	} catch (BotigaException e) {
                 		System.out.println("ERROR: massa entrades a botiga.csv");
                 	}
                     quantsVins++;  
