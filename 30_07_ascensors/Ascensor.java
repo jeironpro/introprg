@@ -28,7 +28,7 @@ public class Ascensor {
         // el enter es menor a 0
         if (args.length > 1 || !UtilString.esEnter(args[0]) || Integer.parseInt(args[0]) <= 0) {
             // Mostrar aquest missatge
-            System.out.println("Cap ascensor");
+            System.out.println("Cal indicar un únic valor enter.");
             // Retornar
             return;
         }
