@@ -95,7 +95,7 @@ public class Botiga {
     	return null;
     }
     
-    public Vi cerca(String ref) throws BotigaException {
+    public Vi cerca(String ref) {
 		ref = Vi.normalitzaString(ref);
     	if (ref == null) {
     		throw new IllegalArgumentException("La referència no pot ser null");  
@@ -113,7 +113,7 @@ public class Botiga {
     	return null;
     }
 
-    public Vi cerca(Vi plantilla) throws BotigaException {
+    public Vi cerca(Vi plantilla) {
     	if (plantilla == null) {
     		throw new IllegalArgumentException("La plantilla no pot ser null");
     	}
