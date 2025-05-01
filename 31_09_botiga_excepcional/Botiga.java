@@ -45,7 +45,7 @@ public class Botiga {
     	}
     }
     
-    public Vi afegeix(Vi vi) {
+    public Vi afegeix(Vi vi) throws BotigaException {
     	if (vi == null) {
     		throw new IllegalArgumentException("El vi no pot ser null");
     	} else if (!vi.esValid()) {
