@@ -7,7 +7,6 @@ public class ProvaBotiga {
 			System.out.println(e);
 		}*/
 		
-		
 		try {
 			Botiga botiga = new Botiga(1);
 			botiga.afegeix(new Vi("LLUMALBA20200001", "Llum d'Alba Blanc", 1750, 12, "P02E03N55D", "Priorat", "blanc", "2020"));
@@ -15,8 +14,7 @@ public class ProvaBotiga {
 		} catch (BotigaException e) {
 			System.out.println(e);
 		}
-		
-		
+	
 		/* Botiga botiga = new Botiga(3);
 
 		
