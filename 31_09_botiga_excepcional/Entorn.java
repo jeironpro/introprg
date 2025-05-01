@@ -130,7 +130,7 @@ public class Entorn {
 		    } else {
 		        processaCercaPlantilla();
 		    }
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
     		System.out.println(e);
     	}
     }
@@ -218,7 +218,7 @@ public class Entorn {
 			} else {
 			    System.out.println("No trobat");
 			}
-    	} catch (Exception e) {
+    	} catch (IllegalArgumentException e) {
     		System.out.println(e);
     	}
         
@@ -238,7 +238,7 @@ public class Entorn {
                 if (vi != null) {
                 	try {
 		                botiga.afegeix(vi);
-                	} catch (Exception e) {
+                	} catch (IllegalArgumentException e) {
                 		System.out.println("ERROR: massa entrades a botiga.csv");
                 	}
                     quantsVins++;  
