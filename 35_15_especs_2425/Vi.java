@@ -28,9 +28,6 @@ public class Vi {
     private String collita;
     
     public Vi(String ref, String nom, int preu, int estoc, String lloc, String origen, String tipus, String collita) {
-    	if (!Vi.esValid(ref, nom, preu, estoc, lloc, origen, tipus, collita)) {
-        	throw new IllegalArgumentException("El vi ha de ser vàlid");
-        }
         this.ref = UtilString.normalitzaString(ref);
         this.nom = UtilString.normalitzaString(nom);
         
