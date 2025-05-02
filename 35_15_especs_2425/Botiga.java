@@ -94,7 +94,7 @@ public class Botiga {
     
     public List<Vi> cerca(Especificacio espec, int preuMax, int estocMin) {
     	if (espec == null) {
-    		throw new IllegalArgumentException("L'especificació no pot ser null");
+    		throw new IllegalArgumentException("espec no pot ser null");
     	}
     	List<Vi> vinsCercat = new LinkedList<Vi>();
     	
