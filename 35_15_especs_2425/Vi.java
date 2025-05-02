@@ -65,9 +65,10 @@ public class Vi {
     }
     
     public void setPreu(int preu) { 
-        if (preu >= 0) { 
-            this.preu = preu; 
-        } 
+    	if (preu < 0) {
+    		throw new IllegalArgumentException();
+    	}
+        this.preu = preu; 
     }
     
     public int getEstoc() { 
@@ -75,9 +76,10 @@ public class Vi {
     }
     
     public void setEstoc(int estoc) { 
-        if (estoc >= 0) { 
-            this.estoc = estoc; 
-        } 
+    	if (estoc < 0) {
+    		throw new IllegalArgumentException();
+    	}
+        this.estoc = estoc; 
     }
 
     public String getLloc() {
@@ -85,9 +87,10 @@ public class Vi {
     }
 
     public void setLloc(String lloc) {
-    	if (lloc != null && !lloc.isBlank()) {
-		    this.lloc = UtilString.normalitzaString(lloc);
+    	if (lloc == null || lloc.isBlank()) {
+    		throw new IllegalArgumentException();
     	}
+	    this.lloc = UtilString.normalitzaString(lloc);
     }
 
     public String getOrigen() {
