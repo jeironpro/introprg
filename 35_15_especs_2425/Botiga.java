@@ -39,18 +39,6 @@ public class Botiga {
     	} else if (cerca(vi.getRef()) != null) {
             throw new IllegalArgumentException("Referència de vi repetida");
         }
-        String ref = vi.getRef();
-        String nom = vi.getNom();
-        int preu = vi.getPreu();
-        int estoc = vi.getEstoc();
-        String lloc = vi.getLloc();
-        String origen = vi.getOrigen();
-        String tipus = vi.getTipus();
-        String collita = vi.getCollita();
-        
-        if (!Vi.esValid(ref, nom, preu, estoc, lloc, origen, tipus, collita)) {
-        	return null;
-        }
         this.vins.add(vi);
         return vi; 
     }
@@ -141,5 +129,21 @@ public class Botiga {
 			}
     	}
     	return vinsCercat;
+    }
+    
+    public void iniciaRecorregut() {
+        indexVi = 0;
+    } 
+    
+    public Vi getSeguent() {
+        while (indexVi < this.vins.size()) {
+            Vi vi = this.vins.get(indexVi);
+            indexVi++;
+            if (vi == null) {
+		        continue;
+            }
+	        return vi;
+        }
+        return null;
     }
 }
