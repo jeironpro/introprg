@@ -28,6 +28,9 @@ public class Vi {
     private String collita;
     
     public Vi(String ref, String nom, int preu, int estoc, String lloc, String origen, String tipus, String collita) {
+    	if (!Vi.esValid(ref, nom, preu, estoc, lloc, origen, tipus, collita)) {
+        	throw new IllegalArgumentException("El vi ha de ser vàlid");
+        }
         this.ref = UtilString.normalitzaString(ref);
         this.nom = UtilString.normalitzaString(nom);
         
@@ -63,7 +66,7 @@ public class Vi {
     
     public void setPreu(int preu) { 
     	if (preu < 0) {
-    		throw new IllegalArgumentException();
+    		throw new IllegalArgumentException("El preu ha de ser vàlid");
     	}
         this.preu = preu; 
     }
@@ -74,7 +77,7 @@ public class Vi {
     
     public void setEstoc(int estoc) { 
     	if (estoc < 0) {
-    		throw new IllegalArgumentException();
+    		throw new IllegalArgumentException("L'estoc ha de ser vàlid");
     	}
         this.estoc = estoc; 
     }
@@ -85,7 +88,7 @@ public class Vi {
 
     public void setLloc(String lloc) {
     	if (lloc == null || lloc.isBlank()) {
-    		throw new IllegalArgumentException();
+    		throw new IllegalArgumentException("El lloc ha de ser vàlid");
     	}
 	    this.lloc = UtilString.normalitzaString(lloc);
     }
