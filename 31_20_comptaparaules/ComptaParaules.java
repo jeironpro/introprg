@@ -35,6 +35,6 @@ public class ComptaParaules {
 				}
 			}
 		}
-		System.out.println("Adéu");
+		System.out.println("adéu");
 	}
 }
