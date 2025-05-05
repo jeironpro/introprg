@@ -1,3 +1,12 @@
+/*
+ * Classe Especificacio conté:
+ * Quatres propietats de tipus String (nom, origen, tipus, collita), la propietat
+   nom és final.
+ * Un constructor que crea una instància amb tots els valors rebut normalitzat
+   per a cadascuna de les propietats.
+ * Metodes getter per cada propietats. 
+ */
+
 public class Especificacio {
 	private final String nom;
 	private String origen;

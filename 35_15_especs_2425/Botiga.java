@@ -5,7 +5,8 @@
  * Un mètode afegeix(Vi) que permet afegir vi a la llista. 
  * Un mètode elimina(String) que elimina un vi de la llista.
  * Un mètode cerca(String) que cerca un vi pel referència.
- * Un mètode cerca(Vi) que cerca multiples vins per una plantilla.
+ * Un mètode cerca(Vi) que cerca multiples vins per una instància de
+   Especificació.
  * 
  * La botiga té gestió d'excepcions en metodes:
  * Metode cerca(String): gestiona l'excepció quan reb un valor null. 
@@ -21,7 +22,6 @@ import java.util.LinkedList;
 
 public class Botiga {
 	private List<Vi> vins;
-	private int indexVi;
 	
 	public Botiga() {
         this.vins = new LinkedList<Vi>();

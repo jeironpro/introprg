@@ -32,8 +32,9 @@
  * Ara el programa ja no fa servir els mètodes afegeix, modificar i eliminar, 
  * pel que els comandes no estén disponibles.
  *
- * El mètode cerca, ara processa la cerca amb la referència del vi, o mitjançant
- * una plantilla d'un vi que pot rebre valor especificar per fer la cerca.
+ * El mètode cerca, ara processa la cerca amb la referència del vi, o una 
+ * instància de Especificacio d'un vi que pot rebre valor especific per fer 
+   la cerca.
  *
  */
 

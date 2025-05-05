@@ -343,8 +343,8 @@
     // Versió 2
     public static String filtraVocalsCatalaV2(String text) {
         String nouText = "";
-        String vocalsCatala = "àèéíïòóùúüç";
-        String vocals = "aeeiioouuuc";
+        String vocalsCatala = "àèéíïòóùúüçÀÈÉÍÏÒÓÙÚÜÇ";
+        String vocals = "aeeiioouuucAEEIIOOUUUC";
         
         for (int i = 0; i < text.length(); i++) {
             boolean reemplazo = false;
