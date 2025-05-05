@@ -17,8 +17,8 @@ public class ComptaParaules {
 			if (text.isBlank()) {
 				break;
 			}
-			text = text + " ";
-			text = text.toLowerCase();
+			text = text.toLowerCase() + " ";
+			
 			String paraula = "";
 			for (int i = 0; i < text.length(); i++) {
 				char c = text.charAt(i);
