@@ -1,3 +1,20 @@
+/*
+ * Classe Especificacio conté:
+ * Quatres propietats de tipus String (nom, origen, tipus, collita), la propietat
+   nom és final.
+ * Un constructor que crea una instància amb tots els valors rebut normalitzat
+   per a cadascuna de les propietats.
+ * Metodes getter per cada propietats. 
+ * Sobreescrit el toString per mostra la instància de manera personalitzada.
+ * Mètode esComplet que retona true si la instància té totes les propietats
+   correctament inicialitzades, altrament retorna false.
+ * Mètode aArrayString que converteix una especificacio en un array de Strings.
+ * Mètode deArrayString que rep un array de Strings i retorna una especificacio
+   si els dades són vàlides.
+ * Mètode esPlantillaDe que reb un vi i verifica si algunes de les propietats
+   del vi (nom, origen, tipus i collita) son igual a les de l'especificació.
+ */
+ 
 public class Especificacio {
 	private final String nom;
 	private String origen;

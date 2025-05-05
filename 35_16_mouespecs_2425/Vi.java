@@ -1,20 +1,23 @@
 /*
- * Classe vi, amb vuit propietats, ref (que és final), nom (que és final), preu,
- * estoc, lloc, origen, tipus, collita dels vins.
- * Un constructor específic un per construir un vi amb tots els atributs.
- * Getter i setter per cada propietat, excepte que les propietats ref i nom no 
- * tenen setter per què no es pot modificar, els setters de preu i estoc no
- * permetran valors negatius.
+ * Classe Vi conte: 
+ * Vuit propietats ref (que és final), nom (que és final), preu, estoc, lloc,
+   origen, tipus, collita i espec dels vins.
+ * Un constructor específic un per construir un vi amb tots els atributs
+   normalitzat.
+ * Getter i setter per cada propietat, excepte que les propietats ref, nom,
+   origen, tipus i collita no tenen setter per què no es pot modificar. El setter
+   de preu i estoc no permetran valors negatius i el de lloc no permet valors
+   null ni blank.
  * Un mètode esValid que verifica sí les dades del vi són vàlids.
  * Utilitza la funció de UtilString normalitzaString que rep un String i el
    retorna normalitzat si no és buit, altrament retorna null.
  * Sobreescrit el toString per mostra la instància de manera personalitzada.
  * 
  * Ara, per poder simplificar la lectura i el guardat del vins de la Botiga
- * s'han agregat dos mètodes d'instancia:
+   s'han agregat dos mètodes d'instancia:
  * Mètode aArrayString que converteix un vi en un array de Strings.
  * Mètode deArrayString que rep un array de Strings i retorna un vi si els
- * dades són vàlides.
+   dades són vàlides.
  */
 
 public class Vi {
