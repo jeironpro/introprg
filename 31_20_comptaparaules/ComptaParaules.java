@@ -9,7 +9,8 @@ import java.util.HashMap;
 public class ComptaParaules {
 	public static void main(String[] args) {
 		Map<String, Integer> paraules = new HashMap<>();
-				
+		
+		System.out.println("Ves introduint frases. Enter per finalitzar.");	
 		while(true) {
 			String text = Entrada.readLine();
 			
