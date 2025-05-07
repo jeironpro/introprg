@@ -13,7 +13,7 @@ public class EnvoltaString {
     private String valor;
     
     public EnvoltaString(String valor) { 
-    	this.valor = valor.toLowerCase(); 
+    	this.valor = valor; 
 	}
     
     public String toString() { 
@@ -21,6 +21,6 @@ public class EnvoltaString {
 	}
     
     public boolean equals(EnvoltaString altre) {
-        return valor.equals(altre.valor);
+        return valor.equalsIgnoreCase(altre.valor);
     }
 }
