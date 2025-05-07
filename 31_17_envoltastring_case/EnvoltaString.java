@@ -6,7 +6,7 @@
  * @Override: toString() -> mostra de manera personalitzada el valor de la instància
  * @Overload: equals(Object) -> aquest mètode reb una instància de la classe i 
               comprova si la propietat d'aquesta instància és igual a la de la 
-              classe.
+              classe sense tenir en compte majúscules i minúscules.
  */
 
 public class EnvoltaString {
