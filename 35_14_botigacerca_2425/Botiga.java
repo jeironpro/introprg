@@ -137,20 +137,4 @@ public class Botiga {
 		}
     	return vinsCercat;
     }
-    
-    public void iniciaRecorregut() {
-        indexVi = 0;
-    } 
-    
-    public Vi getSeguent() {
-        while (indexVi < this.vins.size()) {
-            Vi vi = this.vins.get(indexVi);
-            indexVi++;
-            if (vi == null) {
-		        continue;
-            }
-	        return vi;
-        }
-        return null;
-    }
 }
