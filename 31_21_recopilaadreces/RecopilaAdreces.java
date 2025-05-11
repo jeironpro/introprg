@@ -26,7 +26,7 @@ public class RecopilaAdreces {
 		}
 		
 		if (!fitxer.isFile()) {
-			System.out.println("No es un fitxer");
+			System.out.println("No s'ha pogut llegir el fitxer " + fitxer);
 			return null;
 		}
 		
