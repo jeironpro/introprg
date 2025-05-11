@@ -12,6 +12,10 @@ public class Recopilador {
 	private static final String SEPARADORS = "[\\s\\[{(<>})\\],;:'\"=|/\\!?]";
 	
 	public int processa(String nom, String text) {
+		if (text.isEmpty() || text == null) {
+			return 0;
+		}
+		
 		int comptador = 0;
 		String[] adreca = text.split(SEPARADORS);
 		
