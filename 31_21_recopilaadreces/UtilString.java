@@ -1069,7 +1069,7 @@
 			char c = text.charAt(i);
 			
 			if ((!Character.isDigit(c) && !Character.isLetter(c))) {
-				if (c != '-' || c != '_' || c != '.' || c != '+') {
+				if (c != '-' && c != '_' && c != '.' && c != '+') {
 					return false;
 				}
 			}
