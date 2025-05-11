@@ -60,11 +60,6 @@ public class RecopilaAdreces {
 		for (int i = 0; i < args.length; i++) {
 			String fitxer = args[i];
 			String contingut = llegeixFitxer(fitxer);
-			
-			if (contingut == null) {
-				System.out.println("N'hi ha contingut");
-				return;
-			}
 			int quants = recopilador.processa(fitxer, contingut);
 			
 			if (quants == 0) {
