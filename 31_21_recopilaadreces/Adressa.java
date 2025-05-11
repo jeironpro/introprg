@@ -37,47 +37,49 @@ public class Adressa implements Comparable<Adressa> {
 			return false;
 		}
 		
-		if (!text.contains("@")) {
+		String[] adreca = text.split("@");
+		
+		if (adreca.length != 2) {
 			return false;
 		}
 		
-		String[] adrec = text.split("@");
+		String identificador = adreca[0];
+		String domini = adreca[1];
 		
-		if (adrec.length != 2) {
+		if (identificador.length() < 1 || domini.length() < 2) {
 			return false;
 		}
 		
-		if (adrec[0].length() < 1 || adrec[1].length() < 2) {
+		if (!UtilString.formatCorrecte(identificador)) {
 			return false;
 		}
 		
-		if (!UtilString.formatCorrecte(adrec[0])) {
+		if (identificador.contains("@") || identificador.contains("@") ) {
 			return false;
 		}
 		
-		if (adrec[0].contains("@") || adrec[1].contains("@") ) {
+		if (!domini.contains(".")) {
 			return false;
 		}
 		
-		if (!adrec[1].contains(".")) {
+		String[] partsDomini = domini.split("\\.");
+		
+		if (partsDomini.length != 2) {
 			return false;
 		}
 		
-		String[] dom = adrec[1].split("\\.");
+		String nomDom = partsDomini[0];
+		String extDom = partsDomini[1];
 
-		if (dom.length != 2) {
+		if (nomDom.isEmpty() || extDom.length() < 2) {
 			return false;
 		}
 		
-		if (dom[0].isEmpty() || dom[1].length() < 2) {
+		if (nomDom.contains(".") || extDom.contains(".")) {
 			return false;
 		}
 		
-		if (dom[0].contains("\\.") || dom[1].contains("\\.")) {
-			return false;
-		}
-		
-		if (!UtilString.nomesConteLletres(dom[1])) {
+		if (!UtilString.nomesConteLletres(extDom)) {
 			return false;
 		}
 		

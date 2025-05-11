@@ -172,6 +172,9 @@
  *
  * Una funció que rep un text i verifica si només està format per lletres.
    (conteNomesLletres)
+ *
+ * Una funció que rep un text i verifica si el text està format per lletres, 
+   números i alguns símbols. (formatCorrecte)
  */
 
  public class UtilString {
