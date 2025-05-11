@@ -66,6 +66,11 @@ public class RecopilaAdreces {
 				return;
 			}
 			int quants = recopilador.processa(fitxer, contingut);
+			
+			if (quants == 0) {
+				System.out.println("No s'han trobat adreces");
+				return;
+			}
 		}
 		mostraResultat(recopilador);
 	}
