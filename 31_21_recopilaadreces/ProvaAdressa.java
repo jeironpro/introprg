@@ -10,8 +10,9 @@ class ProvaAdressa {
 	private static final String SEPARADORS = "[\\s\\[{(<>})\\],;:'\"=|/\\!?]";
 	
 	public static void main(String[] args) {
-		String adressa = "<li><a href=\"mailto:garfieldmolames@xupimail.com\">Gamberfield</a></li>";
-		// boolean esValida = Adressa.esValida(adressa);
+		String adressa = "amig da@la.la";
+		boolean esValida = Adressa.esValida(adressa);
+		System.out.println(esValida);
 		// Adressa adress = Adressa.fromString(adressa);
 		
 		/* List<String> noms = new ArrayList<>();
