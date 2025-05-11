@@ -1,5 +1,16 @@
 /**
+ * Classe que conté:
+ * Una propietat de tipus Map(hashMap) amb (k(Adressa), v(List<String>))
  *
+ * Tres mètodes d'instància:
+ * procesa(String, String) -> rep un nom i el contingut d'un fitxer i retorna quantes
+   adreçes hi ha, a més guarda les adreces en el Map amb el seu respectiu fitxer.
+ *
+ * getAdreces() -> retorna una llista ordenada alfabèticament de les adreces que hi ha
+   en el Map.
+ *
+ * getNoms(Adressa) -> rep una adreça i retorna la llista ordenada alfabèticament de
+   fitxers que té com valor l'adreça.
  */
  
 import java.util.Map;
