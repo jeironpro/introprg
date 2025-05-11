@@ -70,7 +70,7 @@ public class RecopilaAdreces {
 			String contingut = llegeixFitxer(fitxer);
 			
 			if (contingut != null) {
-				quants = recopilador.processa(fitxer, contingut);
+				quants += recopilador.processa(fitxer, contingut);
 			}
 			
 		}
