@@ -29,8 +29,8 @@ public class Recopilador {
 						adreces.put(adressa, noms);
 						comptador++;
 					}
+					comptador++;
 				}
-				comptador++;
 			}
 		} 
 		return comptador;
