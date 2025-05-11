@@ -52,7 +52,6 @@ public class Adressa implements Comparable<Adressa> {
 		}
 		
 		if (!UtilString.formatCorrecte(adrec[0])) {
-			System.out.println(UtilString.formatCorrecte(adrec[0]));
 			return false;
 		}
 		

@@ -1065,18 +1065,12 @@
 	}
 	
 	public static boolean formatCorrecte(String text) {
-		String format = "-_.+";
-		
 		for (int i = 0; i < text.length(); i++) {
 			char c = text.charAt(i);
 			
-			for (int j = 0; j < format.length(); j++) {
-				char f = format.charAt(j);
-				
-				if ((!Character.isDigit(c) && !Character.isLetter(c))) {
-					if (c == f) {
-						return true;
-					}
+			if ((!Character.isDigit(c) && !Character.isLetter(c))) {
+				if (c != '-' || c != '_' || c != '.' || c != '+') {
+					return true;
 				}
 			}
 		}
