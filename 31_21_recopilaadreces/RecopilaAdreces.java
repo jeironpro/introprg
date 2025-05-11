@@ -52,6 +52,7 @@ public class RecopilaAdreces {
 			
 			if (!fitxer.exists()) {
 				System.out.println("No s'ha trobat el fitxer " + args[i]);
+				return;
 			} else if (!fitxer.canRead()) {
 				System.out.println("El fixter no es pot llegir " + args[i]);
 			}
