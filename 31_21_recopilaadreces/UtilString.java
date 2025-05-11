@@ -1070,10 +1070,10 @@
 			
 			if ((!Character.isDigit(c) && !Character.isLetter(c))) {
 				if (c != '-' || c != '_' || c != '.' || c != '+') {
-					return true;
+					return false;
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 }
