@@ -71,7 +71,6 @@ public class RecopilaAdreces {
 			
 			if (contingut == null) {
 				System.out.println("No s'han trobat adreces");
-				return;
 			}
 			quants = recopilador.processa(fitxer, contingut);
 			
