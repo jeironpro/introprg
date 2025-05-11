@@ -64,13 +64,20 @@ public class RecopilaAdreces {
 	}
 	
 	public static void main(String[] args) throws IOException {
+		int quants = 0;
 		for (int i = 0; i < args.length; i++) {
 			String fitxer = args[i];
 			String contingut = llegeixFitxer(fitxer);
 			
-			if (contingut == null || recopilador.processa(fitxer, contingut) == 0) {
+			if (contingut == null) {
 				System.out.println("No s'han trobat adreces");
+				return;
 			}
+			quants = recopilador.processa(fitxer, contingut);
+			
+		}
+		if (quants == 0) {
+			System.out.println("No s'han trobat adreces");
 		}
 		mostraResultat(recopilador);
 	}
