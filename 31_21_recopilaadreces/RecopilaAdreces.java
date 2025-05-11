@@ -42,8 +42,8 @@ public class RecopilaAdreces {
 		List<Adressa> adreca = recopilador.getAdrecess();
 		
 		for (Adressa adrec: adreca) {
-			String id = adrec.getId();
-			String dom = adrec.getDom();
+			String id = adrec.getIdentificador();
+			String dom = adrec.getDomini();
 			String compAdressa = id + "" + dom;
 			System.out.println(compAdressa);
 			

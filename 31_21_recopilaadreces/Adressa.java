@@ -12,11 +12,11 @@ public class Adressa implements Comparable<Adressa> {
 		this.domini = domini;
 	}
 	
-	public String getId() {
+	public String getIdentificador() {
 		return identificador;
 	}
 	
-	public String getDom() {
+	public String getDomini() {
 		return domini;
 	}
 	
