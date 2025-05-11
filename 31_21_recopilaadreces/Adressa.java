@@ -43,11 +43,6 @@ public class Adressa implements Comparable<Adressa> {
 		
 		String[] adrec = text.split("@");
 		
-		System.out.println(adrec.length);
-		for (String ad: adrec) {
-			System.out.println(ad);
-		}
-		
 		if (adrec.length != 2) {
 			return false;
 		}
