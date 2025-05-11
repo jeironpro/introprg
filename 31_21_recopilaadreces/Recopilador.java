@@ -18,11 +18,11 @@ public class Recopilador {
 		for (String adrec: adreca) {
 			if (adrec.contains("@")) {
 				if (Adressa.esValida(adrec)) {
+					comptador++;
 					Adressa adressa = Adressa.fromString(adrec);
 					if (adreces.get(adressa) != null) {
 						if (!adreces.get(adressa).contains(nom)) {
 							adreces.get(adressa).add(nom);
-							comptador++;
 						}
 					} else {
 						List<String> noms = new ArrayList<>();
