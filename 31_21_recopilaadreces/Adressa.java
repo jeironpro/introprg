@@ -55,10 +55,6 @@ public class Adressa implements Comparable<Adressa> {
 			return false;
 		}
 		
-		if (!adrec[1].contains("\\.")) {
-			return false;
-		}
-		
 		String[] dom = adrec[1].split("\\.");
 
 		if (dom.length != 2) {
