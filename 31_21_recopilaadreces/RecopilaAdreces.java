@@ -68,14 +68,9 @@ public class RecopilaAdreces {
 			String fitxer = args[i];
 			String contingut = llegeixFitxer(fitxer);
 			
-			if (contingut == null) {
+			if (contingut == null || recopilador.processa(fitxer, contingut) == 0) {
 				System.out.println("No s'han trobat adreces");
 				return;
-			}
-			int quants = recopilador.processa(fitxer, contingut);
-			
-			if (quants == 0) {
-				System.out.println("No s'han trobat adreces");
 			}
 		}
 		mostraResultat(recopilador);
