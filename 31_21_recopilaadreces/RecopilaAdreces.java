@@ -13,7 +13,17 @@ public class RecopilaAdreces {
 	private static Recopilador recopilador = new Recopilador();
 	
 	public static String llegeixFitxer(String nomFitxer) throws IOException {
-		BufferedReader lector = new BufferedReader(new FileReader(nomFitxer));
+		File fitxer = new File(nomFitxer);
+		
+		if (!fitxer.exists()) {
+			System.out.println("No s'ha trobat el fitxer " + fitxer);
+			return null;
+		} else if (!fitxer.canRead()) {
+			System.out.println("El fixter no es pot llegir");
+			return null;
+		}
+		
+		BufferedReader lector = new BufferedReader(new FileReader(fitxer));
 		StringBuilder sb = new StringBuilder();
 		
 		while (true) {
@@ -48,17 +58,14 @@ public class RecopilaAdreces {
 	
 	public static void main(String[] args) throws IOException {
 		for (int i = 0; i < args.length; i++) {
-			File fitxer = new File(args[i]);
+			String fitxer = args[i];
+			String contingut = llegeixFitxer(fitxer);
 			
-			if (!fitxer.exists()) {
-				System.out.println("No s'ha trobat el fitxer " + args[i]);
+			if (contingut == null) {
+				System.out.println("N'hi ha contingut");
 				return;
-			} else if (!fitxer.canRead()) {
-				System.out.println("El fixter no es pot llegir " + args[i]);
 			}
-			
-			String contingut = llegeixFitxer(args[i]);
-			int quants = recopilador.processa(args[i], contingut);
+			int quants = recopilador.processa(fitxer, contingut);
 			
 			if (quants == 0) {
 				System.out.println("No s'han trobat adreces");
