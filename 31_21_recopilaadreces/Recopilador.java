@@ -27,8 +27,8 @@ public class Recopilador {
 						List<String> noms = new ArrayList<>();
 						noms.add(nom);
 						adreces.put(adressa, noms);
+						comptador++;
 					}
-					comptador++;
 				}
 			}
 		} 
