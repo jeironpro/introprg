@@ -10,7 +10,7 @@ class ProvaAdressa {
 	private static final String SEPARADORS = "[\\s\\[{(<>})\\],;:'\"=|/\\!?]";
 	
 	public static void main(String[] args) {
-		String adressa = "amig da@la.la";
+		String adressa = "a+a@b.cd";
 		boolean esValida = Adressa.esValida(adressa);
 		System.out.println(esValida);
 		// Adressa adress = Adressa.fromString(adressa);
@@ -37,10 +37,9 @@ class ProvaAdressa {
 		// System.out.println(adress.domini);
 		// System.out.printf("%s -> %b%n", adressa, esValida);
 		
-		String[] correu = adressa.split(SEPARADORS);
+		/*String[] correu = adressa.split(SEPARADORS);
 		for (String cor : correu) {
 			System.out.println(cor);
-		}
-		
+		}*/
 	}
 }
