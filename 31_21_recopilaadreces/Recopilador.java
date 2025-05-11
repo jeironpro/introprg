@@ -33,7 +33,7 @@ public class Recopilador {
 		return comptador;
 	}
 	
-	public List<Adressa> getAdrecess() {
+	public List<Adressa> getAdreces() {
 		List<Adressa> adrecs = new ArrayList<>(adreces.keySet());
 		java.util.Collections.sort(adrecs);
 		return adrecs;

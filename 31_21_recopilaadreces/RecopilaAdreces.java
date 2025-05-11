@@ -39,7 +39,7 @@ public class RecopilaAdreces {
 	}
 	
 	public static void mostraResultat(Recopilador recopilador) {
-		List<Adressa> adreca = recopilador.getAdrecess();
+		List<Adressa> adreca = recopilador.getAdreces();
 		
 		for (Adressa adrec: adreca) {
 			String id = adrec.getIdentificador();
