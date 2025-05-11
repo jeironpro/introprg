@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 
-public class RecopilaAdresses {
+public class RecopilaAdreces {
 	private static Recopilador recopilador = new Recopilador();
 	public static String llegeixFitxer(String nomFitxer) throws IOException {
 		File fitxer = new File(nomFitxer);
