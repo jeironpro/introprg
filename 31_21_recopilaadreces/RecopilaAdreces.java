@@ -60,7 +60,7 @@ public class RecopilaAdreces {
 			String fitxer = args[i];
 			String contingut = llegeixFitxer(fitxer);
 			
-			if (contingut.isEmpty() || contingut == null) {
+			if (contingut == null) {
 				System.out.println("N'hi ha contingut");
 				return;
 			}
