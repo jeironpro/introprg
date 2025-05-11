@@ -20,7 +20,9 @@ public class Recopilador {
 				if (Adressa.esValida(adrec)) {
 					Adressa adressa = Adressa.fromString(adrec);
 					if (adreces.get(adressa) != null) {
-						adreces.get(adressa).add(nom);
+						if (!adreces.get(adressa).contains(nom)) {
+							adreces.get(adressa).add(nom);
+						}
 					} else {
 						List<String> noms = new ArrayList<>();
 						noms.add(nom);
