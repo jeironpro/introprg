@@ -76,7 +76,6 @@ public class RecopilaAdreces {
 			
 			if (quants == 0) {
 				System.out.println("No s'han trobat adreces");
-				return;
 			}
 		}
 		mostraResultat(recopilador);
