@@ -47,7 +47,7 @@ public class Adressa implements Comparable<Adressa> {
 			return false;
 		}
 		
-		if (adrec[0].length() < 1 || adrec[1].length() < 1) {
+		if (adrec[0].length() <= 2 || adrec[1].length() <= 2) {
 			return false;
 		}
 		
