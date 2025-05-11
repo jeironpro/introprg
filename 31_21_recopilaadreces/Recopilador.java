@@ -22,6 +22,7 @@ public class Recopilador {
 					if (adreces.get(adressa) != null) {
 						if (!adreces.get(adressa).contains(nom)) {
 							adreces.get(adressa).add(nom);
+							comptador++;
 						}
 					} else {
 						List<String> noms = new ArrayList<>();
