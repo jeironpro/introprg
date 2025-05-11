@@ -70,7 +70,6 @@ public class RecopilaAdreces {
 			
 			if (contingut == null || recopilador.processa(fitxer, contingut) == 0) {
 				System.out.println("No s'han trobat adreces");
-				return;
 			}
 		}
 		mostraResultat(recopilador);
