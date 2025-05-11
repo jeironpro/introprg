@@ -62,11 +62,13 @@ public class RecopilaAdreces {
 			
 			if (contingut.isEmpty() || contingut == null) {
 				System.out.println("N'hi ha contingut");
+				return;
 			}
 			int quants = recopilador.processa(fitxer, contingut);
 			
 			if (quants == 0) {
 				System.out.println("No s'han trobat adreces");
+				return;
 			}
 		}
 		mostraResultat(recopilador);
