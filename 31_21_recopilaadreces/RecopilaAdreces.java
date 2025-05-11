@@ -18,8 +18,15 @@ public class RecopilaAdreces {
 		if (!fitxer.exists()) {
 			System.out.println("No s'ha trobat el fitxer " + fitxer);
 			return null;
-		} else if (!fitxer.canRead()) {
+		}
+		
+		if (!fitxer.canRead()) {
 			System.out.println("El fixter no es pot llegir");
+			return null;
+		}
+		
+		if (!fitxer.isFile()) {
+			System.out.println("No es un fitxer");
 			return null;
 		}
 		
