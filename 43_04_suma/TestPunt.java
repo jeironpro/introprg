@@ -12,6 +12,13 @@ public class TestPunt {
     }
     
     @Test
+	public void constructorEspecific() {
+		Punt p = new Punt(1, 2);
+		assertEquals(1, p.getX());
+		assertEquals(2, p.getY());
+    }
+    
+    @Test
     public void constructorDefecteXZero() {
         Punt p = new Punt();
         assertEquals(0, p.getX());
