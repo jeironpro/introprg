@@ -51,7 +51,7 @@ public class Categoria {
 	@Override
 	public String toString() {
 		return "Categoria(id:" + 
-			(id < = ? "indefinit": id) +
+			(id < 0 ? "indefinit": id) +
 			", " + nom + ")";
 	}
 }
