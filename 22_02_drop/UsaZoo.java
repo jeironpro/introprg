@@ -1,5 +1,6 @@
 /**
- * Classe que comprova el funcionament de la classe Zoo.
+ * Classe que comprova el funcionament dels diferents mètodes que 
+   hi ha en la classe Zoo.
  */
 
 import java.sql.SQLException;
