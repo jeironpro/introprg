@@ -31,7 +31,7 @@ public class UsaZoo {
         zoo.afegeixCategoria(mamifer);
 
         System.out.println();
-        System.out.println("Un cop inserides les categories queden: ");
+        System.out.println("Un cop inserides les categories queden:");
         System.out.println("\t"+ ocell);
         System.out.println("\t"+ mamifer);
 
