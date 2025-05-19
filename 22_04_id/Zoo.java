@@ -104,7 +104,8 @@ public class Zoo {
 	}
 	
 	public String obteCategoriaPerNom(String nom) throws SQLException {
-		String sentencia = "SELECT id FROM CATEGORIES WHERE nom = " + "'" + nom + "'" + " ORDER BY id LIMIT 1;";
+		String sentencia = "SELECT id FROM CATEGORIES WHERE nom = " + 
+						   "'" + nom + "'" + " ORDER BY id LIMIT 1;";
 		Statement st = null;
 		
 		try {
