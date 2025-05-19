@@ -45,10 +45,6 @@ public class Zoo {
 	    }
 	}
 	
-	public void creaTaulaAnimals() throws SQLException {
-		eliminaTaulaAnimals();
-	}
-	
 	public void eliminaTaulaCategories() throws SQLException {
 		String sentencia = "DROP TABLE IF EXISTS CATEGORIES";
 		Statement st = null;
@@ -64,14 +60,14 @@ public class Zoo {
 	}
 	
 	public void afegeixCategoria(Categoria categoria) throws SQLException {
-		String sql = String.format(
+		String sentencia = String.format(
 		        "INSERT INTO CATEGORIES (nom) VALUES ('%s')",
 		        categoria.getNom());
 		Statement st = null;
 
 		try {
 		    st = conn.createStatement();
-		    st.executeUpdate(sql);
+		    st.executeUpdate(sentencia);
 		    ResultSet rs = st.getGeneratedKeys();
 		    rs.next();
 		    int id = rs.getInt(1);
@@ -84,12 +80,12 @@ public class Zoo {
 	}
 	
 	public List<Categoria> recuperaCategories() throws SQLException {
-		String sql = "SELECT * FROM CATEGORIES ORDER BY nom";
+		String sentencia = "SELECT * FROM CATEGORIES ORDER BY nom";
 		Statement st = null;
 
 		try {
 		    st = conn.createStatement();
-		    ResultSet rs = st.executeQuery(sql);
+		    ResultSet rs = st.executeQuery(sentencia);
 		    List<Categoria> categories = new LinkedList<>();
 
 		    while (rs.next()) {
