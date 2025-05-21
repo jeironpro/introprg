@@ -141,6 +141,12 @@ public class Zoo {
 		try {
 			st = conn.createStatement();
 			st.executeUpdate(sentencia);
+			ResultSet rs = st.getGeneratedKeys();
+		    if (rs.next()) {
+		    	int id = rs.getInt(1);
+				animal.setId(id);		    
+		    }
+		    rs.close();
 		} finally {
 			if (st != null) {
 				st.close();
