@@ -49,9 +49,9 @@ public class Zoo {
 	public void creaTaulaAnimals() throws SQLException {
 		creaTaulaCategories();
 		String sentencia = "CREATE TABLE ANIMALS (" +
-						   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-						   " nom VARCHAR(40)," +
-						   " categoria INTEGER," + 
+						   " id          INTEGER PRIMARY KEY AUTOINCREMENT," +
+						   " nom         VARCHAR(40)," +
+						   " categoria   INTEGER," + 
 						   " FOREIGN KEY(categoria) REFERENCES CATEGORIES(id))";
 		Statement st = null;
 		
