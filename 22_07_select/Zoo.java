@@ -173,7 +173,7 @@ public class Zoo {
 	}
 	
 	public List<Animal> recuperaAnimals() throws SQLException {
-		String sentencia = "SELECT a.id as id_animal, a.nom as nom_animal, c.id as id_categoria, c.nom as nom_categoria FROM ANIMALS a JOIN CATEGORIES c c ON a.categoria = c.id ORDER BY a.nom";
+		String sentencia = "SELECT a.id as id_animal, a.nom as nom_animal, c.id as id_categoria, c.nom as nom_categoria FROM ANIMALS a JOIN CATEGORIES c ON a.categoria = c.id ORDER BY a.nom";
 		Statement st = null;
 
 		try {
