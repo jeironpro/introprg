@@ -33,8 +33,8 @@ public class Zoo {
 	public void creaTaulaCategories() throws SQLException {
 		eliminaTaulaCategories();
 		String sentencia = "CREATE TABLE CATEGORIES (" +
-						   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-						   " nom VARCHAR(40))";
+						   "id    INTEGER PRIMARY KEY AUTOINCREMENT," +
+						   "nom   VARCHAR(40))";
 	    Statement st = null;
 	    
 	    try {
@@ -50,9 +50,9 @@ public class Zoo {
 	public void creaTaulaAnimals() throws SQLException {
 		creaTaulaCategories();
 		String sentencia = "CREATE TABLE ANIMALS (" +
-						   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-						   " nom VARCHAR(40)," +
-						   " categoria INTEGER," + 
+						   " id          INTEGER PRIMARY KEY AUTOINCREMENT," +
+						   " nom         VARCHAR(40)," +
+						   " categoria   INTEGER," + 
 						   " FOREIGN KEY(categoria) REFERENCES CATEGORIES(id))";
 		Statement st = null;
 		
@@ -96,18 +96,19 @@ public class Zoo {
 	}
 	
 	public void afegeixCategoria(Categoria categoria) throws SQLException {
-		String sentencia = String.format(
-		        "INSERT INTO CATEGORIES (nom) VALUES ('%s')",
-		        categoria.getNom());
+		String sentencia = String.format("INSERT INTO CATEGORIES (nom) VALUES ('%s')", categoria.getNom());
+		
 		Statement st = null;
 
 		try {
 		    st = conn.createStatement();
 		    st.executeUpdate(sentencia);
 		    ResultSet rs = st.getGeneratedKeys();
-		    rs.next();
-		    int id = rs.getInt(1);
-		    categoria.setId(id);
+		    if (rs.next()) {
+		    	int id = rs.getInt(1);
+				categoria.setId(id);		    
+		    }
+		    rs.close();
 		} finally {
 		    if (st != null) {
 		        st.close();
@@ -120,21 +121,21 @@ public class Zoo {
 			return;
 		}
 		
-		int idCat = 0;
-		if (animal.getCategoria().idIndefinit()) {
-			String nomCategoria = animal.getCategoria().getNom();
-			if (obteCategoriaPerNom(nomCategoria) == null) {
-				afegeixCategoria(animal.getCategoria());
-			}
-			idCat = idCategoria(nomCategoria);	
-		} else {
-			idCat = animal.getCategoria().getId();
-		}	
+		Categoria categoriaAnimal = animal.getCategoria();
+		if (categoriaAnimal.idIndefinit()) {
+			Categoria categoria = obteCategoriaPerNom(categoriaAnimal.getNom());
+			if (categoria == null) {
+				afegeixCategoria(categoriaAnimal);
+			} else {
+				categoriaAnimal.setId(categoria.getId());
+			}	
+		}
 		
 		String sentencia = String.format(
 				"INSERT INTO ANIMALS (nom, categoria) VALUES ('%s', '%d')",
 				animal.getNom(),
-				idCat);
+				animal.getCategoria().getId());
+				
 		Statement st = null;
 		
 		try {
@@ -171,21 +172,19 @@ public class Zoo {
 		}
 	}
 	
-	public String obteCategoriaPerNom(String nom) throws SQLException {
-		String sentencia = "SELECT id FROM CATEGORIES WHERE nom = " + 
-							"'" + nom + "'" + " ORDER BY id LIMIT 1;";
+	public Categoria obteCategoriaPerNom(String nom) throws SQLException {
+		String sentencia = String.format("SELECT id FROM CATEGORIES WHERE nom = '%s' ORDER BY id LIMIT 1", nom);
+		
 		Statement st = null;
 		
 		try {
 			st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sentencia);
-			
-	        int bdId = rs.getInt("id");
-	        
-	        if (bdId > 0) {
-			    Categoria categoria = new Categoria(bdId, nom);
-			    return categoria.toString();
-	        }
+			if (rs.next()) {
+			    int id = rs.getInt("id");
+			    Categoria categoria = new Categoria(id, nom);
+			    return categoria;			
+			}
 	        return null;
 		} finally {
 			if (st != null) {
@@ -207,24 +206,5 @@ public class Zoo {
 		    rs.close();
 		}
 		return taules.size() > 0 ? String.join(", ", taules) : "cap";
-	}
-	
-	public int idCategoria(String nomCategoria) throws SQLException {
-		String sentencia = "SELECT id FROM CATEGORIES WHERE nom = " + 
-					       "'" + nomCategoria + "'" + " ORDER BY id LIMIT 1;";
-		
-		Statement st = null;
-		try {
-			st = conn.createStatement();
-    		st.executeQuery(sentencia);
-			ResultSet rs = st.getGeneratedKeys();
-    		rs.next();
-    		int idCat = rs.getInt(1);
-    		return idCat;
-		} finally {
-			if (st != null) {
-				st.close();
-			}
-		}
 	}
 }
