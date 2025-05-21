@@ -125,10 +125,8 @@ public class Zoo {
 			String nomCategoria = animal.getCategoria().getNom();
 			if (obteCategoriaPerNom(nomCategoria) == null) {
 				afegeixCategoria(animal.getCategoria());
-				idCat = animal.getCategoria().getId();
-			} else {
-				idCat = idCategoria(nomCategoria);	
 			}
+			idCat = idCategoria(nomCategoria);	
 		} else {
 			idCat = animal.getCategoria().getId();
 		}	
