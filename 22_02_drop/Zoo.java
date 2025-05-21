@@ -28,8 +28,8 @@ public class Zoo {
 	public void creaTaulaCategories() throws SQLException {
 		eliminaTaulaCategories();
 		String sentencia = "CREATE TABLE CATEGORIES (" +
-						   "       id        INTEGER PRIMARY KEY AUTOINCREMENT," +
-						   "       nom       VARCHAR(40))";
+						   "id    INTEGER PRIMARY KEY AUTOINCREMENT," +
+						   "nom   VARCHAR(40))";
 	    Statement st = null;
 	    
 	    try {
