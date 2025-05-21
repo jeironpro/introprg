@@ -227,7 +227,7 @@ public class Zoo {
 		}
 	}
 	
-	public String obteAnimalPerNom(String nom) throws SQLException {
+	public Animal obteAnimalPerNom(String nom) throws SQLException {
 		String sentencia = String.format("SELECT a.id as id_animal, c.id as id_categoria, c.nom as nom_categoria FROM ANIMALS a JOIN CATEGORIES c ON a.categoria = c.id WHERE a.nom = '%s' ORDER BY a.nom LIMIT 1", nom);
 			
 		Statement st = null;
@@ -243,7 +243,7 @@ public class Zoo {
 			
 	        	Categoria categoria = new Categoria(idCat, nomCat);
 			    Animal animal = new Animal(idAni, nom, categoria);
-			    return animal.toString();
+			    return animal;
 			}
 	        return null;
 		} finally {
