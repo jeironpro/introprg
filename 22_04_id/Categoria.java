@@ -9,6 +9,7 @@
  * Dos constructors específics, un que inicialitza la propietat nom, l'altre
    inicialitza ambdues.
  * Getter per cada propietat.
+ * Setter per la propietat id.
  * Un mètode que retorna false si la propietat id té un valor negatiu, altrament
    retorna true.
  * Sobreescrit el mètode toString mencionat abans.
@@ -54,8 +55,8 @@ public class Categoria {
 	
 	@Override
 	public String toString() {
-		return "Categoria(id:" + 
-			(id < 0 ? "indefinit": id) +
-			", " + nom + ")";
+		return String.format("Categoria(id:%s, %s)", 
+								(id < 0 ? "indefinit": id), 
+								nom);
 	}
 }
