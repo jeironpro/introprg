@@ -31,8 +31,8 @@ public class Zoo {
 	public void creaTaulaCategories() throws SQLException {
 		eliminaTaulaCategories();
 		String sentencia = "CREATE TABLE CATEGORIES (" +
-						   "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-						   " nom VARCHAR(40))";
+						   "id    INTEGER PRIMARY KEY AUTOINCREMENT," +
+						   "nom   VARCHAR(40))";
 	    Statement st = null;
 	    
 	    try {
@@ -60,14 +60,13 @@ public class Zoo {
 	}
 	
 	public void afegeixCategoria(Categoria categoria) throws SQLException {
-		String sql = String.format(
-		        "INSERT INTO CATEGORIES (nom) VALUES ('%s')",
-		        categoria.getNom());
+		String sentencia = String.format("INSERT INTO CATEGORIES (nom) VALUES ('%s')", categoria.getNom());
+		
 		Statement st = null;
 
 		try {
 		    st = conn.createStatement();
-		    st.executeUpdate(sql);
+		    st.executeUpdate(sentencia);
 		} finally {
 		    if (st != null) {
 		        st.close();
@@ -76,12 +75,13 @@ public class Zoo {
 	}
 	
 	public List<Categoria> recuperaCategories() throws SQLException {
-		String sql = "SELECT * FROM CATEGORIES ORDER BY nom";
+		String sentencia = "SELECT * FROM CATEGORIES ORDER BY nom";
+		
 		Statement st = null;
 
 		try {
 		    st = conn.createStatement();
-		    ResultSet rs = st.executeQuery(sql);
+		    ResultSet rs = st.executeQuery(sentencia);
 		    List<Categoria> categories = new LinkedList<>();
 
 		    while (rs.next()) {
@@ -99,20 +99,19 @@ public class Zoo {
 		}
 	}
 	
-	public String obteCategoriaPerNom(String nom) throws SQLException {
-		String sentencia = "SELECT id FROM CATEGORIES WHERE nom = " + "'" + nom + "'" + " ORDER BY id LIMIT 1;";
+	public Categoria obteCategoriaPerNom(String nom) throws SQLException {
+		String sentencia = String.format("SELECT id FROM CATEGORIES WHERE nom = '%s' ORDER BY id LIMIT 1", nom);
+		
 		Statement st = null;
 		
 		try {
 			st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sentencia);
-			
-	        int bdId = rs.getInt("id");
-	        
-	        if (bdId > 0) {
-			    Categoria categoria = new Categoria(bdId, nom);
-			    return categoria.toString();
-	        }
+			if (rs.next()) {
+			    int id = rs.getInt("id");
+			    Categoria categoria = new Categoria(id, nom);
+			    return categoria;			
+			}
 	        return null;
 		} finally {
 			if (st != null) {
